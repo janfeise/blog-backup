@@ -1,0 +1,395 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">CSS布局：flex和grid</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 26 分钟 · 字数 5134</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="css-布局-flex-与-grid-系统梳理"><a href="#css-布局-flex-与-grid-系统梳理" class="anchor-link">#</a> CSS 布局：Flex 与 Grid 系统梳理</h1>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>重点知识</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flex 布局</td>
+<td>一维布局</td>
+<td>主要用于行或列方向的排版</td>
+</tr>
+<tr>
+<td>Grid 布局</td>
+<td>二维布局</td>
+<td>同时控制行与列，适合整体页面结构</td>
+</tr>
+<tr>
+<td>Grid 行列定义</td>
+<td>grid-template-rows / columns</td>
+<td>控制网格行列数量与尺寸</td>
+</tr>
+<tr>
+<td>Grid 间隙</td>
+<td>grid-row-gap / column-gap</td>
+<td>控制行列之间的空隙</td>
+</tr>
+<tr>
+<td>repeat 函数</td>
+<td>repeat()</td>
+<td>简化多行或多列的定义</td>
+</tr>
+<tr>
+<td>fr 单位</td>
+<td>fr</td>
+<td>Grid 专属的弹性比例单位</td>
+</tr>
+<tr>
+<td>元素定位</td>
+<td>grid-row / grid-column</td>
+<td>指定元素在网格中的位置</td>
+</tr>
+<tr>
+<td>实战练习</td>
+<td>综合应用</td>
+<td>使用 Grid 还原复杂布局</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="flex-布局概述"><a href="#flex-布局概述" class="anchor-link">#</a> Flex 布局概述</h2>
+<p>Flex 布局是一种典型的一维布局方案，其核心思想是沿着单一主轴进行排列，元素要么横向分布，要么纵向堆叠，而不会同时控制行与列，因此非常适合导航栏、列表、工具栏等线性结构的布局需求</p>
+<p>Flex 的优势在于语义直观、学习成本低，并且在处理对齐方式、空间分配等问题时表现高效，这也是它在实际业务开发中被广泛采用的重要原因</p>
+<p><img src="E:%5C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%5C%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%87%86%E5%A4%87%5Cimg%5Cimage-20260303160804185.png" alt="image-20260303160804185"></p>
+<p><img src="E:%5C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%5C%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%87%86%E5%A4%87%5Cimg%5Cimage-20260303152011828.png" alt="image-20260303152011828"></p>
+<h3 id="flex布局基础知识"><a href="#flex布局基础知识" class="anchor-link">#</a> flex布局基础知识</h3>
+<ul>
+<li>轴：flex布局由两个轴组成，主轴和侧轴组成，flex的所有核心属性都围绕这两条轴</li>
+<li>布局：flex容器内的元素可以沿着轴的方向进行布局，居中、开头、结尾、均匀布局等</li>
+<li>子元素可以自定义布局方向，摆脱父元素的统一布局</li>
+</ul>
+<h3 id="flex-轴"><a href="#flex-轴" class="anchor-link">#</a> flex 轴</h3>
+<p>flex布局可以自定义主轴，侧轴会跟着变化</p>
+<h3 id="flex布局"><a href="#flex布局" class="anchor-link">#</a> flex布局</h3>
+<p>在定了了轴的方向后，可以定义元素沿着轴的布局，在主轴方向居中，侧轴居中等</p>
+<hr>
+<h2 id="grid-布局概述"><a href="#grid-布局概述" class="anchor-link">#</a> Grid 布局概述</h2>
+<p>Grid 布局是一种二维布局方案，能够同时对行与列进行控制，是更加偏向页面级结构设计的布局工具，尤其适合后台管理系统、门户首页等结构复杂的页面场景</p>
+<p>如果说 Flex 更像是在“沿着一条线排列元素”，那么 Grid 更接近于“先搭建一张网格，再将元素放入指定位置”，整体结构更加直观清晰</p>
+<blockquote>
+<p><a href="https://www.bilibili.com">bilibili 首页的整体布局便体现了典型的 Grid 设计思路</a></p>
+</blockquote>
+<hr>
+<h3 id="grid-布局的基础知识"><a href="#grid-布局的基础知识" class="anchor-link">#</a> Grid 布局的基础知识</h3>
+<p>在正式使用 Grid 布局之前，需要理解几个关键概念，这些概念共同决定了网格的结构形态与最终的展示效果</p>
+<ul>
+<li>行与列：行和列用于控制网格的尺寸，间接决定页面中可展示的行数与列数，对应属性为 <code>grid-template-rows</code> 与 <code>grid-template-columns</code></li>
+<li>间隙：间隙用于控制行与行、列与列之间的距离，对应属性为 <code>grid-row-gap</code> 与 <code>grid-column-gap</code></li>
+<li><code>repeat</code> 函数：用于简化重复行或列的定义，提高代码的可维护性</li>
+<li><code>fr</code> 单位：用于对剩余空间进行比例分配</li>
+<li>跨区域：元素可以跨行或跨列，占据多个网格区域，<code>span</code></li>
+</ul>
+<hr>
+<h3 id="grid-控制行与列"><a href="#grid-控制行与列" class="anchor-link">#</a> Grid 控制行与列</h3>
+<p>Grid 的核心能力体现在对行与列的显式定义上，通过<code>grid-template-rows</code> 和<code> grid-template-columns</code>，可以清晰地指定每一行或每一列的尺寸，从而构建结构明确的网格体系</p>
+<p>定义一个<code>三行三列</code>的基础网格结构</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.container%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Edisplay%3C%2Fspan%3E%3A%20grid%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-template-rows%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E100px%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-number%22%3E200px%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-number%22%3E100px%3C%2Fspan%3E%3B%20%2F%2F%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%E8%A1%8C%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-template-columns%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3Efr%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3Efr%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3Efr%3B%20%2F%2F%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%E5%88%97%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">100px</span> <span class="hljs-number">200px</span> <span class="hljs-number">100px</span>; // <span class="hljs-number">3</span>行
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">2</span>fr <span class="hljs-number">1</span>fr; // <span class="hljs-number">3</span>列
+}
+</code></pre>
+      </div>
+    
+<p>上述代码中，行高采用固定像素值，列宽则使用 <code>fr</code> 单位进行比例分配，从而实现固定与自适应相结合的布局效果</p>
+<hr>
+<h3 id="grid-间隙设置"><a href="#grid-间隙设置" class="anchor-link">#</a> Grid 间隙设置</h3>
+<p>在 Grid 布局中，默认情况下各行与各列是紧密相连的，通过设置 <code>grid-row-gap</code> 与 <code>grid-column-gap</code>，可以让布局在视觉上更加舒展</p>
+<p>如果行与列的间隙一致，可以使用简写形式，使代码更加简洁</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.container%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Edisplay%3C%2Fspan%3E%3A%20grid%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egap%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E20px%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">20px</span>;
+}
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="repeat-函数的作用"><a href="#repeat-函数的作用" class="anchor-link">#</a> repeat 函数的作用</h3>
+<p>当网格中包含较多行或列时，如果逐一书写尺寸定义，代码会显得冗长且不易维护，例如下面的写法可读性较差</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-template-rows%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E100px%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-number%22%3E100px%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-number%22%3E100px%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-number%22%3E100px%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-number%22%3E100px%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-number%22%3E100px%3C%2Fspan%3E%3B%20%2F%2F%20%E5%85%AD%E8%A1%8C%EF%BC%8C%E6%AF%8F%E8%A1%8C%3Cspan%20class%3D%22hljs-number%22%3E100px%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>; // 六行，每行<span class="hljs-number">100px</span>
+</code></pre>
+      </div>
+    
+<p>此时可以使用 repeat 函数对重复结构进行抽象，使定义更加简洁直观</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-template-rows%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Erepeat%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E6%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E100px%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F*%206%20%E8%A1%8C%EF%BC%8C%E6%AF%8F%E8%A1%8C%20100px%20*%2F%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-built_in">repeat</span>(<span class="hljs-number">6</span>, <span class="hljs-number">100px</span>); <span class="hljs-comment">/* 6 行，每行 100px */</span>
+</code></pre>
+      </div>
+    
+<p>repeat 本质上是语法层面的简化手段，不会改变布局能力，但能显著提升代码的清晰度与维护体验</p>
+<hr>
+<h3 id="grid-中的-fr-单位"><a href="#grid-中的-fr-单位" class="anchor-link">#</a> Grid 中的 fr 单位</h3>
+<p>fr 是 Grid 布局特有的弹性单位，用于按比例分配剩余可用空间，可以理解为对可分配空间进行“切分”</p>
+<p>在同时存在固定尺寸与自适应区域的布局中，fr 能够自然地平衡空间分配，这是 Grid 相较于传统布局方式的一项重要优势</p>
+<hr>
+<h3 id="grid-指定元素位置"><a href="#grid-指定元素位置" class="anchor-link">#</a> Grid 指定元素位置</h3>
+<p>Grid 不仅可以定义整体结构，还支持对单个元素进行精确定位，其核心思路是通过“起始线 + 结束线”来描述元素在网格中的占位范围，从而实现显式、可控的布局设计</p>
+<hr>
+<h4 id="使用-grid-row-start-与-grid-column-start"><a href="#使用-grid-row-start-与-grid-column-start" class="anchor-link">#</a> 使用 grid-row-start 与 grid-column-start</h4>
+<p>首先可以通过 <code>grid-row-start</code> 和 <code>grid-column-start</code> 指定元素从哪一条网格线开始布局，用于确定元素的起点位置</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.item%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-row-start%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-column-start%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-row-start</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">2</span>;
+}
+</code></pre>
+      </div>
+    
+<p>上述代码表示元素从第 1 行开始，从第 2 列开始放置，此时元素的结束位置仍由默认规则决定</p>
+<hr>
+<h4 id="使用-grid-row-end-与-grid-column-end"><a href="#使用-grid-row-end-与-grid-column-end" class="anchor-link">#</a> 使用 grid-row-end 与 grid-column-end</h4>
+<p>在明确起始位置后，可以进一步通过 <code>grid-row-end</code> 和 <code>grid-column-end</code> 指定元素结束于哪一条网格线，从而精确控制其占据的行数与列数</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.item%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-row-start%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-row-end%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-column-start%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-column-end%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E4%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-row-start</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">grid-row-end</span>: <span class="hljs-number">3</span>;
+  <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">grid-column-end</span>: <span class="hljs-number">4</span>;
+}
+</code></pre>
+      </div>
+    
+<p>该写法表示元素纵向占据第 1 到第 2 行，横向占据第 2 到第 3 列，布局范围完全由开发者显式控制</p>
+<hr>
+<h3 id="使用-span-表示跨越行或列"><a href="#使用-span-表示跨越行或列" class="anchor-link">#</a> 使用 span 表示跨越行或列</h3>
+<blockquote>
+<p>span翻译：跨度</p>
+</blockquote>
+<p>如果不关心具体结束线编号，也可以使用 <code>span</code> 关键字表示元素跨越的行数或列数，从而提升可读性</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.item%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-row-start%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-row-end%3C%2Fspan%3E%3A%20span%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-column-start%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-column-end%3C%2Fspan%3E%3A%20span%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-row-start</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">grid-row-end</span>: span <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">grid-column-end</span>: span <span class="hljs-number">2</span>;
+}
+</code></pre>
+      </div>
+    
+<p>这种方式更贴近“占几行、占几列”的直觉表达，在动态布局中尤为常见</p>
+<hr>
+<h4 id="grid-row-与-grid-column-简写形式"><a href="#grid-row-与-grid-column-简写形式" class="anchor-link">#</a> grid-row 与 grid-column 简写形式</h4>
+<p>在实际开发中，更推荐使用 <code>grid-row</code> 和 <code>grid-column</code> 的简写形式，将起始线与结束线合并书写，使代码更加紧凑清晰</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.item%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-row%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%20%2F%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-column%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%20%2F%20%3Cspan%20class%3D%22hljs-number%22%3E4%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span> / <span class="hljs-number">3</span>;
+  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">2</span> / <span class="hljs-number">4</span>;
+}
+</code></pre>
+      </div>
+    
+<p>也可以结合 <code>span</code> 使用，表达更加语义化</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.item%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-row%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%20%2F%20span%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-column%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%20%2F%20span%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span> / span <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">2</span> / span <span class="hljs-number">2</span>;
+}
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="使用-1-表示到最后一行或最后一列"><a href="#使用-1-表示到最后一行或最后一列" class="anchor-link">#</a> 使用 <code>-1</code> 表示到最后一行或最后一列</h3>
+<p>在 Grid 布局中，除了使用 <code>span</code> 表示跨越的行数或列数外，还可以使用 <code>-1</code> 作为结束线编号，表示元素一直延伸到最后一行或最后一列</p>
+<p><code>-1</code> 代表倒数第一条网格线，无论网格的行数或列数如何变化，元素都会自动延伸到最末端，因此在自适应布局中非常实用</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.item%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-row-start%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-row-end%3C%2Fspan%3E%3A%20-%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-row-start</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">grid-row-end</span>: -<span class="hljs-number">1</span>;
+}
+</code></pre>
+      </div>
+    
+<p>上述写法表示元素从第 2 行开始，一直占据到最后一行结束，无需关心具体的总行数</p>
+<p>同样的规则也适用于列方向</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.item%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-column-start%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-column-end%3C%2Fspan%3E%3A%20-%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">grid-column-end</span>: -<span class="hljs-number">1</span>;
+}
+</code></pre>
+      </div>
+    
+<p>在简写形式中，<code>-1</code> 也可以直接与 <code>grid-row</code> 和 <code>grid-column</code> 搭配使用</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.item%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-row%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%20%2F%20-%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Egrid-column%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%20%2F%20-%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">2</span> / -<span class="hljs-number">1</span>;
+  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">1</span> / -<span class="hljs-number">1</span>;
+}
+</code></pre>
+      </div>
+    
+<p>相较于 <code>span</code> 更关注“占多少行或列”，<code>-1</code> 更关注“延伸到哪里”，二者结合使用，可以在不同布局需求下灵活选择最合适的表达方式</p>
+<hr>
+<h3 id="grid-布局练习"><a href="#grid-布局练习" class="anchor-link">#</a> Grid 布局练习</h3>
+<p>使用grid完成下图的布局：</p>
+<p><img src="E:%5C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%5C%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E5%87%86%E5%A4%87%5Cimg%5Cimage-20260302201214628-1772525294044-1.png" alt="image-20260302201214628"></p>
+<h3 id="进阶"><a href="#进阶" class="anchor-link">#</a> 进阶</h3>
+<p><a href="https://www.bilibili.com/video/BV1n94y1o7yS/?p=95&amp;spm_id_from=333.40138.top_right_bar_window_history.content.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f">096 Grid Challenge_哔哩哔哩_bilibili</a></p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/24</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/03/24</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

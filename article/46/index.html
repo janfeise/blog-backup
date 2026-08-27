@@ -1,0 +1,694 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">从事件驱动到流程驱动：使用 Promise 组织前端业务流程</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 35 分钟 · 字数 6943</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><blockquote>
+<p>文档：<a href="https://zgq.me/posts/react-app-dev/">https://zgq.me/posts/react-app-dev/</a></p>
+<p>promise文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise</a></p>
+</blockquote>
+<p>最近看到了上述的一篇文档，作者提出<code>Event based -&gt; 命令式</code>，从事件驱动到流程驱动，两者的区别在于：业务是否割裂</p>
+<ul>
+<li>
+<p>事件驱动：业务可能存在割裂，一条完整流程，却被拆成了多个独立事件</p>
+</li>
+<li>
+<p>流程驱动：业务流程完整</p>
+</li>
+</ul>
+<p>下面以删除功能需弹窗二次确认举例，说明两者的区别</p>
+<h2 id="什么是事件驱动"><a href="#什么是事件驱动" class="anchor-link">#</a> 什么是事件驱动</h2>
+<p>事件驱动最大的特点是：</p>
+<blockquote>
+<p>代码围绕事件组织，而不是围绕业务流程组织</p>
+</blockquote>
+<p>例如，一个带二次确认的删除功能，其真实业务流程其实非常简单：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4%0A%3Cspan%20class%3D%22hljs-code%22%3E%20%20%20%20%E2%86%93%0A%E7%94%A8%E6%88%B7%E7%A1%AE%E8%AE%A4%0A%20%20%20%20%E2%86%93%0A%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code>点击删除
+<span class="hljs-code">    ↓
+用户确认
+    ↓
+删除数据
+</span></code></pre>
+      </div>
+    
+<p>但在传统事件驱动模式下，它通常会被拆分为多个事件</p>
+<p>业务流程：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4%0A%20%20%20%20%E2%86%93%0A%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-title%22%3EhandleDelete%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%3C%2Fspan%3E%0A%0A%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%0A%0A%E7%94%A8%E6%88%B7%E7%82%B9%E5%87%BB%E7%A1%AE%E8%AE%A4%0A%20%20%20%20%E2%86%93%0A%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-title%22%3EhandleConfirm%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%3C%2Fspan%3E%0A%0A%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%0A%0A%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>点击删除
+    ↓
+<span class="hljs-function"><span class="hljs-title">handleDelete</span><span class="hljs-params">()</span></span>
+
+——————————
+
+用户点击确认
+    ↓
+<span class="hljs-function"><span class="hljs-title">handleConfirm</span><span class="hljs-params">()</span></span>
+
+——————————
+
+删除数据
+</code></pre>
+      </div>
+    
+<p>对应代码：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EhandleDelete%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetVisible%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%3B%0A%7D%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EhandleConfirm%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EdeleteApi%3C%2Fspan%3E()%3B%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EloadList%3C%2Fspan%3E()%3B%0A%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">handleDelete</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-title function_">setVisible</span>(<span class="hljs-literal">true</span>);
+};
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">handleConfirm</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">deleteApi</span>();
+  <span class="hljs-title function_">loadList</span>();
+};
+</code></pre>
+      </div>
+    
+<p>可以发现，一个完整的业务流程被拆散到了两个不同的函数中</p>
+<p>阅读代码时，需要开发者自己在脑海中拼接整个执行过程：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="handleDelete%0A%3Cspan%20class%3D%22hljs-code%22%3E%20%20%20%20%E2%86%93%0AModal%0A%20%20%20%20%E2%86%93%0AhandleConfirm%0A%20%20%20%20%E2%86%93%0AdeleteApi%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code>handleDelete
+<span class="hljs-code">    ↓
+Modal
+    ↓
+handleConfirm
+    ↓
+deleteApi
+</span></code></pre>
+      </div>
+    
+<p>当业务继续扩展，例如增加权限校验、日志记录、页面跳转、异常处理等步骤时，这种割裂会越来越明显，业务逻辑会分散到多个事件、多个回调甚至多个组件中，维护成本也随之增加</p>
+<h2 id="什么是流程驱动"><a href="#什么是流程驱动" class="anchor-link">#</a> 什么是流程驱动</h2>
+<p>流程驱动与事件驱动最大的区别在于：</p>
+<blockquote>
+<p><strong>代码按照业务执行顺序组织，而不是按照事件触发顺序组织</strong></p>
+</blockquote>
+<p>同样的删除功能，可以组织成下面这种形式：</p>
+<p>业务流程：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%BC%80%E5%A7%8B%0A%0A%E2%86%93%0A%0A%E7%A1%AE%E8%AE%A4%0A%0A%E2%86%93%0A%0A%E5%88%A0%E9%99%A4%0A%0A%E2%86%93%0A%0A%E7%BB%93%E6%9D%9F%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>开始
+
+↓
+
+确认
+
+↓
+
+删除
+
+↓
+
+结束
+</code></pre>
+      </div>
+    
+<p>对应代码：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EdeleteFlow%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%98%BE%E7%A4%BA%E5%BC%B9%E7%AA%97%20%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EshowConfirm%3C%2Fspan%3E()%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EdeleteApi%3C%2Fspan%3E()%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%B6%E5%AE%83%E6%B5%81%E7%A8%8B%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EloadList%3C%2Fspan%3E()%3B%0A%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">deleteFlow</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-comment">// 显示弹窗 </span>
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">showConfirm</span>();
+
+  <span class="hljs-comment">// 删除数据</span>
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">deleteApi</span>();
+
+  <span class="hljs-comment">// 其它流程</span>
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">loadList</span>();
+};
+</code></pre>
+      </div>
+    
+<p>阅读这段代码时，不需要再去寻找 <code>handleConfirm()</code> 在哪里，也不需要在脑海中拼接流程；代码的执行顺序，就是业务发生的顺序</p>
+<p>随着流程越来越复杂，这种优势会越来越明显</p>
+<h2 id="promise-连接事件与流程的桥梁"><a href="#promise-连接事件与流程的桥梁" class="anchor-link">#</a> Promise：连接事件与流程的桥梁</h2>
+<p>那么，如何把事件驱动转换成流程驱动？“—— <strong>Promise</strong></p>
+<p>在 MDN 中，Promise 有一个示例：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20myPromise%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Eresolve%2C%20reject%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-built_in%22%3EsetTimeout%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eresolve%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bfoo%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%7D%2C%20%3Cspan%20class%3D%22hljs-number%22%3E300%3C%2Fspan%3E)%3B%0A%7D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> myPromise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">resolve</span>(<span class="hljs-string">"foo"</span>);
+  }, <span class="hljs-number">300</span>);
+});
+</code></pre>
+      </div>
+    
+<p>整个执行过程如下：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%88%9B%E5%BB%BA%20%3Cspan%20class%3D%22hljs-built_in%22%3EPromise%3C%2Fspan%3E%0A%20%20%20%20%E2%86%93%0A%3Cspan%20class%3D%22hljs-built_in%22%3EPromise%3C%2Fspan%3E%20%E8%BF%9B%E5%85%A5%20Pending%EF%BC%88%E7%AD%89%E5%BE%85%EF%BC%89%0A%20%20%20%20%E2%86%93%0A%3Cspan%20class%3D%22hljs-number%22%3E300%3C%2Fspan%3Ems%20%E5%90%8E%E8%B0%83%E7%94%A8%20resolve()%0A%20%20%20%20%E2%86%93%0A%3Cspan%20class%3D%22hljs-built_in%22%3EPromise%3C%2Fspan%3E%20%E5%AE%8C%E6%88%90%EF%BC%88Fulfilled%EF%BC%89%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>创建 <span class="hljs-built_in">Promise</span>
+    ↓
+<span class="hljs-built_in">Promise</span> 进入 Pending（等待）
+    ↓
+<span class="hljs-number">300</span>ms 后调用 resolve()
+    ↓
+<span class="hljs-built_in">Promise</span> 完成（Fulfilled）
+</code></pre>
+      </div>
+    
+<p>Promise 在等待 <code>resolve()</code> 或 <code>reject()</code> 被调用，上述例子中<code>setTimeout</code> 则在 300ms 后调用了 <code>resolve()</code>，结束 Promise</p>
+<p>实际上，任何未来发生的事情都可以调用 <code>resolve()</code>，例如：</p>
+<ul>
+<li>网络请求完成</li>
+<li>文件上传完成</li>
+<li>WebSocket 收到消息</li>
+<li>用户点击按钮</li>
+</ul>
+<p>因此，对于 Modal 而言，我们也可以把"等待用户点击确认"包装成一个 Promise</p>
+<h3 id="showconfirm-做了什么"><a href="#showconfirm-做了什么" class="anchor-link">#</a> showConfirm 做了什么</h3>
+<p>在流程驱动版本中(下面有完整的&lt;u&gt;流程驱动代码&lt;/u&gt;)，其中最关键的代码就是 <code>showConfirm</code>：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BF%9D%E5%AD%98%20Promise%20%E7%9A%84%E5%9B%9E%E8%B0%83%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20resolveFn%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20rejectFn%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20*%20%E5%B0%86%20Modal%20%E5%B0%81%E8%A3%85%E6%88%90%20Promise%0A%20*%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EshowConfirm%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Eitem%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%98%BE%E7%A4%BA%E5%BC%B9%E7%AA%97%EF%BC%8C%E5%B9%B6%E8%AE%B0%E5%BD%95%E5%BE%85%E5%88%A0%E9%99%A4%E7%9A%84%E6%95%B0%E6%8D%AE%3C%2Fspan%3E%0A%20%20deleteItem.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20item%3B%0A%20%20modalVisible.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%BF%94%E5%9B%9E%20Promise%EF%BC%8C%E7%AD%89%E5%BE%85%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Eresolve%2C%20reject%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20resolveFn%20%3D%20resolve%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BF%9D%E5%AD%98%20resolve%20%E5%9B%9E%E8%B0%83%3C%2Fspan%3E%0A%20%20%20%20rejectFn%20%3D%20reject%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BF%9D%E5%AD%98%20reject%20%E5%9B%9E%E8%B0%83%3C%2Fspan%3E%0A%20%20%7D)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// 保存 Promise 的回调</span>
+<span class="hljs-keyword">let</span> resolveFn = <span class="hljs-literal">null</span>;
+<span class="hljs-keyword">let</span> rejectFn = <span class="hljs-literal">null</span>;
+
+<span class="hljs-comment">/**
+ * 将 Modal 封装成 Promise
+ */</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">showConfirm</span>(<span class="hljs-params">item</span>) {
+  <span class="hljs-comment">// 显示弹窗，并记录待删除的数据</span>
+  deleteItem.<span class="hljs-property">value</span> = item;
+  modalVisible.<span class="hljs-property">value</span> = <span class="hljs-literal">true</span>;
+
+  <span class="hljs-comment">// 返回 Promise，等待用户操作</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    resolveFn = resolve; <span class="hljs-comment">// 保存 resolve 回调</span>
+    rejectFn = reject; <span class="hljs-comment">// 保存 reject 回调</span>
+  });
+}
+</code></pre>
+      </div>
+    
+<p>关键在于需要把 <code>resolve</code> 和 <code>reject</code> 回调保存起来</p>
+<p>因为：<code>new Promise()</code> 创建时可以拿到 <code>resolve</code> 和 <code>reject</code>，但是用户点击按钮发生在未来，只有将其保存下来后续才能调用</p>
+<p>执行时间线如下：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-title%22%3EdeleteFlow%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%3C%2Fspan%3E%0A%0A%E2%86%93%0A%0A%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-title%22%3EshowConfirm%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%3C%2Fspan%3E%0A%0A%E2%86%93%0A%0A%E5%88%9B%E5%BB%BA%20Promise%0A%0A%E2%86%93%0A%0A%E4%BF%9D%E5%AD%98%20resolve%20%2F%20reject%0A%0A%E2%86%93%0A%0A%E6%89%93%E5%BC%80%20Modal%0A%0A%E2%86%93%0A%0APromise%20%E4%BF%9D%E6%8C%81%20Pending%0A%0A%E2%86%93%0A%0AdeleteFlow%20%E6%9A%82%E5%81%9C%EF%BC%88await%EF%BC%89%0A%0A%E2%80%A6%E2%80%A6%0A%0A%E7%94%A8%E6%88%B7%E7%82%B9%E5%87%BB%E7%A1%AE%E8%AE%A4%0A%0A%E2%86%93%0A%0A%E8%B0%83%E7%94%A8%20%3Cspan%20class%3D%22hljs-built_in%22%3Eresolve%3C%2Fspan%3E()%0A%0A%E2%86%93%0A%0APromise%20%E5%AE%8C%E6%88%90%0A%0A%E2%86%93%0A%0AdeleteFlow%20%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-function"><span class="hljs-title">deleteFlow</span><span class="hljs-params">()</span></span>
+
+↓
+
+<span class="hljs-function"><span class="hljs-title">showConfirm</span><span class="hljs-params">()</span></span>
+
+↓
+
+创建 Promise
+
+↓
+
+保存 resolve / reject
+
+↓
+
+打开 Modal
+
+↓
+
+Promise 保持 Pending
+
+↓
+
+deleteFlow 暂停（await）
+
+……
+
+用户点击确认
+
+↓
+
+调用 <span class="hljs-built_in">resolve</span>()
+
+↓
+
+Promise 完成
+
+↓
+
+deleteFlow 继续执行
+</code></pre>
+      </div>
+    
+<p>因此，<code>showConfirm</code> 的真正作用并不是显示 Modal，而是：</p>
+<blockquote>
+<p><strong>创建一个 Promise，并把未来控制 Promise 状态的方法保存下来</strong></p>
+</blockquote>
+<h3 id="用户点击确认后发生了什么"><a href="#用户点击确认后发生了什么" class="anchor-link">#</a> 用户点击确认后发生了什么</h3>
+<p>当用户点击"确定"按钮时：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EconfirmModal%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%7B%0A%20%20modalVisible.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%3B%0A%20%20resolveFn%3F.()%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">confirmModal</span>(<span class="hljs-params"></span>) {
+  modalVisible.<span class="hljs-property">value</span> = <span class="hljs-literal">false</span>;
+  resolveFn?.();
+}
+</code></pre>
+      </div>
+    
+<p>调用 <code>resolve()</code> 后，Promise 状态发生变化：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Pending%0A%20%20%20%20%E2%86%93%0A%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-title%22%3Eresolve%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%3C%2Fspan%3E%0A%20%20%20%20%E2%86%93%0AFulfilled%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>Pending
+    ↓
+<span class="hljs-function"><span class="hljs-title">resolve</span><span class="hljs-params">()</span></span>
+    ↓
+Fulfilled
+</code></pre>
+      </div>
+    
+<p>于是：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EshowConfirm%3C%2Fspan%3E()%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">await</span> <span class="hljs-title function_">showConfirm</span>();
+</code></pre>
+      </div>
+    
+<p>立即结束等待，继续执行下面的代码：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EdeleteFlow%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Eitem%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EshowConfirm%3C%2Fspan%3E(item)%3B%0A%0A%20%20list.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20list.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Efilter%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-params%22%3Ei%3C%2Fspan%3E%20%3D%3E%3C%2Fspan%3E%20i%20!%3D%3D%20item)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%88%A0%E9%99%A4%E6%88%90%E5%8A%9F%26quot%3B%3C%2Fspan%3E)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">deleteFlow</span>(<span class="hljs-params">item</span>) {
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">showConfirm</span>(item);
+
+  list.<span class="hljs-property">value</span> = list.<span class="hljs-property">value</span>.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">i</span> =&gt;</span> i !== item);
+
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"删除成功"</span>);
+}
+</code></pre>
+      </div>
+    
+<p>如果用户点击取消：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EcancelModal%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%7B%0A%20%20modalVisible.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%3B%0A%20%20rejectFn%3F.()%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">cancelModal</span>(<span class="hljs-params"></span>) {
+  modalVisible.<span class="hljs-property">value</span> = <span class="hljs-literal">false</span>;
+  rejectFn?.();
+}
+</code></pre>
+      </div>
+    
+<p>则会调用 <code>reject()</code></p>
+<p>由于 <code>await</code> 抛出了异常，因此流程会直接进入：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Ecatch%3C%2Fspan%3E%20()%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E7%94%A8%E6%88%B7%E5%8F%96%E6%B6%88%E5%88%A0%E9%99%A4%26quot%3B%3C%2Fspan%3E)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">catch</span> () {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"用户取消删除"</span>);
+}
+</code></pre>
+      </div>
+    
+<p>整个异常处理也变得十分自然</p>
+<h2 id="事件驱动完整代码"><a href="#事件驱动完整代码" class="anchor-link">#</a> 事件驱动完整代码</h2>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Etemplate%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ev-for%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bi%20in%20list%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3E%3Akey%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bi%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Espan%3C%2Fspan%3E%3E%3C%2Fspan%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-template-variable%22%3E%7B%7B%20%3Cspan%20class%3D%22hljs-name%22%3Ei%3C%2Fspan%3E%20%7D%7D%3C%2Fspan%3E%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Espan%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-button%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Edanger%3C%2Fspan%3E%20%40%3Cspan%20class%3D%22hljs-attr%22%3Eclick%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BshowModal(i)%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%E5%88%A0%E9%99%A4%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-button%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E4%BA%8C%E6%AC%A1%E7%A1%AE%E8%AE%A4%E5%BC%B9%E7%AA%97%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-modal%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ev-model%3Aopen%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BmodalVisible%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Etitle%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E7%A1%AE%E8%AE%A4%E5%88%A0%E9%99%A4%26quot%3B%3C%2Fspan%3E%20%40%3Cspan%20class%3D%22hljs-attr%22%3Eok%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BhandleOk%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%E7%A1%AE%E5%AE%9A%E8%A6%81%E5%88%A0%E9%99%A4%20%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-template-variable%22%3E%7B%7B%20%3Cspan%20class%3D%22hljs-name%22%3EdeleteItem%3C%2Fspan%3E%20%7D%7D%3C%2Fspan%3E%3Cspan%20class%3D%22language-xml%22%3E%20%E5%90%97%EF%BC%9F%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-modal%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Etemplate%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Esetup%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-javascript%22%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%20ref%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bvue%26quot%3B%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20list%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%5B%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E4%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%5D)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20modalVisible%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20deleteItem%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EshowModal%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3Eitem%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20deleteItem.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20item%3B%0A%20%20modalVisible.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%3B%0A%7D%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EhandleOk%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(deleteItem.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20!%3D%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E)%20%7B%0A%20%20%20%20list.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20list.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Efilter%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Ei%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20i%20!%3D%3D%20deleteItem.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E)%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%88%A0%E9%99%A4%E6%88%90%E5%8A%9F%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%7D%0A%20%20modalVisible.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%3B%0A%7D%3B%0A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"i in list"</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">"i"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span class="hljs-template-variable">{{ <span class="hljs-name">i</span> }}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a-button</span> <span class="hljs-attr">danger</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"showModal(i)"</span>&gt;</span>删除<span class="hljs-tag">&lt;/<span class="hljs-name">a-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- 二次确认弹窗 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a-modal</span> <span class="hljs-attr">v-model:open</span>=<span class="hljs-string">"modalVisible"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"确认删除"</span> @<span class="hljs-attr">ok</span>=<span class="hljs-string">"handleOk"</span>&gt;</span>
+      确定要删除 </span><span class="hljs-template-variable">{{ <span class="hljs-name">deleteItem</span> }}</span><span class="language-xml"> 吗？
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a-modal</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">"vue"</span>;
+
+<span class="hljs-keyword">const</span> list = <span class="hljs-title function_">ref</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]);
+<span class="hljs-keyword">const</span> modalVisible = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">false</span>);
+<span class="hljs-keyword">const</span> deleteItem = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">null</span>);
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">showModal</span> = (<span class="hljs-params">item</span>) =&gt; {
+  deleteItem.<span class="hljs-property">value</span> = item;
+  modalVisible.<span class="hljs-property">value</span> = <span class="hljs-literal">true</span>;
+};
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">handleOk</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">if</span> (deleteItem.<span class="hljs-property">value</span> !== <span class="hljs-literal">null</span>) {
+    list.<span class="hljs-property">value</span> = list.<span class="hljs-property">value</span>.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">i</span>) =&gt;</span> i !== deleteItem.<span class="hljs-property">value</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"删除成功"</span>);
+  }
+  modalVisible.<span class="hljs-property">value</span> = <span class="hljs-literal">false</span>;
+};
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</span></code></pre>
+      </div>
+    
+<h2 id="流程驱动的完整代码"><a href="#流程驱动的完整代码" class="anchor-link">#</a> 流程驱动的完整代码</h2>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Etemplate%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ev-for%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bitem%20in%20list%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3E%3Akey%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bitem%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Espan%3C%2Fspan%3E%3E%3C%2Fspan%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-template-variable%22%3E%7B%7B%20%3Cspan%20class%3D%22hljs-name%22%3Eitem%3C%2Fspan%3E%20%7D%7D%3C%2Fspan%3E%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Espan%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-button%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Edanger%3C%2Fspan%3E%20%40%3Cspan%20class%3D%22hljs-attr%22%3Eclick%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BdeleteFlow(item)%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%20%E5%88%A0%E9%99%A4%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-button%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-modal%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ev-model%3Aopen%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BmodalVisible%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Etitle%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E7%A1%AE%E8%AE%A4%E5%88%A0%E9%99%A4%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%20%20%40%3Cspan%20class%3D%22hljs-attr%22%3Eok%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BconfirmModal%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%20%20%40%3Cspan%20class%3D%22hljs-attr%22%3Ecancel%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BcancelModal%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%E7%A1%AE%E5%AE%9A%E8%A6%81%E5%88%A0%E9%99%A4%20%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-template-variable%22%3E%7B%7B%20%3Cspan%20class%3D%22hljs-name%22%3EdeleteItem%3C%2Fspan%3E%20%7D%7D%3C%2Fspan%3E%3Cspan%20class%3D%22language-xml%22%3E%20%E5%90%97%EF%BC%9F%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-modal%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Etemplate%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Esetup%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-javascript%22%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%20ref%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bvue%26quot%3B%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20list%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%5B%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E4%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%5D)%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20modalVisible%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20deleteItem%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BF%9D%E5%AD%98%20Promise%20%E7%9A%84%E5%9B%9E%E8%B0%83%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20resolveFn%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20rejectFn%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20*%20%E5%B0%86%20Modal%20%E5%B0%81%E8%A3%85%E6%88%90%20Promise%0A%20*%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EshowConfirm%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Eitem%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%98%BE%E7%A4%BA%E5%BC%B9%E7%AA%97%EF%BC%8C%E5%B9%B6%E8%AE%B0%E5%BD%95%E5%BE%85%E5%88%A0%E9%99%A4%E7%9A%84%20item%3C%2Fspan%3E%0A%20%20deleteItem.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20item%3B%0A%20%20modalVisible.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%20Promise%EF%BC%8C%E7%AD%89%E5%BE%85%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Eresolve%2C%20reject%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20resolveFn%20%3D%20resolve%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BF%9D%E5%AD%98%20resolve%20%E5%9B%9E%E8%B0%83%3C%2Fspan%3E%0A%20%20%20%20rejectFn%20%3D%20reject%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BF%9D%E5%AD%98%20reject%20%E5%9B%9E%E8%B0%83%3C%2Fspan%3E%0A%20%20%7D)%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20*%20%E5%88%A0%E9%99%A4%E6%B5%81%E7%A8%8B%0A%20*%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EdeleteFlow%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Eitem%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Etry%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%AD%89%E5%BE%85%E7%94%A8%E6%88%B7%E7%A1%AE%E8%AE%A4%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EshowConfirm%3C%2Fspan%3E(item)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%BC%B9%E7%AA%97%E7%82%B9%E5%87%BB%E7%A1%AE%E8%AE%A4%E5%90%8E%E4%BC%9A%E7%BB%93%E6%9D%9Fpromise%EF%BC%8C%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C%E4%B8%8B%E9%9D%A2%E7%9A%84%E9%80%BB%E8%BE%91%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%EF%BC%9A%E5%9C%A8%E5%BC%80%E5%8F%91%E6%97%B6%E5%8F%AF%E6%9B%BF%E6%8D%A2%E4%B8%BA%E5%85%B7%E4%BD%93%E7%9A%84%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82%3C%2Fspan%3E%0A%20%20%20%20list.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20list.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Efilter%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Ei%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20i%20!%3D%3D%20item)%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%88%A0%E9%99%A4%E6%88%90%E5%8A%9F%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecatch%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20catch%E6%8D%95%E8%8E%B7%E7%9A%84%E6%98%AF%EF%BC%9Areject()%EF%BC%8C%E5%8D%B3%E7%94%A8%E6%88%B7%E5%8F%96%E6%B6%88%E5%88%A0%E9%99%A4%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E7%94%A8%E6%88%B7%E5%8F%96%E6%B6%88%E5%88%A0%E9%99%A4%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%7D%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20*%20%E7%94%A8%E6%88%B7%E7%A1%AE%E8%AE%A4%0A%20*%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EconfirmModal%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%7B%0A%20%20modalVisible.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%3B%0A%20%20resolveFn%3F.()%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%B0%83%E7%94%A8%20resolve%EF%BC%8C%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C%E5%88%A0%E9%99%A4%E6%B5%81%E7%A8%8B%3C%2Fspan%3E%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20*%20%E7%94%A8%E6%88%B7%E5%8F%96%E6%B6%88%0A%20*%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EcancelModal%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%7B%0A%20%20modalVisible.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%3B%0A%20%20rejectFn%3F.()%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%B0%83%E7%94%A8%20reject%EF%BC%8C%E7%BB%88%E6%AD%A2%E5%88%A0%E9%99%A4%E6%B5%81%E7%A8%8B%3C%2Fspan%3E%0A%7D%0A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in list"</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">"item"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span class="hljs-template-variable">{{ <span class="hljs-name">item</span> }}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a-button</span> <span class="hljs-attr">danger</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"deleteFlow(item)"</span>&gt;</span> 删除 <span class="hljs-tag">&lt;/<span class="hljs-name">a-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">a-modal</span>
+      <span class="hljs-attr">v-model:open</span>=<span class="hljs-string">"modalVisible"</span>
+      <span class="hljs-attr">title</span>=<span class="hljs-string">"确认删除"</span>
+      @<span class="hljs-attr">ok</span>=<span class="hljs-string">"confirmModal"</span>
+      @<span class="hljs-attr">cancel</span>=<span class="hljs-string">"cancelModal"</span>
+    &gt;</span>
+      确定要删除 </span><span class="hljs-template-variable">{{ <span class="hljs-name">deleteItem</span> }}</span><span class="language-xml"> 吗？
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a-modal</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> { ref } <span class="hljs-keyword">from</span> <span class="hljs-string">"vue"</span>;
+
+<span class="hljs-keyword">const</span> list = <span class="hljs-title function_">ref</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]);
+
+<span class="hljs-keyword">const</span> modalVisible = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">false</span>);
+<span class="hljs-keyword">const</span> deleteItem = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">null</span>);
+
+<span class="hljs-comment">// 保存 Promise 的回调</span>
+<span class="hljs-keyword">let</span> resolveFn = <span class="hljs-literal">null</span>;
+<span class="hljs-keyword">let</span> rejectFn = <span class="hljs-literal">null</span>;
+
+<span class="hljs-comment">/**
+ * 将 Modal 封装成 Promise
+ */</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">showConfirm</span>(<span class="hljs-params">item</span>) {
+  <span class="hljs-comment">// 显示弹窗，并记录待删除的 item</span>
+  deleteItem.<span class="hljs-property">value</span> = item;
+  modalVisible.<span class="hljs-property">value</span> = <span class="hljs-literal">true</span>;
+
+  <span class="hljs-comment">// 返回一个 Promise，等待用户操作</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    resolveFn = resolve; <span class="hljs-comment">// 保存 resolve 回调</span>
+    rejectFn = reject; <span class="hljs-comment">// 保存 reject 回调</span>
+  });
+}
+
+<span class="hljs-comment">/**
+ * 删除流程
+ */</span>
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">deleteFlow</span>(<span class="hljs-params">item</span>) {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// 等待用户确认</span>
+    <span class="hljs-keyword">await</span> <span class="hljs-title function_">showConfirm</span>(item); <span class="hljs-comment">// 弹窗点击确认后会结束promise，继续执行下面的逻辑</span>
+
+    <span class="hljs-comment">// 删除数据：在开发时可替换为具体的接口请求</span>
+    list.<span class="hljs-property">value</span> = list.<span class="hljs-property">value</span>.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">i</span>) =&gt;</span> i !== item);
+
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"删除成功"</span>);
+  } <span class="hljs-keyword">catch</span> {
+    <span class="hljs-comment">// catch捕获的是：reject()，即用户取消删除</span>
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"用户取消删除"</span>);
+  }
+}
+
+<span class="hljs-comment">/**
+ * 用户确认
+ */</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">confirmModal</span>(<span class="hljs-params"></span>) {
+  modalVisible.<span class="hljs-property">value</span> = <span class="hljs-literal">false</span>;
+  resolveFn?.(); <span class="hljs-comment">// 调用 resolve，继续执行删除流程</span>
+}
+
+<span class="hljs-comment">/**
+ * 用户取消
+ */</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">cancelModal</span>(<span class="hljs-params"></span>) {
+  modalVisible.<span class="hljs-property">value</span> = <span class="hljs-literal">false</span>;
+  rejectFn?.(); <span class="hljs-comment">// 调用 reject，终止删除流程</span>
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</span></code></pre>
+      </div>
+    
+<h2 id="原文-事件驱动-flow"><a href="#原文-事件驱动-flow" class="anchor-link">#</a> 原文: 事件驱动-&gt;Flow</h2>
+<h3 id="event-based-命令式"><a href="#event-based-命令式" class="anchor-link">#</a> Event based -&gt; 命令式</h3>
+<p>对于一些相对较长的 Flow，尽可能用命令式的写法去组织代码，可以让业务逻辑的表达更加直观清晰。但有时候涉及到类似 Modal 组件 visible，用户交互 confirm 后、再继续往下走的流程，代码上就很容易出现前面说到的业务逻辑跳来跳去的情况。</p>
+<p>一个可以参考的做法是，把这种类似 Modal 交互的 Event based 逻辑转换为命令式的写法。代码层面可以用 Promise 构造函数 + Ref 的方式来实现，外层 Flow 直接 await 这个 Promise，当用户在 Modal 确认后，通过 resolve / reject 结束 Modal 的 Flow，再把流程交还给上层 Flow 继续往下走。</p>
+<p>如以下例子代码，这里忽略了一些定义、传值的细节。在实际的操作上，你还可以把这类逻辑封装成一个 hook 实现通用化。</p>
+
+      <div class="md-editor-code" data-language="tsx">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">tsx</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3ETestComponent%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%5BmodalVisible%2C%20setModalVisible%5D%20%3D%20useState%3C%3Cspan%20class%3D%22hljs-built_in%22%3Eboolean%3C%2Fspan%3E%3E(%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E)%3B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20resolveRef%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EuseRef%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E)%3B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20rejectRef%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EuseRef%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EstartModalFlow%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Eresolve%2C%20reject%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20resolveRef.%3Cspan%20class%3D%22hljs-property%22%3Ecurrent%3C%2Fspan%3E%20%3D%20resolve%3B%0A%20%20%20%20rejectRef.%3Cspan%20class%3D%22hljs-property%22%3Ecurrent%3C%2Fspan%3E%20%3D%20reject%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetModalVisible%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%3B%0A%20%20%7D)%3B%0A%20%20%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EstartMainFlow%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20before%20modal%20flow%20logic...%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EstartModalFlow%3C%2Fspan%3E()%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20follow%20up%20logic...%3C%2Fspan%3E%0A%20%20%7D%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20(%0A%20%20%20%20%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3ETestModal%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Evisible%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%7BmodalVisible%7D%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3EonConfirm%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%7B()%3C%2Fspan%3E%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20resolveRef.current%3F.()%3B%0A%20%20%20%20%20%20%20%20setModalVisible(false)%3B%0A%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%20%20onCancel%3D%7B()%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20rejectRef.current%3F.()%3B%0A%20%20%20%20%20%20%20%20setModalVisible(false)%3B%0A%20%20%20%20%20%20%7D%7D%0A%20%20%20%20%20%20onClose%3D%7B()%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20rejectRef.current%3F.()%3B%0A%20%20%20%20%20%20%20%20setModalVisible(false)%3B%0A%20%20%20%20%20%20%7D%7D%0A%20%20)%3B%0A%7D%3B%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-tsx"><span class="hljs-keyword">const</span> <span class="hljs-title function_">TestComponent</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> [modalVisible, setModalVisible] = useState&lt;<span class="hljs-built_in">boolean</span>&gt;(<span class="hljs-literal">false</span>);
+  <span class="hljs-keyword">const</span> resolveRef = <span class="hljs-title function_">useRef</span>(<span class="hljs-literal">null</span>);
+  <span class="hljs-keyword">const</span> rejectRef = <span class="hljs-title function_">useRef</span>(<span class="hljs-literal">null</span>);
+
+  <span class="hljs-keyword">const</span> <span class="hljs-title function_">startModalFlow</span> = (<span class="hljs-params"></span>) =&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    resolveRef.<span class="hljs-property">current</span> = resolve;
+    rejectRef.<span class="hljs-property">current</span> = reject;
+    <span class="hljs-title function_">setModalVisible</span>(<span class="hljs-literal">true</span>);
+  });
+  
+  <span class="hljs-keyword">const</span> <span class="hljs-title function_">startMainFlow</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-comment">// before modal flow logic...</span>
+    <span class="hljs-keyword">await</span> <span class="hljs-title function_">startModalFlow</span>();
+    <span class="hljs-comment">// follow up logic...</span>
+  };
+
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">TestModal</span>
+      <span class="hljs-attr">visible</span>=<span class="hljs-string">{modalVisible}</span>
+      <span class="hljs-attr">onConfirm</span>=<span class="hljs-string">{()</span> =&gt;</span> {
+        resolveRef.current?.();
+        setModalVisible(false);
+      }}
+      onCancel={() =&gt; {
+        rejectRef.current?.();
+        setModalVisible(false);
+      }}
+      onClose={() =&gt; {
+        rejectRef.current?.();
+        setModalVisible(false);
+      }}
+  );
+};
+</span></code></pre>
+      </div>
+    
+<p>当我们能把业务流程用命令式的写法串起来以后，即使涉及到流程结束、报错的情况，我们也可以很轻松地兜住，正常结束我们可以用 return，异常结束可以直接 throw 一个定义好的 Exception / Error，只需要简单地用 try / catch 等语法就能实现错误的统一处理。并且，这样的做法也可以促使开发者多多思考业务的错误降级、兜底逻辑，对用户使用过程可能遇到的各种场景都有预期去做兜底，获得更加丝滑的体验。</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/07/25</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/07/25</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">promiseAll并行减少多个异步等待时间</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 17 分钟 · 字数 3347</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="使用-promise-all-并行优化异步请求-减少总等待时间"><a href="#使用-promise-all-并行优化异步请求-减少总等待时间" class="anchor-link">#</a> 使用 Promise.all 并行优化异步请求，减少总等待时间</h1>
+<p>在项目 <a href="https://github.com/janfeise/obsidian-to-memo?utm_source=chatgpt.com">obsidian-to-memo</a> 初始阶段中，消息数据采用串行方式读取。虽然逻辑简单，但随着数据量增加，页面会出现明显的加载迟钝感</p>
+<p>问题的核心在于：</p>
+<ul>
+<li>串行读取：当前文件读取完成后，才会开始读取下一个文件，每次只能读取一个文件</li>
+<li>多个异步任务被人为“排队”</li>
+</ul>
+<p>这种模式会导致整体耗时不断累加</p>
+<h2 id="串行读取的问题"><a href="#串行读取的问题" class="anchor-link">#</a> 串行读取的问题</h2>
+<p>最初的实现如下：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%B2%E8%A1%8C%E8%AF%BB%E5%8F%96%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%3D%3D%3D%3D%3D%20%E6%B8%B2%E6%9F%93%E6%B6%88%E6%81%AF%20%3D%3D%3D%3D%3D%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efor%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20p%20%3Cspan%20class%3D%22hljs-keyword%22%3Eof%3C%2Fspan%3E%20pages)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20file%20%3D%20app.%3Cspan%20class%3D%22hljs-property%22%3Evault%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetAbstractFileByPath%3C%2Fspan%3E(p.%3Cspan%20class%3D%22hljs-property%22%3Efile%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Epath%3C%2Fspan%3E)%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(file%20%26%26%20file.%3Cspan%20class%3D%22hljs-property%22%3Eextension%3C%2Fspan%3E%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bmd%26quot%3B%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%B2%E8%A1%8C%E8%AF%BB%E5%8F%96%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%BF%85%E9%A1%BB%E7%AD%89%E5%BE%85%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%AE%8C%E6%88%90%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20text%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20app.%3Cspan%20class%3D%22hljs-property%22%3Evault%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eread%3C%2Fspan%3E(file)%0A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%90%8E%E7%BB%AD%E5%A4%84%E7%90%86%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20......%3C%2Fspan%3E%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// 串行读取</span>
+<span class="hljs-comment">// ===== 渲染消息 =====</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> p <span class="hljs-keyword">of</span> pages) {
+    <span class="hljs-keyword">let</span> file = app.<span class="hljs-property">vault</span>.<span class="hljs-title function_">getAbstractFileByPath</span>(p.<span class="hljs-property">file</span>.<span class="hljs-property">path</span>)
+    <span class="hljs-keyword">if</span> (file &amp;&amp; file.<span class="hljs-property">extension</span> === <span class="hljs-string">"md"</span>) {
+        
+        <span class="hljs-comment">// 串行读取</span>
+        <span class="hljs-comment">// 必须等待当前文件读取完成</span>
+        <span class="hljs-keyword">let</span> text = <span class="hljs-keyword">await</span> app.<span class="hljs-property">vault</span>.<span class="hljs-title function_">read</span>(file)
+
+        <span class="hljs-comment">// 后续处理</span>
+        <span class="hljs-comment">// ......</span>
+    }
+}
+</code></pre>
+      </div>
+    
+<p>这里的关键问题是：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20app.%3Cspan%20class%3D%22hljs-property%22%3Evault%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eread%3C%2Fspan%3E(file)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">await</span> app.<span class="hljs-property">vault</span>.<span class="hljs-title function_">read</span>(file)
+</code></pre>
+      </div>
+    
+<p><code>await</code> 会阻塞当前循环。</p>
+<p>因此：</p>
+<ol>
+<li>第一个文件读取完成</li>
+<li>才开始第二个文件</li>
+<li>第二个完成后</li>
+<li>才开始第三个</li>
+</ol>
+<p>如果一个文件读取耗时 100ms，10 个文件就可能接近 1s。</p>
+<p>当文件数量进一步增加时，性能问题会更加明显。</p>
+<hr>
+<h2 id="为什么串行会越来越慢"><a href="#为什么串行会越来越慢" class="anchor-link">#</a> 为什么串行会越来越慢</h2>
+<p>假设有以下异步任务：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Etask1%3C%2Fspan%3E()%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Etask2%3C%2Fspan%3E()%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Etask3%3C%2Fspan%3E()%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">await</span> <span class="hljs-title function_">task1</span>()
+<span class="hljs-keyword">await</span> <span class="hljs-title function_">task2</span>()
+<span class="hljs-keyword">await</span> <span class="hljs-title function_">task3</span>()
+</code></pre>
+      </div>
+    
+<p>执行顺序如下：</p>
+
+      <div class="md-editor-code" data-language="txt">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">txt</span>
+            <button class="md-editor-copy-button" data-code="task1%20%E5%AE%8C%E6%88%90%20-%3E%20task2%20%E5%BC%80%E5%A7%8B%0Atask2%20%E5%AE%8C%E6%88%90%20-%3E%20task3%20%E5%BC%80%E5%A7%8B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-txt">task1 完成 -&gt; task2 开始
+task2 完成 -&gt; task3 开始
+</code></pre>
+      </div>
+    
+<p>总耗时：</p>
+
+      <div class="md-editor-code" data-language="txt">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">txt</span>
+            <button class="md-editor-copy-button" data-code="%E6%80%BB%E6%97%B6%E9%97%B4%20%3D%20task1%20%2B%20task2%20%2B%20task3%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-txt">总时间 = task1 + task2 + task3
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="promise-all-的并行思路"><a href="#promise-all-的并行思路" class="anchor-link">#</a> Promise.all 的并行思路</h2>
+<p>对于互不依赖的数据读取，更适合采用并行方案：</p>
+<ul>
+<li>一次性发起所有异步任务</li>
+<li>所有任务同时执行</li>
+<li>等待全部完成后统一返回结果</li>
+</ul>
+<p>这正是 <code>Promise.all</code> 的作用。</p>
+<hr>
+<h2 id="测试串行和并行耗时时长"><a href="#测试串行和并行耗时时长" class="anchor-link">#</a> 测试串行和并行耗时时长</h2>
+<p>为了验证串行与并行的区别，在 <a href="https://codepen.io/xiaquan/pen/KwNVKvo?editors=0011&amp;utm_source=chatgpt.com">CodePen 测试页面</a> 中编写了一组测试代码</p>
+<h2 id="辅助函数"><a href="#辅助函数" class="anchor-link">#</a> 辅助函数</h2>
+<p>先定义一个模拟异步请求的 Promise：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20promiseFun%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3Etime%2C%20index%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-params%22%3Eresolve%3C%2Fspan%3E%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3EsetTimeout%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eresolve%3C%2Fspan%3E(index)%0A%20%20%20%20%20%20%20%20%7D%2C%20time)%0A%20%20%20%20%7D)%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// 辅助函数</span>
+<span class="hljs-keyword">const</span> promiseFun = <span class="hljs-keyword">function</span> (<span class="hljs-params">time, index</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {
+        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+            <span class="hljs-title function_">resolve</span>(index)
+        }, time)
+    })
+}
+</code></pre>
+      </div>
+    
+<p>这里通过 <code>setTimeout</code> 模拟异步耗时。</p>
+<hr>
+<h1 id="串行执行"><a href="#串行执行" class="anchor-link">#</a> 串行执行</h1>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%B2%E8%A1%8C%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efor%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20i%20%3D%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%3B%20i%20%3C%20len%3B%20i%2B%2B)%20%7B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20result%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EpromiseFun%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E100%3C%2Fspan%3E%20*%20i%2C%20i)%0A%0A%20%20%20%20results.%3Cspan%20class%3D%22hljs-title%20function_%22%3Epush%3C%2Fspan%3E(result)%0A%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// 串行</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> <span class="hljs-title function_">promiseFun</span>(<span class="hljs-number">100</span> * i, i)
+
+    results.<span class="hljs-title function_">push</span>(result)
+
+}
+</code></pre>
+      </div>
+    
+<p>执行逻辑：</p>
+
+      <div class="md-editor-code" data-language="txt">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">txt</span>
+            <button class="md-editor-copy-button" data-code="%E7%AC%AC1%E4%B8%AA%E5%AE%8C%E6%88%90%0A%E2%86%93%0A%E7%AC%AC2%E4%B8%AA%E5%BC%80%E5%A7%8B%0A%E2%86%93%0A%E7%AC%AC3%E4%B8%AA%E5%BC%80%E5%A7%8B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-txt">第1个完成
+↓
+第2个开始
+↓
+第3个开始
+</code></pre>
+      </div>
+    
+<p>测试结果：</p>
+
+      <div class="md-editor-code" data-language="cmd">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">cmd</span>
+            <button class="md-editor-copy-button" data-code="%26quot%3B%E7%BB%93%E6%9E%9C%E6%95%B0%E7%BB%84%3A%26quot%3B%0A%5B%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E4%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E6%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E7%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E8%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E9%3C%2Fspan%3E%5D%0A%0A%26quot%3B%E4%B8%B2%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%80%97%E6%97%B6%3A%20%3Cspan%20class%3D%22hljs-number%22%3E5306%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-number%22%3E90%3C%2Fspan%3Ems%26quot%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-cmd">"结果数组:"
+[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]
+
+"串行代码耗时: <span class="hljs-number">5306</span>.<span class="hljs-number">90</span>ms"
+</code></pre>
+      </div>
+    
+<p>可以看到：</p>
+<p>虽然每个任务本身耗时不高，但由于需要逐个等待，最终总耗时已经超过 5 秒。</p>
+<hr>
+<h1 id="promise-all-并行执行"><a href="#promise-all-并行执行" class="anchor-link">#</a> Promise.all 并行执行</h1>
+<p>并行执行异步请求：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B9%B6%E8%A1%8C%20%3C%2Fspan%3E%0Aresults%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eall%3C%2Fspan%3E(%0A%20%20%20%20%5B...%3Cspan%20class%3D%22hljs-title%20class_%22%3EArray%3C%2Fspan%3E(len)%5D.%3Cspan%20class%3D%22hljs-title%20function_%22%3Emap%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3E_%2C%20i%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EpromiseFun%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E100%3C%2Fspan%3E%20*%20i%2C%20i)%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20len%20%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%2010%EF%BC%8C%E9%9C%80%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%95%B0%E7%BB%84%E6%89%8D%E8%83%BD%E4%BD%BF%E7%94%A8%20map%3C%2Fspan%3E%0A)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// 并行 </span>
+results = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>(
+    [...<span class="hljs-title class_">Array</span>(len)].<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">_, i</span>) =&gt;</span> <span class="hljs-title function_">promiseFun</span>(<span class="hljs-number">100</span> * i, i) <span class="hljs-comment">// len 为一个整数 10，需转换为数组才能使用 map</span>
+);
+</code></pre>
+      </div>
+    
+<h2 id="promise-all-做了什么"><a href="#promise-all-做了什么" class="anchor-link">#</a> Promise.all 做了什么</h2>
+<p>代码执行时：</p>
+
+      <div class="md-editor-code" data-language="txt">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">txt</span>
+            <button class="md-editor-copy-button" data-code="task1%20%E5%BC%80%E5%A7%8B%0Atask2%20%E5%BC%80%E5%A7%8B%0Atask3%20%E5%BC%80%E5%A7%8B%0A...%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-txt">task1 开始
+task2 开始
+task3 开始
+...
+</code></pre>
+      </div>
+    
+<p>所有异步任务会同时进入等待状态。</p>
+<p>整体耗时不再是：</p>
+
+      <div class="md-editor-code" data-language="txt">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">txt</span>
+            <button class="md-editor-copy-button" data-code="%E4%BB%BB%E5%8A%A11%20%2B%20%E4%BB%BB%E5%8A%A12%20%2B%20%E4%BB%BB%E5%8A%A13%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-txt">任务1 + 任务2 + 任务3
+</code></pre>
+      </div>
+    
+<p>而是：</p>
+
+      <div class="md-editor-code" data-language="txt">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">txt</span>
+            <button class="md-editor-copy-button" data-code="max(%E4%BB%BB%E5%8A%A1%E8%80%97%E6%97%B6)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-txt">max(任务耗时)
+</code></pre>
+      </div>
+    
+<p>即：</p>
+<p>最终时间取决于“最慢”的那个任务。</p>
+<hr>
+<h2 id="并行测试结果"><a href="#并行测试结果" class="anchor-link">#</a> 并行测试结果</h2>
+
+      <div class="md-editor-code" data-language="cmd">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">cmd</span>
+            <button class="md-editor-copy-button" data-code="%26quot%3B%E5%B9%B6%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%BC%80%E5%A7%8B%E6%89%A7%E8%A1%8C%EF%BC%81%26quot%3B%0A%0A%26quot%3B%E7%BB%93%E6%9E%9C%E6%95%B0%E7%BB%84%3A%26quot%3B%0A%5B%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E4%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E6%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E7%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E8%3C%2Fspan%3E%2C%3Cspan%20class%3D%22hljs-number%22%3E9%3C%2Fspan%3E%5D%0A%0A%26quot%3B%E5%B9%B6%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%80%97%E6%97%B6%3A%20%3Cspan%20class%3D%22hljs-number%22%3E995%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-number%22%3E60%3C%2Fspan%3Ems%26quot%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-cmd">"并行代码开始执行！"
+
+"结果数组:"
+[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]
+
+"并行代码耗时: <span class="hljs-number">995</span>.<span class="hljs-number">60</span>ms"
+</code></pre>
+      </div>
+    
+<p>原本超过 5 秒的耗时，现在不到 1 秒。</p>
+<p>性能提升非常明显。</p>
+<hr>
+<h1 id="在-obsidian-插件中的优化方式"><a href="#在-obsidian-插件中的优化方式" class="anchor-link">#</a> 在 Obsidian 插件中的优化方式</h1>
+<p>因此，可以将原有的串行读取改造为：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B9%B6%E8%A1%8C%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20messages%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eall%3C%2Fspan%3E(%0A%20%20pages.%3Cspan%20class%3D%22hljs-title%20function_%22%3Emap%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20function_%22%3Easync%3C%2Fspan%3E%20(p)%20%3D%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20file%20%3D%20app.%3Cspan%20class%3D%22hljs-property%22%3Evault%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetAbstractFileByPath%3C%2Fspan%3E(p.%3Cspan%20class%3D%22hljs-property%22%3Efile%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Epath%3C%2Fspan%3E)%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%90%8E%E7%BB%AD%E5%A4%84%E7%90%86%3C%2Fspan%3E%0A%20%20%7D%0A%20)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// 并行读取文件</span>
+<span class="hljs-keyword">let</span> messages = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>(
+  pages.<span class="hljs-title function_">map</span>(<span class="hljs-title function_">async</span> (p) =&gt; {
+    <span class="hljs-keyword">let</span> file = app.<span class="hljs-property">vault</span>.<span class="hljs-title function_">getAbstractFileByPath</span>(p.<span class="hljs-property">file</span>.<span class="hljs-property">path</span>)
+    <span class="hljs-comment">// 后续处理</span>
+  }
+ )
+</code></pre>
+      </div>
+    
+<p>这样：</p>
+<ul>
+<li>所有 Markdown 文件同时读取</li>
+<li>不再逐个等待</li>
+<li>页面渲染速度明显提升</li>
+</ul>
+<p>尤其在：</p>
+<ul>
+<li>聊天记录</li>
+<li>Dataview 数据</li>
+<li>本地知识库</li>
+<li>大量 Markdown 文件</li>
+</ul>
+<p>等场景中，效果会非常明显。</p>
+<hr>
+<h1 id="promise-all-适合哪些场景"><a href="#promise-all-适合哪些场景" class="anchor-link">#</a> Promise.all 适合哪些场景</h1>
+<p>适用于：</p>
+<ul>
+<li>多文件读取</li>
+<li>多接口请求</li>
+<li>多图片预加载</li>
+<li>批量数据库查询</li>
+<li>多资源初始化</li>
+</ul>
+<p>核心条件：</p>
+
+      <div class="md-editor-code" data-language="txt">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">txt</span>
+            <button class="md-editor-copy-button" data-code="%E4%BB%BB%E5%8A%A1%E4%B9%8B%E9%97%B4%E4%BA%92%E4%B8%8D%E4%BE%9D%E8%B5%96%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-txt">任务之间互不依赖
+</code></pre>
+      </div>
+    
+<p>如果后一个任务依赖前一个任务结果，则仍然需要串行。</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20token%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Elogin%3C%2Fspan%3E()%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20userInfo%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetUserInfo%3C%2Fspan%3E(token)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> token = <span class="hljs-keyword">await</span> <span class="hljs-title function_">login</span>()
+<span class="hljs-keyword">const</span> userInfo = <span class="hljs-keyword">await</span> <span class="hljs-title function_">getUserInfo</span>(token)
+</code></pre>
+      </div>
+    
+<p>这种情况下无法并行。</p>
+<hr>
+<h1 id="promise-all-的注意事项"><a href="#promise-all-的注意事项" class="anchor-link">#</a> Promise.all 的注意事项</h1>
+<h2 id="任意一个失败会整体失败"><a href="#任意一个失败会整体失败" class="anchor-link">#</a> 任意一个失败会整体失败</h2>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eall%3C%2Fspan%3E(%5B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Etask1%3C%2Fspan%3E()%2C%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Etask2%3C%2Fspan%3E()%2C%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Etask3%3C%2Fspan%3E()%0A%5D)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>([
+    <span class="hljs-title function_">task1</span>(),
+    <span class="hljs-title function_">task2</span>(),
+    <span class="hljs-title function_">task3</span>()
+])
+</code></pre>
+      </div>
+    
+<p>只要其中一个 Promise reject：</p>
+
+      <div class="md-editor-code" data-language="txt">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">txt</span>
+            <button class="md-editor-copy-button" data-code="%E6%95%B4%E4%B8%AA%20Promise.all%20%E7%9B%B4%E6%8E%A5%20reject%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-txt">整个 Promise.all 直接 reject
+</code></pre>
+      </div>
+    
+<p>因此实际项目中通常会搭配：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Etry%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecatch%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">try</span> <span class="hljs-keyword">catch</span>
+</code></pre>
+      </div>
+    
+<p>或者使用：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EallSettled%3C%2Fspan%3E()%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">allSettled</span>()
+</code></pre>
+      </div>
+    
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/05/24</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/05/24</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

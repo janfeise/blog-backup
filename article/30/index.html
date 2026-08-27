@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">git多人合作分支学习</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 11 分钟 · 字数 2010</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="git-多人协作分支规范-main-dev-业务分支"><a href="#git-多人协作分支规范-main-dev-业务分支" class="anchor-link">#</a> Git 多人协作分支规范（main / dev / 业务分支）</h1>
+<p>在团队协作中，一般会长期保留两个核心分支：</p>
+<ul>
+<li><strong>main</strong>：生产环境的稳定版本</li>
+<li><strong>dev</strong>：开发环境的集成分支</li>
+</ul>
+<p>后续所有业务开发均在独立的<strong>业务分支</strong>完成，最终合并进 dev，验证无误后再同步到 main</p>
+<h2 id="分支结构示意图"><a href="#分支结构示意图" class="anchor-link">#</a> 分支结构示意图</h2>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/26/image-20251130105843892.png?sign=Rd_llzpvDJQrAM4QTWCy4wPuMs6BqmNMaSiupaUnocE=:0" alt="image-20251130105843892"></p>
+<h2 id="本地创建业务分支并推送到远程"><a href="#本地创建业务分支并推送到远程" class="anchor-link">#</a> 本地创建业务分支并推送到远程</h2>
+<h3 id="1-创建本地分支"><a href="#1-创建本地分支" class="anchor-link">#</a> 1. 创建本地分支</h3>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-symbol%22%3Egit%3C%2Fspan%3E%20checkout%20-%3Cspan%20class%3D%22hljs-keyword%22%3Eb%3C%2Fspan%3E%20%E5%88%86%E6%94%AF%E5%90%8D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-symbol">git</span> checkout -<span class="hljs-keyword">b</span> 分支名
+</code></pre>
+      </div>
+    
+<h3 id="2-推送到远程并建立关联"><a href="#2-推送到远程并建立关联" class="anchor-link">#</a> 2. 推送到远程并建立关联</h3>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="git%20%3Cspan%20class%3D%22hljs-built_in%22%3Epush%3C%2Fspan%3E%20-u%20%3Cspan%20class%3D%22hljs-built_in%22%3Eorigin%3C%2Fspan%3E%20%E5%88%86%E6%94%AF%E5%90%8D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>git <span class="hljs-built_in">push</span> -u <span class="hljs-built_in">origin</span> 分支名
+</code></pre>
+      </div>
+    
+<p><code>-u</code> 作用：设置「上游分支」，以后该分支可直接 <code>git push / git pull</code></p>
+<h3 id="3-查看远程分支是否创建成功"><a href="#3-查看远程分支是否创建成功" class="anchor-link">#</a> 3. 查看远程分支是否创建成功</h3>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="git%20branch%20-%3Cspan%20class%3D%22hljs-attribute%22%3Er%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>git branch -<span class="hljs-attribute">r</span>
+</code></pre>
+      </div>
+    
+<p><code>-r</code>（remote）：列出所有远程分支</p>
+<hr>
+<h2 id="推送当前分支的更改"><a href="#推送当前分支的更改" class="anchor-link">#</a> 推送当前分支的更改</h2>
+<ol>
+<li>git add .</li>
+<li>git commit -m “提交备注”</li>
+</ol>
+<p><code>git push</code> 的作用是：</p>
+<blockquote>
+<p><strong>只会将当前所在分支的提交推送到与之关联的远程分支</strong></p>
+</blockquote>
+<p>如果你在 <code>feature-login</code> 分支：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="git%20%3Cspan%20class%3D%22hljs-built_in%22%3Epush%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>git <span class="hljs-built_in">push</span>
+</code></pre>
+      </div>
+    
+<p>只会更新 <code>origin/feature-login</code>，不会影响其它分支</p>
+<p>切换分支：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attribute%22%3Egit%3C%2Fspan%3E%20checkout%20%E5%88%86%E6%94%AF%E5%90%8D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-attribute">git</span> checkout 分支名
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="合并流程-业务分支-dev-分支"><a href="#合并流程-业务分支-dev-分支" class="anchor-link">#</a> 合并流程：业务分支 → dev 分支</h2>
+<p>业务分支开发完成后，需要合并到 dev常见有两种方式：</p>
+<hr>
+<h3 id="方式-a-通过-github-gitlab-提-pr-推荐"><a href="#方式-a-通过-github-gitlab-提-pr-推荐" class="anchor-link">#</a> 方式 A：通过 GitHub / GitLab 提 PR（推荐）</h3>
+<p>创建 Pull Request / Merge Request：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-symbol%22%3Esource%3A%3C%2Fspan%3E%20feature-login%0A%3Cspan%20class%3D%22hljs-symbol%22%3Etarget%3A%3C%2Fspan%3E%20dev%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-symbol">source:</span> feature-login
+<span class="hljs-symbol">target:</span> dev
+</code></pre>
+      </div>
+    
+<p>由团队成员 review，确认无误后合并</p>
+<blockquote>
+<p>👍 团队协作推荐
+✔ 可审查
+✔ 可讨论
+✔ 可记录
+✔ 可回滚
+✔ 可保证质量</p>
+</blockquote>
+<hr>
+<h3 id="方式-b-本地手动合并-不推荐团队协作"><a href="#方式-b-本地手动合并-不推荐团队协作" class="anchor-link">#</a> 方式 B：本地手动合并（不推荐团队协作）</h3>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="git%20checkout%20dev%0Agit%20pull%20%3Cspan%20class%3D%22hljs-built_in%22%3Eorigin%3C%2Fspan%3E%20dev%0Agit%20merge%20%E5%BE%85%E5%90%88%E5%B9%B6%E7%9A%84%E5%88%86%E6%94%AF%E5%90%8D%0Agit%20%3Cspan%20class%3D%22hljs-built_in%22%3Epush%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3Eorigin%3C%2Fspan%3E%20dev%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>git checkout dev
+git pull <span class="hljs-built_in">origin</span> dev
+git merge 待合并的分支名
+git <span class="hljs-built_in">push</span> <span class="hljs-built_in">origin</span> dev
+</code></pre>
+      </div>
+    
+<p>适用于个人项目或紧急情况，团队合作优先使用 PR 流程</p>
+<hr>
+<h2 id="验证-dev-分支是否正常"><a href="#验证-dev-分支是否正常" class="anchor-link">#</a> 验证 dev 分支是否正常</h2>
+<p>业务分支合并到 dev 后，必须确保 dev 工作正常：</p>
+<ul>
+<li>⭐ 能否正常编译？</li>
+<li>⭐ 项目能否正常启动？</li>
+<li>⭐ 功能是否符合预期？</li>
+<li>⭐ 是否影响了其它同事的功能？</li>
+<li>⭐ 冲突是否正确解决？</li>
+<li>⭐ （如有）单元测试 / UI 测试是否通过？</li>
+</ul>
+<p>只有 dev 完全验证通过后，才能进入下一步</p>
+<hr>
+<h2 id="dev-分支-main-分支-稳定版本"><a href="#dev-分支-main-分支-稳定版本" class="anchor-link">#</a> dev 分支 → main 分支（稳定版本）</h2>
+<p>当 dev 分支稳定后，可将其合并进 main</p>
+<blockquote>
+<p>推荐同样使用：PR / MR
+（参考上文的方式 A）</p>
+</blockquote>
+<p>本地方式如下：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="git%20checkout%20main%0Agit%20pull%0Agit%20merge%20dev%0Agit%20%3Cspan%20class%3D%22hljs-built_in%22%3Epush%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>git checkout main
+git pull
+git merge dev
+git <span class="hljs-built_in">push</span>
+</code></pre>
+      </div>
+    
+<p><strong>main 分支代表最终上线版本，必须确保绝对稳定</strong></p>
+<hr>
+<h2 id="删除业务分支"><a href="#删除业务分支" class="anchor-link">#</a> 删除业务分支</h2>
+<p>当业务分支已成功合并并验证无误，可以删除该分支：</p>
+<h3 id="删除本地分支"><a href="#删除本地分支" class="anchor-link">#</a> 删除本地分支</h3>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="git%20%3Cspan%20class%3D%22hljs-keyword%22%3Ebranch%20%3C%2Fspan%3E-d%20%E5%88%86%E6%94%AF%E5%90%8D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>git <span class="hljs-keyword">branch </span>-d 分支名
+</code></pre>
+      </div>
+    
+<h3 id="删除远程分支"><a href="#删除远程分支" class="anchor-link">#</a> 删除远程分支</h3>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="git%20%3Cspan%20class%3D%22hljs-built_in%22%3Epush%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3Eorigin%3C%2Fspan%3E%20--%3Cspan%20class%3D%22hljs-built_in%22%3Edelete%3C%2Fspan%3E%20%E5%88%86%E6%94%AF%E5%90%8D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>git <span class="hljs-built_in">push</span> <span class="hljs-built_in">origin</span> --<span class="hljs-built_in">delete</span> 分支名
+</code></pre>
+      </div>
+    
+<p>分支删除后不影响历史记录，因为所有提交已归档在 main 和 dev 中</p>
+<h2 id="补充-业务分支在开发周期较长时需要定期与主干同步-关键"><a href="#补充-业务分支在开发周期较长时需要定期与主干同步-关键" class="anchor-link">#</a> 补充：业务分支在开发周期较长时需要定期与主干同步（关键）</h2>
+<p>当业务分支开发时间较长，而 <strong>dev 或 main 已经发生较大更新</strong>时，业务分支必须定期与主干同步，以避免最终合并时出现大量冲突</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/26</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/03/26</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

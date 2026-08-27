@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">Intersection详解</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 24 分钟 · 字数 4791</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="intersection-observer-api-详解"><a href="#intersection-observer-api-详解" class="anchor-link">#</a> Intersection Observer API 详解</h1>
+<table>
+<thead>
+<tr>
+<th>一级主题</th>
+<th>二级主题</th>
+<th>说明 / 关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intersection Observer API</td>
+<td>功能点</td>
+<td>元素==进入/离开==可视区域时执行动作，如：添加/移除类名</td>
+</tr>
+<tr>
+<td>使用方法</td>
+<td>第一步</td>
+<td>创建观察者 <code>new IntersectionObserver(callback, options)</code></td>
+</tr>
+<tr>
+<td></td>
+<td>第二步</td>
+<td>确定观察对象 <code>observer.observe(element)</code></td>
+</tr>
+<tr>
+<td></td>
+<td>第三步</td>
+<td>编写回调函数，利用 entries / observer 来实现逻辑</td>
+</tr>
+<tr>
+<td>回调函数</td>
+<td>参数 entries</td>
+<td><strong>一个数组</strong>，包含被观察元素的可见性变化信息</td>
+</tr>
+<tr>
+<td></td>
+<td>参数 observer</td>
+<td><strong>观察者实例</strong>，可用来取消观察</td>
+</tr>
+<tr>
+<td>entries 的元素 entry</td>
+<td>isIntersecting</td>
+<td>是否满足阈值条件（进入 / 离开）</td>
+</tr>
+<tr>
+<td></td>
+<td>target</td>
+<td>当前进入或离开可视区域的 <strong>DOM 元素本身</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>触发时机</td>
+<td>==初始化时也会触发一次，无论是否满足阈值==</td>
+</tr>
+<tr>
+<td>option 参数</td>
+<td>root</td>
+<td>作为可视区域的元素（默认是浏览器视口）</td>
+</tr>
+<tr>
+<td></td>
+<td>threshold</td>
+<td>阈值（0 ~ 1），表示多少比例进入 root 区域时触发</td>
+</tr>
+<tr>
+<td></td>
+<td>rootMargin</td>
+<td>扩大或缩小 root 区域（正值扩大，负值缩小）</td>
+</tr>
+<tr>
+<td>特点</td>
+<td>调用时机</td>
+<td>初始化时回调会执行一次</td>
+</tr>
+<tr>
+<td></td>
+<td>常见用法</td>
+<td>图片懒加载、动画触发、元素显示/隐藏</td>
+</tr>
+</tbody>
+</table>
+<h3 id="一-作用"><a href="#一-作用" class="anchor-link">#</a> 一、作用</h3>
+<p>Intersection Observer API 用来异步监听目标元素是否==进入==或==离开==指定的可视区域，&lt;u&gt;==当可见比例达到设定的 threshold 时触发回调函数==&lt;/u&gt;</p>
+<p>observe：观察</p>
+<p>intersection：交叉点**[ˌɪntərˈsekʃn]**</p>
+<p>threshold：阈值，临界点**[ˈθreʃ，hoʊld]**</p>
+<p>常见应用场景：</p>
+<ul>
+<li>懒加载（图片进入视口时再加载）</li>
+<li>动画触发（滚动到某个元素时启动动画）</li>
+<li>元素显隐控制（添加 / 移除类名）</li>
+</ul>
+<hr>
+<h3 id="二-使用方法"><a href="#二-使用方法" class="anchor-link">#</a> 二、使用方法</h3>
+<h4 id="第一步-创建观察者"><a href="#第一步-创建观察者" class="anchor-link">#</a> 第一步：创建观察者</h4>
+<p>使用 <code>new IntersectionObserver(callback, options)</code>：</p>
+<ul>
+<li><code>callback</code>：回调函数，当元素进入或离开可视区域时触发</li>
+<li><code>options</code>：配置对象，主要包含
+<ul>
+<li><code>root</code>：以哪个元素为可视区域（默认是 <code>viewport</code>）</li>
+<li><code>threshold</code>：阈值（进入多少比例时触发回调，取值 0 ~ 1）</li>
+<li><code>rootMargin</code>：扩展或收缩 root 区域（正值扩大，负值缩小）</li>
+</ul>
+</li>
+</ul>
+<h4 id="第二步-确定观察对象"><a href="#第二步-确定观察对象" class="anchor-link">#</a> 第二步：确定观察对象</h4>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="observer.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eobserve%3C%2Fspan%3E(element)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">observer.<span class="hljs-title function_">observe</span>(element);
+</code></pre>
+      </div>
+    
+<h4 id="第三步-编写回调函数"><a href="#第三步-编写回调函数" class="anchor-link">#</a> 第三步：编写回调函数</h4>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Ecallback%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3Eentries%2C%20observer%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20entries%EF%BC%9A%E6%9C%AC%E6%AC%A1%E8%A7%A6%E5%8F%91%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7%E5%8F%98%E5%8C%96%E9%9B%86%E5%90%88%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20observer%EF%BC%9A%E8%A7%82%E5%AF%9F%E8%80%85%E5%AE%9E%E4%BE%8B%3C%2Fspan%3E%0A%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">callback</span> = (<span class="hljs-params">entries, observer</span>) =&gt; {
+  <span class="hljs-comment">// entries：本次触发的可见性变化集合</span>
+  <span class="hljs-comment">// observer：观察者实例</span>
+};
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="三-回调函数的两个参数详解"><a href="#三-回调函数的两个参数详解" class="anchor-link">#</a> 三、回调函数的两个参数详解</h3>
+<h4 id="参数一-entries"><a href="#参数一-entries" class="anchor-link">#</a> 参数一：entries</h4>
+<ul>
+<li>
+<p><code>entries</code> 是一个 <strong>数组</strong>，每一项都是一个 <code>IntersectionObserverEntry</code> 对象，表示被观察元素的可见性变化。</p>
+</li>
+<li>
+<p>如果 <code>threshold</code> 只设置一个值（比如 0.5），通常只有一个元素在数组里，可以直接==解构==：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%5Bentry%5D%20%3D%20entries%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20const%20%5Ba%5D%20%3D%20%5B1%5D%3B%20a%20%3D%201%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> [entry] = entries; <span class="hljs-comment">// const [a] = [1]; a = 1;</span>
+</code></pre>
+      </div>
+    
+</li>
+<li>
+<p>常用的 entry 属性：</p>
+<ul>
+<li><code>entry.isIntersecting</code>：是否进入阈值条件</li>
+<li><code>entry.intersectionRatio</code>：可见比例</li>
+<li><code>entry.boundingClientRect</code>：目标元素矩形信息</li>
+<li>==entry.target==：触发观察的 <strong>DOM 元素本身</strong>（非常常用）</li>
+</ul>
+</li>
+</ul>
+<h4 id="参数二-observer"><a href="#参数二-observer" class="anchor-link">#</a> 参数二：observer</h4>
+<ul>
+<li>
+<p><code>observer</code> 就是 <code>IntersectionObserver</code> 实例本身。</p>
+</li>
+<li>
+<p>在一些场景下，比如==只需要观察一次==，可以用它来取消观察：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="observer.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eunobserve%3C%2Fspan%3E(entry.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">observer.<span class="hljs-title function_">unobserve</span>(entry.<span class="hljs-property">target</span>);
+</code></pre>
+      </div>
+    
+</li>
+</ul>
+<p><strong>entry.target</strong></p>
+<ul>
+<li>
+<p><code>entry.target</code> 表示==当前正在被观察==并==触发可见性变化==的元素，即你在 <code>observe()</code> 方法里传入的 DOM 元素。</p>
+</li>
+<li>
+<p>比如：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="observer.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eobserve%3C%2Fspan%3E(img)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">observer.<span class="hljs-title function_">observe</span>(img);
+</code></pre>
+      </div>
+    
+<p>当 <code>img</code> 进入/离开视口时，<code>entry.target === img</code>。</p>
+</li>
+</ul>
+<hr>
+<h3 id="四-isintersecting-的判断逻辑"><a href="#四-isintersecting-的判断逻辑" class="anchor-link">#</a> 四、isIntersecting 的判断逻辑</h3>
+<p><code>Intersection Observer</code> 的回调会在元素 <strong>进入和离开</strong> 可视区域时都触发：</p>
+<ul>
+<li><strong>进入时</strong>：可见比例 <strong>由 &lt; threshold → ≥ threshold</strong>，<code>isIntersecting = true</code></li>
+<li><strong>离开时</strong>：可见比例 <strong>由 ≥ threshold → &lt; threshold</strong>，<code>isIntersecting = false</code></li>
+</ul>
+<hr>
+<h3 id="五-rootmargin详解"><a href="#五-rootmargin详解" class="anchor-link">#</a> 五、rootMargin详解</h3>
+<p>rootMargin可改变root区域：==正值扩大，负值缩小==</p>
+<p>例：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20options%20%3D%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3ErootMargin%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B100px%200px%26%23x27%3B%3C%2Fspan%3E%0A%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> options = {
+  <span class="hljs-attr">rootMargin</span>: <span class="hljs-string">'100px 0px'</span>
+};
+</code></pre>
+      </div>
+    
+<p>意思是：视口上边距和下边距扩大100px，常用于<strong>懒加载</strong></p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20250823173541021.png?sign=6PrIwa-cc9OBmnhve22FHOnE5P5F5i84BO6Q02rEC58=:0" alt="image-20250823173541021"></p>
+<hr>
+<h3 id="六-特点与注意点"><a href="#六-特点与注意点" class="anchor-link">#</a> 六、特点与注意点</h3>
+<ol>
+<li><strong>初始化时会执行一次回调</strong> —— 无论元素是否在可视区域内。可用 <code>isIntersecting</code> 来判断是否真正进入。</li>
+<li>可同时观察多个元素。</li>
+<li>对性能友好，避免频繁监听 <code>scroll</code> 事件。</li>
+</ol>
+<hr>
+<p>✅ 总结一句话：
+<code>Intersection Observer API</code> 是前端性能优化的利器，既能减少手动计算 DOM，可用于懒加载、滚动动画触发等场景</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API">MDN: Intersection Observer</a></p>
+<h2 id="实战"><a href="#实战" class="anchor-link">#</a> 实战</h2>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD%EF%BC%9A%E4%BD%8E%E5%88%86%E8%BE%A8%E7%8E%87%E5%9B%BE%E7%89%87%20%2B%20%E6%A8%A1%E7%B3%8A%E6%BB%A4%E9%95%9C%20%2B%20loading%E5%8A%A8%E7%94%BB%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20lazyImgs%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelectorAll%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bimg%5Bdata-src%5D%26%23x27%3B%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20lazyImgsObserver%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EIntersectionObserver%3C%2Fspan%3E(loadImg%2C%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Eroot%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ethreshold%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3ErootMargin%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B200px%26%23x27%3B%3C%2Fspan%3E%2C%0A%7D)%3B%0A%0AlazyImgs.%3Cspan%20class%3D%22hljs-title%20function_%22%3EforEach%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-params%22%3Eimg%3C%2Fspan%3E%20%3D%3E%3C%2Fspan%3E%20lazyImgsObserver.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eobserve%3C%2Fspan%3E(img))%3B%0A%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%9C%80%E6%94%BE%E5%88%B0%E5%89%8D%E9%9D%A2%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20loadImg%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3Eentries%2C%20observer%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%5Bentry%5D%20%3D%20entries%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20guard%20line%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!entry.%3Cspan%20class%3D%22hljs-property%22%3EisIntersecting%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(entry)%3B%0A%20%20entry.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Esrc%3C%2Fspan%3E%20%3D%20entry.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Edataset%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Esrc%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8D%E6%96%B0%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%EF%BC%8C%E4%BC%9A%E8%A7%A6%E5%8F%91load%E4%BA%8B%E4%BB%B6%3C%2Fspan%3E%0A%0A%20%20entry.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bload%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eremove%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Blazy-img%26%23x27%3B%3C%2Fspan%3E)%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%8E%B7%E5%8F%96%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%85%84%E5%BC%9F%E5%85%83%E7%B4%A0%3A%20loading%E5%8A%A8%E7%94%BB%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20loader%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EpreviousElementSibling%3C%2Fspan%3E%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(loader)%20loader.%3Cspan%20class%3D%22hljs-property%22%3Estyle%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Edisplay%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bnone%26%23x27%3B%3C%2Fspan%3E%3B%0A%20%20%7D)%3B%0A%0A%20%20observer.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eunobserve%3C%2Fspan%3E(entry.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E)%3B%0A%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">///////////////////////////////////////</span>
+<span class="hljs-comment">// 图片懒加载：低分辨率图片 + 模糊滤镜 + loading动画</span>
+<span class="hljs-keyword">const</span> lazyImgs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">'img[data-src]'</span>);
+
+<span class="hljs-keyword">const</span> lazyImgsObserver = <span class="hljs-keyword">new</span> <span class="hljs-title class_">IntersectionObserver</span>(loadImg, {
+  <span class="hljs-attr">root</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">threshold</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">rootMargin</span>: <span class="hljs-string">'200px'</span>,
+});
+
+lazyImgs.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">img</span> =&gt;</span> lazyImgsObserver.<span class="hljs-title function_">observe</span>(img));
+
+
+<span class="hljs-comment">// 需放到前面</span>
+<span class="hljs-keyword">const</span> loadImg = <span class="hljs-keyword">function</span> (<span class="hljs-params">entries, observer</span>) {
+  <span class="hljs-keyword">const</span> [entry] = entries;
+
+  <span class="hljs-comment">// guard line</span>
+  <span class="hljs-keyword">if</span> (!entry.<span class="hljs-property">isIntersecting</span>) <span class="hljs-keyword">return</span>;
+
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(entry);
+  entry.<span class="hljs-property">target</span>.<span class="hljs-property">src</span> = entry.<span class="hljs-property">target</span>.<span class="hljs-property">dataset</span>.<span class="hljs-property">src</span>; <span class="hljs-comment">// 浏览器重新获取图片，会触发load事件</span>
+
+  entry.<span class="hljs-property">target</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'load'</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">'lazy-img'</span>);
+
+    <span class="hljs-comment">// 获取上一个兄弟元素: loading动画</span>
+    <span class="hljs-keyword">const</span> loader = <span class="hljs-variable language_">this</span>.<span class="hljs-property">previousElementSibling</span>;
+    <span class="hljs-keyword">if</span> (loader) loader.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">'none'</span>;
+  });
+
+  observer.<span class="hljs-title function_">unobserve</span>(entry.<span class="hljs-property">target</span>);
+};
+</code></pre>
+      </div>
+    
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/20</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/03/20</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

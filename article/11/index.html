@@ -1,0 +1,1830 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">Spring Boot + MyBatis ：从零开始搭建数据库</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 144 分钟 · 字数 28682</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>步骤</th>
+<th>核心内容</th>
+<th>关键文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>前置准备</strong></td>
+<td>环境配置</td>
+<td>JDK 21、Maven、Navicat</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>项目初始化</strong></td>
+<td>创建 Spring Boot 项目</td>
+<td>Spring Initializr 生成项目骨架</td>
+<td><code>pom.xml</code></td>
+</tr>
+<tr>
+<td></td>
+<td>配置依赖</td>
+<td>添加 MyBatis、MySQL 驱动等依赖</td>
+<td><code>pom.xml</code></td>
+</tr>
+<tr>
+<td><strong>数据库准备</strong></td>
+<td>创建数据库</td>
+<td>Navicat 创建数据库和表</td>
+<td>SQL 脚本</td>
+</tr>
+<tr>
+<td></td>
+<td>插入测试数据</td>
+<td>初始化测试数据</td>
+<td>SQL 脚本</td>
+</tr>
+<tr>
+<td><strong>MyBatis 整合</strong></td>
+<td>配置数据源</td>
+<td>数据库连接信息</td>
+<td><code>application.properties</code></td>
+</tr>
+<tr>
+<td></td>
+<td>配置 MyBatis</td>
+<td>Mapper 位置、类型别名、驼峰映射</td>
+<td><code>application.properties</code></td>
+</tr>
+<tr>
+<td><strong>代码编写</strong></td>
+<td>创建实体类</td>
+<td>定义数据模型</td>
+<td><code>entity/Doc.java</code></td>
+</tr>
+<tr>
+<td></td>
+<td>创建 Dao 接口</td>
+<td>定义数据访问方法</td>
+<td><code>dao/DocDao.java</code></td>
+</tr>
+<tr>
+<td></td>
+<td>编写 Mapper XML</td>
+<td>实现 SQL 映射</td>
+<td><code>mappers/DocMapper.xml</code></td>
+</tr>
+<tr>
+<td></td>
+<td>配置 Mapper 扫描</td>
+<td>启用 Mapper 自动扫描</td>
+<td>主启动类</td>
+</tr>
+<tr>
+<td><strong>测试验证</strong></td>
+<td>编写测试类</td>
+<td>验证数据库连接和查询</td>
+<td><code>test/</code></td>
+</tr>
+<tr>
+<td><strong>问题排查</strong></td>
+<td>常见问题处理</td>
+<td>包路径、配置错误、驼峰命名等</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>流程：</p>
+<ol>
+<li>
+<p>在 entity层    定义数据库中对应表格的字段</p>
+</li>
+<li>
+<p>在 dao层        创建接口，具体实现在mapper层</p>
+</li>
+<li>
+<p>在 mapper层 实现数据库的操作</p>
+</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="一-前置准备"><a href="#一-前置准备" class="anchor-link">#</a> 一、前置准备</h2>
+<p>在开始之前，请确保你的开发环境已安装以下工具：</p>
+<ul>
+<li><strong>JDK 21</strong>：Java 开发工具包</li>
+<li><strong>Maven</strong>：项目依赖管理工具</li>
+<li><strong>Navicat</strong>：数据库可视化管理工具（或其他 MySQL 客户端）</li>
+<li><strong>IntelliJ IDEA</strong>：集成开发环境（推荐）</li>
+</ul>
+<hr>
+<h2 id="二-创建-spring-boot-项目"><a href="#二-创建-spring-boot-项目" class="anchor-link">#</a> 二、创建 Spring Boot 项目</h2>
+<h3 id="2-1-使用-spring-initializr-初始化项目"><a href="#2-1-使用-spring-initializr-初始化项目" class="anchor-link">#</a> 2.1 使用 Spring Initializr 初始化项目</h3>
+<ol>
+<li>打开 <a href="https://start.spring.io/">Spring Initializr 官网</a></li>
+<li>填写项目信息：
+<ul>
+<li><strong>Project</strong>：Maven</li>
+<li><strong>Language</strong>：Java</li>
+<li><strong>Packaging</strong>：Jar</li>
+<li><strong>Java</strong>：21</li>
+</ul>
+</li>
+<li>添加4个依赖（Dependencies）：
+<ul>
+<li><strong>Spring Web</strong>：用于构建 Web 应用</li>
+<li><strong>Spring Boot DevTools</strong>：开发工具，支持热部署</li>
+<li><strong>MySQL Driver</strong>：MySQL 数据库驱动</li>
+<li>lombok</li>
+</ul>
+</li>
+<li>点击 <strong>Generate</strong> 下载项目压缩包</li>
+<li>解压并导入 IntelliJ IDEA</li>
+</ol>
+<h3 id="2-2-项目初始目录结构"><a href="#2-2-项目初始目录结构" class="anchor-link">#</a> 2.2 项目初始目录结构</h3>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="tilex-blog-backend%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20src%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20main%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20java%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20blog%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Etilex%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Ebackend%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Etilex_blog_backend%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20TilexBlogBackendApplication.java%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E4%B8%BB%E5%90%AF%E5%8A%A8%E7%B1%BB%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20resources%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20application.properties%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20test%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20java%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20blog%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Etilex%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Ebackend%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Etilex_blog_backend%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20TilexBlogBackendApplicationTests.java%0A%E2%94%94%E2%94%80%E2%94%80%20pom.xml%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20Maven%20%E4%BE%9D%E8%B5%96%E9%85%8D%E7%BD%AE%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>tilex-blog-backend<span class="hljs-symbol">/</span>
+├── src<span class="hljs-symbol">/</span>
+│   ├── main<span class="hljs-symbol">/</span>
+│   │   ├── java<span class="hljs-symbol">/</span>
+│   │   │   └── blog<span class="hljs-operator">/</span>tilex<span class="hljs-operator">/</span>backend<span class="hljs-operator">/</span>tilex_blog_backend<span class="hljs-symbol">/</span>
+│   │   │       └── TilexBlogBackendApplication.java  <span class="hljs-comment"># 主启动类</span>
+│   │   └── resources<span class="hljs-symbol">/</span>
+│   │       └── application.properties  <span class="hljs-comment"># 配置文件</span>
+│   └── test<span class="hljs-symbol">/</span>
+│       └── java<span class="hljs-symbol">/</span>
+│           └── blog<span class="hljs-operator">/</span>tilex<span class="hljs-operator">/</span>backend<span class="hljs-operator">/</span>tilex_blog_backend<span class="hljs-symbol">/</span>
+│               └── TilexBlogBackendApplicationTests.java
+└── pom.xml  <span class="hljs-comment"># Maven 依赖配置</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="三-整合-mybatis"><a href="#三-整合-mybatis" class="anchor-link">#</a> 三、整合 MyBatis</h2>
+<h3 id="3-1-什么是-mybatis"><a href="#3-1-什么是-mybatis" class="anchor-link">#</a> 3.1 什么是 MyBatis？</h3>
+<p><strong>MyBatis 是用来在 Java 程序中方便地执行 SQL 的持久层框架。</strong></p>
+<p>它的核心作用：</p>
+<ul>
+<li>将 Java 对象和数据库表进行<strong>映射</strong></li>
+<li>避免编写大量的 JDBC 样板代码</li>
+<li>通过 XML 或注解方式管理 SQL 语句</li>
+</ul>
+<h3 id="3-2-添加-mybatis-依赖"><a href="#3-2-添加-mybatis-依赖" class="anchor-link">#</a> 3.2 添加 MyBatis 依赖</h3>
+<p>编辑 <code>pom.xml</code> 文件，在 <code>&lt;dependencies&gt;</code> 标签中添加：</p>
+<p><strong>文件位置</strong>：<code>项目根目录/pom.xml</code></p>
+
+      <div class="md-editor-code" data-language="xml">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">xml</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Edependencies%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20MyBatis%20Spring%20Boot%20Starter%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3Eorg.mybatis.spring.boot%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3Emybatis-spring-boot-starter%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eversion%3C%2Fspan%3E%3E%3C%2Fspan%3E3.0.3%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eversion%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E5%85%B6%E5%AE%83%E5%BF%85%E8%A6%81%E4%BE%9D%E8%B5%96%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20Spring%20Boot%20Web%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3Eorg.springframework.boot%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3Espring-boot-starter-web%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20MySQL%20%E9%A9%B1%E5%8A%A8%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3Ecom.mysql%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3Emysql-connector-j%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escope%3C%2Fspan%3E%3E%3C%2Fspan%3Eruntime%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escope%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20Spring%20Boot%20DevTools%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3Eorg.springframework.boot%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3Espring-boot-devtools%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escope%3C%2Fspan%3E%3E%3C%2Fspan%3Eruntime%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escope%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eoptional%3C%2Fspan%3E%3E%3C%2Fspan%3Etrue%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eoptional%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20Spring%20Boot%20Test%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3Eorg.springframework.boot%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3Espring-boot-starter-test%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escope%3C%2Fspan%3E%3E%3C%2Fspan%3Etest%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escope%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Edependencies%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- MyBatis Spring Boot Starter --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.0.3<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- 其它必要依赖 --&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- Spring Boot Web --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- MySQL 驱动 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-j<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>runtime<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Spring Boot DevTools --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-devtools<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>runtime<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">optional</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">optional</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Spring Boot Test --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<p><strong>版本兼容说明</strong>：</p>
+<ul>
+<li>Spring Boot <strong>3.5.6</strong> 推荐使用 MyBatis Starter <strong>3.0.3 或以上</strong></li>
+</ul>
+<p>添加依赖后，点击 IDEA 右上角的 <strong>Maven 刷新按钮</strong>（或按 <code>Ctrl + Shift + O</code>）下载依赖。</p>
+<hr>
+<h2 id="四-数据库准备"><a href="#四-数据库准备" class="anchor-link">#</a> 四、数据库准备</h2>
+<h3 id="4-1-创建数据库"><a href="#4-1-创建数据库" class="anchor-link">#</a> 4.1 创建数据库</h3>
+<ol>
+<li>打开 Navicat，连接到本地 MySQL 服务（通常是 <code>localhost</code>）</li>
+<li>右键点击连接名称，选择 <strong>新建数据库</strong></li>
+<li>填写数据库信息：
+<ul>
+<li><strong>数据库名</strong>：<code>tilex_blog</code></li>
+<li><strong>字符集</strong>：<code>utf8mb4</code></li>
+<li><strong>排序规则</strong>：<code>utf8mb4_general_ci</code></li>
+</ul>
+</li>
+<li>点击 <strong>确定</strong> 创建数据库</li>
+</ol>
+<h3 id="4-2-创建测试表并插入数据"><a href="#4-2-创建测试表并插入数据" class="anchor-link">#</a> 4.2 创建测试表并插入数据</h3>
+<p>右键打开刚创建的数据库，选择 <strong>新建查询</strong>，输入以下 SQL：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E--%20%E5%88%9B%E5%BB%BA%E6%B5%8B%E8%AF%95%E8%A1%A8%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3ECREATE%20TABLE%3C%2Fspan%3E%20doc%20(%0A%20%20%20%20doc_id%20%3Cspan%20class%3D%22hljs-type%22%3EBIGINT%3C%2Fspan%3E%20AUTO_INCREMENT%20%3Cspan%20class%3D%22hljs-keyword%22%3EPRIMARY%20KEY%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%96%87%E6%A1%A3ID%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%20%20title%20%3Cspan%20class%3D%22hljs-type%22%3EVARCHAR%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E200%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-keyword%22%3ENOT%20NULL%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%96%87%E6%A1%A3%E6%A0%87%E9%A2%98%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%20%20content%20TEXT%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%96%87%E6%A1%A3%E5%86%85%E5%AE%B9%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%20%20author%20%3Cspan%20class%3D%22hljs-type%22%3EVARCHAR%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E50%3C%2Fspan%3E)%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E4%BD%9C%E8%80%85%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%20%20created_at%20%3Cspan%20class%3D%22hljs-type%22%3ETIMESTAMP%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EDEFAULT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3ECURRENT_TIMESTAMP%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E5%88%9B%E5%BB%BA%E6%97%B6%E9%97%B4%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%20%20updated_at%20%3Cspan%20class%3D%22hljs-type%22%3ETIMESTAMP%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EDEFAULT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3ECURRENT_TIMESTAMP%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EON%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EUPDATE%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3ECURRENT_TIMESTAMP%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4%26%23x27%3B%3C%2Fspan%3E%0A)%20ENGINE%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3EInnoDB%20%3Cspan%20class%3D%22hljs-keyword%22%3EDEFAULT%3C%2Fspan%3E%20CHARSET%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3Eutf8mb4%20COMMENT%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%96%87%E6%A1%A3%E8%A1%A8%26%23x27%3B%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E--%20%E6%8F%92%E5%85%A5%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3EINSERT%20INTO%3C%2Fspan%3E%20doc%20(title%2C%20content%2C%20author)%20%0A%3Cspan%20class%3D%22hljs-keyword%22%3EVALUES%3C%2Fspan%3E%20%0A%20%20%20%20(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BSpring%20Boot%20%E5%85%A5%E9%97%A8%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E5%85%B3%E4%BA%8E%20Spring%20Boot%20%E7%9A%84%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E5%BC%A0%E4%B8%89%26%23x27%3B%3C%2Fspan%3E)%2C%0A%20%20%20%20(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BMyBatis%20%E6%95%B4%E5%90%88%E6%8C%87%E5%8D%97%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%20MyBatis%20%E4%B8%8E%20Spring%20Boot%20%E7%9A%84%E6%95%B4%E5%90%88%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%9D%8E%E5%9B%9B%26%23x27%3B%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E--%20%E6%9F%A5%E8%AF%A2%E9%AA%8C%E8%AF%81%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3ESELECT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E*%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EFROM%3C%2Fspan%3E%20doc%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-comment">-- 创建测试表</span>
+<span class="hljs-keyword">CREATE TABLE</span> doc (
+    doc_id <span class="hljs-type">BIGINT</span> AUTO_INCREMENT <span class="hljs-keyword">PRIMARY KEY</span> COMMENT <span class="hljs-string">'文档ID'</span>,
+    title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">200</span>) <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">'文档标题'</span>,
+    content TEXT COMMENT <span class="hljs-string">'文档内容'</span>,
+    author <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">50</span>) COMMENT <span class="hljs-string">'作者'</span>,
+    created_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">'创建时间'</span>,
+    updated_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">'更新时间'</span>
+) ENGINE<span class="hljs-operator">=</span>InnoDB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8mb4 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">'文档表'</span>;
+
+<span class="hljs-comment">-- 插入测试数据</span>
+<span class="hljs-keyword">INSERT INTO</span> doc (title, content, author) 
+<span class="hljs-keyword">VALUES</span> 
+    (<span class="hljs-string">'Spring Boot 入门'</span>, <span class="hljs-string">'这是一篇关于 Spring Boot 的入门教程'</span>, <span class="hljs-string">'张三'</span>),
+    (<span class="hljs-string">'MyBatis 整合指南'</span>, <span class="hljs-string">'详细介绍 MyBatis 与 Spring Boot 的整合'</span>, <span class="hljs-string">'李四'</span>);
+
+<span class="hljs-comment">-- 查询验证</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> doc;
+</code></pre>
+      </div>
+    
+<p>执行 SQL 后，应该能看到两条测试数据。</p>
+<hr>
+<h2 id="五-配置-mybatis-和数据源"><a href="#五-配置-mybatis-和数据源" class="anchor-link">#</a> 五、配置 MyBatis 和数据源</h2>
+<p>编辑 <code>application.properties</code> 配置文件。</p>
+<p><strong>文件位置</strong>：<code>src/main/resources/application.properties</code></p>
+
+      <div class="md-editor-code" data-language="properties">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">properties</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E5%BA%94%E7%94%A8%E5%90%8D%E7%A7%B0%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Espring.application.name%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Etilex-blog-backend%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%0A%23%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20%E6%95%B0%E6%8D%AE%E6%BA%90%E9%85%8D%E7%BD%AE%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%23%20MySQL%208.x%20%E9%A9%B1%E5%8A%A8%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Espring.datasource.driver-class-name%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Ecom.mysql.cj.jdbc.Driver%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%20URL%EF%BC%88%E6%9B%BF%E6%8D%A2%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%E3%80%91%E5%92%8C%E6%97%B6%E5%8C%BA%EF%BC%89%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Espring.datasource.url%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Ejdbc%3Amysql%3A%2F%2Flocalhost%3A3306%2F%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%E3%80%91%3FuseUnicode%3Dtrue%26characterEncoding%3Dutf8%26useSSL%3Dfalse%26serverTimezone%3DAsia%2FShanghai%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%95%B0%E6%8D%AE%E5%BA%93%E7%94%A8%E6%88%B7%E5%90%8D%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Espring.datasource.username%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eroot%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%86%E7%A0%81%EF%BC%88%E6%9B%BF%E6%8D%A2%E4%B8%BA%E4%BD%A0%E7%9A%84%E5%AE%9E%E9%99%85%E5%AF%86%E7%A0%81%EF%BC%89%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Espring.datasource.password%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E123456%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%0A%23%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20MyBatis%20%E9%85%8D%E7%BD%AE%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%8C%87%E5%AE%9A%20Mapper%20XML%20%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%8D%E7%BD%AE%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.mapper-locations%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eclasspath%3Amappers%2F*.xml%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%8C%87%E5%AE%9A%E5%AE%9E%E4%BD%93%E7%B1%BB%E7%9A%84%E5%8C%85%E8%B7%AF%E5%BE%84%EF%BC%8C%E7%94%A8%E4%BA%8E%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D%EF%BC%88%E5%9C%A8%20XML%20%E4%B8%AD%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%90%8D%EF%BC%89%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.type-aliases-package%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eblog.tilex.backend.tilex_blog_backend.entity%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E5%BC%80%E5%90%AF%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E8%87%AA%E5%8A%A8%E6%98%A0%E5%B0%84%EF%BC%88doc_id%20-%3E%20docId%EF%BC%89%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.configuration.map-underscore-to-camel-case%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Etrue%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%89%93%E5%8D%B0%20SQL%20%E6%97%A5%E5%BF%97%EF%BC%88%E5%BC%80%E5%8F%91%E6%97%B6%E5%8F%AF%E9%80%89%EF%BC%8C%E4%BE%BF%E4%BA%8E%E8%B0%83%E8%AF%95%EF%BC%89%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.configuration.log-impl%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eorg.apache.ibatis.logging.stdout.StdOutImpl%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-properties"><span class="hljs-comment"># 应用名称</span>
+<span class="hljs-attr">spring.application.name</span>=<span class="hljs-string">tilex-blog-backend</span>
+<span class="hljs-comment">
+# ========== 数据源配置 ==========</span>
+<span class="hljs-comment"># MySQL 8.x 驱动</span>
+<span class="hljs-attr">spring.datasource.driver-class-name</span>=<span class="hljs-string">com.mysql.cj.jdbc.Driver</span>
+<span class="hljs-comment"># 数据库连接 URL（替换【数据库名】和时区）</span>
+<span class="hljs-attr">spring.datasource.url</span>=<span class="hljs-string">jdbc:mysql://localhost:3306/【数据库名】?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai</span>
+<span class="hljs-comment"># 数据库用户名</span>
+<span class="hljs-attr">spring.datasource.username</span>=<span class="hljs-string">root</span>
+<span class="hljs-comment"># 数据库密码（替换为你的实际密码）</span>
+<span class="hljs-attr">spring.datasource.password</span>=<span class="hljs-string">123456</span>
+<span class="hljs-comment">
+# ========== MyBatis 配置 ==========</span>
+<span class="hljs-comment"># 指定 Mapper XML 文件的位置</span>
+<span class="hljs-attr">mybatis.mapper-locations</span>=<span class="hljs-string">classpath:mappers/*.xml</span>
+<span class="hljs-comment"># 指定实体类的包路径，用于类型别名（在 XML 中可以直接使用类名）</span>
+<span class="hljs-attr">mybatis.type-aliases-package</span>=<span class="hljs-string">blog.tilex.backend.tilex_blog_backend.entity</span>
+<span class="hljs-comment"># 开启驼峰命名自动映射（doc_id -&gt; docId）</span>
+<span class="hljs-attr">mybatis.configuration.map-underscore-to-camel-case</span>=<span class="hljs-string">true</span>
+<span class="hljs-comment"># 打印 SQL 日志（开发时可选，便于调试）</span>
+<span class="hljs-attr">mybatis.configuration.log-impl</span>=<span class="hljs-string">org.apache.ibatis.logging.stdout.StdOutImpl</span>
+</code></pre>
+      </div>
+    
+<p><strong>配置说明</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spring.datasource.url</code></td>
+<td>指定数据库连接地址，包含数据库名和连接参数</td>
+</tr>
+<tr>
+<td><code>mybatis.mapper-locations</code></td>
+<td>告诉 MyBatis 去哪里找 SQL 映射文件（XML）</td>
+</tr>
+<tr>
+<td><code>mybatis.type-aliases-package</code></td>
+<td>配置实体类的包路径，在 XML 中可以简写类名</td>
+</tr>
+<tr>
+<td><code>map-underscore-to-camel-case</code></td>
+<td>自动将数据库下划线命名转为 Java 驼峰命名</td>
+</tr>
+<tr>
+<td><code>log-impl</code></td>
+<td>开启 SQL 日志输出，便于开发调试</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="六-编写代码实现数据访问"><a href="#六-编写代码实现数据访问" class="anchor-link">#</a> 六、编写代码实现数据访问</h2>
+<h3 id="6-1-创建实体类-entity"><a href="#6-1-创建实体类-entity" class="anchor-link">#</a> 6.1 创建实体类（Entity）</h3>
+<p><strong>实体类的作用</strong>：&lt;u&gt;对应数据库表的结构&lt;/u&gt;，定义字段和类型。</p>
+<p><strong>文件位置</strong>：<code>src/main/java/blog/tilex/backend/tilex_blog_backend/entity/Doc.java</code></p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Epackage%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.entity%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20java.sql.Timestamp%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20*%20%E6%96%87%E6%A1%A3%E5%AE%9E%E4%BD%93%E7%B1%BB%0A%20*%20%E5%AF%B9%E5%BA%94%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%EF%BC%9Adoc%0A%20*%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eclass%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDoc%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20Long%20docId%3B%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%96%87%E6%A1%A3ID%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20String%20title%3B%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%A0%87%E9%A2%98%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20String%20content%3B%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%86%85%E5%AE%B9%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20String%20author%3B%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BD%9C%E8%80%85%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20Timestamp%20createdAt%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%9B%E5%BB%BA%E6%97%B6%E9%97%B4%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20Timestamp%20updatedAt%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EDoc%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%A8%E5%8F%82%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EDoc%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Long%20docId%2C%20String%20title%2C%20String%20content%2C%20String%20author%2C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Timestamp%20createdAt%2C%20Timestamp%20updatedAt)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.docId%20%3D%20docId%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.title%20%3D%20title%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.content%20%3D%20content%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.author%20%3D%20author%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.createdAt%20%3D%20createdAt%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.updatedAt%20%3D%20updatedAt%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20Getter%20%E5%92%8C%20Setter%20%E6%96%B9%E6%B3%95%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20Long%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetDocId%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20docId%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetDocId%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Long%20docId)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.docId%20%3D%20docId%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20String%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetTitle%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20title%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetTitle%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(String%20title)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.title%20%3D%20title%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20String%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetContent%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20content%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetContent%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(String%20content)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.content%20%3D%20content%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20String%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetAuthor%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20author%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetAuthor%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(String%20author)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.author%20%3D%20author%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20Timestamp%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetCreatedAt%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20createdAt%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetCreatedAt%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Timestamp%20createdAt)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.createdAt%20%3D%20createdAt%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20Timestamp%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetUpdatedAt%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20updatedAt%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetUpdatedAt%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Timestamp%20updatedAt)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.updatedAt%20%3D%20updatedAt%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20toString%20%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BE%BF%E4%BA%8E%E8%B0%83%E8%AF%95%E8%BE%93%E5%87%BA%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Override%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20String%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EtoString%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDoc%7B%26quot%3B%3C%2Fspan%3E%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BdocId%3D%26quot%3B%3C%2Fspan%3E%20%2B%20docId%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%2C%20title%3D%26%23x27%3B%26quot%3B%3C%2Fspan%3E%20%2B%20title%20%2B%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%5C%26%23x27%3B%26%23x27%3B%3C%2Fspan%3E%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%2C%20content%3D%26%23x27%3B%26quot%3B%3C%2Fspan%3E%20%2B%20content%20%2B%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%5C%26%23x27%3B%26%23x27%3B%3C%2Fspan%3E%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%2C%20author%3D%26%23x27%3B%26quot%3B%3C%2Fspan%3E%20%2B%20author%20%2B%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%5C%26%23x27%3B%26%23x27%3B%3C%2Fspan%3E%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%2C%20createdAt%3D%26quot%3B%3C%2Fspan%3E%20%2B%20createdAt%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%2C%20updatedAt%3D%26quot%3B%3C%2Fspan%3E%20%2B%20updatedAt%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%7D%26%23x27%3B%3C%2Fspan%3E%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">package</span> blog.tilex.backend.tilex_blog_backend.entity;
+
+<span class="hljs-keyword">import</span> java.sql.Timestamp;
+
+<span class="hljs-comment">/**
+ * 文档实体类
+ * 对应数据库表：doc
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Doc</span> {
+    <span class="hljs-keyword">private</span> Long docId;          <span class="hljs-comment">// 文档ID</span>
+    <span class="hljs-keyword">private</span> String title;        <span class="hljs-comment">// 标题</span>
+    <span class="hljs-keyword">private</span> String content;      <span class="hljs-comment">// 内容</span>
+    <span class="hljs-keyword">private</span> String author;       <span class="hljs-comment">// 作者</span>
+    <span class="hljs-keyword">private</span> Timestamp createdAt; <span class="hljs-comment">// 创建时间</span>
+    <span class="hljs-keyword">private</span> Timestamp updatedAt; <span class="hljs-comment">// 更新时间</span>
+
+    <span class="hljs-comment">// 无参构造函数</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Doc</span><span class="hljs-params">()</span> {}
+
+    <span class="hljs-comment">// 全参构造函数</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Doc</span><span class="hljs-params">(Long docId, String title, String content, String author, 
+               Timestamp createdAt, Timestamp updatedAt)</span> {
+        <span class="hljs-built_in">this</span>.docId = docId;
+        <span class="hljs-built_in">this</span>.title = title;
+        <span class="hljs-built_in">this</span>.content = content;
+        <span class="hljs-built_in">this</span>.author = author;
+        <span class="hljs-built_in">this</span>.createdAt = createdAt;
+        <span class="hljs-built_in">this</span>.updatedAt = updatedAt;
+    }
+
+    <span class="hljs-comment">// Getter 和 Setter 方法</span>
+    <span class="hljs-keyword">public</span> Long <span class="hljs-title function_">getDocId</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> docId;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setDocId</span><span class="hljs-params">(Long docId)</span> {
+        <span class="hljs-built_in">this</span>.docId = docId;
+    }
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getTitle</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> title;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setTitle</span><span class="hljs-params">(String title)</span> {
+        <span class="hljs-built_in">this</span>.title = title;
+    }
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getContent</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> content;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setContent</span><span class="hljs-params">(String content)</span> {
+        <span class="hljs-built_in">this</span>.content = content;
+    }
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getAuthor</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> author;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setAuthor</span><span class="hljs-params">(String author)</span> {
+        <span class="hljs-built_in">this</span>.author = author;
+    }
+
+    <span class="hljs-keyword">public</span> Timestamp <span class="hljs-title function_">getCreatedAt</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> createdAt;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setCreatedAt</span><span class="hljs-params">(Timestamp createdAt)</span> {
+        <span class="hljs-built_in">this</span>.createdAt = createdAt;
+    }
+
+    <span class="hljs-keyword">public</span> Timestamp <span class="hljs-title function_">getUpdatedAt</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> updatedAt;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setUpdatedAt</span><span class="hljs-params">(Timestamp updatedAt)</span> {
+        <span class="hljs-built_in">this</span>.updatedAt = updatedAt;
+    }
+
+    <span class="hljs-comment">// toString 方法，便于调试输出</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Doc{"</span> +
+                <span class="hljs-string">"docId="</span> + docId +
+                <span class="hljs-string">", title='"</span> + title + <span class="hljs-string">'\''</span> +
+                <span class="hljs-string">", content='"</span> + content + <span class="hljs-string">'\''</span> +
+                <span class="hljs-string">", author='"</span> + author + <span class="hljs-string">'\''</span> +
+                <span class="hljs-string">", createdAt="</span> + createdAt +
+                <span class="hljs-string">", updatedAt="</span> + updatedAt +
+                <span class="hljs-string">'}'</span>;
+    }
+}
+</code></pre>
+      </div>
+    
+<h3 id="6-2-创建-dao-接口"><a href="#6-2-创建-dao-接口" class="anchor-link">#</a> 6.2 创建 Dao 接口</h3>
+<p><strong>Dao（Data Access Object）的作用</strong>：定义数据访问方法的接口，声明对数据库的操作。</p>
+<p><strong>文件位置</strong>：<code>src/main/java/blog/tilex/backend/tilex_blog_backend/dao/DocDao.java</code></p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Epackage%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.dao%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.entity.Doc%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20org.apache.ibatis.annotations.Mapper%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20java.util.List%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20*%20%E6%96%87%E6%A1%A3%20Dao%20%E6%8E%A5%E5%8F%A3%0A%20*%20%E4%BD%BF%E7%94%A8%20%3Cspan%20class%3D%22hljs-doctag%22%3E%40Mapper%3C%2Fspan%3E%20%E6%B3%A8%E8%A7%A3%E6%A0%87%E8%AE%B0%E4%B8%BA%20MyBatis%20Mapper%0A%20*%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40Mapper%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDocDao%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20%20%20*%20%E6%A0%B9%E6%8D%AE%20ID%20%E6%9F%A5%E8%AF%A2%E6%96%87%E6%A1%A3%0A%20%20%20%20%20*%20%3Cspan%20class%3D%22hljs-doctag%22%3E%40param%3C%2Fspan%3E%20docId%20%E6%96%87%E6%A1%A3ID%0A%20%20%20%20%20*%20%3Cspan%20class%3D%22hljs-doctag%22%3E%40return%3C%2Fspan%3E%20%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%0A%20%20%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%20%20Doc%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetDocById%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Long%20docId)%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20%20%20*%20%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89%E6%96%87%E6%A1%A3%0A%20%20%20%20%20*%20%3Cspan%20class%3D%22hljs-doctag%22%3E%40return%3C%2Fspan%3E%20%E6%96%87%E6%A1%A3%E5%88%97%E8%A1%A8%0A%20%20%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%20%20List%3CDoc%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetAllDocs%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20%20%20*%20%E6%8F%92%E5%85%A5%E6%96%87%E6%A1%A3%0A%20%20%20%20%20*%20%3Cspan%20class%3D%22hljs-doctag%22%3E%40param%3C%2Fspan%3E%20doc%20%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%0A%20%20%20%20%20*%20%3Cspan%20class%3D%22hljs-doctag%22%3E%40return%3C%2Fspan%3E%20%E5%8F%97%E5%BD%B1%E5%93%8D%E7%9A%84%E8%A1%8C%E6%95%B0%0A%20%20%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3Eint%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertDoc%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Doc%20doc)%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20%20%20*%20%E6%9B%B4%E6%96%B0%E6%96%87%E6%A1%A3%0A%20%20%20%20%20*%20%3Cspan%20class%3D%22hljs-doctag%22%3E%40param%3C%2Fspan%3E%20doc%20%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%0A%20%20%20%20%20*%20%3Cspan%20class%3D%22hljs-doctag%22%3E%40return%3C%2Fspan%3E%20%E5%8F%97%E5%BD%B1%E5%93%8D%E7%9A%84%E8%A1%8C%E6%95%B0%0A%20%20%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3Eint%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EupdateDoc%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Doc%20doc)%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20%20%20*%20%E5%88%A0%E9%99%A4%E6%96%87%E6%A1%A3%0A%20%20%20%20%20*%20%3Cspan%20class%3D%22hljs-doctag%22%3E%40param%3C%2Fspan%3E%20docId%20%E6%96%87%E6%A1%A3ID%0A%20%20%20%20%20*%20%3Cspan%20class%3D%22hljs-doctag%22%3E%40return%3C%2Fspan%3E%20%E5%8F%97%E5%BD%B1%E5%93%8D%E7%9A%84%E8%A1%8C%E6%95%B0%0A%20%20%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3Eint%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EdeleteDoc%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Long%20docId)%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">package</span> blog.tilex.backend.tilex_blog_backend.dao;
+
+<span class="hljs-keyword">import</span> blog.tilex.backend.tilex_blog_backend.entity.Doc;
+<span class="hljs-keyword">import</span> org.apache.ibatis.annotations.Mapper;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-comment">/**
+ * 文档 Dao 接口
+ * 使用 <span class="hljs-doctag">@Mapper</span> 注解标记为 MyBatis Mapper
+ */</span>
+<span class="hljs-meta">@Mapper</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">DocDao</span> {
+    <span class="hljs-comment">/**
+     * 根据 ID 查询文档
+     * <span class="hljs-doctag">@param</span> docId 文档ID
+     * <span class="hljs-doctag">@return</span> 文档对象
+     */</span>
+    Doc <span class="hljs-title function_">getDocById</span><span class="hljs-params">(Long docId)</span>;
+
+    <span class="hljs-comment">/**
+     * 查询所有文档
+     * <span class="hljs-doctag">@return</span> 文档列表
+     */</span>
+    List&lt;Doc&gt; <span class="hljs-title function_">getAllDocs</span><span class="hljs-params">()</span>;
+
+    <span class="hljs-comment">/**
+     * 插入文档
+     * <span class="hljs-doctag">@param</span> doc 文档对象
+     * <span class="hljs-doctag">@return</span> 受影响的行数
+     */</span>
+    <span class="hljs-type">int</span> <span class="hljs-title function_">insertDoc</span><span class="hljs-params">(Doc doc)</span>;
+
+    <span class="hljs-comment">/**
+     * 更新文档
+     * <span class="hljs-doctag">@param</span> doc 文档对象
+     * <span class="hljs-doctag">@return</span> 受影响的行数
+     */</span>
+    <span class="hljs-type">int</span> <span class="hljs-title function_">updateDoc</span><span class="hljs-params">(Doc doc)</span>;
+
+    <span class="hljs-comment">/**
+     * 删除文档
+     * <span class="hljs-doctag">@param</span> docId 文档ID
+     * <span class="hljs-doctag">@return</span> 受影响的行数
+     */</span>
+    <span class="hljs-type">int</span> <span class="hljs-title function_">deleteDoc</span><span class="hljs-params">(Long docId)</span>;
+}
+</code></pre>
+      </div>
+    
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>必须使用 <code>@Mapper</code> 注解或在启动类配置 <code>@MapperScan</code></li>
+<li>接口方法的命名应清晰表达意图</li>
+<li>参数和返回值类型要与 Mapper XML 一致</li>
+</ul>
+<h3 id="6-3-创建-mapper-xml-文件"><a href="#6-3-创建-mapper-xml-文件" class="anchor-link">#</a> 6.3 创建 Mapper XML 文件</h3>
+<p><strong>Mapper XML 的作用</strong>：编写具体的 SQL 语句，实现 Dao 接口中定义的方法。</p>
+<p><strong>文件位置</strong>：<code>src/main/resources/mappers/DocMapper.xml</code></p>
+
+      <div class="md-editor-code" data-language="xml">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">xml</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-meta%22%3E%3C%3Fxml%20version%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B1.0%26quot%3B%3C%2Fspan%3E%20encoding%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BUTF-8%26quot%3B%3C%2Fspan%3E%20%3F%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-meta%22%3E%3C!DOCTYPE%20%3Cspan%20class%3D%22hljs-keyword%22%3Emapper%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EPUBLIC%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B-%2F%2Fmybatis.org%2F%2FDTD%20Mapper%203.0%2F%2FEN%26quot%3B%3C%2Fspan%3E%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhttp%3A%2F%2Fmybatis.org%2Fdtd%2Fmybatis-3-mapper.dtd%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20namespace%20%E5%BF%85%E9%A1%BB%E6%98%AF%20Dao%20%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%85%A8%E9%99%90%E5%AE%9A%E5%90%8D%20--%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Emapper%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Enamespace%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bblog.tilex.backend.tilex_blog_backend.dao.DocDao%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20ResultMap%EF%BC%9A%E5%AE%9A%E4%B9%89%E7%BB%93%E6%9E%9C%E6%98%A0%E5%B0%84%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%8C%E5%BC%80%E5%90%AF%E9%A9%BC%E5%B3%B0%E6%98%A0%E5%B0%84%E6%97%B6%E5%8F%AF%E7%9C%81%E7%95%A5%EF%BC%89%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EresultMap%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDocResultMap%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Etype%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDoc%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eproperty%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BdocId%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ecolumn%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bdoc_id%26quot%3B%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eresult%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eproperty%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Btitle%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ecolumn%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Btitle%26quot%3B%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eresult%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eproperty%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bcontent%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ecolumn%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bcontent%26quot%3B%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eresult%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eproperty%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bauthor%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ecolumn%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bauthor%26quot%3B%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eresult%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eproperty%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BcreatedAt%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ecolumn%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bcreated_at%26quot%3B%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eresult%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eproperty%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BupdatedAt%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ecolumn%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bupdated_at%26quot%3B%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EresultMap%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E6%A0%B9%E6%8D%AE%20ID%20%E6%9F%A5%E8%AF%A2%E6%96%87%E6%A1%A3%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eselect%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BgetDocById%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EresultType%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDoc%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EparameterType%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blong%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20SELECT%20*%20FROM%20doc%20WHERE%20doc_id%20%3D%20%23%7BdocId%7D%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eselect%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89%E6%96%87%E6%A1%A3%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eselect%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BgetAllDocs%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EresultType%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDoc%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20SELECT%20*%20FROM%20doc%20ORDER%20BY%20created_at%20DESC%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eselect%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E6%8F%92%E5%85%A5%E6%96%87%E6%A1%A3%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Einsert%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BinsertDoc%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EparameterType%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDoc%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EuseGeneratedKeys%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Btrue%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EkeyProperty%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BdocId%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20INSERT%20INTO%20doc%20(title%2C%20content%2C%20author)%0A%20%20%20%20%20%20%20%20VALUES%20(%23%7Btitle%7D%2C%20%23%7Bcontent%7D%2C%20%23%7Bauthor%7D)%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Einsert%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E6%9B%B4%E6%96%B0%E6%96%87%E6%A1%A3%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eupdate%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BupdateDoc%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EparameterType%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDoc%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20UPDATE%20doc%0A%20%20%20%20%20%20%20%20SET%20title%20%3D%20%23%7Btitle%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20content%20%3D%20%23%7Bcontent%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20author%20%3D%20%23%7Bauthor%7D%0A%20%20%20%20%20%20%20%20WHERE%20doc_id%20%3D%20%23%7BdocId%7D%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eupdate%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E5%88%A0%E9%99%A4%E6%96%87%E6%A1%A3%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Edelete%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BdeleteDoc%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EparameterType%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blong%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20DELETE%20FROM%20doc%20WHERE%20doc_id%20%3D%20%23%7BdocId%7D%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Edelete%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Emapper%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"UTF-8"</span> ?&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">mapper</span> <span class="hljs-keyword">PUBLIC</span> <span class="hljs-string">"-//mybatis.org//DTD Mapper 3.0//EN"</span> 
+    <span class="hljs-string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- namespace 必须是 Dao 接口的全限定名 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mapper</span> <span class="hljs-attr">namespace</span>=<span class="hljs-string">"blog.tilex.backend.tilex_blog_backend.dao.DocDao"</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- ResultMap：定义结果映射（可选，开启驼峰映射时可省略） --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">resultMap</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"DocResultMap"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"Doc"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">id</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"docId"</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"doc_id"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"title"</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"title"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"content"</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"content"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"author"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"createdAt"</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"created_at"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"updatedAt"</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"updated_at"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">resultMap</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- 根据 ID 查询文档 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"getDocById"</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">"Doc"</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">"long"</span>&gt;</span>
+        SELECT * FROM doc WHERE doc_id = #{docId}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- 查询所有文档 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"getAllDocs"</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">"Doc"</span>&gt;</span>
+        SELECT * FROM doc ORDER BY created_at DESC
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- 插入文档 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">insert</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"insertDoc"</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">"Doc"</span> <span class="hljs-attr">useGeneratedKeys</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">keyProperty</span>=<span class="hljs-string">"docId"</span>&gt;</span>
+        INSERT INTO doc (title, content, author)
+        VALUES (#{title}, #{content}, #{author})
+    <span class="hljs-tag">&lt;/<span class="hljs-name">insert</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- 更新文档 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">update</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"updateDoc"</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">"Doc"</span>&gt;</span>
+        UPDATE doc
+        SET title = #{title},
+            content = #{content},
+            author = #{author}
+        WHERE doc_id = #{docId}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">update</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- 删除文档 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">delete</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"deleteDoc"</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">"long"</span>&gt;</span>
+        DELETE FROM doc WHERE doc_id = #{docId}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">delete</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapper</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<p><strong>XML 配置说明</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>标签/属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>namespace</code></td>
+<td>绑定 Dao 接口的全限定名，必须完全匹配</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>对应接口中的方法名</td>
+</tr>
+<tr>
+<td><code>resultType</code></td>
+<td>返回类型，因为配置了类型别名，可以简写为 <code>Doc</code></td>
+</tr>
+<tr>
+<td><code>parameterType</code></td>
+<td>参数类型</td>
+</tr>
+<tr>
+<td><code>#{property}</code></td>
+<td>MyBatis 参数占位符，会自动进行类型转换和预编译</td>
+</tr>
+<tr>
+<td><code>useGeneratedKeys</code></td>
+<td>插入时返回自增主键</td>
+</tr>
+<tr>
+<td><code>keyProperty</code></td>
+<td>指定主键对应的属性名</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="七-配置-mapper-扫描"><a href="#七-配置-mapper-扫描" class="anchor-link">#</a> 七、配置 Mapper 扫描</h2>
+<p>有两种方式配置 Mapper 扫描：</p>
+<h3 id="方式一-在启动类添加-mapperscan-注解-推荐"><a href="#方式一-在启动类添加-mapperscan-注解-推荐" class="anchor-link">#</a> 方式一：在启动类添加 <code>@MapperScan</code> 注解（推荐）</h3>
+<p><strong>文件位置</strong>：<code>src/main/java/blog/tilex/backend/tilex_blog_backend/TilexBlogBackendApplication.java</code></p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Epackage%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20org.mybatis.spring.annotation.MapperScan%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20org.springframework.boot.SpringApplication%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20org.springframework.boot.autoconfigure.SpringBootApplication%3B%0A%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40SpringBootApplication%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40MapperScan(%26quot%3Bblog.tilex.backend.tilex_blog_backend.dao%26quot%3B)%3C%2Fspan%3E%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%89%AB%E6%8F%8F%20Dao%20%E5%8C%85%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eclass%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3ETilexBlogBackendApplication%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Estatic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Emain%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(String%5B%5D%20args)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20SpringApplication.run(TilexBlogBackendApplication.class%2C%20args)%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">package</span> blog.tilex.backend.tilex_blog_backend;
+
+<span class="hljs-keyword">import</span> org.mybatis.spring.annotation.MapperScan;
+<span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@MapperScan("blog.tilex.backend.tilex_blog_backend.dao")</span>  <span class="hljs-comment">// 扫描 Dao 包</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TilexBlogBackendApplication</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        SpringApplication.run(TilexBlogBackendApplication.class, args);
+    }
+}
+</code></pre>
+      </div>
+    
+<h3 id="方式二-在每个-dao-接口上添加-mapper-注解"><a href="#方式二-在每个-dao-接口上添加-mapper-注解" class="anchor-link">#</a> 方式二：在每个 Dao 接口上添加 <code>@Mapper</code> 注解</h3>
+<p>如果 Dao 接口不多，可以在每个接口上添加 <code>@Mapper</code> 注解（已在上面的 DocDao.java 中添加）。</p>
+<p><strong>推荐使用方式一</strong>，统一管理更方便。</p>
+<hr>
+<h2 id="八-编写测试类验证"><a href="#八-编写测试类验证" class="anchor-link">#</a> 八、编写测试类验证</h2>
+<h3 id="8-1-创建测试类"><a href="#8-1-创建测试类" class="anchor-link">#</a> 8.1 创建测试类</h3>
+<p><strong>文件位置</strong>：<code>src/test/java/blog/tilex/backend/tilex_blog_backend/dao/DocDaoTest.java</code></p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Epackage%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.dao%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.entity.Doc%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20org.junit.jupiter.api.Test%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20org.springframework.beans.factory.annotation.Autowired%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20org.springframework.boot.test.context.SpringBootTest%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20java.util.List%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Estatic%3C%2Fspan%3E%20org.junit.jupiter.api.Assertions.*%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20*%20DocDao%20%E6%B5%8B%E8%AF%95%E7%B1%BB%0A%20*%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40SpringBootTest%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eclass%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDocDaoTest%3C%2Fspan%3E%20%7B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Autowired%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20DocDao%20docDao%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20%20%20*%20%E6%B5%8B%E8%AF%95%E6%A0%B9%E6%8D%AE%20ID%20%E6%9F%A5%E8%AF%A2%E6%96%87%E6%A1%A3%0A%20%20%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Test%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EtestGetDocById%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20%E6%B5%8B%E8%AF%95%E6%A0%B9%E6%8D%AE%20ID%20%E6%9F%A5%E8%AF%A2%E6%96%87%E6%A1%A3%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3ELong%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3EtestId%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-number%22%3E1L%3C%2Fspan%3E%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3EDoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3Edoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20docDao.getDocById(testId)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20assertNotNull(doc%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%BA%94%E4%B8%BA%E7%A9%BA%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20assertEquals(testId%2C%20doc.getDocId()%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%96%87%E6%A1%A3ID%E5%BA%94%E8%AF%A5%E5%8C%B9%E9%85%8D%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%EF%BC%9A%26quot%3B%3C%2Fspan%3E%20%2B%20doc)%3B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%B5%8B%E8%AF%95%E9%80%9A%E8%BF%87%EF%BC%81%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20%20%20*%20%E6%B5%8B%E8%AF%95%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89%E6%96%87%E6%A1%A3%0A%20%20%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Test%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EtestGetAllDocs%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20%E6%B5%8B%E8%AF%95%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89%E6%96%87%E6%A1%A3%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20List%3CDoc%3E%20docs%20%3D%20docDao.getAllDocs()%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20assertNotNull(docs%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%BA%94%E4%B8%BA%E7%A9%BA%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20assertTrue(docs.size()%20%3E%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E8%87%B3%E5%B0%91%E5%BA%94%E8%AF%A5%E6%9C%89%E4%B8%80%E6%9D%A1%E6%95%B0%E6%8D%AE%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%85%B1%E6%9F%A5%E8%AF%A2%E5%88%B0%20%26quot%3B%3C%2Fspan%3E%20%2B%20docs.size()%20%2B%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%20%E6%9D%A1%E6%96%87%E6%A1%A3%EF%BC%9A%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20docs.forEach(System.out%3A%3Aprintln)%3B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%B5%8B%E8%AF%95%E9%80%9A%E8%BF%87%EF%BC%81%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20%20%20*%20%E6%B5%8B%E8%AF%95%E6%8F%92%E5%85%A5%E6%96%87%E6%A1%A3%0A%20%20%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Test%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EtestInsertDoc%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20%E6%B5%8B%E8%AF%95%E6%8F%92%E5%85%A5%E6%96%87%E6%A1%A3%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3EDoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3EnewDoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDoc%3C%2Fspan%3E()%3B%0A%20%20%20%20%20%20%20%20newDoc.setTitle(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20newDoc.setContent(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3%E7%9A%84%E5%86%85%E5%AE%B9%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20newDoc.setAuthor(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3Eint%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3Eresult%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20docDao.insertDoc(newDoc)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20assertEquals(%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20result%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%BA%94%E8%AF%A5%E6%8F%92%E5%85%A5%E4%B8%80%E6%9D%A1%E8%AE%B0%E5%BD%95%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20assertNotNull(newDoc.getDocId()%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%BA%94%E8%AF%A5%E8%BF%94%E5%9B%9E%E8%87%AA%E5%A2%9E%E4%B8%BB%E9%94%AE%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%8F%92%E5%85%A5%E6%88%90%E5%8A%9F%EF%BC%8C%E6%96%B0%E6%96%87%E6%A1%A3ID%EF%BC%9A%26quot%3B%3C%2Fspan%3E%20%2B%20newDoc.getDocId())%3B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%B5%8B%E8%AF%95%E9%80%9A%E8%BF%87%EF%BC%81%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20%20%20*%20%E6%B5%8B%E8%AF%95%E6%9B%B4%E6%96%B0%E6%96%87%E6%A1%A3%0A%20%20%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Test%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EtestUpdateDoc%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20%E6%B5%8B%E8%AF%95%E6%9B%B4%E6%96%B0%E6%96%87%E6%A1%A3%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%88%E6%9F%A5%E8%AF%A2%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3EDoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3Edoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20docDao.getDocById(%3Cspan%20class%3D%22hljs-number%22%3E1L%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20assertNotNull(doc%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%96%87%E6%A1%A3%E5%BA%94%E8%AF%A5%E5%AD%98%E5%9C%A8%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BF%AE%E6%94%B9%E5%86%85%E5%AE%B9%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3EString%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3EnewTitle%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%9B%B4%E6%96%B0%E5%90%8E%E7%9A%84%E6%A0%87%E9%A2%98%26quot%3B%3C%2Fspan%3E%3B%0A%20%20%20%20%20%20%20%20doc.setTitle(newTitle)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3Eint%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3Eresult%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20docDao.updateDoc(doc)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20assertEquals(%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20result%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%BA%94%E8%AF%A5%E6%9B%B4%E6%96%B0%E4%B8%80%E6%9D%A1%E8%AE%B0%E5%BD%95%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%86%8D%E6%AC%A1%E6%9F%A5%E8%AF%A2%E9%AA%8C%E8%AF%81%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3EDoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3EupdatedDoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20docDao.getDocById(%3Cspan%20class%3D%22hljs-number%22%3E1L%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20assertEquals(newTitle%2C%20updatedDoc.getTitle()%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%A0%87%E9%A2%98%E5%BA%94%E8%AF%A5%E5%B7%B2%E6%9B%B4%E6%96%B0%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%9B%B4%E6%96%B0%E6%88%90%E5%8A%9F%EF%BC%9A%26quot%3B%3C%2Fspan%3E%20%2B%20updatedDoc)%3B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%B5%8B%E8%AF%95%E9%80%9A%E8%BF%87%EF%BC%81%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20%20%20*%20%E6%B5%8B%E8%AF%95%E5%88%A0%E9%99%A4%E6%96%87%E6%A1%A3%EF%BC%88%E8%B0%A8%E6%85%8E%E4%BD%BF%E7%94%A8%EF%BC%89%0A%20%20%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Test%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EtestDeleteDoc%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E()%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20%E6%B5%8B%E8%AF%95%E5%88%A0%E9%99%A4%E6%96%87%E6%A1%A3%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%88%E6%8F%92%E5%85%A5%E4%B8%80%E6%9D%A1%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3EDoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3EtestDoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDoc%3C%2Fspan%3E()%3B%0A%20%20%20%20%20%20%20%20testDoc.setTitle(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%BE%85%E5%88%A0%E9%99%A4%E7%9A%84%E6%96%87%E6%A1%A3%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20testDoc.setContent(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E8%BF%99%E6%9D%A1%E6%95%B0%E6%8D%AE%E5%B0%86%E8%A2%AB%E5%88%A0%E9%99%A4%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20testDoc.setAuthor(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%B5%8B%E8%AF%95%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20docDao.insertDoc(testDoc)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3ELong%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3EdocId%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20testDoc.getDocId()%3B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%8F%92%E5%85%A5%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%EF%BC%8CID%EF%BC%9A%26quot%3B%3C%2Fspan%3E%20%2B%20docId)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%A0%E9%99%A4%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3Eint%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3Eresult%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20docDao.deleteDoc(docId)%3B%0A%20%20%20%20%20%20%20%20assertEquals(%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20result%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%BA%94%E8%AF%A5%E5%88%A0%E9%99%A4%E4%B8%80%E6%9D%A1%E8%AE%B0%E5%BD%95%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%AA%8C%E8%AF%81%E5%B7%B2%E5%88%A0%E9%99%A4%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-type%22%3EDoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%22%3EdeletedDoc%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20docDao.getDocById(docId)%3B%0A%20%20%20%20%20%20%20%20assertNull(deletedDoc%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%96%87%E6%A1%A3%E5%BA%94%E8%AF%A5%E5%B7%B2%E8%A2%AB%E5%88%A0%E9%99%A4%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%88%A0%E9%99%A4%E6%88%90%E5%8A%9F%EF%BC%81%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20System.out.println(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%B5%8B%E8%AF%95%E9%80%9A%E8%BF%87%EF%BC%81%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">package</span> blog.tilex.backend.tilex_blog_backend.dao;
+
+<span class="hljs-keyword">import</span> blog.tilex.backend.tilex_blog_backend.entity.Doc;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.boot.test.context.SpringBootTest;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assertions.*;
+
+<span class="hljs-comment">/**
+ * DocDao 测试类
+ */</span>
+<span class="hljs-meta">@SpringBootTest</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DocDaoTest</span> {
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> DocDao docDao;
+
+    <span class="hljs-comment">/**
+     * 测试根据 ID 查询文档
+     */</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testGetDocById</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"========== 测试根据 ID 查询文档 =========="</span>);
+        <span class="hljs-type">Long</span> <span class="hljs-variable">testId</span> <span class="hljs-operator">=</span> <span class="hljs-number">1L</span>;
+        <span class="hljs-type">Doc</span> <span class="hljs-variable">doc</span> <span class="hljs-operator">=</span> docDao.getDocById(testId);
+        
+        assertNotNull(doc, <span class="hljs-string">"查询结果不应为空"</span>);
+        assertEquals(testId, doc.getDocId(), <span class="hljs-string">"文档ID应该匹配"</span>);
+        
+        System.out.println(<span class="hljs-string">"查询结果："</span> + doc);
+        System.out.println(<span class="hljs-string">"测试通过！"</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * 测试查询所有文档
+     */</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testGetAllDocs</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"========== 测试查询所有文档 =========="</span>);
+        List&lt;Doc&gt; docs = docDao.getAllDocs();
+        
+        assertNotNull(docs, <span class="hljs-string">"查询结果不应为空"</span>);
+        assertTrue(docs.size() &gt; <span class="hljs-number">0</span>, <span class="hljs-string">"至少应该有一条数据"</span>);
+        
+        System.out.println(<span class="hljs-string">"共查询到 "</span> + docs.size() + <span class="hljs-string">" 条文档："</span>);
+        docs.forEach(System.out::println);
+        System.out.println(<span class="hljs-string">"测试通过！"</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * 测试插入文档
+     */</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testInsertDoc</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"========== 测试插入文档 =========="</span>);
+        <span class="hljs-type">Doc</span> <span class="hljs-variable">newDoc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Doc</span>();
+        newDoc.setTitle(<span class="hljs-string">"测试文档"</span>);
+        newDoc.setContent(<span class="hljs-string">"这是一篇测试文档的内容"</span>);
+        newDoc.setAuthor(<span class="hljs-string">"测试用户"</span>);
+        
+        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> docDao.insertDoc(newDoc);
+        
+        assertEquals(<span class="hljs-number">1</span>, result, <span class="hljs-string">"应该插入一条记录"</span>);
+        assertNotNull(newDoc.getDocId(), <span class="hljs-string">"应该返回自增主键"</span>);
+        
+        System.out.println(<span class="hljs-string">"插入成功，新文档ID："</span> + newDoc.getDocId());
+        System.out.println(<span class="hljs-string">"测试通过！"</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * 测试更新文档
+     */</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testUpdateDoc</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"========== 测试更新文档 =========="</span>);
+        <span class="hljs-comment">// 先查询</span>
+        <span class="hljs-type">Doc</span> <span class="hljs-variable">doc</span> <span class="hljs-operator">=</span> docDao.getDocById(<span class="hljs-number">1L</span>);
+        assertNotNull(doc, <span class="hljs-string">"文档应该存在"</span>);
+        
+        <span class="hljs-comment">// 修改内容</span>
+        <span class="hljs-type">String</span> <span class="hljs-variable">newTitle</span> <span class="hljs-operator">=</span> <span class="hljs-string">"更新后的标题"</span>;
+        doc.setTitle(newTitle);
+        
+        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> docDao.updateDoc(doc);
+        
+        assertEquals(<span class="hljs-number">1</span>, result, <span class="hljs-string">"应该更新一条记录"</span>);
+        
+        <span class="hljs-comment">// 再次查询验证</span>
+        <span class="hljs-type">Doc</span> <span class="hljs-variable">updatedDoc</span> <span class="hljs-operator">=</span> docDao.getDocById(<span class="hljs-number">1L</span>);
+        assertEquals(newTitle, updatedDoc.getTitle(), <span class="hljs-string">"标题应该已更新"</span>);
+        
+        System.out.println(<span class="hljs-string">"更新成功："</span> + updatedDoc);
+        System.out.println(<span class="hljs-string">"测试通过！"</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * 测试删除文档（谨慎使用）
+     */</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testDeleteDoc</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"========== 测试删除文档 =========="</span>);
+        <span class="hljs-comment">// 先插入一条测试数据</span>
+        <span class="hljs-type">Doc</span> <span class="hljs-variable">testDoc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Doc</span>();
+        testDoc.setTitle(<span class="hljs-string">"待删除的文档"</span>);
+        testDoc.setContent(<span class="hljs-string">"这条数据将被删除"</span>);
+        testDoc.setAuthor(<span class="hljs-string">"测试"</span>);
+        docDao.insertDoc(testDoc);
+        
+        <span class="hljs-type">Long</span> <span class="hljs-variable">docId</span> <span class="hljs-operator">=</span> testDoc.getDocId();
+        System.out.println(<span class="hljs-string">"插入测试数据，ID："</span> + docId);
+        
+        <span class="hljs-comment">// 删除</span>
+        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> docDao.deleteDoc(docId);
+        assertEquals(<span class="hljs-number">1</span>, result, <span class="hljs-string">"应该删除一条记录"</span>);
+        
+        <span class="hljs-comment">// 验证已删除</span>
+        <span class="hljs-type">Doc</span> <span class="hljs-variable">deletedDoc</span> <span class="hljs-operator">=</span> docDao.getDocById(docId);
+        assertNull(deletedDoc, <span class="hljs-string">"文档应该已被删除"</span>);
+        
+        System.out.println(<span class="hljs-string">"删除成功！"</span>);
+        System.out.println(<span class="hljs-string">"测试通过！"</span>);
+    }
+}
+</code></pre>
+      </div>
+    
+<h3 id="8-2-运行测试"><a href="#8-2-运行测试" class="anchor-link">#</a> 8.2 运行测试</h3>
+<ol>
+<li>右键点击测试类，选择 <strong>Run ‘DocDaoTest’</strong></li>
+<li>或点击测试方法左侧的绿色运行按钮</li>
+<li>查看控制台输出，确认测试通过</li>
+</ol>
+<p><strong>预期输出示例</strong>：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20%E6%B5%8B%E8%AF%95%E6%A0%B9%E6%8D%AE%20ID%20%E6%9F%A5%E8%AF%A2%E6%96%87%E6%A1%A3%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%3D%3D%3E%20%20Preparing%3A%20SELECT%20*%20%3Cspan%20class%3D%22hljs-keyword%22%3EFROM%3C%2Fspan%3E%20doc%20WHERE%20doc_id%20%3D%20%3F%0A%3D%3D%3E%20Parameters%3A%201(Long)%0A%3C%3D%3D%20%20%20%20%20%20Total%3A%201%0A%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%EF%BC%9ADoc%7B%3Cspan%20class%3D%22hljs-attribute%22%3EdocId%3C%2Fspan%3E%3D1%2C%20%3Cspan%20class%3D%22hljs-attribute%22%3Etitle%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BSpring%20Boot%20%E5%85%A5%E9%97%A8%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attribute%22%3Econtent%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E5%85%B3%E4%BA%8E%20Spring%20Boot%20%E7%9A%84%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attribute%22%3Eauthor%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E5%BC%A0%E4%B8%89%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attribute%22%3EcreatedAt%3C%2Fspan%3E%3D2025-10-07%2010%3A30%3A00.0%2C%20%3Cspan%20class%3D%22hljs-attribute%22%3EupdatedAt%3C%2Fspan%3E%3D2025-10-07%2010%3A30%3A00.0%7D%0A%E6%B5%8B%E8%AF%95%E9%80%9A%E8%BF%87%EF%BC%81%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>========== 测试根据 ID 查询文档 ==========
+==&gt;  Preparing: SELECT * <span class="hljs-keyword">FROM</span> doc WHERE doc_id = ?
+==&gt; Parameters: 1(Long)
+&lt;==      Total: 1
+查询结果：Doc{<span class="hljs-attribute">docId</span>=1, <span class="hljs-attribute">title</span>=<span class="hljs-string">'Spring Boot 入门'</span>, <span class="hljs-attribute">content</span>=<span class="hljs-string">'这是一篇关于 Spring Boot 的入门教程'</span>, <span class="hljs-attribute">author</span>=<span class="hljs-string">'张三'</span>, <span class="hljs-attribute">createdAt</span>=2025-10-07 10:30:00.0, <span class="hljs-attribute">updatedAt</span>=2025-10-07 10:30:00.0}
+测试通过！
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="九-完整目录结构"><a href="#九-完整目录结构" class="anchor-link">#</a> 九、完整目录结构</h2>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="tilex-blog-backend%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20src%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20main%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20java%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20blog%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Etilex%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Ebackend%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Etilex_blog_backend%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20TilexBlogBackendApplication.java%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E4%B8%BB%E5%90%AF%E5%8A%A8%E7%B1%BB%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20entity%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%B1%82%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20Doc.java%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%96%87%E6%A1%A3%E5%AE%9E%E4%BD%93%E7%B1%BB%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20dao%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%B1%82%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20DocDao.java%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%96%87%E6%A1%A3%20Dao%20%E6%8E%A5%E5%8F%A3%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20service%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E5%B1%82%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20DocService.java%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%9C%8D%E5%8A%A1%E6%8E%A5%E5%8F%A3%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20impl%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20DocServiceImpl.java%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20controller%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%8E%A7%E5%88%B6%E5%99%A8%E5%B1%82%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20DocController.java%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20REST%20API%20%E6%8E%A7%E5%88%B6%E5%99%A8%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20resources%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20application.properties%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20mappers%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20MyBatis%20%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20DocMapper.xml%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%96%87%E6%A1%A3%20Mapper%20XML%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20static%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20test%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20java%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20blog%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Etilex%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Ebackend%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Etilex_blog_backend%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20TilexBlogBackendApplicationTests.java%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E5%90%AF%E5%8A%A8%E6%B5%8B%E8%AF%95%E7%B1%BB%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20dao%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20DocDaoTest.java%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20Dao%20%E5%B1%82%E6%B5%8B%E8%AF%95%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20pom.xml%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20Maven%20%E4%BE%9D%E8%B5%96%E9%85%8D%E7%BD%AE%3C%2Fspan%3E%0A%E2%94%94%E2%94%80%E2%94%80%20README.md%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>tilex-blog-backend<span class="hljs-symbol">/</span>
+├── src<span class="hljs-symbol">/</span>
+│   ├── main<span class="hljs-symbol">/</span>
+│   │   ├── java<span class="hljs-symbol">/</span>
+│   │   │   └── blog<span class="hljs-operator">/</span>tilex<span class="hljs-operator">/</span>backend<span class="hljs-operator">/</span>tilex_blog_backend<span class="hljs-symbol">/</span>
+│   │   │       ├── TilexBlogBackendApplication.java        <span class="hljs-comment"># 主启动类</span>
+│   │   │       ├── entity<span class="hljs-symbol">/</span>                                 <span class="hljs-comment"># 实体类层</span>
+│   │   │       │   └── Doc.java                            <span class="hljs-comment"># 文档实体类</span>
+│   │   │       ├── dao<span class="hljs-symbol">/</span>                                    <span class="hljs-comment"># 数据访问层</span>
+│   │   │       │   └── DocDao.java                         <span class="hljs-comment"># 文档 Dao 接口</span>
+│   │   │       ├── service<span class="hljs-symbol">/</span>                                <span class="hljs-comment"># 业务逻辑层（可选）</span>
+│   │   │       │   ├── DocService.java                     <span class="hljs-comment"># 服务接口</span>
+│   │   │       │   └── impl<span class="hljs-symbol">/</span>
+│   │   │       │       └── DocServiceImpl.java             <span class="hljs-comment"># 服务实现</span>
+│   │   │       └── controller<span class="hljs-symbol">/</span>                             <span class="hljs-comment"># 控制器层（可选）</span>
+│   │   │           └── DocController.java                  <span class="hljs-comment"># REST API 控制器</span>
+│   │   └── resources<span class="hljs-symbol">/</span>
+│   │       ├── application.properties                      <span class="hljs-comment"># 配置文件</span>
+│   │       ├── mappers<span class="hljs-symbol">/</span>                                    <span class="hljs-comment"># MyBatis 映射文件</span>
+│   │       │   └── DocMapper.xml                           <span class="hljs-comment"># 文档 Mapper XML</span>
+│   │       └── static<span class="hljs-symbol">/</span>                                     <span class="hljs-comment"># 静态资源</span>
+│   └── test<span class="hljs-symbol">/</span>
+│       └── java<span class="hljs-symbol">/</span>
+│           └── blog<span class="hljs-operator">/</span>tilex<span class="hljs-operator">/</span>backend<span class="hljs-operator">/</span>tilex_blog_backend<span class="hljs-symbol">/</span>
+│               ├── TilexBlogBackendApplicationTests.java   <span class="hljs-comment"># 启动测试类</span>
+│               └── dao<span class="hljs-symbol">/</span>
+│                   └── DocDaoTest.java                     <span class="hljs-comment"># Dao 层测试</span>
+├── pom.xml                                                 <span class="hljs-comment"># Maven 依赖配置</span>
+└── README.md                                               <span class="hljs-comment"># 项目说明文档</span>
+</code></pre>
+      </div>
+    
+<p><strong>层次结构说明</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity</strong></td>
+<td>实体类，对应数据库表</td>
+<td><code>Doc.java</code></td>
+</tr>
+<tr>
+<td><strong>Dao</strong></td>
+<td>数据访问层，定义数据库操作接口</td>
+<td><code>DocDao.java</code> + <code>DocMapper.xml</code></td>
+</tr>
+<tr>
+<td><strong>Service</strong></td>
+<td>业务逻辑层，处理业务规则</td>
+<td><code>DocService.java</code></td>
+</tr>
+<tr>
+<td><strong>Controller</strong></td>
+<td>控制器层，处理 HTTP 请求</td>
+<td><code>DocController.java</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="十-常见问题与解决方案"><a href="#十-常见问题与解决方案" class="anchor-link">#</a> 十、常见问题与解决方案</h2>
+<h3 id="10-1-包路径不存在错误"><a href="#10-1-包路径不存在错误" class="anchor-link">#</a> 10.1 包路径不存在错误</h3>
+<p><strong>错误信息</strong>：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Ejava%3A%20%3C%2Fspan%3E%E7%A8%8B%E5%BA%8F%E5%8C%85%20%3Cspan%20class%3D%22hljs-keyword%22%3Eblog.tilex.entity%20%3C%2Fspan%3E%E4%B8%8D%E5%AD%98%E5%9C%A8%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-keyword">java: </span>程序包 <span class="hljs-keyword">blog.tilex.entity </span>不存在
+</code></pre>
+      </div>
+    
+<p><strong>原因分析</strong>：</p>
+<ul>
+<li>实体类的包路径与配置不一致</li>
+<li>Dao 接口中引用了错误的包路径</li>
+<li><code>application.properties</code> 中的类型别名包配置错误</li>
+</ul>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>检查实体类的 <code>package</code> 声明是否正确</li>
+<li>统一所有包路径命名（建议使用小写，如 <code>dao</code> 而非 <code>Dao</code>）</li>
+<li>确保 <code>mybatis.type-aliases-package</code> 配置正确</li>
+<li>在 Dao 接口中使用完整的类路径或正确导入</li>
+</ol>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%AD%A3%E7%A1%AE%E7%A4%BA%E4%BE%8B%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epackage%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.dao%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.entity.Doc%3B%0A%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40Mapper%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDocDao%3C%2Fspan%3E%20%7B%0A%20%20%20%20Doc%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetDocById%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Long%20docId)%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-comment">// 正确示例</span>
+<span class="hljs-keyword">package</span> blog.tilex.backend.tilex_blog_backend.dao;
+<span class="hljs-keyword">import</span> blog.tilex.backend.tilex_blog_backend.entity.Doc;
+
+<span class="hljs-meta">@Mapper</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">DocDao</span> {
+    Doc <span class="hljs-title function_">getDocById</span><span class="hljs-params">(Long docId)</span>;
+}
+</code></pre>
+      </div>
+    
+<h3 id="10-2-mapper-xml-找不到"><a href="#10-2-mapper-xml-找不到" class="anchor-link">#</a> 10.2 Mapper XML 找不到</h3>
+<p><strong>错误信息</strong>：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Invalid%20bound%20statement%20(not%20found)%3A%20blog%3Cspan%20class%3D%22hljs-selector-class%22%3E.tilex%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-class%22%3E.backend%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-class%22%3E.tilex_blog_backend%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-class%22%3E.dao%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-class%22%3E.DocDao%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-class%22%3E.getDocById%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>Invalid bound statement (not found): blog<span class="hljs-selector-class">.tilex</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.tilex_blog_backend</span><span class="hljs-selector-class">.dao</span><span class="hljs-selector-class">.DocDao</span><span class="hljs-selector-class">.getDocById</span>
+</code></pre>
+      </div>
+    
+<p><strong>原因分析</strong>：</p>
+<ul>
+<li>Mapper XML 文件位置不正确</li>
+<li><code>namespace</code> 与 Dao 接口全限定名不匹配</li>
+<li>XML 中的 <code>id</code> 与接口方法名不匹配</li>
+<li>Maven 打包时未包含 XML 文件</li>
+</ul>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>确认 XML 文件位置：<code>src/main/resources/mappers/DocMapper.xml</code></li>
+<li>检查 <code>namespace</code> 是否正确：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="xml">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">xml</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E5%BF%85%E9%A1%BB%E4%B8%8E%20Dao%20%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%85%E5%90%8D%20%2B%20%E7%B1%BB%E5%90%8D%E5%AE%8C%E5%85%A8%E4%B8%80%E8%87%B4%20--%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Emapper%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Enamespace%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bblog.tilex.backend.tilex_blog_backend.dao.DocDao%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-xml"><span class="hljs-comment">&lt;!-- 必须与 Dao 接口的包名 + 类名完全一致 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mapper</span> <span class="hljs-attr">namespace</span>=<span class="hljs-string">"blog.tilex.backend.tilex_blog_backend.dao.DocDao"</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<ol>
+<li>检查方法 <code>id</code> 是否匹配：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="xml">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">xml</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20id%20%E5%BF%85%E9%A1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%96%B9%E6%B3%95%E5%90%8D%E4%B8%80%E8%87%B4%20--%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eselect%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BgetDocById%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EresultType%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDoc%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EparameterType%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blong%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20SELECT%20*%20FROM%20doc%20WHERE%20doc_id%20%3D%20%23%7BdocId%7D%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eselect%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-xml"><span class="hljs-comment">&lt;!-- id 必须与接口方法名一致 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"getDocById"</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">"Doc"</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">"long"</span>&gt;</span>
+    SELECT * FROM doc WHERE doc_id = #{docId}
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<ol>
+<li>在 <code>pom.xml</code> 中添加资源过滤配置（如果 XML 在 Java 目录下）：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="xml">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">xml</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebuild%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eresources%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eresource%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Edirectory%3C%2Fspan%3E%3E%3C%2Fspan%3Esrc%2Fmain%2Fresources%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Edirectory%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eincludes%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Einclude%3C%2Fspan%3E%3E%3C%2Fspan%3E**%2F*.xml%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Einclude%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Einclude%3C%2Fspan%3E%3E%3C%2Fspan%3E**%2F*.properties%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Einclude%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eincludes%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eresource%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eresources%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ebuild%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">resources</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">resource</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">directory</span>&gt;</span>src/main/resources<span class="hljs-tag">&lt;/<span class="hljs-name">directory</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">includes</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>**/*.xml<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>**/*.properties<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">includes</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">resource</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">resources</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<h3 id="10-3-数据库连接失败"><a href="#10-3-数据库连接失败" class="anchor-link">#</a> 10.3 数据库连接失败</h3>
+<p><strong>错误信息</strong>：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Communications%20link%20failure%0AThe%20%3Cspan%20class%3D%22hljs-keyword%22%3Elast%3C%2Fspan%3E%20packet%20sent%20successfully%20%3Cspan%20class%3D%22hljs-built_in%22%3Eto%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Ethe%3C%2Fspan%3E%20server%20was%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3Emilliseconds%3C%2Fspan%3E%20ago%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>Communications link failure
+The <span class="hljs-keyword">last</span> packet sent successfully <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> server was <span class="hljs-number">0</span> <span class="hljs-built_in">milliseconds</span> ago
+</code></pre>
+      </div>
+    
+<p><strong>原因分析</strong>：</p>
+<ul>
+<li>MySQL 服务未启动</li>
+<li>数据库地址、端口、用户名或密码错误</li>
+<li>数据库不存在</li>
+<li>时区配置问题</li>
+</ul>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>确认 MySQL 服务正在运行：
+<ul>
+<li>Windows：任务管理器 → 服务 → MySQL</li>
+<li>Mac/Linux：<code>sudo systemctl status mysql</code></li>
+</ul>
+</li>
+<li>检查连接配置：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="properties">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">properties</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E7%A1%AE%E8%AE%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%E7%A7%B0%E6%AD%A3%E7%A1%AE%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Espring.datasource.url%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Ejdbc%3Amysql%3A%2F%2Flocalhost%3A3306%2Ftilex_blog%3FuseUnicode%3Dtrue%26characterEncoding%3Dutf8%26useSSL%3Dfalse%26serverTimezone%3DAsia%2FShanghai%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%0A%23%20%E7%A1%AE%E8%AE%A4%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E6%AD%A3%E7%A1%AE%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Espring.datasource.username%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eroot%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Espring.datasource.password%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%E4%BD%A0%E7%9A%84%E5%AE%9E%E9%99%85%E5%AF%86%E7%A0%81%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-properties"><span class="hljs-comment"># 确认数据库名称正确</span>
+<span class="hljs-attr">spring.datasource.url</span>=<span class="hljs-string">jdbc:mysql://localhost:3306/tilex_blog?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai</span>
+<span class="hljs-comment">
+# 确认用户名密码正确</span>
+<span class="hljs-attr">spring.datasource.username</span>=<span class="hljs-string">root</span>
+<span class="hljs-attr">spring.datasource.password</span>=<span class="hljs-string">你的实际密码</span>
+</code></pre>
+      </div>
+    
+<ol>
+<li>在 Navicat 中测试连接是否成功</li>
+<li>确认数据库已创建：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3ESHOW%3C%2Fspan%3E%20DATABASES%20%3Cspan%20class%3D%22hljs-keyword%22%3ELIKE%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Btilex_blog%26%23x27%3B%3C%2Fspan%3E%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">SHOW</span> DATABASES <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'tilex_blog'</span>;
+</code></pre>
+      </div>
+    
+<h3 id="10-4-驼峰命名映射不生效"><a href="#10-4-驼峰命名映射不生效" class="anchor-link">#</a> 10.4 驼峰命名映射不生效</h3>
+<p><strong>问题描述</strong>： 数据库字段 <code>doc_id</code> 无法映射到 Java 属性 <code>docId</code>，查询结果中该字段为 <code>null</code>。</p>
+<p><strong>原因分析</strong>：</p>
+<ul>
+<li>未开启驼峰命名映射配置</li>
+<li>字段名与属性名完全不匹配</li>
+</ul>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>确认已开启驼峰映射：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="properties">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">properties</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.configuration.map-underscore-to-camel-case%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Etrue%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-properties"><span class="hljs-attr">mybatis.configuration.map-underscore-to-camel-case</span>=<span class="hljs-string">true</span>
+</code></pre>
+      </div>
+    
+<ol>
+<li>或使用 <code>resultMap</code> 手动映射：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="xml">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">xml</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EresultMap%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDocResultMap%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Etype%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDoc%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eproperty%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BdocId%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ecolumn%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bdoc_id%26quot%3B%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eresult%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eproperty%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Btitle%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ecolumn%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Btitle%26quot%3B%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eresult%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eproperty%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BcreatedAt%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ecolumn%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bcreated_at%26quot%3B%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EresultMap%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eselect%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BgetDocById%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EresultMap%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BDocResultMap%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3EparameterType%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blong%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20SELECT%20*%20FROM%20doc%20WHERE%20doc_id%20%3D%20%23%7BdocId%7D%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eselect%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">resultMap</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"DocResultMap"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"Doc"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">id</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"docId"</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"doc_id"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"title"</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"title"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"createdAt"</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"created_at"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">resultMap</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"getDocById"</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">"DocResultMap"</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">"long"</span>&gt;</span>
+    SELECT * FROM doc WHERE doc_id = #{docId}
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<h3 id="10-5-sql-日志不显示"><a href="#10-5-sql-日志不显示" class="anchor-link">#</a> 10.5 SQL 日志不显示</h3>
+<p><strong>问题描述</strong>： 控制台看不到执行的 SQL 语句，不便于调试。</p>
+<p><strong>解决方案</strong>：</p>
+<p>在 <code>application.properties</code> 中添加日志配置：</p>
+
+      <div class="md-editor-code" data-language="properties">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">properties</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E4%BD%BF%E7%94%A8%20MyBatis%20%E8%87%AA%E5%B8%A6%E7%9A%84%E6%97%A5%E5%BF%97%E5%AE%9E%E7%8E%B0%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.configuration.log-impl%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eorg.apache.ibatis.logging.stdout.StdOutImpl%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%0A%23%20%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8%20SLF4J%20%2B%20Logback%EF%BC%88%E6%9B%B4%E7%81%B5%E6%B4%BB%EF%BC%89%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Elogging.level.blog.tilex.backend.tilex_blog_backend.dao%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3EDEBUG%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-properties"><span class="hljs-comment"># 方式一：使用 MyBatis 自带的日志实现</span>
+<span class="hljs-attr">mybatis.configuration.log-impl</span>=<span class="hljs-string">org.apache.ibatis.logging.stdout.StdOutImpl</span>
+<span class="hljs-comment">
+# 方式二：使用 SLF4J + Logback（更灵活）</span>
+<span class="hljs-attr">logging.level.blog.tilex.backend.tilex_blog_backend.dao</span>=<span class="hljs-string">DEBUG</span>
+</code></pre>
+      </div>
+    
+<h3 id="10-6-mapper-接口注入失败"><a href="#10-6-mapper-接口注入失败" class="anchor-link">#</a> 10.6 Mapper 接口注入失败</h3>
+<p><strong>错误信息</strong>：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-title%22%3EField%3C%2Fspan%3E%3C%2Fspan%3E%20docDao%20in%20...%20required%20a%20bean%20of%20type%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B...%26%23x27%3B%3C%2Fspan%3E%20that%20could%20%3Cspan%20class%3D%22hljs-keyword%22%3Enot%3C%2Fspan%3E%20be%20found.%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-function"><span class="hljs-title">Field</span></span> docDao in ... required a bean of type <span class="hljs-string">'...'</span> that could <span class="hljs-keyword">not</span> be found.
+</code></pre>
+      </div>
+    
+<p><strong>原因分析</strong>：</p>
+<ul>
+<li>未添加 <code>@Mapper</code> 注解</li>
+<li>未配置 <code>@MapperScan</code></li>
+<li>包路径配置错误</li>
+</ul>
+<p><strong>解决方案</strong>：</p>
+<p><strong>方式一</strong>：在每个 Dao 接口上添加 <code>@Mapper</code>：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-meta%22%3E%40Mapper%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDocDao%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20...%3C%2Fspan%3E%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Mapper</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">DocDao</span> {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+      </div>
+    
+<p><strong>方式二</strong>：在启动类添加 <code>@MapperScan</code>（推荐）：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-meta%22%3E%40SpringBootApplication%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40MapperScan(%26quot%3Bblog.tilex.backend.tilex_blog_backend.dao%26quot%3B)%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eclass%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3ETilexBlogBackendApplication%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20...%3C%2Fspan%3E%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@MapperScan("blog.tilex.backend.tilex_blog_backend.dao")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TilexBlogBackendApplication</span> {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+      </div>
+    
+<h3 id="10-7-参数传递错误"><a href="#10-7-参数传递错误" class="anchor-link">#</a> 10.7 参数传递错误</h3>
+<p><strong>错误信息</strong>：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="BindingException%3A%20%3Cspan%20class%3D%22hljs-keyword%22%3EParameter%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BdocId%26%23x27%3B%3C%2Fspan%3E%20not%20%3Cspan%20class%3D%22hljs-comment%22%3Efound%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>BindingException: <span class="hljs-keyword">Parameter</span> <span class="hljs-string">'docId'</span> not <span class="hljs-comment">found</span>
+</code></pre>
+      </div>
+    
+<p><strong>原因分析</strong>：</p>
+<ul>
+<li>接口方法参数未使用 <code>@Param</code> 注解</li>
+<li>XML 中的参数名与接口不匹配</li>
+</ul>
+<p><strong>解决方案</strong>：</p>
+<p><strong>方式一</strong>：使用 <code>@Param</code> 注解（推荐多参数情况）：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="Doc%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetDocByTitleAndAuthor%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(%3Cspan%20class%3D%22hljs-meta%22%3E%40Param(%26quot%3Btitle%26quot%3B)%3C%2Fspan%3E%20String%20title%2C%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Param(%26quot%3Bauthor%26quot%3B)%3C%2Fspan%3E%20String%20author)%3C%2Fspan%3E%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java">Doc <span class="hljs-title function_">getDocByTitleAndAuthor</span><span class="hljs-params">(<span class="hljs-meta">@Param("title")</span> String title, <span class="hljs-meta">@Param("author")</span> String author)</span>;
+</code></pre>
+      </div>
+    
+<p><strong>方式二</strong>：单个参数可以直接使用：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="Doc%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetDocById%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Long%20docId)%3C%2Fspan%3E%3B%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%9B%B4%E6%8E%A5%E5%9C%A8%20XML%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20%23%7BdocId%7D%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java">Doc <span class="hljs-title function_">getDocById</span><span class="hljs-params">(Long docId)</span>;  <span class="hljs-comment">// 直接在 XML 中使用 #{docId}</span>
+</code></pre>
+      </div>
+    
+<p><strong>方式三</strong>：传递对象：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-type%22%3Eint%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertDoc%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Doc%20doc)%3C%2Fspan%3E%3B%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20XML%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20%23%7Btitle%7D%2C%20%23%7Bcontent%7D%20%E7%AD%89%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-type">int</span> <span class="hljs-title function_">insertDoc</span><span class="hljs-params">(Doc doc)</span>;  <span class="hljs-comment">// XML 中使用 #{title}, #{content} 等</span>
+</code></pre>
+      </div>
+    
+<h3 id="10-8-mapper-xml-配置路径问题"><a href="#10-8-mapper-xml-配置路径问题" class="anchor-link">#</a> 10.8 Mapper XML 配置路径问题</h3>
+<p><strong>问题描述</strong>： 不同项目结构可能需要不同的 Mapper 路径配置。</p>
+<p><strong>常见配置方式</strong>：</p>
+
+      <div class="md-editor-code" data-language="properties">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">properties</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E5%8D%95%E5%B1%82%E7%9B%AE%E5%BD%95%EF%BC%9Amappers%2F*.xml%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.mapper-locations%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eclasspath%3Amappers%2F*.xml%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%0A%23%20%E5%A4%9A%E5%B1%82%E7%9B%AE%E5%BD%95%EF%BC%9Amappers%2F*%2F*.xml%EF%BC%88%E9%80%82%E5%90%88%E6%8C%89%E6%A8%A1%E5%9D%97%E5%88%86%E7%B1%BB%EF%BC%89%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.mapper-locations%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eclasspath%3Amappers%2F**%2F*.xml%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%0A%23%20%E5%A4%9A%E4%B8%AA%E8%B7%AF%E5%BE%84%EF%BC%88%E7%94%A8%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%EF%BC%89%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.mapper-locations%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eclasspath%3Amappers%2F*.xml%2Cclasspath%3Amappers%2Fuser%2F*.xml%2Cclasspath%3Amappers%2Fadmin%2F*.xml%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-properties"><span class="hljs-comment"># 单层目录：mappers/*.xml</span>
+<span class="hljs-attr">mybatis.mapper-locations</span>=<span class="hljs-string">classpath:mappers/*.xml</span>
+<span class="hljs-comment">
+# 多层目录：mappers/*/*.xml（适合按模块分类）</span>
+<span class="hljs-attr">mybatis.mapper-locations</span>=<span class="hljs-string">classpath:mappers/**/*.xml</span>
+<span class="hljs-comment">
+# 多个路径（用逗号分隔）</span>
+<span class="hljs-attr">mybatis.mapper-locations</span>=<span class="hljs-string">classpath:mappers/*.xml,classpath:mappers/user/*.xml,classpath:mappers/admin/*.xml</span>
+</code></pre>
+      </div>
+    
+<p><strong>目录结构示例</strong>：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="resources%2F%0A%E2%94%94%E2%94%80%E2%94%80%20mappers%2F%0A%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20user%2F%0A%20%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20UserMapper.%3Cspan%20class%3D%22hljs-keyword%22%3Exml%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%22%3E%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20UserRoleMapper%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-keyword%22%3Exml%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%22%3E%E2%94%94%E2%94%80%E2%94%80%20admin%3C%2Fspan%3E%2F%0A%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20AdminMapper.%3Cspan%20class%3D%22hljs-keyword%22%3Exml%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-title%22%3E%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code>resources/
+└── mappers/
+    ├── user/
+    │   ├── UserMapper.<span class="hljs-keyword">xml</span>
+    <span class="hljs-title">│   └── UserRoleMapper</span>.<span class="hljs-keyword">xml</span>
+    <span class="hljs-title">└── admin</span>/
+        └── AdminMapper.<span class="hljs-keyword">xml</span>
+<span class="hljs-title"></span></code></pre>
+      </div>
+    
+<h3 id="10-9-事务管理问题"><a href="#10-9-事务管理问题" class="anchor-link">#</a> 10.9 事务管理问题</h3>
+<p><strong>问题描述</strong>： 数据插入或更新后未生效，或部分操作需要回滚。</p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>Spring Boot 已自动配置事务管理，在 Service 层添加 <code>@Transactional</code>：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Epackage%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.service.impl%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.dao.DocDao%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.entity.Doc%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20blog.tilex.backend.tilex_blog_backend.service.DocService%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20org.springframework.beans.factory.annotation.Autowired%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20org.springframework.stereotype.Service%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20org.springframework.transaction.annotation.Transactional%3B%0A%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40Service%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eclass%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDocServiceImpl%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eimplements%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDocService%3C%2Fspan%3E%20%7B%0A%20%20%20%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Autowired%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20DocDao%20docDao%3B%0A%20%20%20%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Override%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Transactional%3C%2Fspan%3E%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%B7%BB%E5%8A%A0%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Evoid%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EbatchInsertDocs%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(List%3CDoc%3E%20docs)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Efor%3C%2Fspan%3E%20(Doc%20doc%20%3A%20docs)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20docDao.insertDoc(doc)%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%A6%82%E6%9E%9C%E4%B8%AD%E9%97%B4%E5%87%BA%E7%8E%B0%E5%BC%82%E5%B8%B8%EF%BC%8C%E6%89%80%E6%9C%89%E6%8F%92%E5%85%A5%E6%93%8D%E4%BD%9C%E9%83%BD%E4%BC%9A%E5%9B%9E%E6%BB%9A%3C%2Fspan%3E%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">package</span> blog.tilex.backend.tilex_blog_backend.service.impl;
+
+<span class="hljs-keyword">import</span> blog.tilex.backend.tilex_blog_backend.dao.DocDao;
+<span class="hljs-keyword">import</span> blog.tilex.backend.tilex_blog_backend.entity.Doc;
+<span class="hljs-keyword">import</span> blog.tilex.backend.tilex_blog_backend.service.DocService;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+<span class="hljs-keyword">import</span> org.springframework.transaction.annotation.Transactional;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DocServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">DocService</span> {
+    
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> DocDao docDao;
+    
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-meta">@Transactional</span>  <span class="hljs-comment">// 添加事务管理</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">batchInsertDocs</span><span class="hljs-params">(List&lt;Doc&gt; docs)</span> {
+        <span class="hljs-keyword">for</span> (Doc doc : docs) {
+            docDao.insertDoc(doc);
+        }
+        <span class="hljs-comment">// 如果中间出现异常，所有插入操作都会回滚</span>
+    }
+}
+</code></pre>
+      </div>
+    
+<ol>
+<li>确保数据库引擎支持事务（InnoDB）：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E--%20%E6%9F%A5%E7%9C%8B%E8%A1%A8%E5%BC%95%E6%93%8E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3ESHOW%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3ETABLE%3C%2Fspan%3E%20STATUS%20%3Cspan%20class%3D%22hljs-keyword%22%3EWHERE%3C%2Fspan%3E%20Name%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bdoc%26%23x27%3B%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E--%20%E5%A6%82%E6%9E%9C%E6%98%AF%20MyISAM%EF%BC%8C%E9%9C%80%E8%A6%81%E8%BD%AC%E6%8D%A2%E4%B8%BA%20InnoDB%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3EALTER%20TABLE%3C%2Fspan%3E%20doc%20ENGINE%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3EInnoDB%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-comment">-- 查看表引擎</span>
+<span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">TABLE</span> STATUS <span class="hljs-keyword">WHERE</span> Name <span class="hljs-operator">=</span> <span class="hljs-string">'doc'</span>;
+
+<span class="hljs-comment">-- 如果是 MyISAM，需要转换为 InnoDB</span>
+<span class="hljs-keyword">ALTER TABLE</span> doc ENGINE<span class="hljs-operator">=</span>InnoDB;
+</code></pre>
+      </div>
+    
+<h3 id="10-10-中文乱码问题"><a href="#10-10-中文乱码问题" class="anchor-link">#</a> 10.10 中文乱码问题</h3>
+<p><strong>问题描述</strong>： 插入或查询中文数据时出现乱码（<code>???</code> 或其他字符）。</p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>确保数据库、表、字段都使用 <code>utf8mb4</code>：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E--%20%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%97%E7%AC%A6%E9%9B%86%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3ESHOW%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3ECREATE%3C%2Fspan%3E%20DATABASE%20tilex_blog%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E--%20%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%97%E7%AC%A6%E9%9B%86%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3EALTER%3C%2Fspan%3E%20DATABASE%20tilex_blog%20%3Cspan%20class%3D%22hljs-keyword%22%3ECHARACTER%20SET%3C%2Fspan%3E%20utf8mb4%20%3Cspan%20class%3D%22hljs-keyword%22%3ECOLLATE%3C%2Fspan%3E%20utf8mb4_general_ci%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E--%20%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%AD%97%E7%AC%A6%E9%9B%86%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3EALTER%20TABLE%3C%2Fspan%3E%20doc%20%3Cspan%20class%3D%22hljs-keyword%22%3ECONVERT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3ETO%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3ECHARACTER%20SET%3C%2Fspan%3E%20utf8mb4%20%3Cspan%20class%3D%22hljs-keyword%22%3ECOLLATE%3C%2Fspan%3E%20utf8mb4_general_ci%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-comment">-- 查看数据库字符集</span>
+<span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">CREATE</span> DATABASE tilex_blog;
+
+<span class="hljs-comment">-- 修改数据库字符集</span>
+<span class="hljs-keyword">ALTER</span> DATABASE tilex_blog <span class="hljs-keyword">CHARACTER SET</span> utf8mb4 <span class="hljs-keyword">COLLATE</span> utf8mb4_general_ci;
+
+<span class="hljs-comment">-- 修改表字符集</span>
+<span class="hljs-keyword">ALTER TABLE</span> doc <span class="hljs-keyword">CONVERT</span> <span class="hljs-keyword">TO</span> <span class="hljs-keyword">CHARACTER SET</span> utf8mb4 <span class="hljs-keyword">COLLATE</span> utf8mb4_general_ci;
+</code></pre>
+      </div>
+    
+<ol>
+<li>确保连接 URL 包含编码参数：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="properties">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">properties</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3Espring.datasource.url%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Ejdbc%3Amysql%3A%2F%2Flocalhost%3A3306%2Ftilex_blog%3FuseUnicode%3Dtrue%26characterEncoding%3Dutf8%26useSSL%3Dfalse%26serverTimezone%3DAsia%2FShanghai%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-properties"><span class="hljs-attr">spring.datasource.url</span>=<span class="hljs-string">jdbc:mysql://localhost:3306/tilex_blog?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai</span>
+</code></pre>
+      </div>
+    
+<ol>
+<li>确保 IDEA 和项目文件编码为 UTF-8：
+<ul>
+<li>File → Settings → Editor → File Encodings</li>
+<li>将所有编码设置为 <code>UTF-8</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="十一-扩展建议"><a href="#十一-扩展建议" class="anchor-link">#</a> 十一、扩展建议</h2>
+<h3 id="11-1-分层架构最佳实践"><a href="#11-1-分层架构最佳实践" class="anchor-link">#</a> 11.1 分层架构最佳实践</h3>
+<p>在实际项目中，建议采用完整的分层架构：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-title%22%3Econtroller%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-params%22%3E(%E6%8E%A7%E5%88%B6%E5%B1%82)%3C%2Fspan%3E%20%0A%20%20%20%20%E2%86%93%0A%3Cspan%20class%3D%22hljs-title%22%3Eservice%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-params%22%3E(%E4%B8%9A%E5%8A%A1%E5%B1%82)%3C%2Fspan%3E%20%0A%20%20%20%20%E2%86%93%0A%3Cspan%20class%3D%22hljs-title%22%3Edao%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-params%22%3E(%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%B1%82)%3C%2Fspan%3E%20%0A%20%20%20%20%E2%86%93%0A%3Cspan%20class%3D%22hljs-title%22%3Edatabase%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-params%22%3E(%E6%95%B0%E6%8D%AE%E5%BA%93)%3C%2Fspan%3E%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-function"><span class="hljs-title">controller</span> <span class="hljs-params">(控制层)</span> 
+    ↓
+<span class="hljs-title">service</span> <span class="hljs-params">(业务层)</span> 
+    ↓
+<span class="hljs-title">dao</span> <span class="hljs-params">(数据访问层)</span> 
+    ↓
+<span class="hljs-title">database</span> <span class="hljs-params">(数据库)</span>
+</span></code></pre>
+      </div>
+    
+<p><strong>示例代码结构</strong>：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20Controller%20%E5%B1%82%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40RestController%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40RequestMapping(%26quot%3B%2Fapi%2Fdoc%26quot%3B)%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eclass%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDocController%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Autowired%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20DocService%20docService%3B%0A%20%20%20%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40GetMapping(%26quot%3B%2F%7Bid%7D%26quot%3B)%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20Doc%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetDoc%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(%3Cspan%20class%3D%22hljs-meta%22%3E%40PathVariable%3C%2Fspan%3E%20Long%20id)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20docService.getDocById(id)%3B%0A%20%20%20%20%7D%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20Service%20%E5%B1%82%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40Service%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eclass%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDocServiceImpl%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eimplements%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDocService%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Autowired%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20DocDao%20docDao%3B%0A%20%20%20%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%40Override%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20Doc%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetDocById%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Long%20id)%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%8F%AF%E4%BB%A5%E5%9C%A8%E8%BF%99%E9%87%8C%E6%B7%BB%E5%8A%A0%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20docDao.getDocById(id)%3B%0A%20%20%20%20%7D%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20Dao%20%E5%B1%82%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-meta%22%3E%40Mapper%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDocDao%3C%2Fspan%3E%20%7B%0A%20%20%20%20Doc%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetDocById%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-params%22%3E(Long%20id)%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-comment">// Controller 层</span>
+<span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RequestMapping("/api/doc")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DocController</span> {
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> DocService docService;
+    
+    <span class="hljs-meta">@GetMapping("/{id}")</span>
+    <span class="hljs-keyword">public</span> Doc <span class="hljs-title function_">getDoc</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long id)</span> {
+        <span class="hljs-keyword">return</span> docService.getDocById(id);
+    }
+}
+
+<span class="hljs-comment">// Service 层</span>
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DocServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">DocService</span> {
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> DocDao docDao;
+    
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> Doc <span class="hljs-title function_">getDocById</span><span class="hljs-params">(Long id)</span> {
+        <span class="hljs-comment">// 可以在这里添加业务逻辑</span>
+        <span class="hljs-keyword">return</span> docDao.getDocById(id);
+    }
+}
+
+<span class="hljs-comment">// Dao 层</span>
+<span class="hljs-meta">@Mapper</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">DocDao</span> {
+    Doc <span class="hljs-title function_">getDocById</span><span class="hljs-params">(Long id)</span>;
+}
+</code></pre>
+      </div>
+    
+<h3 id="11-2-按用户角色组织代码"><a href="#11-2-按用户角色组织代码" class="anchor-link">#</a> 11.2 按用户角色组织代码</h3>
+<p>对于多角色系统（如用户端和管理端），可以这样组织：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="src%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Emain%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Ejava%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Eblog%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Etilex%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Ebackend%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Etilex_blog_backend%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20user%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E7%94%A8%E6%88%B7%E7%AB%AF%E6%A8%A1%E5%9D%97%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20entity%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20dao%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20service%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20controller%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%94%E2%94%80%E2%94%80%20admin%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E7%AE%A1%E7%90%86%E7%AB%AF%E6%A8%A1%E5%9D%97%3C%2Fspan%3E%0A%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20entity%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20dao%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20service%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20controller%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%0Asrc%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Emain%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Eresources%3Cspan%20class%3D%22hljs-operator%22%3E%2F%3C%2Fspan%3Emappers%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20user%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E7%94%A8%E6%88%B7%E7%AB%AF%20Mapper%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20UserMapper.xml%0A%E2%94%94%E2%94%80%E2%94%80%20admin%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E7%AE%A1%E7%90%86%E7%AB%AF%20Mapper%3C%2Fspan%3E%0A%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20AdminMapper.xml%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>src<span class="hljs-operator">/</span>main<span class="hljs-operator">/</span>java<span class="hljs-operator">/</span>blog<span class="hljs-operator">/</span>tilex<span class="hljs-operator">/</span>backend<span class="hljs-operator">/</span>tilex_blog_backend<span class="hljs-symbol">/</span>
+├── user<span class="hljs-symbol">/</span>              <span class="hljs-comment"># 用户端模块</span>
+│   ├── entity<span class="hljs-symbol">/</span>
+│   ├── dao<span class="hljs-symbol">/</span>
+│   ├── service<span class="hljs-symbol">/</span>
+│   └── controller<span class="hljs-symbol">/</span>
+└── admin<span class="hljs-symbol">/</span>             <span class="hljs-comment"># 管理端模块</span>
+    ├── entity<span class="hljs-symbol">/</span>
+    ├── dao<span class="hljs-symbol">/</span>
+    ├── service<span class="hljs-symbol">/</span>
+    └── controller<span class="hljs-symbol">/</span>
+
+src<span class="hljs-operator">/</span>main<span class="hljs-operator">/</span>resources<span class="hljs-operator">/</span>mappers<span class="hljs-symbol">/</span>
+├── user<span class="hljs-symbol">/</span>              <span class="hljs-comment"># 用户端 Mapper</span>
+│   └── UserMapper.xml
+└── admin<span class="hljs-symbol">/</span>             <span class="hljs-comment"># 管理端 Mapper</span>
+    └── AdminMapper.xml
+</code></pre>
+      </div>
+    
+<p>相应的配置：</p>
+
+      <div class="md-editor-code" data-language="properties">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">properties</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.mapper-locations%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eclasspath%3Amappers%2F**%2F*.xml%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Emybatis.type-aliases-package%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3Eblog.tilex.backend.tilex_blog_backend.*.entity%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-properties"><span class="hljs-attr">mybatis.mapper-locations</span>=<span class="hljs-string">classpath:mappers/**/*.xml</span>
+<span class="hljs-attr">mybatis.type-aliases-package</span>=<span class="hljs-string">blog.tilex.backend.tilex_blog_backend.*.entity</span>
+</code></pre>
+      </div>
+    
+<h3 id="11-3-使用-mybatis-plus-可选"><a href="#11-3-使用-mybatis-plus-可选" class="anchor-link">#</a> 11.3 使用 MyBatis-Plus（可选）</h3>
+<p>如果希望减少 XML 配置，可以考虑使用 <strong>MyBatis-Plus</strong>：</p>
+
+      <div class="md-editor-code" data-language="xml">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">xml</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E6%9B%BF%E6%8D%A2%20MyBatis%20Starter%20%E4%B8%BA%20MyBatis-Plus%20Starter%20--%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3Ecom.baomidou%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EgroupId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3Emybatis-plus-boot-starter%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3EartifactId%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eversion%3C%2Fspan%3E%3E%3C%2Fspan%3E3.5.5%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eversion%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Edependency%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-xml"><span class="hljs-comment">&lt;!-- 替换 MyBatis Starter 为 MyBatis-Plus Starter --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.baomidou<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.5.5<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<p>优势：</p>
+<ul>
+<li>内置 CRUD 方法，无需编写 XML</li>
+<li>支持分页插件</li>
+<li>支持代码生成器</li>
+</ul>
+<hr>
+<h2 id="十二-总结"><a href="#十二-总结" class="anchor-link">#</a> 十二、总结</h2>
+<p>通过本教程，你已经掌握了：</p>
+<ol>
+<li>✅ 使用 Spring Initializr 创建 Spring Boot 项目</li>
+<li>✅ 整合 MyBatis 并配置数据源</li>
+<li>✅ 创建数据库表和测试数据</li>
+<li>✅ 编写实体类、Dao 接口和 Mapper XML</li>
+<li>✅ 配置 Mapper 扫描和类型别名</li>
+<li>✅ 编写测试类验证功能</li>
+<li>✅ 解决常见问题和错误</li>
+</ol>
+<p><strong>核心要点回顾</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>作用</th>
+<th>关键配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>实体类</strong></td>
+<td>对应数据库表结构</td>
+<td>字段名使用驼峰命名</td>
+</tr>
+<tr>
+<td><strong>Dao 接口</strong></td>
+<td>定义数据访问方法</td>
+<td><code>@Mapper</code> 或 <code>@MapperScan</code></td>
+</tr>
+<tr>
+<td><strong>Mapper XML</strong></td>
+<td>编写 SQL 语句</td>
+<td><code>namespace</code> 必须匹配接口</td>
+</tr>
+<tr>
+<td><strong>配置文件</strong></td>
+<td>连接数据库和配置 MyBatis</td>
+<td>数据源、Mapper 位置、类型别名</td>
+</tr>
+</tbody>
+</table>
+<p><strong>下一步学习建议</strong>：</p>
+<ul>
+<li>🔹 学习 MyBatis 动态 SQL（<code>&lt;if&gt;</code>, <code>&lt;foreach&gt;</code> 等）</li>
+<li>🔹 掌握 MyBatis 分页插件（PageHelper）</li>
+<li>🔹 了解 MyBatis 缓存机制</li>
+<li>🔹 学习 Service 层和 Controller 层的编写</li>
+<li>🔹 集成 Swagger 进行 API 文档管理</li>
+<li>🔹 学习 Spring Security 实现权限控制</li>
+</ul>
+<p><strong>参考资源</strong>：</p>
+<ul>
+<li><a href="https://mybatis.org/mybatis-3/zh/index.html">MyBatis 官方文档</a></li>
+<li><a href="https://spring.io/projects/spring-boot">Spring Boot 官方文档</a></li>
+<li><a href="https://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/">MyBatis-Spring-Boot-Starter 文档</a></li>
+</ul>
+<p>祝你开发顺利！🎉</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/20</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/03/20</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

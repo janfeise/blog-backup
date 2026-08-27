@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">后端CORS预检梳理</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 6 分钟 · 字数 1126</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h2 id="cors"><a href="#cors" class="anchor-link">#</a> CORS</h2>
+<p>CORS：跨源资源共享，英文全称为 Cross-Origin Resource Sharing</p>
+<p>在日常开发时，后端往往需要允许跨域或添加来源白名单；而项目部署后一般不需要额外配置 CORS，为什么？在此做一个简单梳理</p>
+<p><img src="https://oss.tilex.world/d/blog-images/2026/08/26/image-20260826121230267.png?sign=GresqIGsGe5o8uTpMys4JRArTbNxvj8kJaMvv3sak-U=:0" alt="image-20260826121230267"></p>
+<h2 id="同源判断"><a href="#同源判断" class="anchor-link">#</a> 同源判断</h2>
+<p>同源是指 URL 的协议、域名和端口均相同，任何一项不同，都不属于同源</p>
+<p>开发时，前端 Vue 和后端 Java 通常是分开运行的：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%89%8D%E7%AB%AF%EF%BC%9Ahttp%3Cspan%20class%3D%22hljs-punctuation%22%3E%3A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F127.0.0.1%3A5173%3C%2Fspan%3E%0A%E5%90%8E%E7%AB%AF%EF%BC%9Ahttp%3Cspan%20class%3D%22hljs-punctuation%22%3E%3A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F127.0.0.1%3A8080%3C%2Fspan%3E%0A%E5%89%8D%E7%AB%AFAPI%E8%AF%B7%E6%B1%82%EF%BC%9Ahttp%3Cspan%20class%3D%22hljs-punctuation%22%3E%3A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F127.0.0.1%3A8080%2Fapi%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>前端：http<span class="hljs-punctuation">:</span><span class="hljs-comment">//127.0.0.1:5173</span>
+后端：http<span class="hljs-punctuation">:</span><span class="hljs-comment">//127.0.0.1:8080</span>
+前端API请求：http<span class="hljs-punctuation">:</span><span class="hljs-comment">//127.0.0.1:8080/api</span>
+</code></pre>
+      </div>
+    
+<p>前端与请求的 API 协议相同、域名相同，但端口不同，因此不属于同源，会触发跨域处理，并交由后端的CORS预检判断</p>
+<h2 id="cors预检"><a href="#cors预检" class="anchor-link">#</a> CORS预检</h2>
+<p>CORS 预检类似于一道门禁，但并不是每个请求都会触发。浏览器会根据跨域请求的方法、请求头等条件，判断是否需要先发送 OPTIONS 预检请求</p>
+<p>而，后端则根据 CORS 白名单判断是否允许该来源、请求方法和请求头。若预检失败，浏览器不会继续发送实际请求，前端通常会显示跨域错误</p>
+<blockquote>
+<p>白名单示例：</p>
+
+      <div class="md-editor-code" data-language="properties">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">properties</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3Eapp.cors.origins%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%24%7BCORS_ORIGINS%3Ahttp%3A%2F%2Flocalhost%3A5173%2Chttp%3A%2F%2F127.0.0.1%3A5173%7D%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-properties"><span class="hljs-attr">app.cors.origins</span>=<span class="hljs-string">${CORS_ORIGINS:http://localhost:5173,http://127.0.0.1:5173}</span>
+</code></pre>
+      </div>
+    
+</blockquote>
+<p>部分简单跨域请求不会触发预检，而是直接发送实际请求，再由浏览器根据后端返回的 CORS 响应头判断前端能否读取响应</p>
+<h2 id="项目部署无需cors"><a href="#项目部署无需cors" class="anchor-link">#</a> 项目部署无需CORS</h2>
+<p>项目部署在服务器后通常无需额外配置 CORS，因为前端和请求的 API 一般通过同一个域名访问，不会产生跨域</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E9%83%A8%E7%BD%B2%E5%90%8E%E7%9A%84%E5%89%8D%E7%AB%AF%EF%BC%9A%3Cspan%20class%3D%22hljs-keyword%22%3Ehttps%3C%2Fspan%3E%3A%2F%2Ftilex.world%0A%E9%83%A8%E7%BD%B2%E5%90%8E%E7%9A%84%E5%89%8D%E7%AB%AFAPI%E6%8E%A5%E5%8F%A3%EF%BC%9A%3Cspan%20class%3D%22hljs-keyword%22%3Ehttp%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-comment%22%3Es%2F%2Ftilex.world%2Fapi%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>部署后的前端：<span class="hljs-keyword">https</span>://tilex.world
+部署后的前端API接口：<span class="hljs-keyword">http</span><span class="hljs-comment">s//tilex.world/api</span>
+</code></pre>
+      </div>
+    
+<p>此时，两者的协议、域名和端口均相同，属于同源请求，因此浏览器不会触发 CORS 处理。Nginx 即使在服务器内部将 <code>/api</code> 反向代理到其他端口，也不会影响浏览器对同源的判断，不会触发后端的CORS门禁</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/08/26</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/08/26</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

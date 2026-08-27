@@ -1,0 +1,885 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">前端表单校验与校验规则</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 27 分钟 · 字数 5216</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="前端表单校验与自定义校验梳理"><a href="#前端表单校验与自定义校验梳理" class="anchor-link">#</a> 前端表单校验与自定义校验梳理</h1>
+<p>在日常开发中，使用 <code>ant-vue</code> 组件库的 <code>a-form</code>  表单组件时涉及到表单的校验与自定义校验的需求，在此做一个梳理</p>
+<ul>
+<li>
+<p>基础校验配置 <code>rules</code> 即可满足要求</p>
+</li>
+<li>
+<p>当上一条内置规则无法表达时，才需要自定义校验；如：联动校验（两次密码是否一致）、异步接口校验等</p>
+</li>
+</ul>
+<p>但，大多数场景并不需要手写自定义校验函数，<code>rules</code> 中配置的基础规则已经能完成大量“通用校验”。</p>
+<h2 id="基础校验"><a href="#基础校验" class="anchor-link">#</a> 基础校验</h2>
+<p>基础校验通过配置 <code>rules</code> 即可，例如：</p>
+
+      <div class="md-editor-code" data-language="JS">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">JS</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20rules%20%3D%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Epassword%3C%2Fspan%3E%3A%20%5B%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Erequired%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Etype%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bstring%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Emin%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E8%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Emax%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E20%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Emessage%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E8%AF%B7%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%26quot%3B%3C%2Fspan%3E%20%7D%5D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-JS"><span class="hljs-keyword">const</span> rules = {
+  <span class="hljs-attr">password</span>: [{ <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>, <span class="hljs-attr">min</span>: <span class="hljs-number">8</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">20</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">"请输入密码"</span> }]
+}
+</code></pre>
+      </div>
+    
+<p>这里配置了：</p>
+<ul>
+<li>必填校验</li>
+<li>字符串类型校验</li>
+<li>最小长度校验</li>
+<li>最大长度校验</li>
+</ul>
+<p>那么，如何触发校验并显示提示信息（“请输入密码”）呢？——为 <code>a-form</code> 组件绑定 <code>ref</code></p>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Etemplate%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%09%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-form%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eref%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BformRef%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3E%3Arules%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Brules%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E5%85%B3%E9%94%AE%EF%BC%81%EF%BC%81%EF%BC%81%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%09%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-form-item%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Elable%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%AF%86%E7%A0%81%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bpassword%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-form-item%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-form%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%09%0A%09%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-form-item%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-button%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Etype%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bprimary%26quot%3B%3C%2Fspan%3E%20%40%3Cspan%20class%3D%22hljs-attr%22%3Eclick%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BhandleSubit%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3ESubmit%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-button%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-form-item%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Etemplate%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20lable%E6%98%AF%E8%A1%A8%E5%8D%95%E5%9C%A8%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E7%9A%84%E6%96%87%E6%9C%AC%EF%BC%9Bname%E9%9C%80%E4%B8%8Erules%E4%B8%AD%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AD%97%E6%AE%B5%E4%B8%80%E4%B8%80%E5%AF%B9%E5%BA%94%20--%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">a-form</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"formRef"</span> <span class="hljs-attr">:rules</span>=<span class="hljs-string">"rules"</span>&gt;</span> <span class="hljs-comment">&lt;!-- 关键！！！ --&gt;</span>
+    	<span class="hljs-tag">&lt;<span class="hljs-name">a-form-item</span> <span class="hljs-attr">lable</span>=<span class="hljs-string">"密码"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"password"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-form-item</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a-form</span>&gt;</span>
+	
+	<span class="hljs-tag">&lt;<span class="hljs-name">a-form-item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"handleSubit"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">a-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a-form-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- lable是表单在页面显示的文本；name需与rules中对应的字段一一对应 --&gt;</span>
+</code></pre>
+      </div>
+    
+<p>通常情况下，点击按钮 <code>submit</code> 触发校验，校验通过再进行后续的处理</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20formRef%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E)%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EhandleSubmit%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Etry%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20formRef.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Evalidate%3C%2Fspan%3E()%0A%20%20%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecatch%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20message.%3Cspan%20class%3D%22hljs-title%20function_%22%3Ewarning%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%A0%A1%E9%AA%8C%E5%A4%B1%E8%B4%A5%EF%BC%8C%E8%AF%B7XXX%26%23x27%3B%3C%2Fspan%3E)%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%90%8E%E7%BB%AD%E9%80%BB%E8%BE%91%3C%2Fspan%3E%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> formRef = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">null</span>)
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">handleSubmit</span> = (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">await</span> formRef.<span class="hljs-property">value</span>.<span class="hljs-title function_">validate</span>()
+    } <span class="hljs-keyword">catch</span> {
+        message.<span class="hljs-title function_">warning</span>(<span class="hljs-string">'校验失败，请XXX'</span>)
+        <span class="hljs-keyword">return</span>
+    }
+    
+    <span class="hljs-comment">// 后续逻辑</span>
+}
+</code></pre>
+      </div>
+    
+<p>通过 <code>formRef.value.validate()</code> 即可触发校验，需要注意的是，<code>validate()</code> 本质是异步校验，因此通常需要配合 <code>await</code> 使用。</p>
+<h3 id="同一个字段可配置多个-rule"><a href="#同一个字段可配置多个-rule" class="anchor-link">#</a> 同一个字段可配置多个 rule</h3>
+<p><code>rules</code> 的能力其实非常强大，同一个字段可以配置多个规则。</p>
+<p>例如用户名：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3Eusername%3C%2Fspan%3E%3A%20%5B%0A%20%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Erequired%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Emessage%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E8%AF%B7%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%26%23x27%3B%3C%2Fspan%3E%20%7D%2C%0A%20%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Emin%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Emax%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E20%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Emessage%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E9%95%BF%E5%BA%A6%203-20%20%E4%BD%8D%26%23x27%3B%3C%2Fspan%3E%20%7D%2C%0A%20%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Epattern%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-regexp%22%3E%2F%5E%5Ba-zA-Z0-9_%5D%2B%24%2F%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Emessage%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E5%8F%AA%E8%83%BD%E5%8C%85%E5%90%AB%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%B8%8B%E5%88%92%E7%BA%BF%26%23x27%3B%3C%2Fspan%3E%20%7D%0A%5D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-attr">username</span>: [
+  { <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">'请输入用户名'</span> },
+  { <span class="hljs-attr">min</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">20</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">'长度 3-20 位'</span> },
+  { <span class="hljs-attr">pattern</span>: <span class="hljs-regexp">/^[a-zA-Z0-9_]+$/</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">'只能包含字母数字下划线'</span> }
+]
+</code></pre>
+      </div>
+    
+<p>其执行逻辑大致可以理解为：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%BF%85%E5%A1%AB%E6%A0%A1%E9%AA%8C%0A%E2%86%92%20%E9%95%BF%E5%BA%A6%E6%A0%A1%E9%AA%8C%0A%E2%86%92%20%E6%AD%A3%E5%88%99%E6%A0%BC%E5%BC%8F%E6%A0%A1%E9%AA%8C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>必填校验
+→ 长度校验
+→ 正则格式校验
+</code></pre>
+      </div>
+    
+<p>这也是为什么很多场景下无需编写自定义校验函数，仅依赖 <code>rules</code> 即可完成大部分需求。</p>
+<p>在配置 <code>rules</code> 时，还有一个常用的参数：<code>trigger</code></p>
+<h3 id="trigger-触发时机"><a href="#trigger-触发时机" class="anchor-link">#</a> trigger 触发时机</h3>
+<p>在配置 <code>rules</code> 时，还有一个非常常用的参数：<code>trigger</code>。</p>
+<p>它用于指定：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E8%A7%A6%E5%8F%91%E5%BD%93%E5%89%8D%E8%A7%84%E5%88%99%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>什么时候触发当前规则
+</code></pre>
+      </div>
+    
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3Etrigger%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bblur%26%23x27%3B%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Etrigger%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bchange%26%23x27%3B%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-attr%22%3Etrigger%3C%2Fspan%3E%3A%20%5B%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bblur%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bchange%26%23x27%3B%3C%2Fspan%3E%5D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-attr">trigger</span>: <span class="hljs-string">'blur'</span>
+<span class="hljs-attr">trigger</span>: <span class="hljs-string">'change'</span>
+<span class="hljs-attr">trigger</span>: [<span class="hljs-string">'blur'</span>, <span class="hljs-string">'change'</span>]
+</code></pre>
+      </div>
+    
+<p>含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>trigger</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur</td>
+<td>失焦触发</td>
+</tr>
+<tr>
+<td>change</td>
+<td>值变化触发</td>
+</tr>
+<tr>
+<td>[‘blur’,‘change’]</td>
+<td>两者都触发</td>
+</tr>
+</tbody>
+</table>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Erequired%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Emessage%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E8%AF%B7%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Etrigger%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bblur%26%23x27%3B%3C%2Fspan%3E%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">{
+  <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">message</span>: <span class="hljs-string">'请输入用户名'</span>,
+  <span class="hljs-attr">trigger</span>: <span class="hljs-string">'blur'</span>
+}
+</code></pre>
+      </div>
+    
+<p>表示：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%BD%93%E8%BE%93%E5%85%A5%E6%A1%86%E5%A4%B1%E7%84%A6%E6%97%B6%E8%A7%A6%E5%8F%91%E6%A0%A1%E9%AA%8C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>当输入框失焦时触发校验
+</code></pre>
+      </div>
+    
+<h3 id="常见内置规则"><a href="#常见内置规则" class="anchor-link">#</a> 常见内置规则</h3>
+<p>以下是 <code>a-form</code> 中常见的内置规则：</p>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>required</td>
+<td>必填</td>
+</tr>
+<tr>
+<td>type</td>
+<td>类型校验</td>
+</tr>
+<tr>
+<td>min</td>
+<td>最小长度 / 最小值</td>
+</tr>
+<tr>
+<td>max</td>
+<td>最大长度 / 最大值</td>
+</tr>
+<tr>
+<td>len</td>
+<td>固定长度</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td>正则校验</td>
+</tr>
+<tr>
+<td>enum</td>
+<td>枚举值</td>
+</tr>
+<tr>
+<td>whitespace</td>
+<td>空白字符校验</td>
+</tr>
+</tbody>
+</table>
+<p>其中：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3Ewhitespace%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%A6%81%E6%AD%A2%E5%85%A8%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6%EF%BC%8C%E5%85%A8%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6%E6%A0%A1%E9%AA%8C%E4%BC%9A%E5%A4%B1%E8%B4%A5%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-attr">whitespace</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// 禁止全空白字符，全空白字符校验会失败</span>
+</code></pre>
+      </div>
+    
+<p>是一个容易被忽略但非常实用的规则。</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Erequired%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ewhitespace%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Emessage%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E8%AF%B7%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%26%23x27%3B%3C%2Fspan%3E%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">{
+  <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">whitespace</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">message</span>: <span class="hljs-string">'请输入用户名'</span>
+}
+</code></pre>
+      </div>
+    
+<p>它不仅会校验空字符串：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%26%23x27%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-string">''</span>
+</code></pre>
+      </div>
+    
+<p>还会校验：“全空格”输入</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%20%20%20%20%20%26%23x27%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-string">'     '</span>
+</code></pre>
+      </div>
+    
+<p>因此，在文本输入场景中，通常推荐搭配使用。</p>
+<h2 id="自定义校验"><a href="#自定义校验" class="anchor-link">#</a> 自定义校验</h2>
+<p>当上述基础校验仍无法满足需求时，才考虑自定义校验，如：</p>
+<ul>
+<li>
+<p>联动校验（两次密码是否一致）</p>
+</li>
+<li>
+<p>异步接口校验等</p>
+</li>
+</ul>
+<h3 id="联动校验示例-两次密码一致"><a href="#联动校验示例-两次密码一致" class="anchor-link">#</a> 联动校验示例：两次密码一致</h3>
+<p>模板代码如下：</p>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-form%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eref%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BformRef%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3E%3Arules%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Brules%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3E%3Amodel%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BformState%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E5%85%B3%E9%94%AE%20formState%20--%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-form-item%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Elable%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%AF%86%E7%A0%81%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bpassword1%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-form-item%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-form-item%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Elable%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E7%A1%AE%E8%AE%A4%E5%AF%86%E7%A0%81%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bpassword2%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-form-item%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-form-item%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea-button%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Etype%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bprimary%26quot%3B%3C%2Fspan%3E%20%40%3Cspan%20class%3D%22hljs-attr%22%3Eclick%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BhandleSubit%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3ESubmit%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-button%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-form-item%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea-form%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20lable%E6%98%AF%E8%A1%A8%E5%8D%95%E5%9C%A8%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E7%9A%84%E6%96%87%E6%9C%AC%EF%BC%9Bname%E9%9C%80%E4%B8%8Erules%E4%B8%AD%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AD%97%E6%AE%B5%E4%B8%80%E4%B8%80%E5%AF%B9%E5%BA%94%20--%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue"><span class="hljs-tag">&lt;<span class="hljs-name">a-form</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"formRef"</span> <span class="hljs-attr">:rules</span>=<span class="hljs-string">"rules"</span> <span class="hljs-attr">:model</span>=<span class="hljs-string">"formState"</span>&gt;</span> <span class="hljs-comment">&lt;!-- 关键 formState --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a-form-item</span> <span class="hljs-attr">lable</span>=<span class="hljs-string">"密码"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"password1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-form-item</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">a-form-item</span> <span class="hljs-attr">lable</span>=<span class="hljs-string">"确认密码"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"password2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-form-item</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">a-form-item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">a-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"handleSubit"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">a-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a-form-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a-form</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- lable是表单在页面显示的文本；name需与rules中对应的字段一一对应 --&gt;</span>
+</code></pre>
+      </div>
+    
+<p>此时需校验：两次输入的密码是否一致，基础校验无法做到跨 <code>field</code> 校验，因此需手动编写自定义校验；</p>
+<p>这里有一个关键点：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Amodel%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BformState%26quot%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">:model=<span class="hljs-string">"formState"</span>
+</code></pre>
+      </div>
+    
+<p>因为联动校验本质上属于：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E8%B7%A8%E5%AD%97%E6%AE%B5%E8%AE%BF%E9%97%AE%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>跨字段访问
+</code></pre>
+      </div>
+    
+<p>因此需要把多个字段统一放在同一个响应式对象中：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20formState%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Ereactive%3C%2Fspan%3E(%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Epassword%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3EconfirmPassword%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%26%23x27%3B%3C%2Fspan%3E%0A%7D)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> formState = <span class="hljs-title function_">reactive</span>({
+  <span class="hljs-attr">password</span>: <span class="hljs-string">''</span>,
+  <span class="hljs-attr">confirmPassword</span>: <span class="hljs-string">''</span>
+})
+</code></pre>
+      </div>
+    
+<h3 id="自定义-validator-实现"><a href="#自定义-validator-实现" class="anchor-link">#</a> 自定义 validator 实现</h3>
+<p>确认密码校验函数如下：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20*%20%E7%A1%AE%E8%AE%A4%E5%AF%86%E7%A0%81%E6%A0%A1%E9%AA%8C%0A%20*%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EvalidateConfirmPassword%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3E_rule%2C%20value%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%9C%AA%E8%BE%93%E5%85%A5%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!value)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Ereject%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E8%AF%B7%E5%86%8D%E6%AC%A1%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%26%23x27%3B%3C%2Fspan%3E)%0A%20%20%7D%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%8D%E4%B8%80%E8%87%B4%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(value%20!%3D%3D%20formState.%3Cspan%20class%3D%22hljs-property%22%3Epassword%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Ereject%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E4%B8%A4%E6%AC%A1%E5%AF%86%E7%A0%81%E8%BE%93%E5%85%A5%E4%B8%8D%E4%B8%80%E8%87%B4%26%23x27%3B%3C%2Fspan%3E)%0A%20%20%7D%0A%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eresolve%3C%2Fspan%3E()%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">/**
+ * 确认密码校验
+ */</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">validateConfirmPassword</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params">_rule, value</span>) =&gt; {
+  <span class="hljs-comment">// 未输入</span>
+  <span class="hljs-keyword">if</span> (!value) {
+    <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">reject</span>(<span class="hljs-string">'请再次输入密码'</span>)
+  }
+
+  <span class="hljs-comment">// 不一致</span>
+  <span class="hljs-keyword">if</span> (value !== formState.<span class="hljs-property">password</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">reject</span>(<span class="hljs-string">'两次密码输入不一致'</span>)
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>()
+}
+</code></pre>
+      </div>
+    
+<h3 id="rules-配置"><a href="#rules-配置" class="anchor-link">#</a> rules 配置</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20rules%20%3D%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Epassword%3C%2Fspan%3E%3A%20%5B%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Erequired%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Emessage%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E8%AF%B7%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Etrigger%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bblur%26quot%3B%3C%2Fspan%3E%20%7D%5D%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3EconfirmPassword%3C%2Fspan%3E%3A%20%5B%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Evalidator%3C%2Fspan%3E%3A%20validateConfirmPassword%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Etrigger%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bblur%26quot%3B%3C%2Fspan%3E%20%7D%5D%2C%0A%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> rules = {
+  <span class="hljs-attr">password</span>: [{ <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">"请输入密码"</span>, <span class="hljs-attr">trigger</span>: <span class="hljs-string">"blur"</span> }],
+  <span class="hljs-attr">confirmPassword</span>: [{ <span class="hljs-attr">validator</span>: validateConfirmPassword, <span class="hljs-attr">trigger</span>: <span class="hljs-string">"blur"</span> }],
+};
+</code></pre>
+      </div>
+    
+<p>这里与基础校验最大的区别在于：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3Evalidator%3C%2Fspan%3E%3A%20validateConfirmPassword%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-attr">validator</span>: validateConfirmPassword
+</code></pre>
+      </div>
+    
+<p>即：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%BD%93%E5%89%8D%E8%A7%84%E5%88%99%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%A1%E9%AA%8C%E5%87%BD%E6%95%B0%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>当前规则使用自定义校验函数
+</code></pre>
+      </div>
+    
+<h3 id="提交时触发校验"><a href="#提交时触发校验" class="anchor-link">#</a> 提交时触发校验</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EhandleSubmit%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Etry%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20formRef.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Evalidate%3C%2Fspan%3E()%0A%20%20%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecatch%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20message.%3Cspan%20class%3D%22hljs-title%20function_%22%3Ewarning%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%A0%A1%E9%AA%8C%E5%A4%B1%E8%B4%A5%EF%BC%8C%E8%AF%B7XXX%26%23x27%3B%3C%2Fspan%3E)%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%0A%20%20%20%20%7D%0A%20%20%20%20...%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">handleSubmit</span> = (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">await</span> formRef.<span class="hljs-property">value</span>.<span class="hljs-title function_">validate</span>()
+    } <span class="hljs-keyword">catch</span> {
+        message.<span class="hljs-title function_">warning</span>(<span class="hljs-string">'校验失败，请XXX'</span>)
+        <span class="hljs-keyword">return</span>
+    }
+    ...
+}
+</code></pre>
+      </div>
+    
+<p>当点击按钮时：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="formRef.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Evalidate%3C%2Fspan%3E()%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">formRef.<span class="hljs-property">value</span>.<span class="hljs-title function_">validate</span>()
+</code></pre>
+      </div>
+    
+<p>会自动执行：</p>
+<ul>
+<li>基础规则</li>
+<li>自定义 validator</li>
+</ul>
+<p>只要其中任意一项失败，就会进入 <code>catch</code>。</p>
+<h3 id="validator-的标准结构"><a href="#validator-的标准结构" class="anchor-link">#</a> validator 的标准结构</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Evalidator%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3E_rule%2C%20value%3C%2Fspan%3E)%20%3D%3E%20%7B%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">validator</span> = (<span class="hljs-params">_rule, value</span>) =&gt; {}
+</code></pre>
+      </div>
+    
+<p>参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rule</td>
+<td>当前规则对象，大多数场景无用，但可以读取 rule 中的配置信息，只在一些特殊场景使用</td>
+</tr>
+<tr>
+<td>value</td>
+<td>当前字段值</td>
+</tr>
+</tbody>
+</table>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20function_%22%3Evalidator%3C%2Fspan%3E(_%2C%20value)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title function_">validator</span>(_, value)
+</code></pre>
+      </div>
+    
+<p>这里：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="value%20%3D%20confirmPassword%20%E5%BD%93%E5%89%8D%E8%BE%93%E5%85%A5%E5%80%BC%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">value = confirmPassword 当前输入值
+</code></pre>
+      </div>
+    
+<h4 id="rule-参数的作用"><a href="#rule-参数的作用" class="anchor-link">#</a> rule 参数的作用</h4>
+<p>很多时候会看到：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="(_%2C%20value)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">(_, value)
+</code></pre>
+      </div>
+    
+<p>或者：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="(_rule%2C%20value)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">(_rule, value)
+</code></pre>
+      </div>
+    
+<p>这是因为：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%A4%A7%E5%A4%9A%E6%95%B0%E5%9C%BA%E6%99%AF%E5%B9%B6%E4%B8%8D%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%20%3Cspan%20class%3D%22hljs-keyword%22%3Erule%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>大多数场景并不需要使用 <span class="hljs-keyword">rule</span>
+</code></pre>
+      </div>
+    
+<p>因此会用 <code>_</code> 表示：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E2%80%9C%E8%AF%A5%E5%8F%82%E6%95%B0%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%BD%86%E5%BD%93%E5%89%8D%E9%80%BB%E8%BE%91%E6%9C%AA%E4%BD%BF%E7%94%A8%E2%80%9D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>“该参数存在，但当前逻辑未使用”
+</code></pre>
+      </div>
+    
+<p>不过，<code>rule</code> 在一些高级场景中依然非常有价值。</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Emin%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Emax%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E10%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Evalidator%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Erule%2C%20value%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(rule.%3Cspan%20class%3D%22hljs-property%22%3Emin%3C%2Fspan%3E)%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(rule.%3Cspan%20class%3D%22hljs-property%22%3Emax%3C%2Fspan%3E)%0A%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">{
+  <span class="hljs-attr">min</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">max</span>: <span class="hljs-number">10</span>,
+  <span class="hljs-title function_">validator</span>(<span class="hljs-params">rule, value</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(rule.<span class="hljs-property">min</span>)
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(rule.<span class="hljs-property">max</span>)
+  }
+}
+</code></pre>
+      </div>
+    
+<p>此时可以动态读取规则配置，实现：</p>
+<ul>
+<li>通用校验器</li>
+<li>动态规则系统</li>
+<li>公共 validator 封装</li>
+</ul>
+<p>因此：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%A4%A7%E5%A4%9A%E6%95%B0%E4%B8%9A%E5%8A%A1%E5%9C%BA%E6%99%AF%E5%8F%AA%E4%BD%BF%E7%94%A8%20value%0A%E9%AB%98%E7%BA%A7%E5%B0%81%E8%A3%85%E5%9C%BA%E6%99%AF%E6%89%8D%E4%BC%9A%E9%A2%91%E7%B9%81%E4%BD%BF%E7%94%A8%20%3Cspan%20class%3D%22hljs-keyword%22%3Erule%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>大多数业务场景只使用 value
+高级封装场景才会频繁使用 <span class="hljs-keyword">rule</span>
+</code></pre>
+      </div>
+    
+<h2 id="总结"><a href="#总结" class="anchor-link">#</a> 总结</h2>
+<p>在 <code>a-form</code> 表单校验中，一个比较推荐的开发思路是：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E4%BC%98%E5%85%88%E4%BD%BF%E7%94%A8%E5%86%85%E7%BD%AE%20rules%0A%E2%86%92%20%E5%86%8D%E8%80%83%E8%99%91%20%3Cspan%20class%3D%22hljs-keyword%22%3Evalidator%3C%2Fspan%3E%0A%E2%86%92%20%E6%9C%80%E5%90%8E%E5%86%8D%E5%A4%84%E7%90%86%E5%A4%8D%E6%9D%82%E8%81%94%E5%8A%A8%E9%80%BB%E8%BE%91%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>优先使用内置 rules
+→ 再考虑 <span class="hljs-keyword">validator</span>
+→ 最后再处理复杂联动逻辑
+</code></pre>
+      </div>
+    
+<p>很多情况下：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="required%0A%3Cspan%20class%3D%22hljs-built_in%22%3Emin%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-built_in%22%3Emax%3C%2Fspan%3E%0Apattern%0A%3Cspan%20class%3D%22hljs-built_in%22%3Etype%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>required
+<span class="hljs-built_in">min</span>
+<span class="hljs-built_in">max</span>
+pattern
+<span class="hljs-built_in">type</span>
+</code></pre>
+      </div>
+    
+<p>已经足够完成绝大多数表单校验需求。</p>
+<p>只有在：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E8%B7%A8%E5%AD%97%E6%AE%B5%0A%E8%81%94%E5%8A%A8%E9%80%BB%E8%BE%91%0A%E5%BC%82%E6%AD%A5%E6%8E%A5%E5%8F%A3%0A%E5%A4%8D%E6%9D%82%E4%B8%9A%E5%8A%A1%E8%A7%84%E5%88%99%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>跨字段
+联动逻辑
+异步接口
+复杂业务规则
+</code></pre>
+      </div>
+    
+<p>等场景下，才真正需要使用自定义 <code>validator</code>。</p>
+<p>合理利用基础规则，不仅代码更简洁，也能降低维护成本，提高表单代码的可读性与可维护性。</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/06/01</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/06/01</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

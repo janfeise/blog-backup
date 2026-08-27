@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">前端项目本地依赖一致性检查</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 7 分钟 · 字数 1360</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="predev-前端项目本地依赖一致性检查"><a href="#predev-前端项目本地依赖一致性检查" class="anchor-link">#</a> predev 前端项目本地依赖一致性检查</h1>
+<blockquote>
+<p><code>package.json</code> 中声明的依赖没有安装，项目启动后出现异常报错</p>
+</blockquote>
+<p>由于多次遇到此问题，且每次排查都要耗费不少时间，在此做一个记录，并对后续开发进行规避</p>
+<h2 id="问题现象"><a href="#问题现象" class="anchor-link">#</a> 问题现象</h2>
+<p><code>git pull</code> 拉取最新代码后，项目可以正常启动，部分页面也能正常访问，但进入&lt;u&gt;某个新页面&lt;/u&gt;时出现错误</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Failed%20to%20fetch%20dynamically%20imported%20module%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">Failed to fetch dynamically imported module
+</code></pre>
+      </div>
+    
+<ol>
+<li>
+<p>F12 打开后，Network 中对应 <code> XXX组件.vue</code> <code>Status Code</code> 为 <code>500</code></p>
+</li>
+<li>
+<p>Vite 终端显示</p>
+</li>
+</ol>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Failed%20to%20resolve%20import%20%26quot%3B%40XXX%E4%BE%9D%E8%B5%96%26quot%3B%0Afrom%20%26quot%3Bsrc%2Fviews%2FXXX%E7%BB%84%E4%BB%B6.vue%26quot%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">Failed to resolve import "@XXX依赖"
+from "src/views/XXX组件.vue"
+</code></pre>
+      </div>
+    
+<p>原因是新代码引用了新的依赖，但本地只拉取了代码，没有同步 <code>node_modules</code></p>
+<p>执行下面的命令后问题解决</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="npm%20install%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash">npm install
+</code></pre>
+      </div>
+    
+<p>团队项目在锁文件 <code>package-lock.json</code> 可靠的情况下，也可以使用</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="npm%20ci%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash">npm ci
+</code></pre>
+      </div>
+    
+<p><code>npm ci</code> 负责修复和重建：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E8%AE%A9%20node_modules%20%E4%B8%A5%E6%A0%BC%E6%81%A2%E5%A4%8D%E5%88%B0%20package-%3Cspan%20class%3D%22hljs-keyword%22%3Elock%3C%2Fspan%3E.json%20%E6%8F%8F%E8%BF%B0%E7%9A%84%E7%8A%B6%E6%80%81%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>让 node_modules 严格恢复到 package-<span class="hljs-keyword">lock</span>.json 描述的状态
+</code></pre>
+      </div>
+    
+<h2 id="为什么项目仍然可以启动"><a href="#为什么项目仍然可以启动" class="anchor-link">#</a> 为什么项目仍然可以启动</h2>
+<p>依赖缺失，但项目仍可以启动，是由于项目使用了路由懒加载，新依赖只在特定页面中使用</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Epath%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%2Fbig-screen%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ecomponent%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%40%2Fviews%2FbigScreen%2Findex.vue%26%23x27%3B%3C%2Fspan%3E)%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">{
+    <span class="hljs-attr">path</span>: <span class="hljs-string">'/big-screen'</span>,
+    <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'@/views/bigScreen/index.vue'</span>)
+}
+</code></pre>
+      </div>
+    
+<p>Vite 启动时不会立即加载所有懒加载页面，只有进入组件对应页面页面后才会解析 <code>XXX组件.vue</code>，此时才发现依赖缺失</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8%E6%88%90%E5%8A%9F%0A%E2%86%92%20%E8%AE%BF%E9%97%AE%E6%99%AE%E9%80%9A%E9%A1%B5%E9%9D%A2%E6%AD%A3%E5%B8%B8%0A%E2%86%92%20%E8%BF%9B%E5%85%A5XXX%E9%A1%B5%E9%9D%A2%0A%E2%86%92%20%E5%8A%A0%E8%BD%BD%20XXX%E7%BB%84%E4%BB%B6.vue%0A%E2%86%92%20%E6%96%B0%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90%0A%E2%86%92%20%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">项目启动成功
+→ 访问普通页面正常
+→ 进入XXX页面
+→ 加载 XXX组件.vue
+→ 新依赖无法解析
+→ 页面加载失败
+</code></pre>
+      </div>
+    
+<p>因此，项目能够启动不代表本地依赖完整</p>
+<h2 id="添加-predev-检查"><a href="#添加-predev-检查" class="anchor-link">#</a> 添加 predev 检查</h2>
+<p>可以在 <code>package.json</code> 中添加 <code>predev</code></p>
+
+      <div class="md-editor-code" data-language="json">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">json</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-punctuation%22%3E%7B%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3E%26quot%3Bscripts%26quot%3B%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-punctuation%22%3E%3A%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-punctuation%22%3E%7B%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3E%26quot%3Bpredev%26quot%3B%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-punctuation%22%3E%3A%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnpm%20ls%20--depth%3D0%26quot%3B%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-punctuation%22%3E%2C%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3E%26quot%3Bdev%26quot%3B%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-punctuation%22%3E%3A%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bvite%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-punctuation%22%3E%7D%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-punctuation%22%3E%7D%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">"scripts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"predev"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"npm ls --depth=0"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"dev"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"vite"</span>
+    <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+      </div>
+    
+<p>执行</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="npm%20run%20dev%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash">npm run dev
+</code></pre>
+      </div>
+    
+<p>npm 会先自动执行</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="npm%20run%20predev%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash">npm run predev
+</code></pre>
+      </div>
+    
+<p>如果 <code>package.json</code> 中声明的依赖没有安装，<code>npm ls --depth=0</code> 会报错并阻止项目继续启动</p>
+<p>潜在问题：</p>
+<blockquote>
+<p>如果项目引用了新依赖，但没有把该依赖写入 <code>package.json</code>，<code>npm ls</code> 无法通过依赖声明发现它</p>
+</blockquote>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/08/08</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/08/08</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

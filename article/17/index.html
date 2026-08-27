@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">动态路由</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 8 分钟 · 字数 1459</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><blockquote>
+<p>哔站是如何实现：点击某个视频时，跳转新页面，并显示该视频的相关内容的？显然不可能为每个视频编写对应的页面（后续上传的视频如何能编写对应的页面呢）</p>
+</blockquote>
+<p>方法：建立一个 &lt;u&gt;通用&lt;/u&gt; 的模版页面，将内容传递给模板，模板更新即为对应的详情页</p>
+<h2 id="核心问题"><a href="#核心问题" class="anchor-link">#</a> 核心问题</h2>
+<p>前端需要解决的核心问题是：<strong>如何用一个通用页面模板展示不同内容，并通过URL或路由参数加载对应数据？</strong></p>
+<p>问题可以拆解为三点：</p>
+<ol>
+<li>
+<p><strong>页面模板复用</strong>
+前端不能为每条内容都创建一个页面，因此需要一个<strong>通用模板页面</strong>。模板中可以包含标题、发布时间、正文内容、评论区等模块，通过传入不同的数据来渲染不同的内容。</p>
+</li>
+<li>
+<p><strong>URL参数传递内容标识</strong>
+用户点击列表项时，前端需要知道应该展示哪条内容。常见做法是通过 URL 传递内容标识：</p>
+<ul>
+<li>Query 参数形式：<code>article.html?id=1</code></li>
+<li>Path 参数形式：<code>article.html/1</code></li>
+</ul>
+<p>注意两者的差异：</p>
+<ul>
+<li><code>article.html?id=1</code> 页面不会真正导航到新的HTML页面，而是在同一个页面中通过JS解析参数加载内容。</li>
+<li><code>article.html/1</code> 可能触发前端路由机制导航到“新页面”，实现更直观的动态路由体验。</li>
+</ul>
+</li>
+<li>
+<p><strong>前端路由处理动态路径</strong>
+现代前端框架（如 React、Vue）提供了路由机制，可以通过<strong>动态路径参数</strong>实现页面跳转：</p>
+<ul>
+<li>React：<code>/article/:id</code> → 使用 <code>useParams()</code> 获取 id</li>
+<li>Vue：<code>/article/:id</code> → 使用 <code>route.params.id</code> 获取 id</li>
+</ul>
+<p>然后在模板中根据参数请求对应数据（通过 API 或本地 JSON），动态渲染页面内容。</p>
+</li>
+</ol>
+<h2 id="实现思路"><a href="#实现思路" class="anchor-link">#</a> 实现思路</h2>
+<ol>
+<li>
+<p><strong>建立通用模板页面</strong>
+页面结构固定，只需一个 HTML 文件，例如 <code>article.html</code>。模板中使用占位符或前端组件渲染动态内容。</p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20article.html%20--%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%E9%80%9A%E7%94%A8%E6%A8%A1%E7%89%88%E7%BC%96%E5%86%99%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-comment">&lt;!-- article.html --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    通用模版编写
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+      </div>
+    
+</li>
+<li>
+<p><strong>通过 URL 获取参数</strong></p>
+<blockquote>
+<p>前提紧要：点击视频等时会自动跳转，且URL发生改变，如：/article/1</p>
+</blockquote>
+<ul>
+<li>Query 参数：<code>window.location.search</code></li>
+<li>Path 参数：路由库提供的参数接口 <code>useParams()</code> / <code>route.params</code></li>
+</ul>
+</li>
+<li>
+<p><strong>加载对应数据</strong>
+根据参数调用 API 或读取本地数据，将内容填充到模板中。</p>
+</li>
+<li>
+<p><strong>渲染页面</strong>
+将标题、正文、时间等动态内容插入页面。模板可复用，支持无限量新增内容，而无需新增HTML页面。</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="anchor-link">#</a> 总结</h2>
+<p>动态路由的核心思想是 <strong>模板+参数+数据</strong>：</p>
+<ul>
+<li><strong>模板</strong>：一个页面模板复用所有内容</li>
+<li><strong>参数</strong>：通过 URL 或路由参数标识具体内容</li>
+<li><strong>数据</strong>：根据参数获取对应内容并渲染</li>
+</ul>
+<p>这种方式不仅节约开发成本，也方便后续内容扩展，网站可以随时添加新文章或视频而无需额外创建页面。URL形式的不同（<code>?id=1</code> vs <code>/1</code>）只是实现细节的差异，但最终目标都是实现动态页面展示。</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/20</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/03/20</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

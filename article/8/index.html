@@ -1,0 +1,530 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">js事件流(event flow)</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 45 分钟 · 字数 8958</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="javascript-事件流-event-flow-详解"><a href="#javascript-事件流-event-flow-详解" class="anchor-link">#</a> JavaScript 事件流（Event Flow）详解</h1>
+<p>在前端开发中，事件是交互的核心，而**事件流（Event Flow）**决定了浏览器如何处理用户触发的事件（例如点击、键盘输入、鼠移动等）。理解事件流，有助于我们更好地控制事件触发的顺序，避免"父子元素都触发事件"的困惑。</p>
+<hr>
+<h2 id="1-事件流的三个阶段"><a href="#1-事件流的三个阶段" class="anchor-link">#</a> 1. 事件流的三个阶段</h2>
+<p>JavaScript 的事件流分为三个阶段：</p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20260320203717561.png?sign=MZ-wzCWzEjr-eKhrJoiylgxUI4W84qAbDHV9tuVincc=:0" alt="image-20260320203717561"></p>
+<blockquote>
+<p>截图来源：<a href="https://juejin.cn/post/6854573221983813645">https://juejin.cn/post/6854573221983813645</a></p>
+</blockquote>
+<h3 id="1-捕获阶段-capturing-phase"><a href="#1-捕获阶段-capturing-phase" class="anchor-link">#</a> （1）捕获阶段（Capturing Phase）</h3>
+<p>事件从 <strong>DOM 树的根节点（<code>window</code>/<code>document</code>）</strong> 开始，沿着树形结构 <strong>由外到内</strong> 逐层传递。</p>
+<p>&lt;u&gt;如果&lt;/u&gt;在监听时设置了捕获参数 <code>true</code>，则在这个阶段触发：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bclick%26quot%3B%3C%2Fspan%3E%2C%20handler%2C%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8D%95%E8%8E%B7%E9%98%B6%E6%AE%B5%E8%A7%A6%E5%8F%91%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, handler, <span class="hljs-literal">true</span>); <span class="hljs-comment">// 捕获阶段触发</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="2-目标阶段-target-phase"><a href="#2-目标阶段-target-phase" class="anchor-link">#</a> （2）目标阶段（Target Phase）</h3>
+<p>事件到达真正的<strong>目标元素（event.target）</strong>。</p>
+<p>在目标元素上：</p>
+<ul>
+<li>先触发捕获阶段的监听器（如果注册过）</li>
+<li>再触发冒泡阶段的监听器（默认）</li>
+</ul>
+<hr>
+<h3 id="3-冒泡阶段-bubbling-phase"><a href="#3-冒泡阶段-bubbling-phase" class="anchor-link">#</a> （3）冒泡阶段（Bubbling Phase）</h3>
+<p>事件从<strong>目标元素开始</strong>，<strong>由内向外</strong>逐层往上传递，直到根节点。</p>
+<p>默认情况下，事件监听是在冒泡阶段触发的：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bclick%26quot%3B%3C%2Fspan%3E%2C%20handler)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%BB%98%E8%AE%A4%E6%98%AF%E5%86%92%E6%B3%A1%E9%98%B6%E6%AE%B5%EF%BC%8C%E7%AC%AC%E4%B8%89%E4%B8%AA%E5%8F%82%E6%95%B0%E4%B8%BA%20false%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, handler); <span class="hljs-comment">// 默认是冒泡阶段，第三个参数为 false</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="总结"><a href="#总结" class="anchor-link">#</a> 总结</h3>
+<p>事件流顺序是：<strong>捕获（由外到内）→ 目标 → 冒泡（由内到外）</strong></p>
+<p>默认情况下，事件监听会在<strong>冒泡阶段</strong>执行。</p>
+<hr>
+<h2 id="2-事件流示意图"><a href="#2-事件流示意图" class="anchor-link">#</a> 2. 事件流示意图</h2>
+<p>下面的示意图能更直观地展示事件流：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Ewindow%3C%2Fspan%3E%20%2F%3Cspan%20class%3D%22hljs-built_in%22%3E%20document%3C%2Fspan%3E%0A%20%20%20%E2%86%93%20%E6%8D%95%E8%8E%B7%0A%20%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bparent%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%E2%86%93%20%E6%8D%95%E8%8E%B7%0A%20%20%20%3C%2Fspan%3E%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bchild%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%E7%82%B9%E5%87%BB%E6%88%91%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%3E%3C%2Fspan%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-xml%22%3E%0A%20%20%20%E2%86%91%20%E5%86%92%E6%B3%A1%0A%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%3C%2Fspan%3E%0A%E2%86%91%20%E5%86%92%E6%B3%A1%0A%3Cspan%20class%3D%22hljs-keyword%22%3Ewindow%3C%2Fspan%3E%20%2F%3Cspan%20class%3D%22hljs-built_in%22%3E%20document%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-keyword">window</span> /<span class="hljs-built_in"> document</span>
+   ↓ 捕获
+ <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"parent"</span>&gt;</span>
+   ↓ 捕获
+   </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"child"</span>&gt;</span>点击我<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span class="language-xml">
+   ↑ 冒泡
+ <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+↑ 冒泡
+<span class="hljs-keyword">window</span> /<span class="hljs-built_in"> document</span>
+</code></pre>
+      </div>
+    
+<p>当点击按钮时：</p>
+<ol>
+<li>事件先从 <code>document</code> 向下捕获到 <code>button</code></li>
+<li>到达目标 <code>button</code></li>
+<li>再从 <code>button</code> 向上冒泡到 <code>document</code></li>
+</ol>
+<p>如果在捕获阶段监听，就会在向下的过程中触发；如果在冒泡阶段监听（默认），就会在向上的过程中触发。</p>
+<hr>
+<h2 id="3-实际例子演示"><a href="#3-实际例子演示" class="anchor-link">#</a> 3. 实际例子演示</h2>
+<p>通过代码来直观感受事件流：</p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bparent%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Estyle%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bpadding%3A%2030px%3B%20background%3A%20lightblue%3B%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%E7%88%B6%E5%85%83%E7%B4%A0%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bchild%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%E7%82%B9%E5%87%BB%E6%88%91%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-javascript%22%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20parent%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bparent%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20child%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bchild%26quot%3B%3C%2Fspan%3E)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%88%B6%E5%85%83%E7%B4%A0%E5%86%92%E6%B3%A1%E9%98%B6%E6%AE%B5%3C%2Fspan%3E%0A%20%20parent.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bclick%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E7%88%B6%E5%85%83%E7%B4%A0%EF%BC%9A%E5%86%92%E6%B3%A1%E9%98%B6%E6%AE%B5%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%7D)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%88%B6%E5%85%83%E7%B4%A0%E6%8D%95%E8%8E%B7%E9%98%B6%E6%AE%B5%3C%2Fspan%3E%0A%20%20parent.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bclick%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E7%88%B6%E5%85%83%E7%B4%A0%EF%BC%9A%E6%8D%95%E8%8E%B7%E9%98%B6%E6%AE%B5%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%7D%2C%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%AD%90%E5%85%83%E7%B4%A0%EF%BC%88%E7%9B%AE%E6%A0%87%E9%98%B6%E6%AE%B5%EF%BC%89%3C%2Fspan%3E%0A%20%20child.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bclick%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%AD%90%E5%85%83%E7%B4%A0%EF%BC%9A%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%7D)%3B%0A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"parent"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"padding: 30px; background: lightblue;"</span>&gt;</span>
+  父元素
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"child"</span>&gt;</span>点击我<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">const</span> parent = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"parent"</span>);
+  <span class="hljs-keyword">const</span> child = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"child"</span>);
+
+  <span class="hljs-comment">// 父元素冒泡阶段</span>
+  parent.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"父元素：冒泡阶段"</span>);
+  });
+
+  <span class="hljs-comment">// 父元素捕获阶段</span>
+  parent.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"父元素：捕获阶段"</span>);
+  }, <span class="hljs-literal">true</span>);
+
+  <span class="hljs-comment">// 子元素（目标阶段）</span>
+  child.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"子元素：点击事件"</span>);
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<h3 id="点击按钮-child-的执行顺序"><a href="#点击按钮-child-的执行顺序" class="anchor-link">#</a> 点击按钮 <code>child</code> 的执行顺序：</h3>
+<ol>
+<li>父元素捕获阶段</li>
+<li>子元素点击事件</li>
+<li>父元素冒泡阶段</li>
+</ol>
+<p>控制台输出：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E7%88%B6%E5%85%83%E7%B4%A0%EF%BC%9A%E6%8D%95%E8%8E%B7%E9%98%B6%E6%AE%B5%0A%E5%AD%90%E5%85%83%E7%B4%A0%EF%BC%9A%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%0A%E7%88%B6%E5%85%83%E7%B4%A0%EF%BC%9A%E5%86%92%E6%B3%A1%E9%98%B6%E6%AE%B5%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>父元素：捕获阶段
+子元素：点击事件
+父元素：冒泡阶段
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="4-为什么父子元素都会触发"><a href="#4-为什么父子元素都会触发" class="anchor-link">#</a> 4. 为什么父子元素都会触发？</h2>
+<p>很多同学会疑惑：“我点击了子元素，为什么父元素也触发了？”</p>
+<p>原因就在于<strong>事件会沿着 DOM 树传播</strong>：</p>
+<ul>
+<li><strong>捕获阶段</strong>：由外到内，经过父元素，第三个参数设置为 <code>true</code> 可以将捕获阶段开启，因此先输出：<code>父元素：捕获阶段</code></li>
+<li><strong>目标阶段</strong>：到达子元素</li>
+<li><strong>冒泡阶段</strong>：由内到外，再次经过父元素，触发父元素的监听事件，输出：<code>父元素：冒泡阶段</code></li>
+</ul>
+<p>因此，父子元素上的事件监听器都会被触发。理解这一点是掌握事件流的关键。</p>
+<hr>
+<h2 id="5-阻止事件传播"><a href="#5-阻止事件传播" class="anchor-link">#</a> 5. 阻止事件传播</h2>
+<p>如果不希望事件继续冒泡或捕获，可以使用：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="e.%3Cspan%20class%3D%22hljs-title%20function_%22%3EstopPropagation%3C%2Fspan%3E()%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E7%BB%A7%E7%BB%AD%E4%BC%A0%E6%92%AD%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">e.<span class="hljs-title function_">stopPropagation</span>(); <span class="hljs-comment">// 阻止事件继续传播</span>
+</code></pre>
+      </div>
+    
+<p>这在某些场景下非常有用，比如点击子元素时不想触发父元素的事件。</p>
+<h1 id="事件委托-event-delegation"><a href="#事件委托-event-delegation" class="anchor-link">#</a> ==事件委托（Event Delegation）==</h1>
+<h3 id="什么是事件委托"><a href="#什么是事件委托" class="anchor-link">#</a> 什么是事件委托</h3>
+<p><strong>事件委托的核心思想是：将子元素的事件交给父元素处理。</strong></p>
+<p>利用事件冒泡机制，我们只需在父元素上注册一个事件监听器，就能捕获所有子元素的事件，从而避免对每个子元素逐一绑定监听。</p>
+<p>事件委托的两个关键点：</p>
+<ol>
+<li><strong>子元素拥有同一个父元素</strong></li>
+<li><strong>通过 <code>e.target</code> 找到真正触发事件的子元素</strong></li>
+</ol>
+<p>这样可以显著提高性能，尤其在有大量相似子元素时（如导航栏菜单、表格行、列表项等）。</p>
+<hr>
+<h3 id="为什么要用事件委托"><a href="#为什么要用事件委托" class="anchor-link">#</a> 为什么要用事件委托</h3>
+<ul>
+<li><strong>性能优化</strong>：减少事件监听器的数量，降低内存开销</li>
+<li><strong>动态元素支持</strong>：后续添加的新子元素也会被自动监听，无需额外绑定</li>
+<li><strong>代码简洁</strong>：只需在父元素上绑定一次，逻辑更清晰</li>
+</ul>
+<hr>
+<h3 id="案例一-导航栏链接smooth跳转"><a href="#案例一-导航栏链接smooth跳转" class="anchor-link">#</a> 案例一：导航栏链接smooth跳转</h3>
+<p>该案例由单页面组成，点击导航栏可以跳转到页面的不同位置，使用事件委托实现：平滑滚动到对应的页面区域，因为默认的跳转是直接跳转，而不是平滑跳转</p>
+<p>HTML 结构：</p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20250820171737926.png?sign=KuJMMc60Nqu3110k3iUgczIyKaOFxMX1ou80aedTDlQ=:0" alt="image-20250820171737926"></p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Enav%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav__links%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav__item%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav__link%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ehref%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%23section--1%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EFeatures%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav__item%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav__link%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ehref%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%23section--2%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EOperations%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav__item%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav__link%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ehref%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%23section--3%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3ETestimonials%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav__item%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav__link%20nav__link--btn%20btn--show-modal%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ehref%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%23%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20Open%20account%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Enav%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav__links"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav__item"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav__link"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section--1"</span>&gt;</span>Features<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav__item"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav__link"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section--2"</span>&gt;</span>Operations<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav__item"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav__link"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section--3"</span>&gt;</span>Testimonials<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav__item"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav__link nav__link--btn btn--show-modal"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>
+        Open account
+      <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<p>JavaScript 代码：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%201.%20%E8%8E%B7%E5%8F%96%E7%88%B6%E5%85%83%E7%B4%A0%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20navLinks%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelector%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B.nav__links%26%23x27%3B%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%202.%20%E7%BB%99%E7%88%B6%E5%85%83%E7%B4%A0%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%3C%2Fspan%3E%0AnavLinks.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bclick%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3Ee%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20%20%20*%20%E6%89%BE%E5%88%B0%E9%9C%80%E8%A6%81%E7%9A%84%E5%AD%90%E5%85%83%E7%B4%A0%0A%20%20%20*%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BA%E5%8F%AF%E8%83%BD%E6%98%AF%EF%BC%9A%0A%20%20%20*%20%20%3Ca%20class%3D%26quot%3Bnav__link%26quot%3B%20href%3D%26quot%3B%23section__1%26quot%3B%3EOperations%3C%2Fa%3E%20%20%E3%80%90%E9%9C%80%E8%A6%81%E7%9A%84%E5%AD%90%E5%85%83%E7%B4%A0%E3%80%91%0A%20%20%20*%20%20%3Cul%20class%3D%26quot%3Bnav__links%26quot%3B%3E...%3C%2Ful%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E3%80%90%E5%B9%B2%E6%89%B0%E5%85%83%E7%B4%A0%E3%80%91%0A%20%20%20*%2F%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(e.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E)%3B%0A%20%20%20%20%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%203.%20%E5%88%A4%E6%96%AD%E5%AE%9E%E9%99%85%E7%82%B9%E5%87%BB%E7%9A%84%E5%85%83%E7%B4%A0%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(e.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Econtains%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bnav__link%26%23x27%3B%3C%2Fspan%3E))%20%7B%0A%20%20%20%20e.%3Cspan%20class%3D%22hljs-title%20function_%22%3EpreventDefault%3C%2Fspan%3E()%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%98%BB%E6%AD%A2%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20id%20%3D%20e.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetAttribute%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bhref%26%23x27%3B%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%8E%B7%E5%8F%96%E8%B7%B3%E8%BD%AC%E7%9B%AE%E6%A0%87%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelector%3C%2Fspan%3E(id).%3Cspan%20class%3D%22hljs-title%20function_%22%3EscrollIntoView%3C%2Fspan%3E(%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ebehavior%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bsmooth%26%23x27%3B%3C%2Fspan%3E%20%7D)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B9%B3%E6%BB%91%E8%B7%B3%E8%BD%AC%3C%2Fspan%3E%0A%20%20%7D%0A%7D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// 1. 获取父元素</span>
+<span class="hljs-keyword">const</span> navLinks = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'.nav__links'</span>);
+
+<span class="hljs-comment">// 2. 给父元素注册事件监听</span>
+navLinks.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) {
+  <span class="hljs-comment">/**
+   * 找到需要的子元素
+   * 控制台输出可能是：
+   *  &lt;a class="nav__link" href="#section__1"&gt;Operations&lt;/a&gt;  【需要的子元素】
+   *  &lt;ul class="nav__links"&gt;...&lt;/ul&gt;                         【干扰元素】
+   */</span>
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(e.<span class="hljs-property">target</span>);
+    
+  <span class="hljs-comment">// 3. 判断实际点击的元素</span>
+  <span class="hljs-keyword">if</span> (e.<span class="hljs-property">target</span>.<span class="hljs-property">classList</span>.<span class="hljs-title function_">contains</span>(<span class="hljs-string">'nav__link'</span>)) {
+    e.<span class="hljs-title function_">preventDefault</span>(); <span class="hljs-comment">// 阻止默认跳转</span>
+    <span class="hljs-keyword">const</span> id = e.<span class="hljs-property">target</span>.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">'href'</span>); <span class="hljs-comment">// 获取跳转目标</span>
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(id).<span class="hljs-title function_">scrollIntoView</span>({ <span class="hljs-attr">behavior</span>: <span class="hljs-string">'smooth'</span> }); <span class="hljs-comment">// 平滑跳转</span>
+  }
+});
+</code></pre>
+      </div>
+    
+<h4 id="代码解析"><a href="#代码解析" class="anchor-link">#</a> 代码解析</h4>
+<ol>
+<li><strong>父元素监听</strong>：事件统一绑定在 <code>.nav__links</code> 上</li>
+<li><strong>事件目标识别</strong>：通过 <code>e.target</code> 获取点击的子元素</li>
+<li><strong>条件过滤</strong>：使用 <code>classList.contains('nav__link')</code> 确保点击的是需要的链接，而不是其他元素</li>
+<li><strong>实现效果</strong>：平滑滚动到对应的页面区域</li>
+</ol>
+<hr>
+<h3 id="案例二-选项卡切换"><a href="#案例二-选项卡切换" class="anchor-link">#</a> 案例二：选项卡切换</h3>
+<p>点击不同的button，显示不同的内容</p>
+<p>选项卡（Tabs）切换是前端开发中非常常见的功能。我们不需要为每个按钮都绑定监听器，而是可以通过<strong>事件委托</strong>的方式，只在父容器上注册一次事件，就能完成所有按钮的切换逻辑。</p>
+<h4 id="html-结构"><a href="#html-结构" class="anchor-link">#</a> HTML 结构</h4>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Boperations%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E6%8C%89%E9%92%AE%E5%AE%B9%E5%99%A8%20--%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Boperations__tab-container%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bbtn%20operations__tab%20operations__tab--1%20operations__tab--active%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Edata-tab%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B1%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Espan%3C%2Fspan%3E%3E%3C%2Fspan%3E01%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Espan%3C%2Fspan%3E%3E%3C%2Fspan%3EInstant%20Transfers%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bbtn%20operations__tab%20operations__tab--2%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Edata-tab%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B2%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Espan%3C%2Fspan%3E%3E%3C%2Fspan%3E02%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Espan%3C%2Fspan%3E%3E%3C%2Fspan%3EInstant%20Loans%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bbtn%20operations__tab%20operations__tab--3%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Edata-tab%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B3%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Espan%3C%2Fspan%3E%3E%3C%2Fspan%3E03%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Espan%3C%2Fspan%3E%3E%3C%2Fspan%3EInstant%20Closing%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20%E5%86%85%E5%AE%B9%E5%8C%BA%E5%9F%9F%20--%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Boperations__content%20operations__content--1%20operations__content--active%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%E5%86%85%E5%AE%B91%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Boperations__content%20operations__content--2%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%E5%86%85%E5%AE%B92%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Boperations__content%20operations__content--3%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%E5%86%85%E5%AE%B93%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"operations"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- 按钮容器 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"operations__tab-container"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn operations__tab operations__tab--1 operations__tab--active"</span> <span class="hljs-attr">data-tab</span>=<span class="hljs-string">"1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>01<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>Instant Transfers
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn operations__tab operations__tab--2"</span> <span class="hljs-attr">data-tab</span>=<span class="hljs-string">"2"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>02<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>Instant Loans
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn operations__tab operations__tab--3"</span> <span class="hljs-attr">data-tab</span>=<span class="hljs-string">"3"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>03<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>Instant Closing
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- 内容区域 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"operations__content operations__content--1 operations__content--active"</span>&gt;</span>内容1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"operations__content operations__content--2"</span>&gt;</span>内容2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"operations__content operations__content--3"</span>&gt;</span>内容3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<h4 id="javascript-代码实现"><a href="#javascript-代码实现" class="anchor-link">#</a> JavaScript 代码实现</h4>
+<p>核心思路：</p>
+<ul>
+<li>使用<strong>事件委托</strong>，只在父容器 <code>.operations__tab-container</code> 上绑定一次 <code>click</code> 事件</li>
+<li>使用 <code>e.target.closest('button')</code> 来确保点击到按钮或内部子元素（如 <code>&lt;span&gt;</code>）都能正确定位到按钮</li>
+<li>使用 <code>dataset.tab</code> 来动态切换对应的内容</li>
+</ul>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20tabsContainer%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelector%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B.operations__tab-container%26%23x27%3B%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20tabs%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelectorAll%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B.operations__tab%26%23x27%3B%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20tabsContent%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelectorAll%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B.operations__content%26%23x27%3B%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%EF%BC%9A%E7%9B%91%E5%90%AC%E7%88%B6%E5%AE%B9%E5%99%A8%3C%2Fspan%3E%0AtabsContainer.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bclick%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3Ee%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20clicked%20%3D%20e.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eclosest%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bbutton%26%23x27%3B%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%89%BE%E5%88%B0%E7%82%B9%E5%87%BB%E7%9A%84%E6%8C%89%E9%92%AE%3C%2Fspan%3E%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20Guard%20Clause%EF%BC%9A%E5%A6%82%E6%9E%9C%E7%82%B9%E5%88%B0%E7%9A%84%E4%B8%8D%E6%98%AF%E6%8C%89%E9%92%AE%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%BF%94%E5%9B%9E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!clicked)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%201.%20%E7%A7%BB%E9%99%A4%E6%89%80%E6%9C%89%E6%8C%89%E9%92%AE%E7%9A%84%20active%20%E6%A0%B7%E5%BC%8F%3C%2Fspan%3E%0A%20%20tabs.%3Cspan%20class%3D%22hljs-title%20function_%22%3EforEach%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-params%22%3Et%3C%2Fspan%3E%20%3D%3E%3C%2Fspan%3E%20t.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eremove%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Boperations__tab--active%26%23x27%3B%3C%2Fspan%3E))%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%202.%20%E4%B8%BA%E5%BD%93%E5%89%8D%E6%8C%89%E9%92%AE%E6%B7%BB%E5%8A%A0%20active%20%E6%A0%B7%E5%BC%8F%3C%2Fspan%3E%0A%20%20clicked.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eadd%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Boperations__tab--active%26%23x27%3B%3C%2Fspan%3E)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%203.%20%E9%9A%90%E8%97%8F%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9%E5%8C%BA%E5%9F%9F%3C%2Fspan%3E%0A%20%20tabsContent.%3Cspan%20class%3D%22hljs-title%20function_%22%3EforEach%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-params%22%3Ec%3C%2Fspan%3E%20%3D%3E%3C%2Fspan%3E%20c.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eremove%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Boperations__content--active%26%23x27%3B%3C%2Fspan%3E))%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%204.%20%E6%98%BE%E7%A4%BA%E5%AF%B9%E5%BA%94%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%88%E6%A0%B9%E6%8D%AE%20data-tab%20%E5%8C%B9%E9%85%8D%EF%BC%89%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E%0A%20%20%20%20.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelector%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%60.operations__content--%3Cspan%20class%3D%22hljs-subst%22%3E%24%7Bclicked.dataset.tab%7D%3C%2Fspan%3E%60%3C%2Fspan%3E)%0A%20%20%20%20.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eadd%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Boperations__content--active%26%23x27%3B%3C%2Fspan%3E)%3B%0A%7D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> tabsContainer = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'.operations__tab-container'</span>);
+<span class="hljs-keyword">const</span> tabs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">'.operations__tab'</span>);
+<span class="hljs-keyword">const</span> tabsContent = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">'.operations__content'</span>);
+
+<span class="hljs-comment">// 事件委托：监听父容器</span>
+tabsContainer.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) {
+  <span class="hljs-keyword">const</span> clicked = e.<span class="hljs-property">target</span>.<span class="hljs-title function_">closest</span>(<span class="hljs-string">'button'</span>); <span class="hljs-comment">// 找到点击的按钮</span>
+
+  <span class="hljs-comment">// Guard Clause：如果点到的不是按钮，直接返回</span>
+  <span class="hljs-keyword">if</span> (!clicked) <span class="hljs-keyword">return</span>;
+
+  <span class="hljs-comment">// 1. 移除所有按钮的 active 样式</span>
+  tabs.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">t</span> =&gt;</span> t.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">'operations__tab--active'</span>));
+
+  <span class="hljs-comment">// 2. 为当前按钮添加 active 样式</span>
+  clicked.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">'operations__tab--active'</span>);
+
+  <span class="hljs-comment">// 3. 隐藏所有内容区域</span>
+  tabsContent.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> c.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">'operations__content--active'</span>));
+
+  <span class="hljs-comment">// 4. 显示对应的内容（根据 data-tab 匹配）</span>
+  <span class="hljs-variable language_">document</span>
+    .<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">`.operations__content--<span class="hljs-subst">${clicked.dataset.tab}</span>`</span>)
+    .<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">'operations__content--active'</span>);
+});
+</code></pre>
+      </div>
+    
+<h4 id="关键点解析"><a href="#关键点解析" class="anchor-link">#</a> 关键点解析</h4>
+<ol>
+<li><strong>事件委托（Event Delegation）</strong>
+<ul>
+<li>不需要给每个按钮都注册事件，只需在父容器上绑定一次即可</li>
+<li>借助事件流的冒泡机制，点击子元素时事件会冒泡到父容器</li>
+</ul>
+</li>
+<li><strong>closest 的使用</strong>
+<ul>
+<li><code>e.target.closest('button')</code> 会向上查找最近的 <code>&lt;button&gt;</code> 元素</li>
+<li>即使点击的是按钮内部的 <code>&lt;span&gt;</code>，也能找到父级 <code>&lt;button&gt;</code>，避免选择不到正确元素</li>
+</ul>
+</li>
+<li><strong>Guard Clause（守卫语句）</strong>
+<ul>
+<li>如果点击的是空白区域或容器内部的非按钮元素，直接 <code>return</code>，代码更健壮</li>
+</ul>
+</li>
+<li><strong>利用 data 属性切换内容</strong>
+<ul>
+<li><code>data-tab="1"</code> 对应 <code>.operations__content--1</code></li>
+<li>这样实现按钮和内容的动态绑定，扩展性很强</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="案例三-导航菜单悬停效果"><a href="#案例三-导航菜单悬停效果" class="anchor-link">#</a> 案例三：导航菜单悬停效果</h3>
+<p>在导航菜单中，我们常常需要实现鼠标悬停时，&lt;u&gt;当前链接高亮&lt;/u&gt;，&lt;u&gt;其他链接变淡的效果&lt;/u&gt;。通过事件委托配合 <code>closest()</code> 和 <code>querySelectorAll()</code>，可以高效实现这一功能。</p>
+<h4 id="为什么使用-closest-配合-queryselectorall"><a href="#为什么使用-closest-配合-queryselectorall" class="anchor-link">#</a> 为什么使用 closest() 配合 querySelectorAll()</h4>
+<p>在事件委托中，我们需要：</p>
+<ol>
+<li><strong>定位当前操作的元素</strong>：使用 <code>e.target</code> 获取触发事件的元素</li>
+<li><strong>查找所有相关的兄弟元素</strong>：需要一个方法<strong>找到所有需要操作的同级元素</strong>，这样才能将其它链接变淡</li>
+</ol>
+<p>这时组合使用 <code>closest()</code> 和 <code>querySelectorAll()</code> 就非常巧妙：</p>
+<ul>
+<li><strong><code>closest('.nav')</code></strong>：向上查找最近的 <code>.nav</code> 父容器</li>
+<li><strong><code>.querySelectorAll('.nav__link')</code></strong>：在该父容器内查找所有 <code>.nav__link</code> 子元素</li>
+</ul>
+<p>这样做的好处是：</p>
+<ul>
+<li>无需预先用变量保存所有链接元素</li>
+<li>即使 DOM 结构动态变化，也能准确找到所有相关元素</li>
+<li>代码逻辑更清晰，维护性更好</li>
+</ul>
+<h4 id="javascript-代码实现-2"><a href="#javascript-代码实现-2" class="anchor-link">#</a> JavaScript 代码实现</h4>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20nav%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelector%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B.nav%26%23x27%3B%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EhandleHover%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Ee%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20target%20%3D%20e.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20Guard%20Clause%EF%BC%9A%E5%8F%AA%E5%A4%84%E7%90%86%E5%AF%BC%E8%88%AA%E9%93%BE%E6%8E%A5%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!target.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Econtains%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnav__link%26quot%3B%3C%2Fspan%3E))%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%80%9A%E8%BF%87%20closest%20%E6%89%BE%E5%88%B0%E7%88%B6%E5%AE%B9%E5%99%A8%EF%BC%8C%E5%86%8D%E7%94%A8%20querySelectorAll%20%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E9%93%BE%E6%8E%A5%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20links%20%3D%20target.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eclosest%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.nav%26quot%3B%3C%2Fspan%3E).%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelectorAll%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.nav__link%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E9%93%BE%E6%8E%A5%EF%BC%8C%E6%94%B9%E5%8F%98%E9%9D%9E%E5%BD%93%E5%89%8D%E9%93%BE%E6%8E%A5%E7%9A%84%E9%80%8F%E6%98%8E%E5%BA%A6%3C%2Fspan%3E%0A%20%20links.%3Cspan%20class%3D%22hljs-title%20function_%22%3EforEach%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Elink%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(link%20!%3D%3D%20target)%20%7B%0A%20%20%20%20%20%20link.%3Cspan%20class%3D%22hljs-property%22%3Estyle%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eopacity%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20this%20%E4%B8%BA%E4%BC%A0%E5%85%A5%E7%9A%84%E9%80%8F%E6%98%8E%E5%BA%A6%E5%80%BC%3C%2Fspan%3E%0A%20%20%20%20%7D%0A%20%20%7D)%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%85%A5%E6%97%B6%EF%BC%8C%E5%85%B6%E4%BB%96%E9%93%BE%E6%8E%A5%E5%8F%98%E6%B7%A1%3C%2Fspan%3E%0Anav.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bmouseover%26quot%3B%3C%2Fspan%3E%2C%20handleHover.%3Cspan%20class%3D%22hljs-title%20function_%22%3Ebind%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E0.5%3C%2Fspan%3E))%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%87%BA%E6%97%B6%EF%BC%8C%E6%89%80%E6%9C%89%E9%93%BE%E6%8E%A5%E6%81%A2%E5%A4%8D%3C%2Fspan%3E%0Anav.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bmouseout%26quot%3B%3C%2Fspan%3E%2C%20handleHover.%3Cspan%20class%3D%22hljs-title%20function_%22%3Ebind%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E))%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> nav = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'.nav'</span>);
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">handleHover</span>(<span class="hljs-params">e</span>) {
+  <span class="hljs-keyword">const</span> target = e.<span class="hljs-property">target</span>;
+
+  <span class="hljs-comment">// Guard Clause：只处理导航链接</span>
+  <span class="hljs-keyword">if</span> (!target.<span class="hljs-property">classList</span>.<span class="hljs-title function_">contains</span>(<span class="hljs-string">"nav__link"</span>)) <span class="hljs-keyword">return</span>;
+
+  <span class="hljs-comment">// 通过 closest 找到父容器，再用 querySelectorAll 获取所有链接</span>
+  <span class="hljs-keyword">const</span> links = target.<span class="hljs-title function_">closest</span>(<span class="hljs-string">".nav"</span>).<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">".nav__link"</span>);
+  
+  <span class="hljs-comment">// 遍历所有链接，改变非当前链接的透明度</span>
+  links.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">link</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (link !== target) {
+      link.<span class="hljs-property">style</span>.<span class="hljs-property">opacity</span> = <span class="hljs-variable language_">this</span>; <span class="hljs-comment">// this 为传入的透明度值</span>
+    }
+  });
+}
+
+<span class="hljs-comment">// 鼠标移入时，其他链接变淡</span>
+nav.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"mouseover"</span>, handleHover.<span class="hljs-title function_">bind</span>(<span class="hljs-number">0.5</span>));
+
+<span class="hljs-comment">// 鼠标移出时，所有链接恢复</span>
+nav.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"mouseout"</span>, handleHover.<span class="hljs-title function_">bind</span>(<span class="hljs-number">1</span>));
+</code></pre>
+      </div>
+    
+<h4 id="代码解析-2"><a href="#代码解析-2" class="anchor-link">#</a> 代码解析</h4>
+<ol>
+<li><strong>事件委托</strong>：在 <code>.nav</code> 父元素上监听 <code>mouseover</code> 和 <code>mouseout</code> 事件</li>
+<li><strong>Guard Clause</strong>：通过 <code>classList.contains("nav__link")</code> 确保只处理导航链接，忽略其他元素（如 logo、按钮等）</li>
+<li><strong>closest() + querySelectorAll() 组合</strong>：
+<ul>
+<li><code>target.closest(".nav")</code>：从当前元素向上查找最近的 <code>.nav</code> 容器</li>
+<li><code>.querySelectorAll(".nav__link")</code>：在该容器内查找所有导航链接</li>
+<li>这样就获得了所有需要操作的兄弟元素</li>
+</ul>
+</li>
+<li><strong>使用 bind 传递参数</strong>：
+<ul>
+<li><code>handleHover.bind(0.5)</code>：鼠标悬停时，其他链接透明度设为 0.5</li>
+<li><code>handleHover.bind(1)</code>：鼠标移出时，所有链接透明度恢复为 1</li>
+</ul>
+</li>
+<li><strong>性能优势</strong>：
+<ul>
+<li>只绑定一次事件监听器，而不是为每个链接单独绑定</li>
+<li>即使后续动态添加新的导航链接，也无需额外处理</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="总结-2"><a href="#总结-2" class="anchor-link">#</a> 总结</h2>
+<p>事件流是前端开发中的核心概念，理解事件流的三个阶段（捕获、目标、冒泡）能帮助我们更好地控制交互逻辑。</p>
+<p><strong>事件委托</strong>是基于事件流的重要应用技巧，它的核心是：</p>
+<ul>
+<li><strong>父元素监听 + 子元素定位（<code>e.target</code>）</strong></li>
+<li>利用冒泡机制，减少事件监听器数量，提升性能</li>
+<li>配合 <code>closest()</code> 和 <code>querySelectorAll()</code> 可以灵活处理复杂的 DOM 操作</li>
+</ul>
+<p>事件委托特别适用于：</p>
+<ul>
+<li>菜单导航</li>
+<li>表格操作按钮</li>
+<li>动态生成的列表项</li>
+<li>大量相似元素的交互</li>
+</ul>
+<p>掌握事件流和事件委托，能让我们写出更高效、更易维护的前端代码。</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/20</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/03/20</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

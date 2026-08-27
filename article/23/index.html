@@ -1,0 +1,580 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">图片懒加载</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 29 分钟 · 字数 5637</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="图片懒加载详解"><a href="#图片懒加载详解" class="anchor-link">#</a> 图片懒加载详解</h1>
+<table>
+<thead>
+<tr>
+<th>一级主题</th>
+<th>二级主题</th>
+<th>说明 / 关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基本概念</td>
+<td>为什么需要懒加载</td>
+<td>减少首屏加载压力、提升用户体验、节省带宽</td>
+</tr>
+<tr>
+<td>==实现思路==</td>
+<td>低分辨率占位</td>
+<td>使用低清晰度图片 + CSS 模糊滤镜</td>
+</tr>
+<tr>
+<td></td>
+<td>高分辨率替换</td>
+<td>通过 <code>data-src</code> 存储真实路径，进入可视区后替换 <code>src</code></td>
+</tr>
+<tr>
+<td></td>
+<td>去除模糊滤镜</td>
+<td>监听 <code>load</code> 事件 → 资源加载完成后移除模糊滤镜</td>
+</tr>
+<tr>
+<td>技术关键点</td>
+<td>data 属性的作用</td>
+<td>HTML5 自定义属性 → <code>dataset.属性名</code> 获取</td>
+</tr>
+<tr>
+<td></td>
+<td>图片选择器优化</td>
+<td>使用 <code>img[data-src]</code> 精确选择需要懒加载的图片，避免 logo、图标等常驻图片被处理</td>
+</tr>
+<tr>
+<td>监听与触发时机</td>
+<td>load 事件</td>
+<td>仅在资源重新请求并加载完成后触发</td>
+</tr>
+<tr>
+<td></td>
+<td>Intersection Observer</td>
+<td>更优雅的懒加载方式，监测元素是否进入可视区</td>
+</tr>
+<tr>
+<td>开发调试</td>
+<td>network 工具</td>
+<td>使用 Chrome DevTools → 设置 Slow 3G 查看加载顺序与滤镜消除时机</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>大型电商、图片墙、资讯流</td>
+<td>图片数量多、带宽消耗大，懒加载效果明显</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="一-什么是图片懒加载"><a href="#一-什么是图片懒加载" class="anchor-link">#</a> 一、什么是图片懒加载？</h2>
+<p><strong>图片懒加载（Lazy Load）</strong> 是一种性能优化策略：
+当页面中有大量图片时，不必在首屏==一次性加载所有图片==，而是先加载占位图或低分辨率版本，等到用户滚动到对应位置时，再加载清晰大图。</p>
+<p>好处：</p>
+<ul>
+<li>✅ <strong>提升首屏加载速度</strong></li>
+<li>✅ <strong>减少不必要的带宽消耗</strong></li>
+<li>✅ <strong>改善用户体验</strong></li>
+</ul>
+<hr>
+<h2 id="二-基本实现思路"><a href="#二-基本实现思路" class="anchor-link">#</a> 二、基本实现思路</h2>
+<ol>
+<li>
+<p><strong>占位图 + 模糊滤镜</strong></p>
+<ul>
+<li>
+<p>使用低分辨率图片（体积小、加载快）。</p>
+</li>
+<li>
+<p>在 CSS 中添加模糊效果：</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.blur%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Efilter%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Eblur%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E10px%3C%2Fspan%3E)%3B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Etransition%3C%2Fspan%3E%3A%20filter%20%3Cspan%20class%3D%22hljs-number%22%3E0.5s%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-class">.blur</span> {
+  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">10px</span>);
+  <span class="hljs-attribute">transition</span>: filter <span class="hljs-number">0.5s</span>;
+}
+</code></pre>
+      </div>
+    
+</li>
+<li>
+<p>页面加载时，低清晰度图显示为模糊。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>使用 <code>data-src</code> 存储高清图路径</strong></p>
+<ul>
+<li>
+<p>HTML 结构示例：</p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eimg%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Esrc%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blow.jpg%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Edata-src%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhigh.jpg%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bblur%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ealt%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E9%A3%8E%E6%99%AF%E5%9B%BE%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"low.jpg"</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"high.jpg"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"blur"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"风景图"</span>&gt;</span>
+</code></pre>
+      </div>
+    
+</li>
+<li>
+<p><code>src</code> → 低清晰度图或占位图；</p>
+</li>
+<li>
+<p><code>data-src</code> → 真正的高清图。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>进入可视区时替换图片</strong></p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20imgs%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelectorAll%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bimg%5Bdata-src%5D%26quot%3B%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EloadImg%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3Eimg%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20img.%3Cspan%20class%3D%22hljs-property%22%3Esrc%3C%2Fspan%3E%20%3D%20img.%3Cspan%20class%3D%22hljs-property%22%3Edataset%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Esrc%3C%2Fspan%3E%3B%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%9B%BF%E6%8D%A2%E6%88%90%E9%AB%98%E6%B8%85%E5%9B%BE%3C%2Fspan%3E%0A%20%20img.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bload%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20img.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eremove%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bblur%26quot%3B%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%8E%BB%E9%99%A4%E6%A8%A1%E7%B3%8A%E6%BB%A4%E9%95%9C%3C%2Fspan%3E%0A%20%20%7D)%3B%0A%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> imgs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">"img[data-src]"</span>);
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">loadImg</span> = (<span class="hljs-params">img</span>) =&gt; {
+  img.<span class="hljs-property">src</span> = img.<span class="hljs-property">dataset</span>.<span class="hljs-property">src</span>;   <span class="hljs-comment">// 替换成高清图</span>
+  img.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"load"</span>, <span class="hljs-function">() =&gt;</span> {
+    img.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">"blur"</span>); <span class="hljs-comment">// 去除模糊滤镜</span>
+  });
+};
+</code></pre>
+      </div>
+    
+<ul>
+<li>替换 <code>src</code> 后，浏览器会重新请求资源。</li>
+<li>监听 <code>load</code>，确保高清图加载完成后再去掉模糊。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="三-关键点解析"><a href="#三-关键点解析" class="anchor-link">#</a> 三、关键点解析</h2>
+<h3 id="1-并不是所有图片都需要懒加载"><a href="#1-并不是所有图片都需要懒加载" class="anchor-link">#</a> 1. 并不是所有图片都需要懒加载</h3>
+<ul>
+<li><strong>logo、图标、按钮图标</strong> → 页面一加载就需要显示，不适合懒加载。</li>
+<li>因此不能用 <code>document.querySelectorAll("img")</code>。</li>
+</ul>
+<p>👉 正确选择方式：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelectorAll%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bimg%5Bdata-src%5D%26quot%3B%3C%2Fspan%3E)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">"img[data-src]"</span>);
+</code></pre>
+      </div>
+    
+<p>即只选择带有 <code>data-src</code> 的图片。</p>
+<hr>
+<h3 id="2-data-属性与-dataset"><a href="#2-data-属性与-dataset" class="anchor-link">#</a> 2. data 属性与 dataset</h3>
+<ul>
+<li>
+<p><strong>HTML5 提供了 data-* 自定义属性</strong>，专门存储开发者定义的数据。</p>
+</li>
+<li>
+<p>在 JS 中可以这样获取：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20img%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelector%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bimg%26quot%3B%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(img.%3Cspan%20class%3D%22hljs-property%22%3Edataset%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Esrc%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%8F%96%E5%87%BA%20data-src%20%E7%9A%84%E5%80%BC%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> img = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"img"</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(img.<span class="hljs-property">dataset</span>.<span class="hljs-property">src</span>); <span class="hljs-comment">// 取出 data-src 的值</span>
+</code></pre>
+      </div>
+    
+</li>
+</ul>
+<hr>
+<h3 id="3-load-事件触发时机"><a href="#3-load-事件触发时机" class="anchor-link">#</a> 3. load 事件触发时机</h3>
+<ul>
+<li>当 <code>src</code> 替换为高清图时，浏览器会重新发起请求。</li>
+<li><strong>只有在资源请求完成后，<code>load</code> 才会触发</strong>。</li>
+<li>这就是去除滤镜的最佳时机。</li>
+<li>可通过 <code>DevTools → Network → Slow 3G</code> 观察效果。</li>
+</ul>
+<hr>
+<h2 id="四-实战"><a href="#四-实战" class="anchor-link">#</a> ==四、实战==</h2>
+<p>HTML结构：使用 <code>data-src</code> 存储&lt;u&gt;高分辨率图片地址&lt;/u&gt;，并添加模糊滤镜 <code>lazy-img</code></p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eimg%3C%2Fspan%3E%0A%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Esrc%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bimg%2Fdigital-lazy.jpg%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Edata-src%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bimg%2Fdigital.jpg%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ealt%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BComputer%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bfeatures__img%20lazy-img%26quot%3B%3C%2Fspan%3E%0A%2F%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span>
+     <span class="hljs-attr">src</span>=<span class="hljs-string">"img/digital-lazy.jpg"</span>
+     <span class="hljs-attr">data-src</span>=<span class="hljs-string">"img/digital.jpg"</span>
+     <span class="hljs-attr">alt</span>=<span class="hljs-string">"Computer"</span>
+     <span class="hljs-attr">class</span>=<span class="hljs-string">"features__img lazy-img"</span>
+/&gt;</span>
+</code></pre>
+      </div>
+    
+<p>css滤镜：实现模糊滤镜</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-class%22%3E.lazy-img%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attribute%22%3Efilter%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Eblur%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E20px%3C%2Fspan%3E)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-class">.lazy-img</span> {
+  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">20px</span>);
+}
+</code></pre>
+      </div>
+    
+<p>js：懒加载</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20lazyImgs%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelectorAll%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bimg%5Bdata-src%5D%26%23x27%3B%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E9%9C%80%E8%A6%81%E6%87%92%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%9B%BE%E7%89%87%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20lazyImgsObserver%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EIntersectionObserver%3C%2Fspan%3E(loadImg%2C%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Eroot%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ethreshold%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3ErootMargin%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B200px%26%23x27%3B%3C%2Fspan%3E%2C%0A%7D)%3B%0A%0AlazyImgs.%3Cspan%20class%3D%22hljs-title%20function_%22%3EforEach%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-params%22%3Eimg%3C%2Fspan%3E%20%3D%3E%3C%2Fspan%3E%20lazyImgsObserver.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eobserve%3C%2Fspan%3E(img))%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%AE%9E%E9%99%85%E6%93%8D%E4%BD%9C%E6%97%B6%E9%9C%80%E5%B0%86%E4%B8%8B%E9%9D%A2%E7%9A%84%E4%BB%A3%E7%A0%81%E6%94%BE%E7%BD%AE%E5%9C%A8%E5%89%8D%E9%9D%A2%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20loadImg%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3Eentries%2C%20observer%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%5Bentry%5D%20%3D%20entries%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20guard%20line%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!entry.%3Cspan%20class%3D%22hljs-property%22%3EisIntersecting%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(entry)%3B%0A%20%20entry.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Esrc%3C%2Fspan%3E%20%3D%20entry.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Edataset%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Esrc%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8D%E6%96%B0%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%EF%BC%8C%E4%BC%9A%E8%A7%A6%E5%8F%91load%E4%BA%8B%E4%BB%B6%3C%2Fspan%3E%0A%0A%20%20entry.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bload%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eremove%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Blazy-img%26%23x27%3B%3C%2Fspan%3E)%3B%0A%20%20%7D)%3B%0A%0A%20%20observer.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eunobserve%3C%2Fspan%3E(entry.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%80%E6%AC%A1%E6%87%92%E5%8A%A0%E8%BD%BD%E5%8D%B3%E5%8F%AF%E5%8F%96%E6%B6%88%3C%2Fspan%3E%0A%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// 图片懒加载</span>
+<span class="hljs-keyword">const</span> lazyImgs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">'img[data-src]'</span>); <span class="hljs-comment">// 获取所有需要懒加载的图片</span>
+
+<span class="hljs-keyword">const</span> lazyImgsObserver = <span class="hljs-keyword">new</span> <span class="hljs-title class_">IntersectionObserver</span>(loadImg, {
+  <span class="hljs-attr">root</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">threshold</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">rootMargin</span>: <span class="hljs-string">'200px'</span>,
+});
+
+lazyImgs.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">img</span> =&gt;</span> lazyImgsObserver.<span class="hljs-title function_">observe</span>(img));
+
+<span class="hljs-comment">// 实际操作时需将下面的代码放置在前面</span>
+<span class="hljs-keyword">const</span> loadImg = <span class="hljs-keyword">function</span> (<span class="hljs-params">entries, observer</span>) {
+  <span class="hljs-keyword">const</span> [entry] = entries;
+
+  <span class="hljs-comment">// guard line</span>
+  <span class="hljs-keyword">if</span> (!entry.<span class="hljs-property">isIntersecting</span>) <span class="hljs-keyword">return</span>;
+
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(entry);
+  entry.<span class="hljs-property">target</span>.<span class="hljs-property">src</span> = entry.<span class="hljs-property">target</span>.<span class="hljs-property">dataset</span>.<span class="hljs-property">src</span>; <span class="hljs-comment">// 浏览器重新获取图片，会触发load事件</span>
+
+  entry.<span class="hljs-property">target</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'load'</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">'lazy-img'</span>);
+  });
+
+  observer.<span class="hljs-title function_">unobserve</span>(entry.<span class="hljs-property">target</span>); <span class="hljs-comment">// 一次懒加载即可取消</span>
+};
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="五-使用场景"><a href="#五-使用场景" class="anchor-link">#</a> 五、使用场景</h2>
+<ul>
+<li><strong>电商网站商品列表</strong>：商品图很多，懒加载可大幅提升首屏速度。</li>
+<li><strong>资讯流 / 瀑布流</strong>：用户不一定会滚动到底部，懒加载节省大量流量。</li>
+<li><strong>图片展示网站</strong>：如摄影站、图床等。</li>
+</ul>
+<hr>
+<h2 id="六-总结"><a href="#六-总结" class="anchor-link">#</a> 六、总结</h2>
+<p>图片懒加载的核心是：</p>
+<ol>
+<li><strong>低清晰度占位</strong>（视觉不突兀）。</li>
+<li><strong>进入可视区时替换高清图</strong>。</li>
+<li><strong>等待 <code>load</code> 事件后移除滤镜</strong>。</li>
+<li><strong>通过 <code>img[data-src]</code> 精确选择目标</strong>。</li>
+<li><strong>结合 Intersection Observer 提升性能</strong>。</li>
+</ol>
+<p>这是前端性能优化中最常见也最实用的一个技巧。</p>
+<h2 id="补充-img-data-src"><a href="#补充-img-data-src" class="anchor-link">#</a> ==补充：img[data-src]==</h2>
+<h3 id="一-语法解析"><a href="#一-语法解析" class="anchor-link">#</a> 一、语法解析</h3>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-tag%22%3Eimg%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5Bdata-src%5D%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-tag">img</span><span class="hljs-selector-attr">[data-src]</span>
+</code></pre>
+      </div>
+    
+<p>这是 <strong>CSS 属性选择器</strong> 的一种写法，意思是：</p>
+<ul>
+<li><strong>选择所有带有 <code>data-src</code> 属性的 <code>&lt;img&gt;</code> 标签</strong>。</li>
+<li>不要求 <code>data-src</code> 里面的值是什么，只要存在这个属性即可被选中。</li>
+</ul>
+<p>👉 举例：</p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eimg%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Esrc%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blow.jpg%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Edata-src%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhigh.jpg%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ealt%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%87%92%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eimg%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Esrc%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blogo.png%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ealt%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E7%BD%91%E7%AB%99%20logo%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"low.jpg"</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"high.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"懒加载图片"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"logo.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"网站 logo"</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<ul>
+<li>第一个 <code>&lt;img&gt;</code> 有 <code>data-src</code>，会被 <code>img[data-src]</code> 选中。</li>
+<li>第二个 <code>&lt;img&gt;</code> 没有 <code>data-src</code>，不会被选中。</li>
+</ul>
+<hr>
+<h3 id="二-为什么用它"><a href="#二-为什么用它" class="anchor-link">#</a> 二、为什么用它？</h3>
+<p>在懒加载中，我们要区分：</p>
+<ul>
+<li><strong>需要懒加载的图片</strong> → 通常有一个占位 <code>src</code>，真实路径存在 <code>data-src</code>。</li>
+<li><strong>不需要懒加载的图片</strong> → 比如 logo、图标、导航按钮，一进入页面就要加载。</li>
+</ul>
+<p>如果直接用 <code>document.querySelectorAll("img")</code>：</p>
+<ul>
+<li>会把所有图片都选出来，包括不该懒加载的。</li>
+<li>可能导致 logo 被错误地处理，页面闪烁。</li>
+</ul>
+<p>👉 所以正确做法：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20lazyImgs%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelectorAll%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bimg%5Bdata-src%5D%26quot%3B%3C%2Fspan%3E)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> lazyImgs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">"img[data-src]"</span>);
+</code></pre>
+      </div>
+    
+<p>这样只会拿到需要懒加载的图片。</p>
+<hr>
+<h2 id="补充-data-属性的规则"><a href="#补充-data-属性的规则" class="anchor-link">#</a> ==补充：data-* 属性的规则==</h2>
+<ul>
+<li>
+<p><code>data-*</code> 是 <strong>HTML5 提供的自定义属性机制</strong>。</p>
+</li>
+<li>
+<p>写在标签上的形式是：</p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eimg%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Edata-src%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhigh.jpg%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"high.jpg"</span>&gt;</span>
+</code></pre>
+      </div>
+    
+</li>
+<li>
+<p>在 JS 中可以通过 <code>dataset</code> 获取：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20img%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelector%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bimg%5Bdata-src%5D%26quot%3B%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(img.%3Cspan%20class%3D%22hljs-property%22%3Edataset%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Esrc%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%BE%93%E5%87%BA%20%26quot%3Bhigh.jpg%26quot%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> img = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"img[data-src]"</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(img.<span class="hljs-property">dataset</span>.<span class="hljs-property">src</span>); <span class="hljs-comment">// 输出 "high.jpg"</span>
+</code></pre>
+      </div>
+    
+</li>
+</ul>
+<hr>
+<h2 id="扩展-精确匹配属性值"><a href="#扩展-精确匹配属性值" class="anchor-link">#</a> 扩展：精确匹配属性值</h2>
+<p>除了 <code>img[data-src]</code>（只要有 data-src 就选中），还可以写：</p>
+<ul>
+<li>
+<p><strong>指定属性值</strong>：</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-tag%22%3Eimg%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5Bdata-src%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhigh.jpg%26quot%3B%3C%2Fspan%3E%5D%3C%2Fspan%3E%20%7B%20%3Cspan%20class%3D%22hljs-attribute%22%3Eborder%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E2px%3C%2Fspan%3E%20solid%20red%3B%20%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-tag">img</span><span class="hljs-selector-attr">[data-src=<span class="hljs-string">"high.jpg"</span>]</span> { <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid red; }
+</code></pre>
+      </div>
+    
+<p>→ 只选择 <code>data-src="high.jpg"</code> 的图片。</p>
+</li>
+<li>
+<p><strong>属性值开头匹配</strong>：</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-tag%22%3Eimg%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5Bdata-src%5E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhttps%3A%2F%2F%26quot%3B%3C%2Fspan%3E%5D%3C%2Fspan%3E%20%7B%20...%20%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-tag">img</span><span class="hljs-selector-attr">[data-src^=<span class="hljs-string">"https://"</span>]</span> { ... }
+</code></pre>
+      </div>
+    
+<p>→ 选择所有以 <code>https://</code> 开头的路径。</p>
+</li>
+<li>
+<p><strong>属性值结尾匹配</strong>：</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-tag%22%3Eimg%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5Bdata-src%24%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.jpg%26quot%3B%3C%2Fspan%3E%5D%3C%2Fspan%3E%20%7B%20...%20%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-tag">img</span><span class="hljs-selector-attr">[data-src$=<span class="hljs-string">".jpg"</span>]</span> { ... }
+</code></pre>
+      </div>
+    
+<p>→ 选择所有 <code>.jpg</code> 结尾的图片。</p>
+</li>
+<li>
+<p><strong>属性值包含某段字符串</strong>：</p>
+
+      <div class="md-editor-code" data-language="css">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">css</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-selector-tag%22%3Eimg%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5Bdata-src*%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bbanner%26quot%3B%3C%2Fspan%3E%5D%3C%2Fspan%3E%20%7B%20...%20%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-css"><span class="hljs-selector-tag">img</span><span class="hljs-selector-attr">[data-src*=<span class="hljs-string">"banner"</span>]</span> { ... }
+</code></pre>
+      </div>
+    
+<p>→ 选择路径里包含 <code>banner</code> 的图片。</p>
+</li>
+</ul>
+<hr>
+<p>✅ 总结：</p>
+<ul>
+<li><code>img[data-src]</code> 是属性选择器，作用是「选择所有带有 <code>data-src</code> 属性的图片」。</li>
+<li>在懒加载中，它能帮我们精准过滤出需要懒加载的目标，而不影响 logo、图标等无需处理的图片。</li>
+<li>搭配 <code>dataset</code> 可以读取真实路径，实现从低清晰度 → 高清晰度的替换。</li>
+</ul>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/20</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/03/20</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

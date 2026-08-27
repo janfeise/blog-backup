@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">1panel部署alist-alist本地挂载步骤</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 18 分钟 · 字数 3498</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="alist-本地挂载与媒体存储实践"><a href="#alist-本地挂载与媒体存储实践" class="anchor-link">#</a> AList 本地挂载与媒体存储实践</h1>
+<blockquote>
+<p>背景：通过 1Panel 面板部署 AList，由于采用 Docker 容器方式运行，因此需要先完成目录挂载，才能实现文件持久化与本地存储管理</p>
+</blockquote>
+<p>在实际使用过程中，如果不理解容器挂载机制，很容易遇到“文件丢失”“路径不存在”“回收站报错”等问题。本文将结合实践，系统梳理 AList 本地挂载的完整流程，并给出推荐架构方案</p>
+<hr>
+<h2 id="挂载"><a href="#挂载" class="anchor-link">#</a> 挂载</h2>
+<p>在 1Panel 面板左侧菜单栏找到「容器」，选择 AList 容器并进行编辑，添加挂载目录</p>
+<p>需要理解一点：</p>
+<blockquote>
+<p>挂载的本质，是将容器内的目录映射到服务器目录，后续即使容器删除，数据仍保留在所挂载的服务器目录下</p>
+</blockquote>
+<p>也就是说：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%AE%B9%E5%99%A8%E7%9B%AE%E5%BD%95%20%E2%89%A0%20%E5%AE%9E%E9%99%85%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">容器目录 ≠ 实际存储位置
+</code></pre>
+      </div>
+    
+<p>当你完成挂载后：</p>
+<ul>
+<li>容器内的文件 → 实际存储在服务器</li>
+<li>容器删除后 → 数据仍然存在（不会丢失）</li>
+</ul>
+<p>如下图所示：</p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20260320114923025.png?sign=vCj0PQCCR109_5bIRfcTwI364fCJgX0z3eiihF5BR78=:0" alt="image-20260320114923025"></p>
+<hr>
+<h2 id="alist-添加本地存储"><a href="#alist-添加本地存储" class="anchor-link">#</a> AList 添加本地存储</h2>
+<p>完成挂载后，需要在 AList 后台添加“本地存储”</p>
+<p>操作步骤：</p>
+<ol>
+<li>进入 AList 管理后台</li>
+<li>添加存储 → 选择「本地存储」</li>
+<li>在“根文件夹路径”中填写容器内路径（注意不是服务器路径）</li>
+</ol>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%2Fopt%2Falist%2Fdata%2Fblog-images%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">/opt/alist/data/blog-images
+</code></pre>
+      </div>
+    
+<p>如下图所示：</p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20260320115239215.png?sign=pSDJgX0BsGb0Ds_u6qeLJxVE3Rt-0n6AJRRBHtf98x8=:0" alt="image-20260320115239215"></p>
+<hr>
+<h2 id="测试挂载是否成功"><a href="#测试挂载是否成功" class="anchor-link">#</a> 测试挂载是否成功</h2>
+<p>完成配置后，建议进行一次验证，确保挂载正常</p>
+<h3 id="步骤一-在容器中创建文件"><a href="#步骤一-在容器中创建文件" class="anchor-link">#</a> 步骤一：在容器中创建文件</h3>
+<p>进入容器终端，在挂载目录中创建测试文件：</p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20260320115612864.png?sign=VB-adP2sfPPhiqtf12qRwRC2y2uAI2dDBqeS6qQYPII=:0" alt="image-20260320115612864"></p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20260320115842238.png?sign=n0pkNkvOLhpDkPZjpmsNqslfoNsHCp0UF5_zBkWEa6Q=:0" alt="image-20260320115842238"></p>
+<hr>
+<h3 id="步骤二-在服务器中验证"><a href="#步骤二-在服务器中验证" class="anchor-link">#</a> 步骤二：在服务器中验证</h3>
+<p>退出容器，在服务器对应目录中查看：</p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20260320115911090.png?sign=4nRh9zHObIo5G5KKxpUX7xTPRgwpAOiMrBHGW8wA8Zo=:0" alt="image-20260320115911090"></p>
+<p>如果能够看到刚才创建的文件，说明：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%AE%B9%E5%99%A8%E7%9B%AE%E5%BD%95%20%E2%86%90%E2%86%92%20%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%AE%E5%BD%95%20%E5%B7%B2%E6%88%90%E5%8A%9F%E6%98%A0%E5%B0%84%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">容器目录 ←→ 服务器目录 已成功映射
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="常见问题说明"><a href="#常见问题说明" class="anchor-link">#</a> 常见问题说明</h2>
+<p>在使用过程中，最容易踩的坑是：</p>
+<h3 id="回收站报错-invalid-cross-device-link"><a href="#回收站报错-invalid-cross-device-link" class="anchor-link">#</a> 回收站报错：invalid cross-device link</h3>
+<p>原因在于：</p>
+<blockquote>
+<p>AList 删除文件时使用的是 rename 操作</p>
+</blockquote>
+<p>而 Linux 中：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="rename%20%E5%8F%AA%E8%83%BD%E5%9C%A8%E5%90%8C%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%89%A7%E8%A1%8C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">rename 只能在同一个文件系统中执行
+</code></pre>
+      </div>
+    
+<p>如果你的“存储目录”和“回收站目录”分别挂载到不同磁盘，就会出现该问题</p>
+<hr>
+<h2 id="推荐系统架构"><a href="#推荐系统架构" class="anchor-link">#</a> 推荐系统架构</h2>
+<p>为了避免上述问题，同时方便后续扩展（图床、画廊、视频管理），建议采用统一挂载方案。</p>
+<h3 id="核心思路"><a href="#核心思路" class="anchor-link">#</a> 核心思路</h3>
+<ul>
+<li>只挂载一个根目录</li>
+<li>所有媒体资源统一管理</li>
+<li>回收站与存储目录必须在同一挂载点</li>
+</ul>
+<hr>
+<h3 id="具体实现"><a href="#具体实现" class="anchor-link">#</a> 具体实现</h3>
+<h4 id="宿主机目录"><a href="#宿主机目录" class="anchor-link">#</a> 宿主机目录</h4>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%2Fdata%2Fblog-media%2F%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash">/data/blog-media/
+</code></pre>
+      </div>
+    
+<hr>
+<h4 id="容器挂载"><a href="#容器挂载" class="anchor-link">#</a> 容器挂载</h4>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%AE%B9%E5%99%A8%E7%9B%AE%E5%BD%95%EF%BC%9A%2Fopt%2Falist%2Fdata%2Fblog%0A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9B%AE%E5%BD%95%EF%BC%9A%2Fdata%2Fblog-media%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">容器目录：/opt/alist/data/blog
+宿主机目录：/data/blog-media
+</code></pre>
+      </div>
+    
+<hr>
+<h4 id="容器内目录结构"><a href="#容器内目录结构" class="anchor-link">#</a> 容器内目录结构</h4>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%2Fopt%2Falist%2Fdata%2Fblog%2F%0A%E2%94%9C%E2%94%80%E2%94%80%20blog-images%2F%0A%E2%94%9C%E2%94%80%E2%94%80%20blog-garbage%2F%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash">/opt/alist/data/blog/
+├── blog-images/
+├── blog-garbage/
+</code></pre>
+      </div>
+    
+<p>说明：</p>
+<ul>
+<li><code>blog-images</code>：存储图片资源</li>
+<li><code>blog-garbage</code>：作为回收站</li>
+</ul>
+<hr>
+<h4 id="alist-配置"><a href="#alist-配置" class="anchor-link">#</a> AList 配置</h4>
+<p>在 AList 后台设置：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E6%A0%B9%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%EF%BC%9A%2Fopt%2Falist%2Fdata%2Fblog%2Fblog-images%0A%E5%9B%9E%E6%94%B6%E7%AB%99%E8%B7%AF%E5%BE%84%EF%BC%9A%2Fopt%2Falist%2Fdata%2Fblog%2Fblog-garbage%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">根文件路径：/opt/alist/data/blog/blog-images
+回收站路径：/opt/alist/data/blog/blog-garbage
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="效果展示"><a href="#效果展示" class="anchor-link">#</a> 效果展示</h3>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20260320124856321.png?sign=n9JvNc_1DMl7XS-GRvM2FM8KsAAVan-2vWs9_rH_ZDk=:0" alt="image-20260320124856321"></p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20260320125119854.png?sign=0twcKUjIOWDSLrVxobnWunSEnko6UWlQeoGku6HTw0c=:0" alt="image-20260320125119854"></p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/03/20/image-20260320125222277.png?sign=MowsTIrOAOx-4oQLkuM6CbFje_qMgXcB4PrEAFLUloE=:0" alt="image-20260320125222277"></p>
+<h3 id="避免跨磁盘问题"><a href="#避免跨磁盘问题" class="anchor-link">#</a> 避免跨磁盘问题</h3>
+<ul>
+<li>存储目录与回收站在同一文件系统</li>
+<li>不再出现 rename 报错</li>
+</ul>
+<hr>
+<h3 id="数据结构清晰"><a href="#数据结构清晰" class="anchor-link">#</a> 数据结构清晰</h3>
+<ul>
+<li>所有媒体资源统一在 <code>/data/blog-media</code></li>
+<li>方便备份与迁移</li>
+</ul>
+<hr>
+<h3 id="易于扩展"><a href="#易于扩展" class="anchor-link">#</a> 易于扩展</h3>
+<p>后续可以直接扩展：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%2Fdata%2Fblog-media%2F%0A%E2%94%9C%E2%94%80%E2%94%80%20images%2F%0A%E2%94%9C%E2%94%80%E2%94%80%20videos%2F%0A%E2%94%9C%E2%94%80%E2%94%80%20garbage%2F%0A%E2%94%9C%E2%94%80%E2%94%80%20thumbs%2F%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash">/data/blog-media/
+├── images/
+├── videos/
+├── garbage/
+├── thumbs/
+</code></pre>
+      </div>
+    
+<p>用于支持：</p>
+<ul>
+<li>图床系统</li>
+<li>博客图片管理</li>
+<li>画廊页面</li>
+<li>视频资源管理</li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="anchor-link">#</a> 总结</h2>
+<p>在使用 AList 进行本地存储时，核心不是“如何挂载”，而是：</p>
+<blockquote>
+<p>如何设计一个稳定、可扩展的存储结构</p>
+</blockquote>
+<p>关键要点可以归纳为：</p>
+<ul>
+<li>容器挂载优先使用“单一根目录”</li>
+<li>AList 路径必须使用容器内路径</li>
+<li>回收站与存储目录必须在同一文件系统</li>
+<li>提前规划媒体目录结构，避免后期迁移成本</li>
+</ul>
+<p>当这些基础设计做好后，AList 不仅可以作为文件管理工具，还可以进一步演变为：</p>
+<blockquote>
+<p>个人图床 + 媒体资源中心 + 博客资源管理系统</p>
+</blockquote>
+<p>这也是后续构建完整内容平台的重要基础</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/20</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/03/20</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

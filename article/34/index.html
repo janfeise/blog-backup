@@ -1,0 +1,500 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">状态机</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 43 分钟 · 字数 8403</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><p>在guess-agent中遇到了问题：需根据状态进行处理，除了绘制状态机的图外，那么&lt;u&gt;程序如何实现状态机呢&lt;/u&gt;？if else？</p>
+<p>在查看文档：<a href="https://www.runoob.com/w3cnote/verilog-fsm.html%EF%BC%8C%E5%90%8E%E5%AF%B9%E7%8A%B6%E6%80%81%E6%9C%BA%E7%9A%84%E5%AE%9E%E7%8E%B0%E8%BF%9B%E8%A1%8C%E6%A2%B3%E7%90%86">https://www.runoob.com/w3cnote/verilog-fsm.html，后对状态机的实现进行梳理</a></p>
+<p>有限状态机（Finite-State Machine，FSM），简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型</p>
+<p>状态机可分为两类：</p>
+<ul>
+<li>Mealy状态机：下一个状态输出，取决于当前输入和当前状态（常用的是这个）</li>
+<li>Moore状态机：下一个状态输出，只取决于当前状态，与当前输入无关</li>
+</ul>
+<p>文档中举例了：自动售卖机的状态机实现</p>
+<p>背景：饮料单价 2 元，该售卖机只能接受 0.5 元、1 元的硬币。考虑找零和出货</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2020/09/Uep0FDU5QLlSBjKZ.png" alt="img"></p>
+<blockquote>
+<p>coin = 1 代表投入了 0.5 元硬币，coin = 2 代表投入了 1 元硬币</p>
+<p>IDLE：表示等待投币</p>
+<p>GET N：表示已投币金额，如：GET05，表示已投0.5元</p>
+</blockquote>
+<p>状态图分析：</p>
+<p>饮料单价 2 元，根据投币金额决定是否出货，是否找零</p>
+<p>从 IDLE（等待投币） 出发，coin = 1，表示投币0.5，进入GET0.5状态，再次投入coin = 1时，总投币1元，进入GET10状态，再次投入 coin = 1，总投币1.5元，进入GET15，再次投入coin = 1，总投币2元！出货，数量1瓶，不找零</p>
+<p>若处在GET15状态，表示已投币1.5元，此时若投币 coin = 2，表示投币1元，总投币2.5元，出货！数量1瓶，找零0.5元</p>
+<p>其它流程大致也是如此分析，不在赘述</p>
+<h2 id="状态机设计-3-段式-推荐"><a href="#状态机设计-3-段式-推荐" class="anchor-link">#</a> 状态机设计：3 段式（推荐）</h2>
+<p>状态图绘制完成后，进入最关心的程序实现部分，文档中提出，推荐使用3段式实现状态机，分为三个部分：</p>
+<p>将当前状态和输入进行拆分</p>
+<ul>
+<li>状态存储</li>
+<li>状态转移逻辑</li>
+<li>输出动作</li>
+</ul>
+<p>对职责进行划分，每段只处理所需逻辑</p>
+<h3 id="第一段-状态记录"><a href="#第一段-状态记录" class="anchor-link">#</a> 第一段：状态记录</h3>
+<p>在自动售卖机中存在以下几种状态：图中的4个圈圈</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eenum%3C%2Fspan%3E%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81%20%7B%20%E7%A9%BA%E9%97%B2%2C%20%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%E8%A7%92%2C%20%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%2C%20%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%E8%A7%92%20%7D%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eenum%3C%2Fspan%3E%20%E7%A1%AC%E5%B8%81%20%7B%0A%20%20%20%20%E4%BA%94%E8%A7%92(%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E)%2C%0A%20%20%20%20%E4%B8%80%E5%85%83(%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E)%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81%20%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%E8%87%AA%E5%8A%A8%E5%94%AE%E5%8D%96%E6%9C%BA()%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3Ethis%3C%2Fspan%3E.%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%20%3D%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E7%A9%BA%E9%97%B2%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">enum</span> 机器状态 { 空闲, 已投<span class="hljs-number">5</span>角, 已投<span class="hljs-number">1</span>元, 已投<span class="hljs-number">1</span>元<span class="hljs-number">5</span>角 }
+
+<span class="hljs-keyword">enum</span> 硬币 {
+    五角(<span class="hljs-number">1</span>),
+    一元(<span class="hljs-number">2</span>);
+}
+
+<span class="hljs-keyword">private</span> 机器状态 当前状态;
+
+<span class="hljs-keyword">public</span> 自动售卖机() {
+    <span class="hljs-built_in">this</span>.当前状态 = 机器状态.空闲;
+}
+</code></pre>
+      </div>
+    
+<p>这一部分只负责“记录当前状态”，不涉及任何业务逻辑</p>
+<h3 id="第二段-下一个状态"><a href="#第二段-下一个状态" class="anchor-link">#</a> 第二段：下一个状态</h3>
+<p>状态转移只关心一件事：下一步去哪</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20%E7%AC%AC%E4%BA%8C%E6%AE%B5%EF%BC%9A%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E9%80%BB%E8%BE%91%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81%20%E8%AE%A1%E7%AE%97%E4%B8%8B%E4%B8%80%E7%8A%B6%E6%80%81(%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81%20%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%2C%20%E7%A1%AC%E5%B8%81%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eswitch%3C%2Fspan%3E%20(%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81)%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecase%3C%2Fspan%3E%20%E7%A9%BA%E9%97%B2%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%BA%94%E8%A7%92)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%E8%A7%92%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%B8%80%E5%85%83)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ebreak%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecase%3C%2Fspan%3E%20%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%E8%A7%92%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%BA%94%E8%A7%92)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%B8%80%E5%85%83)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%E8%A7%92%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ebreak%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecase%3C%2Fspan%3E%20%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%BA%94%E8%A7%92)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%E8%A7%92%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%B8%80%E5%85%83)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E7%A9%BA%E9%97%B2%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%BB%A12%E5%85%83%EF%BC%8C%E5%9B%9E%E5%88%B0%E7%A9%BA%E9%97%B2%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ebreak%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecase%3C%2Fspan%3E%20%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%E8%A7%92%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%97%A0%E8%AE%BA%E6%8A%95%E4%BA%94%E8%A7%92%E8%BF%98%E6%98%AF%E4%B8%80%E5%85%83%EF%BC%8C%E9%83%BD%E4%BC%9A%E8%BE%BE%E5%88%B0%E6%88%96%E8%B6%85%E8%BF%872%E5%85%83%EF%BC%8C%E5%9B%9E%E5%88%B0%E7%A9%BA%E9%97%B2%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%BA%94%E8%A7%92%20%7C%7C%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%B8%80%E5%85%83)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E7%A9%BA%E9%97%B2%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ebreak%3C%2Fspan%3E%3B%0A%20%20%20%20%7D%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%9D%9E%E6%B3%95%E8%BE%93%E5%85%A5%EF%BC%8C%E4%BF%9D%E6%8C%81%E5%8E%9F%E7%8A%B6%E6%80%81%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-comment">// ==================== 第二段：状态转移逻辑 ====================</span>
+<span class="hljs-keyword">private</span> 机器状态 计算下一状态(机器状态 当前状态, 硬币 投入硬币) {
+    <span class="hljs-keyword">switch</span> (当前状态) {
+        <span class="hljs-keyword">case</span> 空闲:
+            <span class="hljs-keyword">if</span> (投入硬币 == 硬币.五角) <span class="hljs-keyword">return</span> 机器状态.已投<span class="hljs-number">5</span>角;
+            <span class="hljs-keyword">if</span> (投入硬币 == 硬币.一元) <span class="hljs-keyword">return</span> 机器状态.已投<span class="hljs-number">1</span>元;
+            <span class="hljs-keyword">break</span>;
+
+        <span class="hljs-keyword">case</span> 已投<span class="hljs-number">5</span>角:
+            <span class="hljs-keyword">if</span> (投入硬币 == 硬币.五角) <span class="hljs-keyword">return</span> 机器状态.已投<span class="hljs-number">1</span>元;
+            <span class="hljs-keyword">if</span> (投入硬币 == 硬币.一元) <span class="hljs-keyword">return</span> 机器状态.已投<span class="hljs-number">1</span>元<span class="hljs-number">5</span>角;
+            <span class="hljs-keyword">break</span>;
+
+        <span class="hljs-keyword">case</span> 已投<span class="hljs-number">1</span>元:
+            <span class="hljs-keyword">if</span> (投入硬币 == 硬币.五角) <span class="hljs-keyword">return</span> 机器状态.已投<span class="hljs-number">1</span>元<span class="hljs-number">5</span>角;
+            <span class="hljs-keyword">if</span> (投入硬币 == 硬币.一元) <span class="hljs-keyword">return</span> 机器状态.空闲; <span class="hljs-comment">// 满2元，回到空闲</span>
+            <span class="hljs-keyword">break</span>;
+
+        <span class="hljs-keyword">case</span> 已投<span class="hljs-number">1</span>元<span class="hljs-number">5</span>角:
+            <span class="hljs-comment">// 无论投五角还是一元，都会达到或超过2元，回到空闲</span>
+            <span class="hljs-keyword">if</span> (投入硬币 == 硬币.五角 || 投入硬币 == 硬币.一元)
+                <span class="hljs-keyword">return</span> 机器状态.空闲;
+            <span class="hljs-keyword">break</span>;
+    }
+    <span class="hljs-comment">// 非法输入，保持原状态</span>
+    <span class="hljs-keyword">return</span> 当前状态;
+}
+</code></pre>
+      </div>
+    
+<p>这一层完全不关心“出货”或“找零”，只处理状态变化</p>
+<h3 id="第三段-action"><a href="#第三段-action" class="anchor-link">#</a> 第三段：Action</h3>
+<p>action只关心行为，不关心状态如何变化，只考虑系统需要做出的行为（如：出货不找零）</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20%E7%AC%AC%E4%B8%89%E6%AE%B5%EF%BC%9A%E8%BE%93%E5%87%BA%E9%80%BB%E8%BE%91%20%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eprivate%3C%2Fspan%3E%20%E5%94%AE%E5%8D%96%E7%BB%93%E6%9E%9C%20%E6%89%A7%E8%A1%8C%E8%BE%93%E5%87%BA(%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81%20%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%2C%20%E7%A1%AC%E5%B8%81%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%83%85%E5%86%B51%EF%BC%9A%E5%B7%B2%E6%8A%951%E5%85%835%E8%A7%92%20%2B%20%E6%8A%95%E4%BA%94%E8%A7%92%20%3D%20%E6%AD%A3%E5%A5%BD2%E5%85%83%EF%BC%8C%E5%87%BA%E8%B4%A7%E4%B8%8D%E6%89%BE%E9%9B%B6%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%20%3D%3D%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%E8%A7%92%20%26%26%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%BA%94%E8%A7%92)%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E5%88%9B%E5%BB%BA%E7%BB%93%E6%9E%9C(%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E)%3B%0A%20%20%20%20%7D%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%83%85%E5%86%B52%EF%BC%9A%E5%B7%B2%E6%8A%951%E5%85%83%20%2B%20%E6%8A%95%E4%B8%80%E5%85%83%20%3D%20%E6%AD%A3%E5%A5%BD2%E5%85%83%EF%BC%8C%E5%87%BA%E8%B4%A7%E4%B8%8D%E6%89%BE%E9%9B%B6%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%20%3D%3D%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%20%26%26%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%B8%80%E5%85%83)%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E5%88%9B%E5%BB%BA%E7%BB%93%E6%9E%9C(%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E)%3B%0A%20%20%20%20%7D%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%83%85%E5%86%B53%EF%BC%9A%E5%B7%B2%E6%8A%951%E5%85%835%E8%A7%92%20%2B%20%E6%8A%95%E4%B8%80%E5%85%83%20%3D%202.5%E5%85%83%EF%BC%8C%E5%87%BA%E8%B4%A7%E5%B9%B6%E6%89%BE%E9%9B%B60.5%E5%85%83%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%20%3D%3D%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81.%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%E8%A7%92%20%26%26%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E7%A1%AC%E5%B8%81.%E4%B8%80%E5%85%83)%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E5%88%9B%E5%BB%BA%E7%BB%93%E6%9E%9C(%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%3B%0A%20%20%20%20%7D%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%B6%E4%BD%99%E6%83%85%E5%86%B5%EF%BC%9A%E4%B8%8D%E5%87%BA%E8%B4%A7%E4%B8%8D%E6%89%BE%E9%9B%B6%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E5%88%9B%E5%BB%BA%E7%BB%93%E6%9E%9C(%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-comment">// ==================== 第三段：输出逻辑 ====================</span>
+<span class="hljs-keyword">private</span> 售卖结果 执行输出(机器状态 当前状态, 硬币 投入硬币) {
+    <span class="hljs-comment">// 情况1：已投1元5角 + 投五角 = 正好2元，出货不找零</span>
+    <span class="hljs-keyword">if</span> (当前状态 == 机器状态.已投<span class="hljs-number">1</span>元<span class="hljs-number">5</span>角 &amp;&amp; 投入硬币 == 硬币.五角) {
+        <span class="hljs-keyword">return</span> 创建结果(<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-comment">// 情况2：已投1元 + 投一元 = 正好2元，出货不找零</span>
+    <span class="hljs-keyword">if</span> (当前状态 == 机器状态.已投<span class="hljs-number">1</span>元 &amp;&amp; 投入硬币 == 硬币.一元) {
+        <span class="hljs-keyword">return</span> 创建结果(<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>);
+    }
+    <span class="hljs-comment">// 情况3：已投1元5角 + 投一元 = 2.5元，出货并找零0.5元</span>
+    <span class="hljs-keyword">if</span> (当前状态 == 机器状态.已投<span class="hljs-number">1</span>元<span class="hljs-number">5</span>角 &amp;&amp; 投入硬币 == 硬币.一元) {
+        <span class="hljs-keyword">return</span> 创建结果(<span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>);
+    }
+    <span class="hljs-comment">// 其余情况：不出货不找零</span>
+    <span class="hljs-keyword">return</span> 创建结果(<span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>);
+}
+</code></pre>
+      </div>
+    
+<p>这一层可以独立修改，如：后续新增“优惠活动”，只需要改这里</p>
+<h3 id="统一入口"><a href="#统一入口" class="anchor-link">#</a> 统一入口</h3>
+<p>最后，通过一个统一入口把三部分串起来</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A%20*%20%E5%AF%B9%E5%A4%96%E5%94%AF%E4%B8%80%E5%85%A5%E5%8F%A3%EF%BC%9A%E6%8A%95%E5%B8%81%0A%20*%2F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Epublic%3C%2Fspan%3E%20%E5%94%AE%E5%8D%96%E7%BB%93%E6%9E%9C%20%E6%8A%95%E5%B8%81(%E7%A1%AC%E5%B8%81%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%AC%AC%E4%BA%8C%E6%AE%B5%EF%BC%9A%E8%AE%A1%E7%AE%97%E4%B8%8B%E4%B8%80%E7%8A%B6%E6%80%81%3C%2Fspan%3E%0A%20%20%20%20%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81%20%E4%B8%8B%E4%B8%80%E7%8A%B6%E6%80%81%20%3D%20%E8%AE%A1%E7%AE%97%E4%B8%8B%E4%B8%80%E7%8A%B6%E6%80%81(%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%2C%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81)%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%AC%AC%E4%B8%89%E6%AE%B5%EF%BC%9A%E6%89%A7%E8%A1%8C%E8%BE%93%E5%87%BA%E5%8A%A8%E4%BD%9C%3C%2Fspan%3E%0A%20%20%20%20%E5%94%AE%E5%8D%96%E7%BB%93%E6%9E%9C%20%E7%BB%93%E6%9E%9C%20%3D%20%E6%89%A7%E8%A1%8C%E8%BE%93%E5%87%BA(%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%2C%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81)%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%9B%B4%E6%96%B0%E7%8A%B6%E6%80%81%EF%BC%88%E7%9B%B8%E5%BD%93%E4%BA%8E%E7%AC%AC%E4%B8%80%E6%AE%B5%E9%9D%9E%E9%98%BB%E5%A1%9E%E8%B5%8B%E5%80%BC%EF%BC%89%3C%2Fspan%3E%0A%20%20%20%20%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%20%3D%20%E4%B8%8B%E4%B8%80%E7%8A%B6%E6%80%81%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%E7%BB%93%E6%9E%9C%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-comment">/**
+ * 对外唯一入口：投币
+ */</span>
+<span class="hljs-keyword">public</span> 售卖结果 投币(硬币 投入硬币) {
+    <span class="hljs-comment">// 第二段：计算下一状态</span>
+    机器状态 下一状态 = 计算下一状态(当前状态, 投入硬币);
+    <span class="hljs-comment">// 第三段：执行输出动作</span>
+    售卖结果 结果 = 执行输出(当前状态, 投入硬币);
+    <span class="hljs-comment">// 更新状态（相当于第一段非阻塞赋值）</span>
+    当前状态 = 下一状态;
+    <span class="hljs-keyword">return</span> 结果;
+}
+</code></pre>
+      </div>
+    
+<p>这段代码非常关键，它体现了状态机的执行顺序：</p>
+<ol>
+<li>基于当前状态和输入，计算下一状态</li>
+<li>基于当前状态和输入，产生输出</li>
+<li>更新状态</li>
+</ol>
+<p>这与硬件中的“时钟驱动”思想高度一致</p>
+<h3 id="场景a分析-已投1-5元-再投0-5元"><a href="#场景a分析-已投1-5元-再投0-5元" class="anchor-link">#</a> 场景A分析：已投1.5元 + 再投0.5元</h3>
+<p>以“已投 1.5 元，再投 0.5 元”为例：</p>
+<ul>
+<li>当前状态：已投1元5角</li>
+<li>输入：五角</li>
+</ul>
+<p>执行流程：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3E%E6%9C%BA%E5%99%A8%E7%8A%B6%E6%80%81%20%E4%B8%8B%E4%B8%80%E7%8A%B6%E6%80%81%20%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%20%E8%AE%A1%E7%AE%97%E4%B8%8B%E4%B8%80%E7%8A%B6%E6%80%81(%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%2C%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81)%3B%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-attr">机器状态 下一状态 </span>=<span class="hljs-string"> 计算下一状态(当前状态, 投入硬币);
+</span></code></pre>
+      </div>
+    
+<p>得到：下一状态 = 空闲</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3E%E5%94%AE%E5%8D%96%E7%BB%93%E6%9E%9C%20%E7%BB%93%E6%9E%9C%20%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%20%E6%89%A7%E8%A1%8C%E8%BE%93%E5%87%BA(%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%2C%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81)%3B%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-attr">售卖结果 结果 </span>=<span class="hljs-string"> 执行输出(当前状态, 投入硬币);
+</span></code></pre>
+      </div>
+    
+<p>命中规则：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attribute%22%3Eif%3C%2Fspan%3E%20(%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%20%3D%3D%20%E5%B7%B2%E6%8A%95%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%E5%85%83%3Cspan%20class%3D%22hljs-number%22%3E5%3C%2Fspan%3E%E8%A7%92%20%26%26%20%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%20%3D%3D%20%E4%BA%94%E8%A7%92)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-attribute">if</span> (当前状态 == 已投<span class="hljs-number">1</span>元<span class="hljs-number">5</span>角 &amp;&amp; 投入硬币 == 五角)
+</code></pre>
+      </div>
+    
+<p>结果：</p>
+<ul>
+<li>出货：true</li>
+<li>找零：false</li>
+</ul>
+<p>最后更新状态：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20%E4%B8%8B%E4%B8%80%E7%8A%B6%E6%80%81%3Cspan%20class%3D%22hljs-comment%22%3E%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>当前状态 <span class="hljs-operator">=</span> 下一状态<span class="hljs-comment">;</span>
+</code></pre>
+      </div>
+    
+<p>整个流程清晰且可预测</p>
+<h2 id="js实现自动售卖机的状态机"><a href="#js实现自动售卖机的状态机" class="anchor-link">#</a> js实现自动售卖机的状态机</h2>
+<p>编写后感悟：</p>
+<ol>
+<li>
+<p><strong>看图写代码</strong>：根据状态图编写每一段的代码</p>
+<ul>
+<li><strong>第一段——状态</strong>：对应图中“节点”。先明确系统有哪些状态，如：空闲、已投0.5元、已投1元、已投1.5元</li>
+<li><strong>第二段——转移</strong>：对应图中“边”。描述从当前状态在某个输入下如何走到下一个状态</li>
+<li><strong>第三段——输出</strong>：对应图中“动作”。并非每次状态变化都有输出，只有特定路径才触发行为。以自动售卖机为例，仅三种情况产生输出：
+<ul>
+<li>已投1.5元 + 0.5元 → 出货，不找零</li>
+<li>已投1.5元 + 1元 → 出货，找零</li>
+<li>已投1元 + 1元 → 出货，不找零
+其余均为中间过程，无任何输出。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>内部封闭</strong>：三段式状态机的每段都是内部实现，对外不可见</p>
+</li>
+<li>
+<p><strong>统一入口</strong>：对外只暴露一个方法。调用者无需关心当前状态、如何转移、输出如何计算——输入一个行为，得到一个结果即可</p>
+</li>
+<li>
+<p><strong>结果封装</strong>：输出通常需要封装为结构化结果返回</p>
+</li>
+</ol>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%3D%3D%3D%3D%3D%3D%E8%87%AA%E5%8A%A8%E5%94%AE%E5%8D%96%E6%9C%BA%E7%8A%B6%E6%80%81%E6%9C%BA%E6%AD%A3%E5%9C%A8%E8%BF%90%E8%A1%8C%E4%B8%AD%3D%3D%3D%3D%3D%3D%26quot%3B%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%AE%9A%E4%B9%89%E7%8A%B6%E6%80%81%E6%9C%BA%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eclass%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%AC%AC%E4%B8%80%E6%AE%B5%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Estatic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%20constant_%22%3ESTATES%3C%2Fspan%3E%20%3D%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3EIDLE%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BIDLE%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%A9%BA%E9%97%B2%E7%8A%B6%E6%80%81%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EGOT05%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BGOT05%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B7%B2%E6%8A%95%E5%85%A55%E8%A7%92%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EGOT10%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BGOT10%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B7%B2%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EGOT15%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BGOT15%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B7%B2%E6%8A%95%E5%85%A51.5%E5%85%83%E9%92%B1%3C%2Fspan%3E%0A%20%20%7D%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Estatic%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%20constant_%22%3ECOIN%3C%2Fspan%3E%20%3D%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Econ05%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0.5%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%205%E8%A7%92%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Econ10%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1.0%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%201%E5%85%83%E9%92%B1%3C%2Fspan%3E%0A%20%20%7D%3B%0A%0A%20%20%23currentState%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%EF%BC%8C%E4%B8%BA%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%3C%2Fspan%3E%0A%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Econstructor%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%23currentState%20%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EIDLE%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%9D%E5%A7%8B%E7%8A%B6%E6%80%81%E4%B8%BA%E7%A9%BA%E9%97%B2%3C%2Fspan%3E%0A%20%20%7D%0A%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetCurrentState%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%23currentState%3B%0A%20%20%7D%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%AC%AC%E4%BA%8C%E6%AE%B5%EF%BC%9A%E7%8A%B6%E6%80%81%E9%80%BB%E8%BE%91%E8%BD%AC%E7%A7%BB%EF%BC%8C%E5%8F%AA%E5%85%B3%E5%BF%83%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%8A%B6%E6%80%81%3C%2Fspan%3E%0A%20%20%23%3Cspan%20class%3D%22hljs-title%20function_%22%3EnextState%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Ecoin%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eswitch%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%23currentState)%20%7B%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecase%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EIDLE%3C%2Fspan%3E%3A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%A9%BA%E9%97%B2%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ05%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT05%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8A%95%E5%85%A55%E8%A7%92%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eelse%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ10%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT10%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ebreak%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecase%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT05%3C%2Fspan%3E%3A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B7%B2%E6%8A%95%E5%85%A55%E8%A7%92%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ05%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT10%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%86%8D%E6%8A%95%E5%85%A55%E8%A7%92%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B01%E5%85%83%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eelse%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ10%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT15%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B01.5%E5%85%83%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ebreak%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecase%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT10%3C%2Fspan%3E%3A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B7%B2%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ05%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT15%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8A%95%E5%85%A55%E8%A7%92%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B01.5%E5%85%83%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eelse%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ10%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EIDLE%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%86%8D%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B02%E5%85%83%E9%92%B1%EF%BC%8C%E5%87%BA%E8%B4%A7%EF%BC%81%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ebreak%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecase%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT15%3C%2Fspan%3E%3A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B7%B2%E6%8A%95%E5%85%A51.5%E5%85%83%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%0A%20%20%20%20%20%20%20%20%20%20coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ05%3C%2Fspan%3E%20%7C%7C%0A%20%20%20%20%20%20%20%20%20%20coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ10%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EIDLE%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%86%8D%E6%8A%95%E5%85%A5%E4%BB%BB%E6%84%8F%E7%A1%AC%E5%B8%81%EF%BC%8C%E8%BE%BE%E5%88%B02%E5%85%83%E9%92%B1%EF%BC%8C%E5%87%BA%E8%B4%A7%EF%BC%81%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ebreak%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Edefault%3C%2Fspan%3E%3A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%9D%9E%E6%B3%95%E8%BE%93%E5%85%A5%EF%BC%8C%E4%BF%9D%E6%8C%81%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eerror%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E9%9D%9E%E6%B3%95%E8%BE%93%E5%85%A5%E7%9A%84%E7%A1%AC%E5%B8%81%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetCurrentState%3C%2Fspan%3E()%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%AC%AC%E4%B8%89%E6%AE%B5%EF%BC%9A%E9%80%BB%E8%BE%91%E5%A4%84%E7%90%86%3C%2Fspan%3E%0A%20%20%23%3Cspan%20class%3D%22hljs-title%20function_%22%3Eprocess%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Ecoin%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%83%85%E6%99%AF%E4%B8%80%EF%BC%9A%E5%B7%B2%E6%8A%951.5%EF%BC%8C%E5%86%8D%E6%8A%955%E8%A7%92%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B02%E5%85%83%E9%92%B1%EF%BC%8C%E5%87%BA%E8%B4%A7%E4%B8%8D%E6%89%BE%E9%9B%B6%EF%BC%81%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetCurrentState%3C%2Fspan%3E()%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT15%3C%2Fspan%3E%20%26%26%0A%20%20%20%20%20%20coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ05%3C%2Fspan%3E%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Edispense%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Echange%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%20%7D%3B%0A%20%20%20%20%7D%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%83%85%E6%99%AF%E4%BA%8C%EF%BC%9A%E5%B7%B2%E6%8A%951.5%EF%BC%8C%E5%86%8D%E6%8A%951%E5%85%83%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B02.5%E5%85%83%E9%92%B1%EF%BC%8C%E5%87%BA%E8%B4%A7%E5%B9%B6%E6%89%BE%E5%9B%9E5%E8%A7%92%E9%92%B1%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetCurrentState%3C%2Fspan%3E()%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT15%3C%2Fspan%3E%20%26%26%0A%20%20%20%20%20%20coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ10%3C%2Fspan%3E%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Edispense%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Echange%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%20%7D%3B%0A%20%20%20%20%7D%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%83%85%E6%99%AF%E4%B8%89%EF%BC%9A%E5%B7%B2%E6%8A%951%E5%85%83%EF%BC%8C%E5%86%8D%E6%8A%951%E5%85%83%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B02%E5%85%83%E9%92%B1%EF%BC%8C%E5%87%BA%E8%B4%A7%E4%B8%8D%E6%89%BE%E9%9B%B6%EF%BC%81%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetCurrentState%3C%2Fspan%3E()%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESTATES%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EGOT10%3C%2Fspan%3E%20%26%26%0A%20%20%20%20%20%20coin%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ10%3C%2Fspan%3E%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Edispense%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Echange%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%20%7D%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%B6%E4%BB%96%E6%83%85%E5%86%B5%EF%BC%8C%E4%B8%8D%E5%87%BA%E8%B4%A7%EF%BC%8C%E4%B8%8D%E6%89%BE%E9%9B%B6%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Edispense%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Echange%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%20%7D%3B%0A%20%20%7D%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%BB%9F%E4%B8%80%E5%85%A5%E5%8F%A3%EF%BC%9A%E6%8A%95%E5%B8%81%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertCoin%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Ecoin%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20prevState%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%23currentState%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%88%E8%AE%A1%E7%AE%97%E8%BE%93%E5%87%BA%EF%BC%88%E5%9F%BA%E4%BA%8E%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81%E5%92%8C%E6%8A%95%E5%85%A5%E7%A1%AC%E5%B8%81%EF%BC%89%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%7B%20dispense%2C%20change%20%7D%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%23%3Cspan%20class%3D%22hljs-title%20function_%22%3Eprocess%3C%2Fspan%3E(coin)%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%8A%B6%E6%80%81%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%23currentState%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%23%3Cspan%20class%3D%22hljs-title%20function_%22%3EnextState%3C%2Fspan%3E(coin)%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%89%93%E5%8D%B0%E7%BB%93%E6%9E%9C%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%60%5B%3Cspan%20class%3D%22hljs-subst%22%3E%24%7BprevState%7D%3C%2Fspan%3E%5D%20%E6%8A%95%E5%85%A5%20%3Cspan%20class%3D%22hljs-subst%22%3E%24%7Bcoin%7D%3C%2Fspan%3E%E5%85%83%20-%3E%20%5B%3Cspan%20class%3D%22hljs-subst%22%3E%24%7B%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ethis%3C%2Fspan%3E.%23currentState%7D%3C%2Fspan%3E%5D%20%60%3C%2Fspan%3E%20%2B%0A%20%20%20%20%20%20%20%20(dispense%0A%20%20%20%20%20%20%20%20%20%20%3F%20change%0A%20%20%20%20%20%20%20%20%20%20%20%20%3F%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%F0%9F%8D%BA%20%E5%87%BA%E8%B4%A7%20%2B%20%E6%89%BE%E9%9B%B60.5%E5%85%83%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%F0%9F%8D%BA%20%E5%87%BA%E8%B4%A7%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E7%AD%89%E5%BE%85%E7%BB%A7%E7%BB%AD%E6%8A%95%E5%B8%81%26quot%3B%3C%2Fspan%3E)%2C%0A%20%20%20%20)%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%7B%20dispense%2C%20change%20%7D%3B%0A%20%20%7D%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%83%85%E6%99%AF%E4%B8%80%EF%BC%9A%E5%B7%B2%E6%8A%951.5%EF%BC%8C%E5%86%8D%E6%8A%955%E8%A7%92%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B02%E5%85%83%E9%92%B1%EF%BC%8C%E5%87%BA%E8%B4%A7%E4%B8%8D%E6%89%BE%E9%9B%B6%EF%BC%81%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20vendingMachine%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E()%3B%0AvendingMachine.%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertCoin%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ05%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8A%95%E5%85%A55%E8%A7%92%E9%92%B1%3C%2Fspan%3E%0AvendingMachine.%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertCoin%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ10%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%3C%2Fspan%3E%0AvendingMachine.%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertCoin%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ10%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%86%8D%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B02%E5%85%83%E9%92%B1%EF%BC%8C%E5%87%BA%E8%B4%A7%E4%B8%8D%E6%89%BE%E9%9B%B6%EF%BC%81%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%83%85%E6%99%AF%E4%BA%8C%EF%BC%9A%E6%8A%95%E5%85%A50.5%EF%BC%8C%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%EF%BC%8C%E5%86%8D%E6%8A%951%E5%85%83%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B02.5%E5%85%83%E9%92%B1%EF%BC%8C%E5%87%BA%E8%B4%A7%E5%B9%B6%E6%89%BE%E5%9B%9E5%E8%A7%92%E9%92%B1%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20vendingMachine2%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E()%3B%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%5Cn%3D%3D%3D%3D%3D%3D%E6%83%85%E6%99%AF%E4%BA%8C%EF%BC%9A%E6%8A%95%E5%85%A50.5%EF%BC%8C%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%EF%BC%8C%E5%86%8D%E6%8A%951%E5%85%83%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B02.5%E5%85%83%E9%92%B1%EF%BC%8C%E5%87%BA%E8%B4%A7%E5%B9%B6%E6%89%BE%E5%9B%9E5%E8%A7%92%E9%92%B1%3D%3D%3D%3D%3D%3D%26quot%3B%3C%2Fspan%3E%2C%0A)%3B%0AvendingMachine2.%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertCoin%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ05%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8A%95%E5%85%A55%E8%A7%92%E9%92%B1%3C%2Fspan%3E%0AvendingMachine2.%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertCoin%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ10%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%3C%2Fspan%3E%0AvendingMachine2.%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertCoin%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20class_%22%3EVendingMachine%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ECOIN%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Econ10%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%86%8D%E6%8A%95%E5%85%A51%E5%85%83%E9%92%B1%EF%BC%8C%E8%BE%BE%E5%88%B02.5%E5%85%83%E9%92%B1%EF%BC%8C%E5%87%BA%E8%B4%A7%E5%B9%B6%E6%89%BE%E5%9B%9E5%E8%A7%92%E9%92%B1%EF%BC%81%3C%2Fspan%3E%0A%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"======自动售卖机状态机正在运行中======"</span>);
+
+<span class="hljs-comment">// 定义状态机</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">VendingMachine</span> {
+  <span class="hljs-comment">// 第一段</span>
+  <span class="hljs-keyword">static</span> <span class="hljs-variable constant_">STATES</span> = {
+    <span class="hljs-attr">IDLE</span>: <span class="hljs-string">"IDLE"</span>, <span class="hljs-comment">// 空闲状态</span>
+    <span class="hljs-title class_">GOT05</span>: <span class="hljs-string">"GOT05"</span>, <span class="hljs-comment">// 已投入5角钱</span>
+    <span class="hljs-title class_">GOT10</span>: <span class="hljs-string">"GOT10"</span>, <span class="hljs-comment">// 已投入1元钱</span>
+    <span class="hljs-title class_">GOT15</span>: <span class="hljs-string">"GOT15"</span>, <span class="hljs-comment">// 已投入1.5元钱</span>
+  };
+
+  <span class="hljs-keyword">static</span> <span class="hljs-variable constant_">COIN</span> = {
+    <span class="hljs-attr">con05</span>: <span class="hljs-number">0.5</span>, <span class="hljs-comment">// 5角钱</span>
+    <span class="hljs-attr">con10</span>: <span class="hljs-number">1.0</span>, <span class="hljs-comment">// 1元钱</span>
+  };
+
+  #currentState; <span class="hljs-comment">// 当前状态，为私有属性</span>
+
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.#currentState = <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">IDLE</span>; <span class="hljs-comment">// 初始状态为空闲</span>
+  }
+
+  <span class="hljs-title function_">getCurrentState</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.#currentState;
+  }
+
+  <span class="hljs-comment">// 第二段：状态逻辑转移，只关心下一个状态</span>
+  #<span class="hljs-title function_">nextState</span>(<span class="hljs-params">coin</span>) {
+    <span class="hljs-keyword">switch</span> (<span class="hljs-variable language_">this</span>.#currentState) {
+      <span class="hljs-keyword">case</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">IDLE</span>:
+        <span class="hljs-comment">// 空闲</span>
+        <span class="hljs-keyword">if</span> (coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con05</span>) {
+          <span class="hljs-keyword">return</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT05</span>; <span class="hljs-comment">// 投入5角钱</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con10</span>) {
+          <span class="hljs-keyword">return</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT10</span>; <span class="hljs-comment">// 投入1元钱</span>
+        }
+        <span class="hljs-keyword">break</span>;
+
+      <span class="hljs-keyword">case</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT05</span>:
+        <span class="hljs-comment">// 已投入5角钱</span>
+        <span class="hljs-keyword">if</span> (coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con05</span>) {
+          <span class="hljs-keyword">return</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT10</span>; <span class="hljs-comment">// 再投入5角钱，达到1元钱</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con10</span>) {
+          <span class="hljs-keyword">return</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT15</span>; <span class="hljs-comment">// 投入1元钱，达到1.5元钱</span>
+        }
+        <span class="hljs-keyword">break</span>;
+
+      <span class="hljs-keyword">case</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT10</span>:
+        <span class="hljs-comment">// 已投入1元钱</span>
+        <span class="hljs-keyword">if</span> (coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con05</span>) {
+          <span class="hljs-keyword">return</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT15</span>; <span class="hljs-comment">// 投入5角钱，达到1.5元钱</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con10</span>) {
+          <span class="hljs-keyword">return</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">IDLE</span>; <span class="hljs-comment">// 再投入1元钱，达到2元钱，出货！</span>
+        }
+        <span class="hljs-keyword">break</span>;
+
+      <span class="hljs-keyword">case</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT15</span>:
+        <span class="hljs-comment">// 已投入1.5元钱</span>
+        <span class="hljs-keyword">if</span> (
+          coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con05</span> ||
+          coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con10</span>
+        ) {
+          <span class="hljs-keyword">return</span> <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">IDLE</span>; <span class="hljs-comment">// 再投入任意硬币，达到2元钱，出货！</span>
+        }
+        <span class="hljs-keyword">break</span>;
+
+      <span class="hljs-attr">default</span>:
+        <span class="hljs-comment">// 非法输入，保持当前状态</span>
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">"非法输入的硬币"</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getCurrentState</span>();
+    }
+  }
+
+  <span class="hljs-comment">// 第三段：逻辑处理</span>
+  #<span class="hljs-title function_">process</span>(<span class="hljs-params">coin</span>) {
+    <span class="hljs-comment">// 情景一：已投1.5，再投5角钱，达到2元钱，出货不找零！</span>
+    <span class="hljs-keyword">if</span> (
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getCurrentState</span>() === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT15</span> &amp;&amp;
+      coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con05</span>
+    ) {
+      <span class="hljs-keyword">return</span> { <span class="hljs-attr">dispense</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">change</span>: <span class="hljs-literal">false</span> };
+    }
+    <span class="hljs-comment">// 情景二：已投1.5，再投1元钱，达到2.5元钱，出货并找回5角钱</span>
+    <span class="hljs-keyword">if</span> (
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getCurrentState</span>() === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT15</span> &amp;&amp;
+      coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con10</span>
+    ) {
+      <span class="hljs-keyword">return</span> { <span class="hljs-attr">dispense</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">change</span>: <span class="hljs-literal">true</span> };
+    }
+    <span class="hljs-comment">// 情景三：已投1元，再投1元钱，达到2元钱，出货不找零！</span>
+    <span class="hljs-keyword">if</span> (
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getCurrentState</span>() === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">STATES</span>.<span class="hljs-property">GOT10</span> &amp;&amp;
+      coin === <span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con10</span>
+    ) {
+      <span class="hljs-keyword">return</span> { <span class="hljs-attr">dispense</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">change</span>: <span class="hljs-literal">false</span> };
+    }
+
+    <span class="hljs-comment">// 其他情况，不出货，不找零</span>
+    <span class="hljs-keyword">return</span> { <span class="hljs-attr">dispense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">change</span>: <span class="hljs-literal">false</span> };
+  }
+
+  <span class="hljs-comment">// 统一入口：投币</span>
+  <span class="hljs-title function_">insertCoin</span>(<span class="hljs-params">coin</span>) {
+    <span class="hljs-keyword">const</span> prevState = <span class="hljs-variable language_">this</span>.#currentState; <span class="hljs-comment">// 当前状态</span>
+
+    <span class="hljs-comment">// 先计算输出（基于当前状态和投入硬币）</span>
+    <span class="hljs-keyword">const</span> { dispense, change } = <span class="hljs-variable language_">this</span>.#<span class="hljs-title function_">process</span>(coin);
+
+    <span class="hljs-comment">// 下一个状态</span>
+    <span class="hljs-variable language_">this</span>.#currentState = <span class="hljs-variable language_">this</span>.#<span class="hljs-title function_">nextState</span>(coin);
+
+    <span class="hljs-comment">// 打印结果</span>
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(
+      <span class="hljs-string">`[<span class="hljs-subst">${prevState}</span>] 投入 <span class="hljs-subst">${coin}</span>元 -&gt; [<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.#currentState}</span>] `</span> +
+        (dispense
+          ? change
+            ? <span class="hljs-string">"🍺 出货 + 找零0.5元"</span>
+            : <span class="hljs-string">"🍺 出货"</span>
+          : <span class="hljs-string">"等待继续投币"</span>),
+    );
+
+    <span class="hljs-keyword">return</span> { dispense, change };
+  }
+}
+
+<span class="hljs-comment">// 情景一：已投1.5，再投5角钱，达到2元钱，出货不找零！</span>
+<span class="hljs-keyword">const</span> vendingMachine = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VendingMachine</span>();
+vendingMachine.<span class="hljs-title function_">insertCoin</span>(<span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con05</span>); <span class="hljs-comment">// 投入5角钱</span>
+vendingMachine.<span class="hljs-title function_">insertCoin</span>(<span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con10</span>); <span class="hljs-comment">// 投入1元钱</span>
+vendingMachine.<span class="hljs-title function_">insertCoin</span>(<span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con10</span>); <span class="hljs-comment">// 再投入1元钱，达到2元钱，出货不找零！</span>
+
+<span class="hljs-comment">// 情景二：投入0.5，投入1元钱，再投1元钱，达到2.5元钱，出货并找回5角钱</span>
+<span class="hljs-keyword">const</span> vendingMachine2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VendingMachine</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(
+  <span class="hljs-string">"\n======情景二：投入0.5，投入1元钱，再投1元钱，达到2.5元钱，出货并找回5角钱======"</span>,
+);
+vendingMachine2.<span class="hljs-title function_">insertCoin</span>(<span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con05</span>); <span class="hljs-comment">// 投入5角钱</span>
+vendingMachine2.<span class="hljs-title function_">insertCoin</span>(<span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con10</span>); <span class="hljs-comment">// 投入1元钱</span>
+vendingMachine2.<span class="hljs-title function_">insertCoin</span>(<span class="hljs-title class_">VendingMachine</span>.<span class="hljs-property">COIN</span>.<span class="hljs-property">con10</span>); <span class="hljs-comment">// 再投入1元钱，达到2.5元钱，出货并找回5角钱！</span>
+
+</code></pre>
+      </div>
+    
+<h2 id="总结"><a href="#总结" class="anchor-link">#</a> 总结</h2>
+<p>程序通过三段式实现状态机</p>
+<ol>
+<li>
+<p><strong>看图写代码</strong>：根据状态图编写每一段的代码</p>
+<ul>
+<li><strong>第一段——状态</strong>：对应图中“节点”。先明确系统有哪些状态，如：空闲、已投0.5元、已投1元、已投1.5元</li>
+<li><strong>第二段——转移</strong>：对应图中“边”。描述从当前状态在某个输入下如何走到下一个状态</li>
+<li><strong>第三段——输出</strong>：对应图中“动作”。并非每次状态变化都有输出，只有特定路径才触发行为。以自动售卖机为例，仅三种情况产生输出：
+<ul>
+<li>已投1.5元 + 0.5元 → 出货，不找零</li>
+<li>已投1.5元 + 1元 → 出货，找零</li>
+<li>已投1元 + 1元 → 出货，不找零
+其余均为中间过程，无任何输出。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>内部封闭</strong>：三段式状态机的每段都是内部实现，对外不可见</p>
+</li>
+<li>
+<p><strong>&lt;u&gt;统一入口&lt;/u&gt;</strong>：对外只暴露一个方法。调用者无需关心当前状态、如何转移、输出如何计算——输入一个行为，得到一个结果即可</p>
+</li>
+<li>
+<p><strong>结果封装</strong>：输出通常需要封装为结构化结果返回</p>
+</li>
+</ol>
+<p>因此，总共有 5 段代码：</p>
+<ol>
+<li>三段式状态机</li>
+<li>统一入口</li>
+<li>结果封装</li>
+</ol>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/05/03</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/05/03</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">ts入门</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 26 分钟 · 字数 5057</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="typescript-从入门"><a href="#typescript-从入门" class="anchor-link">#</a> TypeScript 从入门</h1>
+<p>在前端工程逐渐复杂的背景下，类型系统不再是可选项，而是提升代码质量与可维护性的关键工具</p>
+<p>TypeScript 通过“类型”这一抽象层，将原本松散的 JavaScript 代码变得更加可控、可预测</p>
+<hr>
+<h2 id="类型系统的三种使用方式"><a href="#类型系统的三种使用方式" class="anchor-link">#</a> 类型系统的三种使用方式</h2>
+<p>TypeScript 的强类型能力主要体现在三种使用方式中，但它们的适用场景和推荐程度各不相同</p>
+<h3 id="类型推断"><a href="#类型推断" class="anchor-link">#</a> 类型推断</h3>
+<p>当你定义变量但未显式声明类型时，TypeScript 会自动推断类型</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20str%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhello%26quot%3B%3C%2Fspan%3E%3B%0Astr%20%3D%20%3Cspan%20class%3D%22hljs-number%22%3E123%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8A%A5%E9%94%99%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">let</span> str = <span class="hljs-string">"hello"</span>;
+str = <span class="hljs-number">123</span>; <span class="hljs-comment">// 报错</span>
+</code></pre>
+      </div>
+    
+<p>这种方式的优点是简洁，但缺点也很明显：不直观，且一旦推断完成，类型就被“锁死”，在复杂业务中容易出现隐式问题，因此不推荐在核心逻辑中依赖类型推断</p>
+<hr>
+<h3 id="类型声明"><a href="#类型声明" class="anchor-link">#</a> 类型声明</h3>
+<p>这是开发中最常用、也是最推荐的方式</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Estr%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%3B%0Astr%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhello%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20str%20%3D%20123%3B%20%2F%2F%20%E6%8A%A5%E9%94%99%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">let</span> <span class="hljs-attr">str</span>: <span class="hljs-built_in">string</span>;
+str = <span class="hljs-string">"hello"</span>;
+<span class="hljs-comment">// str = 123; // 报错</span>
+</code></pre>
+      </div>
+    
+<p>通过显式声明类型，可以让代码意图更加清晰，也更利于团队协作与维护</p>
+<hr>
+<h3 id="类型断言"><a href="#类型断言" class="anchor-link">#</a> 类型断言</h3>
+<p>当数据来源复杂（例如接口返回、DOM 获取）时，TypeScript 可能无法准确推断类型，这时可以使用断言</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20el%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bapp%26quot%3B%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-keyword%22%3Eas%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EHTMLDivElement%3C%2Fspan%3E%3B%0Ael.%3Cspan%20class%3D%22hljs-property%22%3Estyle%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Ecolor%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bred%26quot%3B%3C%2Fspan%3E%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">const</span> el = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"app"</span>) <span class="hljs-keyword">as</span> <span class="hljs-title class_">HTMLDivElement</span>;
+el.<span class="hljs-property">style</span>.<span class="hljs-property">color</span> = <span class="hljs-string">"red"</span>;
+</code></pre>
+      </div>
+    
+<p>需要注意，断言本质是“告诉编译器相信你”，因此必须在确定类型安全的前提下使用，否则容易引入隐藏错误</p>
+<hr>
+<h2 id="常用类型详解"><a href="#常用类型详解" class="anchor-link">#</a> 常用类型详解</h2>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="anchor-link">#</a> 基本数据类型</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Enum%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-number%22%3E10%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Estr%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Btext%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eflag%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Eboolean%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">let</span> <span class="hljs-attr">num</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> <span class="hljs-attr">str</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">"text"</span>;
+<span class="hljs-keyword">let</span> <span class="hljs-attr">flag</span>: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">true</span>;
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="数组类型"><a href="#数组类型" class="anchor-link">#</a> 数组类型</h3>
+<p>TypeScript 支持两种定义方式</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Earr1%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%5B%5D%20%3D%20%5B%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%5D%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Earr2%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EArray%3C%2Fspan%3E%3C%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3E%20%3D%20%5B%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%5D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">let</span> <span class="hljs-attr">arr1</span>: <span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-keyword">let</span> <span class="hljs-attr">arr2</span>: <span class="hljs-title class_">Array</span>&lt;<span class="hljs-built_in">number</span>&gt; = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+</code></pre>
+      </div>
+    
+<p>推荐使用第一种，更简洁直观</p>
+<hr>
+<h3 id="元组"><a href="#元组" class="anchor-link">#</a> 元组</h3>
+<p>元组可以限制数组中每个元素的类型和数量</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Earr%3C%2Fspan%3E%3A%20%5B%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3F%5D%20%3D%20%5B%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhello%26quot%3B%3C%2Fspan%3E%5D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">let</span> <span class="hljs-attr">arr</span>: [<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>?] = [<span class="hljs-number">1</span>, <span class="hljs-string">"hello"</span>];
+</code></pre>
+      </div>
+    
+<p>适用于结构固定的数据，例如接口返回的特定格式</p>
+<hr>
+<h3 id="函数类型"><a href="#函数类型" class="anchor-link">#</a> 函数类型</h3>
+<p>函数可以约束参数类型和返回值类型</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Esum%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3Cspan%20class%3D%22hljs-attr%22%3Ea%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Eb%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3C%2Fspan%3E)%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20a%20%2B%20b%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Egreet%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Eage%3C%2Fspan%3E%3F%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(name%2C%20age)%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Egreet2%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bguest%26quot%3B%3C%2Fspan%3E%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(name)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params"><span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span></span>): <span class="hljs-built_in">number</span> {
+  <span class="hljs-keyword">return</span> a + b;
+}
+
+<span class="hljs-comment">// 可选参数</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params"><span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>, <span class="hljs-attr">age</span>?: <span class="hljs-built_in">number</span></span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name, age);
+}
+
+<span class="hljs-comment">// 默认参数</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">greet2</span>(<span class="hljs-params"><span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">"guest"</span></span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);
+}
+</code></pre>
+      </div>
+    
+<p>在实际开发中，函数类型的约束可以显著减少调用错误</p>
+<hr>
+<h2 id="自定义类型的进阶-从定义到使用"><a href="#自定义类型的进阶-从定义到使用" class="anchor-link">#</a> 自定义类型的进阶：从定义到使用</h2>
+<p>在实际开发中，类型不仅仅是“声明一下”，更重要的是参与业务逻辑，约束数据流动。相比零散的基础类型，自定义类型才是 TypeScript 真正发挥价值的地方</p>
+<hr>
+<h2 id="interface-描述-对象长什么样"><a href="#interface-描述-对象长什么样" class="anchor-link">#</a> interface：描述“对象长什么样”</h2>
+<p>interface 的核心作用是：<strong>约束对象结构</strong></p>
+<p>不仅仅是定义字段，更重要的是在业务中“规范数据”</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EUser%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Eage%3C%2Fspan%3E%3F%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">User</span> {
+  <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span>;
+  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+  <span class="hljs-attr">age</span>?: <span class="hljs-built_in">number</span>;
+}
+</code></pre>
+      </div>
+    
+<h3 id="实际使用场景-接口数据约束"><a href="#实际使用场景-接口数据约束" class="anchor-link">#</a> 实际使用场景：接口数据约束</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EUser%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%A8%A1%E6%8B%9F%E6%8E%A5%E5%8F%A3%E8%BF%94%E5%9B%9E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetUser%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%3A%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EUser%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BTom%26quot%3B%3C%2Fspan%3E%0A%20%20%7D%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20user%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetUser%3C%2Fspan%3E()%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BD%BF%E7%94%A8%E6%97%B6%E6%9C%89%E6%98%8E%E7%A1%AE%E6%8F%90%E7%A4%BA%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(user.%3Cspan%20class%3D%22hljs-property%22%3Ename%3C%2Fspan%3E)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">User</span> {
+  <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span>;
+  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-comment">// 模拟接口返回</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">getUser</span>(<span class="hljs-params"></span>): <span class="hljs-title class_">User</span> {
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"Tom"</span>
+  };
+}
+
+<span class="hljs-keyword">const</span> user = <span class="hljs-title function_">getUser</span>();
+
+<span class="hljs-comment">// 使用时有明确提示</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(user.<span class="hljs-property">name</span>);
+</code></pre>
+      </div>
+    
+<h3 id="实际使用场景-组件-props-前端高频"><a href="#实际使用场景-组件-props-前端高频" class="anchor-link">#</a> 实际使用场景：组件 props（前端高频）</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EProps%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Etitle%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ecount%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Erender%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3Cspan%20class%3D%22hljs-attr%22%3Eprops%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EProps%3C%2Fspan%3E%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(props.%3Cspan%20class%3D%22hljs-property%22%3Etitle%3C%2Fspan%3E%2C%20props.%3Cspan%20class%3D%22hljs-property%22%3Ecount%3C%2Fspan%3E)%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-title%20function_%22%3Erender%3C%2Fspan%3E(%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Etitle%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%A0%87%E9%A2%98%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Ecount%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E10%3C%2Fspan%3E%20%7D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Props</span> {
+  <span class="hljs-attr">title</span>: <span class="hljs-built_in">string</span>;
+  <span class="hljs-attr">count</span>: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">render</span>(<span class="hljs-params"><span class="hljs-attr">props</span>: <span class="hljs-title class_">Props</span></span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(props.<span class="hljs-property">title</span>, props.<span class="hljs-property">count</span>);
+}
+
+<span class="hljs-title function_">render</span>({ <span class="hljs-attr">title</span>: <span class="hljs-string">"标题"</span>, <span class="hljs-attr">count</span>: <span class="hljs-number">10</span> });
+</code></pre>
+      </div>
+    
+<p>可以看到，interface 的重点不是“定义”，而是让数据在传递过程中始终符合预期结构</p>
+<hr>
+<h2 id="type-更灵活的类型组合工具"><a href="#type-更灵活的类型组合工具" class="anchor-link">#</a> type：更灵活的类型组合工具</h2>
+<p>type 的本质是：<strong>给任意类型起名字，并进行组合</strong></p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Etype%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EID%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%20%7C%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Etype%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPoint%3C%2Fspan%3E%20%3D%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ex%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-attr%22%3Ey%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%20%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">type</span> <span class="hljs-variable constant_">ID</span> = <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span>;
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">Point</span> = { <span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>; <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span> };
+</code></pre>
+      </div>
+    
+<h3 id="实际使用场景-联合类型"><a href="#实际使用场景-联合类型" class="anchor-link">#</a> 实际使用场景：联合类型</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Etype%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EID%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%20%7C%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EfindUser%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3A%20ID%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%9F%A5%E6%89%BE%E7%94%A8%E6%88%B7%3A%26quot%3B%3C%2Fspan%3E%2C%20id)%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-title%20function_%22%3EfindUser%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-title%20function_%22%3EfindUser%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Babc123%26quot%3B%3C%2Fspan%3E)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">type</span> <span class="hljs-variable constant_">ID</span> = <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">findUser</span>(<span class="hljs-params"><span class="hljs-attr">id</span>: ID</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"查找用户:"</span>, id);
+}
+
+<span class="hljs-title function_">findUser</span>(<span class="hljs-number">1</span>);
+<span class="hljs-title function_">findUser</span>(<span class="hljs-string">"abc123"</span>);
+</code></pre>
+      </div>
+    
+<h3 id="实际使用场景-组合类型"><a href="#实际使用场景-组合类型" class="anchor-link">#</a> 实际使用场景：组合类型</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Etype%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EUser%3C%2Fspan%3E%20%3D%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%3B%0A%7D%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Etype%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EAdmin%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EUser%3C%2Fspan%3E%20%26%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Erole%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%3B%0A%7D%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eadmin%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EAdmin%3C%2Fspan%3E%20%3D%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BTom%26quot%3B%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Erole%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bsuper%26quot%3B%3C%2Fspan%3E%0A%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">type</span> <span class="hljs-title class_">User</span> = {
+  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+};
+
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">Admin</span> = <span class="hljs-title class_">User</span> &amp; {
+  <span class="hljs-attr">role</span>: <span class="hljs-built_in">string</span>;
+};
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">admin</span>: <span class="hljs-title class_">Admin</span> = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"Tom"</span>,
+  <span class="hljs-attr">role</span>: <span class="hljs-string">"super"</span>
+};
+</code></pre>
+      </div>
+    
+<p>type 更像“拼装工具”，适合处理复杂类型关系</p>
+<hr>
+<h2 id="interface-和-type-的核心区别-用例理解"><a href="#interface-和-type-的核心区别-用例理解" class="anchor-link">#</a> interface 和 type 的核心区别（用例理解）</h2>
+<p>与其死记概念，不如看实际开发中如何选择</p>
+<h3 id="场景一-定义对象结构-推荐-interface"><a href="#场景一-定义对象结构-推荐-interface" class="anchor-link">#</a> 场景一：定义对象结构（推荐 interface）</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EUser%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EAdmin%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eextends%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EUser%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Erole%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">User</span> {
+  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Admin</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">User</span> {
+  <span class="hljs-attr">role</span>: <span class="hljs-built_in">string</span>;
+}
+</code></pre>
+      </div>
+    
+<p>为什么用 interface
+因为它天然适合“继承”和“扩展”，语义更清晰</p>
+<hr>
+<h3 id="场景二-需要联合或复杂组合-必须用-type"><a href="#场景二-需要联合或复杂组合-必须用-type" class="anchor-link">#</a> 场景二：需要联合或复杂组合（必须用 type）</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Etype%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EStatus%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bsuccess%26quot%3B%3C%2Fspan%3E%20%7C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Berror%26quot%3B%3C%2Fspan%3E%20%7C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bloading%26quot%3B%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Ehandle%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3Cspan%20class%3D%22hljs-attr%22%3Estatus%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EStatus%3C%2Fspan%3E%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(status)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">type</span> <span class="hljs-title class_">Status</span> = <span class="hljs-string">"success"</span> | <span class="hljs-string">"error"</span> | <span class="hljs-string">"loading"</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">handle</span>(<span class="hljs-params"><span class="hljs-attr">status</span>: <span class="hljs-title class_">Status</span></span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(status);
+}
+</code></pre>
+      </div>
+    
+<p>interface 无法直接表达这种“多种可能值”</p>
+<hr>
+<h3 id="场景三-类型复用-扩展-两者都可以"><a href="#场景三-类型复用-扩展-两者都可以" class="anchor-link">#</a> 场景三：类型复用 + 扩展（两者都可以）</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20interface%20%E5%86%99%E6%B3%95%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20A%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ex%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3B%0A%7D%0A%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20B%20%3Cspan%20class%3D%22hljs-keyword%22%3Eextends%3C%2Fspan%3E%20A%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ey%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20type%20%E5%86%99%E6%B3%95%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Etype%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EA1%3C%2Fspan%3E%20%3D%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ex%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%20%7D%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Etype%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EB1%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EA1%3C%2Fspan%3E%20%26%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ey%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%20%7D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-comment">// interface 写法</span>
+<span class="hljs-keyword">interface</span> A {
+  <span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-keyword">interface</span> B <span class="hljs-keyword">extends</span> A {
+  <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-comment">// type 写法</span>
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">A1</span> = { <span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span> };
+<span class="hljs-keyword">type</span> <span class="hljs-variable constant_">B1</span> = <span class="hljs-variable constant_">A1</span> &amp; { <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span> };
+</code></pre>
+      </div>
+    
+<p>简单理解：</p>
+<ul>
+<li><strong>interface：更像“定义一个类结构”</strong></li>
+<li><strong>type：更像“拼接类型表达式”</strong></li>
+</ul>
+<hr>
+<h2 id="泛型-让类型-动态起来"><a href="#泛型-让类型-动态起来" class="anchor-link">#</a> 泛型：让类型“动态起来”</h2>
+<p>前面的类型都是固定的，而泛型解决的是：<strong>&lt;u&gt;类型在使用时才确定&lt;/u&gt;</strong></p>
+<hr>
+<h3 id="什么是泛型-直接看效果"><a href="#什么是泛型-直接看效果" class="anchor-link">#</a> 什么是泛型（直接看效果）</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20identity%3CT%3E(%3Cspan%20class%3D%22hljs-attr%22%3Evalue%3C%2Fspan%3E%3A%20T)%3A%20T%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20value%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20a%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eidentity%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E10%3C%2Fspan%3E)%3B%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20number%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20b%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eidentity%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhello%26quot%3B%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20string%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">function</span> identity&lt;T&gt;(<span class="hljs-attr">value</span>: T): T {
+  <span class="hljs-keyword">return</span> value;
+}
+
+<span class="hljs-keyword">const</span> a = <span class="hljs-title function_">identity</span>(<span class="hljs-number">10</span>);       <span class="hljs-comment">// number</span>
+<span class="hljs-keyword">const</span> b = <span class="hljs-title function_">identity</span>(<span class="hljs-string">"hello"</span>); <span class="hljs-comment">// string</span>
+</code></pre>
+      </div>
+    
+<p>同一个函数，适配多种类型</p>
+<hr>
+<h2 id="泛型在业务中的真实作用"><a href="#泛型在业务中的真实作用" class="anchor-link">#</a> 泛型在业务中的真实作用</h2>
+<h3 id="场景一-接口返回数据封装"><a href="#场景一-接口返回数据封装" class="anchor-link">#</a> 场景一：接口返回数据封装</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EResponseData%3C%2Fspan%3E%3CT%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ecode%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Edata%3C%2Fspan%3E%3A%20T%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20fetchData%3CT%3E(%3Cspan%20class%3D%22hljs-attr%22%3Edata%3C%2Fspan%3E%3A%20T)%3A%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EResponseData%3C%2Fspan%3E%3CT%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ecode%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E200%3C%2Fspan%3E%2C%0A%20%20%20%20data%0A%20%20%7D%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20res%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EfetchData%3C%2Fspan%3E(%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BTom%26quot%3B%3C%2Fspan%3E%20%7D)%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%87%AA%E5%8A%A8%E6%8E%A8%E5%AF%BC%E7%B1%BB%E5%9E%8B%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(res.%3Cspan%20class%3D%22hljs-property%22%3Edata%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Ename%3C%2Fspan%3E)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">ResponseData</span>&lt;T&gt; {
+  <span class="hljs-attr">code</span>: <span class="hljs-built_in">number</span>;
+  <span class="hljs-attr">data</span>: T;
+}
+
+<span class="hljs-keyword">function</span> fetchData&lt;T&gt;(<span class="hljs-attr">data</span>: T): <span class="hljs-title class_">ResponseData</span>&lt;T&gt; {
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">code</span>: <span class="hljs-number">200</span>,
+    data
+  };
+}
+
+<span class="hljs-keyword">const</span> res = <span class="hljs-title function_">fetchData</span>({ <span class="hljs-attr">name</span>: <span class="hljs-string">"Tom"</span> });
+
+<span class="hljs-comment">// 自动推导类型</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(res.<span class="hljs-property">data</span>.<span class="hljs-property">name</span>);
+</code></pre>
+      </div>
+    
+<p>重点：<strong>接口返回什么类型，由调用者决定</strong></p>
+<hr>
+<h3 id="场景二-工具函数复用"><a href="#场景二-工具函数复用" class="anchor-link">#</a> 场景二：工具函数复用</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20getFirst%3CT%3E(%3Cspan%20class%3D%22hljs-attr%22%3Earr%3C%2Fspan%3E%3A%20T%5B%5D)%3A%20T%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20arr%5B%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%5D%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20num%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetFirst%3C%2Fspan%3E(%5B%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%5D)%3B%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20number%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20str%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetFirst%3C%2Fspan%3E(%5B%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Ba%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bb%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bc%26quot%3B%3C%2Fspan%3E%5D)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20string%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">function</span> getFirst&lt;T&gt;(<span class="hljs-attr">arr</span>: T[]): T {
+  <span class="hljs-keyword">return</span> arr[<span class="hljs-number">0</span>];
+}
+
+<span class="hljs-keyword">const</span> num = <span class="hljs-title function_">getFirst</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);       <span class="hljs-comment">// number</span>
+<span class="hljs-keyword">const</span> str = <span class="hljs-title function_">getFirst</span>([<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>]); <span class="hljs-comment">// string</span>
+</code></pre>
+      </div>
+    
+<p>避免为每种类型写一套函数</p>
+<hr>
+<h3 id="场景三-约束泛型-进阶但常用"><a href="#场景三-约束泛型-进阶但常用" class="anchor-link">#</a> 场景三：约束泛型（进阶但常用）</h3>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20getLength%3CT%20%3Cspan%20class%3D%22hljs-keyword%22%3Eextends%3C%2Fspan%3E%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Elength%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%20%7D%3E(%3Cspan%20class%3D%22hljs-attr%22%3Eval%3C%2Fspan%3E%3A%20T)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20val.%3Cspan%20class%3D%22hljs-property%22%3Elength%3C%2Fspan%3E%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetLength%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhello%26quot%3B%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetLength%3C%2Fspan%3E(%5B%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%5D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">function</span> getLength&lt;T <span class="hljs-keyword">extends</span> { <span class="hljs-attr">length</span>: <span class="hljs-built_in">number</span> }&gt;(<span class="hljs-attr">val</span>: T) {
+  <span class="hljs-keyword">return</span> val.<span class="hljs-property">length</span>;
+}
+
+<span class="hljs-title function_">getLength</span>(<span class="hljs-string">"hello"</span>);
+<span class="hljs-title function_">getLength</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);
+</code></pre>
+      </div>
+    
+<p>说明：泛型不仅灵活，还可以加“规则”</p>
+<hr>
+<h2 id="为什么泛型不能被可选参数替代"><a href="#为什么泛型不能被可选参数替代" class="anchor-link">#</a> 为什么泛型不能被可选参数替代</h2>
+<p>这是很多初学者容易混淆的点</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0%EF%BC%9A%E8%A7%A3%E5%86%B3%E6%9C%89%E6%B2%A1%E6%9C%89%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Efn%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3Cspan%20class%3D%22hljs-attr%22%3Ea%3C%2Fspan%3E%3F%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3C%2Fspan%3E)%20%7B%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%B3%9B%E5%9E%8B%EF%BC%9A%E8%A7%A3%E5%86%B3%E6%98%AF%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20fn2%3CT%3E(%3Cspan%20class%3D%22hljs-attr%22%3Ea%3C%2Fspan%3E%3A%20T)%3A%20T%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20a%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-comment">// 可选参数：解决有没有</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">fn</span>(<span class="hljs-params"><span class="hljs-attr">a</span>?: <span class="hljs-built_in">number</span></span>) {}
+
+<span class="hljs-comment">// 泛型：解决是什么类型</span>
+<span class="hljs-keyword">function</span> fn2&lt;T&gt;(<span class="hljs-attr">a</span>: T): T {
+  <span class="hljs-keyword">return</span> a;
+}
+</code></pre>
+      </div>
+    
+<p>更直观一点的对比：</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%94%99%E8%AF%AF%E6%80%9D%E8%B7%AF%EF%BC%9A%E6%83%B3%E7%94%A8%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86%E6%89%80%E6%9C%89%E7%B1%BB%E5%9E%8B%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eget%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3Cspan%20class%3D%22hljs-attr%22%3Eval%3C%2Fspan%3E%3F%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20val%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%AD%A3%E7%A1%AE%E5%81%9A%E6%B3%95%EF%BC%9A%E7%94%A8%E6%B3%9B%E5%9E%8B%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20get2%3CT%3E(%3Cspan%20class%3D%22hljs-attr%22%3Eval%3C%2Fspan%3E%3A%20T)%3A%20T%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20val%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-comment">// 错误思路：想用一个函数处理所有类型</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">get</span>(<span class="hljs-params"><span class="hljs-attr">val</span>?: <span class="hljs-built_in">number</span></span>) {
+  <span class="hljs-keyword">return</span> val;
+}
+
+<span class="hljs-comment">// 正确做法：用泛型</span>
+<span class="hljs-keyword">function</span> get2&lt;T&gt;(<span class="hljs-attr">val</span>: T): T {
+  <span class="hljs-keyword">return</span> val;
+}
+</code></pre>
+      </div>
+    
+<p>可选参数无法表达“多类型复用”，而泛型正是为此而生</p>
+<hr>
+<h2 id="小结"><a href="#小结" class="anchor-link">#</a> 小结</h2>
+<ul>
+<li>interface：用于定义清晰的对象结构，适合接口数据和组件传参</li>
+<li>type：用于组合类型、联合类型，适合复杂类型表达</li>
+<li>泛型：用于提升代码复用性，让类型随使用场景动态变化</li>
+</ul>
+<p>当项目规模变大后，这三者往往是一起配合使用的，而不是互相替代</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/22</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/03/22</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

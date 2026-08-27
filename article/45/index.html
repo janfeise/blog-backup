@@ -1,0 +1,887 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">Ant Design Vue 组件库 Cascader、TreeSelect 组件梳理</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 30 分钟 · 字数 5812</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><blockquote>
+<p>Cascader 组件文档：<a href="https://antdv.com/components/cascader-cn#api">https://antdv.com/components/cascader-cn#api</a></p>
+<p>TreeSelect 组件文档：<a href="https://antdv.com/components/tree-select-cn#api">https://antdv.com/components/tree-select-cn#api</a></p>
+</blockquote>
+<p>在后台系统中，常用的组件离不开 Cascader（级联组件）、TreeSelect（树形选择组件） 等组件，在此做一个梳理，梳理要点如下：</p>
+<ul>
+<li>组件的数据格式梳理</li>
+<li>后端接口所需的数据格式梳理</li>
+</ul>
+<h2 id="cascader-组件"><a href="#cascader-组件" class="anchor-link">#</a> Cascader 组件</h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>数据结构</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>[{ label, value, children[] }]</td>
+<td>可选项数据源</td>
+</tr>
+<tr>
+<td>v-model:value=“selectValue”</td>
+<td>[‘浙江’, ‘杭州’, ‘西湖’]</td>
+<td>选中数据值，路径数组，逐层深入</td>
+</tr>
+</tbody>
+</table>
+<p>Cascader（级联选择器）适用于严格层级关系的数据选择。</p>
+<p>典型场景：</p>
+<ul>
+<li>省 → 市 → 区</li>
+<li>产品分类 → 子分类 → 商品</li>
+<li>部门 → 科室 → 岗位</li>
+</ul>
+<p>用户必须按照层级逐步选择，最终得到一条完整路径。</p>
+<h3 id="数据源结构-option"><a href="#数据源结构-option" class="anchor-link">#</a> 数据源结构：Option</h3>
+<p>Cascader 通过 <code>options</code> 属性定义数据源。</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20options%20%3D%20%5B%20%0A%20%20%7B%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Elabel%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%B5%99%E6%B1%9F%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Evalue%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bzhejiang%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Echildren%3C%2Fspan%3E%3A%20%5B%20%0A%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Elabel%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%9D%AD%E5%B7%9E%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Evalue%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bhangzhou%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Echildren%3C%2Fspan%3E%3A%20%5B%20%0A%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Elabel%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E8%A5%BF%E6%B9%96%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Evalue%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bxihu%26%23x27%3B%3C%2Fspan%3E%20%0A%20%20%20%20%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20%20%20%5D%20%0A%20%20%20%20%20%20%7D%20%0A%20%20%20%20%5D%20%0A%20%20%7D%20%0A%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> options = [ 
+  { 
+    <span class="hljs-attr">label</span>: <span class="hljs-string">'浙江'</span>, 
+    <span class="hljs-attr">value</span>: <span class="hljs-string">'zhejiang'</span>, 
+    <span class="hljs-attr">children</span>: [ 
+      { 
+        <span class="hljs-attr">label</span>: <span class="hljs-string">'杭州'</span>, 
+        <span class="hljs-attr">value</span>: <span class="hljs-string">'hangzhou'</span>, 
+        <span class="hljs-attr">children</span>: [ 
+          { 
+            <span class="hljs-attr">label</span>: <span class="hljs-string">'西湖'</span>, 
+            <span class="hljs-attr">value</span>: <span class="hljs-string">'xihu'</span> 
+          } 
+        ] 
+      } 
+    ] 
+  } 
+] 
+</code></pre>
+      </div>
+    
+<p>对应的数据结构：</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EOption%3C%2Fspan%3E%20%7B%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Evalue%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%20%7C%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Elabel%3C%2Fspan%3E%3F%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Eany%3C%2Fspan%3E%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Edisabled%3C%2Fspan%3E%3F%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Eboolean%3C%2Fspan%3E%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Echildren%3C%2Fspan%3E%3F%3A%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EOption%3C%2Fspan%3E%5B%5D%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3EisLeaf%3C%2Fspan%3E%3F%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Eboolean%3C%2Fspan%3E%20%0A%7D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Option</span> { 
+  <span class="hljs-attr">value</span>: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span> 
+  <span class="hljs-attr">label</span>?: <span class="hljs-built_in">any</span> 
+  <span class="hljs-attr">disabled</span>?: <span class="hljs-built_in">boolean</span> 
+  <span class="hljs-attr">children</span>?: <span class="hljs-title class_">Option</span>[] 
+  <span class="hljs-attr">isLeaf</span>?: <span class="hljs-built_in">boolean</span> 
+} 
+</code></pre>
+      </div>
+    
+<p>组件使用方式：</p>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="%3C%3Cspan%20class%3D%22hljs-keyword%22%3Ea%3C%2Fspan%3E-cascader%20%0A%20%20v-%3Cspan%20class%3D%22hljs-keyword%22%3Emode%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-variable%22%3El%3Avalue%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BselectValue%26quot%3B%3C%2Fspan%3E%20%0A%20%20%3A%3Cspan%20class%3D%22hljs-keyword%22%3Eoptions%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Boptions%26quot%3B%3C%2Fspan%3E%20%0A%2F%3E%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue">&lt;<span class="hljs-keyword">a</span>-cascader 
+  v-<span class="hljs-keyword">mode</span><span class="hljs-variable">l:value</span>=<span class="hljs-string">"selectValue"</span> 
+  :<span class="hljs-keyword">options</span>=<span class="hljs-string">"options"</span> 
+/&gt; 
+</code></pre>
+      </div>
+    
+<h3 id="返回值结构-v-model-value-selectvalue"><a href="#返回值结构-v-model-value-selectvalue" class="anchor-link">#</a> 返回值结构：v-model:value=“selectValue”</h3>
+<p>与很多组件不同，Cascader 返回的并不是当前节点，而是完整路径</p>
+<p>例如用户选择： 西湖</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E6%B5%99%E6%B1%9F%20%0A%20%E2%94%94%E2%94%80%20%E6%9D%AD%E5%B7%9E%20%0A%20%20%20%20%20%E2%94%94%E2%94%80%20%E8%A5%BF%E6%B9%96%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">浙江 
+ └─ 杭州 
+     └─ 西湖 
+</code></pre>
+      </div>
+    
+<p>返回结果：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%5B%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bzhejiang%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhangzhou%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">[<span class="hljs-string">"zhejiang"</span>, <span class="hljs-string">"hangzhou"</span>, <span class="hljs-string">"xihu"</span>] 
+</code></pre>
+      </div>
+    
+<p>这表示用户的完整选择路径</p>
+<p>因此：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="selectValue.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">selectValue.<span class="hljs-property">value</span> 
+</code></pre>
+      </div>
+    
+<p>得到的是：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%5B%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bzhejiang%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhangzhou%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">[<span class="hljs-string">"zhejiang"</span>, <span class="hljs-string">"hangzhou"</span>, <span class="hljs-string">"xihu"</span>] 
+</code></pre>
+      </div>
+    
+<p>而不是：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-string">"xihu"</span> 
+</code></pre>
+      </div>
+    
+<h3 id="接口提交时的数据转换"><a href="#接口提交时的数据转换" class="anchor-link">#</a> 接口提交时的数据转换</h3>
+<p>实际业务中，后端往往只需要最终节点 ID</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%5B%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bzhejiang%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhangzhou%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">[<span class="hljs-string">"zhejiang"</span>, <span class="hljs-string">"hangzhou"</span>, <span class="hljs-string">"xihu"</span>] 
+</code></pre>
+      </div>
+    
+<p>提交给接口时需要转换为：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-string">"xihu"</span> 
+</code></pre>
+      </div>
+    
+<p>处理方式：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20areaId%20%3D%20selectValue.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eat%3C%2Fspan%3E(-%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E)%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> areaId = selectValue.<span class="hljs-title function_">at</span>(-<span class="hljs-number">1</span>) 
+</code></pre>
+      </div>
+    
+<p>或者：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20areaId%20%3D%20selectValue%5BselectValue.%3Cspan%20class%3D%22hljs-property%22%3Elength%3C%2Fspan%3E%20-%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> areaId = selectValue[selectValue.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>] 
+</code></pre>
+      </div>
+    
+<h4 id="多选场景"><a href="#多选场景" class="anchor-link">#</a> 多选场景</h4>
+<p>开启多选后：</p>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="%3C%3Cspan%20class%3D%22hljs-keyword%22%3Ea%3C%2Fspan%3E-cascader%20%0A%20%20multiple%20%0A%20%20v-%3Cspan%20class%3D%22hljs-keyword%22%3Emode%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-variable%22%3El%3Avalue%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BselectValue%26quot%3B%3C%2Fspan%3E%20%0A%2F%3E%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue">&lt;<span class="hljs-keyword">a</span>-cascader 
+  multiple 
+  v-<span class="hljs-keyword">mode</span><span class="hljs-variable">l:value</span>=<span class="hljs-string">"selectValue"</span> 
+/&gt; 
+</code></pre>
+      </div>
+    
+<p>返回结果：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%5B%20%0A%20%20%5B%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bzhejiang%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhangzhou%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%5D%2C%20%0A%20%20%5B%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bsichuan%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bchengdu%26quot%3B%3C%2Fspan%3E%5D%20%0A%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">[ 
+  [<span class="hljs-string">"zhejiang"</span>, <span class="hljs-string">"hangzhou"</span>, <span class="hljs-string">"xihu"</span>], 
+  [<span class="hljs-string">"sichuan"</span>, <span class="hljs-string">"chengdu"</span>] 
+] 
+</code></pre>
+      </div>
+    
+<p>后端通常需要：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%5B%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bchengdu%26quot%3B%3C%2Fspan%3E%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">[<span class="hljs-string">"xihu"</span>, <span class="hljs-string">"chengdu"</span>] 
+</code></pre>
+      </div>
+    
+<p>转换代码：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20result%20%3D%20selectValue.%3Cspan%20class%3D%22hljs-title%20function_%22%3Emap%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-params%22%3Eitem%3C%2Fspan%3E%20%3D%3E%3C%2Fspan%3E%20item.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eat%3C%2Fspan%3E(-%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E))%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> result = selectValue.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> item.<span class="hljs-title function_">at</span>(-<span class="hljs-number">1</span>)) 
+</code></pre>
+      </div>
+    
+<p>输出：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%5B%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bchengdu%26quot%3B%3C%2Fspan%3E%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">[<span class="hljs-string">"xihu"</span>, <span class="hljs-string">"chengdu"</span>] 
+</code></pre>
+      </div>
+    
+<h3 id="详情页回显问题"><a href="#详情页回显问题" class="anchor-link">#</a> 详情页回显问题</h3>
+<p>这是 Cascader 最容易踩坑的地方。</p>
+<p>假设接口返回：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%7B%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3EareaId%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%20%0A%7D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">{ 
+  <span class="hljs-attr">areaId</span>: <span class="hljs-string">"xihu"</span> 
+} 
+</code></pre>
+      </div>
+    
+<p>直接赋值：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="selectValue.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%5B%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">selectValue.<span class="hljs-property">value</span> = [<span class="hljs-string">"xihu"</span>] 
+</code></pre>
+      </div>
+    
+<p>无法正常回显</p>
+<p>因为 Cascader 需要的是完整路径：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%5B%20%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bzhejiang%26quot%3B%3C%2Fspan%3E%2C%20%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhangzhou%26quot%3B%3C%2Fspan%3E%2C%20%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%20%0A%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">[ 
+  <span class="hljs-string">"zhejiang"</span>, 
+  <span class="hljs-string">"hangzhou"</span>, 
+  <span class="hljs-string">"xihu"</span> 
+] 
+</code></pre>
+      </div>
+    
+<p>因此需要根据叶子节点 ID 反向查找整条路径</p>
+<p>例如：递归查找</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EfindPath%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Etree%2C%20target%3C%2Fspan%3E)%20%7B%20%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Efor%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20item%20%3Cspan%20class%3D%22hljs-keyword%22%3Eof%3C%2Fspan%3E%20tree)%20%7B%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20path%20%3D%20%5Bitem.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%5D%20%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(item.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%3D%3D%20target)%20%7B%20%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20path%20%0A%20%20%20%20%7D%20%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(item.%3Cspan%20class%3D%22hljs-property%22%3Echildren%3C%2Fspan%3E)%20%7B%20%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20childPath%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EfindPath%3C%2Fspan%3E(item.%3Cspan%20class%3D%22hljs-property%22%3Echildren%3C%2Fspan%3E%2C%20target)%20%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(childPath)%20%7B%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%5B...path%2C%20...childPath%5D%20%0A%20%20%20%20%20%20%7D%20%0A%20%20%20%20%7D%20%0A%20%20%7D%20%0A%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E%20%0A%7D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findPath</span>(<span class="hljs-params">tree, target</span>) { 
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> tree) { 
+    <span class="hljs-keyword">const</span> path = [item.<span class="hljs-property">value</span>] 
+
+    <span class="hljs-keyword">if</span> (item.<span class="hljs-property">value</span> === target) { 
+      <span class="hljs-keyword">return</span> path 
+    } 
+
+    <span class="hljs-keyword">if</span> (item.<span class="hljs-property">children</span>) { 
+      <span class="hljs-keyword">const</span> childPath = <span class="hljs-title function_">findPath</span>(item.<span class="hljs-property">children</span>, target) 
+
+      <span class="hljs-keyword">if</span> (childPath) { 
+        <span class="hljs-keyword">return</span> [...path, ...childPath] 
+      } 
+    } 
+  } 
+
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span> 
+} 
+</code></pre>
+      </div>
+    
+<p>使用：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20path%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EfindPath%3C%2Fspan%3E(options%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bxihu%26%23x27%3B%3C%2Fspan%3E)%20%0A%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(path)%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> path = <span class="hljs-title function_">findPath</span>(options, <span class="hljs-string">'xihu'</span>) 
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(path) 
+</code></pre>
+      </div>
+    
+<p>输出：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%5B%20%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bzhejiang%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bhangzhou%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bxihu%26%23x27%3B%3C%2Fspan%3E%20%0A%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">[ 
+  <span class="hljs-string">'zhejiang'</span>, 
+  <span class="hljs-string">'hangzhou'</span>, 
+  <span class="hljs-string">'xihu'</span> 
+] 
+</code></pre>
+      </div>
+    
+<p>然后：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="selectValue.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20path%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">selectValue.<span class="hljs-property">value</span> = path 
+</code></pre>
+      </div>
+    
+<p>即可正常回显</p>
+<hr>
+<h2 id="treeselect-组件"><a href="#treeselect-组件" class="anchor-link">#</a> TreeSelect 组件</h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>数据结构</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>treeData</td>
+<td>[{ label, value, children[] }]</td>
+<td>可选项数据源</td>
+</tr>
+<tr>
+<td>v-model:value=“treeSelect”</td>
+<td>[‘option1’, ‘option2’]</td>
+<td>直接返回选中数据的 value</td>
+</tr>
+</tbody>
+</table>
+<p>TreeSelect（树选择器）适用于树状结构选择</p>
+<p>典型场景：</p>
+<ul>
+<li>菜单权限</li>
+<li>组织架构</li>
+<li>部门树</li>
+<li>分类树</li>
+<li>功能模块选择</li>
+</ul>
+<p>相比 Cascader，它更关注节点本身，而不是完整路径。</p>
+<h3 id="数据源结构-treedata"><a href="#数据源结构-treedata" class="anchor-link">#</a> 数据源结构：treeData</h3>
+<p>TreeSelect 使用 <code>treeData</code> 作为数据源</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20treeData%20%3D%20%5B%20%0A%20%20%7B%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Etitle%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%B5%99%E6%B1%9F%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Evalue%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bzhejiang%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Echildren%3C%2Fspan%3E%3A%20%5B%20%0A%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Etitle%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%9D%AD%E5%B7%9E%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Evalue%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bhangzhou%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Echildren%3C%2Fspan%3E%3A%20%5B%20%0A%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Etitle%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E8%A5%BF%E6%B9%96%26%23x27%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Evalue%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bxihu%26%23x27%3B%3C%2Fspan%3E%20%0A%20%20%20%20%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20%20%20%5D%20%0A%20%20%20%20%20%20%7D%20%0A%20%20%20%20%5D%20%0A%20%20%7D%20%0A%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> treeData = [ 
+  { 
+    <span class="hljs-attr">title</span>: <span class="hljs-string">'浙江'</span>, 
+    <span class="hljs-attr">value</span>: <span class="hljs-string">'zhejiang'</span>, 
+    <span class="hljs-attr">children</span>: [ 
+      { 
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'杭州'</span>, 
+        <span class="hljs-attr">value</span>: <span class="hljs-string">'hangzhou'</span>, 
+        <span class="hljs-attr">children</span>: [ 
+          { 
+            <span class="hljs-attr">title</span>: <span class="hljs-string">'西湖'</span>, 
+            <span class="hljs-attr">value</span>: <span class="hljs-string">'xihu'</span> 
+          } 
+        ] 
+      } 
+    ] 
+  } 
+] 
+</code></pre>
+      </div>
+    
+<p>对应结构：</p>
+
+      <div class="md-editor-code" data-language="ts">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">ts</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Einterface%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3ETreeNode%3C%2Fspan%3E%20%7B%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Evalue%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%20%7C%20%3Cspan%20class%3D%22hljs-built_in%22%3Enumber%3C%2Fspan%3E%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Etitle%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-built_in%22%3Estring%3C%2Fspan%3E%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Echildren%3C%2Fspan%3E%3F%3A%20%3Cspan%20class%3D%22hljs-title%20class_%22%3ETreeNode%3C%2Fspan%3E%5B%5D%20%0A%7D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">TreeNode</span> { 
+  <span class="hljs-attr">value</span>: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span> 
+  <span class="hljs-attr">title</span>: <span class="hljs-built_in">string</span> 
+  <span class="hljs-attr">children</span>?: <span class="hljs-title class_">TreeNode</span>[] 
+} 
+</code></pre>
+      </div>
+    
+<p>组件使用：</p>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="%3Ca-tree-select%20%0A%20%20v-%3Cspan%20class%3D%22hljs-symbol%22%3Emodel%3A%3C%2Fspan%3Evalue%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BtreeSelect%26quot%3B%3C%2Fspan%3E%20%0A%20%20%3Cspan%20class%3D%22hljs-symbol%22%3E%3Atree-data%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BtreeData%26quot%3B%3C%2Fspan%3E%3C%2Fspan%3E%20%0A%2F%3E%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue">&lt;a-tree-select 
+  v-<span class="hljs-symbol">model:</span>value=<span class="hljs-string">"treeSelect"</span> 
+  <span class="hljs-symbol">:tree-data=<span class="hljs-string">"treeData"</span></span> 
+/&gt; 
+</code></pre>
+      </div>
+    
+<h3 id="返回值结构-v-model-value-treeselect"><a href="#返回值结构-v-model-value-treeselect" class="anchor-link">#</a> 返回值结构：v-model:value=“treeSelect”</h3>
+<p>TreeSelect 返回的是节点值本身。</p>
+<p>例如选择：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E6%B5%99%E6%B1%9F%20%0A%20%E2%94%94%E2%94%80%20%E6%9D%AD%E5%B7%9E%20%0A%20%20%20%20%20%E2%94%94%E2%94%80%20%E8%A5%BF%E6%B9%96%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">浙江 
+ └─ 杭州 
+     └─ 西湖 
+</code></pre>
+      </div>
+    
+<p>返回：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-string">"xihu"</span> 
+</code></pre>
+      </div>
+    
+<p>多选时：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%5B%20%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%2C%20%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhangzhou%26quot%3B%3C%2Fspan%3E%20%0A%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">[ 
+  <span class="hljs-string">"xihu"</span>, 
+  <span class="hljs-string">"hangzhou"</span> 
+] 
+</code></pre>
+      </div>
+    
+<p>不会像 Cascader 一样返回完整路径</p>
+<p>因此处理逻辑更加简单</p>
+<h3 id="接口提交"><a href="#接口提交" class="anchor-link">#</a> 接口提交</h3>
+<p>TreeSelect 返回的数据通常就是后端需要的数据。</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%5B%20%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%2C%20%0A%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhangzhou%26quot%3B%3C%2Fspan%3E%20%0A%5D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">[ 
+  <span class="hljs-string">"xihu"</span>, 
+  <span class="hljs-string">"hangzhou"</span> 
+] 
+</code></pre>
+      </div>
+    
+<p>可直接提交：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Esave%3C%2Fspan%3E(%7B%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Eids%3C%2Fspan%3E%3A%20treeSelect.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%0A%7D)%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">await</span> <span class="hljs-title function_">save</span>({ 
+  <span class="hljs-attr">ids</span>: treeSelect.<span class="hljs-property">value</span> 
+}) 
+</code></pre>
+      </div>
+    
+<p>无需额外转换。</p>
+<h3 id="详情页回显"><a href="#详情页回显" class="anchor-link">#</a> 详情页回显</h3>
+<p>接口返回：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%7B%20%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3Eids%3C%2Fspan%3E%3A%20%5B%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bxihu%26quot%3B%3C%2Fspan%3E%2C%20%0A%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhangzhou%26quot%3B%3C%2Fspan%3E%20%0A%20%20%5D%20%0A%7D%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">{ 
+  <span class="hljs-attr">ids</span>: [ 
+    <span class="hljs-string">"xihu"</span>, 
+    <span class="hljs-string">"hangzhou"</span> 
+  ] 
+} 
+</code></pre>
+      </div>
+    
+<p>直接赋值即可：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="treeSelect.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20data.%3Cspan%20class%3D%22hljs-property%22%3Eids%3C%2Fspan%3E%20%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">treeSelect.<span class="hljs-property">value</span> = data.<span class="hljs-property">ids</span> 
+</code></pre>
+      </div>
+    
+<p>无需递归查找路径。</p>
+<p>这是 TreeSelect 使用体验优于 Cascader 的一个重要原因。</p>
+<hr>
+<h1 id="cascader-与-treeselect-对比"><a href="#cascader-与-treeselect-对比" class="anchor-link">#</a> Cascader 与 TreeSelect 对比</h1>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>Cascader</th>
+<th>TreeSelect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据展示</td>
+<td>级联面板</td>
+<td>树形结构</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>路径数组，层层深入</td>
+<td>当前节点</td>
+</tr>
+<tr>
+<td>回显复杂度</td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td>提交复杂度</td>
+<td>需要转换</td>
+<td>直接提交</td>
+</tr>
+<tr>
+<td>层级表达能力</td>
+<td>强</td>
+<td>中</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>行政区域、分类路径</td>
+<td>权限树、组织架构</td>
+</tr>
+<tr>
+<td>多选支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>接口适配成本</td>
+<td>较高</td>
+<td>较低</td>
+</tr>
+</tbody>
+</table>
+<h1 id="总结"><a href="#总结" class="anchor-link">#</a> 总结</h1>
+<p>虽然 Cascader 和 TreeSelect 都用于处理层级数据，但二者的设计理念完全不同</p>
+<ul>
+<li>Cascader 关注的是"路径"，返回完整层级链路，因此在提交和回显时通常需要进行额外的数据转换</li>
+<li>TreeSelect 关注的是"节点"，返回值就是当前选中的节点 ID，与后端接口的数据格式天然契合，开发成本相对更低</li>
+</ul>
+<p>在实际项目中，如果后端最终只需要节点 ID，并且不关心完整路径，那么优先考虑 TreeSelect；如果业务需要明确表达层级归属关系，则更适合使用 Cascader</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/07/06</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/07/06</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

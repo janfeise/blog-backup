@@ -1,0 +1,935 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">vite-ssg博客动态路由详细配置文档</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 65 分钟 · 字数 12875</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="vite-ssg-博客动态路由详细配置文档"><a href="#vite-ssg-博客动态路由详细配置文档" class="anchor-link">#</a> vite-ssg 博客动态路由详细配置文档</h1>
+<blockquote>
+<p>该文档由 AI 编写</p>
+<ul>
+<li>解决问题：虽然使用 onServerPrefetch 成功等待接口返回博客文章数据，但 vite-ssg 在默认情况下无法为动态路由生成对应的静态 HTML 页面的问题；</li>
+<li>解决方法：通过 includedRoutes 获取动态路由，为每篇博客生成静态HTML文档</li>
+</ul>
+<p>最终效果，在 <code>dist/article</code> 文件夹内生成了每篇博客的静态HTML文档：</p>
+
+      <div class="md-editor-code" data-language="cmd">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">cmd</span>
+            <button class="md-editor-copy-button" data-code="dist%2F%0A%20%E2%94%9C%E2%94%80%20article%2F%0A%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2F%0A%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%20index.html%0A%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%2F%0A%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%20index.html%0A%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%20%3Cspan%20class%3D%22hljs-number%22%3E3%3C%2Fspan%3E%2F%0A%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%20index.html%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-cmd">dist/
+ ├─ article/
+ │   ├─ <span class="hljs-number">1</span>/
+ │   │   └─ index.html
+ │   ├─ <span class="hljs-number">2</span>/
+ │   │   └─ index.html
+ │   ├─ <span class="hljs-number">3</span>/
+ │   │   └─ index.html
+</code></pre>
+      </div>
+    
+</blockquote>
+<p>本文结合当前博客项目，系统说明如何使用 vite-ssg 实现博客动态路由静态化，以及在真实项目中如何处理 SSR、Pinia、Element Plus、SCSS 和文章接口预取等问题。</p>
+<p>适合阅读对象：已经熟悉 Vue 3、Vue Router、Pinia 和 Vite 的中高级前端开发者。</p>
+<p>相关代码：</p>
+<ul>
+<li><a href="../src/main.js">src/main.js</a></li>
+<li><a href="../src/router/index.js">src/router/index.js</a></li>
+<li><a href="../src/router/modules/article.js">src/router/modules/article.js</a></li>
+<li><a href="../src/views/Article/ArticleView.vue">src/views/Article/ArticleView.vue</a></li>
+<li><a href="../src/api/blog.js">src/api/blog.js</a></li>
+<li><a href="../vite.config.js">vite.config.js</a></li>
+</ul>
+<h2 id="1-为什么动态路由不能直接生成-html"><a href="#1-为什么动态路由不能直接生成-html" class="anchor-link">#</a> 1. 为什么动态路由不能直接生成 HTML</h2>
+<p>vite-ssg 无法知道动态路由具体有哪些，以博客来说，vite-ssg 无法知道每一篇博客的路由有哪些，因此无法为每篇博客生成静态HTML文档</p>
+<p>在传统 SPA 中，<code>/article/38</code> 这类地址只是前端路由的运行时结果。浏览器进入页面后，Vue Router 根据当前路径渲染对应组件，但构建阶段并不知道最终会访问哪些文章 ID，所以静态构建默认只能生成一个路由壳，而不能自动生成 <code>/article/38/index.html</code>、<code>/article/37/index.html</code> 这类页面。</p>
+<h3 id="核心原因"><a href="#核心原因" class="anchor-link">#</a> 核心原因</h3>
+<ul>
+<li>动态路由的参数来自运行时数据</li>
+<li>构建时没有提前知道文章列表</li>
+<li>普通 Vite 构建只会产出单页应用资源，不会枚举业务数据</li>
+</ul>
+<p>也就是说，<code>/article/:id</code> 是“路由规则”，不是“具体页面路径”。如果不额外告诉构建器哪些路径需要渲染，就不会生成对应 HTML。</p>
+<h2 id="2-vite-ssg-是怎么工作的"><a href="#2-vite-ssg-是怎么工作的" class="anchor-link">#</a> 2. vite-ssg 是怎么工作的</h2>
+<p>vite-ssg 的目标是把 Vue 应用从 SPA 转成“可以静态预渲染的应用”。它的工作流程大致分为三步：</p>
+<ol>
+<li>先构建客户端资源，生成可在浏览器运行的 JS/CSS</li>
+<li>再构建服务端渲染资源，生成用于 SSR 的临时入口</li>
+<li>根据路由列表逐个渲染页面，把 HTML 写入 <code>dist</code></li>
+</ol>
+<p>在博客场景里，vite-ssg 的关键价值是：</p>
+<ul>
+<li>首页、关于页、文章详情页都能提前生成 HTML</li>
+<li>搜索引擎可以直接读取内容</li>
+<li>首屏速度更好，尤其是文章页</li>
+</ul>
+<h3 id="你需要理解的两个概念"><a href="#你需要理解的两个概念" class="anchor-link">#</a> 你需要理解的两个概念</h3>
+<h4 id="ssg"><a href="#ssg" class="anchor-link">#</a> SSG</h4>
+<p>Static Site Generation，静态站点生成。构建时把页面渲染成 HTML。</p>
+<h4 id="ssr"><a href="#ssr" class="anchor-link">#</a> SSR</h4>
+<p>Server Side Rendering，服务端渲染。这里主要用于“构建时的预渲染阶段”，不是在线服务端渲染。</p>
+<p>在 vite-ssg 中，SSR 和 SSG 是配合使用的：</p>
+<ul>
+<li>SSR 负责在构建时执行组件逻辑、拉取数据、生成 HTML</li>
+<li>SSG 负责把这些 HTML 固化到 <code>dist</code> 目录</li>
+</ul>
+<h2 id="3-includedroutes-的作用"><a href="#3-includedroutes-的作用" class="anchor-link">#</a> 3. includedRoutes 的作用</h2>
+<p><code>includedRoutes</code> 是 vite-ssg 提供的路由筛选和扩展机制。它解决的正是“构建时不知道该生成哪些动态路由”的问题。</p>
+<p>它的职责很直接：</p>
+<ul>
+<li>接收当前已有的路由路径 <code>paths</code></li>
+<li>接收路由记录 <code>routes</code></li>
+<li>返回最终需要参与静态生成的路径列表</li>
+</ul>
+<p>在博客项目中，它的作用就是：</p>
+<ul>
+<li>构建时先请求文章列表接口，获取所有文章的id</li>
+<li>从 <code>records</code> 中提取文章 ID</li>
+<li>组装成 <code>/article/38</code>、<code>/article/37</code> 这样的真实路径</li>
+<li>让 vite-ssg 在预渲染时逐个生成 HTML</li>
+</ul>
+<h2 id="4-项目中的路由结构"><a href="#4-项目中的路由结构" class="anchor-link">#</a> 4. 项目中的路由结构</h2>
+<p>当前项目的路由采用“数组导出”的方式，而不是直接在 <code>router/index.js</code> 中创建路由实例。这样更适合 vite-ssg 使用。</p>
+<h3 id="路由入口"><a href="#路由入口" class="anchor-link">#</a> 路由入口</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20src%2Frouter%2Findex.js%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20articleRouter%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.%2Fmodules%2Farticle%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20aboutRouter%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.%2Fmodules%2Fabout%26quot%3B%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20routes%20%3D%20%5B%0A%20%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Epath%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%2F%26quot%3B%3C%2Fspan%3E%2C%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BHome%26quot%3B%3C%2Fspan%3E%2C%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ecomponent%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%40%2Fviews%2FHome%2Findex.vue%26quot%3B%3C%2Fspan%3E)%2C%0A%20%20%7D%2C%0A%20%20...articleRouter%2C%0A%20%20...aboutRouter%2C%0A%5D%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Edefault%3C%2Fspan%3E%20routes%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// src/router/index.js</span>
+<span class="hljs-keyword">import</span> articleRouter <span class="hljs-keyword">from</span> <span class="hljs-string">"./modules/article"</span>;
+<span class="hljs-keyword">import</span> aboutRouter <span class="hljs-keyword">from</span> <span class="hljs-string">"./modules/about"</span>;
+
+<span class="hljs-keyword">const</span> routes = [
+  {
+    <span class="hljs-attr">path</span>: <span class="hljs-string">"/"</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"Home"</span>,
+    <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"@/views/Home/index.vue"</span>),
+  },
+  ...articleRouter,
+  ...aboutRouter,
+];
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> routes;
+</code></pre>
+      </div>
+    
+<h3 id="文章路由"><a href="#文章路由" class="anchor-link">#</a> 文章路由</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20src%2Frouter%2Fmodules%2Farticle.js%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20articleRouter%20%3D%20%5B%0A%20%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Epath%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%2Farticle%2F%3Aid%26quot%3B%3C%2Fspan%3E%2C%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ename%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BArticleDetail%26quot%3B%3C%2Fspan%3E%2C%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ecomponent%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%40%2Fviews%2FArticle%2FArticleView.vue%26quot%3B%3C%2Fspan%3E)%2C%0A%20%20%7D%2C%0A%5D%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Edefault%3C%2Fspan%3E%20articleRouter%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// src/router/modules/article.js</span>
+<span class="hljs-keyword">const</span> articleRouter = [
+  {
+    <span class="hljs-attr">path</span>: <span class="hljs-string">"/article/:id"</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"ArticleDetail"</span>,
+    <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"@/views/Article/ArticleView.vue"</span>),
+  },
+];
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> articleRouter;
+</code></pre>
+      </div>
+    
+<p>这里的关键点是：<code>/article/:id</code> 只是规则，真正参与预渲染的必须是 <code>includedRoutes</code> 返回的 <code>/article/38</code> 这种具体路径。</p>
+<h2 id="5-main-js-的完整配置方式"><a href="#5-main-js-的完整配置方式" class="anchor-link">#</a> 5. main.js 的完整配置方式</h2>
+<p>这是当前项目的核心入口配置，也是整个静态化链路的中心。</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20src%2Fmain.js%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EViteSSG%3C%2Fspan%3E%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bvite-ssg%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EElementPlus%3C%2Fspan%3E%2C%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EID_INJECTION_KEY%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EZINDEX_INJECTION_KEY%3C%2Fspan%3E%2C%0A%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Belement-plus%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Belement-plus%2Fdist%2Findex.css%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%20createPinia%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bpinia%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20piniaPluginPersistedstate%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bpinia-plugin-persistedstate%26quot%3B%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%20getArticles%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%40%2Fapi%2Fblog%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EApp%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.%2FApp.vue%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20routes%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.%2Frouter%26quot%3B%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.%2Fstyles%2Fmain.scss%26quot%3B%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20createApp%20%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EViteSSG%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20class_%22%3EApp%3C%2Fspan%3E%2C%20%7B%20routes%20%7D%2C%20%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3E%7B%20app%2C%20router%20%7D%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20app.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eprovide%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EID_INJECTION_KEY%3C%2Fspan%3E%2C%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Eprefix%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1024%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Ecurrent%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%20%7D)%3B%0A%20%20app.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eprovide%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EZINDEX_INJECTION_KEY%3C%2Fspan%3E%2C%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ecurrent%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%20%7D)%3B%0A%0A%20%20app.%3Cspan%20class%3D%22hljs-title%20function_%22%3Euse%3C%2Fspan%3E(router)%3B%0A%20%20app.%3Cspan%20class%3D%22hljs-title%20function_%22%3Euse%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20class_%22%3EElementPlus%3C%2Fspan%3E)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20pinia%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EcreatePinia%3C%2Fspan%3E()%3B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Emeta%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eenv%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESSR%3C%2Fspan%3E)%20%7B%0A%20%20%20%20pinia.%3Cspan%20class%3D%22hljs-title%20function_%22%3Euse%3C%2Fspan%3E(piniaPluginPersistedstate)%3B%0A%20%20%7D%0A%20%20app.%3Cspan%20class%3D%22hljs-title%20function_%22%3Euse%3C%2Fspan%3E(pinia)%3B%0A%7D)%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EincludedRoutes%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Epaths%2C%20routes%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Etry%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20res%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetArticles%3C%2Fspan%3E()%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20articleRecords%20%3D%20res%3F.%3Cspan%20class%3D%22hljs-property%22%3Edata%3C%2Fspan%3E%3F.%3Cspan%20class%3D%22hljs-property%22%3Erecords%3C%2Fspan%3E%20%7C%7C%20%5B%5D%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20articlePaths%20%3D%20articleRecords.%3Cspan%20class%3D%22hljs-title%20function_%22%3Emap%3C%2Fspan%3E(%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Earticle%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%60%2Farticle%2F%3Cspan%20class%3D%22hljs-subst%22%3E%24%7Barticle.id%7D%3C%2Fspan%3E%60%3C%2Fspan%3E%2C%0A%20%20%20%20)%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20routes.%3Cspan%20class%3D%22hljs-title%20function_%22%3EflatMap%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Eroute%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(route.%3Cspan%20class%3D%22hljs-property%22%3Ename%3C%2Fspan%3E%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BArticleDetail%26quot%3B%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20articlePaths%3B%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20route.%3Cspan%20class%3D%22hljs-property%22%3Epath%3C%2Fspan%3E%3B%0A%20%20%20%20%7D)%3B%0A%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecatch%3C%2Fspan%3E%20(error)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eerror%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E8%8E%B7%E5%8F%96%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8%E5%A4%B1%E8%B4%A5%EF%BC%8C%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%EF%BC%9A%26quot%3B%3C%2Fspan%3E%2C%20error)%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20paths%3B%0A%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// src/main.js</span>
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">ViteSSG</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"vite-ssg"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">ElementPlus</span>, {
+  <span class="hljs-variable constant_">ID_INJECTION_KEY</span>,
+  <span class="hljs-variable constant_">ZINDEX_INJECTION_KEY</span>,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">"element-plus"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"element-plus/dist/index.css"</span>;
+<span class="hljs-keyword">import</span> { createPinia } <span class="hljs-keyword">from</span> <span class="hljs-string">"pinia"</span>;
+<span class="hljs-keyword">import</span> piniaPluginPersistedstate <span class="hljs-keyword">from</span> <span class="hljs-string">"pinia-plugin-persistedstate"</span>;
+
+<span class="hljs-keyword">import</span> { getArticles } <span class="hljs-keyword">from</span> <span class="hljs-string">"@/api/blog"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"./App.vue"</span>;
+<span class="hljs-keyword">import</span> routes <span class="hljs-keyword">from</span> <span class="hljs-string">"./router"</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"./styles/main.scss"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createApp = <span class="hljs-title class_">ViteSSG</span>(<span class="hljs-title class_">App</span>, { routes }, <span class="hljs-function">(<span class="hljs-params">{ app, router }</span>) =&gt;</span> {
+  app.<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">ID_INJECTION_KEY</span>, { <span class="hljs-attr">prefix</span>: <span class="hljs-number">1024</span>, <span class="hljs-attr">current</span>: <span class="hljs-number">0</span> });
+  app.<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">ZINDEX_INJECTION_KEY</span>, { <span class="hljs-attr">current</span>: <span class="hljs-number">0</span> });
+
+  app.<span class="hljs-title function_">use</span>(router);
+  app.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">ElementPlus</span>);
+
+  <span class="hljs-keyword">const</span> pinia = <span class="hljs-title function_">createPinia</span>();
+  <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">SSR</span>) {
+    pinia.<span class="hljs-title function_">use</span>(piniaPluginPersistedstate);
+  }
+  app.<span class="hljs-title function_">use</span>(pinia);
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">includedRoutes</span>(<span class="hljs-params">paths, routes</span>) {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> <span class="hljs-title function_">getArticles</span>();
+    <span class="hljs-keyword">const</span> articleRecords = res?.<span class="hljs-property">data</span>?.<span class="hljs-property">records</span> || [];
+    <span class="hljs-keyword">const</span> articlePaths = articleRecords.<span class="hljs-title function_">map</span>(
+      <span class="hljs-function">(<span class="hljs-params">article</span>) =&gt;</span> <span class="hljs-string">`/article/<span class="hljs-subst">${article.id}</span>`</span>,
+    );
+
+    <span class="hljs-keyword">return</span> routes.<span class="hljs-title function_">flatMap</span>(<span class="hljs-function">(<span class="hljs-params">route</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (route.<span class="hljs-property">name</span> === <span class="hljs-string">"ArticleDetail"</span>) <span class="hljs-keyword">return</span> articlePaths;
+      <span class="hljs-keyword">return</span> route.<span class="hljs-property">path</span>;
+    });
+  } <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">"获取文章列表失败，使用默认路由生成静态页面："</span>, error);
+    <span class="hljs-keyword">return</span> paths;
+  }
+}
+</code></pre>
+      </div>
+    
+<h3 id="这段代码做了什么"><a href="#这段代码做了什么" class="anchor-link">#</a> 这段代码做了什么</h3>
+<ul>
+<li><code>ViteSSG(...)</code> 把 Vue 应用交给 vite-ssg 管理</li>
+<li><code>ID_INJECTION_KEY</code> 和 <code>ZINDEX_INJECTION_KEY</code> 解决 Element Plus SSR 注入问题</li>
+<li><code>piniaPluginPersistedstate</code> 只在客户端启用</li>
+<li><code>includedRoutes</code> 动态注入文章页面路径</li>
+</ul>
+<h2 id="6-onserverprefetch-的执行时机"><a href="#6-onserverprefetch-的执行时机" class="anchor-link">#</a> 6. onServerPrefetch 的执行时机</h2>
+<p><code>onServerPrefetch</code> 只会在 SSR 阶段执行，它的作用是：</p>
+<ul>
+<li>在服务端渲染组件之前提前拉取数据</li>
+<li>确保 HTML 生成时已经有内容</li>
+<li>避免“先渲染空壳、客户端再补数据”</li>
+</ul>
+<p>在文章详情页中，它的时机非常关键：</p>
+<ol>
+<li>路由解析出 <code>/article/38</code></li>
+<li>SSR 进入 <code>ArticleView.vue</code></li>
+<li><code>onServerPrefetch</code> 触发 <code>loadArticle(route.params.id)</code></li>
+<li>文章数据写入响应式状态</li>
+<li>最终渲染出包含正文的 HTML</li>
+</ol>
+<p>这就是为什么它比 <code>onMounted</code> 更适合 SSG/SSR 预取。</p>
+<h3 id="为什么不能只用-onmounted"><a href="#为什么不能只用-onmounted" class="anchor-link">#</a> 为什么不能只用 onMounted</h3>
+<p><code>onMounted</code> 只在客户端执行，SSR 阶段不会运行。这样构建出来的 HTML 只会是空壳，搜索引擎和首屏体验都会变差。</p>
+<h2 id="7-articleview-vue-的完整配置方式"><a href="#7-articleview-vue-的完整配置方式" class="anchor-link">#</a> 7. ArticleView.vue 的完整配置方式</h2>
+<p>文章详情页是动态路由静态化是否成功的关键。</p>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%3C!--%20src%2Fviews%2FArticle%2FArticleView.vue%20--%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Esetup%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-javascript%22%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%20ref%2C%20watch%2C%20onServerPrefetch%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bvue%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%20useRoute%2C%20useRouter%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bvue-router%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20articleLayout%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%40%2FLayout%2Farticle%2FarticleLayout.vue%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EMarkdownRenderer%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%40%2Fcomponents%2FMarkdownRenderer.vue%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EArticleTableOfContents%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%40%2Fcomponents%2FArticleTableOfContents.vue%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%20getArticleById%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%40%2Fapi%2Fblog%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EElMessage%3C%2Fspan%3E%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Belement-plus%26quot%3B%3C%2Fspan%3E%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20articleList%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.%2Fcomponents%2FarticleList.vue%26quot%3B%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20route%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EuseRoute%3C%2Fspan%3E()%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20router%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EuseRouter%3C%2Fspan%3E()%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20article%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20loading%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20tableOfContents%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%5B%5D)%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EloadArticle%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3Eid%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20loading.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Etry%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20res%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetArticleById%3C%2Fspan%3E(id)%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(res%3F.%3Cspan%20class%3D%22hljs-property%22%3Estatus%3C%2Fspan%3E%20!%3D%3D%20%3Cspan%20class%3D%22hljs-number%22%3E200%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20article.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E%3B%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Emeta%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eenv%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESSR%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EElMessage%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eerror%3C%2Fspan%3E(res%3F.%3Cspan%20class%3D%22hljs-property%22%3Emessage%3C%2Fspan%3E%20%7C%7C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%96%87%E7%AB%A0%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20article.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20res.%3Cspan%20class%3D%22hljs-property%22%3Edata%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Emeta%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eenv%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESSR%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!route.%3Cspan%20class%3D%22hljs-property%22%3Ehash%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ewindow%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EscrollTo%3C%2Fspan%3E(%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Etop%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Eleft%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Ebehavior%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bsmooth%26quot%3B%3C%2Fspan%3E%20%7D)%3B%0A%20%20%20%20%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eelse%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20rawHash%20%3D%20route.%3Cspan%20class%3D%22hljs-property%22%3Ehash%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Esubstring%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!rawHash)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%0A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20targetId%20%3D%20%3Cspan%20class%3D%22hljs-built_in%22%3EdecodeURIComponent%3C%2Fspan%3E(rawHash)%3B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3EsetTimeout%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20element%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(targetId)%3B%0A%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(element)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20element.%3Cspan%20class%3D%22hljs-title%20function_%22%3EscrollIntoView%3C%2Fspan%3E(%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ebehavior%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bsmooth%26quot%3B%3C%2Fspan%3E%20%7D)%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%20%3Cspan%20class%3D%22hljs-number%22%3E100%3C%2Fspan%3E)%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecatch%3C%2Fspan%3E%20(error)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Emeta%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eenv%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESSR%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EElMessage%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eerror%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E8%8E%B7%E5%8F%96%E6%96%87%E7%AB%A0%E5%A4%B1%E8%B4%A5%EF%BC%8C%E8%AF%B7%E6%A3%80%E6%9F%A5%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%7D%0A%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efinally%3C%2Fspan%3E%20%7B%0A%20%20%20%20loading.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%3B%0A%20%20%7D%0A%7D%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EhandleMarkdownReady%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BMarkdown%20%E6%B8%B2%E6%9F%93%E5%AE%8C%E6%88%90%26quot%3B%3C%2Fspan%3E)%3B%0A%7D%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EhandleTOCChange%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3Etoc%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20tableOfContents.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20toc%3B%0A%7D%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EhandleTOCClick%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3Eid%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20router.%3Cspan%20class%3D%22hljs-title%20function_%22%3Ereplace%3C%2Fspan%3E(%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ehash%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%60%23%3Cspan%20class%3D%22hljs-subst%22%3E%24%7Bid%7D%3C%2Fspan%3E%60%3C%2Fspan%3E%20%7D)%3B%0A%7D%3B%0A%0A%3Cspan%20class%3D%22hljs-title%20function_%22%3Ewatch%3C%2Fspan%3E(%0A%20%20%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20route.%3Cspan%20class%3D%22hljs-property%22%3Eparams%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eid%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Eid%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EloadArticle%3C%2Fspan%3E(id)%3B%0A%20%20%7D%2C%0A%20%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Eimmediate%3C%2Fspan%3E%3A%20!%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Emeta%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eenv%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESSR%3C%2Fspan%3E%20%7D%2C%0A)%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%80%9A%E8%BF%87%20onServerPrefetch%20%E7%AD%89%E5%BE%85%E6%8E%A5%E5%8F%A3%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-title%20function_%22%3EonServerPrefetch%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20function_%22%3Easync%3C%2Fspan%3E%20()%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EloadArticle%3C%2Fspan%3E(route.%3Cspan%20class%3D%22hljs-property%22%3Eparams%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eid%3C%2Fspan%3E)%3B%0A%7D)%3B%0A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue"><span class="hljs-comment">&lt;!-- src/views/Article/ArticleView.vue --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">import</span> { ref, watch, onServerPrefetch } <span class="hljs-keyword">from</span> <span class="hljs-string">"vue"</span>;
+<span class="hljs-keyword">import</span> { useRoute, useRouter } <span class="hljs-keyword">from</span> <span class="hljs-string">"vue-router"</span>;
+<span class="hljs-keyword">import</span> articleLayout <span class="hljs-keyword">from</span> <span class="hljs-string">"@/Layout/article/articleLayout.vue"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">MarkdownRenderer</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"@/components/MarkdownRenderer.vue"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">ArticleTableOfContents</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"@/components/ArticleTableOfContents.vue"</span>;
+<span class="hljs-keyword">import</span> { getArticleById } <span class="hljs-keyword">from</span> <span class="hljs-string">"@/api/blog"</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">ElMessage</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"element-plus"</span>;
+<span class="hljs-keyword">import</span> articleList <span class="hljs-keyword">from</span> <span class="hljs-string">"./components/articleList.vue"</span>;
+
+<span class="hljs-keyword">const</span> route = <span class="hljs-title function_">useRoute</span>();
+<span class="hljs-keyword">const</span> router = <span class="hljs-title function_">useRouter</span>();
+<span class="hljs-keyword">const</span> article = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">null</span>);
+<span class="hljs-keyword">const</span> loading = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">true</span>);
+<span class="hljs-keyword">const</span> tableOfContents = <span class="hljs-title function_">ref</span>([]);
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">loadArticle</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params">id</span>) =&gt; {
+  loading.<span class="hljs-property">value</span> = <span class="hljs-literal">true</span>;
+
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> <span class="hljs-title function_">getArticleById</span>(id);
+
+    <span class="hljs-keyword">if</span> (res?.<span class="hljs-property">status</span> !== <span class="hljs-number">200</span>) {
+      article.<span class="hljs-property">value</span> = <span class="hljs-literal">null</span>;
+      <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">SSR</span>) {
+        <span class="hljs-title class_">ElMessage</span>.<span class="hljs-title function_">error</span>(res?.<span class="hljs-property">message</span> || <span class="hljs-string">"文章加载失败"</span>);
+      }
+      <span class="hljs-keyword">return</span>;
+    }
+
+    article.<span class="hljs-property">value</span> = res.<span class="hljs-property">data</span>;
+
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">SSR</span>) {
+      <span class="hljs-keyword">if</span> (!route.<span class="hljs-property">hash</span>) {
+        <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">scrollTo</span>({ <span class="hljs-attr">top</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">left</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">behavior</span>: <span class="hljs-string">"smooth"</span> });
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">const</span> rawHash = route.<span class="hljs-property">hash</span>.<span class="hljs-title function_">substring</span>(<span class="hljs-number">1</span>);
+        <span class="hljs-keyword">if</span> (!rawHash) <span class="hljs-keyword">return</span>;
+
+        <span class="hljs-keyword">const</span> targetId = <span class="hljs-built_in">decodeURIComponent</span>(rawHash);
+        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+          <span class="hljs-keyword">const</span> element = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(targetId);
+          <span class="hljs-keyword">if</span> (element) {
+            element.<span class="hljs-title function_">scrollIntoView</span>({ <span class="hljs-attr">behavior</span>: <span class="hljs-string">"smooth"</span> });
+          }
+        }, <span class="hljs-number">100</span>);
+      }
+    }
+  } <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">SSR</span>) {
+      <span class="hljs-title class_">ElMessage</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">"获取文章失败，请检查网络连接"</span>);
+    }
+  } <span class="hljs-keyword">finally</span> {
+    loading.<span class="hljs-property">value</span> = <span class="hljs-literal">false</span>;
+  }
+};
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">handleMarkdownReady</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Markdown 渲染完成"</span>);
+};
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">handleTOCChange</span> = (<span class="hljs-params">toc</span>) =&gt; {
+  tableOfContents.<span class="hljs-property">value</span> = toc;
+};
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">handleTOCClick</span> = (<span class="hljs-params">id</span>) =&gt; {
+  router.<span class="hljs-title function_">replace</span>({ <span class="hljs-attr">hash</span>: <span class="hljs-string">`#<span class="hljs-subst">${id}</span>`</span> });
+};
+
+<span class="hljs-title function_">watch</span>(
+  <span class="hljs-function">() =&gt;</span> route.<span class="hljs-property">params</span>.<span class="hljs-property">id</span>,
+  <span class="hljs-function">(<span class="hljs-params">id</span>) =&gt;</span> {
+    <span class="hljs-title function_">loadArticle</span>(id);
+  },
+  { <span class="hljs-attr">immediate</span>: !<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">SSR</span> },
+);
+
+<span class="hljs-comment">// 通过 onServerPrefetch 等待接口返回数据</span>
+<span class="hljs-title function_">onServerPrefetch</span>(<span class="hljs-title function_">async</span> () =&gt; {
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">loadArticle</span>(route.<span class="hljs-property">params</span>.<span class="hljs-property">id</span>);
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<h3 id="为什么这样写"><a href="#为什么这样写" class="anchor-link">#</a> 为什么这样写</h3>
+<ul>
+<li><code>watch(..., { immediate: !import.meta.env.SSR })</code>：避免 SSR 和预取阶段重复请求</li>
+<li><code>onServerPrefetch</code>：确保服务端预渲染时拿到文章内容</li>
+<li><code>import.meta.env.SSR</code>：区分服务端和客户端</li>
+<li><code>window</code> / <code>document</code> 仅在客户端使用</li>
+</ul>
+<h2 id="8-ssr-与客户端环境的区别"><a href="#8-ssr-与客户端环境的区别" class="anchor-link">#</a> 8. SSR 与客户端环境的区别</h2>
+<p>SSR 环境和浏览器环境最大的区别，是 SSR 没有浏览器对象。</p>
+<h3 id="ssr-中不存在的对象"><a href="#ssr-中不存在的对象" class="anchor-link">#</a> SSR 中不存在的对象</h3>
+<ul>
+<li><code>window</code></li>
+<li><code>document</code></li>
+<li><code>localStorage</code></li>
+<li><code>sessionStorage</code></li>
+<li>部分依赖 DOM 的第三方组件行为</li>
+</ul>
+<h3 id="正确的判断方式"><a href="#正确的判断方式" class="anchor-link">#</a> 正确的判断方式</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Emeta%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eenv%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESSR%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ewindow%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EscrollTo%3C%2Fspan%3E(%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Etop%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%20%7D)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">if</span> (!<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">SSR</span>) {
+  <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">scrollTo</span>({ <span class="hljs-attr">top</span>: <span class="hljs-number">0</span> });
+}
+</code></pre>
+      </div>
+    
+<h3 id="错误示例"><a href="#错误示例" class="anchor-link">#</a> 错误示例</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ewindow%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EscrollTo%3C%2Fspan%3E(%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Etop%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%20%7D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">scrollTo</span>({ <span class="hljs-attr">top</span>: <span class="hljs-number">0</span> });
+</code></pre>
+      </div>
+    
+<p>如果这段代码在 SSR 阶段执行，就会直接报错：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="ReferenceError%3A%20window%20is%20not%20defined%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">ReferenceError: window is not defined
+</code></pre>
+      </div>
+    
+<h3 id="正确示例"><a href="#正确示例" class="anchor-link">#</a> 正确示例</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Emeta%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eenv%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESSR%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Ewindow%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EscrollTo%3C%2Fspan%3E(%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Etop%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%20%7D)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">if</span> (!<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">SSR</span>) {
+  <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">scrollTo</span>({ <span class="hljs-attr">top</span>: <span class="hljs-number">0</span> });
+}
+</code></pre>
+      </div>
+    
+<p>同理，访问 <code>document.getElementById(...)</code>、<code>localStorage.getItem(...)</code> 也必须做同样的保护。</p>
+<h2 id="9-pinia-持久化插件在-ssr-中的兼容处理"><a href="#9-pinia-持久化插件在-ssr-中的兼容处理" class="anchor-link">#</a> 9. Pinia 持久化插件在 SSR 中的兼容处理</h2>
+<p>本项目使用了 <code>pinia-plugin-persistedstate</code>，它默认依赖浏览器环境中的存储能力。如果在 SSR 阶段直接安装，会触发 <code>window is not defined</code>。</p>
+<h3 id="错误示例-2"><a href="#错误示例-2" class="anchor-link">#</a> 错误示例</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="app.%3Cspan%20class%3D%22hljs-title%20function_%22%3Euse%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20function_%22%3EcreatePinia%3C%2Fspan%3E().%3Cspan%20class%3D%22hljs-title%20function_%22%3Euse%3C%2Fspan%3E(piniaPluginPersistedstate))%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">app.<span class="hljs-title function_">use</span>(<span class="hljs-title function_">createPinia</span>().<span class="hljs-title function_">use</span>(piniaPluginPersistedstate));
+</code></pre>
+      </div>
+    
+<h3 id="正确示例-2"><a href="#正确示例-2" class="anchor-link">#</a> 正确示例</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20pinia%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EcreatePinia%3C%2Fspan%3E()%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Emeta%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eenv%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESSR%3C%2Fspan%3E)%20%7B%0A%20%20pinia.%3Cspan%20class%3D%22hljs-title%20function_%22%3Euse%3C%2Fspan%3E(piniaPluginPersistedstate)%3B%0A%7D%0A%0Aapp.%3Cspan%20class%3D%22hljs-title%20function_%22%3Euse%3C%2Fspan%3E(pinia)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> pinia = <span class="hljs-title function_">createPinia</span>();
+
+<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">SSR</span>) {
+  pinia.<span class="hljs-title function_">use</span>(piniaPluginPersistedstate);
+}
+
+app.<span class="hljs-title function_">use</span>(pinia);
+</code></pre>
+      </div>
+    
+<h3 id="原理说明"><a href="#原理说明" class="anchor-link">#</a> 原理说明</h3>
+<ul>
+<li>SSR 阶段只负责渲染，不应依赖浏览器存储</li>
+<li>客户端阶段再启用持久化，才能安全访问 <code>localStorage</code></li>
+</ul>
+<h2 id="10-element-plus-在-vite-ssg-中为什么需要-id-injection-key-和-zindex-injection-key"><a href="#10-element-plus-在-vite-ssg-中为什么需要-id-injection-key-和-zindex-injection-key" class="anchor-link">#</a> 10. Element Plus 在 vite-ssg 中为什么需要 ID_INJECTION_KEY 和 ZINDEX_INJECTION_KEY</h2>
+<p>Element Plus 的部分组件会在 SSR 场景下生成 ID、处理浮层层级和 teleport。若没有提供注入值，就会出现 hydration 相关警告。</p>
+<h3 id="为什么需要-id-injection-key"><a href="#为什么需要-id-injection-key" class="anchor-link">#</a> 为什么需要 ID_INJECTION_KEY</h3>
+<p>它用于保证服务端和客户端生成的 ID 一致，避免 hydration mismatch。</p>
+<h3 id="为什么需要-zindex-injection-key"><a href="#为什么需要-zindex-injection-key" class="anchor-link">#</a> 为什么需要 ZINDEX_INJECTION_KEY</h3>
+<p>它用于给弹层、对话框、提示框等组件提供统一的初始 z-index 基线。</p>
+<h3 id="错误示例-3"><a href="#错误示例-3" class="anchor-link">#</a> 错误示例</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="app.%3Cspan%20class%3D%22hljs-title%20function_%22%3Euse%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20class_%22%3EElementPlus%3C%2Fspan%3E)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">app.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">ElementPlus</span>);
+</code></pre>
+      </div>
+    
+<h3 id="正确示例-3"><a href="#正确示例-3" class="anchor-link">#</a> 正确示例</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="app.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eprovide%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EID_INJECTION_KEY%3C%2Fspan%3E%2C%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Eprefix%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1024%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Ecurrent%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%20%7D)%3B%0Aapp.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eprovide%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EZINDEX_INJECTION_KEY%3C%2Fspan%3E%2C%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ecurrent%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%20%7D)%3B%0Aapp.%3Cspan%20class%3D%22hljs-title%20function_%22%3Euse%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20class_%22%3EElementPlus%3C%2Fspan%3E)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">app.<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">ID_INJECTION_KEY</span>, { <span class="hljs-attr">prefix</span>: <span class="hljs-number">1024</span>, <span class="hljs-attr">current</span>: <span class="hljs-number">0</span> });
+app.<span class="hljs-title function_">provide</span>(<span class="hljs-variable constant_">ZINDEX_INJECTION_KEY</span>, { <span class="hljs-attr">current</span>: <span class="hljs-number">0</span> });
+app.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">ElementPlus</span>);
+</code></pre>
+      </div>
+    
+<h3 id="会出现什么警告"><a href="#会出现什么警告" class="anchor-link">#</a> 会出现什么警告</h3>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="ElementPlusError%3A%20%5BIdInjection%5D%20Looks%20like%20you%20are%20using%20server%20rendering...%0AElementPlusError%3A%20%5BZIndexInjection%5D%20Looks%20like%20you%20are%20using%20server%20rendering...%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">ElementPlusError: [IdInjection] Looks like you are using server rendering...
+ElementPlusError: [ZIndexInjection] Looks like you are using server rendering...
+</code></pre>
+      </div>
+    
+<p>这类警告说明 Element Plus 组件在 SSR 场景中缺少必要上下文。</p>
+<h2 id="11-scss-报错的根本原因与修复方案"><a href="#11-scss-报错的根本原因与修复方案" class="anchor-link">#</a> 11. scss 报错的根本原因与修复方案</h2>
+<h3 id="问题现象"><a href="#问题现象" class="anchor-link">#</a> 问题现象</h3>
+<p>构建时出现：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="TypeError%20%5BERR_UNKNOWN_FILE_EXTENSION%5D%3A%20Unknown%20file%20extension%20%26quot%3B.scss%26quot%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".scss"
+</code></pre>
+      </div>
+    
+<h3 id="根本原因"><a href="#根本原因" class="anchor-link">#</a> 根本原因</h3>
+<p>项目最初在 <code>unplugin-vue-components</code> 的 Element Plus Resolver 中使用了 <code>importStyle: "sass"</code>，会把按需组件样式指向 <code>theme-chalk/src/*.scss</code>。</p>
+<p>在客户端构建中，Vite 会处理这些 SCSS；但在 vite-ssg 的 server 构建阶段，Node 会尝试直接加载这些源文件，结果就报错了。</p>
+<h3 id="错误示例-4"><a href="#错误示例-4" class="anchor-link">#</a> 错误示例</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20class_%22%3EElementPlusResolver%3C%2Fspan%3E(%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3EimportStyle%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bsass%26quot%3B%3C%2Fspan%3E%2C%0A%7D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title class_">ElementPlusResolver</span>({
+  <span class="hljs-attr">importStyle</span>: <span class="hljs-string">"sass"</span>,
+});
+</code></pre>
+      </div>
+    
+<h3 id="正确示例-4"><a href="#正确示例-4" class="anchor-link">#</a> 正确示例</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20class_%22%3EElementPlusResolver%3C%2Fspan%3E(%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3EimportStyle%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%2C%0A%7D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title class_">ElementPlusResolver</span>({
+  <span class="hljs-attr">importStyle</span>: <span class="hljs-literal">false</span>,
+});
+</code></pre>
+      </div>
+    
+<p>并且保留全局 CSS：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Belement-plus%2Fdist%2Findex.css%26quot%3B%3C%2Fspan%3E%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">import</span> <span class="hljs-string">"element-plus/dist/index.css"</span>;
+</code></pre>
+      </div>
+    
+<h3 id="为什么这样修复有效"><a href="#为什么这样修复有效" class="anchor-link">#</a> 为什么这样修复有效</h3>
+<ul>
+<li>不再让 SSR 阶段去解析 <code>.scss</code></li>
+<li>改为引入已经编译好的全局 CSS</li>
+<li>避免 Node 直接处理样式源文件</li>
+</ul>
+<h2 id="12-构建流程解析"><a href="#12-构建流程解析" class="anchor-link">#</a> 12. 构建流程解析</h2>
+<h3 id="第一步-客户端构建"><a href="#第一步-客户端构建" class="anchor-link">#</a> 第一步：客户端构建</h3>
+<p>vite-ssg 先构建客户端资源，生成 <code>dist/assets/*</code> 中的 JS 和 CSS。</p>
+<h3 id="第二步-服务端构建"><a href="#第二步-服务端构建" class="anchor-link">#</a> 第二步：服务端构建</h3>
+<p>再构建 SSR 临时入口，用于真正执行组件逻辑和预渲染。</p>
+<h3 id="第三步-includedroutes-获取文章路径"><a href="#第三步-includedroutes-获取文章路径" class="anchor-link">#</a> 第三步：includedRoutes 获取文章路径</h3>
+<p>构建时执行：</p>
+<ol>
+<li>请求 <code>GET /articles</code></li>
+<li>读取 <code>data.records</code></li>
+<li>将文章 ID 转成 <code>/article/:id</code></li>
+<li>返回给 vite-ssg</li>
+</ol>
+<h3 id="第四步-逐页-ssr-渲染"><a href="#第四步-逐页-ssr-渲染" class="anchor-link">#</a> 第四步：逐页 SSR 渲染</h3>
+<p>vite-ssg 会对以下路径分别执行渲染：</p>
+<ul>
+<li><code>/</code></li>
+<li><code>/about</code></li>
+<li><code>/article/1</code></li>
+<li><code>/article/2</code></li>
+<li><code>/article/3</code></li>
+<li>…</li>
+</ul>
+<h3 id="第五步-输出-html"><a href="#第五步-输出-html" class="anchor-link">#</a> 第五步：输出 HTML</h3>
+<p>最终在 <code>dist</code> 目录下生成对应 HTML。</p>
+<h2 id="13-动态文章路径生成流程"><a href="#13-动态文章路径生成流程" class="anchor-link">#</a> 13. 动态文章路径生成流程</h2>
+<p>可以把整个流程理解成下面这个顺序：</p>
+
+      <div class="md-editor-code" data-language="mermaid">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">mermaid</span>
+            <button class="md-editor-copy-button" data-code="flowchart%20%3Cspan%20class%3D%22hljs-selector-tag%22%3ETD%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-selector-tag%22%3EA%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5B%E6%9E%84%E5%BB%BA%E5%90%AF%E5%8A%A8%5D%3C%2Fspan%3E%20--%3E%20%3Cspan%20class%3D%22hljs-selector-tag%22%3EB%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5B%E8%B0%83%E7%94%A8%20includedRoutes%5D%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-selector-tag%22%3EB%3C%2Fspan%3E%20--%3E%20C%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5B%E8%AF%B7%E6%B1%82%20GET%20%2Farticles%5D%3C%2Fspan%3E%0A%20%20C%20--%3E%20D%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5B%E8%AF%BB%E5%8F%96%20data.records%5D%3C%2Fspan%3E%0A%20%20D%20--%3E%20E%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5B%E6%8F%90%E5%8F%96%20article.id%5D%3C%2Fspan%3E%0A%20%20E%20--%3E%20F%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5B%E7%94%9F%E6%88%90%20%2Farticle%2F%3Aid%20%E8%B7%AF%E5%BE%84%E5%88%97%E8%A1%A8%5D%3C%2Fspan%3E%0A%20%20F%20--%3E%20%3Cspan%20class%3D%22hljs-selector-tag%22%3EG%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5Bvite-ssg%20%E9%80%90%E9%A1%B5%20SSR%20%E6%B8%B2%E6%9F%93%5D%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-selector-tag%22%3EG%3C%2Fspan%3E%20--%3E%20H%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5B%E5%86%99%E5%85%A5%20dist%2Farticle%2F*.html%5D%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-mermaid">flowchart <span class="hljs-selector-tag">TD</span>
+  <span class="hljs-selector-tag">A</span><span class="hljs-selector-attr">[构建启动]</span> --&gt; <span class="hljs-selector-tag">B</span><span class="hljs-selector-attr">[调用 includedRoutes]</span>
+  <span class="hljs-selector-tag">B</span> --&gt; C<span class="hljs-selector-attr">[请求 GET /articles]</span>
+  C --&gt; D<span class="hljs-selector-attr">[读取 data.records]</span>
+  D --&gt; E<span class="hljs-selector-attr">[提取 article.id]</span>
+  E --&gt; F<span class="hljs-selector-attr">[生成 /article/:id 路径列表]</span>
+  F --&gt; <span class="hljs-selector-tag">G</span><span class="hljs-selector-attr">[vite-ssg 逐页 SSR 渲染]</span>
+  <span class="hljs-selector-tag">G</span> --&gt; H<span class="hljs-selector-attr">[写入 dist/article/*.html]</span>
+</code></pre>
+      </div>
+    
+<h2 id="14-ssr-渲染流程"><a href="#14-ssr-渲染流程" class="anchor-link">#</a> 14. SSR 渲染流程</h2>
+<p>文章页的 SSR 渲染顺序如下：</p>
+
+      <div class="md-editor-code" data-language="mermaid">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">mermaid</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%22%3EsequenceDiagram%3C%2Fspan%3E%0A%20%20participant%20%3Cspan%20class%3D%22hljs-type%22%3ES%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eas%3C%2Fspan%3E%20vite-ssg%0A%20%20participant%20%3Cspan%20class%3D%22hljs-type%22%3EV%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eas%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-type%22%3EArticleView%3C%2Fspan%3E.vue%0A%20%20participant%20%3Cspan%20class%3D%22hljs-type%22%3EA%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Eas%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-type%22%3EAPI%3C%2Fspan%3E%0A%0A%20%20%3Cspan%20class%3D%22hljs-type%22%3ES%3C%2Fspan%3E-%3E%3E%3Cspan%20class%3D%22hljs-type%22%3EV%3C%2Fspan%3E%3A%20%E8%BF%9B%E5%85%A5%20%2Farticle%2F%3Cspan%20class%3D%22hljs-number%22%3E38%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-type%22%3EV%3C%2Fspan%3E-%3E%3E%3Cspan%20class%3D%22hljs-type%22%3EA%3C%2Fspan%3E%3A%20onServerPrefetch%20loadArticle(%3Cspan%20class%3D%22hljs-number%22%3E38%3C%2Fspan%3E)%0A%20%20%3Cspan%20class%3D%22hljs-type%22%3EA%3C%2Fspan%3E--%3E%3E%3Cspan%20class%3D%22hljs-type%22%3EV%3C%2Fspan%3E%3A%20%E8%BF%94%E5%9B%9E%E6%96%87%E7%AB%A0%E8%AF%A6%E6%83%85%0A%20%20%3Cspan%20class%3D%22hljs-type%22%3EV%3C%2Fspan%3E--%3E%3E%3Cspan%20class%3D%22hljs-type%22%3ES%3C%2Fspan%3E%3A%20article.value%20%3D%20res.%3Cspan%20class%3D%22hljs-class%22%3E%3Cspan%20class%3D%22hljs-keyword%22%3Edata%3C%2Fspan%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-type%22%3ES%3C%2Fspan%3E--%3E%3E%3Cspan%20class%3D%22hljs-type%22%3ES%3C%2Fspan%3E%3A%20%E7%94%9F%E6%88%90%20%3Cspan%20class%3D%22hljs-type%22%3EHTML%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-mermaid"><span class="hljs-title">sequenceDiagram</span>
+  participant <span class="hljs-type">S</span> <span class="hljs-keyword">as</span> vite-ssg
+  participant <span class="hljs-type">V</span> <span class="hljs-keyword">as</span> <span class="hljs-type">ArticleView</span>.vue
+  participant <span class="hljs-type">A</span> <span class="hljs-keyword">as</span> <span class="hljs-type">API</span>
+
+  <span class="hljs-type">S</span>-&gt;&gt;<span class="hljs-type">V</span>: 进入 /article/<span class="hljs-number">38</span>
+  <span class="hljs-type">V</span>-&gt;&gt;<span class="hljs-type">A</span>: onServerPrefetch loadArticle(<span class="hljs-number">38</span>)
+  <span class="hljs-type">A</span>--&gt;&gt;<span class="hljs-type">V</span>: 返回文章详情
+  <span class="hljs-type">V</span>--&gt;&gt;<span class="hljs-type">S</span>: article.value = res.<span class="hljs-class"><span class="hljs-keyword">data</span></span>
+  <span class="hljs-type">S</span>--&gt;&gt;<span class="hljs-type">S</span>: 生成 <span class="hljs-type">HTML</span>
+</code></pre>
+      </div>
+    
+<h2 id="15-dist-目录最终输出结构"><a href="#15-dist-目录最终输出结构" class="anchor-link">#</a> 15. dist 目录最终输出结构</h2>
+<p>构建完成后，<code>dist</code> 目录会包含：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="dist%2F%0A%20%20index.html%0A%20%20about.html%0A%20%20article%2F%0A%20%20%20%201.html%0A%20%20%20%202.html%0A%20%20%20%203.html%0A%20%20%20%20...%0A%20%20assets%2F%0A%20%20%20%20app-xxxx.js%0A%20%20%20%20app-xxxx.css%0A%20%20%20%20Home-xxxx.js%0A%20%20%20%20ArticleView-xxxx.js%0A%20%20%20%20articleList-xxxx.js%0A%20%20%20%20...%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">dist/
+  index.html
+  about.html
+  article/
+    1.html
+    2.html
+    3.html
+    ...
+  assets/
+    app-xxxx.js
+    app-xxxx.css
+    Home-xxxx.js
+    ArticleView-xxxx.js
+    articleList-xxxx.js
+    ...
+</code></pre>
+      </div>
+    
+<p>在当前项目里，<code>article</code> 目录下会生成所有文章对应的静态 HTML 文件，说明动态路由已经被成功静态化。</p>
+<h2 id="16-常见问题分析"><a href="#16-常见问题分析" class="anchor-link">#</a> 16. 常见问题分析</h2>
+<h3 id="16-1-为什么没有生成文章-html"><a href="#16-1-为什么没有生成文章-html" class="anchor-link">#</a> 16.1 为什么没有生成文章 HTML</h3>
+<p>通常是因为没有正确实现 <code>includedRoutes</code>，或者 <code>includedRoutes</code> 没有返回文章详情路径。</p>
+<h4 id="错误示例-5"><a href="#错误示例-5" class="anchor-link">#</a> 错误示例</h4>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EincludedRoutes%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Epaths%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20paths%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">includedRoutes</span>(<span class="hljs-params">paths</span>) {
+  <span class="hljs-keyword">return</span> paths;
+}
+</code></pre>
+      </div>
+    
+<h4 id="正确示例-5"><a href="#正确示例-5" class="anchor-link">#</a> 正确示例</h4>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EincludedRoutes%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Epaths%2C%20routes%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20res%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetArticles%3C%2Fspan%3E()%3B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20articlePaths%20%3D%20res.%3Cspan%20class%3D%22hljs-property%22%3Edata%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Erecords%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Emap%3C%2Fspan%3E(%0A%20%20%20%20%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Earticle%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%60%2Farticle%2F%3Cspan%20class%3D%22hljs-subst%22%3E%24%7Barticle.id%7D%3C%2Fspan%3E%60%3C%2Fspan%3E%2C%0A%20%20)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20routes.%3Cspan%20class%3D%22hljs-title%20function_%22%3EflatMap%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Eroute%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(route.%3Cspan%20class%3D%22hljs-property%22%3Ename%3C%2Fspan%3E%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BArticleDetail%26quot%3B%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20articlePaths%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20route.%3Cspan%20class%3D%22hljs-property%22%3Epath%3C%2Fspan%3E%3B%0A%20%20%7D)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">includedRoutes</span>(<span class="hljs-params">paths, routes</span>) {
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> <span class="hljs-title function_">getArticles</span>();
+  <span class="hljs-keyword">const</span> articlePaths = res.<span class="hljs-property">data</span>.<span class="hljs-property">records</span>.<span class="hljs-title function_">map</span>(
+    <span class="hljs-function">(<span class="hljs-params">article</span>) =&gt;</span> <span class="hljs-string">`/article/<span class="hljs-subst">${article.id}</span>`</span>,
+  );
+
+  <span class="hljs-keyword">return</span> routes.<span class="hljs-title function_">flatMap</span>(<span class="hljs-function">(<span class="hljs-params">route</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (route.<span class="hljs-property">name</span> === <span class="hljs-string">"ArticleDetail"</span>) <span class="hljs-keyword">return</span> articlePaths;
+    <span class="hljs-keyword">return</span> route.<span class="hljs-property">path</span>;
+  });
+}
+</code></pre>
+      </div>
+    
+<h3 id="16-2-为什么-onserverprefetch-没有执行"><a href="#16-2-为什么-onserverprefetch-没有执行" class="anchor-link">#</a> 16.2 为什么 onServerPrefetch 没有执行</h3>
+<p>常见原因：</p>
+<ul>
+<li>写在了 <code>onMounted</code></li>
+<li>组件没有真正参与 SSR 渲染</li>
+<li>路由没有被 includedRoutes 包含</li>
+</ul>
+<h4 id="错误示例-6"><a href="#错误示例-6" class="anchor-link">#</a> 错误示例</h4>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20function_%22%3EonMounted%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EloadArticle%3C%2Fspan%3E(route.%3Cspan%20class%3D%22hljs-property%22%3Eparams%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eid%3C%2Fspan%3E)%3B%0A%7D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-title function_">loadArticle</span>(route.<span class="hljs-property">params</span>.<span class="hljs-property">id</span>);
+});
+</code></pre>
+      </div>
+    
+<h4 id="正确示例-6"><a href="#正确示例-6" class="anchor-link">#</a> 正确示例</h4>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20function_%22%3EonServerPrefetch%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20function_%22%3Easync%3C%2Fspan%3E%20()%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EloadArticle%3C%2Fspan%3E(route.%3Cspan%20class%3D%22hljs-property%22%3Eparams%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eid%3C%2Fspan%3E)%3B%0A%7D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title function_">onServerPrefetch</span>(<span class="hljs-title function_">async</span> () =&gt; {
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">loadArticle</span>(route.<span class="hljs-property">params</span>.<span class="hljs-property">id</span>);
+});
+</code></pre>
+      </div>
+    
+<h3 id="16-3-为什么动态路由不会自动预渲染"><a href="#16-3-为什么动态路由不会自动预渲染" class="anchor-link">#</a> 16.3 为什么动态路由不会自动预渲染</h3>
+<p>因为 <code>/article/:id</code> 只是路由模式，不是路径列表。vite-ssg 无法凭空知道文章 ID，必须通过 <code>includedRoutes</code> 显式告诉它。</p>
+<h3 id="16-4-为什么会出现-unknown-file-extension-scss"><a href="#16-4-为什么会出现-unknown-file-extension-scss" class="anchor-link">#</a> 16.4 为什么会出现 Unknown file extension “.scss”</h3>
+<p>原因是 Element Plus 按需样式导入把 SCSS 源文件暴露给了 SSR 构建。修复方式是关闭 <code>importStyle: "sass"</code>，改为全局 CSS。</p>
+<h3 id="16-5-为什么会出现-window-is-not-defined"><a href="#16-5-为什么会出现-window-is-not-defined" class="anchor-link">#</a> 16.5 为什么会出现 window is not defined</h3>
+<p>原因是在 SSR 环境直接访问了 <code>window</code>、<code>document</code>、<code>localStorage</code> 或使用了依赖这些对象的插件。</p>
+<p>正确处理方式是：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Emeta%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eenv%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESSR%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20browser-only%20code%3C%2Fspan%3E%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">if</span> (!<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">SSR</span>) {
+  <span class="hljs-comment">// browser-only code</span>
+}
+</code></pre>
+      </div>
+    
+<h2 id="17-vite-ssg-按目录式输出"><a href="#17-vite-ssg-按目录式输出" class="anchor-link">#</a> 17. vite-ssg 按目录式输出</h2>
+<p>vite-ssg 默认会把路由 <code>/article/39</code> 输出为扁平文件形式，也就是 <code>dist/article/39.html</code>。这个形式在本地预览时通常没有问题，但在很多静态服务器或站点部署环境中，用户直接访问 <code>/article/39</code> 时，服务器会优先去寻找目录式页面，例如 <code>/article/39/index.html</code>。如果部署环境没有额外配置 URL 重写规则，就可能找不到对应资源，从而出现“文章页面访问失败”的问题。</p>
+<p>换句话说，问题不在于文章没有被渲染出来，而在于“URL 访问路径”和“静态文件组织方式”不一致。为了让 <code>/article/39</code> 这种路由能够自然命中静态文件，应该把输出结构改成目录式，也就是：</p>
+<ul>
+<li><code>/article/39</code> -&gt; <code>dist/article/39/index.html</code></li>
+<li><code>/about</code> -&gt; <code>dist/about/index.html</code></li>
+</ul>
+<h3 id="配置方式"><a href="#配置方式" class="anchor-link">#</a> 配置方式</h3>
+<p>在 <code>vite.config.js</code> 中配置：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attr%22%3EssgOptions%3C%2Fspan%3E%3A%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-attr%22%3EdirStyle%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnested%26quot%3B%3C%2Fspan%3E%2C%0A%7D%2C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-attr">ssgOptions</span>: {
+  <span class="hljs-attr">dirStyle</span>: <span class="hljs-string">"nested"</span>,
+},
+</code></pre>
+      </div>
+    
+<h3 id="配置效果"><a href="#配置效果" class="anchor-link">#</a> 配置效果</h3>
+<p>配置为 <code>dirStyle: "nested"</code> 后，vite-ssg 会把每个路由页面输出为“目录 + index.html”的形式。这样无论是本地静态预览还是部署到常见的静态托管平台，都更容易让 <code>/article/39</code> 这类 URL 正确命中页面。</p>
+<h2 id="18-实践结论"><a href="#18-实践结论" class="anchor-link">#</a> 18. 实践结论</h2>
+<p>在博客项目中使用 vite-ssg 做动态路由静态化，关键不是“把路由写出来”，而是让构建阶段知道“要生成哪些具体页面”，并且让页面在 SSR 阶段能够安全执行数据预取。</p>
+<p>这套方案的核心组合是：</p>
+<ul>
+<li><code>includedRoutes</code>：负责把动态路由展开成真实路径</li>
+<li><code>onServerPrefetch</code>：负责在 SSR 阶段提前拿到页面数据</li>
+<li><code>import.meta.env.SSR</code>：负责区分服务端与客户端代码</li>
+<li>Pinia 客户端持久化：避免 SSR 访问浏览器 API</li>
+<li>Element Plus SSR 注入：避免 hydration 和层级警告</li>
+<li>全局 CSS 引入：避免 SCSS 在 SSR 阶段被 Node 直接加载</li>
+</ul>
+<p>把这些环节串起来之后，博客项目就可以稳定地在构建阶段生成每一篇文章的静态 HTML，同时保持客户端交互能力。</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/05/24</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/05/24</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

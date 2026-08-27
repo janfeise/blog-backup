@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">vue 自定义hooks</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 9 分钟 · 字数 1679</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="vue-自定义-hooks-让组件逻辑与-ui-解耦"><a href="#vue-自定义-hooks-让组件逻辑与-ui-解耦" class="anchor-link">#</a> Vue 自定义 Hooks：让组件逻辑与 UI 解耦</h1>
+<p>在 Vue 开发中，一个组件通常由两部分组成：</p>
+<ul>
+<li>UI：页面结构与展示</li>
+<li>状态与逻辑：数据管理、事件处理、生命周期逻辑等</li>
+</ul>
+<p>当组件较为简单时，通常会将这两部分直接写在同一个组件中。但随着业务复杂度提升，会逐渐出现以下问题：</p>
+<ul>
+<li>组件代码越来越长</li>
+<li>状态逻辑难以维护</li>
+<li>多个组件存在重复逻辑</li>
+<li>UI 与业务逻辑强耦合</li>
+</ul>
+<p>此时，自定义 Hooks 便成为了一个非常重要的解决方案。</p>
+<h2 id="什么是-vue-自定义-hooks"><a href="#什么是-vue-自定义-hooks" class="anchor-link">#</a> 什么是 Vue 自定义 Hooks</h2>
+<p>Vue 自定义 Hooks 本质上是：</p>
+<ul>
+<li>将组件中的状态与逻辑抽离到独立函数中</li>
+<li>通过组合式 API 实现&lt;u&gt;逻辑复用&lt;/u&gt;</li>
+<li>UI 组件只负责展示</li>
+<li>Hooks 负责&lt;u&gt;管理状态与行为&lt;/u&gt;</li>
+</ul>
+<p>这种模式本质上是一种“逻辑复用”和“职责拆分”的思想。</p>
+<p>如下图所示：</p>
+<p><img src="https://oss.tilex.world/d/blog-images/2026/07/04/mmexport1783145698355.png?sign=hppt-_0Kr5qZQJs_jBK2Lq5ZeK7doO6_lZ1CrApUToU=:0" alt="mmexport1783145698355"></p>
+<p>组件不再同时负责 UI 与逻辑，而是：</p>
+<ul>
+<li>UI 专注页面展示</li>
+<li>Hooks 专注状态与逻辑管理</li>
+</ul>
+<p>从而实现真正意义上的解耦。</p>
+<h2 id="示例-计数器"><a href="#示例-计数器" class="anchor-link">#</a> 示例：计数器</h2>
+<p>计数器较为简单，一般无需拆分为UI和自定义hooks，但是作为自定义hooks的学习却是不错的例子</p>
+<p>计数器:</p>
+<ul>
+<li>UI 负责展示 count</li>
+<li>Hooks 负责管理状态与逻辑处理</li>
+</ul>
+<p>自定义hooks：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EuseCount%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20count%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eincrease%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3Enum%20%3D%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%20%20count.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%2B%3D%20num%3B%0A%20%20%7D%0A%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EonMounted%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20count.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-number%22%3E0%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%9D%E5%A7%8B%E5%8C%96%3C%2Fspan%3E%0A%20%20%7D)%0A%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%7B%0A%20%20%20%20count%2C%0A%20%20%20%20increase%0A%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">useCount</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> count = <span class="hljs-title function_">ref</span>(<span class="hljs-number">0</span>);
+
+  <span class="hljs-keyword">const</span> <span class="hljs-title function_">increase</span> = (<span class="hljs-params">num = <span class="hljs-number">0</span></span>) =&gt; {
+    count.<span class="hljs-property">value</span> += num;
+  }
+
+  <span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> {
+    count.<span class="hljs-property">value</span> = <span class="hljs-number">0</span>; <span class="hljs-comment">// 初始化</span>
+  })
+
+  <span class="hljs-keyword">return</span> {
+    count,
+    increase
+  }
+}
+</code></pre>
+      </div>
+    
+<p>这个 Hooks 中包含：</p>
+<ul>
+<li>状态：<code>count</code></li>
+<li>方法：<code>increase</code></li>
+<li>生命周期逻辑：<code>onMounted</code></li>
+</ul>
+<p>并最终通过 <code>return</code> 暴露出去。</p>
+<p>UI：</p>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Esetup%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-javascript%22%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%7Bcount%2C%20increase%7D%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EuseCount%3C%2Fspan%3E()%3B%0A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Etemplate%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-template-variable%22%3E%7B%7B%3Cspan%20class%3D%22hljs-name%22%3Ecount%3C%2Fspan%3E%7D%7D%3C%2Fspan%3E%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%20%40%3Cspan%20class%3D%22hljs-attr%22%3Eclick%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bincrease(1)%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%2B1%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebr%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%20%40%3Cspan%20class%3D%22hljs-attr%22%3Eclick%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bincrease(10)%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%2B10%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Etemplate%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="language-javascript">
+<span class="hljs-keyword">const</span> {count, increase} = <span class="hljs-title function_">useCount</span>();
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span class="hljs-template-variable">{{<span class="hljs-name">count</span>}}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"increase(1)"</span>&gt;</span>+1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"increase(10)"</span>&gt;</span>+10<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</span></code></pre>
+      </div>
+    
+<p>一个简单的计数器便完成了，通过这个例子可以看到，此时组件会变得非常清晰</p>
+<p>组件本身只关心：</p>
+<ul>
+<li>count 如何展示</li>
+<li>点击按钮时调用什么函数</li>
+</ul>
+<p>至于：</p>
+<ul>
+<li>count 如何维护</li>
+<li>increase 如何实现</li>
+<li>生命周期如何处理</li>
+</ul>
+<p>这些全部由 Hooks 负责，但在实际开发中并不是将状态全部由 hooks 管理，只有复用的状态与逻辑才写入hooks，其它的状态和逻辑处理由组件自身维护，若将所有状态和逻辑写入hooks，只不过是换了个地方，没必要，只有可复用逻辑才进行抽离</p>
+<h2 id="usevue"><a href="#usevue" class="anchor-link">#</a> useVue</h2>
+<p>useVue是基于 Vue3 Composition API 封装了大量可复用 Hooks</p>
+<p>提供了大量现成 Hooks，例如：</p>
+<ul>
+<li>鼠标位置监听</li>
+<li>本地存储</li>
+<li>请求状态</li>
+<li>防抖节流</li>
+<li>浏览器 API</li>
+<li>设备信息</li>
+<li>生命周期增强</li>
+<li>动画</li>
+<li>时间处理</li>
+</ul>
+<p>开发者无需重复造轮子。</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/07/04</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/07/04</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

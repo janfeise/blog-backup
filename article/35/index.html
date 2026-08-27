@@ -1,0 +1,700 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">用户行为数据采集</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 61 分钟 · 字数 12078</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><p>参考文章：<a href="https://juejin.cn/post/7583612559443279923">https://juejin.cn/post/7583612559443279923</a></p>
+<p>参考文章：<a href="https://juejin.cn/post/7224132741997281338?searchId=202512222050324E8E4982AF0DFCD86993">https://juejin.cn/post/7224132741997281338?searchId=202512222050324E8E4982AF0DFCD86993</a></p>
+<hr>
+<h2 id="目的"><a href="#目的" class="anchor-link">#</a> 目的</h2>
+<p>用户行为数据采集的目的：&lt;u&gt;推荐&lt;/u&gt;，为用户推荐相关内容</p>
+<h2 id="采集数据"><a href="#采集数据" class="anchor-link">#</a> 采集数据</h2>
+<p>需采集以下数据：</p>
+<ul>
+<li>PV：Page View，页面浏览量，某个页面被打开了多少次</li>
+<li>UV：Unique Visitor，有多少个用户访问</li>
+<li>停留时长：页面停留时长</li>
+<li>点击：用户点击量</li>
+</ul>
+<h3 id="pv采集"><a href="#pv采集" class="anchor-link">#</a> PV采集</h3>
+<p>分为两类：</p>
+<ul>
+<li><strong>MPA（传统页面）</strong>：死守 <code>window.load</code>，加载完就报</li>
+<li><strong>SPA（单页应用）</strong>：路由变了页面不刷新咋办？劫持 <code>history.pushState</code> 和 <code>replaceState</code>，再监听 <code>popstate</code>，路由一变，PV 立马 +1</li>
+</ul>
+<p><strong>注：SPA和MPA区别：</strong></p>
+<ul>
+<li><strong>MPA (Multi-Page Application)</strong>：传统多页应用（如京东首页跳转详情页），每次跳转都会重新加载 HTML，触发 <code>window.load</code></li>
+<li><strong>SPA (Single-Page Application)</strong>：现代单页应用（如 Vue/React 项目），页面跳转不刷新浏览器，只是 JS 换了内容，<strong>不会</strong>触发 <code>window.load</code></li>
+</ul>
+<h3 id="uv采集"><a href="#uv采集" class="anchor-link">#</a> UV采集</h3>
+<p><code>localStorage</code>存储用户来访信息</p>
+<p>在浏览器本地 (<code>localStorage</code>) 盖个章。如果发现今天已经盖过章了，就不重复上报了</p>
+<h3 id="停留时长采集"><a href="#停留时长采集" class="anchor-link">#</a> 停留时长采集</h3>
+<ul>
+<li><strong>通用招数</strong>：监听 <code>beforeunload</code>（页面要关了）和 <code>visibilitychange</code>（页面隐藏了），一旦触发就计算时间。</li>
+<li><strong>SPA 特攻</strong>：路由切换时（<code>pushState</code>/<code>popstate</code>），除了报 PV，还得把<strong>上一页</strong>的停留时间给结清了。</li>
+</ul>
+<h3 id="点击采集"><a href="#点击采集" class="anchor-link">#</a> 点击采集</h3>
+<p><strong>事件委托</strong> ，在最外层 (<code>document</code>) 装个<strong>监听器</strong>。不管你点了里面的哪个元素，最终都会被捕获</p>
+<p>JavaScript事件流：</p>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/05/04/image-20250819164311696-1755681541206-1.png?sign=f-Txih0JS0LUgnRQgWCr2gcYUqyZeUMN_WWF7bhURwk=:0" alt="image-20250819164311696-1755681541206-1"></p>
+<h2 id="逻辑"><a href="#逻辑" class="anchor-link">#</a> 逻辑</h2>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/05/04/image-20260504184318942.png?sign=-QbRmONoGTz7UK6j5zz6dwh9GEsNMCIopXXOsVLTU7E=:0" alt="image-20260504184318942"></p>
+<h2 id="流程"><a href="#流程" class="anchor-link">#</a> 流程</h2>
+<p><strong>存储校验（Storage）</strong>：初始化时，先检查 <code>localStorage</code>，判断是新客还是回头客（UV 校验）</p>
+<p><strong>核心采集（Collection）</strong>：启动监听器，分别捕获 PV、点击和停留时长</p>
+<p><strong>数据上报（Reporting）</strong>：所有数据最终汇聚到上报模块，发送给服务端</p>
+<h2 id="数据存储"><a href="#数据存储" class="anchor-link">#</a> 数据存储</h2>
+<p>由于前端没有“长期存储”功能，一旦用户刷新页面，在前端定义的数据就会刷新，恢复默认值，此时记录的用户数据会丢失，因此需考虑数据存储策略</p>
+<ul>
+<li>localstorage等浏览器存储：有被篡改的风险</li>
+</ul>
+<p>目前采用的方法是：将数据 + hash 值存储在localstorage，后端根据数据校验 hash 是否一致，若 hash 不匹配，后端可拒绝或修正</p>
+<p>hash由：数据 + 时间戳 生成</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3ECryptoJS%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bcrypto-js%26%23x27%3B%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20secretKey%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bmy-secret-key%26%23x27%3B%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20dataStr%20%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EJSON%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Estringify%3C%2Fspan%3E(data)%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20hash%20%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3ECryptoJS%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20class_%22%3EHmacSHA256%3C%2Fspan%3E(dataStr%2C%20secretKey).%3Cspan%20class%3D%22hljs-title%20function_%22%3EtoString%3C%2Fspan%3E()%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3ElocalStorage%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetItem%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BbehaviorData%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EJSON%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Estringify%3C%2Fspan%3E(%7B%20data%2C%20hash%20%7D))%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%8A%E6%8A%A5%E6%97%B6%EF%BC%8C%E5%90%8E%E7%AB%AF%E5%8F%AF%E6%A0%A1%E9%AA%8C%20hash%20%E6%98%AF%E5%90%A6%E4%B8%80%E8%87%B4%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">CryptoJS</span> <span class="hljs-keyword">from</span> <span class="hljs-string">'crypto-js'</span>
+
+<span class="hljs-keyword">const</span> secretKey = <span class="hljs-string">'my-secret-key'</span>
+
+<span class="hljs-comment">// 保存数据</span>
+<span class="hljs-keyword">const</span> dataStr = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(data)
+<span class="hljs-keyword">const</span> hash = <span class="hljs-title class_">CryptoJS</span>.<span class="hljs-title class_">HmacSHA256</span>(dataStr, secretKey).<span class="hljs-title function_">toString</span>()
+<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">setItem</span>(<span class="hljs-string">'behaviorData'</span>, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({ data, hash }))
+
+<span class="hljs-comment">// 上报时，后端可校验 hash 是否一致</span>
+</code></pre>
+      </div>
+    
+<p>存在的问题：前端的秘钥是完全暴露的，被获取后，hash值可以被篡改</p>
+<h3 id="数据生命周期管理"><a href="#数据生命周期管理" class="anchor-link">#</a> 数据生命周期管理</h3>
+<p>目前是将用户行为数据存储在 localstorage ，每次用户触发埋点时：继承 localstorage 已有的数据，然后进行更新，存在问题：</p>
+<ul>
+<li>数据无限累积，缺少时间维度的生命周期管理</li>
+</ul>
+<p>在 <strong>初始化阶段做「用户行为数据生命周期校验」</strong></p>
+<ul>
+<li>行为数据是“按天”的临时缓存，不是永久日志</li>
+</ul>
+<h2 id="数据上报时机"><a href="#数据上报时机" class="anchor-link">#</a> 数据上报时机</h2>
+<p>对于点击量收集，即用户点击了哪些内容，此时可考虑以下上报时机：</p>
+<ul>
+<li>
+<p>页面刷新上报</p>
+</li>
+<li>
+<p>定时上报 【通用】</p>
+</li>
+<li>
+<p>用户离开网站时上报【通用】</p>
+</li>
+</ul>
+<blockquote>
+<p>注：不同类型的用户行为数据，上报时机不同，通用的是：定时上报 + 用户离开网站时上报</p>
+</blockquote>
+<h2 id="前端发送请求方式抉择"><a href="#前端发送请求方式抉择" class="anchor-link">#</a> 前端发送请求方式抉择</h2>
+<h3 id="1-axios-fetch"><a href="#1-axios-fetch" class="anchor-link">#</a> 1. axios / fetch</h3>
+<p>axios / fetch 常用于日常接口中，但是在用户行为数据采集业务中：由于 页面刷新/关闭时异步请求可能失败，因此不可用于 页面 卸载时发送请求</p>
+<p>适合的上报时机：</p>
+<ul>
+<li>定时上报</li>
+</ul>
+<h3 id="2-navigator-sendbeacon"><a href="#2-navigator-sendbeacon" class="anchor-link">#</a> 2. navigator.sendBeacon</h3>
+<p>navigator.sendBeacon 特性：</p>
+<ul>
+<li>不会阻塞页面关闭</li>
+<li>无法带自定义请求头（如 token）</li>
+<li>不关心响应结果</li>
+</ul>
+<p>因此 navigator.sendBeacon 适合的上报时机：</p>
+<ul>
+<li>
+<p>页面刷新</p>
+</li>
+<li>
+<p>页面卸载</p>
+</li>
+</ul>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Etry%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20payload%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EBlob%3C%2Fspan%3E(%5B%3Cspan%20class%3D%22hljs-title%20class_%22%3EJSON%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Estringify%3C%2Fspan%3E(data)%5D%2C%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Etype%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bapplication%2Fjson%26%23x27%3B%3C%2Fspan%3E%20%7D)%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(navigator.%3Cspan%20class%3D%22hljs-property%22%3EsendBeacon%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%20%20%20%20navigator.%3Cspan%20class%3D%22hljs-title%20function_%22%3EsendBeacon%3C%2Fspan%3E(url%2C%20payload)%0A%20%20%20%20%7D%0A%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecatch%3C%2Fspan%3E%20(beaconError)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Ewarn%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BsendBeacon%E9%99%8D%E7%BA%A7%E6%96%B9%E6%A1%88%E4%B9%9F%E5%A4%B1%E8%B4%A5%3A%26%23x27%3B%3C%2Fspan%3E%2C%20beaconError)%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> payload = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Blob</span>([<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(data)], { <span class="hljs-attr">type</span>: <span class="hljs-string">'application/json'</span> })
+    <span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">sendBeacon</span>) {
+        navigator.<span class="hljs-title function_">sendBeacon</span>(url, payload)
+    }
+} <span class="hljs-keyword">catch</span> (beaconError) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">warn</span>(<span class="hljs-string">'sendBeacon降级方案也失败:'</span>, beaconError)
+}
+</code></pre>
+      </div>
+    
+<h3 id="总结"><a href="#总结" class="anchor-link">#</a> 总结</h3>
+<ul>
+<li>页面刷新采用：navigator.sendBeacon</li>
+<li>定时上报采用：axios / fetch</li>
+<li>页面卸载采用：navigator.sendBeacon</li>
+</ul>
+<p>由于：页面卸载使用 navigator.sendBeacon 发送数据，而 navigator.sendBeacon 无法携带 token，因此存在问题：</p>
+<ul>
+<li>登录的用户无法绑定数据：由于无法携带 token ，无法绑定用户</li>
+</ul>
+<p>解决方法：初次进入网站时，使用 axios / fetch 发送数据</p>
+<p>由于用户卸载了页面，在下次进入网站时，如果用户是登录状态：使用 axios / fetch 发送数据</p>
+<h2 id="数据库-用户行为数据表设计"><a href="#数据库-用户行为数据表设计" class="anchor-link">#</a> 数据库：用户行为数据表设计</h2>
+<h3 id="表设计目标"><a href="#表设计目标" class="anchor-link">#</a> 表设计目标</h3>
+<ul>
+<li>统计用户不同时间段的行为数据（在不同时间段推荐不同的数据）</li>
+<li><strong>时间可分析</strong>：按天/月/年统计用户行为</li>
+<li><strong>全量记录</strong>：登录/匿名用户、不同类型行为、不同目标</li>
+</ul>
+<p>下面以“程序猿”项目的用户行为表设计为示例：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3ECREATE%20TABLE%3C%2Fspan%3E%20user_behavior%20(%0A%20%20id%20%3Cspan%20class%3D%22hljs-type%22%3EBIGINT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EPRIMARY%20KEY%3C%2Fspan%3E%20AUTO_INCREMENT%2C%0A%20%20%0A%20%20user_id%20%3Cspan%20class%3D%22hljs-type%22%3EBIGINT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3ENULL%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7ID%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20anonymous_id%20%3Cspan%20class%3D%22hljs-type%22%3EVARCHAR%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E64%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-keyword%22%3ENULL%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%9C%AA%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7%E5%8C%BF%E5%90%8DID%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%0A%20%20behavior_type%20%3Cspan%20class%3D%22hljs-type%22%3EVARCHAR%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E32%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-keyword%22%3ENOT%20NULL%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E8%A1%8C%E4%B8%BA%E7%B1%BB%E5%9E%8B%EF%BC%9Aproblem_click%2Fpost_click%2Ftag_click%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20target_id%20%3Cspan%20class%3D%22hljs-type%22%3EBIGINT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3ENOT%20NULL%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E7%9B%AE%E6%A0%87ID%EF%BC%9A%E9%A2%98%E7%9B%AE%2F%E5%B8%96%E5%AD%90%2F%E6%A0%87%E7%AD%BE%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20click_count%20%3Cspan%20class%3D%22hljs-type%22%3EINT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EDEFAULT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E7%82%B9%E5%87%BB%E6%80%BB%E6%95%B0%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%0A%20%20data_hash%20%3Cspan%20class%3D%22hljs-type%22%3EVARCHAR%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-number%22%3E256%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-keyword%22%3ENULL%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E5%93%88%E5%B8%8C%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%0A%20%20created_at%20%3Cspan%20class%3D%22hljs-type%22%3ETIMESTAMP%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EDEFAULT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3ECURRENT_TIMESTAMP%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E5%88%9B%E5%BB%BA%E6%97%B6%E9%97%B4%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20updated_at%20%3Cspan%20class%3D%22hljs-type%22%3ETIMESTAMP%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EDEFAULT%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3ECURRENT_TIMESTAMP%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EON%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3EUPDATE%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3ECURRENT_TIMESTAMP%3C%2Fspan%3E%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eyear%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-type%22%3EINT%3C%2Fspan%3E%20GENERATED%20ALWAYS%20%3Cspan%20class%3D%22hljs-keyword%22%3EAS%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-keyword%22%3EYEAR%3C%2Fspan%3E(created_at))%20STORED%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E5%88%9B%E5%BB%BA%E5%B9%B4%E4%BB%BD%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Emonth%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-type%22%3EINT%3C%2Fspan%3E%20GENERATED%20ALWAYS%20%3Cspan%20class%3D%22hljs-keyword%22%3EAS%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-keyword%22%3EMONTH%3C%2Fspan%3E(created_at))%20STORED%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E5%88%9B%E5%BB%BA%E6%9C%88%E4%BB%BD%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eday%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-type%22%3EINT%3C%2Fspan%3E%20GENERATED%20ALWAYS%20%3Cspan%20class%3D%22hljs-keyword%22%3EAS%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-keyword%22%3EDAY%3C%2Fspan%3E(created_at))%20STORED%20COMMENT%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%E5%88%9B%E5%BB%BA%E6%97%A5%E6%9C%9F%26%23x27%3B%3C%2Fspan%3E%2C%0A%20%20%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E--%20%E7%B4%A2%E5%BC%95%3C%2Fspan%3E%0A%20%20INDEX%20idx_behavior_type%20(behavior_type)%2C%0A%20%20INDEX%20idx_created_at%20(created_at)%2C%0A%20%20INDEX%20idx_year_month_day%20(%3Cspan%20class%3D%22hljs-keyword%22%3Eyear%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-keyword%22%3Emonth%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-keyword%22%3Eday%3C%2Fspan%3E)%0A)%20ENGINE%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3EInnoDB%20%3Cspan%20class%3D%22hljs-keyword%22%3EDEFAULT%3C%2Fspan%3E%20CHARSET%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3Eutf8mb4%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">CREATE TABLE</span> user_behavior (
+  id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">PRIMARY KEY</span> AUTO_INCREMENT,
+  
+  user_id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">'登录用户ID'</span>,
+  anonymous_id <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>) <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">'未登录用户匿名ID'</span>,
+  
+  behavior_type <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">32</span>) <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">'行为类型：problem_click/post_click/tag_click'</span>,
+  target_id <span class="hljs-type">BIGINT</span> <span class="hljs-keyword">NOT NULL</span> COMMENT <span class="hljs-string">'目标ID：题目/帖子/标签'</span>,
+  click_count <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span> COMMENT <span class="hljs-string">'点击总数'</span>,
+  
+  data_hash <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">256</span>) <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">'数据完整性哈希'</span>,
+  
+  created_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">'创建时间'</span>,
+  updated_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="hljs-string">'更新时间'</span>,
+  
+  <span class="hljs-keyword">year</span> <span class="hljs-type">INT</span> GENERATED ALWAYS <span class="hljs-keyword">AS</span> (<span class="hljs-keyword">YEAR</span>(created_at)) STORED COMMENT <span class="hljs-string">'创建年份'</span>,
+  <span class="hljs-keyword">month</span> <span class="hljs-type">INT</span> GENERATED ALWAYS <span class="hljs-keyword">AS</span> (<span class="hljs-keyword">MONTH</span>(created_at)) STORED COMMENT <span class="hljs-string">'创建月份'</span>,
+  <span class="hljs-keyword">day</span> <span class="hljs-type">INT</span> GENERATED ALWAYS <span class="hljs-keyword">AS</span> (<span class="hljs-keyword">DAY</span>(created_at)) STORED COMMENT <span class="hljs-string">'创建日期'</span>,
+  
+  <span class="hljs-comment">-- 索引</span>
+  INDEX idx_behavior_type (behavior_type),
+  INDEX idx_created_at (created_at),
+  INDEX idx_year_month_day (<span class="hljs-keyword">year</span>, <span class="hljs-keyword">month</span>, <span class="hljs-keyword">day</span>)
+) ENGINE<span class="hljs-operator">=</span>InnoDB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8mb4;
+</code></pre>
+      </div>
+    
+<h2 id="推荐"><a href="#推荐" class="anchor-link">#</a> 推荐</h2>
+<p>用户行为数据采集的目的便是：推荐，根据用户的行为数据，为用户推荐相关内容</p>
+<p>背景：在“程序猿”进阶服务站中，题目推荐可以由标签实现——因为题目关联标签，标签有多个题目，因此可以通过收集标签数据为用户推荐题目</p>
+<h3 id="个性推荐"><a href="#个性推荐" class="anchor-link">#</a> 个性推荐</h3>
+<p>基于采集的用户行为数据和用户的收藏等数据，给出用户个性的推荐</p>
+<p>此时对于不同的项目需判断：</p>
+<ul>
+<li>用户是否必须登录，若用户未登录、无点击、无收藏，则需进行：冷启动</li>
+</ul>
+<h3 id="系统推荐"><a href="#系统推荐" class="anchor-link">#</a> 系统推荐</h3>
+<p>基于全局行为数据和业务规则的非个性化推荐方式，常用于广场、榜单等场景。它通过对用户行为数据进行聚合统计，计算内容热度并排序展示，是个性推荐的重要兜底方案</p>
+<p>需考虑：</p>
+<ul>
+<li>原始数据表、用户行为数据表、时间衰减 三个方面，进行综合评分</li>
+</ul>
+<p>时间衰减是为了：</p>
+<ul>
+<li>
+<p>防止老帖长期霸榜</p>
+</li>
+<li>
+<p>新帖优势明显</p>
+</li>
+<li>
+<p>老帖不会瞬间归零</p>
+</li>
+<li>
+<p>补充：时间衰减相关应用文章：</p>
+<blockquote>
+<p>基于上下文的推荐 – 包括时间衰减算法和位置推荐算法（代码实现）:<a href="https://developer.aliyun.com/article/1217528">https://developer.aliyun.com/article/1217528</a></p>
+<p>跨越推荐系统“时间陷阱”，让模型在流式数据中学到真实用户偏好：<a href="https://www.infoq.cn/article/OyWXX1zizKaS1HNojI6E">https://www.infoq.cn/article/OyWXX1zizKaS1HNojI6E</a></p>
+</blockquote>
+</li>
+</ul>
+<p>【详情可查看下面的业务章节】</p>
+<h2 id="业务场景"><a href="#业务场景" class="anchor-link">#</a> 业务场景</h2>
+<p>在“程序猿”项目中，由于系统不强制登录，此时未登录也能访问系统，此时存在两种情况：</p>
+<ul>
+<li>未登录用户数据采集</li>
+<li>已登录用户数据采集</li>
+</ul>
+<p>存在问题：未登录用户后续登录后应该如何处理？——数据迁移</p>
+<p>通过 <code>anonymousId</code> 关联用户，若用户后续登录后，将 <code>anonymousId</code> 的数据迁移至 <code>userId</code></p>
+<h3 id="用户状态变化场景分析"><a href="#用户状态变化场景分析" class="anchor-link">#</a> 用户状态变化场景分析</h3>
+<blockquote>
+<p><strong>背景</strong></p>
+<ul>
+<li>系统 <strong>不强制登录</strong></li>
+<li><code>anonymousId</code> 由前端生成并存储在 <code>localStorage</code></li>
+<li><code>localStorage</code> 中的用户行为数据 <strong>不会因登录/退出登录自动清空</strong></li>
+<li>登录态由是否携带 <code>token</code> 决定</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="场景-1-始终登录状态-理论存在-实践中可忽略"><a href="#场景-1-始终登录状态-理论存在-实践中可忽略" class="anchor-link">#</a> 场景 1：始终登录状态（理论存在，实践中可忽略）</h4>
+<blockquote>
+<p>⚠️ 说明：从系统生命周期角度看，<strong>该场景几乎不存在</strong></p>
+</blockquote>
+<h5 id="原因说明"><a href="#原因说明" class="anchor-link">#</a> 原因说明</h5>
+<ul>
+<li>用户<strong>第一次访问系统时一定是未登录状态</strong></li>
+<li>前端初始化阶段必然会生成并保存 <code>anonymousId</code></li>
+<li>即使用户随后立即登录，<code>anonymousId</code> 依然存在于 <code>localStorage</code></li>
+</ul>
+<h5 id="结论"><a href="#结论" class="anchor-link">#</a> 结论</h5>
+<p>➡ <strong>“anonymousId 为空 + 始终登录”在真实业务中几乎不会出现</strong></p>
+<p>因此该场景在设计中<strong>可不单独处理</strong></p>
+<hr>
+<h4 id="场景-2-始终未登录状态"><a href="#场景-2-始终未登录状态" class="anchor-link">#</a> 场景 2：始终未登录状态</h4>
+<h5 id="状态特征"><a href="#状态特征" class="anchor-link">#</a> 状态特征</h5>
+<ul>
+<li>请求 <strong>不携带 <code>token</code></strong></li>
+<li><code>localStorage</code> 中 <strong>存在 <code>anonymousId</code></strong></li>
+</ul>
+<h5 id="行为数据处理"><a href="#行为数据处理" class="anchor-link">#</a> 行为数据处理</h5>
+<ul>
+<li>所有用户行为数据：
+<ul>
+<li>仅使用 <code>anonymousId</code> 作为唯一标识</li>
+<li>不关联 <code>userId</code></li>
+</ul>
+</li>
+<li>数据可直接入库或先本地缓存后再上报</li>
+</ul>
+<p>✔ 该场景逻辑简单，无需特殊处理</p>
+<hr>
+<h4 id="场景-3-未登录-登录-核心场景"><a href="#场景-3-未登录-登录-核心场景" class="anchor-link">#</a> 场景 3：未登录 → 登录（核心场景 ⭐）</h4>
+<h5 id="状态特征-2"><a href="#状态特征-2" class="anchor-link">#</a> 状态特征</h5>
+<ul>
+<li>登录成功后：
+<ul>
+<li>请求开始携带 <code>token</code></li>
+<li><code>localStorage</code> 中 <strong>仍然存在 <code>anonymousId</code></strong>
+<ul>
+<li>因为匿名行为数据不能被覆盖或删除</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>因此出现 <strong>双身份并存</strong> 状态：
+<ul>
+<li><code>userId</code>（登录态）</li>
+<li><code>anonymousId</code>（历史行为标识）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="问题本质"><a href="#问题本质" class="anchor-link">#</a> 问题本质</h5>
+<p>如果不处理，会导致：</p>
+<ul>
+<li>用户&lt;u&gt;历史行为&lt;/u&gt; <strong>无法计入登录用户画像</strong></li>
+<li>推荐系统、行为分析出现数据割裂</li>
+</ul>
+<hr>
+<h5 id="处理方式-关键逻辑"><a href="#处理方式-关键逻辑" class="anchor-link">#</a> 处理方式（关键逻辑）</h5>
+<ol>
+<li>用户登录成功</li>
+<li>前端请求同时携带：
+<ul>
+<li><code>token</code></li>
+<li><code>anonymousId</code></li>
+</ul>
+</li>
+<li>后端执行数据迁移逻辑：
+<ul>
+<li>将 <strong><code>anonymousId</code> 对应的历史行为数据</strong></li>
+<li><strong>批量更新关联到 <code>userId</code></strong></li>
+</ul>
+</li>
+<li>迁移完成后：
+<ul>
+<li>后续行为数据 <strong>只以 <code>userId</code> 作为标识</strong></li>
+<li><code>anonymousId</code>：
+<ul>
+<li>可保留（推荐，用于异常兜底）</li>
+<li>或标记为已迁移 / 废弃</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>✅ <strong>目标</strong>
+保证用户行为数据在“未登录 → 登录”过程中的 <strong>连续性、一致性与可追溯性</strong></p>
+<hr>
+<h4 id="场景-4-登录-未登录-退出登录"><a href="#场景-4-登录-未登录-退出登录" class="anchor-link">#</a> 场景 4：登录 → 未登录（退出登录）</h4>
+<h5 id="状态分析"><a href="#状态分析" class="anchor-link">#</a> 状态分析</h5>
+<ul>
+<li>用户第一次进入系统：
+<ul>
+<li>未登录</li>
+<li>已生成 <code>anonymousId</code></li>
+</ul>
+</li>
+<li>登录后：
+<ul>
+<li><code>anonymousId</code> <strong>未被删除</strong>（退出登录后，系统没有对 anonymousid 进行删除）</li>
+</ul>
+</li>
+<li>退出登录后：
+<ul>
+<li><code>token</code> 被清除</li>
+<li><code>anonymousId</code> <strong>依然存在于 <code>localStorage</code></strong></li>
+</ul>
+</li>
+</ul>
+<h5 id="行为数据处理-2"><a href="#行为数据处理-2" class="anchor-link">#</a> 行为数据处理</h5>
+<ul>
+<li>退出登录后的用户行为：
+<ul>
+<li>继续使用现有 <code>anonymousId</code> 进行采集</li>
+<li>行为数据重新以匿名用户身份入库</li>
+</ul>
+</li>
+<li>不需要额外迁移操作</li>
+</ul>
+<p>✔ 该行为符合用户真实使用路径</p>
+<hr>
+<h4 id="特殊情况-用户主动清除本地数据"><a href="#特殊情况-用户主动清除本地数据" class="anchor-link">#</a> 特殊情况：用户主动清除本地数据</h4>
+<h5 id="情况说明"><a href="#情况说明" class="anchor-link">#</a> 情况说明</h5>
+<ul>
+<li>用户手动删除：
+<ul>
+<li><code>localStorage</code></li>
+<li>浏览器缓存</li>
+<li>或使用无痕模式</li>
+</ul>
+</li>
+</ul>
+<h5 id="系统处理策略"><a href="#系统处理策略" class="anchor-link">#</a> 系统处理策略</h5>
+<ul>
+<li>前端检测到 <code>anonymousId</code> 不存在</li>
+<li>自动重新生成新的 <code>anonymousId</code></li>
+<li>该逻辑 <strong>与是否登录无关</strong></li>
+</ul>
+<p>📌 影响说明：</p>
+<ul>
+<li>行为数据会被视为 <strong>新匿名用户</strong></li>
+<li>属于可接受的数据自然丢失场景</li>
+</ul>
+<h3 id="dry"><a href="#dry" class="anchor-link">#</a> DRY</h3>
+<p>冗余写法：每一个类型都重复编写大段代码</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%E5%B0%86%E7%82%B9%E5%87%BB%E9%87%8F%E9%87%87%E9%9B%86%E5%B0%81%E8%A3%85%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%EF%BC%9A%E9%81%BF%E5%85%8D%3Cspan%20class%3D%22hljs-variable%20constant_%22%3EDRY%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EtrackClicks%3C%2Fspan%3E%20%3D%20(%3Cspan%20class%3D%22hljs-params%22%3Edata%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bclick%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Eevent%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%87%87%E9%9B%86%EF%BC%9A%E9%A2%98%E7%9B%AE%E7%82%B9%E5%87%BB%E9%87%8F%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20problemEl%20%3D%20event.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eclosest%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B.problem-click%26%23x27%3B%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%89%BE%E5%88%B0%E6%9C%80%E8%BF%91%E7%9A%84%E5%B8%A6%20problem-click%20%E7%9A%84%E7%88%B6%E5%85%83%E7%B4%A0%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(problemEl)%20%7B%0A%20%20%20%20%20%20data%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3ElocalStorage%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetItem%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BuserBehaviorData%26%23x27%3B%3C%2Fspan%3E)%0A%20%20%20%20%20%20%20%20%3F%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EJSON%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eparse%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-variable%20language_%22%3ElocalStorage%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetItem%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BuserBehaviorData%26%23x27%3B%3C%2Fspan%3E))%0A%20%20%20%20%20%20%20%20%3A%20data%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20problemId%20%3D%20problemEl.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetAttribute%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bdata-problem-id%26%23x27%3B%3C%2Fspan%3E)%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%60Tracking%20Problem%20Click%3A%20%3Cspan%20class%3D%22hljs-subst%22%3E%24%7BproblemId%7D%3C%2Fspan%3E%60%3C%2Fspan%3E)%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%95%B0%E6%8D%AE%E6%90%9C%E9%9B%86%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20now%20%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDate%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Enow%3C%2Fspan%3E()%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!data%5B%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bproblem_click%26%23x27%3B%3C%2Fspan%3E%5D%5BproblemId%5D)%20%7B%0A%20%20%20%20%20%20%20%20data%5B%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bproblem_click%26%23x27%3B%3C%2Fspan%3E%5D%5BproblemId%5D%20%3D%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ecount%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3ElastTimestamp%3C%2Fspan%3E%3A%20now%20%7D%0A%20%20%20%20%20%20%20%20data.%3Cspan%20class%3D%22hljs-property%22%3Ekey%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgenerateHash%3C%2Fspan%3E(data%2C%20now)%0A%20%20%20%20%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eelse%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20data%5B%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bproblem_click%26%23x27%3B%3C%2Fspan%3E%5D%5BproblemId%5D.%3Cspan%20class%3D%22hljs-property%22%3Ecount%3C%2Fspan%3E%20%2B%3D%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20data%5B%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bproblem_click%26%23x27%3B%3C%2Fspan%3E%5D%5BproblemId%5D.%3Cspan%20class%3D%22hljs-property%22%3ElastTimestamp%3C%2Fspan%3E%20%3D%20now%0A%20%20%20%20%20%20%20%20data.%3Cspan%20class%3D%22hljs-property%22%3Ekey%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgenerateHash%3C%2Fspan%3E(data%2C%20now)%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3ElocalStorage%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetItem%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BuserBehaviorData%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EJSON%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Estringify%3C%2Fspan%3E(data))%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B7%B2%E5%A4%84%E7%90%86%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%BF%94%E5%9B%9E%3C%2Fspan%3E%0A%20%20%20%20%7D%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%87%87%E9%9B%86%EF%BC%9A%E5%B8%96%E5%AD%90%E7%82%B9%E5%87%BB%E9%87%8F%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20postEl%20%3D%20event.%3Cspan%20class%3D%22hljs-property%22%3Etarget%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eclosest%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B.post-click%26%23x27%3B%3C%2Fspan%3E)%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%89%BE%E5%88%B0%E6%9C%80%E8%BF%91%E7%9A%84%E5%B8%A6%20post-click%20%E7%9A%84%E7%88%B6%E5%85%83%E7%B4%A0%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(postEl)%20%7B%0A%20%20%20%20%20%20data%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3ElocalStorage%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetItem%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BuserBehaviorData%26%23x27%3B%3C%2Fspan%3E)%0A%20%20%20%20%20%20%20%20%3F%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EJSON%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eparse%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-variable%20language_%22%3ElocalStorage%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetItem%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BuserBehaviorData%26%23x27%3B%3C%2Fspan%3E))%0A%20%20%20%20%20%20%20%20%3A%20data%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20postId%20%3D%20postEl.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetAttribute%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bdata-post-id%26%23x27%3B%3C%2Fspan%3E)%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%60Tracking%20Post%20Click%3A%20%3Cspan%20class%3D%22hljs-subst%22%3E%24%7BpostId%7D%3C%2Fspan%3E%60%3C%2Fspan%3E)%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%95%B0%E6%8D%AE%E6%90%9C%E9%9B%86%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20now%20%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EDate%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Enow%3C%2Fspan%3E()%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!data%5B%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bpost_click%26%23x27%3B%3C%2Fspan%3E%5D%5BpostId%5D)%20%7B%0A%20%20%20%20%20%20%20%20data%5B%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bpost_click%26%23x27%3B%3C%2Fspan%3E%5D%5BpostId%5D%20%3D%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Ecount%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3ElastTimestamp%3C%2Fspan%3E%3A%20now%20%7D%0A%20%20%20%20%20%20%20%20data.%3Cspan%20class%3D%22hljs-property%22%3Ekey%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgenerateHash%3C%2Fspan%3E(data%2C%20now)%0A%20%20%20%20%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eelse%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20data%5B%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bpost_click%26%23x27%3B%3C%2Fspan%3E%5D%5BpostId%5D.%3Cspan%20class%3D%22hljs-property%22%3Ecount%3C%2Fspan%3E%20%2B%3D%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20data%5B%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bpost_click%26%23x27%3B%3C%2Fspan%3E%5D%5BpostId%5D.%3Cspan%20class%3D%22hljs-property%22%3ElastTimestamp%3C%2Fspan%3E%20%3D%20now%0A%20%20%20%20%20%20%20%20data.%3Cspan%20class%3D%22hljs-property%22%3Ekey%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EgenerateHash%3C%2Fspan%3E(data%2C%20now)%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3ElocalStorage%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetItem%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3BuserBehaviorData%26%23x27%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EJSON%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Estringify%3C%2Fspan%3E(data))%0A%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B7%B2%E5%A4%84%E7%90%86%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%BF%94%E5%9B%9E%3C%2Fspan%3E%0A%20%20%20%20%7D%0A%20%20%7D)%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">将点击量采集封装为一个函数：避免<span class="hljs-variable constant_">DRY</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">trackClicks</span> = (<span class="hljs-params">data</span>) =&gt; {
+      <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+    <span class="hljs-comment">// 采集：题目点击量</span>
+    <span class="hljs-keyword">const</span> problemEl = event.<span class="hljs-property">target</span>.<span class="hljs-title function_">closest</span>(<span class="hljs-string">'.problem-click'</span>) <span class="hljs-comment">// 找到最近的带 problem-click 的父元素</span>
+    <span class="hljs-keyword">if</span> (problemEl) {
+      data = <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">'userBehaviorData'</span>)
+        ? <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">'userBehaviorData'</span>))
+        : data
+
+      <span class="hljs-keyword">const</span> problemId = problemEl.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">'data-problem-id'</span>)
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Tracking Problem Click: <span class="hljs-subst">${problemId}</span>`</span>)
+
+      <span class="hljs-comment">// 数据搜集</span>
+      <span class="hljs-keyword">const</span> now = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>()
+      <span class="hljs-keyword">if</span> (!data[<span class="hljs-string">'problem_click'</span>][problemId]) {
+        data[<span class="hljs-string">'problem_click'</span>][problemId] = { <span class="hljs-attr">count</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">lastTimestamp</span>: now }
+        data.<span class="hljs-property">key</span> = <span class="hljs-title function_">generateHash</span>(data, now)
+      } <span class="hljs-keyword">else</span> {
+        data[<span class="hljs-string">'problem_click'</span>][problemId].<span class="hljs-property">count</span> += <span class="hljs-number">1</span>
+        data[<span class="hljs-string">'problem_click'</span>][problemId].<span class="hljs-property">lastTimestamp</span> = now
+        data.<span class="hljs-property">key</span> = <span class="hljs-title function_">generateHash</span>(data, now)
+      }
+
+      <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">setItem</span>(<span class="hljs-string">'userBehaviorData'</span>, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(data))
+
+      <span class="hljs-keyword">return</span> <span class="hljs-comment">// 已处理，直接返回</span>
+    }
+
+    <span class="hljs-comment">// 采集：帖子点击量</span>
+    <span class="hljs-keyword">const</span> postEl = event.<span class="hljs-property">target</span>.<span class="hljs-title function_">closest</span>(<span class="hljs-string">'.post-click'</span>) <span class="hljs-comment">// 找到最近的带 post-click 的父元素</span>
+    <span class="hljs-keyword">if</span> (postEl) {
+      data = <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">'userBehaviorData'</span>)
+        ? <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">'userBehaviorData'</span>))
+        : data
+
+      <span class="hljs-keyword">const</span> postId = postEl.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">'data-post-id'</span>)
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Tracking Post Click: <span class="hljs-subst">${postId}</span>`</span>)
+
+      <span class="hljs-comment">// 数据搜集</span>
+      <span class="hljs-keyword">const</span> now = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>()
+      <span class="hljs-keyword">if</span> (!data[<span class="hljs-string">'post_click'</span>][postId]) {
+        data[<span class="hljs-string">'post_click'</span>][postId] = { <span class="hljs-attr">count</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">lastTimestamp</span>: now }
+        data.<span class="hljs-property">key</span> = <span class="hljs-title function_">generateHash</span>(data, now)
+      } <span class="hljs-keyword">else</span> {
+        data[<span class="hljs-string">'post_click'</span>][postId].<span class="hljs-property">count</span> += <span class="hljs-number">1</span>
+        data[<span class="hljs-string">'post_click'</span>][postId].<span class="hljs-property">lastTimestamp</span> = now
+        data.<span class="hljs-property">key</span> = <span class="hljs-title function_">generateHash</span>(data, now)
+      }
+
+      <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">setItem</span>(<span class="hljs-string">'userBehaviorData'</span>, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(data))
+
+      <span class="hljs-keyword">return</span> <span class="hljs-comment">// 已处理，直接返回</span>
+    }
+  })
+}
+</code></pre>
+      </div>
+    
+<h3 id="系统推荐-帖子推荐设计"><a href="#系统推荐-帖子推荐设计" class="anchor-link">#</a> 系统推荐：帖子推荐设计</h3>
+<ul>
+<li>属于系统推荐</li>
+</ul>
+<p>背景：在“程序猿”广场页面，根据 帖子数据 和 用户行为数据，实时推荐热门帖子</p>
+<ol>
+<li>
+<p>原始数据帖子表评分设计：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="base_score%20%3D%0A%20%20view_count%20%20%20%20*%201%0A%2B%20like_count%20%20%20%20*%203%0A%2B%20comment_count%20*%204%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">base_score =
+  view_count    * 1
++ like_count    * 3
++ comment_count * 4
+</code></pre>
+      </div>
+    
+<p>原因：</p>
+<ul>
+<li>view：低成本行为</li>
+<li>like：明确正反馈</li>
+<li>comment：强互动</li>
+</ul>
+</li>
+<li>
+<p>用户行为数据表</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="behavior_score%20%3D%20total_click%20*%201.5%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">behavior_score = total_click * 1.5
+</code></pre>
+      </div>
+    
+<p>由于在该项目中：用户行为数据记录的是——最新时间下用户行为数据的采集，相较于帖子数据，时间更新，占比权重大于：view_count</p>
+</li>
+<li>
+<p>时间衰减：从创建日期开始衰减，采用 <strong>非线性单调递减的幂律函数 (Power-law Decay)</strong>。随着创建时间增长，内容权重呈非线性下降，平衡新旧数据的影响力
+$$
+time_decay = \frac{1}{(days_since_create + 1)^{0.5}}
+$$</p>
+<p>特点：</p>
+<ul>
+<li>新帖优势明显</li>
+<li>老帖不会瞬间归零</li>
+</ul>
+<p><img src="http://oss.tilex.world/d/blog-images/2026/05/04/image-20251225204402420.png?sign=lsnqCOaVCVDq6N1doPrKoJ1_19V59y8ByqjgqoOaWE4=:0" alt="image-20251225204402420"></p>
+<table>
+<thead>
+<tr>
+<th><strong>创建时间</strong></th>
+<th><strong>间隔天数 (x)</strong></th>
+<th><strong>返回值 (timeDecay)</strong></th>
+<th><strong>权重剩余</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>今天</strong></td>
+<td>0</td>
+<td>$1 / \sqrt{1} = 1.0$</td>
+<td><strong>100%</strong></td>
+</tr>
+<tr>
+<td><strong>3天前</strong></td>
+<td>3</td>
+<td>$1 / \sqrt{4} = 0.5$</td>
+<td><strong>50%</strong></td>
+</tr>
+<tr>
+<td><strong>8天前</strong></td>
+<td>8</td>
+<td>$1 / \sqrt{9} = 0.33$</td>
+<td><strong>33%</strong></td>
+</tr>
+<tr>
+<td><strong>24天前</strong></td>
+<td>24</td>
+<td>$1 / \sqrt{25} = 0.2$</td>
+<td><strong>20%</strong></td>
+</tr>
+<tr>
+<td><strong>99天前</strong>（三个月前的帖子）</td>
+<td>99</td>
+<td>$1 / \sqrt{100} = 0.1$</td>
+<td><strong>10%</strong></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h4 id="总结-最终帖子热度评分计算"><a href="#总结-最终帖子热度评分计算" class="anchor-link">#</a> 总结：最终帖子热度评分计算</h4>
+<p>热度计算应将<strong>静态累计指标</strong>与<strong>动态用户行为</strong>拆分处理：<code>view_count / like_count / comment_count</code> 属于历史认可度，天然会累积增长，必须结合帖子创建时间做<strong>时间衰减</strong>以避免老帖长期霸榜；而用户行为采集的 <strong>post_click</strong> 是实时、高频、强时效数据，应<strong>仅统计最近 7 天</strong>，并在行为层面做轻量时间衰减或直接作为动态分使用，不应再参与整体时间衰减。因此，合理的热度模型应为：<strong>静态分 × 静态时间衰减 + 近 7 天行为动态分（可加权）</strong>，这样才能同时反映“长期价值”和“当前热度”
+$$
+hot_score=(view_count∗1+like_count∗3+comment_count∗4)×time_decay</p>
+<ul>
+<li>total_click_7d∗1.5
+$$</li>
+</ul>
+<h4 id="定时更新"><a href="#定时更新" class="anchor-link">#</a> 定时更新</h4>
+<p>不必每次实时计算，推荐：</p>
+<ul>
+<li>
+<p>定时任务（5～10 分钟）</p>
+</li>
+<li>
+<p>计算 hot_score</p>
+</li>
+<li>
+<p>写入redis <code>post_hot_stat</code></p>
+</li>
+</ul>
+<h4 id="触发事件"><a href="#触发事件" class="anchor-link">#</a> 触发事件</h4>
+<ol>
+<li>帖子删除：当帖子删除时应该重新计算帖子热度，因为可能删除的帖子是：热度帖子，此时帖子被删除，无法查看，因此需要情况redis缓存重新计算热度</li>
+<li>帖子发布无需更新缓存，无需重新计算帖子热度：因为刚发布的帖子不可能登上热度榜，况且缓存时间设置为5分钟，5分钟后重新计算</li>
+</ol>
+<h3 id="个性化推荐-热门题目"><a href="#个性化推荐-热门题目" class="anchor-link">#</a> 个性化推荐：热门题目</h3>
+<p>由于题目关联了标签：因此可以通过计算用户感兴趣的标签为用户推荐相关题目</p>
+<p>用户个性化推荐通过用户行为数据（题目点击、标签点击、题目收藏）映射至&lt;u&gt;标签维&lt;/u&gt;度，计算用户对各标签的兴趣强度。其中题目点击与标签点击为即时兴趣信号，而&lt;u&gt;收藏行为&lt;/u&gt;作为强兴趣信号需引入&lt;u&gt;时间衰减函数&lt;/u&gt;。最终基于高热度兴趣标签，从关联题目中筛选并排序推荐内容。</p>
+<p>标签热度计算：</p>
+<p>基于<strong>用户最近一次收集的用户行为数据开始，向前回溯的7天，计算这7天内的行为数据</strong>
+$$
+tag_score =
+题目点击次数对应的标签 * 1</p>
+<ul>
+<li>标签点击次数 * 0.5</li>
+<li>收藏题目对应的标签 * 3 * time_decay
+$$</li>
+</ul>
+<ol>
+<li>题目点击 &amp; 收藏题目 ⇒ 必须映射到标签</li>
+<li>时间衰减用于收藏行为，收藏是长期兴趣，但会“过时”</li>
+<li>点击、标签点击本身已经是“短期行为”，可以不加衰减</li>
+<li>需识别用户身份，通过用户身份进行题目的标签热度计算（与系统推荐不同，系统推荐无需关注用户身份，直接全部统计，但是个性化推荐不同，需根据用户的身份进行筛选，不能全部统计）</li>
+</ol>
+<p>注意：冷启动，若用户未登录、无点击、无收藏，此时需有兜底策略</p>
+<h4 id="数据存储-2"><a href="#数据存储-2" class="anchor-link">#</a> 数据存储</h4>
+<ul>
+<li><strong>个性化导致存储量过大</strong>，无法直接缓存每个用户的完整推荐列表，如果需要存储，由于是个性化推荐，那么每个用户都需要存储热门题目数据，导致：用户数 × 推荐条数 → 数据量大</li>
+</ul>
+<p>解决方法：</p>
+<p>折中存储：只存储每个用户的兴趣标签，不存储题目数据，其中兴趣标签只存放两个字段：标签id和评分，类型为 Set，按照 score 排序（降序），再从标签中返回题目列表</p>
+<h4 id="匿名用户和登录用户"><a href="#匿名用户和登录用户" class="anchor-link">#</a> 匿名用户和登录用户</h4>
+<p>匿名用户：根据用户行为数据采集的进行推荐，由于未登录并没有收藏数据</p>
+<h4 id="耗时对比"><a href="#耗时对比" class="anchor-link">#</a> 耗时对比</h4>
+<p>将兴趣标签存入redis，后续根据兴趣标签计算题目，耗时：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="650ms%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">650ms
+</code></pre>
+      </div>
+    
+<p>若实时计算兴趣标签，然后再计算题目，耗时：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="2355ms%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">2355ms
+</code></pre>
+      </div>
+    
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/05/04</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/05/04</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

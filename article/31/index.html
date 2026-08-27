@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">loading动画分析-延迟loading</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 6 分钟 · 字数 1151</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><p>异步请求时，页面可以使用加载动画提高用户体验，但是存在两种情况：</p>
+<ul>
+<li>慢接口：loading动画提高用户体验</li>
+<li>快接口（网络状态良好）：loading存在闪烁，出现又消失，造成”闪烁“</li>
+</ul>
+<p>解决方案：延迟显示</p>
+<p>初始不显示加载动画，并设置一个 200ms 的定时器，若接口在时限内请求成功，直接显示页面；若超过时限接口仍在请求，则显示加载动画</p>
+<p>代码实现思路：</p>
+<ol>
+<li>设置定时器，超过 200ms 时限触发加载动画</li>
+</ol>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cscript%20setup%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20src%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%26quot%3B%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%9B%BE%E7%89%87src%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20loading%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eref%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20timer%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Enull%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3ElazyLoad%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(timer)%20%3Cspan%20class%3D%22hljs-built_in%22%3EclearTimeout%3C%2Fspan%3E(timer)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%88%E6%B8%85%E7%90%86%E6%97%A7%E5%AE%9A%E6%97%B6%E5%99%A8%EF%BC%8C%E9%98%B2%E6%AD%A2%E8%BF%9E%E7%BB%AD%E7%82%B9%E5%87%BB%E5%AF%BC%E8%87%B4%E7%9A%84%E9%80%BB%E8%BE%91%E6%B7%B7%E4%B9%B1%3C%2Fspan%3E%0A%0A%20%20timer%20%3D%20%3Cspan%20class%3D%22hljs-built_in%22%3EsetTimeout%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20loading.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%3B%0A%20%20%7D%2C%20%3Cspan%20class%3D%22hljs-number%22%3E200%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%97%B6%E9%99%90%20200ms%EF%BC%8C%E8%B6%85%E8%BF%87%E6%97%B6%E9%99%90%E5%BC%80%E5%90%AF%E5%8A%A0%E8%BD%BD%E5%8A%A8%E7%94%BB%3C%2Fspan%3E%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8E%A5%E5%8F%A3%E6%A8%A1%E6%8B%9F%EF%BC%9A%E6%A8%A1%E6%8B%9F%E8%BF%9C%E7%A8%8B%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Etry%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Enew%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EPromise%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Eresolve%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20setTimeout(()%20%3D%3E%20resolve(%26quot%3Bhttps%3A%2F%2Fpicsum.photos%2F400%2F400%26quot%3B)%2C%201000)%2C%20%2F%2F%201000ms%3C%2Fspan%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-built_in%22%3EsetTimeout%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eresolve%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhttps%3A%2F%2Fpicsum.photos%2F400%2F400%26quot%3B%3C%2Fspan%3E)%2C%20%3Cspan%20class%3D%22hljs-number%22%3E100%3C%2Fspan%3E)%2C%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20100ms%3C%2Fspan%3E%0A%20%20%20%20).%3Cspan%20class%3D%22hljs-title%20function_%22%3Ethen%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E(%3Cspan%20class%3D%22hljs-params%22%3Eres%3C%2Fspan%3E)%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20src.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20res%3B%0A%20%20%20%20%7D)%3B%0A%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Ecatch%3C%2Fspan%3E%20(error)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eerror%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%3A%26quot%3B%3C%2Fspan%3E%2C%20error)%3B%0A%20%20%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Efinally%3C%2Fspan%3E%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(timer)%20%3Cspan%20class%3D%22hljs-built_in%22%3EclearTimeout%3C%2Fspan%3E(timer)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%89%A7%E8%A1%8C%E5%AE%8C%E6%AF%95%EF%BC%8C%E6%B8%85%E6%A5%9A%E5%AE%9A%E6%97%B6%E5%99%A8%3C%2Fspan%3E%0A%20%20%20%20loading.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Efalse%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%8F%96%E6%B6%88%E5%8A%A0%E8%BD%BD%E5%8A%A8%E7%94%BB%3C%2Fspan%3E%0A%20%20%7D%0A%7D%3B%0A%3C%2Fscript%3E%0A%0A%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Etemplate%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eel-button%3C%2Fspan%3E%20%40%3Cspan%20class%3D%22hljs-attr%22%3Eclick%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BlazyLoad%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%E8%BF%9C%E7%A8%8B%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eel-button%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ev-loading%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bloading%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eimg%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3E%3Asrc%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bsrc%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ealt%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E4%B8%AD...%26quot%3B%3C%2Fspan%3E%20%2F%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Etemplate%3C%2Fspan%3E%3E%3C%2Fspan%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">&lt;script setup&gt;
+<span class="hljs-keyword">const</span> src = <span class="hljs-title function_">ref</span>(<span class="hljs-string">""</span>); <span class="hljs-comment">// 图片src</span>
+<span class="hljs-keyword">const</span> loading = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">false</span>);
+<span class="hljs-keyword">let</span> timer = <span class="hljs-literal">null</span>;
+
+<span class="hljs-comment">// 延迟加载</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">lazyLoad</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">if</span> (timer) <span class="hljs-built_in">clearTimeout</span>(timer); <span class="hljs-comment">// 先清理旧定时器，防止连续点击导致的逻辑混乱</span>
+
+  timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+    loading.<span class="hljs-property">value</span> = <span class="hljs-literal">true</span>;
+  }, <span class="hljs-number">200</span>); <span class="hljs-comment">// 时限 200ms，超过时限开启加载动画</span>
+
+  <span class="hljs-comment">// 接口模拟：模拟远程获取图片</span>
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span>
+      <span class="hljs-comment">// setTimeout(() =&gt; resolve("https://picsum.photos/400/400"), 1000), // 1000ms</span>
+      <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">resolve</span>(<span class="hljs-string">"https://picsum.photos/400/400"</span>), <span class="hljs-number">100</span>), <span class="hljs-comment">// 100ms</span>
+    ).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {
+      src.<span class="hljs-property">value</span> = res;
+    });
+  } <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">"图片加载失败:"</span>, error);
+  } <span class="hljs-keyword">finally</span> {
+    <span class="hljs-keyword">if</span> (timer) <span class="hljs-built_in">clearTimeout</span>(timer); <span class="hljs-comment">// 执行完毕，清楚定时器</span>
+    loading.<span class="hljs-property">value</span> = <span class="hljs-literal">false</span>; <span class="hljs-comment">// 取消加载动画</span>
+  }
+};
+&lt;/script&gt;
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"lazyLoad"</span>&gt;</span>远程获取图片<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-loading</span>=<span class="hljs-string">"loading"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">"src"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"图片加载中..."</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+</code></pre>
+      </div>
+    
+<p>现象：</p>
+<ul>
+<li>1000ms时，触发加载动画</li>
+<li>100ms时，直接显示图片，没有加载动画</li>
+</ul>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/05/03</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/05/24</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

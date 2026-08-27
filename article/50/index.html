@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">让 AI 编写你认知范围内的代码：vite-ssg initialState 踩坑记录</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 20 分钟 · 字数 3857</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><p>Codex 在更改代码时，对于&lt;u&gt;没有说明、留白的地方&lt;/u&gt;（我甚至没有考虑到这一点），自动进行了“脑补”，而我在审核时遗漏了，导致博客的首页数据停留在构建时的数据。</p>
+<p>最终排查发现，codex更改的代码，通过使用 vite-ssg 的 <code>initialState</code> 保存构建状态，又通过 <code>loaded</code> 判断阻止客户端重新请求，导致博客首页长期停留在构建时的数据。</p>
+<p>首页：构建时的数据（旧数据）
+<img src="https://oss.tilex.world/d/blog-images/2026/08/01/image-20260801173032358.png?sign=BCrRp8rqlZQTQ-kQGx1rPps0-PMD5pVzHWC_2crtuMY=:0" alt="image-20260801173032358"></p>
+<p>后续，更新文章时，发现首页的数据一直没有更新，仍停留在构建阶段，预期的状态：</p>
+<p><img src="https://oss.tilex.world/d/blog-images/2026/08/01/image-20260801173144308.png?sign=5aNrq9ye5cILDcl6wyZIxMOC6xjK0E0AZ-vj1Ms1am4=:0" alt="image-20260801173144308"></p>
+<p>但，预期的状态并没有生效</p>
+<h2 id="从-spa-到-ssg"><a href="#从-spa-到-ssg" class="anchor-link">#</a> 从 SPA 到 SSG</h2>
+<p>传统 Vue SPA 首次访问时，服务器通常只返回一个 HTML 根节点：</p>
+
+      <div class="md-editor-code" data-language="HTML">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">HTML</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bapp%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<p>浏览器随后还需要：</p>
+<ol>
+<li>下载 js；</li>
+<li>执行 js；</li>
+<li>创建 Vue 应用；</li>
+<li>请求页面所需的数据；</li>
+<li>根据数据生成实际 DOM。</li>
+</ol>
+<p>在 js 执行和数据请求完成之前，页面可能只显示空白或加载状态，且对于博客来说，这种方式存在两个比较明显的问题：</p>
+<ul>
+<li>SEO不友好：搜索引擎首次拿到的 HTML 缺少文章内容，对 SEO 不够友好；</li>
+<li>白屏：页面需要等待 JavaScript 和接口请求完成，首屏内容出现得较晚。</li>
+</ul>
+<p>因此，我在博客中引入了 <a href="https://github.com/antfu-collective/vite-ssg">vite-ssg</a>，在项目构建阶段提前生成静态 HTML，构建完成后，可以得到类似下面的文件：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="dist%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%20index.html%0A%E2%94%9C%E2%94%80%20about%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%E2%94%94%E2%94%80%20index.html%0A%E2%94%94%E2%94%80%20article%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%20%20%20%E2%94%9C%E2%94%80%20%3Cspan%20class%3D%22hljs-number%22%3E1%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%20%20%20%E2%94%82%20%20%E2%94%94%E2%94%80%20index.html%0A%20%20%20%E2%94%9C%E2%94%80%20%3Cspan%20class%3D%22hljs-number%22%3E2%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%20%20%20%E2%94%82%20%20%E2%94%94%E2%94%80%20index.html%0A%20%20%20%E2%94%94%E2%94%80%20...%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>dist<span class="hljs-symbol">/</span>
+├─ index.html
+├─ about<span class="hljs-symbol">/</span>
+│  └─ index.html
+└─ article<span class="hljs-symbol">/</span>
+   ├─ <span class="hljs-number">1</span><span class="hljs-symbol">/</span>
+   │  └─ index.html
+   ├─ <span class="hljs-number">2</span><span class="hljs-symbol">/</span>
+   │  └─ index.html
+   └─ ...
+</code></pre>
+      </div>
+    
+<p>这样后续访问博客时，服务器直接返回渲染后的静态HTML，此时即使 js 尚未完成加载，用户和搜索引擎也能看到主要内容。</p>
+<h2 id="vite-ssg-的局限-静态-html-的数据可能过期"><a href="#vite-ssg-的局限-静态-html-的数据可能过期" class="anchor-link">#</a> vite-ssg 的局限：静态 HTML 的数据可能过期</h2>
+<p>vite-ssg 生成的是构建时的数据快照。</p>
+<p>假设网站在 7 月 1 日执行构建，首页静态 HTML 包含当时最新的 10 篇文章。7 月 2 日发布了一篇新文章，但没有重新构建前端，那么已经部署的 <code>index.html</code> 并不会自动更新。</p>
+<p>用户访问时，可能经历下面的过程：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E8%BF%94%E5%9B%9E%E6%9E%84%E5%BB%BA%E6%97%B6%E7%9A%84%E9%9D%99%E6%80%81%20%3Cspan%20class%3D%22hljs-selector-tag%22%3EHTML%3C%2Fspan%3E%0A%20%20%20%20%E2%86%93%0A%E5%85%88%E6%98%BE%E7%A4%BA%E6%9E%84%E5%BB%BA%E6%97%B6%E7%9A%84%E6%97%A7%E6%96%87%E7%AB%A0%0A%20%20%20%20%E2%86%93%0A%E4%B8%8B%E8%BD%BD%E5%B9%B6%E6%89%A7%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%20JavaScript%0A%20%20%20%20%E2%86%93%0AVue%20%E6%8E%A5%E7%AE%A1%E9%A1%B5%E9%9D%A2%0A%20%20%20%20%E2%86%93%0A%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AF%B7%E6%B1%82%E6%9C%80%E6%96%B0%E6%96%87%E7%AB%A0%0A%20%20%20%20%E2%86%93%0A%E6%9B%B4%E6%96%B0%E4%B8%BA%E6%9C%80%E6%96%B0%E6%95%B0%E6%8D%AE%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>返回构建时的静态 <span class="hljs-selector-tag">HTML</span>
+    ↓
+先显示构建时的旧文章
+    ↓
+下载并执行客户端 JavaScript
+    ↓
+Vue 接管页面
+    ↓
+客户端请求最新文章
+    ↓
+更新为最新数据
+</code></pre>
+      </div>
+    
+<p>这是引入 vite-ssg 后的正常流程：</p>
+<ul>
+<li>先用旧数据保证首屏立即有内容；</li>
+<li>再通过客户端请求更新为最新数据。</li>
+</ul>
+<p>旧数据并不是问题，只要客户端最终能够重新请求和更新，那么此次首页数据为什么没有更新？bug 是如何产生的呢？</p>
+<h2 id="bug-是如何产生的"><a href="#bug-是如何产生的" class="anchor-link">#</a> Bug 是如何产生的</h2>
+<blockquote>
+<p>initialState  文档：<a href="https://github.com/antfu-collective/vite-ssg#initial-state">https://github.com/antfu-collective/vite-ssg#initial-state</a></p>
+</blockquote>
+<p>查看了 codex 更改的代码，发现首页的数据没有更新，便在于 codex 自动进行了脑补，使用 initialState 将数据序列化到首页的HTML，又通过 <code>loaded</code> 判断阻止客户端重新请求，导致后续不会重新获取数据，详情如下：</p>
+<p>首页在构建阶段通过 <code>onServerPrefetch()</code> 请求文章：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20function_%22%3EonServerPrefetch%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-title%20function_%22%3Easync%3C%2Fspan%3E%20()%20%3D%3E%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EloadPage%3C%2Fspan%3E()%3B%0A%7D)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title function_">onServerPrefetch</span>(<span class="hljs-title function_">async</span> () =&gt; {
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">loadPage</span>();
+});
+</code></pre>
+      </div>
+    
+<p>请求成功后，loadPage 会将首页数据和 <code>loaded</code> 状态写入 Pinia：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="articles.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20res.%3Cspan%20class%3D%22hljs-property%22%3Edata%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Earticles%3C%2Fspan%3E%3B%0Apage.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20res.%3Cspan%20class%3D%22hljs-property%22%3Edata%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Epage%3C%2Fspan%3E%3B%0Atotal.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20res.%3Cspan%20class%3D%22hljs-property%22%3Edata%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Etotal%3C%2Fspan%3E%3B%0Aloaded.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">articles.<span class="hljs-property">value</span> = res.<span class="hljs-property">data</span>.<span class="hljs-property">articles</span>;
+page.<span class="hljs-property">value</span> = res.<span class="hljs-property">data</span>.<span class="hljs-property">page</span>;
+total.<span class="hljs-property">value</span> = res.<span class="hljs-property">data</span>.<span class="hljs-property">total</span>;
+loaded.<span class="hljs-property">value</span> = <span class="hljs-literal">true</span>;
+</code></pre>
+      </div>
+    
+<p>随后，vite-ssg 通过 <code>initialState</code> 将 Pinia 状态序列化到静态 HTML：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Emeta%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eenv%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3ESSR%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EonSSRAppRendered%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E()%20%3D%3E%3C%2Fspan%3E%20%7B%0A%20%20%20%20initialState.%3Cspan%20class%3D%22hljs-property%22%3Epinia%3C%2Fspan%3E%20%3D%20pinia.%3Cspan%20class%3D%22hljs-property%22%3Estate%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%3B%0A%20%20%7D)%3B%0A%7D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eelse%3C%2Fspan%3E%20%7B%0A%20%20pinia.%3Cspan%20class%3D%22hljs-property%22%3Estate%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%20initialState.%3Cspan%20class%3D%22hljs-property%22%3Epinia%3C%2Fspan%3E%20%7C%7C%20%7B%7D%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">SSR</span>) {
+  <span class="hljs-title function_">onSSRAppRendered</span>(<span class="hljs-function">() =&gt;</span> {
+    initialState.<span class="hljs-property">pinia</span> = pinia.<span class="hljs-property">state</span>.<span class="hljs-property">value</span>;
+  });
+} <span class="hljs-keyword">else</span> {
+  pinia.<span class="hljs-property">state</span>.<span class="hljs-property">value</span> = initialState.<span class="hljs-property">pinia</span> || {};
+}
+</code></pre>
+      </div>
+    
+<p>序列化的结果，将输入写入首页的静态 HTML：</p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-meta%22%3E%3C!DOCTYPE%20%3Cspan%20class%3D%22hljs-keyword%22%3Ehtml%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ehtml%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Elang%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Ben%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ehead%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Etitle%3C%2Fspan%3E%3E%3C%2Fspan%3ETilex%20Blog%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Etitle%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ehead%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebody%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%E2%80%A6%E2%80%A6%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ebody%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-handlebars%22%3E%3Cspan%20class%3D%22language-xml%22%3Ewindow.__INITIAL_STATE__%3D%26quot%3B%7B%5C%26quot%3Bpinia%5C%26quot%3B%3A%7B%5C%26quot%3Bhome%5C%26quot%3B%3A%7B%5C%26quot%3Bloaded%26quot%3B%3A%20true%2C%5C%26quot%3Barticles%5C%26quot%3B%3A%5B%7B%5C%26quot%3Bid%5C%26quot%3B%3A49%2C%5C%26quot%3Btitle%5C%26quot%3B%3A%5C%26quot%3B%E9%9B%A8%E5%A4%A9%E4%B8%8A%E7%8F%AD.md%5C%26quot%3B%2C%5C%26quot%3Bpreview%5C%26quot%3B%3A%5C%26quot%3B%5Cu003E%20TAG%3A%20DAILY%5C%5Cn%5C%5Cn%23%20%E9%9B%A8%E5%A4%A9%E4%B8%8A%E7%8F%AD%5C%5Cn%5C%5Cn!%5BIMG_20260728_192947_1%5D(https%3A%5Cu002F%5Cu002Foss.tilex.%0A%E2%80%A6%E2%80%A6%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ehtml%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3C%2Fspan%3E%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Tilex Blog<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  ……
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml">window.__INITIAL_STATE__="{\"pinia\":{\"home\":{\"loaded": true,\"articles\":[{\"id\":49,\"title\":\"雨天上班.md\",\"preview\":\"\u003E TAG: DAILY\\n\\n# 雨天上班\\n\\n![IMG_20260728_192947_1](https:\u002F\u002Foss.tilex.
+……
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</span></span></code></pre>
+      </div>
+    
+<p>浏览器访问首页时，会恢复构建阶段的 Pinia 状态，其中包括：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="loaded.%3Cspan%20class%3D%22hljs-property%22%3Evalue%3C%2Fspan%3E%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">loaded.<span class="hljs-property">value</span> === <span class="hljs-literal">true</span>;
+</code></pre>
+      </div>
+    
+<p>但客户端在处理时，却增加了 <code>loaded</code> 判断：</p>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="onMounted(()%20%3D%3E%20%7B%0A%20%20if%20(!loaded.value)%20%7B%20%2F%2F%20bug%20%E4%BA%A7%E7%94%9F%E7%9A%84%E6%A0%B8%E5%BF%83%0A%20%20%20%20loadPage()%3Cspan%20class%3D%22hljs-comment%22%3E%3B%3C%2Fspan%3E%0A%20%20%7D%0A%7D)%3Cspan%20class%3D%22hljs-comment%22%3E%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue">onMounted(() =&gt; {
+  if (!loaded.value) { // bug 产生的核心
+    loadPage()<span class="hljs-comment">;</span>
+  }
+})<span class="hljs-comment">;</span>
+</code></pre>
+      </div>
+    
+<p>此时 <code>loaded</code> 为 <code>true</code>，客户端请求会被直接跳过</p>
+<p>完整过程如下：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E6%9E%84%E5%BB%BA%E9%98%B6%E6%AE%B5%E8%AF%B7%E6%B1%82%E6%96%87%E7%AB%A0%0A%E2%86%92%20%3Cspan%20class%3D%22hljs-built_in%22%3Eloaded%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%0A%E2%86%92%20Pinia%20%E7%8A%B6%E6%80%81%E5%86%99%E5%85%A5%20initialState%0A%E2%86%92%20%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%81%A2%E5%A4%8D%20%3Cspan%20class%3D%22hljs-built_in%22%3Eloaded%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E%0A%E2%86%92%20onMounted%20%E8%B7%B3%E8%BF%87%E8%AF%B7%E6%B1%82%0A%E2%86%92%20%E9%A6%96%E9%A1%B5%E4%B8%80%E7%9B%B4%E6%98%BE%E7%A4%BA%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%EF%BC%88%E6%97%A7%E6%95%B0%E6%8D%AE%EF%BC%89%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>构建阶段请求文章
+→ <span class="hljs-built_in">loaded</span> = <span class="hljs-literal">true</span>
+→ Pinia 状态写入 initialState
+→ 客户端恢复 <span class="hljs-built_in">loaded</span> = <span class="hljs-literal">true</span>
+→ onMounted 跳过请求
+→ 首页一直显示构建数据（旧数据）
+</code></pre>
+      </div>
+    
+<p>修复很简单，直接移除 <code>loaded</code> 的判断即可</p>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="onMounted(()%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%3E%20%7B%0A%20%20%20%20loadPage()%3Cspan%20class%3D%22hljs-comment%22%3E%3B%3C%2Fspan%3E%0A%7D)%3Cspan%20class%3D%22hljs-comment%22%3E%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue">onMounted(() <span class="hljs-operator">=</span>&gt; {
+    loadPage()<span class="hljs-comment">;</span>
+})<span class="hljs-comment">;</span>
+</code></pre>
+      </div>
+    
+<p>但，还需要 initialState 吗？此时 initialState 似乎没有起到任何作用，甚至构建生成的HTML文件体积更大：initialState 会将序列化的数据写入静态HTML</p>
+<h2 id="initialstate-使用的权衡"><a href="#initialstate-使用的权衡" class="anchor-link">#</a> initialState 使用的权衡</h2>
+<p><code>initialState</code> 的主要作用是把构建阶段的数据传递给客户端，让客户端第一次渲染与静态 HTML 保持一致，从而稳定完成水合。</p>
+<p>使用 <code>initialState</code> 后，首页流程为：</p>
+<ul>
+<li>返回包首页构建阶段的静态 HTML，包括 initialState 序列化后的数据；</li>
+<li>客户端通过数据，直接恢复&lt;u&gt;构建时&lt;/u&gt;的 Pinia 状态；</li>
+<li>Vue 使用相同状态完成水合；</li>
+<li>水合后请求最新数据；</li>
+<li>Vue 根据新旧数据差异更新页面。</li>
+</ul>
+<p>它的代价是静态 HTML 中同时存在渲染后的 DOM 和序列化状态，产生双份载荷。数据越多，HTML 体积和解析成本越明显。</p>
+<p>因此，是否使用 <code>initialState</code> 需要根据页面情况权衡：</p>
+<ul>
+<li>数据较小，并且希望避免水合不一致和内容闪烁（新旧数据的交接），可以使用；</li>
+<li>数据很大，且能够接受静态内容在客户端重新渲染，可以考虑移除；</li>
+<li>也可以只序列化水合必需字段，减少载荷。</li>
+</ul>
+<p>当然，我的选择是移除 initialState，保持构建时静态HTML的简洁</p>
+<h2 id="对-ai-修改代码的反思"><a href="#对-ai-修改代码的反思" class="anchor-link">#</a> 对 AI 修改代码的反思</h2>
+<p>使用 AI 修改项目时，往往存在许多&lt;u&gt;没有说明、留白的地方&lt;/u&gt;，这些地方甚至不在你的认知范围内，此时 AI 对于这些地方往往会自动“脑补”，如此次bug，我之前甚至并没有接触过 initialState ，对它并不了解 ，但审核时却遗漏了</p>
+<p>让 AI 编写你认知范围内的代码，没有接触过的内容最好三思</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/08/01</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/08/01</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

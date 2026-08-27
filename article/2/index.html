@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">【思想】守卫式 return</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 7 分钟 · 字数 1213</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="用-守卫式-return-优化-if-判断的代码风格"><a href="#用-守卫式-return-优化-if-判断的代码风格" class="anchor-link">#</a> 用「守卫式 return」优化 if 判断的代码风格</h1>
+<h2 id="一-常规写法的问题"><a href="#一-常规写法的问题" class="anchor-link">#</a> 一、常规写法的问题</h2>
+<p>在日常开发中，我们经常需要通过 <code>if</code> 判断某个条件是否成立，然后再执行代码。例如：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eprocess%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Edata%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-title%20function_%22%3Echeck%3C%2Fspan%3E(data)%20%3D%3D%3D%20%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%95%B0%E6%8D%AE%E7%AC%A6%E5%90%88%E6%9D%A1%E4%BB%B6%EF%BC%8C%E5%BC%80%E5%A7%8B%E5%A4%84%E7%90%86...%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%80%E7%B3%BB%E5%88%97%E5%A4%8D%E6%9D%82%E7%9A%84%E9%80%BB%E8%BE%91%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EdoSomething%3C%2Fspan%3E(data)%3B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsaveResult%3C%2Fspan%3E(data)%3B%0A%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">process</span>(<span class="hljs-params">data</span>) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-title function_">check</span>(data) === <span class="hljs-literal">true</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"数据符合条件，开始处理..."</span>);
+    <span class="hljs-comment">// 一系列复杂的逻辑</span>
+    <span class="hljs-title function_">doSomething</span>(data);
+    <span class="hljs-title function_">saveResult</span>(data);
+  }
+}
+</code></pre>
+      </div>
+    
+<p>这样写虽然没有问题，但随着逻辑增多，容易形成「缩进地狱」：</p>
+<ul>
+<li>每多一层判断，就多一层缩进。</li>
+<li>外围逻辑被包裹在条件里，阅读时不够直观。</li>
+</ul>
+<hr>
+<h2 id="二-守卫式写法-if-check-return"><a href="#二-守卫式写法-if-check-return" class="anchor-link">#</a> 二、守卫式写法：if(!check()) return</h2>
+<p>为了避免深层缩进，可以采用「守卫式 return」（Guard Clause）：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eprocess%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Edata%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20guard%20line%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-title%20function_%22%3Echeck%3C%2Fspan%3E(data))%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%20%0A%20%20%20%20%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%95%B0%E6%8D%AE%E7%AC%A6%E5%90%88%E6%9D%A1%E4%BB%B6%EF%BC%8C%E5%BC%80%E5%A7%8B%E5%A4%84%E7%90%86...%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EdoSomething%3C%2Fspan%3E(data)%3B%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsaveResult%3C%2Fspan%3E(data)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">process</span>(<span class="hljs-params">data</span>) {
+  <span class="hljs-comment">// guard line</span>
+  <span class="hljs-keyword">if</span> (!<span class="hljs-title function_">check</span>(data)) <span class="hljs-keyword">return</span>; 
+    
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"数据符合条件，开始处理..."</span>);
+  <span class="hljs-title function_">doSomething</span>(data);
+  <span class="hljs-title function_">saveResult</span>(data);
+}
+</code></pre>
+      </div>
+    
+<p>这里的逻辑是：</p>
+<ol>
+<li><strong>先排除不符合条件的情况</strong>。</li>
+<li><strong>符合条件时，自然往下执行</strong>。</li>
+</ol>
+<p>这种方式可以让代码结构扁平化，逻辑一目了然。</p>
+<hr>
+<h2 id="三-守卫式写法的优势"><a href="#三-守卫式写法的优势" class="anchor-link">#</a> 三、守卫式写法的优势</h2>
+<ol>
+<li><strong>减少缩进</strong>
+<ul>
+<li>不再需要将核心逻辑放在大括号里。</li>
+<li>逻辑展开更清晰。</li>
+</ul>
+</li>
+<li><strong>逻辑更直观</strong>
+<ul>
+<li>一看函数开头，就能知道「哪些情况直接返回」。</li>
+<li>有点类似「门卫把不合格的人挡在门口，符合条件的才继续进入」。</li>
+</ul>
+</li>
+<li><strong>提高可维护性</strong>
+<ul>
+<li>当有多个条件时，可以连用多个守卫式 <code>return</code>，避免层层嵌套：</li>
+</ul>
+</li>
+</ol>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eprocess%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3Edata%3C%2Fspan%3E)%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!data)%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-title%20function_%22%3EcheckType%3C%2Fspan%3E(data))%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-title%20function_%22%3EhasPermission%3C%2Fspan%3E(data))%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%0A%20%20%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%A0%B8%E5%BF%83%E9%80%BB%E8%BE%91%E5%8F%AA%E4%BF%9D%E7%95%99%E4%B8%80%E5%B1%82%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EdoSomething%3C%2Fspan%3E(data)%3B%0A%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EsaveResult%3C%2Fspan%3E(data)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">process</span>(<span class="hljs-params">data</span>) {
+  <span class="hljs-keyword">if</span> (!data) <span class="hljs-keyword">return</span>;
+  <span class="hljs-keyword">if</span> (!<span class="hljs-title function_">checkType</span>(data)) <span class="hljs-keyword">return</span>;
+  <span class="hljs-keyword">if</span> (!<span class="hljs-title function_">hasPermission</span>(data)) <span class="hljs-keyword">return</span>;
+  
+  <span class="hljs-comment">// 核心逻辑只保留一层</span>
+  <span class="hljs-title function_">doSomething</span>(data);
+  <span class="hljs-title function_">saveResult</span>(data);
+}
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="四-总结"><a href="#四-总结" class="anchor-link">#</a> 四、总结</h2>
+<p>在编程中，避免「缩进地狱」是写出清晰代码的重要一步。
+与其写成：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-title%20function_%22%3Echeck%3C%2Fspan%3E())%20%7B%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%80%E5%A0%86%E9%80%BB%E8%BE%91%3C%2Fspan%3E%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">if</span> (<span class="hljs-title function_">check</span>()) {
+  <span class="hljs-comment">// 一堆逻辑</span>
+}
+</code></pre>
+      </div>
+    
+<p>不如直接写成：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20guard%20line%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E%20(!%3Cspan%20class%3D%22hljs-title%20function_%22%3Echeck%3C%2Fspan%3E())%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%80%E5%A0%86%E9%80%BB%E8%BE%91%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// guard line</span>
+<span class="hljs-keyword">if</span> (!<span class="hljs-title function_">check</span>()) <span class="hljs-keyword">return</span>;
+
+<span class="hljs-comment">// 一堆逻辑</span>
+</code></pre>
+      </div>
+    
+<p>这种「守卫式 return」的写法，能够让函数逻辑更简洁、可读性更强。</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/20</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/08/12</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

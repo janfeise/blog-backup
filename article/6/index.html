@@ -1,0 +1,1226 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">JS-DOM-操作全攻略</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 80 分钟 · 字数 15951</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><h1 id="javascript-dom-操作-选择-创建-插入与删除"><a href="#javascript-dom-操作-选择-创建-插入与删除" class="anchor-link">#</a> JavaScript DOM 操作：选择、创建、插入与删除</h1>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>子模块</th>
+<th>关键方法</th>
+<th>特点与注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DOM 选择</strong></td>
+<td>整个文档</td>
+<td><code>document.documentElement</code> / <code>document.head</code> / <code>document.body</code></td>
+<td>分别获取 <code>&lt;html&gt;</code>、<code>&lt;head&gt;</code>、<code>&lt;body&gt;</code> 节点</td>
+</tr>
+<tr>
+<td></td>
+<td>单元素选择</td>
+<td><code>querySelector</code></td>
+<td>返回首个匹配元素</td>
+</tr>
+<tr>
+<td></td>
+<td>多元素选择（静态）</td>
+<td><code>querySelectorAll</code></td>
+<td>返回 <code>NodeList</code>（不可自动更新，可用 <code>[...nodelist]</code> 转数组）</td>
+</tr>
+<tr>
+<td></td>
+<td>多元素选择（动态）</td>
+<td><code>getElementsByTagName</code> / <code>getElementsByClassName</code></td>
+<td>返回动态更新的集合（HTMLCollection）</td>
+</tr>
+<tr>
+<td></td>
+<td>按 ID</td>
+<td><code>getElementById</code></td>
+<td>返回单个匹配元素</td>
+</tr>
+<tr>
+<td><strong>创建与插入元素</strong></td>
+<td>HTML 插入</td>
+<td><code>insertAdjacentHTML(position, text)</code></td>
+<td>精确控制插入位置，性能好，不清除原有内容</td>
+</tr>
+<tr>
+<td></td>
+<td>节点插入（外部）</td>
+<td><code>before</code> / <code>after</code></td>
+<td>在 DOM 节点前后插入</td>
+</tr>
+<tr>
+<td></td>
+<td>节点插入（内部）</td>
+<td><code>prepend</code> / <code>append</code></td>
+<td>分别插入到第一个子节点或最后一个子节点</td>
+</tr>
+<tr>
+<td></td>
+<td>克隆节点</td>
+<td><code>cloneNode(true)</code></td>
+<td>复制 DOM 节点（<code>true</code> 深拷贝）</td>
+</tr>
+<tr>
+<td><strong>删除元素</strong></td>
+<td>现代方法</td>
+<td><code>element.remove()</code></td>
+<td>直接删除当前节点</td>
+</tr>
+<tr>
+<td></td>
+<td>旧方法</td>
+<td><code>parentElement.removeChild(child)</code></td>
+<td>旧浏览器兼容写法</td>
+</tr>
+<tr>
+<td><strong>常用属性与方法</strong></td>
+<td>样式类</td>
+<td><code>classList.add()</code> / <code>classList.remove()</code></td>
+<td>添加或移除 CSS 类</td>
+</tr>
+<tr>
+<td></td>
+<td>文本内容</td>
+<td><code>textContent</code></td>
+<td>只操作纯文本</td>
+</tr>
+<tr>
+<td></td>
+<td>HTML 内容</td>
+<td><code>innerHTML</code></td>
+<td>获取或设置 HTML + 内容</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="1-dom-元素选择"><a href="#1-dom-元素选择" class="anchor-link">#</a> 1. DOM 元素选择</h2>
+<p>JavaScript 提供了多种方法来获取页面上的元素，我们可以按精度和用途来分类。</p>
+<h3 id="1-1-获取整个文档"><a href="#1-1-获取整个文档" class="anchor-link">#</a> 1.1 获取整个文档</h3>
+<ul>
+<li><code>document.documentElement</code>：返回 <code>&lt;html&gt;</code> 元素。</li>
+<li><code>document.head</code>：返回 <code>&lt;head&gt;</code> 元素。</li>
+<li><code>document.body</code>：返回 <code>&lt;body&gt;</code> 元素。</li>
+</ul>
+<h3 id="1-2-按选择器获取"><a href="#1-2-按选择器获取" class="anchor-link">#</a> 1.2 按选择器获取</h3>
+<ul>
+<li>
+<p><strong>单元素</strong>：<code>document.querySelector(selector)</code> 返回首个匹配元素。</p>
+</li>
+<li>
+<p><strong>多元素（静态集合）</strong>：<code>document.querySelectorAll(selector)</code> 返回 <code>NodeList</code>，不可自动更新，可用展开运算符转为数组：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20list%20%3D%20%5B...%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelectorAll%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bp%26%23x27%3B%3C%2Fspan%3E)%5D%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> list = [...<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">'p'</span>)];
+</code></pre>
+      </div>
+    
+</li>
+</ul>
+<h3 id="1-3-按标签或类名获取"><a href="#1-3-按标签或类名获取" class="anchor-link">#</a> 1.3 按标签或类名获取</h3>
+<ul>
+<li>
+<p><code>document.getElementsByTagName(tag)</code>：返回 <strong>动态</strong> 更新的 HTMLCollection。</p>
+<blockquote>
+<p>HTML由 tag + content 组成</p>
+</blockquote>
+</li>
+<li>
+<p><code>document.getElementsByClassName(className)</code>：同样返回动态集合。</p>
+</li>
+</ul>
+<h3 id="1-4-按-id-获取"><a href="#1-4-按-id-获取" class="anchor-link">#</a> 1.4 按 ID 获取</h3>
+<ul>
+<li><code>document.getElementById(id)</code>：返回单个元素（或 <code>null</code>）。</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong></p>
+<ul>
+<li><code>querySelectorAll</code> 返回的结果不会自动反映 DOM 变化，而 <code>getElementsByTagName</code> 等方法返回的 HTMLCollection 是实时更新的。</li>
+<li>动态集合性能稍差，但无需手动重新查询。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="2-创建与插入元素"><a href="#2-创建与插入元素" class="anchor-link">#</a> 2. 创建与插入元素</h2>
+<h3 id="2-1-使用-insertadjacenthtml"><a href="#2-1-使用-insertadjacenthtml" class="anchor-link">#</a> 2.1 使用 <code>insertAdjacentHTML</code></h3>
+<p>语法：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertAdjacentHTML%3C%2Fspan%3E(position%2C%20text)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-title function_">insertAdjacentHTML</span>(position, text);
+</code></pre>
+      </div>
+    
+<p><code>position</code> 可选值：</p>
+<ul>
+<li><code>"beforebegin"</code>：元素自身前面</li>
+<li><code>"afterbegin"</code>：元素内部最前面</li>
+<li><code>"beforeend"</code>：元素内部最后面</li>
+<li><code>"afterend"</code>：元素自身后面</li>
+</ul>
+<p>示例：</p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bcontainer%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%E5%B7%B2%E6%9C%89%E6%AE%B5%E8%90%BD%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>已有段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+      </div>
+    
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20container%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bcontainer%26quot%3B%3C%2Fspan%3E)%3B%0Acontainer.%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertAdjacentHTML%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bbeforeend%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%3Cp%3E%E6%96%B0%E6%AE%B5%E8%90%BD%3C%2Fp%3E%26quot%3B%3C%2Fspan%3E)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> container = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"container"</span>);
+container.<span class="hljs-title function_">insertAdjacentHTML</span>(<span class="hljs-string">"beforeend"</span>, <span class="hljs-string">"&lt;p&gt;新段落&lt;/p&gt;"</span>);
+</code></pre>
+      </div>
+    
+<p>结果：</p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bcontainer%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%E5%B7%B2%E6%9C%89%E6%AE%B5%E8%90%BD%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%E6%96%B0%E6%AE%B5%E8%90%BD%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>已有段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>新段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<p><strong>优点</strong>：</p>
+<ul>
+<li>不会清空原内容（相比 <code>innerHTML +=</code> 更安全）</li>
+<li>性能好，不重新解析整个 DOM</li>
+<li>精确控制位置</li>
+</ul>
+<hr>
+<h3 id="2-2-在-dom-外部插入"><a href="#2-2-在-dom-外部插入" class="anchor-link">#</a> 2.2 在 DOM 外部插入</h3>
+<ul>
+<li><code>element.before(newNode)</code></li>
+<li><code>element.after(newNode)</code></li>
+</ul>
+<h3 id="2-3-在-dom-内部插入"><a href="#2-3-在-dom-内部插入" class="anchor-link">#</a> 2.3 在 DOM 内部插入</h3>
+<ul>
+<li><code>element.prepend(newNode)</code>：插入到第一个子节点前</li>
+<li><code>element.append(newNode)</code>：插入到最后一个子节点后</li>
+</ul>
+<hr>
+<h3 id="2-4-克隆节点"><a href="#2-4-克隆节点" class="anchor-link">#</a> 2.4 克隆节点</h3>
+<p>由于一个 DOM 节点只能存在于一个位置，如果需要在多个位置插入相同内容，需要先克隆：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20clone%20%3D%20element.%3Cspan%20class%3D%22hljs-title%20function_%22%3EcloneNode%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20true%20%E8%A1%A8%E7%A4%BA%E6%B7%B1%E6%8B%B7%E8%B4%9D%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> clone = element.<span class="hljs-title function_">cloneNode</span>(<span class="hljs-literal">true</span>); <span class="hljs-comment">// true 表示深拷贝</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="3-删除元素"><a href="#3-删除元素" class="anchor-link">#</a> 3. 删除元素</h2>
+<h3 id="3-1-现代方法"><a href="#3-1-现代方法" class="anchor-link">#</a> 3.1 现代方法</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eremove%3C%2Fspan%3E()%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-title function_">remove</span>();
+</code></pre>
+      </div>
+    
+<h3 id="3-2-旧方法"><a href="#3-2-旧方法" class="anchor-link">#</a> 3.2 旧方法</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-property%22%3EparentElement%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EremoveChild%3C%2Fspan%3E(element)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-property">parentElement</span>.<span class="hljs-title function_">removeChild</span>(element);
+</code></pre>
+      </div>
+    
+<p><strong>原因</strong>：旧浏览器不支持 <code>.remove()</code> 方法，因此需要==通过父节点手动移除子节点==。</p>
+<hr>
+<h2 id="4-常用属性与方法"><a href="#4-常用属性与方法" class="anchor-link">#</a> 4. 常用属性与方法</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>子模块</th>
+<th>关键方法 / 属性</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>样式操作</strong></td>
+<td>内联样式</td>
+<td><code>element.style.color``element.style.backgroundColor</code></td>
+<td>修改元素内联样式</td>
+</tr>
+<tr>
+<td></td>
+<td>计算样式</td>
+<td><code>getComputedStyle(element)</code></td>
+<td>获取最终渲染后的样式值</td>
+</tr>
+<tr>
+<td><strong>属性操作</strong></td>
+<td>属性增删查</td>
+<td><code>setAttribute</code> / <code>getAttribute</code> / <code>removeAttribute</code></td>
+<td>设置、获取或删除 HTML 属性</td>
+</tr>
+<tr>
+<td><strong>类操作</strong></td>
+<td>classList</td>
+<td><code>add</code> / <code>remove</code> / <code>toggle</code> / <code>contains</code></td>
+<td>添加、删除、切换或判断类名</td>
+</tr>
+<tr>
+<td><strong>文本与 HTML</strong></td>
+<td>文本</td>
+<td><code>textContent</code></td>
+<td>设置或获取纯文本内容</td>
+</tr>
+<tr>
+<td></td>
+<td>HTML</td>
+<td><code>innerHTML</code> / <code>outerHTML</code></td>
+<td>设置或获取 HTML 内容，替换整个元素</td>
+</tr>
+<tr>
+<td><strong>节点操作</strong></td>
+<td>节点增删</td>
+<td><code>appendChild</code> / <code>insertBefore</code> / <code>removeChild</code></td>
+<td>插入或删除子节点</td>
+</tr>
+<tr>
+<td></td>
+<td>克隆节点</td>
+<td><code>cloneNode(true/false)</code></td>
+<td>复制节点，深拷贝或浅拷贝</td>
+</tr>
+<tr>
+<td></td>
+<td>包含关系</td>
+<td><code>contains</code></td>
+<td>判断节点是否包含另一个节点</td>
+</tr>
+<tr>
+<td><strong>节点关系</strong></td>
+<td>查找父子兄弟</td>
+<td><code>parentElement</code> / <code>children</code> / <code>firstElementChild</code> / <code>lastElementChild</code> / <code>nextElementSibling</code> / <code>previousElementSibling</code></td>
+<td>获取父节点、子节点或兄弟节点</td>
+</tr>
+<tr>
+<td><strong>事件操作</strong></td>
+<td>添加/移除事件</td>
+<td><code>addEventListener</code> / <code>removeEventListener</code></td>
+<td>给元素绑定或移除事件</td>
+</tr>
+<tr>
+<td><strong>自定义数据</strong></td>
+<td>data-*</td>
+<td><code>dataset</code></td>
+<td>通过 <code>data-*</code> 属性存储自定义数据</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-1-样式操作"><a href="#4-1-样式操作" class="anchor-link">#</a> 4.1 样式操作</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-property%22%3Estyle%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Ecolor%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bred%26quot%3B%3C%2Fspan%3E%3B%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3Estyle%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3EbackgroundColor%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%23eee%26quot%3B%3C%2Fspan%3E%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-property">style</span>.<span class="hljs-property">color</span> = <span class="hljs-string">"red"</span>;       <span class="hljs-comment">// 内联样式设置</span>
+element.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundColor</span> = <span class="hljs-string">"#eee"</span>;
+</code></pre>
+      </div>
+    
+<blockquote>
+<p>⚠️ 注意：CSS 属性用驼峰命名，如 <code>background-color</code> → <code>backgroundColor</code></p>
+</blockquote>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetComputedStyle%3C%2Fspan%3E(element).%3Cspan%20class%3D%22hljs-property%22%3Ecolor%3C%2Fspan%3E%3B%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%8E%B7%E5%8F%96%E6%9C%80%E7%BB%88%E8%AE%A1%E7%AE%97%E5%90%8E%E7%9A%84%E6%A0%B7%E5%BC%8F%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F**%0A*%20.style.color%20%E5%8F%AA%E8%83%BD%E8%8E%B7%E5%8F%96%20%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F%20%E6%88%96%E7%9B%B4%E6%8E%A5%E8%B5%8B%E5%80%BC%E7%9A%84%E6%A0%B7%E5%BC%8F%0A*%20%0A*%20getComputedStyle(element).color%20%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%20%E5%85%83%E7%B4%A0%E6%9C%80%E7%BB%88%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E5%AE%9E%E9%99%85%E6%98%BE%E7%A4%BA%E7%9A%84%E6%A0%B7%E5%BC%8F%E5%80%BC%EF%BC%8C%E9%9D%9E%E5%B8%B8%E9%80%82%E5%90%88%E8%B0%83%E8%AF%95%E6%88%96%20JS%20*%20%E5%8A%A8%E6%80%81%E8%AE%A1%E7%AE%97%E6%A0%B7%E5%BC%8F%E6%97%B6%E4%BD%BF%E7%94%A8%0A*%2F%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title function_">getComputedStyle</span>(element).<span class="hljs-property">color</span>;   <span class="hljs-comment">// 获取最终计算后的样式</span>
+<span class="hljs-comment">/**
+* .style.color 只能获取 内联样式 或直接赋值的样式
+* 
+* getComputedStyle(element).color 可以获取 元素最终在页面上实际显示的样式值，非常适合调试或 JS * 动态计算样式时使用
+*/</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="4-2-属性操作"><a href="#4-2-属性操作" class="anchor-link">#</a> 4.2 属性操作</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetAttribute%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bid%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BmyId%26quot%3B%3C%2Fspan%3E)%3B%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetAttribute%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bid%26quot%3B%3C%2Fspan%3E)%3B%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7%E5%80%BC%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-title%20function_%22%3EremoveAttribute%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bid%26quot%3B%3C%2Fspan%3E)%3B%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%A0%E9%99%A4%E5%B1%9E%E6%80%A7%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">"id"</span>, <span class="hljs-string">"myId"</span>);   <span class="hljs-comment">// 设置属性</span>
+element.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">"id"</span>);           <span class="hljs-comment">// 获取属性值</span>
+element.<span class="hljs-title function_">removeAttribute</span>(<span class="hljs-string">"id"</span>);        <span class="hljs-comment">// 删除属性</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="4-3-添加-删除类名"><a href="#4-3-添加-删除类名" class="anchor-link">#</a> 4.3 <strong>添加 / 删除类名</strong></h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eadd%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bactive%26quot%3B%3C%2Fspan%3E)%3B%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eremove%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhidden%26quot%3B%3C%2Fspan%3E)%3B%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Etoggle%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bopen%26quot%3B%3C%2Fspan%3E)%3B%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%87%E6%8D%A2%E7%B1%BB%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3EclassList%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Econtains%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bactive%26quot%3B%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E7%B1%BB%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">"active"</span>);
+element.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">"hidden"</span>);
+element.<span class="hljs-property">classList</span>.<span class="hljs-title function_">toggle</span>(<span class="hljs-string">"open"</span>);     <span class="hljs-comment">// 切换类</span>
+element.<span class="hljs-property">classList</span>.<span class="hljs-title function_">contains</span>(<span class="hljs-string">"active"</span>); <span class="hljs-comment">// 判断是否存在类</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="4-4-文本与-html"><a href="#4-4-文本与-html" class="anchor-link">#</a> 4.4 文本与 HTML</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-property%22%3EtextContent%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E7%BA%AF%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%26quot%3B%3C%2Fspan%3E%3B%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%8F%AA%E6%93%8D%E4%BD%9C%E6%96%87%E6%9C%AC%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3EinnerHTML%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%3Cstrong%3E%E5%B8%A6%E6%A0%87%E7%AD%BE%E5%86%85%E5%AE%B9%3C%2Fstrong%3E%26quot%3B%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%93%8D%E4%BD%9C%20HTML%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3EouterHTML%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%3Cdiv%3E%E6%9B%BF%E6%8D%A2%E6%95%B4%E4%B8%AA%E5%85%83%E7%B4%A0%3C%2Fdiv%3E%26quot%3B%3C%2Fspan%3E%3B%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%9B%BF%E6%8D%A2%E8%87%AA%E8%BA%AB%E5%8F%8A%E5%86%85%E5%AE%B9%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-property">textContent</span> = <span class="hljs-string">"纯文本内容"</span>;       <span class="hljs-comment">// 只操作文本</span>
+element.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">"&lt;strong&gt;带标签内容&lt;/strong&gt;"</span>; <span class="hljs-comment">// 操作 HTML</span>
+element.<span class="hljs-property">outerHTML</span> = <span class="hljs-string">"&lt;div&gt;替换整个元素&lt;/div&gt;"</span>;     <span class="hljs-comment">// 替换自身及内容</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="4-5-节点操作"><a href="#4-5-节点操作" class="anchor-link">#</a> 4.5 节点操作</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-title%20function_%22%3EappendChild%3C%2Fspan%3E(newNode)%3B%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%8F%92%E5%85%A5%E5%AD%90%E8%8A%82%E7%82%B9%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-title%20function_%22%3EinsertBefore%3C%2Fspan%3E(newNode%2C%20refNode)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%9C%A8%E6%9F%90%E4%B8%AA%E8%8A%82%E7%82%B9%E5%89%8D%E6%8F%92%E5%85%A5%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-title%20function_%22%3EremoveChild%3C%2Fspan%3E(childNode)%3B%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%A7%BB%E9%99%A4%E5%AD%90%E8%8A%82%E7%82%B9%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-title%20function_%22%3EcloneNode%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%3B%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%8B%E9%9A%86%E8%8A%82%E7%82%B9%EF%BC%88%E6%B7%B1%E6%8B%B7%E8%B4%9D%EF%BC%89%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-title%20function_%22%3Econtains%3C%2Fspan%3E(otherNode)%3B%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%8C%85%E5%90%AB%E6%9F%90%E4%B8%AA%E8%8A%82%E7%82%B9%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-title function_">appendChild</span>(newNode);        <span class="hljs-comment">// 插入子节点</span>
+element.<span class="hljs-title function_">insertBefore</span>(newNode, refNode); <span class="hljs-comment">// 在某个节点前插入</span>
+element.<span class="hljs-title function_">removeChild</span>(childNode);      <span class="hljs-comment">// 移除子节点</span>
+element.<span class="hljs-title function_">cloneNode</span>(<span class="hljs-literal">true</span>);             <span class="hljs-comment">// 克隆节点（深拷贝）</span>
+element.<span class="hljs-title function_">contains</span>(otherNode);         <span class="hljs-comment">// 判断是否包含某个节点</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="4-6-查找节点关系"><a href="#4-6-查找节点关系" class="anchor-link">#</a> 4.6 查找节点关系</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-property%22%3EparentElement%3C%2Fspan%3E%3B%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%88%B6%E8%8A%82%E7%82%B9%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3Echildren%3C%2Fspan%3E%3B%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%AD%90%E5%85%83%E7%B4%A0%E9%9B%86%E5%90%88%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3EfirstElementChild%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E5%85%83%E7%B4%A0%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3ElastElementChild%3C%2Fspan%3E%3B%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%AD%90%E5%85%83%E7%B4%A0%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3EnextElementSibling%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%85%84%E5%BC%9F%E5%85%83%E7%B4%A0%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3EpreviousElementSibling%3C%2Fspan%3E%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%85%84%E5%BC%9F%E5%85%83%E7%B4%A0%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-property">parentElement</span>;    <span class="hljs-comment">// 父节点</span>
+element.<span class="hljs-property">children</span>;         <span class="hljs-comment">// 子元素集合</span>
+element.<span class="hljs-property">firstElementChild</span>; <span class="hljs-comment">// 第一个子元素</span>
+element.<span class="hljs-property">lastElementChild</span>;  <span class="hljs-comment">// 最后一个子元素</span>
+element.<span class="hljs-property">nextElementSibling</span>; <span class="hljs-comment">// 下一个兄弟元素</span>
+element.<span class="hljs-property">previousElementSibling</span>; <span class="hljs-comment">// 上一个兄弟元素</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="4-7-事件操作"><a href="#4-7-事件操作" class="anchor-link">#</a> 4.7 事件操作</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-title%20function_%22%3EaddEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bclick%26quot%3B%3C%2Fspan%3E%2C%20handleClick)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6%3C%2Fspan%3E%0Aelement.%3Cspan%20class%3D%22hljs-title%20function_%22%3EremoveEventListener%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bclick%26quot%3B%3C%2Fspan%3E%2C%20handleClick)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%A7%BB%E9%99%A4%E4%BA%8B%E4%BB%B6%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, handleClick); <span class="hljs-comment">// 添加事件</span>
+element.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">"click"</span>, handleClick); <span class="hljs-comment">// 移除事件</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="4-8-数据存储-自定义属性"><a href="#4-8-数据存储-自定义属性" class="anchor-link">#</a> 4.8 数据存储（自定义属性）</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%3Cbutton%20data-id%3D%26quot%3B1%26quot%3B%3E%3C%2Fbutton%3E%3C%2Fspan%3E%0A%0Aelement.%3Cspan%20class%3D%22hljs-property%22%3Edataset%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eid%3C%2Fspan%3E%20%3D%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B123%26quot%3B%3C%2Fspan%3E%3B%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%80%9A%E8%BF%87%20data-*%20%E5%B1%9E%E6%80%A7%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(element.%3Cspan%20class%3D%22hljs-property%22%3Edataset%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Eid%3C%2Fspan%3E)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// &lt;button data-id="1"&gt;&lt;/button&gt;</span>
+
+element.<span class="hljs-property">dataset</span>.<span class="hljs-property">id</span> = <span class="hljs-string">"123"</span>;  <span class="hljs-comment">// 通过 data-* 属性存储数据</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(element.<span class="hljs-property">dataset</span>.<span class="hljs-property">id</span>);
+</code></pre>
+      </div>
+    
+<hr>
+<p>💡 <strong>总结</strong>：
+这一套常用方法几乎覆盖了日常开发中对 DOM 的绝大多数操作，包括：</p>
+<ul>
+<li>样式修改</li>
+<li>属性增删改查</li>
+<li>节点的增删改查</li>
+<li>克隆节点</li>
+<li>文本和 HTML 操作</li>
+<li>事件绑定</li>
+<li>自定义数据存储</li>
+</ul>
+<hr>
+<p>如果你愿意，我可以帮你把这部分整合到你的博客 <strong>4. 常用属性与方法</strong> 小节里，配上 <strong>表格+示例</strong>，让整个 DOM 常用方法一目了然。</p>
+<p>你希望我直接帮你整理吗？</p>
+<h2 id="补充-克隆节点-让同一元素出现在多个位置"><a href="#补充-克隆节点-让同一元素出现在多个位置" class="anchor-link">#</a> ==补充：==克隆节点：让同一元素出现在多个位置</h2>
+<p>由于一个 DOM 节点在页面中只能存在于一个位置，如果你直接插入已存在的节点，它会 <strong>从原位置被移动</strong> 到新位置，而不是复制一份。
+如果需要在多个位置显示相同的内容，就必须先 <strong>克隆</strong> 节点。</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20clone%20%3D%20element.%3Cspan%20class%3D%22hljs-title%20function_%22%3EcloneNode%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20true%20%E8%A1%A8%E7%A4%BA%E6%B7%B1%E6%8B%B7%E8%B4%9D%EF%BC%88%E5%8C%85%E5%90%AB%E5%AD%90%E8%8A%82%E7%82%B9%E5%92%8C%E5%B1%9E%E6%80%A7%EF%BC%89%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> clone = element.<span class="hljs-title function_">cloneNode</span>(<span class="hljs-literal">true</span>); <span class="hljs-comment">// true 表示深拷贝（包含子节点和属性）</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h4 id="示例-同一个元素出现在多个位置"><a href="#示例-同一个元素出现在多个位置" class="anchor-link">#</a> 示例：同一个元素出现在多个位置</h4>
+<p>HTML：</p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blist1%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blist2%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bitem%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%E6%88%91%E6%98%AF%E8%A6%81%E8%A2%AB%E5%85%8B%E9%9A%86%E7%9A%84%E6%AE%B5%E8%90%BD%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"item"</span>&gt;</span>我是要被克隆的段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<p>JS：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20list1%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blist1%26quot%3B%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20list2%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blist2%26quot%3B%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20item%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bitem%26quot%3B%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%B0%86%E5%8E%9F%E8%8A%82%E7%82%B9%E6%8F%92%E5%85%A5%E5%88%B0%20list1%20%E4%B8%AD%3C%2Fspan%3E%0Alist1.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eappend%3C%2Fspan%3E(item)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%9C%A8list1%E5%86%85%E9%83%A8%EF%BC%8C%E6%9C%AB%E5%B0%BE%E6%8F%92%E5%85%A5%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%8B%E9%9A%86%E4%B8%80%E4%BB%BD%EF%BC%88%E6%B7%B1%E6%8B%B7%E8%B4%9D%EF%BC%89%EF%BC%8C%E6%8F%92%E5%85%A5%E5%88%B0%20list2%20%E4%B8%AD%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20clonedItem%20%3D%20item.%3Cspan%20class%3D%22hljs-title%20function_%22%3EcloneNode%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-literal%22%3Etrue%3C%2Fspan%3E)%3B%0Alist2.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eappend%3C%2Fspan%3E(clonedItem)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> list1 = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"list1"</span>);
+<span class="hljs-keyword">const</span> list2 = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"list2"</span>);
+<span class="hljs-keyword">const</span> item = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"item"</span>);
+
+<span class="hljs-comment">// 将原节点插入到 list1 中</span>
+list1.<span class="hljs-title function_">append</span>(item); <span class="hljs-comment">// 在list1内部，末尾插入</span>
+
+<span class="hljs-comment">// 克隆一份（深拷贝），插入到 list2 中</span>
+<span class="hljs-keyword">const</span> clonedItem = item.<span class="hljs-title function_">cloneNode</span>(<span class="hljs-literal">true</span>);
+list2.<span class="hljs-title function_">append</span>(clonedItem);
+</code></pre>
+      </div>
+    
+<p>结果（页面渲染）：</p>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blist1%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bitem%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%E6%88%91%E6%98%AF%E8%A6%81%E8%A2%AB%E5%85%8B%E9%9A%86%E7%9A%84%E6%AE%B5%E8%90%BD%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blist2%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bitem%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%E6%88%91%E6%98%AF%E8%A6%81%E8%A2%AB%E5%85%8B%E9%9A%86%E7%9A%84%E6%AE%B5%E8%90%BD%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"item"</span>&gt;</span>我是要被克隆的段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list2"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"item"</span>&gt;</span>我是要被克隆的段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<hr>
+<p>💡 <strong>注意</strong>：</p>
+<ul>
+<li>
+<p>如果 <code>cloneNode(false)</code>，只会复制元素本身，不会包含子节点。</p>
+<p>克隆的元素即使内容相同，也是新的 DOM 节点，事件绑定不会自动复制，需要手动重新绑定。</p>
+</li>
+</ul>
+<h2 id="补充-setattribute详解"><a href="#补充-setattribute详解" class="anchor-link">#</a> ==补充：==setAttribute详解</h2>
+<p><code>setAttribute</code> 是操作 DOM 元素属性的高频方法之一，用于 <strong>给元素设置或修改属性值</strong>。</p>
+<hr>
+<h3 id="1-基本语法"><a href="#1-基本语法" class="anchor-link">#</a> 1. 基本语法</h3>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="element.%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetAttribute%3C%2Fspan%3E(name%2C%20value)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">element.<span class="hljs-title function_">setAttribute</span>(name, value);
+</code></pre>
+      </div>
+    
+<ul>
+<li><code>element</code>：目标 DOM 元素</li>
+<li><code>name</code>：要设置的属性名（字符串）</li>
+<li><code>value</code>：属性值（字符串）</li>
+</ul>
+<blockquote>
+<p>返回值：<strong>无</strong>，只是修改或新增属性</p>
+</blockquote>
+<hr>
+<h3 id="2-功能作用"><a href="#2-功能作用" class="anchor-link">#</a> 2. 功能作用</h3>
+<ol>
+<li><strong>新增属性</strong>：元素原本没有这个属性时，会创建该属性。</li>
+<li><strong>修改属性</strong>：元素已有该属性时，会覆盖原有值。</li>
+<li><strong>兼容 HTML 特性</strong>：可用于设置 HTML 属性（如 <code>id</code>、<code>class</code>、<code>href</code>、<code>src</code> 等）以及自定义属性（如 <code>data-*</code>）。</li>
+</ol>
+<hr>
+<h3 id="3-示例"><a href="#3-示例" class="anchor-link">#</a> 3. 示例</h3>
+<h4 id="3-1-设置-id"><a href="#3-1-设置-id" class="anchor-link">#</a> 3.1 设置 ID</h4>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bdemo%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EHello%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"demo"</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+      </div>
+    
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20p%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bdemo%26quot%3B%3C%2Fspan%3E)%3B%0Ap.%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetAttribute%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bid%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3BnewId%26quot%3B%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(p.%3Cspan%20class%3D%22hljs-property%22%3Eid%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%BE%93%E5%87%BA%20%26quot%3BnewId%26quot%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> p = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"demo"</span>);
+p.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">"id"</span>, <span class="hljs-string">"newId"</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(p.<span class="hljs-property">id</span>); <span class="hljs-comment">// 输出 "newId"</span>
+</code></pre>
+      </div>
+    
+<h4 id="3-2-设置-class"><a href="#3-2-设置-class" class="anchor-link">#</a> 3.2 设置 class</h4>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="p.%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetAttribute%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bclass%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bactive%26quot%3B%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(p.%3Cspan%20class%3D%22hljs-property%22%3EclassName%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%BE%93%E5%87%BA%20%26quot%3Bactive%26quot%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js">p.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">"class"</span>, <span class="hljs-string">"active"</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(p.<span class="hljs-property">className</span>); <span class="hljs-comment">// 输出 "active"</span>
+</code></pre>
+      </div>
+    
+<h4 id="3-3-设置-href"><a href="#3-3-设置-href" class="anchor-link">#</a> 3.3 设置 href</h4>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ea%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blink%26quot%3B%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ehref%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%23%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EClick%20me%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ea%3C%2Fspan%3E%3E%3C%2Fspan%3E%0Aconst%20a%20%3D%20document.getElementById(%26quot%3Blink%26quot%3B)%3B%0Aa.setAttribute(%26quot%3Bhref%26quot%3B%2C%20%26quot%3Bhttps%3A%2F%2Fexample.com%26quot%3B)%3B%0Aconsole.log(a.href)%3B%20%2F%2F%20%E8%BE%93%E5%87%BA%E5%AE%8C%E6%95%B4%20URL%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"link"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+const a = document.getElementById("link");
+a.setAttribute("href", "https://example.com");
+console.log(a.href); // 输出完整 URL
+</code></pre>
+      </div>
+    
+<h4 id="3-4-设置自定义属性"><a href="#3-4-设置自定义属性" class="anchor-link">#</a> 3.4 设置自定义属性</h4>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bbox%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0Aconst%20box%20%3D%20document.getElementById(%26quot%3Bbox%26quot%3B)%3B%0Abox.setAttribute(%26quot%3Bdata-id%26quot%3B%2C%20%26quot%3B123%26quot%3B)%3B%0Aconsole.log(box.dataset.id)%3B%20%2F%2F%20%E8%BE%93%E5%87%BA%20%26quot%3B123%26quot%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"box"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+const box = document.getElementById("box");
+box.setAttribute("data-id", "123");
+console.log(box.dataset.id); // 输出 "123"
+</code></pre>
+      </div>
+    
+<hr>
+<h3 id="4-与其他方法的对比"><a href="#4-与其他方法的对比" class="anchor-link">#</a> 4. 与其他方法的对比</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+<th>区别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>setAttribute(name, value)</code></td>
+<td>设置任意属性</td>
+<td>支持 HTML 属性和自定义属性，直接操作 DOM 属性值不会自动同步到对象属性（如 <code>element.id</code>）时可能存在差异</td>
+</tr>
+<tr>
+<td><code>element.id = "xxx"</code></td>
+<td>设置 id 属性</td>
+<td>更直观，直接修改 DOM 对象的属性</td>
+</tr>
+<tr>
+<td><code>element.classList.add("class")</code></td>
+<td>添加类名</td>
+<td>专门针对 <code>class</code>，更安全（不会覆盖原有类）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>总结</strong>：
+<code>setAttribute</code> 更通用，适合设置任意 HTML 属性，包括自定义属性，但对于特定属性（如 <code>id</code>、<code>class</code>、<code>value</code>）直接操作 DOM 对象的属性通常更方便。</p>
+</blockquote>
+<hr>
+<h3 id="5-注意事项"><a href="#5-注意事项" class="anchor-link">#</a> 5. 注意事项</h3>
+<ol>
+<li><strong>属性名区分大小写</strong>：
+<ul>
+<li>HTML 属性通常不区分大小写（如 <code>id</code>、<code>class</code>）</li>
+<li>SVG 或 XML 属性大小写敏感，需要精确匹配</li>
+</ul>
+</li>
+<li><strong>与 DOM 对象属性不同</strong>：
+<ul>
+<li>设置 <code>element.setAttribute("value", "123")</code></li>
+<li>并不总是同步到 <code>element.value</code>（input 类型可能需要特别注意）</li>
+</ul>
+</li>
+<li><strong>布尔属性</strong>：
+<ul>
+<li>对于如 <code>checked</code>、<code>disabled</code> 的布尔属性，<code>setAttribute("checked", "checked")</code> 表示启用，移除属性表示禁用</li>
+</ul>
+</li>
+<li><strong>安全性</strong>：
+<ul>
+<li>避免直接插入用户输入的 HTML 到属性中（防止 XSS），尤其是 <code>href</code>、<code>src</code> 等</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="6-高级应用示例"><a href="#6-高级应用示例" class="anchor-link">#</a> 6. 高级应用示例</h3>
+<h4 id="6-1-批量设置属性"><a href="#6-1-批量设置属性" class="anchor-link">#</a> 6.1 批量设置属性</h4>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20img%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EcreateElement%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bimg%26quot%3B%3C%2Fspan%3E)%3B%0A%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20attrs%20%3D%20%7B%20%3Cspan%20class%3D%22hljs-attr%22%3Esrc%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bimage.png%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Ealt%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E5%9B%BE%E7%89%87%E6%8F%8F%E8%BF%B0%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-attr%22%3Etitle%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E6%8F%90%E7%A4%BA%26quot%3B%3C%2Fspan%3E%20%7D%3B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efor%3C%2Fspan%3E%20(%3Cspan%20class%3D%22hljs-keyword%22%3Elet%3C%2Fspan%3E%20key%20%3Cspan%20class%3D%22hljs-keyword%22%3Ein%3C%2Fspan%3E%20attrs)%20%7B%0A%20%20img.%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetAttribute%3C%2Fspan%3E(key%2C%20attrs%5Bkey%5D)%3B%0A%7D%0A%0A%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-property%22%3Ebody%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EappendChild%3C%2Fspan%3E(img)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> img = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">"img"</span>);
+<span class="hljs-keyword">const</span> attrs = { <span class="hljs-attr">src</span>: <span class="hljs-string">"image.png"</span>, <span class="hljs-attr">alt</span>: <span class="hljs-string">"图片描述"</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">"提示"</span> };
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> attrs) {
+  img.<span class="hljs-title function_">setAttribute</span>(key, attrs[key]);
+}
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(img);
+</code></pre>
+      </div>
+    
+<h4 id="6-2-动态切换属性"><a href="#6-2-动态切换属性" class="anchor-link">#</a> 6.2 动态切换属性</h4>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20btn%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelector%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bbutton%26quot%3B%3C%2Fspan%3E)%3B%0A%0A%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%87%E6%8D%A2%20disabled%20%E5%B1%9E%E6%80%A7%3C%2Fspan%3E%0Abtn.%3Cspan%20class%3D%22hljs-title%20function_%22%3EsetAttribute%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bdisabled%26quot%3B%3C%2Fspan%3E%2C%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Btrue%26quot%3B%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%A6%81%E7%94%A8%E6%8C%89%E9%92%AE%3C%2Fspan%3E%0Abtn.%3Cspan%20class%3D%22hljs-title%20function_%22%3EremoveAttribute%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bdisabled%26quot%3B%3C%2Fspan%3E)%3B%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%90%AF%E7%94%A8%E6%8C%89%E9%92%AE%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> btn = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"button"</span>);
+
+<span class="hljs-comment">// 切换 disabled 属性</span>
+btn.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">"disabled"</span>, <span class="hljs-string">"true"</span>); <span class="hljs-comment">// 禁用按钮</span>
+btn.<span class="hljs-title function_">removeAttribute</span>(<span class="hljs-string">"disabled"</span>);       <span class="hljs-comment">// 启用按钮</span>
+</code></pre>
+      </div>
+    
+<hr>
+<p>💡 <strong>总结</strong>：</p>
+<ul>
+<li><code>setAttribute</code> 是 DOM 属性操作中最通用、最基础的方法之一</li>
+<li>适合修改任何 HTML 或自定义属性</li>
+<li>对特定属性，直接修改 DOM 对象属性可能更高效</li>
+<li>结合 <code>removeAttribute</code> 可实现动态控制属性</li>
+</ul>
+<p>好的 ✅ 我帮你整理成一篇完整的博客文章，开头会用表格的形式呈现思维导图，接着对「DOM 节点向上、向下、同级获取」进行讲解，并加上例子说明。</p>
+<hr>
+<p>好的 👍 我帮你把你的大纲扩写成一篇完整的博客。会在开头用思维导图表格展示整体结构，然后详细展开 <strong>向上获取、向下获取、同级获取、组合使用</strong> 四个部分，并加上例子。</p>
+<hr>
+<h1 id="js-dom-节点获取-父节点-子节点与同级节点"><a href="#js-dom-节点获取-父节点-子节点与同级节点" class="anchor-link">#</a> JS DOM 节点获取：父节点、子节点与同级节点</h1>
+<h2 id="思维导图-表格版"><a href="#思维导图-表格版" class="anchor-link">#</a> 思维导图（表格版）</h2>
+<table>
+<thead>
+<tr>
+<th>一级主题</th>
+<th>二级主题</th>
+<th>说明 / 关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>向上获取</td>
+<td><code>parentNode</code> / <code>parentElement</code></td>
+<td>获取直接父节点</td>
+</tr>
+<tr>
+<td></td>
+<td>==closest(selector)==</td>
+<td>向上查找，直到找到符合选择器的祖先节点</td>
+</tr>
+<tr>
+<td>向下获取</td>
+<td><code>children</code> / <code>firstElementChild</code> / <code>lastElementChild</code></td>
+<td>直接子节点获取</td>
+</tr>
+<tr>
+<td></td>
+<td><code>querySelectorAll</code> 嵌套</td>
+<td>可以递归/嵌套查询任意深度的子节点</td>
+</tr>
+<tr>
+<td>同级获取</td>
+<td><code>nextElementSibling</code> / <code>previousElementSibling</code></td>
+<td>获取相邻的兄弟节点</td>
+</tr>
+<tr>
+<td>组合使用</td>
+<td>获取所有同级节点</td>
+<td>先获取父节点，再获取父节点的 <code>children</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="1-向上获取-父节点"><a href="#1-向上获取-父节点" class="anchor-link">#</a> 1. 向上获取：父节点</h2>
+<p>DOM 元素都在树形结构中，可以向上追溯它的父节点或祖先节点。</p>
+<h3 id="常用方法"><a href="#常用方法" class="anchor-link">#</a> 常用方法</h3>
+<ol>
+<li><strong><code>parentNode</code> / <code>parentElement</code></strong>
+<ul>
+<li><code>parentNode</code>：返回父节点（可能是文档节点、注释节点等）。</li>
+<li><code>parentElement</code>：只返回父元素，如果父节点不是元素，则返回 <code>null</code>。</li>
+</ul>
+</li>
+<li>==<strong><code>closest(selector)</code></strong>==
+<ul>
+<li>从当前节点开始，向上查找第一个匹配选择器的祖先元素。</li>
+<li>比如：查找离按钮最近的 <code>.container</code>。</li>
+</ul>
+</li>
+</ol>
+<h3 id="示例"><a href="#示例" class="anchor-link">#</a> 示例：</h3>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bcontainer%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bbox%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bbtn%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EClick%20me%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ebutton%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-javascript%22%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20btn%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bbtn%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(btn.%3Cspan%20class%3D%22hljs-property%22%3EparentElement%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%3Cdiv%20class%3D%26quot%3Bbox%26quot%3B%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(btn.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eclosest%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.container%26quot%3B%3C%2Fspan%3E))%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%3Cdiv%20class%3D%26quot%3Bcontainer%26quot%3B%3E%3C%2Fspan%3E%0A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"btn"</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">const</span> btn = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"btn"</span>);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(btn.<span class="hljs-property">parentElement</span>); <span class="hljs-comment">// &lt;div class="box"&gt;</span>
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(btn.<span class="hljs-title function_">closest</span>(<span class="hljs-string">".container"</span>)); <span class="hljs-comment">// &lt;div class="container"&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="2-向下获取-子节点"><a href="#2-向下获取-子节点" class="anchor-link">#</a> 2. 向下获取：子节点</h2>
+<p>向下获取主要是拿到一个元素的子节点，常见方法有：</p>
+<ol>
+<li><strong>直接子元素</strong>
+<ul>
+<li><code>children</code>：获取所有子元素（不含文本、注释）。</li>
+<li><code>firstElementChild</code>：第一个子元素。</li>
+<li><code>lastElementChild</code>：最后一个子元素。</li>
+</ul>
+</li>
+<li><strong>任意深度查询</strong>
+<ul>
+<li><code>querySelectorAll</code>：可以配合选择器查找任意层级的子元素。</li>
+</ul>
+</li>
+</ol>
+<h3 id="示例-2"><a href="#示例-2" class="anchor-link">#</a> 示例：</h3>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blist%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bfruit%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EApple%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bfruit%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EBanana%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eclass%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bfruit%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EOrange%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-javascript%22%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20list%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Blist%26quot%3B%3C%2Fspan%3E)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%9B%B4%E6%8E%A5%E5%AD%90%E8%8A%82%E7%82%B9%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(list.%3Cspan%20class%3D%22hljs-property%22%3Echildren%3C%2Fspan%3E)%3B%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%5Bli%2C%20li%2C%20li%5D%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(list.%3Cspan%20class%3D%22hljs-property%22%3EfirstElementChild%3C%2Fspan%3E)%3B%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%3Cli%3EApple%3C%2Fli%3E%3C%2Fspan%3E%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E4%BB%BB%E6%84%8F%E6%B7%B1%E5%BA%A6%E5%AD%90%E8%8A%82%E7%82%B9%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20fruits%20%3D%20list.%3Cspan%20class%3D%22hljs-title%20function_%22%3EquerySelectorAll%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.fruit%26quot%3B%3C%2Fspan%3E)%3B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(fruits)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20NodeList(3)%20%5Bli%2C%20li%2C%20li%5D%3C%2Fspan%3E%0A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fruit"</span>&gt;</span>Apple<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fruit"</span>&gt;</span>Banana<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fruit"</span>&gt;</span>Orange<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">const</span> list = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"list"</span>);
+
+  <span class="hljs-comment">// 直接子节点</span>
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(list.<span class="hljs-property">children</span>);            <span class="hljs-comment">// [li, li, li]</span>
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(list.<span class="hljs-property">firstElementChild</span>);   <span class="hljs-comment">// &lt;li&gt;Apple&lt;/li&gt;</span>
+
+  <span class="hljs-comment">// 任意深度子节点</span>
+  <span class="hljs-keyword">const</span> fruits = list.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">".fruit"</span>);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits); <span class="hljs-comment">// NodeList(3) [li, li, li]</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="3-同级获取-兄弟节点"><a href="#3-同级获取-兄弟节点" class="anchor-link">#</a> 3. 同级获取：兄弟节点</h2>
+<p>如果需要获取某个元素的前一个或后一个同级节点，可以用：</p>
+<ul>
+<li><code>nextElementSibling</code>：获取下一个兄弟元素。</li>
+<li><code>previousElementSibling</code>：获取上一个兄弟元素。</li>
+</ul>
+<h3 id="示例-3"><a href="#示例-3" class="anchor-link">#</a> 示例：</h3>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bfirst%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EApple%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bsecond%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EBanana%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bthird%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EOrange%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-javascript%22%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20second%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bsecond%26quot%3B%3C%2Fspan%3E)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(second.%3Cspan%20class%3D%22hljs-property%22%3EpreviousElementSibling%3C%2Fspan%3E)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%3Cli%3EApple%3C%2Fli%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(second.%3Cspan%20class%3D%22hljs-property%22%3EnextElementSibling%3C%2Fspan%3E)%3B%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%3Cli%3EOrange%3C%2Fli%3E%3C%2Fspan%3E%0A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"first"</span>&gt;</span>Apple<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"second"</span>&gt;</span>Banana<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"third"</span>&gt;</span>Orange<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">const</span> second = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"second"</span>);
+
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(second.<span class="hljs-property">previousElementSibling</span>); <span class="hljs-comment">// &lt;li&gt;Apple&lt;/li&gt;</span>
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(second.<span class="hljs-property">nextElementSibling</span>);     <span class="hljs-comment">// &lt;li&gt;Orange&lt;/li&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="4-组合使用-获取所有同级节点"><a href="#4-组合使用-获取所有同级节点" class="anchor-link">#</a> 4. 组合使用：获取所有同级节点</h2>
+<p>如果想获取某个元素的所有同级节点（包括它自己），需要：</p>
+<ol>
+<li>先找到它的父节点</li>
+<li>再通过父节点的 <code>children</code> 拿到所有子元素</li>
+</ol>
+<p>如果只要「除了自己以外的同级节点」，可以用 <code>Array.from</code> 过滤。</p>
+<h3 id="示例-4"><a href="#示例-4" class="anchor-link">#</a> 示例：</h3>
+
+      <div class="md-editor-code" data-language="html">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">html</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3EApple%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Eid%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bme%26quot%3B%3C%2Fspan%3E%3E%3C%2Fspan%3EBanana%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3EOrange%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eli%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Eul%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%3Cspan%20class%3D%22language-javascript%22%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20me%20%3D%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Edocument%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3EgetElementById%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bme%26quot%3B%3C%2Fspan%3E)%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%85%88%E8%8E%B7%E5%8F%96%E7%88%B6%E8%8A%82%E7%82%B9%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20parent%20%3D%20me.%3Cspan%20class%3D%22hljs-property%22%3EparentElement%3C%2Fspan%3E%3B%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%86%8D%E8%8E%B7%E5%8F%96%E7%88%B6%E8%8A%82%E7%82%B9%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%90%E8%8A%82%E7%82%B9%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20siblings%20%3D%20parent.%3Cspan%20class%3D%22hljs-property%22%3Echildren%3C%2Fspan%3E%3B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(siblings)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%5Bli%2C%20li%2C%20li%5D%3C%2Fspan%3E%0A%0A%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E8%BF%87%E6%BB%A4%E6%8E%89%E8%87%AA%E5%B7%B1%EF%BC%8C%E5%BE%97%E5%88%B0%E5%85%B6%E4%BB%96%E5%90%8C%E7%BA%A7%E8%8A%82%E7%82%B9%3C%2Fspan%3E%0A%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20others%20%3D%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EArray%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Efrom%3C%2Fspan%3E(siblings).%3Cspan%20class%3D%22hljs-title%20function_%22%3Efilter%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-params%22%3Eel%3C%2Fspan%3E%20%3D%3E%3C%2Fspan%3E%20el%20!%3D%3D%20me)%3B%0A%20%20%3Cspan%20class%3D%22hljs-variable%20language_%22%3Econsole%3C%2Fspan%3E.%3Cspan%20class%3D%22hljs-title%20function_%22%3Elog%3C%2Fspan%3E(others)%3B%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%5B%3Cli%3EApple%3C%2Fli%3E%2C%20%3Cli%3EOrange%3C%2Fli%3E%5D%3C%2Fspan%3E%0A%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Escript%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Apple<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"me"</span>&gt;</span>Banana<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Orange<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">const</span> me = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"me"</span>);
+
+  <span class="hljs-comment">// 先获取父节点</span>
+  <span class="hljs-keyword">const</span> parent = me.<span class="hljs-property">parentElement</span>;
+
+  <span class="hljs-comment">// 再获取父节点的所有子节点</span>
+  <span class="hljs-keyword">const</span> siblings = parent.<span class="hljs-property">children</span>;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(siblings); <span class="hljs-comment">// [li, li, li]</span>
+
+  <span class="hljs-comment">// 过滤掉自己，得到其他同级节点</span>
+  <span class="hljs-keyword">const</span> others = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(siblings).<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">el</span> =&gt;</span> el !== me);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(others); <span class="hljs-comment">// [&lt;li&gt;Apple&lt;/li&gt;, &lt;li&gt;Orange&lt;/li&gt;]</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<hr>
+<h2 id="总结"><a href="#总结" class="anchor-link">#</a> 总结</h2>
+<ul>
+<li><strong>向上获取</strong>：用 <code>parentNode</code>、<code>parentElement</code> 获取父节点，或用 <code>closest()</code> 向上查找符合条件的祖先节点。</li>
+<li><strong>向下获取</strong>：用 <code>children</code>、<code>firstElementChild</code>、<code>querySelectorAll</code> 获取子节点。</li>
+<li><strong>同级获取</strong>：用 <code>nextElementSibling</code>、<code>previousElementSibling</code> 获取兄弟节点。</li>
+<li><strong>组合使用</strong>：通过父节点的 <code>children</code> 获取所有同级节点，必要时过滤掉自己。</li>
+</ul>
+<p>这些方法灵活组合，可以满足大部分 DOM 节点查找的需求，例如：</p>
+<ul>
+<li>表格中高亮某行 → 通过同级节点控制样式</li>
+<li>菜单展开/收起 → 通过子节点查找对应元素
+<ul>
+<li>表单校验 → 通过 <code>closest()</code> 找到所属的表单容器</li>
+</ul>
+</li>
+</ul>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/03/20</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/03/20</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

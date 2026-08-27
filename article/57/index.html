@@ -1,0 +1,1078 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">next 框架学习</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 67 分钟 · 字数 13334</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><blockquote>
+<p>时间：2026/07/17/17:31</p>
+</blockquote>
+<h2 id="html-生成时机不同产生的不同渲染方式-csr-ssr-ssg-isr"><a href="#html-生成时机不同产生的不同渲染方式-csr-ssr-ssg-isr" class="anchor-link">#</a> html 生成时机不同产生的不同渲染方式：CSR、SSR、SSG、ISR</h2>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-code%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20HTML%20%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%9F%E6%88%90%EF%BC%9F%0A%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-code%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%0A%20%20%20%20%20%20%20%20%E2%94%8C%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%BC%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%90%0A%20%20%20%20%20%20%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%0A%20%20%20%20%20%20%20%20%E2%96%BC%20%20%20%20%20%20%20%20%20%20%20%20%E2%96%BC%20%20%20%20%20%20%20%20%20%20%20%20%E2%96%BC%0A%3C%2Fspan%3E%0A%20%E6%B5%8F%E8%A7%88%E5%99%A8%E7%94%9F%E6%88%90%20%20%20%20%20%20%E8%AF%B7%E6%B1%82%E6%97%B6%E7%94%9F%E6%88%90%20%20%20%20%20%20%E6%8F%90%E5%89%8D%E7%94%9F%E6%88%90%0A%0A%3Cspan%20class%3D%22hljs-code%22%3E%20%20%20%20CSR%20%20%20%20%20%20%20%20%20%20%20%20SSR%20%20%20%20%20%20%20%20%20%20%20%20SSG%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%96%BC%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E5%8F%AF%E4%BB%A5%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%94%82%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%E2%96%BC%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20ISR%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-code">               HTML 什么时候生成？
+</span>
+<span class="hljs-code">                     │
+        ┌────────────┼────────────┐
+        │            │            │
+        ▼            ▼            ▼
+</span>
+ 浏览器生成      请求时生成      提前生成
+
+<span class="hljs-code">    CSR            SSR            SSG
+                                     │
+                                     ▼
+                              可以重新生成
+                                     │
+                                     ▼
+                                    ISR
+</span></code></pre>
+      </div>
+    
+<ul>
+<li>CSR（Client Side Rendering，客户端渲染）：Vue、React 创建的普通 SPA 默认采用 CSR。服务器返回一个几乎为空的 HTML（通常只有一个 <code>root</code> 节点），浏览器下载并执行 JavaScript 后，React/Vue 才开始渲染页面，因此页面是在客户端生成的。</li>
+<li>SSR（Server Side Rendering，服务端渲染）：每次请求页面时，服务器都会重新执行渲染逻辑，生成最新的 HTML 返回给浏览器，因此能够保证数据实时，但每次请求都会产生渲染成本。</li>
+<li>SSG：静态站点生成，前端项目在构建时便生成了静态的html文件，该文件中包含了完整的数据，当网站部署后，服务器直接返回该html，渲染开销小，但可能存在过时问题，因为构建时的数据可能会随着时间过时，但一次构建，一直复用</li>
+<li>ISG（Incremental Static Regeneration）：ISR 是 SSG 的扩展。页面仍然可以复用预渲染结果，但 Next.js 可以按照时间或主动失效策略，在部署后重新生成对应页面或缓存内容，而不需要重新构建整个网站。</li>
+</ul>
+<p>以上四点并不是孤立的，在不同情况下可以选择不同的方式，trade-off</p>
+<h2 id="app-router"><a href="#app-router" class="anchor-link">#</a> app router</h2>
+<p>App Router 将应用组织成一棵 Route Tree。客户端导航时，Next.js 可以复用未变化的共享 Layout，只更新发生变化的路由分支。</p>
+<p><code>Users</code>页面：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attribute%22%3ERootLayout%3C%2Fspan%3E%0A%E2%94%82%0A%E2%94%9C%E2%94%80%E2%94%80%20DashboardLayout%0A%E2%94%82%20%20%20%20%20%20%E2%94%82%0A%E2%94%82%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20UsersPage%0A%E2%94%82%0A%E2%94%94%E2%94%80%E2%94%80%20LoginPage%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-attribute">RootLayout</span>
+│
+├── DashboardLayout
+│      │
+│      └── UsersPage
+│
+└── LoginPage
+</code></pre>
+      </div>
+    
+<p><code>Orders</code>页面：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="RootLayout%0A%E2%94%82%0A%E2%94%9C%E2%94%80%E2%94%80%20DashboardLayout%0A%E2%94%82%20%20%20%20%20%20%E2%94%82%0A%E2%94%82%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20%3Cspan%20class%3D%22hljs-keyword%22%3EOrdersPage%0A%3C%2Fspan%3E%E2%94%82%0A%E2%94%94%E2%94%80%E2%94%80%20LoginPage%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>RootLayout
+│
+├── DashboardLayout
+│      │
+│      └── <span class="hljs-keyword">OrdersPage
+</span>│
+└── LoginPage
+</code></pre>
+      </div>
+    
+<p>真正改变的只有 Page，其它组件没有改变，如：<code>RootLayout</code></p>
+<h2 id="路由-目录结构即是路由"><a href="#路由-目录结构即是路由" class="anchor-link">#</a> 路由：目录结构即是路由</h2>
+<p>在next中，路由无需特殊配置，项目的目录即是路由</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="app%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20layout.tsx%0A%E2%94%94%E2%94%80%E2%94%80%20dashboard%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20layout.tsx%0A%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20users%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20page.tsx%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>app<span class="hljs-symbol">/</span>
+├── layout.tsx
+└── dashboard<span class="hljs-symbol">/</span>
+    ├── layout.tsx
+    └── users<span class="hljs-symbol">/</span>
+        └── page.tsx
+</code></pre>
+      </div>
+    
+<p>访问url <code>/dashboard/users/</code> 便对应到</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="app%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20layout.tsx%0A%E2%94%94%E2%94%80%E2%94%80%20dashboard%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20layout.tsx%0A%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20users%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20%5Bpage.tsx%5D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>app<span class="hljs-symbol">/</span>
+├── layout.tsx
+└── dashboard<span class="hljs-symbol">/</span>
+    ├── layout.tsx
+    └── users<span class="hljs-symbol">/</span>
+        └── [page.tsx]
+</code></pre>
+      </div>
+    
+<p><code>page.tsx</code> 文件是路由节点的入口文件</p>
+<h2 id="layout-next自动组装嵌套layout"><a href="#layout-next自动组装嵌套layout" class="anchor-link">#</a> layout：next自动组装嵌套layout</h2>
+<p>与vue、react框架不同，next会自动组装layout</p>
+<p>vue和react需开发者手动编写嵌套的layout：</p>
+
+      <div class="md-editor-code" data-language="vue">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vue</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-section%22%3E%3CApp%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-section%22%3E%3CDashboard%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-section%22%3E%3CUsers%2F%3E%3C%2Fspan%3E%0A%20%20%20%20%3Cspan%20class%3D%22hljs-section%22%3E%3C%2FDashboard%3E%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-section%22%3E%3C%2FApp%3E%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vue"><span class="hljs-section">&lt;App&gt;</span>
+    <span class="hljs-section">&lt;Dashboard&gt;</span>
+        <span class="hljs-section">&lt;Users/&gt;</span>
+    <span class="hljs-section">&lt;/Dashboard&gt;</span>
+<span class="hljs-section">&lt;/App&gt;</span>
+</code></pre>
+      </div>
+    
+<p>这是通过开发者编写代码实现的layout，而next无需如此，在目录进行处理后，next会自动组装layout</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="app%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20layout.tsx%0A%E2%94%9C%E2%94%80%E2%94%80%20dashboard%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20layout.tsx%0A%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20users%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20page.tsx%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>app<span class="hljs-symbol">/</span>
+├── layout.tsx
+├── dashboard<span class="hljs-symbol">/</span>
+│   ├── layout.tsx
+│   └── users<span class="hljs-symbol">/</span>
+│       └── page.tsx
+</code></pre>
+      </div>
+    
+<p>访问：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-regexp%22%3E%2Fdashboard%2Fu%3C%2Fspan%3Esers%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-regexp">/dashboard/u</span>sers
+</code></pre>
+      </div>
+    
+<p>next会自动组装layout，得到</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attribute%22%3ERootLayout%3C%2Fspan%3E%0A%0A%E2%86%93%0A%0ADashboardLayout%0A%0A%E2%86%93%0A%0AUsersPage%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-attribute">RootLayout</span>
+
+↓
+
+DashboardLayout
+
+↓
+
+UsersPage
+</code></pre>
+      </div>
+    
+<p>next会根据目录进行递归和组装，得到url完整的layout：</p>
+<ul>
+<li>
+<p><strong>递归（Recursion）</strong>：对目录进行递归，层层找到url所关联的layout</p>
+</li>
+<li>
+<p><strong>组装（Compose）</strong>：将递归的所找到的layout文件全部组装起来</p>
+</li>
+</ul>
+<h2 id="root-layout和layout"><a href="#root-layout和layout" class="anchor-link">#</a> root layout和layout</h2>
+<p>由于app目录结构即是路由，若存在以下架构：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="app%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20layout.tsx%0A%E2%94%9C%E2%94%80%E2%94%80%20dashboard%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20layout.tsx%0A%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20users%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20page.tsx%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>app<span class="hljs-symbol">/</span>
+├── layout.tsx
+├── dashboard<span class="hljs-symbol">/</span>
+│   ├── layout.tsx
+│   └── users<span class="hljs-symbol">/</span>
+│       └── page.tsx
+</code></pre>
+      </div>
+    
+<p>可以发现有两个layout.tsx，在访问 dashboard/users 路由时，会将两个layout进行自动组装（无需手动配置，next自动完成）</p>
+<p>其中 Root Layout 有点特殊，必须返回html和body，因为：Next.js 在服务器端生成完整的 HTML Document，并返回给浏览器，但整个next项目中并没有类似于vue或者react需要创建一个index.html，而html需要两个标签组成：html和body标签，考虑到layout的特殊性，next会进行layout tree 构建，因此，html标签和body标签的任务便交给Root Layout了，在Root Layout中配置html标签和body标签</p>
+<p>Root Layout 实际上取代了传统 SPA 中的 <code>index.html</code> 和 <code>App.vue</code>，既负责生成完整的 HTML Document，又作为整个应用的根布局</p>
+<p>当然其它layout.tsx无需配置也不能配置html和body标签，因为，一个html文件只能有一个html标签和body标签</p>
+<h2 id="template"><a href="#template" class="anchor-link">#</a> Template</h2>
+<p>Template 的出现是因为：layout，在页面切换和跳转时，layout会保留状态和数据，例如：</p>
+<ul>
+<li>在root layout中定义了count</li>
+<li>在users页面将count增加到6</li>
+<li>切换为orders页面时，count的状态不会重置，而是保持为6</li>
+</ul>
+<p>但项目中并不是所有的切换都需要保留状态的，如：路由变化状态需重置，此时便需使用 template，template可以看做layout的特殊版：</p>
+<ul>
+<li>template 与 Layout 一样可以包裹子内容</li>
+<li>template 当路由变化时会触发卸载和挂载，而layout则保留状态</li>
+</ul>
+<p>next构建Route Tree时template所处位置？——layout的下一层级</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Layout%0A%E2%94%94%E2%94%80%E2%94%80%20Template%0A%3Cspan%20class%3D%22hljs-code%22%3E%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20Children%0A%3C%2Fspan%3E">复制代码</button>
+          </div>
+        </div>
+        <pre><code>Layout
+└── Template
+<span class="hljs-code">    └── Children
+</span></code></pre>
+      </div>
+    
+<h2 id="server-component-和-client-component"><a href="#server-component-和-client-component" class="anchor-link">#</a> Server Component 和 Client Component</h2>
+<p>Server Component 和 client Component 并不是对前端与后端的区分，而是对组件运行环境的区分</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Server%20Component%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%20%E2%9D%8C%0AClient%20Component%20%3Cspan%20class%3D%22hljs-operator%22%3E%3D%3C%2Fspan%3E%20%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81%20%E2%9D%8C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>Server Component <span class="hljs-operator">=</span> 后端代码 ❌
+Client Component <span class="hljs-operator">=</span> 前端代码 ❌
+</code></pre>
+      </div>
+    
+<p>这是错误的，Server Component 和 client Component 是对前端组件进行划分，由于大部分UI不需要浏览器能力，因此默认放服务器更合理，服务器直接返回渲染后的HTML（类似于SSR），而 client Component 则是需要浏览器运行环境的组件，如：点击、键盘与鼠标监听等事件是需要浏览器运行环境的，此时需指定 client Component</p>
+<p>next 框架默认组件是 server component，其设计理念是：</p>
+<blockquote>
+<p>大部分UI不需要浏览器能力，因此默认放服务器更合理</p>
+</blockquote>
+<p>与传统前端的区别是，对前端组件进行了细化，传统前端组件都由浏览器渲染和执行</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20vue%E6%88%96react%3C%2Fspan%3E%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EUserList%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%7B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20%5Busers%2CsetUsers%5D%20%3D%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EuseState%3C%2Fspan%3E(%5B%5D)%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EuseEffect%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-function%22%3E()%3D%3E%3C%2Fspan%3E%7B%0A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Efetch%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%2Fapi%2Fusers%26quot%3B%3C%2Fspan%3E)%0A%20%20%20%20%20%20%20%20%20%20%20%20.%3Cspan%20class%3D%22hljs-title%20function_%22%3Ethen%3C%2Fspan%3E(...)%0A%0A%20%20%20%20%7D%2C%5B%5D)%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20(%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20...%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%3C%2Fspan%3E%0A%20%20%20%20)%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// vue或react</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">UserList</span>(<span class="hljs-params"></span>){
+
+    <span class="hljs-keyword">const</span> [users,setUsers] = <span class="hljs-title function_">useState</span>([])
+
+    <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">()=&gt;</span>{
+
+        <span class="hljs-title function_">fetch</span>(<span class="hljs-string">"/api/users"</span>)
+            .<span class="hljs-title function_">then</span>(...)
+
+    },[])
+
+    <span class="hljs-keyword">return</span> (
+        <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            ...
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+}
+</code></pre>
+      </div>
+    
+<p>流程：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E6%B5%8F%E8%A7%88%E5%99%A8%0A%0A%E2%86%93%0A%0A%E4%B8%8B%E8%BD%BD%20JavaScript%20%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5B%E9%A2%9D%E5%A4%96%E7%9A%84%E5%BC%80%E9%94%80%5D%3C%2Fspan%3E%0A%0A%E2%86%93%0A%0A%E6%89%A7%E8%A1%8C%20React%0A%0A%E2%86%93%0A%0AuseEffect%0A%0A%E2%86%93%0A%0A%E8%AF%B7%E6%B1%82%20API%20%3Cspan%20class%3D%22hljs-selector-attr%22%3E%5B%E9%A2%9D%E5%A4%96%E7%9A%84%E5%BC%80%E9%94%80%5D%3C%2Fspan%3E%0A%0A%E2%86%93%0A%0A%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%0A%0A%E2%86%93%0A%0A%E9%87%8D%E6%96%B0%E6%B8%B2%E6%9F%93%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>浏览器
+
+↓
+
+下载 JavaScript <span class="hljs-selector-attr">[额外的开销]</span>
+
+↓
+
+执行 React
+
+↓
+
+useEffect
+
+↓
+
+请求 API <span class="hljs-selector-attr">[额外的开销]</span>
+
+↓
+
+获取数据
+
+↓
+
+重新渲染
+</code></pre>
+      </div>
+    
+<p>而next的server component则将无需浏览器环境的组件进行直接渲染，返回渲染后的组件html代码：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%B7%E6%B1%82%0A%0A%E2%86%93%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3ENext%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3EServer%3C%2Fspan%3E%0A%0A%E2%86%93%0A%0A%E6%89%A7%E8%A1%8C%20Users()%0A%0A%E2%86%93%0A%0A%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E5%BA%93%0A%0A%E2%86%93%0A%0A%E7%94%9F%E6%88%90%20React%20%3Cspan%20class%3D%22hljs-built_in%22%3EServer%3C%2Fspan%3E%20Payload%0A%0A%E2%86%93%0A%0A%E7%94%9F%E6%88%90%20HTML%0A%0A%E2%86%93%0A%0A%E8%BF%94%E5%9B%9E%E6%B5%8F%E8%A7%88%E5%99%A8%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>浏览器请求
+
+↓
+
+<span class="hljs-keyword">Next</span> <span class="hljs-built_in">Server</span>
+
+↓
+
+执行 Users()
+
+↓
+
+查询数据库
+
+↓
+
+生成 React <span class="hljs-built_in">Server</span> Payload
+
+↓
+
+生成 HTML
+
+↓
+
+返回浏览器
+</code></pre>
+      </div>
+    
+<p>与 vue或react框架的对比是：减少api调用开销，服务器直接查询数据并渲染，将渲染后的html返回给前端</p>
+<h2 id="client-component-依赖传递"><a href="#client-component-依赖传递" class="anchor-link">#</a> client component 依赖传递</h2>
+<p>在前端开发中，组件并不是独立的，在大多时候是嵌套使用的，此时若父组件为 client component，那么父组件所依赖的所有子组件都会是 client component，但server component并不会</p>
+<blockquote>
+<p>疑问：为什么client component的依赖会传递？</p>
+<p>解答：依赖问题，若父组件是client component，那么父组件必然在浏览器环境运行，但父组件所依赖的子组件呢？——也需满足在浏览器环境运行，否则会出问题，如：子组件只能在server运行（如：数据库查询），那么父组件所依赖的子组件无法在浏览器运行，子组件会在浏览器环境崩溃，进而导致父组件崩溃，因此client component的关系是层层递进的，父-&gt;子</p>
+</blockquote>
+<p>推荐方式： Server Component 负责数据获取和页面结构，Client Component 负责交互；即父组件为server component，子组件决定是否为client component</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Server%20Component%20%3Cspan%20class%3D%22hljs-punctuation%22%3E(%3C%2Fspan%3E%E7%88%B6%3Cspan%20class%3D%22hljs-punctuation%22%3E)%3C%2Fspan%3E%0A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%7C%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%7C%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%E2%86%93%0A%0AClient%20Component%20%EF%BC%88%E5%AD%90%EF%BC%89%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>Server Component <span class="hljs-punctuation">(</span>父<span class="hljs-punctuation">)</span>
+
+        <span class="hljs-string">|</span>
+        <span class="hljs-string">|</span>
+        ↓
+
+Client Component （子）
+</code></pre>
+      </div>
+    
+<p>困惑：没有理解这一节中的技巧，client component可以通过props接受server component</p>
+<h2 id="技巧-client-component-可通过props接受server-component"><a href="#技巧-client-component-可通过props接受server-component" class="anchor-link">#</a> 技巧：client component 可通过props接受server component</h2>
+<p>client component 与 server component的核心区别在于：</p>
+<ul>
+<li>Client Component 的 import 会形成依赖链，父-&gt;子，若父为client component，那么子也为client component</li>
+<li>Server Component 可以渲染 Client Component，即server component并不会形成依赖链，子组件可在两种类型中做选择</li>
+</ul>
+<p>由于 client component的依赖链，下方的例子是错误的：</p>
+
+      <div class="md-editor-code" data-language="react">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">react</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Buse%20client%26quot%3B%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20class_%22%3EServerComponent%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B.%2FServerComponent%26quot%3B%3C%2Fspan%3E%0A%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Edefault%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EClient%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%7B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20(%0A%0A%20%20%20%20%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3EServerComponent%3C%2Fspan%3E%2F%3E%3C%2Fspan%3E%3C%2Fspan%3E%20%E2%9D%8C%0A%0A)%0A%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-react"><span class="hljs-string">"use client"</span>
+
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">ServerComponent</span> <span class="hljs-keyword">from</span> <span class="hljs-string">"./ServerComponent"</span>
+
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Client</span>(<span class="hljs-params"></span>){
+
+<span class="hljs-keyword">return</span> (
+
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ServerComponent</span>/&gt;</span></span> ❌
+
+)
+
+}
+</code></pre>
+      </div>
+    
+<p>父组件为 client component，所导入的子组件仍需为 client component</p>
+<p>但，props可以避开client component的依赖链，类似于vue的插槽，插槽并不会在意传入的内容是client component还是server component</p>
+
+      <div class="md-editor-code" data-language="react">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">react</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20Client.tsx%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Buse%20client%26quot%3B%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Edefault%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EClient%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%7B%0A%20%20%20%20children%0A%7D%3C%2Fspan%3E)%7B%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20(%0A%20%20%20%20%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%7Bchildren%7D%0A%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%3C%2Fspan%3E%0A)%0A%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-react"><span class="hljs-comment">// Client.tsx</span>
+
+<span class="hljs-string">"use client"</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Client</span>(<span class="hljs-params">{
+    children
+}</span>){
+
+<span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        {children}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+)
+
+}
+</code></pre>
+      </div>
+    
+<p>述例子中通过 props 传递参数，<code>children</code> 可为server component / client component</p>
+<h2 id="hydration-水合"><a href="#hydration-水合" class="anchor-link">#</a> hydration 水合</h2>
+<blockquote>
+<p>服务器输出的 HTML 像干燥的植物，js运行后为它浇水，重获生命</p>
+</blockquote>
+<p>水合是什么？——以SSR进行说明，SSR用户每次访问网站时会返回服务端渲染完成后的HTML，此时浏览器直接处理渲染完成后的HTML，此时的html是静态的没有交互（js没有下载），并下载js，js下载完成后与html进行绑定，如：按钮的点击事件等，通过js的绑定，让页面具有交互能力，这个过程便是水合</p>
+<p>疑问：</p>
+<ol>
+<li>
+<p>next为什么需要水合？server component往往处理无需浏览器环境的组件，如详情页只需渲染，没有交互，此时无需水合；client component 组件next会将js发给用户浏览器，浏览器渲染client component的html代码，然后执行js，与传统vue或react相似，不存在接管html的情况，无需水合</p>
+<blockquote>
+<p>Server Component 不需要 Hydration，因为没有客户端逻辑；Client Component 在 Next.js 中通常先由服务器生成 HTML，再由浏览器 Hydration 接管，而不是简单重新生成 HTML。</p>
+</blockquote>
+</li>
+<li>
+<p>client component和server component都会渲染html？只是client会将对于的js发给用户浏览器？</p>
+<blockquote>
+<p>Client Component 发送 JS 是为了恢复交互能力，而 Server Component 不发送组件 JS，因此无法在浏览器继续运行。</p>
+</blockquote>
+</li>
+<li>
+<p>client component与server component的区别只有：是否发生js，渲染都是在server？</p>
+<blockquote>
+<p>区别包括运行环境、是否发送 JS、是否拥有浏览器能力、是否需要 Hydration。Client Component 可以参与服务器预渲染，但必须能够在浏览器执行。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="server-component-数据获取与缓存策略"><a href="#server-component-数据获取与缓存策略" class="anchor-link">#</a> Server Component 数据获取与缓存策略</h2>
+<blockquote>
+<p>Server Component 在服务器运行，可以直接获取数据并将结果渲染到 HTML。Next.js 通过 <code>fetch</code> 的缓存配置决定数据是否复用，以及页面采用静态生成、动态渲染还是增量更新策略</p>
+</blockquote>
+<p>对于服务端 next 可选择 SSR、SSG、ISR几种策略，而 server component 无需每次重新请求数据，可对 server component 的请求数据进行缓存，至于缓存策略如何，则由开发者决定</p>
+<p>示例：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E9%BB%98%E8%AE%A4%20Server%20Component%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Edefault%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EUsersPage%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%20%7B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20res%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Efetch%3C%2Fspan%3E(%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhttps%3A%2F%2Fapi.example.com%2Fusers%26quot%3B%3C%2Fspan%3E%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20)%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20users%20%3D%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20res.%3Cspan%20class%3D%22hljs-title%20function_%22%3Ejson%3C%2Fspan%3E()%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20(%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22language-xml%22%3E%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%7Busers.map(user%20%3D%3E%20(%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-attr%22%3Ekey%3C%2Fspan%3E%3D%3Cspan%20class%3D%22hljs-string%22%3E%7Buser.id%7D%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7Buser.name%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ep%3C%2Fspan%3E%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20))%7D%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-tag%22%3E%3C%2F%3Cspan%20class%3D%22hljs-name%22%3Ediv%3C%2Fspan%3E%3E%3C%2Fspan%3E%3C%2Fspan%3E%0A%20%20%20%20)%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-comment">// 默认 Server Component</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">UsersPage</span>(<span class="hljs-params"></span>) {
+
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(
+        <span class="hljs-string">"https://api.example.com/users"</span>,
+        {
+            <span class="hljs-comment">// 缓存策略</span>
+        }
+    )
+
+    <span class="hljs-keyword">const</span> users = <span class="hljs-keyword">await</span> res.<span class="hljs-title function_">json</span>()
+
+    <span class="hljs-keyword">return</span> (
+        <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            {users.map(user =&gt; (
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{user.id}</span>&gt;</span>
+                    {user.name}
+                <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            ))}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+}
+</code></pre>
+      </div>
+    
+<p>可在 fetch 请求中通过指定cache实现server component的不同方式：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20function_%22%3Efetch%3C%2Fspan%3E(url%2C%20%7B%0A%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Ecache%3C%2Fspan%3E%3A%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bno-store%26quot%3B%3C%2Fspan%3E%0A%7D)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title function_">fetch</span>(url, {
+    <span class="hljs-attr">cache</span>: <span class="hljs-string">"no-store"</span>
+})
+</code></pre>
+      </div>
+    
+<ul>
+<li>no-store：不缓存，类似于SSR</li>
+<li>revalidate: 设置缓存时间，类似于ISR，到时间后缓存失效，重新渲染</li>
+<li>force-cache：强制缓存，类似于SSG，缓存永远不失效</li>
+</ul>
+<h2 id="route-handler-与-server-action"><a href="#route-handler-与-server-action" class="anchor-link">#</a> Route Handler 与 Server Action</h2>
+<h3 id="route-handler"><a href="#route-handler" class="anchor-link">#</a> route handler</h3>
+<p>route handler：Next.js 中创建 HTTP API 的方式，与前后端分离时，两者通信一致，通过http请求获取数据</p>
+<p>api路径：</p>
+<ul>
+<li>文件路径便是api接口，如：文件路径 <code>app/api/users/route.ts</code> 所对应的接口便是 <code>/api/users</code></li>
+<li>routs.ts 是接口的入口文件</li>
+</ul>
+<h3 id="server-action"><a href="#server-action" class="anchor-link">#</a> server action</h3>
+<p>由于 next 是全栈框架，与前后端分离存在特殊之处，全栈框架中前端可直接调用后端的服务无需经过http请求，而 server action 便是为此存在，可直接内部调用，无需编写一层api</p>
+<p>next 组件分为两类: server component 与 client component</p>
+<ul>
+<li>Client Component 负责交互。客户端触发的数据修改可以通过 Server Action 或 Route Handler 调用服务器逻辑</li>
+<li>Server Component 负责页面数据获取和渲染；实际项目通常不建议将业务逻辑和数据库操作直接写在组件中，而是抽离到 Service/Lib 层，server component直接访问 service/lib 层</li>
+</ul>
+<h2 id="前后端接口划分"><a href="#前后端接口划分" class="anchor-link">#</a> 前后端接口划分</h2>
+<ul>
+<li>Server Component 负责“&lt;u&gt;读数据&lt;/u&gt;并生成页面”</li>
+<li>Server Action 负责“&lt;u&gt;用户操作&lt;/u&gt;触发服务器业务”，内部调用</li>
+<li>Route Handler 负责“向外提供 HTTP API”，第三方处理</li>
+</ul>
+<h2 id="server-action-2"><a href="#server-action-2" class="anchor-link">#</a> server action</h2>
+<p>通过server action，client component可绕过http api接口调用，直接调用后端逻辑，但需要声明action：</p>
+<ul>
+<li>server action需使用 “use serve” 标注</li>
+<li>建议 server action 不写业务逻辑，而是去调用后端的service</li>
+<li>本质是将http api调用转为server action，需额外进行server action的编写</li>
+</ul>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Buse%20server%26quot%3B%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%0A%20%20%20%20createUser%0A%7D%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%40%2Fservices%2Fuser%26quot%3B%3C%2Fspan%3E%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eregister%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%3C%2Fspan%3E)%7B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EcreateUser%3C%2Fspan%3E()%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E6%B2%A1%E6%9C%89%E7%BC%96%E5%86%99%E5%85%B7%E4%BD%93%E7%9A%84%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%EF%BC%8C%E8%80%8C%E6%98%AF%E5%8E%BB%E8%B0%83%E7%94%A8%E5%90%8E%E7%AB%AF%E7%9A%84services%EF%BC%8C%E5%B0%86http%20api%E8%AF%B7%E6%B1%82%E5%86%85%E5%8C%96%3C%2Fspan%3E%0A%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-string">"use server"</span>
+
+<span class="hljs-keyword">import</span> {
+    createUser
+}
+<span class="hljs-keyword">from</span> <span class="hljs-string">"@/services/user"</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">register</span>(<span class="hljs-params"></span>){
+
+    <span class="hljs-keyword">await</span> <span class="hljs-title function_">createUser</span>() <span class="hljs-comment">// 没有编写具体的业务逻辑，而是去调用后端的services，将http api请求内化</span>
+
+}
+</code></pre>
+      </div>
+    
+<h2 id="redirect-重定向"><a href="#redirect-重定向" class="anchor-link">#</a> redirect 重定向</h2>
+<p>在next中，没有vue或react的router，而是通过 redirect 实现跳转，如：登录成功跳转面板</p>
+<p><code>server action</code>：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Buse%20server%26quot%3B%3C%2Fspan%3E%0A%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eimport%3C%2Fspan%3E%20%7B%0A%20redirect%0A%7D%0A%3Cspan%20class%3D%22hljs-keyword%22%3Efrom%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bnext%2Fnavigation%26quot%3B%3C%2Fspan%3E%0A%0A%0A%3Cspan%20class%3D%22hljs-keyword%22%3Eexport%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Easync%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Efunction%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Elogin%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-params%22%3E%0A%20%20%20%20formData%3AFormData%0A%3C%2Fspan%3E)%7B%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20username%20%3D%0A%20%20%20%20%20%20%20%20formData.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eget%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Busername%26quot%3B%3C%2Fspan%3E)%0A%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20password%20%3D%0A%20%20%20%20%20%20%20%20formData.%3Cspan%20class%3D%22hljs-title%20function_%22%3Eget%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bpassword%26quot%3B%3C%2Fspan%3E)%0A%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Econst%3C%2Fspan%3E%20user%20%3D%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EverifyUser%3C%2Fspan%3E(%0A%20%20%20%20%20%20%20%20%20%20%20%20username%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20password%0A%20%20%20%20%20%20%20%20)%0A%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eif%3C%2Fspan%3E(!user)%7B%0A%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Ereturn%3C%2Fspan%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Eerror%3C%2Fspan%3E%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%7D%0A%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%2F%2F%20%E5%88%9B%E5%BB%BAsession%3C%2Fspan%3E%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-keyword%22%3Eawait%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-title%20function_%22%3EcreateSession%3C%2Fspan%3E(user)%0A%0A%0A%20%20%20%20%3Cspan%20class%3D%22hljs-title%20function_%22%3Eredirect%3C%2Fspan%3E(%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%2Fdashboard%26quot%3B%3C%2Fspan%3E%0A%20%20%20%20)%0A%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-string">"use server"</span>
+
+
+<span class="hljs-keyword">import</span> {
+ redirect
+}
+<span class="hljs-keyword">from</span> <span class="hljs-string">"next/navigation"</span>
+
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">login</span>(<span class="hljs-params">
+    formData:FormData
+</span>){
+
+    <span class="hljs-keyword">const</span> username =
+        formData.<span class="hljs-title function_">get</span>(<span class="hljs-string">"username"</span>)
+
+
+    <span class="hljs-keyword">const</span> password =
+        formData.<span class="hljs-title function_">get</span>(<span class="hljs-string">"password"</span>)
+
+
+    <span class="hljs-keyword">const</span> user =
+        <span class="hljs-keyword">await</span> <span class="hljs-title function_">verifyUser</span>(
+            username,
+            password
+        )
+
+
+    <span class="hljs-keyword">if</span>(!user){
+
+        <span class="hljs-keyword">return</span> {
+            <span class="hljs-attr">error</span>:
+            <span class="hljs-string">"账号密码错误"</span>
+        }
+
+    }
+
+
+    <span class="hljs-comment">// 创建session</span>
+
+    <span class="hljs-keyword">await</span> <span class="hljs-title function_">createSession</span>(user)
+
+
+    <span class="hljs-title function_">redirect</span>(
+        <span class="hljs-string">"/dashboard"</span>
+    )
+
+}
+</code></pre>
+      </div>
+    
+<h2 id="revalidatepath-与-revalidatetag-处理next缓存"><a href="#revalidatepath-与-revalidatetag-处理next缓存" class="anchor-link">#</a> revalidatePath 与 revalidateTag 处理next缓存</h2>
+<p>在 next 中，缓存的刷新需通过：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>revalidatePath</th>
+<th>revalidateTag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依据</td>
+<td>URL</td>
+<td>数据</td>
+</tr>
+<tr>
+<td>粒度</td>
+<td>页面</td>
+<td>数据</td>
+</tr>
+<tr>
+<td>适合</td>
+<td>简单页面刷新</td>
+<td>复杂数据共享</td>
+</tr>
+</tbody>
+</table>
+<p>revalidatePath 处理：url路径缓存，让url路径缓存失效</p>
+<p>revalidateTag 处理：接口数据</p>
+<p>获取数据：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20function_%22%3Efetch%3C%2Fspan%3E(%0A%20%20%20%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bhttps%3A%2F%2Fapi.com%2Fproducts%26quot%3B%3C%2Fspan%3E%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Enext%3C%2Fspan%3E%3A%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-attr%22%3Etags%3C%2Fspan%3E%3A%5B%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bproducts%26quot%3B%3C%2Fspan%3E%5D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title function_">fetch</span>(
+    <span class="hljs-string">"https://api.com/products"</span>,
+    {
+        <span class="hljs-attr">next</span>:{
+            <span class="hljs-attr">tags</span>:[<span class="hljs-string">"products"</span>]
+        }
+    }
+)
+</code></pre>
+      </div>
+    
+<p>更新：</p>
+
+      <div class="md-editor-code" data-language="js">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">js</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-title%20function_%22%3ErevalidateTag%3C%2Fspan%3E(%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bproducts%26quot%3B%3C%2Fspan%3E)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-js"><span class="hljs-title function_">revalidateTag</span>(<span class="hljs-string">"products"</span>)
+</code></pre>
+      </div>
+    
+<p>所有使用：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attribute%22%3Eproducts%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-attribute">products</span>
+</code></pre>
+      </div>
+    
+<p>数据缓存的位置，都会失效</p>
+<h2 id="middleware-关卡"><a href="#middleware-关卡" class="anchor-link">#</a> middleware 关卡</h2>
+<p>由于 next 并没有router，那么如何实现路由拦截呢？如：登录后才能访问系统，此时若点击链接直接访问系统的 /dashborad，如何拦截？</p>
+<ol>
+<li>为每个页面添加验证：是否登录，登录后才能访问</li>
+<li>middleware</li>
+</ol>
+<p>第一种方法无疑太过繁琐，无法统一管理；而 next 框架提供的 middleware 可以很好的实现拦截，可将 middleware 看做一道关卡，用户访问系统时需经过该关卡，但需注意：</p>
+<ol>
+<li>middleware 请求频率高：每一次请求都会经过该关卡，不适合数据库查询，100次请求查询100次数据库，耗时且慢</li>
+<li>middleware 适合快速判断，如：JWT是否有效，cookie是否存在等</li>
+</ol>
+<p>那么真正的权限校验应该如何处理？——后端，服务器 service 层处理</p>
+<h2 id="prisma-orm-数据库操作"><a href="#prisma-orm-数据库操作" class="anchor-link">#</a> Prisma  ORM 数据库操作</h2>
+<p>在 springboot 中，一般在 mapper 层处理数据库操作，ORM与之类似，Object Relational Mapping：</p>
+<ul>
+<li>object：对象</li>
+<li>Relational：关系，关系型数据库</li>
+<li>Mapping：映射</li>
+</ul>
+<p>通过 ORM 可直接将 js 数据直接映射到数据库中，不用直接编写 SQL 语句，而 prisma 便是 ORM 的一种</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3ENext%3C%2Fspan%3E.js%0A%0A%E2%86%93%0A%0APrisma%0A%0A%E2%86%93%0A%0ADataBase%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-keyword">Next</span>.js
+
+↓
+
+Prisma
+
+↓
+
+DataBase
+</code></pre>
+      </div>
+    
+<h2 id="next-项目架构推荐"><a href="#next-项目架构推荐" class="anchor-link">#</a> next 项目架构推荐</h2>
+<p>根目录 <code>app</code> + 公共代码 + 业务功能组织：由于 next 框架只识别 app 目录，其它目录不会受到影响</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="project%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20src%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20app%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E8%B7%AF%E7%94%B1%E3%80%81%E5%B8%83%E5%B1%80%E3%80%81%E9%A1%B5%E9%9D%A2%E7%BB%84%E8%A3%85%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20features%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E4%B8%9A%E5%8A%A1%E5%8A%9F%E8%83%BD%E5%88%92%E5%88%86%E5%AD%90%E7%9B%AE%E5%BD%95%EF%BC%8C%E8%AF%A5%E4%B8%9A%E5%8A%A1%E7%9A%84%E5%90%8E%E7%AB%AF%E5%9C%A8%E5%AF%B9%E5%BA%94%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%AE%9E%E7%8E%B0%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20shared%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-comment%22%3E%23%20%E8%B7%A8%E4%B8%9A%E5%8A%A1%E5%85%AC%E5%85%B1%E8%83%BD%E5%8A%9B%EF%BC%8C%E5%A6%82%EF%BC%9A%E5%85%AC%E5%85%B1%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20public%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%94%E2%94%80%E2%94%80%20package.json%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>project<span class="hljs-symbol">/</span>
+├── src<span class="hljs-symbol">/</span>
+│   ├── app<span class="hljs-symbol">/</span>          <span class="hljs-comment"># 路由、布局、页面组装</span>
+│   ├── features<span class="hljs-symbol">/</span>     <span class="hljs-comment"># 业务功能划分子目录，该业务的后端在对应子目录下实现</span>
+│   └── shared<span class="hljs-symbol">/</span>       <span class="hljs-comment"># 跨业务公共能力，如：公共后端代码</span>
+├── public<span class="hljs-symbol">/</span>
+└── package.json
+</code></pre>
+      </div>
+    
+<p>核心思想是：</p>
+<ul>
+<li><code>app</code> 只负责路由与页面组装</li>
+<li><code>features</code> 按业务领域组织代码</li>
+<li>公共组件、工具和基础设施放在业务目录之外</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td>Next.js 路由和入口</td>
+</tr>
+<tr>
+<td><code>features/posts/components</code></td>
+<td>文章业务的 UI</td>
+</tr>
+<tr>
+<td><code>features/posts/server</code></td>
+<td>文章业务的服务端逻辑</td>
+</tr>
+<tr>
+<td><code>shared/server</code></td>
+<td>数据库、认证、Redis 等公共基础设施</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="project%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20src%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20app%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20(public)%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20page.tsx%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20posts%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20page.tsx%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20(auth)%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20login%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20page.tsx%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20register%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20page.tsx%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20dashboard%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20layout.tsx%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20page.tsx%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20api%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20posts%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20route.ts%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20layout.tsx%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20loading.tsx%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20error.tsx%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20globals.css%0A%E2%94%82%20%20%20%E2%94%82%0A%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20features%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20auth%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20components%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20server%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20actions.ts%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20service.ts%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20repository.ts%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20schemas%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20types.ts%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%82%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20posts%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20components%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20server%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%20%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20actions.ts%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20queries.ts%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20repository.ts%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20schemas%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20types.ts%0A%E2%94%82%20%20%20%E2%94%82%0A%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20shared%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20ui%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20hooks%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20lib%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20server%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20db.ts%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20auth.ts%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20env.ts%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20types%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20constants%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%82%0A%E2%94%9C%E2%94%80%E2%94%80%20public%3Cspan%20class%3D%22hljs-symbol%22%3E%2F%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20package.json%0A%E2%94%9C%E2%94%80%E2%94%80%20tsconfig.json%0A%E2%94%94%E2%94%80%E2%94%80%20next.config.ts%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>project<span class="hljs-symbol">/</span>
+├── src<span class="hljs-symbol">/</span>
+│   ├── app<span class="hljs-symbol">/</span>
+│   │   ├── (public)<span class="hljs-symbol">/</span>
+│   │   │   ├── page.tsx
+│   │   │   └── posts<span class="hljs-symbol">/</span>
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── (auth)<span class="hljs-symbol">/</span>
+│   │   │   ├── login<span class="hljs-symbol">/</span>
+│   │   │   │   └── page.tsx
+│   │   │   └── register<span class="hljs-symbol">/</span>
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── dashboard<span class="hljs-symbol">/</span>
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── api<span class="hljs-symbol">/</span>
+│   │   │   └── posts<span class="hljs-symbol">/</span>
+│   │   │       └── route.ts
+│   │   │
+│   │   ├── layout.tsx
+│   │   ├── loading.tsx
+│   │   ├── error.tsx
+│   │   └── globals.css
+│   │
+│   ├── features<span class="hljs-symbol">/</span>
+│   │   ├── auth<span class="hljs-symbol">/</span>
+│   │   │   ├── components<span class="hljs-symbol">/</span>
+│   │   │   ├── server<span class="hljs-symbol">/</span>
+│   │   │   │   ├── actions.ts
+│   │   │   │   ├── service.ts
+│   │   │   │   └── repository.ts
+│   │   │   ├── schemas<span class="hljs-symbol">/</span>
+│   │   │   └── types.ts
+│   │   │
+│   │   └── posts<span class="hljs-symbol">/</span>
+│   │       ├── components<span class="hljs-symbol">/</span>
+│   │       ├── server<span class="hljs-symbol">/</span> 
+│   │       │   ├── actions.ts
+│   │       │   ├── queries.ts
+│   │       │   └── repository.ts
+│   │       ├── schemas<span class="hljs-symbol">/</span>
+│   │       └── types.ts
+│   │
+│   └── shared<span class="hljs-symbol">/</span>
+│       ├── ui<span class="hljs-symbol">/</span>
+│       ├── hooks<span class="hljs-symbol">/</span>
+│       ├── lib<span class="hljs-symbol">/</span>
+│       ├── server<span class="hljs-symbol">/</span>
+│       │   ├── db.ts
+│       │   ├── auth.ts
+│       │   └── env.ts
+│       ├── types<span class="hljs-symbol">/</span>
+│       └── constants<span class="hljs-symbol">/</span>
+│
+├── public<span class="hljs-symbol">/</span>
+├── package.json
+├── tsconfig.json
+└── next.config.ts
+</code></pre>
+      </div>
+    
+<h2 id="要点"><a href="#要点" class="anchor-link">#</a> 要点</h2>
+<ol>
+<li>app目录结构即是路由</li>
+<li>page.tsx是入口文件</li>
+<li>root layout需返回html和body</li>
+<li>layout：next会根据url自动递归查询并组装layout，如：/users 会自动组装root layout和users的layout</li>
+<li>template：next会与layout类似，next也会根据url自动递归查询并组装template，区别在于两点：template 会触发状态重置；template位于layout的下一层级</li>
+<li>server component 和 client component：不需要浏览器环境的UI使用server component，需要浏览器环境的使用client component; 并不是对前端代码或后端代码的划分</li>
+<li>client component会形成依赖关系，父组件为client component，那么父组件所依赖的子组件也会是client component；因此推荐的架构是：父组件 server component，子组件 client component</li>
+<li>通过 props 可绕开client component的依赖链</li>
+<li>server component 和 client component都是在server完成html渲染：<strong>Client Component</strong> 同样会在服务端执行一次渲染，&lt;u&gt;生成初始的 HTM&lt;/u&gt;L。这意味着客户端组件的内容在首屏就能可见，且有利于 SEO。随后，这些组件的 JS 代码会被下载、执行，完成 <strong>水合（Hydration）</strong>，使交互逻辑生效。</li>
+<li>next 数据缓存策略，通过配置fetch接口请求的缓存策略，实现动态渲染（SSR）、过时重新渲染（ISR）、长期缓存（SSG）</li>
+<li>前后端接口划分：server component用于查询数据并生成页面；server action则当用户操作触发服务器业务时使用；route handler则主要用于第三方服务</li>
+<li>redirect 实现跳转</li>
+<li>revalidatePath 与 revalidateTag 刷新缓存，path刷新路径缓存，tag刷新接口缓存</li>
+<li>middleware 关卡，拦截路由，判断是否有访问权限，如：未登录无法访问，并跳转到登录页面</li>
+</ol>
+<h2 id="辨析"><a href="#辨析" class="anchor-link">#</a> 辨析</h2>
+<ol>
+<li>next通过app router自动构建路由，但并不是每一个文件都会生成路由，只有page.tsx 等约定文件会形成可访问入口</li>
+</ol>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/08/08</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/08/08</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>

@@ -1,0 +1,1050 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-BBHRVuo9.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/es-i2shCBGp.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BgjmPHvO.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DRpaXpFq.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CeXmUTq7.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-BcEn1snJ.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-CwCzxOZA.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-DpyYwNXP.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-RJdf_hsr.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Remark42Comment-BR2Ag-nK.js"><link rel="stylesheet" href="/blog-backup/assets/Remark42Comment-BUuPj24e.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><!--[--><!--[--><!--[--><div class="nav flex nav__top" style=""><div class="nav__top--logo"><a href="/" class="nav__logo-link">Tilex Blog</a></div><!--[--><!--[--><!--[--><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-controls="article-read-drawer" aria-expanded="false" title="阅读导航" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></button><!--]--><!--]--><!--]--><button class="nav__menu-btn" type="button" aria-label="切换导航菜单" aria-controls="top-nav-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg></button><!----><div id="top-nav-menu" class="nav__links"><ul role="menubar" style="--el-menu-level:0;" class="el-menu el-menu--horizontal"><!--[--><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/" class="nav__link">首页</a><!--]--><!--[--><!--]--><!--]--></li><li class="el-menu-item" role="menuitem" tabindex="-1"><!--[--><!--[--><a href="/gallery" class="nav__link">画廊</a><!--]--><!--[--><!--]--><!--]--></li><!--]--><div class="nav__top--profile-links"><!--[--><a href="/archive" class="nav__profile-link">归档</a><a href="/links" class="nav__profile-link">友链</a><a href="/about" class="nav__profile-link">关于我</a><!--]--></div></ul></div><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><aside class="article-layout__sidebar"><!--[--><div class="article-list" data-v-edab7ac5=""><ul class="article-list__items"><!--[--><!--]--></ul><p class="article-list__empty"> 暂无文章 </p></div><!--]--></aside><section class="article-layout__content"><!--[--><article class="article-container" data-v-edab7ac5=""><div class="markdown-renderer" data-v-edab7ac5="" data-v-dd77d4ad=""><div class="markdown-header" data-v-dd77d4ad=""><h1 class="markdown-title" data-v-dd77d4ad="">WindTerm ssh 连接服务器流程记录</h1><div class="reading-info" data-v-dd77d4ad=""> 阅读时间约 33 分钟 · 字数 6468</div></div><div class="markdown-container" data-v-dd77d4ad=""><div class="markdown-content-wrapper" data-v-dd77d4ad=""><div class="markdown-content" data-v-dd77d4ad=""><p>WindTerm 是一个开源免费的SSH工具，若不使用XShell，可尝试该工具</p>
+<blockquote>
+<p>github地址：<a href="https://github.com/kingToolbox/WindTerm">https://github.com/kingToolbox/WindTerm</a></p>
+</blockquote>
+<p>流程：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5%E5%AF%B9%0A%E2%86%92%20%E7%A7%81%E9%92%A5%E7%95%99%E5%9C%A8%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%0A%E2%86%92%20%E5%8F%AA%E6%8A%8A%E5%85%AC%E9%92%A5%E5%86%99%E5%85%A5%20VPS%0A%E2%86%92%20WindTerm%20%E4%BD%BF%E7%94%A8%E7%A7%81%E9%92%A5%E7%99%BB%E5%BD%95%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>个人电脑生成密钥对
+→ 私钥留在个人电脑
+→ 只把公钥写入 VPS
+→ WindTerm 使用私钥登录
+</code></pre>
+      </div>
+    
+<h2 id="一-使用密码登录-vps"><a href="#一-使用密码登录-vps" class="anchor-link">#</a> 一、使用密码登录 VPS</h2>
+<p>打开 WindTerm，新建 SSH 会话：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%8D%8F%E8%AE%AE%EF%BC%9ASSH%0A%E4%B8%BB%E6%9C%BA%EF%BC%9AVPS%20%E5%85%AC%E7%BD%91%20%3Cspan%20class%3D%22hljs-built_in%22%3EIP%3C%2Fspan%3E%0A%E7%AB%AF%E5%8F%A3%EF%BC%9A%3Cspan%20class%3D%22hljs-number%22%3E22%3C%2Fspan%3E%0A%E7%94%A8%E6%88%B7%E5%90%8D%EF%BC%9A%E4%BD%A0%E7%9A%84%20VPS%20%E8%B4%A6%E5%8F%B7%EF%BC%8C%E4%BE%8B%E5%A6%82%20root%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>协议：SSH
+主机：VPS 公网 <span class="hljs-built_in">IP</span>
+端口：<span class="hljs-number">22</span>
+用户名：你的 VPS 账号，例如 root
+</code></pre>
+      </div>
+    
+<p>点击连接，首次连接时确认主机指纹，然后输入 VPS 密码</p>
+<p>成功后会看到类似：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="root%3Cspan%20class%3D%22hljs-variable%22%3E%40server%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-symbol%22%3E%3A~%3C%2Fspan%3E%3Cspan%20class%3D%22hljs-comment%22%3E%23%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>root<span class="hljs-variable">@server</span><span class="hljs-symbol">:~</span><span class="hljs-comment">#</span>
+</code></pre>
+      </div>
+    
+<p>先不要关闭这个会话，后面需要用它写入公钥</p>
+<h2 id="二-在个人电脑生成-ssh-密钥"><a href="#二-在个人电脑生成-ssh-密钥" class="anchor-link">#</a> 二、在个人电脑生成 SSH 密钥</h2>
+<p>在 Windows 中打开 PowerShell，执行：</p>
+
+      <div class="md-editor-code" data-language="powershell">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">powershell</span>
+            <button class="md-editor-copy-button" data-code="ssh%3Cspan%20class%3D%22hljs-literal%22%3E-keygen%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-literal%22%3E-t%3C%2Fspan%3E%20ed25519%20%3Cspan%20class%3D%22hljs-literal%22%3E-a%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-number%22%3E64%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-literal%22%3E-C%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3Bpersonal-vps%26quot%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-powershell">ssh<span class="hljs-literal">-keygen</span> <span class="hljs-literal">-t</span> ed25519 <span class="hljs-literal">-a</span> <span class="hljs-number">64</span> <span class="hljs-literal">-C</span> <span class="hljs-string">"personal-vps"</span>
+</code></pre>
+      </div>
+    
+<blockquote>
+<p>各参数含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ssh-keygen</code></td>
+<td>SSH 密钥生成工具。</td>
+</tr>
+<tr>
+<td><code>-t ed25519</code></td>
+<td>指定密钥算法为 <strong>Ed25519</strong>（推荐，速度快、安全性高、密钥更短）。</td>
+</tr>
+<tr>
+<td><code>-a 64</code></td>
+<td>KDF（密钥派生函数）迭代次数为 <strong>64</strong>，提高私钥口令的破解难度，增强安全性。</td>
+</tr>
+<tr>
+<td><code>-C "personal-vps"</code></td>
+<td>为公钥添加注释（Comment），方便识别该密钥用途，不影响认证。</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>执行后通常会依次询问：</p>
+<p>保存位置：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Enter%20%3Cspan%20class%3D%22hljs-built_in%22%3Efile%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Ein%3C%2Fspan%3E%20which%20%3Cspan%20class%3D%22hljs-built_in%22%3Eto%3C%2Fspan%3E%20save%20%3Cspan%20class%3D%22hljs-keyword%22%3Ethe%3C%2Fspan%3E%20key%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>Enter <span class="hljs-built_in">file</span> <span class="hljs-keyword">in</span> which <span class="hljs-built_in">to</span> save <span class="hljs-keyword">the</span> key
+</code></pre>
+      </div>
+    
+<p>使用默认路径，直接按 Enter：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-symbol%22%3EC%3A%3C%2Fspan%3E%5CUsers%5C%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%5C.ssh%5Cid_ed25519%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-symbol">C:</span>\Users\你的用户名\.ssh\id_ed25519
+</code></pre>
+      </div>
+    
+<blockquote>
+<p>若出现：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="C%3A%5CUsers%5C%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%5C.ssh%5Cid_ed25519%20already%20exists.%0A%3Cspan%20class%3D%22hljs-built_in%22%3EOverwrite%3C%2Fspan%3E%20(y%2Fn)%3F%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>C:\Users\你的用户名\.ssh\id_ed25519 already exists.
+<span class="hljs-built_in">Overwrite</span> (y/n)?
+</code></pre>
+      </div>
+    
+<p><strong>一个 <code>.ssh</code> 目录可以存放多个 SSH 密钥对</strong>，只是<strong>默认文件名</strong>只有一个 <code>id_ed25519</code>，表示当前已经存在一个默认名称的 Ed25519 密钥</p>
+<p>推荐做法：每个用途对应一个密钥</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-symbol%22%3EC%3A%3C%2Fspan%3E%5CUsers%5C%E7%94%A8%E6%88%B7%E5%90%8D%5C.ssh%5C%0A%E2%94%9C%E2%94%80%E2%94%80%20id_ed25519%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%23%20%E9%BB%98%E8%AE%A4%E5%AF%86%E9%92%A5%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20id_ed25519.pub%0A%E2%94%9C%E2%94%80%E2%94%80%20github-personal%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%23%20GitHub%20%E4%B8%AA%E4%BA%BA%E8%B4%A6%E5%8F%B7%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20github-personal.pub%0A%E2%94%9C%E2%94%80%E2%94%80%20ovh-vps%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22hljs-meta%22%3E%23%20OVH%20VPS%3C%2Fspan%3E%0A%E2%94%9C%E2%94%80%E2%94%80%20ovh-vps.pub%0A%E2%94%94%E2%94%80%E2%94%80%20config%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-symbol">C:</span>\Users\用户名\.ssh\
+├── id_ed25519                 <span class="hljs-meta"># 默认密钥</span>
+├── id_ed25519.pub
+├── github-personal            <span class="hljs-meta"># GitHub 个人账号</span>
+├── github-personal.pub
+├── ovh-vps                    <span class="hljs-meta"># OVH VPS</span>
+├── ovh-vps.pub
+└── config
+</code></pre>
+      </div>
+    
+<p>这种方式最清晰，也便于后续管理</p>
+<p>==在提示时不要直接回车，而是输入新的文件名，例如：==</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Enter%20%3Cspan%20class%3D%22hljs-built_in%22%3Efile%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-keyword%22%3Ein%3C%2Fspan%3E%20which%20%3Cspan%20class%3D%22hljs-built_in%22%3Eto%3C%2Fspan%3E%20save%20%3Cspan%20class%3D%22hljs-keyword%22%3Ethe%3C%2Fspan%3E%20key%3A%0AC%3A%5CUsers%5C%E7%94%A8%E6%88%B7%E5%90%8D%5C.ssh%5C%E6%96%87%E4%BB%B6%E5%90%8D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>Enter <span class="hljs-built_in">file</span> <span class="hljs-keyword">in</span> which <span class="hljs-built_in">to</span> save <span class="hljs-keyword">the</span> key:
+C:\Users\用户名\.ssh\文件名
+</code></pre>
+      </div>
+    
+</blockquote>
+<p>随后提示：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-attribute%22%3EEnter%20passphrase%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-attribute">Enter passphrase</span>
+</code></pre>
+      </div>
+    
+<p>建议为私钥设置一个独立口令。该口令用于保护个人电脑上的私钥，即使私钥文件被复制，对方仍不能直接使用。</p>
+<p>设置完成后提示秘钥放置位置，如：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Your%20public%20%3Cspan%20class%3D%22hljs-built_in%22%3Ekey%3C%2Fspan%3E%20has%20been%20%3Cspan%20class%3D%22hljs-built_in%22%3Esaved%3C%2Fspan%3E%20in%20C%3A%5CUsers%5C%E7%94%A8%E6%88%B7%E5%90%8D%2F.ssh%2Fvps_ed25519.pub%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>Your public <span class="hljs-built_in">key</span> has been <span class="hljs-built_in">saved</span> in C:\Users\用户名/.ssh/vps_ed25519.pub
+</code></pre>
+      </div>
+    
+<p>打开该文件夹存在下述两个文件：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="vps%3Cspan%20class%3D%22hljs-emphasis%22%3E_ed25519%20%20%20%20%20%20%20%E7%A7%81%E9%92%A5%EF%BC%8C%E5%8F%AA%E8%83%BD%E4%BF%9D%E5%AD%98%E5%9C%A8%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%0Avps_%3C%2Fspan%3Eed25519.pub%20%20%20%E5%85%AC%E9%92%A5%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%B8%8A%E4%BC%A0%E5%88%B0%20VPS%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>vps<span class="hljs-emphasis">_ed25519       私钥，只能保存在个人电脑
+vps_</span>ed25519.pub   公钥，可以上传到 VPS
+</code></pre>
+      </div>
+    
+<p>注意：<code>.pub</code> 文件是公钥；没有 <code>.pub</code> 后缀的文件是私钥，不能发送给别人，也不能上传到 VPS。</p>
+<h2 id="三-查看并复制公钥"><a href="#三-查看并复制公钥" class="anchor-link">#</a> 三、查看并复制公钥</h2>
+<p>在 Windows PowerShell 中执行：</p>
+<blockquote>
+<p>将 【vps_ed25519】替换为实际生成的公钥名</p>
+</blockquote>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="Get-Content%20%3Cspan%20class%3D%22hljs-string%22%3E%26quot%3B%24env%3AUSERPROFILE%3Cspan%20class%3D%22hljs-char%20escape_%22%3E%5C.%3C%2Fspan%3Essh%3Cspan%20class%3D%22hljs-char%20escape_%22%3E%5C%E3%80%90%3C%2Fspan%3Evps_ed25519%E3%80%91.pub%26quot%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>Get-Content <span class="hljs-string">"$env:USERPROFILE<span class="hljs-char escape_">\.</span>ssh<span class="hljs-char escape_">\【</span>vps_ed25519】.pub"</span>
+</code></pre>
+      </div>
+    
+<p>会输出一整行内容，例如：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-title%22%3Essh%3C%2Fspan%3E%3C%2Fspan%3E-ed25519%20AAAAC3NzaC1lZDI1NTE5AAAA...%20personal-vps%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-function"><span class="hljs-title">ssh</span></span>-ed25519 AAAAC3NzaC1lZDI1NTE5AAAA... personal-vps
+</code></pre>
+      </div>
+    
+<p>完整复制这一行，不要换行，也不要漏掉开头的 <code>ssh-ed25519</code>。</p>
+<h2 id="四-把公钥写入-vps"><a href="#四-把公钥写入-vps" class="anchor-link">#</a> 四、把公钥写入 VPS</h2>
+<p>回到之前已经通过密码登录的 WindTerm 窗口。</p>
+<h3 id="1-确认当前用户"><a href="#1-确认当前用户" class="anchor-link">#</a> 1. 确认当前用户</h3>
+<p>执行：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Ewhoami%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-built_in">whoami</span>
+</code></pre>
+      </div>
+    
+<p>公钥必须写入你以后准备登录的用户目录。</p>
+<p>例如：</p>
+<ul>
+<li>使用 <code>root</code> 登录，公钥写入位置 <code>/root/.ssh/authorized_keys</code></li>
+<li>使用 <code>ubuntu</code> 登录，公钥写入位置 <code>/home/ubuntu/.ssh/authorized_keys</code></li>
+</ul>
+<h3 id="2-创建-ssh-配置目录"><a href="#2-创建-ssh-配置目录" class="anchor-link">#</a> 2. 创建 SSH 配置目录</h3>
+<p>执行：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Emkdir%3C%2Fspan%3E%20-p%20~%2F.ssh%0A%3Cspan%20class%3D%22hljs-built_in%22%3Echmod%3C%2Fspan%3E%20700%20~%2F.ssh%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-built_in">mkdir</span> -p ~/.ssh
+<span class="hljs-built_in">chmod</span> 700 ~/.ssh
+</code></pre>
+      </div>
+    
+<h3 id="3-写入公钥"><a href="#3-写入公钥" class="anchor-link">#</a> 3. 写入公钥</h3>
+<p>执行：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="vi%20~%3Cspan%20class%3D%22hljs-regexp%22%3E%2F.ssh%2F%3C%2Fspan%3Eauthorized_keys%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>vi ~<span class="hljs-regexp">/.ssh/</span>authorized_keys
+</code></pre>
+      </div>
+    
+<p>将刚才复制的一整行公钥粘贴进去</p>
+<h3 id="4-修正文件权限"><a href="#4-修正文件权限" class="anchor-link">#</a> 4. 修正文件权限</h3>
+<p>执行：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Echmod%3C%2Fspan%3E%20600%20~%2F.ssh%2Fauthorized_keys%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-built_in">chmod</span> 600 ~/.ssh/authorized_keys
+</code></pre>
+      </div>
+    
+<h3 id="5-检查公钥是否写入"><a href="#5-检查公钥是否写入" class="anchor-link">#</a> 5. 检查公钥是否写入</h3>
+<p>执行：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Ecat%3C%2Fspan%3E%20~%2F.ssh%2Fauthorized_keys%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-built_in">cat</span> ~/.ssh/authorized_keys
+</code></pre>
+      </div>
+    
+<p>确认里面存在完整的一行：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-function%22%3E%3Cspan%20class%3D%22hljs-title%22%3Essh%3C%2Fspan%3E%3C%2Fspan%3E-ed25519%20AAAA...%20personal-vps%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-function"><span class="hljs-title">ssh</span></span>-ed25519 AAAA... personal-vps
+</code></pre>
+      </div>
+    
+<p>并且于 powershell 中生成的公钥一致</p>
+<h2 id="五-在-windterm-中配置私钥"><a href="#五-在-windterm-中配置私钥" class="anchor-link">#</a> 五、在 WindTerm 中配置私钥</h2>
+<p>不要关闭当前通过密码登录的会话。</p>
+<p>在 WindTerm 中复制或编辑 VPS 会话，填写：</p>
+<p><img src="https://oss.tilex.world/d/blog-images/2026/08/22/image-20260822224833061.png?sign=rwazEQCQ2wiIBMMHynEVZ8hFvojtS9ow0tuYt8t_oWY=:0" alt="image-20260822224833061"></p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E7%94%A8%E6%88%B7%E5%90%8D%EF%BC%9A%E5%86%99%E5%85%A5%E5%85%AC%E9%92%A5%E7%9A%84%20VPS%20%E7%94%A8%E6%88%B7%3Cspan%20class%3D%22hljs-built_in%22%3E%EF%BC%88root%3C%2Fspan%3E%2F%E5%85%B6%E5%AE%83%E7%94%A8%E6%88%B7%EF%BC%89%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>用户名：写入公钥的 VPS 用户<span class="hljs-built_in">（root</span>/其它用户）
+</code></pre>
+      </div>
+    
+<p>然后在会话的 SSH 身份验证设置中：</p>
+<ol>
+<li>选择“公钥”或“Public Key”认证。</li>
+<li>私钥文件选择：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-symbol%22%3EC%3A%3C%2Fspan%3E%5CUsers%5C%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%5C.ssh%5Cvps_ed25519%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-symbol">C:</span>\Users\你的用户名\.ssh\vps_ed25519
+</code></pre>
+      </div>
+    
+<p>如果使用默认文件名，则选择：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-symbol%22%3EC%3A%3C%2Fspan%3E%5CUsers%5C%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%5C.ssh%5Cid_ed25519%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-symbol">C:</span>\Users\你的用户名\.ssh\id_ed25519
+</code></pre>
+      </div>
+    
+<ol>
+<li>如果生成密钥时设置了口令，连接时输入的是<strong>私钥口令</strong>，不再是 VPS 用户密码。</li>
+<li>保存会话。</li>
+</ol>
+<p>不同 WindTerm 版本的选项名称可能略有差异，一般位于：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E4%BC%9A%E8%AF%9D%E8%AE%BE%E7%BD%AE%0A%E2%86%92%20SSH%0A%E2%86%92%20%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%0A%E2%86%92%20%E5%85%AC%E9%92%A5%0A%E2%86%92%20%E7%A7%81%E9%92%A5%E6%96%87%E4%BB%B6%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>会话设置
+→ SSH
+→ 身份验证
+→ 公钥
+→ 私钥文件
+</code></pre>
+      </div>
+    
+<p>注意不要选择 <code>.pub</code> 文件。WindTerm 需要使用的是没有 <code>.pub</code> 后缀的私钥文件。</p>
+<h2 id="特殊情况-windterm-无法选择-onekey"><a href="#特殊情况-windterm-无法选择-onekey" class="anchor-link">#</a> 特殊情况：WindTerm 无法选择 onekey</h2>
+<p><img src="https://oss.tilex.world/d/blog-images/2026/08/26/image-20260826194104396.png?sign=SSJS-xMAmA3rJk7Vihpnr-sbAcI5Kn-wtbzGZRjLxeE=:0" alt="image-20260826194104396"></p>
+<p>点击设置（上图右侧红框所框住的icon），进行添加即可</p>
+<p><img src="https://oss.tilex.world/d/blog-images/2026/08/22/image-20260822225646373.png?sign=tBh66Ds8tKtncfERUAiSHTeUU-e8-VcEPcqoV_h_mzU=:0" alt="image-20260822225646373"></p>
+<p>添加后继续第五步即可</p>
+<h2 id="六-测试密钥登录"><a href="#六-测试密钥登录" class="anchor-link">#</a> 六、测试密钥登录</h2>
+<p>保持原来的密码登录窗口不要关闭（避免连接不上），另外新开一个 WindTerm 标签页，连接刚配置的会话。</p>
+<p>成功时：</p>
+<ul>
+<li>不再要求输入 VPS 账号密码；</li>
+<li>如果私钥设置了口令，会要求输入私钥口令；</li>
+<li>最终出现服务器终端提示符。</li>
+</ul>
+<p>登录后执行：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Ewhoami%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-built_in">whoami</span>
+</code></pre>
+      </div>
+    
+<p>确认当前用户正确。</p>
+<p>建议再测试一次：</p>
+<ol>
+<li>主动退出新会话：</li>
+</ol>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-keyword%22%3Eexit%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code><span class="hljs-keyword">exit</span>
+</code></pre>
+      </div>
+    
+<ol>
+<li>重新双击 WindTerm 中保存的会话。</li>
+<li>确认仍能通过私钥登录。</li>
+</ol>
+<p>至少成功测试两次，才能考虑关闭密码登录。</p>
+<h2 id="七-可选-关闭-ssh-密码登录"><a href="#七-可选-关闭-ssh-密码登录" class="anchor-link">#</a> 七、可选：关闭 SSH 密码登录</h2>
+<p>这是安全加固步骤，不要在密钥尚未验证成功时操作！！！</p>
+<p>首先查看 SSH 实际配置：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Esudo%3C%2Fspan%3E%20sshd%20-T%20%7C%20grep%20-Ei%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bpasswordauthentication%7Cpubkeyauthentication%7Cpermitrootlogin%26%23x27%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash"><span class="hljs-built_in">sudo</span> sshd -T | grep -Ei <span class="hljs-string">'passwordauthentication|pubkeyauthentication|permitrootlogin'</span>
+</code></pre>
+      </div>
+    
+<p>默认情况返回：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%23%20%E5%85%81%E8%AE%B8%20root%20%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%0APermitRootLogin%20yes%0A%0A%23%20%E5%90%AF%E7%94%A8%E5%85%AC%E9%92%A5%E8%AE%A4%E8%AF%81%0APubkeyAuthentication%20yes%0A%0A%23%20%E5%90%AF%E7%94%A8%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81%0APasswordAuthentication%20yes%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text"># 允许 root 用户登录
+PermitRootLogin yes
+
+# 启用公钥认证
+PubkeyAuthentication yes
+
+# 启用密码认证
+PasswordAuthentication yes
+</code></pre>
+      </div>
+    
+<p>SSH 配置文件通常是：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%2Fetc%2Fssh%2Fsshd_config%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">/etc/ssh/sshd_config
+</code></pre>
+      </div>
+    
+<p>不过部分系统还会读取：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%2Fetc%2Fssh%2Fsshd_config.d%2F*.conf%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">/etc/ssh/sshd_config.d/*.conf
+</code></pre>
+      </div>
+    
+<p>不同系统的配置结构不同。修改前建议先备份：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Esudo%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3Ecp%3C%2Fspan%3E%20%2Fetc%2Fssh%2Fsshd_config%20%2Fetc%2Fssh%2Fsshd_config.backup%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">cp</span> /etc/ssh/sshd_config /etc/ssh/sshd_config.backup
+</code></pre>
+      </div>
+    
+<p>编辑配置：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Esudo%3C%2Fspan%3E%20vi%20%2Fetc%2Fssh%2Fsshd_config%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash"><span class="hljs-built_in">sudo</span> vi /etc/ssh/sshd_config
+</code></pre>
+      </div>
+    
+<p>设置或修改：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%23%20%E5%90%AF%E7%94%A8%E5%85%AC%E9%92%A5%E8%AE%A4%E8%AF%81%0APubkeyAuthentication%20yes%0A%0A%23%20%E7%A6%81%E7%94%A8%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81%0APasswordAuthentication%20no%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text"># 启用公钥认证
+PubkeyAuthentication yes
+
+# 禁用密码认证
+PasswordAuthentication no
+</code></pre>
+      </div>
+    
+<h3 id="配置未生效"><a href="#配置未生效" class="anchor-link">#</a> 配置未生效？</h3>
+<p>若修改后执行：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Esudo%3C%2Fspan%3E%20sshd%20-T%20%7C%20grep%20-Ei%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bpasswordauthentication%7Cpubkeyauthentication%7Cpermitrootlogin%26%23x27%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash"><span class="hljs-built_in">sudo</span> sshd -T | grep -Ei <span class="hljs-string">'passwordauthentication|pubkeyauthentication|permitrootlogin'</span>
+</code></pre>
+      </div>
+    
+<p>仍显示：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="PasswordAuthentication%20yes%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">PasswordAuthentication yes
+</code></pre>
+      </div>
+    
+<p>则可能是 <code>/etc/ssh/sshd_config.d/*.conf</code> 中的配置覆盖了主配置文件。</p>
+<p>排查所有相关配置：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Esudo%3C%2Fspan%3E%20grep%20-RniE%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3B%5E%5B%5B%3Aspace%3A%5D%5D*(PasswordAuthentication%7CPubkeyAuthentication%7CPermitRootLogin)%26%23x27%3B%3C%2Fspan%3E%20%5C%0A%2Fetc%2Fssh%2Fsshd_config%20%2Fetc%2Fssh%2Fsshd_config.d%2F%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash"><span class="hljs-built_in">sudo</span> grep -RniE <span class="hljs-string">'^[[:space:]]*(PasswordAuthentication|PubkeyAuthentication|PermitRootLogin)'</span> \
+/etc/ssh/sshd_config /etc/ssh/sshd_config.d/
+</code></pre>
+      </div>
+    
+<p>找到设置为 <code>PasswordAuthentication yes</code> 的配置文件后，将其修改为：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="PasswordAuthentication%20no%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">PasswordAuthentication no
+</code></pre>
+      </div>
+    
+<p>随后验证配置：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Esudo%3C%2Fspan%3E%20sshd%20-t%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash"><span class="hljs-built_in">sudo</span> sshd -t
+</code></pre>
+      </div>
+    
+<p>无输出表示配置正确，然后重新加载 SSH 服务：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Esudo%3C%2Fspan%3E%20systemctl%20reload%20ssh%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash"><span class="hljs-built_in">sudo</span> systemctl reload ssh
+</code></pre>
+      </div>
+    
+<p>若提示服务不存在，可先查看服务名称：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="systemctl%20status%20ssh%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash">systemctl status ssh
+</code></pre>
+      </div>
+    
+<p>部分发行版服务名为：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Esudo%3C%2Fspan%3E%20systemctl%20reload%20sshd%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash"><span class="hljs-built_in">sudo</span> systemctl reload sshd
+</code></pre>
+      </div>
+    
+<p>再次确认最终生效配置：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Esudo%3C%2Fspan%3E%20sshd%20-T%20%7C%20grep%20-Ei%20%3Cspan%20class%3D%22hljs-string%22%3E%26%23x27%3Bpasswordauthentication%7Cpubkeyauthentication%7Cpermitrootlogin%26%23x27%3B%3C%2Fspan%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash"><span class="hljs-built_in">sudo</span> sshd -T | grep -Ei <span class="hljs-string">'passwordauthentication|pubkeyauthentication|permitrootlogin'</span>
+</code></pre>
+      </div>
+    
+<p>应看到：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="PermitRootLogin%20yes%0APubkeyAuthentication%20yes%0APasswordAuthentication%20no%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">PermitRootLogin yes
+PubkeyAuthentication yes
+PasswordAuthentication no
+</code></pre>
+      </div>
+    
+<h3 id="误修改恢复"><a href="#误修改恢复" class="anchor-link">#</a> 误修改恢复</h3>
+<p>可通过备份文件恢复：</p>
+
+      <div class="md-editor-code" data-language="bash">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">bash</span>
+            <button class="md-editor-copy-button" data-code="%3Cspan%20class%3D%22hljs-built_in%22%3Esudo%3C%2Fspan%3E%20%3Cspan%20class%3D%22hljs-built_in%22%3Ecp%3C%2Fspan%3E%20%2Fetc%2Fssh%2Fsshd_config.backup%20%2Fetc%2Fssh%2Fsshd_config%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">cp</span> /etc/ssh/sshd_config.backup /etc/ssh/sshd_config
+</code></pre>
+      </div>
+    
+<h3 id="vi-快速定位"><a href="#vi-快速定位" class="anchor-link">#</a> vi 快速定位</h3>
+<p>快速定位到 <code>PasswordAuthentication</code>：</p>
+<p>按 <code>Esc</code> 后输入：</p>
+
+      <div class="md-editor-code" data-language="vim">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">vim</span>
+            <button class="md-editor-copy-button" data-code="%2FPasswordAuthentication%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-vim">/PasswordAuthentication
+</code></pre>
+      </div>
+    
+<p>按 <strong>Enter</strong> 开始搜索，可使用下面的常用快捷键：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>向下查找</td>
+<td><code>/关键字</code></td>
+</tr>
+<tr>
+<td>向上查找</td>
+<td><code>?关键字</code></td>
+</tr>
+<tr>
+<td>下一个匹配</td>
+<td><code>n</code></td>
+</tr>
+<tr>
+<td>上一个匹配</td>
+<td><code>N</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>不要立刻关闭当前 SSH 会话。重新打开一个 WindTerm（或其他 SSH 客户端）窗口，确认可以通过密钥正常登录后，再关闭旧会话，避免因配置错误导致无法重新连接服务器</p>
+</blockquote>
+<h2 id="八-后续日常登录"><a href="#八-后续日常登录" class="anchor-link">#</a> 八、后续日常登录</h2>
+<p>以后登录流程是：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E6%89%93%E5%BC%80%20WindTerm%0A%E2%86%92%20%E5%8F%8C%E5%87%BB%E5%B7%B2%E4%BF%9D%E5%AD%98%E7%9A%84%20VPS%20%E4%BC%9A%E8%AF%9D%0A%E2%86%92%20WindTerm%20%E8%AF%BB%E5%8F%96%E6%9C%AC%E6%9C%BA%E7%A7%81%E9%92%A5%0A%E2%86%92%20%E5%BF%85%E8%A6%81%E6%97%B6%E8%BE%93%E5%85%A5%E7%A7%81%E9%92%A5%E5%8F%A3%E4%BB%A4%0A%E2%86%92%20VPS%20%E4%BD%BF%E7%94%A8%20authorized_keys%20%E4%B8%AD%E7%9A%84%E5%85%AC%E9%92%A5%E9%AA%8C%E8%AF%81%0A%E2%86%92%20%E7%99%BB%E5%BD%95%E6%88%90%E5%8A%9F%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>打开 WindTerm
+→ 双击已保存的 VPS 会话
+→ WindTerm 读取本机私钥
+→ 必要时输入私钥口令
+→ VPS 使用 authorized_keys 中的公钥验证
+→ 登录成功
+</code></pre>
+      </div>
+    
+<p>文件应分别存放：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>存放位置</th>
+<th>是否可以公开</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>私钥 <code>vps_ed25519</code></td>
+<td>个人电脑</td>
+<td>不可以</td>
+</tr>
+<tr>
+<td>公钥 <code>vps_ed25519.pub</code></td>
+<td>个人电脑和 VPS</td>
+<td>可以</td>
+</tr>
+<tr>
+<td><code>authorized_keys</code></td>
+<td>VPS</td>
+<td>包含允许登录的公钥</td>
+</tr>
+</tbody>
+</table>
+<p>还应备份私钥到一个可信的加密介质或密码管理器附件中。若个人电脑损坏且私钥没有备份，同时密码登录已经关闭，就只能通过云厂商控制台恢复访问</p>
+</div></div></div><!----></div><div class="article-footer" data-v-edab7ac5=""><div class="article-footer__main" data-v-edab7ac5=""><div class="article-meta" data-v-edab7ac5=""><span class="meta-item" data-v-edab7ac5=""> 发布：<strong data-v-edab7ac5="">2026/08/26</strong></span><span class="meta-item" data-v-edab7ac5=""> 更新：<strong data-v-edab7ac5="">2026/08/26</strong></span></div><button type="button" class="article-footer__download btn btn--secondary btn--sm" data-v-edab7ac5=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="article-footer__icon" aria-hidden="true" data-v-edab7ac5=""><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg> 下载 Markdown </button></div><div class="article-tags" data-v-edab7ac5=""><!--[--><!--]--></div></div><!----><div class="remark42" data-v-edab7ac5="" data-v-3f8d3e88=""><div id="remark42" class="remark42__embed" data-v-3f8d3e88=""></div></div></article><!--]--></section><!----></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--><!--]--></div>
+  
+
+</body></html>
