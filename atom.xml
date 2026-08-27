@@ -5,9 +5,9 @@
   <link rel="self" type="application/atom+xml" href="https://janfeise.github.io/blog-backup/atom.xml" />
   <subtitle>浮生世，片刻光阴</subtitle>
   <id>https://janfeise.github.io/blog-backup/</id>
-  <updated>2026-08-26T04:29:07Z</updated>
+  <updated>2026-08-27T03:50:59Z</updated>
   <dc:creator>Tilex</dc:creator>
-  <dc:date>2026-08-26T04:29:07Z</dc:date>
+  <dc:date>2026-08-27T03:50:59Z</dc:date>
   <entry>
     <title>WindTerm ssh 连接服务器流程记录.md</title>
     <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/66" />
@@ -699,7 +699,7 @@ docker compose up -d
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/63</id>
-    <updated>2026-08-19T17:58:31Z</updated>
+    <updated>2026-08-27T03:50:59Z</updated>
     <published>2026-08-17T20:42:47Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
@@ -713,7 +713,7 @@ docker compose up -d
 
 我使用的是上面这张邮储的借记卡，在办理前没有做足功课，开户后经历数次订阅失败才知道这张卡是拒付王&#x1f605;&#x1f605;&#x1f605;，不过在一阵捣腾后还是订阅成功，可根据下面内容进行参考：
 
-申请该卡，可以在线上或邮储app上申请该卡，线上申请可点击此链接：[邮储万事达借记卡申请](https://wap.psbc.com/zh/static/h5/dzkp/index.html?c1=8#/home)，申请后大概1~2周便可以收到快递，然后便是去附近的邮储银行进行开户了，开户时如果是二类卡，建议在邮储APP进行升级，升级为一类卡
+申请该卡，可以在线上或邮储app上申请该卡，线上申请可点击此链接：[邮储万事达借记卡申请](https://wap.psbc.com/zh/static/h5/dzkp/index.html?c1=8#/home)，申请后大概1~2周便可以收到快递，然后便是去附近的邮储银行进行开户了，开户后如果是二类卡，建议在邮储APP进行升级，升级为一类卡
 
 ![image-20260818120133796](https://oss.tilex.world/d/blog-images/2026/08/18/image-20260818120133796.png?sign=MHBPFmZV8QwkocTCaWXFUNxDCvBFSF7JcI_YG9JxJ78=:0)
 
