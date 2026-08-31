@@ -228,7 +228,7 @@ ssh-ed25519 AAAA... personal-vps
 
 在 WindTerm 中复制或编辑 VPS 会话，填写：
 
-![image-20260822224833061](/blog-backup/blog-images/2026/08/22/image-20260822224833061.png)
+![image-20260822224833061](https://oss.tilex.world/d/blog-images/2026/08/22/image-20260822224833061.png?sign=rwazEQCQ2wiIBMMHynEVZ8hFvojtS9ow0tuYt8t_oWY=:0)
 
 ```
 用户名：写入公钥的 VPS 用户（root/其它用户）
@@ -266,7 +266,7 @@ C:\Users\你的用户名\.ssh\id_ed25519
 
 ## 特殊情况：WindTerm 无法选择 onekey
 
-![image-20260826194104396](/blog-backup/blog-images/2026/08/26/image-20260826194104396.png)
+![image-20260826194104396](https://oss.tilex.world/d/blog-images/2026/08/26/image-20260826194104396.png?sign=SSJS-xMAmA3rJk7Vihpnr-sbAcI5Kn-wtbzGZRjLxeE=:0)
 
 点击设置（上图右侧红框所框住的icon），进行添加即可
 
@@ -500,7 +500,7 @@ CORS：跨源资源共享，英文全称为 Cross-Origin Resource Sharing&#xD;
 &#xD;
 在日常开发时，后端往往需要允许跨域或添加来源白名单；而项目部署后一般不需要额外配置 CORS，为什么？在此做一个简单梳理&#xD;
 &#xD;
-![image-20260826121230267](/blog-backup/blog-images/2026/08/26/image-20260826121230267.png)&#xD;
+![image-20260826121230267](https://oss.tilex.world/d/blog-images/2026/08/26/image-20260826121230267.png?sign=GresqIGsGe5o8uTpMys4JRArTbNxvj8kJaMvv3sak-U=:0)&#xD;
 &#xD;
 ## 同源判断&#xD;
 &#xD;
@@ -623,7 +623,7 @@ location / {
 进行前端路由重定向配置，保存并重载 OpenResty 后，访问博客的其他页面，如 https://www.tilex.world/article/64， 才能正常打开
 
 反向代理：
-![image-20260820185447374](/blog-backup/blog-images/2026/08/21/image-20260820185447374.png)
+![image-20260820185447374](https://oss.tilex.world/d/blog-images/2026/08/21/image-20260820185447374.png?sign=tUGw81N6iYv8hvbbbM90zGVgUhEuJhUscimTV_A_gfs=:0)
 
 ## 图床
 
@@ -664,9 +664,9 @@ Nginx
 /data/blog-media/blog-images/...
 ```
 
-![image-20260821113802289](/blog-backup/blog-images/2026/08/21/image-20260821113802289.png)
+![image-20260821113802289](https://oss.tilex.world/d/blog-images/2026/08/21/image-20260821113802289.png?sign=BMus46ILnbNZCLK4QOFyWfBqpwfG8-AhmCsU0FEf-Zw=:0)
 
-![image-20260821113955412](/blog-backup/blog-images/2026/08/21/image-20260821113955412.png)
+![image-20260821113955412](https://oss.tilex.world/d/blog-images/2026/08/21/image-20260821113955412.png?sign=rJ5Bu4wgTRZHm-MKnajuVb4zc8gQh6IzXPbpkYtvlhc=:0)
 
 ## remark42
 
@@ -3972,7 +3972,7 @@ onMounted(() =&gt; {
 
 今年五、六月份实习期间，我也曾连续打卡记录过一段时间，但只坚持了二十来天，后来便彻底放弃了，主观性太强，稳定性必然下降。
 
-![Screenshot_20260725_225619](/blog-backup/blog-images/2026/07/25/Screenshot_20260725_225619.jpg)</content>
+![Screenshot_20260725_225619](https://oss.tilex.world/d/blog-images/2026/07/25/Screenshot_20260725_225619.jpg?sign=7GFkzYMMhZR3ipofRBPJtulDfnTFJixk7Uo7mkVazCI=:0)</content>
     <dc:creator>Tilex</dc:creator>
     <dc:date>2026-07-25T07:20:29Z</dc:date>
   </entry>
