@@ -5,9 +5,9 @@
   <link rel="self" type="application/atom+xml" href="https://janfeise.github.io/blog-backup/atom.xml" />
   <subtitle>浮生世，片刻光阴</subtitle>
   <id>https://janfeise.github.io/blog-backup/</id>
-  <updated>2026-08-27T04:07:55Z</updated>
+  <updated>2026-08-30T23:03:30Z</updated>
   <dc:creator>Tilex</dc:creator>
-  <dc:date>2026-08-27T04:07:55Z</dc:date>
+  <dc:date>2026-08-30T23:03:30Z</dc:date>
   <entry>
     <title>WindTerm ssh 连接服务器流程记录.md</title>
     <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/66" />
@@ -15,11 +15,11 @@
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/66</id>
-    <updated>2026-08-26T04:29:07Z</updated>
+    <updated>2026-08-27T22:29:06Z</updated>
     <published>2026-08-26T03:44:26Z</published>
     <content type="text/markdown"># WindTerm ssh 连接服务器流程记录
 
-WindTerm 是一个开源免费的SSH工具，若不使用XShell，可尝试该工具
+WindTerm 是一个开源免费的SSH工具，若没有使用XShell，可尝试该工具
 
 &gt; github地址：https://github.com/kingToolbox/WindTerm
 
@@ -228,7 +228,7 @@ ssh-ed25519 AAAA... personal-vps
 
 在 WindTerm 中复制或编辑 VPS 会话，填写：
 
-![image-20260822224833061](https://oss.tilex.world/d/blog-images/2026/08/22/image-20260822224833061.png?sign=rwazEQCQ2wiIBMMHynEVZ8hFvojtS9ow0tuYt8t_oWY=:0)
+![image-20260822224833061](/blog-backup/blog-images/2026/08/22/image-20260822224833061.png)
 
 ```
 用户名：写入公钥的 VPS 用户（root/其它用户）
@@ -266,11 +266,11 @@ C:\Users\你的用户名\.ssh\id_ed25519
 
 ## 特殊情况：WindTerm 无法选择 onekey
 
-![image-20260826194104396](https://oss.tilex.world/d/blog-images/2026/08/26/image-20260826194104396.png?sign=SSJS-xMAmA3rJk7Vihpnr-sbAcI5Kn-wtbzGZRjLxeE=:0)
+![image-20260826194104396](/blog-backup/blog-images/2026/08/26/image-20260826194104396.png)
 
 点击设置（上图右侧红框所框住的icon），进行添加即可
 
-![image-20260822225646373](https://oss.tilex.world/d/blog-images/2026/08/22/image-20260822225646373.png?sign=tBh66Ds8tKtncfERUAiSHTeUU-e8-VcEPcqoV_h_mzU=:0)
+![image-20260822225646373](/blog-backup/blog-images/2026/08/22/image-20260822225646373.png)
 
 添加后继续第五步即可
 
@@ -500,7 +500,7 @@ CORS：跨源资源共享，英文全称为 Cross-Origin Resource Sharing&#xD;
 &#xD;
 在日常开发时，后端往往需要允许跨域或添加来源白名单；而项目部署后一般不需要额外配置 CORS，为什么？在此做一个简单梳理&#xD;
 &#xD;
-![image-20260826121230267](https://oss.tilex.world/d/blog-images/2026/08/26/image-20260826121230267.png?sign=GresqIGsGe5o8uTpMys4JRArTbNxvj8kJaMvv3sak-U=:0)&#xD;
+![image-20260826121230267](/blog-backup/blog-images/2026/08/26/image-20260826121230267.png)&#xD;
 &#xD;
 ## 同源判断&#xD;
 &#xD;
@@ -550,13 +550,13 @@ CORS 预检类似于一道门禁，但并不是每个请求都会触发。浏览
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/64</id>
-    <updated>2026-08-23T23:54:42Z</updated>
+    <updated>2026-08-29T00:54:31Z</updated>
     <published>2026-08-20T20:40:06Z</published>
     <content type="text/markdown"># 服务器迁移
 
 &gt; 2026/08/20 | 记录
 
-![image-20260821113247088](https://oss.tilex.world/d/blog-images/2026/08/21/image-20260821113247088.png?sign=lYBYMzA--XoAGOAbolyKHdKgzWBfVRVxTScxprVCvHc=:0)
+![image-20260821113247088](/blog-backup/blog-images/2026/08/21/image-20260821113247088.png)
 
 当前使用的是从 rocknerd 购买的 3C4G vps，价格 59.99 刀，位于 San Jose，vps 主要用于：
 
@@ -623,7 +623,7 @@ location / {
 进行前端路由重定向配置，保存并重载 OpenResty 后，访问博客的其他页面，如 https://www.tilex.world/article/64， 才能正常打开
 
 反向代理：
-![image-20260820185447374](https://oss.tilex.world/d/blog-images/2026/08/21/image-20260820185447374.png?sign=tUGw81N6iYv8hvbbbM90zGVgUhEuJhUscimTV_A_gfs=:0)
+![image-20260820185447374](/blog-backup/blog-images/2026/08/21/image-20260820185447374.png)
 
 ## 图床
 
@@ -664,11 +664,11 @@ Nginx
 /data/blog-media/blog-images/...
 ```
 
-![image-20260821113802289](https://oss.tilex.world/d/blog-images/2026/08/21/image-20260821113802289.png?sign=BMus46ILnbNZCLK4QOFyWfBqpwfG8-AhmCsU0FEf-Zw=:0)
+![image-20260821113802289](/blog-backup/blog-images/2026/08/21/image-20260821113802289.png)
 
-![image-20260821113955412](https://oss.tilex.world/d/blog-images/2026/08/21/image-20260821113955412.png?sign=rJ5Bu4wgTRZHm-MKnajuVb4zc8gQh6IzXPbpkYtvlhc=:0)
+![image-20260821113955412](/blog-backup/blog-images/2026/08/21/image-20260821113955412.png)
 
-## remake42
+## remark42
 
 评论区分为两部分：remark42容器 + 反向代理
 
@@ -709,17 +709,17 @@ docker compose up -d
 
 ## 借记卡：I类卡并开启小额免密
 
-![image-20260818115141353](https://oss.tilex.world/d/blog-images/2026/08/18/image-20260818115141353.png?sign=RxKZnSy-Ka7hHTqYfMxZ_E8tktjlKWJlvD3YGtCOaAs=:0)
+![image-20260818115141353](/blog-backup/blog-images/2026/08/18/image-20260818115141353.png)
 
 我使用的是上面这张邮储的借记卡，在办理前没有做足功课，开户后经历数次订阅失败才知道这张卡是拒付王&#x1f605;&#x1f605;&#x1f605;，不过在一阵捣腾后还是订阅成功，可根据下面内容进行参考：
 
 申请该卡，可以在线上或邮储app上申请该卡，线上申请可点击此链接：[邮储万事达借记卡申请](https://wap.psbc.com/zh/static/h5/dzkp/index.html?c1=8#/home)，申请后大概1~2周便可以收到快递，然后便是去附近的邮储银行进行开户了，开户后如果是二类卡，建议在邮储APP进行升级，升级为一类卡
 
-![image-20260818120133796](https://oss.tilex.world/d/blog-images/2026/08/18/image-20260818120133796.png?sign=MHBPFmZV8QwkocTCaWXFUNxDCvBFSF7JcI_YG9JxJ78=:0)
+![image-20260818120133796](/blog-backup/blog-images/2026/08/18/image-20260818120133796.png)
 
 此外，建议开启小额免密
 
-![Screenshot_20260818_123351](https://oss.tilex.world/d/blog-images/2026/08/18/Screenshot_20260818_123351.jpg?sign=o114EKgL6rUirDs2bipBvnwkuacsYh7e93lYSwnjkfk=:0)
+![Screenshot_20260818_123351](/blog-backup/blog-images/2026/08/18/Screenshot_20260818_123351.jpg)
 
 ## google pay 绑定：美国免税区
 
@@ -727,11 +727,11 @@ docker compose up -d
 
 google pay 绑定该卡，其中地址建议选择为：美国的免税区，我使用的是：[俄勒冈州](https://oregon/)
 
-![image-20260818120553446](https://oss.tilex.world/d/blog-images/2026/08/18/image-20260818120553446.png?sign=AdrHTcLWLQEfbKWrHaD3aiXZUgkyHupJzgpOdyah-hY=:0)
+![image-20260818120553446](/blog-backup/blog-images/2026/08/18/image-20260818120553446.png)
 
 填写地址时可以使用：地址生成器，并选择免税州，可参考下面的内容
 
-![image-20260818120755170](https://oss.tilex.world/d/blog-images/2026/08/18/image-20260818120755170.png?sign=kHbBnitF56Jh5EbAVqTeZGgxQYR9r9vN-TCR6gOh4Wc=:0)
+![image-20260818120755170](/blog-backup/blog-images/2026/08/18/image-20260818120755170.png)
 
 ## google pay 地址：美国
 
@@ -751,16 +751,16 @@ Google Play
 
 国家/地区和个人资料需同步更新为美国
 
-![image-20260818121951582](https://oss.tilex.world/d/blog-images/2026/08/18/image-20260818121951582.png?sign=VCK9GpYUifptSK_R1CmxGMw6-TKcIuKF95evnO5I8KY=:0)
+![image-20260818121951582](/blog-backup/blog-images/2026/08/18/image-20260818121951582.png)
 
 ## 手机下载google pay，订阅ChatGPT
-![Screenshot_20260820_095453](https://oss.tilex.world/d/blog-images/2026/08/20/Screenshot_20260820_095453.jpg?sign=lcoOC2YyEV1pq4b3djXfEAvftRK6RPy6mkefB6auP8k=:0)
+![Screenshot_20260820_095453](/blog-backup/blog-images/2026/08/20/Screenshot_20260820_095453.jpg)
 
 在电脑上捣腾许久，每次都订阅失败，后来更换为手机下载 google pay，订阅直接就成功了&#x1f602;，由于我使用的是华为手机，不确定是否可以安装 google pay，于是进行了搜索，并根据搜索结果下载了 GBox，然后在 GBox 中安装google pay，可行&#x1f917;
 
-![image-20260818122506237](https://oss.tilex.world/d/blog-images/2026/08/18/image-20260818122506237.png?sign=UrBgGDM5s5Mm63U7ewkxcT1hr_9gyANKRALVYY-oa4o=:0)
+![image-20260818122506237](/blog-backup/blog-images/2026/08/18/image-20260818122506237.png)
 
-![Screenshot_20260818_122701_com.gbox.android](https://oss.tilex.world/d/blog-images/2026/08/18/Screenshot_20260818_122701_com.gbox.android.jpg?sign=jkbAxz-knpu2tNOtmSFe-sxTciLEyvb3bJ6It2qPAl4=:0)
+![Screenshot_20260818_122701_com.gbox.android](/blog-backup/blog-images/2026/08/18/Screenshot_20260818_122701_com.gbox.android.jpg)
 
 下载 ChatGPT 后，打开 ChatGPT 直接订阅即可
 
@@ -768,7 +768,7 @@ Google Play
 
 订阅成功后，ChatGPT 账单显示：
 
-![image-20260818114342824](https://oss.tilex.world/d/blog-images/2026/08/18/image-20260818114342824.png?sign=aQ1ZpSjHStomVrZ9B0ea6PvDpuBwVPeIIYgXECPLcH4=:0)</content>
+![image-20260818114342824](/blog-backup/blog-images/2026/08/18/image-20260818114342824.png)</content>
     <dc:creator>Tilex</dc:creator>
     <dc:date>2026-08-17T20:42:47Z</dc:date>
   </entry>
@@ -779,7 +779,7 @@ Google Play
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/62</id>
-    <updated>2026-08-17T17:49:27Z</updated>
+    <updated>2026-08-30T23:03:30Z</updated>
     <published>2026-08-15T23:42:18Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
@@ -787,13 +787,13 @@ Google Play
 
 &gt; 2026年 | 大三下 | 前端实习
 
-![Codex 图像 2026年8月15日 16_00_03](https://oss.tilex.world/d/blog-images/2026/08/15/Codex%20%E5%9B%BE%E5%83%8F%202026%E5%B9%B48%E6%9C%8815%E6%97%A5%2016_00_03.png?sign=APq9nFxpbLzLvgrYF3xhEizyS57uno56-_5n3KETycM=:0)
+![Codex 图像 2026年8月15日 16_00_03](/blog-backup/blog-images/2026/08/15/Codex%20%E5%9B%BE%E5%83%8F%202026%E5%B9%B48%E6%9C%8815%E6%97%A5%2016_00_03.png)
 
 2026/03/26 开启了人生第一次实习
 
 ## 求职
 
-2026/03，大三下学期开学时，便开始准备简历，3月初开始投递，半个月后便找到了一份实习，总计只投递了30多份简历（很幸运，入职后才知道是由于上一位前端开发的人员离职而空出来的职位）
+2026/03，大三下学期开学时，便开始准备简历，3月初开始投递，半个月后便找到了一份实习，总计只投递了30多份简历（很幸运，入职后才知道是由于近期上一位前端开发的人员离职而空出来的职位）
 
 03/19 进行了线下面试，面试时间很短不到半小时，技术面和HR面都结束了
 
@@ -809,7 +809,7 @@ HR面，由于 mentor 那边说没什么问题，HR面也很快，聊了聊专�
 
 面试结果很快便出了，一周后发offer，并入职——03/26
 
-![image-20260814155920202](https://oss.tilex.world/d/blog-images/2026/08/14/image-20260814155920202.png?sign=ocrKPNFACz6W-4kbyYnD0XETSlolZ_FdpulCHamwoYw=:0)
+![image-20260814155920202](/blog-backup/blog-images/2026/08/14/image-20260814155920202.png)
 
 ## 入职，前端开发
 
@@ -831,7 +831,7 @@ npm run serve
 
 &gt; microapp 文档：https://jd-opensource.github.io/micro-app/
 
-![image-20260814163259348](https://oss.tilex.world/d/blog-images/2026/08/14/image-20260814163259348.png?sign=G1m4Sb2qJ0WBLhwhgMiJImffh0qFdRUhojrBcj3MLcI=:0)
+![image-20260814163259348](/blog-backup/blog-images/2026/08/14/image-20260814163259348.png)
 
 项目成功启动，后续便是看代码了？！代码实在太多了，慢慢看吧（后来才慢慢总结出来，熟悉一个项目，不是去看代码，而是看这个项目实现的业务是什么，再去看代码是怎么实现业务的，而不是怼着代码看&#x1f602;）
 
@@ -888,7 +888,7 @@ ds 很快啊，库库写，效率贼高，但看着写的代码，满头黑线�
 
 开发完成后，会进行测试，并将 bug 汇总，公司使用的是 [pingcode](https://pingcode.com/) 对 bug 进行统计
 
-![image-20260814184600120](https://oss.tilex.world/d/blog-images/2026/08/14/image-20260814184600120.png?sign=RjyVqQdUChWsfK38RFCgmSCB3GgPrVIZkfPxnAH9KUc=:0)
+![image-20260814184600120](/blog-backup/blog-images/2026/08/14/image-20260814184600120.png)
 
 bug改完后便是上线，上线的时间是晚上，白天一般有用户在使用，导致上线那天基本都要加班
 
@@ -928,11 +928,11 @@ bug改完后便是上线，上线的时间是晚上，白天一般有用户在�
 
 &gt; 每次需求写完，push 到仓库时，都有一种被榨干的感觉&#x1f628;
 
-![Codex 图像 2026年8月16日 15_29_59](https://oss.tilex.world/d/blog-images/2026/08/16/Codex%20%E5%9B%BE%E5%83%8F%202026%E5%B9%B48%E6%9C%8816%E6%97%A5%2015_29_59.png?sign=JPyh6Po5z71GYMMlxnCc0Fbq9ZPhSQs3xFxDkNMOkjs=:0)
+![Codex 图像 2026年8月16日 15_29_59](/blog-backup/blog-images/2026/08/16/Codex%20%E5%9B%BE%E5%83%8F%202026%E5%B9%B48%E6%9C%8816%E6%97%A5%2015_29_59.png)
 
 ## 煎熬，通勤时间太长太长
 
-![exec-1c682e42-753b-4126-9c09-3029310b4113](https://oss.tilex.world/d/blog-images/2026/08/16/exec-1c682e42-753b-4126-9c09-3029310b4113.png?sign=bNtS7ZYU9-rLC6PqOnfX6xsaSuWAi-aMmu_Ve4_iytY=:0)
+![exec-1c682e42-753b-4126-9c09-3029310b4113](/blog-backup/blog-images/2026/08/16/exec-1c682e42-753b-4126-9c09-3029310b4113.png)
 
 大三下还是住在学校的，并没有在公司附近租房，从学校到公司距离将近 30km，还好地铁是直达的，从首站做坐到末站的前一站，光是做地铁都得 40min，整个通勤时间长达 1h15min，一天的通勤时间有 2.5h，太长太长了，这段实习的最大的煎熬就是通勤
 
@@ -991,10 +991,10 @@ bug改完后便是上线，上线的时间是晚上，白天一般有用户在�
 
 Windows 电脑建立还原点，电脑出现问题时直接还原（但已登录的用户数据不会还原，仍存在），而系统映像才能将电脑所有数据重置（离职时也可以直接重置电脑）
 
-![image-20260815093046493](https://oss.tilex.world/d/blog-images/2026/08/15/image-20260815093046493.png?sign=6ZQFFlLVyvLLUC_DBXyAvb-s0E0YltbXn6Wai1UDea4=:0)
+![image-20260815093046493](/blog-backup/blog-images/2026/08/15/image-20260815093046493.png)
 
 ## 工作后的变化，作息
-工作后，作息挺规律的，7点多就起床了，导致离职后，现在也差不多7,8点就醒了，睡懒觉的时光已经离我而去了
+工作后，作息挺规律的，早上7点多就起床了，导致离职后，现在每天早上~~~~也差不多7,8点就醒了，睡懒觉的时光已经离我而去了
 
 ## 预期的工作
 
@@ -1003,7 +1003,7 @@ Windows 电脑建立还原点，电脑出现问题时直接还原（但已登录
 
 虽然有些大厂不存在上述的岗位，但作为秋招的练手面试还是可以的
 
-![ops-coffee-1786693344840](https://oss.tilex.world/d/blog-images/2026/08/14/ops-coffee-1786693344840.png?sign=gTiddN_N11k1DOsz2tD6gU3XEzfeSL1sch2vvqtWMLs=:0)
+![ops-coffee-1786693344840](/blog-backup/blog-images/2026/08/14/ops-coffee-1786693344840.png)
 
 工作都是操蛋的</content>
     <dc:creator>Tilex</dc:creator>
@@ -1026,7 +1026,7 @@ Windows 电脑建立还原点，电脑出现问题时直接还原（但已登录
 
 &gt; 在当前博客中，引用了 LongCang 字体，ttf 文件大小约 5MB，占据整个网络传输的 90%，开销太大
 
-![image-20260813210042271](https://oss.tilex.world/d/blog-images/2026/08/13/image-20260813210042271.png?sign=653W6uEO9ZDrFxWRc4ogdhQLTbIzJdMTyayWhnXgTII=:0)
+![image-20260813210042271](/blog-backup/blog-images/2026/08/13/image-20260813210042271.png)
 
 但实际使用 longcang 字体的地方只有：
 
@@ -1043,7 +1043,7 @@ Windows 电脑建立还原点，电脑出现问题时直接还原（但已登录
 
 处理后得到一个新的、小得多的字体文件——只有 10kb
 
-![image-20260813223457649](https://oss.tilex.world/d/blog-images/2026/08/13/image-20260813223457649.png?sign=1eG0fg-9IT-ozUho7NXEOnxH9l6DLdOTpQD0MXG14uY=:0)</content>
+![image-20260813223457649](/blog-backup/blog-images/2026/08/13/image-20260813223457649.png)</content>
     <dc:creator>Tilex</dc:creator>
     <dc:date>2026-08-13T07:00:52Z</dc:date>
   </entry>
@@ -1103,7 +1103,7 @@ C:\Users\admin\OneDrive
 
 发现后便打开 onDrive，在设置中取消了与此电脑的关联，然后便是卸载了
 
-![image-20260812221702443](https://oss.tilex.world/d/blog-images/2026/08/12/image-20260812221702443.png?sign=rsCengaIM43EONgHV2AJ5-ai3HYt-w8T3FazAA7aH-0=:0)
+![image-20260812221702443](/blog-backup/blog-images/2026/08/12/image-20260812221702443.png)
 
 &gt; 卸载：快捷键 win + i，点击应用 -&gt; 卸载 -&gt; 卸载 onDrive</content>
     <dc:creator>Tilex</dc:creator>
@@ -1153,13 +1153,13 @@ Desktop
     <published>2026-08-09T06:19:12Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
-![bg](https://oss.tilex.world/d/blog-images/2026/08/09/bg.png?sign=23VSEdcsTp5zzI4nSmfP3SXHTimy8tPx-Wqp4WOPa0Y=:0)
+![bg](/blog-backup/blog-images/2026/08/09/bg.png)
 
 遇到了一张好看的壁纸，让 codex 复刻了一张
 
 &gt; 原壁纸来源：https://haowallpaper.com/homeViewLook/18183320935320960
 
-原壁纸：![image-20260809222049436](https://oss.tilex.world/d/blog-images/2026/08/09/image-20260809222049436.png?sign=-jFUMArCjwxex2Y6bmyyPR8oyAYl1B4fHa7_tqkpzpI=:0)
+原壁纸：![image-20260809222049436](/blog-backup/blog-images/2026/08/09/image-20260809222049436.png)
 
 ## prompt 设计到生图
 大致流程:
@@ -1373,7 +1373,7 @@ codex 返回完整的提示词：
 
 后续就是，将 codex 返回的提示词再发给 codex，便得到下面的图片啦
 
-![bg](https://oss.tilex.world/d/blog-images/2026/08/09/bg.png?sign=23VSEdcsTp5zzI4nSmfP3SXHTimy8tPx-Wqp4WOPa0Y=:0)</content>
+![bg](/blog-backup/blog-images/2026/08/09/bg.png)</content>
     <dc:creator>Tilex</dc:creator>
     <dc:date>2026-08-09T06:19:12Z</dc:date>
   </entry>
@@ -2333,7 +2333,7 @@ dotenv 把 `.env` 文件的内容读出来，挂载到 `process.env` 对象�
     <content type="text/markdown"># Ant-Design-Vue Image-Preview 组件箭头图标局部替换
 
 在实习时，UI 的设计稿将 antdv 的 image-preview 组件的左右箭头替换为 UI 所设计的icon，尝试了多次后才成功替换，在此做一个记录
-![Pasted image 20260730104505](https://oss.tilex.world/d/blog-images/2026/08/08/Pasted%20image%2020260730104505.png?sign=V1GdXrIaP9wIztGtcPFU_k6W17nKEZYJm_vdmPU0Xq4=:0)
+![Pasted image 20260730104505](/blog-backup/blog-images/2026/08/08/Pasted%20image%2020260730104505.png)
 
 ## 需求
 
@@ -2370,11 +2370,11 @@ dotenv 把 `.env` 文件的内容读出来，挂载到 `process.env` 对象�
 但实际测试发现，antdv 根本没有提供 rootClassName 的api，纯 AI 幻觉
 &gt; https://antdv.com/components/image-cn#api
 &gt;
-&gt; ![Pasted image 20260730104720](https://oss.tilex.world/d/blog-images/2026/08/08/Pasted%20image%2020260730104720.png?sign=axahQl9q1Q_dm-H1nWNvjbTSz3iRu7KZtrQcnEwyJ1k=:0)
+&gt; ![Pasted image 20260730104720](/blog-backup/blog-images/2026/08/08/Pasted%20image%2020260730104720.png)
 &gt;
 
 后续发现 Ant Design Vue 4.x 的 `PreviewGroup` 封装层会覆盖用户传入的 `rootClassName`，并使用组件内部生成的 `hashId`
-&gt; ![Pasted image 20260730105019](https://oss.tilex.world/d/blog-images/2026/08/08/Pasted%20image%2020260730105019.png?sign=0r6-OFmOn9oAGwePH-o0SrlY7-_cfkEr8phDgT86f1k=:0)
+&gt; ![Pasted image 20260730105019](/blog-backup/blog-images/2026/08/08/Pasted%20image%2020260730105019.png)
 
 ```js
 // node_modules/ant-design-vue/es/image/PreviewGroup.js
@@ -3017,9 +3017,9 @@ v-show
 
 &gt; 动态组件文档：[Vue 官方文档 - Dynamic Components](https://cn.vuejs.org/guide/essentials/component-basics.html?utm_source=chatgpt.com#dynamic-components)
 
-如下图所示，壳组件（Layout Component）组织了布局与左侧的公共目录部分，而右侧区域是不同的内容，需通过组件注入加载，此时有两种方案：动态组件与插槽![Pasted image 20260522104732](https://oss.tilex.world/d/blog-images/2026/08/08/Pasted%20image%2020260522104732.png?sign=aM44aN19sogGHRRxmjS8ZRKten18hm8l1-o1A95NUek=:0)
+如下图所示，壳组件（Layout Component）组织了布局与左侧的公共目录部分，而右侧区域是不同的内容，需通过组件注入加载，此时有两种方案：动态组件与插槽![Pasted image 20260522104732](/blog-backup/blog-images/2026/08/08/Pasted%20image%2020260522104732.png)
 
-![Pasted image 20260522104821](https://oss.tilex.world/d/blog-images/2026/08/08/Pasted%20image%2020260522104821.png?sign=EFtJf4Y-S_VMqnDLtOe_6j0SuLulNa_8C6MEtno3sBM=:0)
+![Pasted image 20260522104821](/blog-backup/blog-images/2026/08/08/Pasted%20image%2020260522104821.png)
 
 在 Vue 中，组件拆分往往并不是完全独立的模块，更多情况下是“公共结构 + 内容注入”的组合模式。某些组件只负责整体布局、状态管理与公共逻辑，而真正的业务内容则通过插槽或动态组件注入到指定区域中
 
@@ -3702,11 +3702,11 @@ Codex 在更改代码时，对于&lt;u&gt;没有说明、留白的地方&lt;/u&g
 最终排查发现，codex更改的代码，通过使用 vite-ssg 的 `initialState` 保存构建状态，又通过 `loaded` 判断阻止客户端重新请求，导致博客首页长期停留在构建时的数据。
 
 首页：构建时的数据（旧数据）
-![image-20260801173032358](https://oss.tilex.world/d/blog-images/2026/08/01/image-20260801173032358.png?sign=BCrRp8rqlZQTQ-kQGx1rPps0-PMD5pVzHWC_2crtuMY=:0)
+![image-20260801173032358](/blog-backup/blog-images/2026/08/01/image-20260801173032358.png)
 
 后续，更新文章时，发现首页的数据一直没有更新，仍停留在构建阶段，预期的状态：
 
-![image-20260801173144308](https://oss.tilex.world/d/blog-images/2026/08/01/image-20260801173144308.png?sign=5aNrq9ye5cILDcl6wyZIxMOC6xjK0E0AZ-vj1Ms1am4=:0)
+![image-20260801173144308](/blog-backup/blog-images/2026/08/01/image-20260801173144308.png)
 
 但，预期的状态并没有生效
 
@@ -3910,7 +3910,7 @@ onMounted(() =&gt; {
 
 # 雨天上班
 
-![IMG_20260728_192947_1](https://oss.tilex.world/d/blog-images/2026/07/30/IMG_20260728_192947_1.jpg?sign=KZecKsWWgHRXpVOWDoTEdkXG-VsWGq4fb10sG-owO9w=:0)
+![IMG_20260728_192947_1](/blog-backup/blog-images/2026/07/30/IMG_20260728_192947_1.jpg)
 
 &gt; 2026/07/30 夏 天气雨
 
@@ -3972,7 +3972,7 @@ onMounted(() =&gt; {
 
 今年五、六月份实习期间，我也曾连续打卡记录过一段时间，但只坚持了二十来天，后来便彻底放弃了，主观性太强，稳定性必然下降。
 
-![Screenshot_20260725_225619](https://oss.tilex.world/d/blog-images/2026/07/25/Screenshot_20260725_225619.jpg?sign=7GFkzYMMhZR3ipofRBPJtulDfnTFJixk7Uo7mkVazCI=:0)</content>
+![Screenshot_20260725_225619](/blog-backup/blog-images/2026/07/25/Screenshot_20260725_225619.jpg)</content>
     <dc:creator>Tilex</dc:creator>
     <dc:date>2026-07-25T07:20:29Z</dc:date>
   </entry>
