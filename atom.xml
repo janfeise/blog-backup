@@ -5,9 +5,9 @@
   <link rel="self" type="application/atom+xml" href="https://janfeise.github.io/blog-backup/atom.xml" />
   <subtitle>浮生世，片刻光阴</subtitle>
   <id>https://janfeise.github.io/blog-backup/</id>
-  <updated>2026-09-12T01:03:52Z</updated>
+  <updated>2026-10-02T08:28:42Z</updated>
   <dc:creator>Tilex</dc:creator>
-  <dc:date>2026-09-12T01:03:52Z</dc:date>
+  <dc:date>2026-10-02T08:28:42Z</dc:date>
   <entry>
     <title>工作、生活、生命.md</title>
     <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/68" />
@@ -15,7 +15,7 @@
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/68</id>
-    <updated>2026-09-12T01:03:52Z</updated>
+    <updated>2026-10-02T08:28:42Z</updated>
     <published>2026-09-11T17:30:31Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
@@ -65,7 +65,7 @@
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/67</id>
-    <updated>2026-08-31T20:08:08Z</updated>
+    <updated>2026-10-02T08:18:15Z</updated>
     <published>2026-08-31T20:00:46Z</published>
     <content type="text/markdown"># 为 codex 添加开发门禁
 
@@ -191,7 +191,7 @@ codex 说明本次更改范围 → codex 等待用户确认 → codex 实施更�
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/66</id>
-    <updated>2026-08-27T22:29:06Z</updated>
+    <updated>2026-10-02T08:16:30Z</updated>
     <published>2026-08-26T03:44:26Z</published>
     <content type="text/markdown"># WindTerm ssh 连接服务器流程记录
 
@@ -666,7 +666,7 @@ sudo cp /etc/ssh/sshd_config.backup /etc/ssh/sshd_config
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/65</id>
-    <updated>2026-08-26T03:19:01Z</updated>
+    <updated>2026-10-02T08:18:21Z</updated>
     <published>2026-08-26T03:19:01Z</published>
     <content type="text/markdown"># 后端CORS预检梳理&#xD;
 &#xD;
@@ -726,7 +726,7 @@ CORS 预检类似于一道门禁，但并不是每个请求都会触发。浏览
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/64</id>
-    <updated>2026-08-29T00:54:31Z</updated>
+    <updated>2026-10-02T08:18:24Z</updated>
     <published>2026-08-20T20:40:06Z</published>
     <content type="text/markdown"># 服务器迁移
 
@@ -875,7 +875,7 @@ docker compose up -d
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/63</id>
-    <updated>2026-08-27T04:07:55Z</updated>
+    <updated>2026-10-02T08:18:30Z</updated>
     <published>2026-08-17T20:42:47Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
@@ -955,7 +955,7 @@ Google Play
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/62</id>
-    <updated>2026-08-30T23:03:30Z</updated>
+    <updated>2026-10-02T08:18:34Z</updated>
     <published>2026-08-15T23:42:18Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
@@ -1192,7 +1192,7 @@ Windows 电脑建立还原点，电脑出现问题时直接还原（但已登录
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/61</id>
-    <updated>2026-08-13T21:47:50Z</updated>
+    <updated>2026-10-02T08:18:40Z</updated>
     <published>2026-08-13T07:00:52Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
@@ -1230,7 +1230,7 @@ Windows 电脑建立还原点，电脑出现问题时直接还原（但已登录
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/60</id>
-    <updated>2026-08-12T06:52:12Z</updated>
+    <updated>2026-10-02T08:18:43Z</updated>
     <published>2026-08-12T06:49:08Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
@@ -1292,7 +1292,7 @@ C:\Users\admin\OneDrive
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/59</id>
-    <updated>2026-08-12T05:46:30Z</updated>
+    <updated>2026-10-02T08:18:49Z</updated>
     <published>2026-08-12T05:43:54Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
@@ -1325,7 +1325,7 @@ Desktop
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/58</id>
-    <updated>2026-08-09T06:43:54Z</updated>
+    <updated>2026-10-02T08:19:25Z</updated>
     <published>2026-08-09T06:19:12Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
@@ -1560,7 +1560,7 @@ codex 返回完整的提示词：
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/57</id>
-    <updated>2026-08-08T07:10:38Z</updated>
+    <updated>2026-10-02T08:19:31Z</updated>
     <published>2026-08-08T07:10:38Z</published>
     <content type="text/markdown">&gt; 时间：2026/07/17/17:31
 
@@ -2287,7 +2287,7 @@ project/
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/56</id>
-    <updated>2026-08-12T07:06:47Z</updated>
+    <updated>2026-10-02T08:19:37Z</updated>
     <published>2026-08-08T07:10:08Z</published>
     <content type="text/markdown"># vue watch 侦听器的权衡
 
@@ -2358,7 +2358,7 @@ filter 会返回新的数组，此时地址发生了改变
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/55</id>
-    <updated>2026-08-08T07:08:46Z</updated>
+    <updated>2026-10-02T08:19:41Z</updated>
     <published>2026-08-08T07:08:46Z</published>
     <content type="text/markdown"># predev 前端项目本地依赖一致性检查&#xD;
 &#xD;
@@ -2467,7 +2467,7 @@ npm run predev&#xD;
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/54</id>
-    <updated>2026-08-12T07:20:06Z</updated>
+    <updated>2026-10-02T08:19:47Z</updated>
     <published>2026-08-08T07:06:38Z</published>
     <content type="text/markdown">在 node.js 中，不支持直接读取 env 文件数据，与前端不同，前端在 vite 的加持下可读取 env 数据，但 node.js 需 `dotenv` 模块才能加载 env 数据
 ```js
@@ -2504,7 +2504,7 @@ dotenv 把 `.env` 文件的内容读出来，挂载到 `process.env` 对象�
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/53</id>
-    <updated>2026-08-08T07:01:45Z</updated>
+    <updated>2026-10-02T08:19:50Z</updated>
     <published>2026-08-08T07:01:45Z</published>
     <content type="text/markdown"># Ant-Design-Vue Image-Preview 组件箭头图标局部替换
 
@@ -3187,7 +3187,7 @@ v-show
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/52</id>
-    <updated>2026-08-08T06:58:02Z</updated>
+    <updated>2026-10-02T08:19:57Z</updated>
     <published>2026-08-08T06:58:02Z</published>
     <content type="text/markdown"># 动态组件 vs 插槽
 
@@ -3806,7 +3806,7 @@ tabs
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/51</id>
-    <updated>2026-08-08T06:50:28Z</updated>
+    <updated>2026-10-02T08:20:00Z</updated>
     <published>2026-08-08T06:47:50Z</published>
     <content type="text/markdown"># git 常用操作
 &gt; 2026/08/08 | 大三下 | 暑假 | 第一份实习 | 前端实习 | 实习时间：2026/03-2026/08
@@ -3869,7 +3869,7 @@ git stash pop
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/50</id>
-    <updated>2026-08-01T06:08:51Z</updated>
+    <updated>2026-10-02T08:20:06Z</updated>
     <published>2026-08-01T02:42:41Z</published>
     <content type="text/markdown"># 让 AI 编写你认知范围内的代码：vite-ssg initialState 踩坑记录
 
@@ -4080,7 +4080,7 @@ onMounted(() =&gt; {
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/49</id>
-    <updated>2026-07-30T05:19:53Z</updated>
+    <updated>2026-10-02T08:20:13Z</updated>
     <published>2026-07-30T05:10:30Z</published>
     <content type="text/markdown">&gt; TAG: DAILY
 
