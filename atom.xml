@@ -17,9 +17,7 @@
     <id>https://janfeise.github.io/blog-backup/article/68</id>
     <updated>2026-10-02T08:28:42Z</updated>
     <published>2026-09-11T17:30:31Z</published>
-    <content type="text/markdown">&gt; TAG: DAILY
-
-# 工作、生活、生命
+    <content type="text/markdown"># 工作、生活、生命
 
 刷哔站时偶然发现一位UP的个签
 
@@ -877,9 +875,7 @@ docker compose up -d
     <id>https://janfeise.github.io/blog-backup/article/63</id>
     <updated>2026-10-02T08:18:30Z</updated>
     <published>2026-08-17T20:42:47Z</published>
-    <content type="text/markdown">&gt; TAG: DAILY
-
-# 邮储万事达借记卡ChatGpt订阅指南
+    <content type="text/markdown"># 邮储万事达借记卡ChatGpt订阅指南
 
 &gt; 踩坑记录，捣腾了两天终于订阅成功&#x1f62d;&#x1f62d;&#x1f62d;
 
@@ -957,9 +953,7 @@ Google Play
     <id>https://janfeise.github.io/blog-backup/article/62</id>
     <updated>2026-10-02T08:18:34Z</updated>
     <published>2026-08-15T23:42:18Z</published>
-    <content type="text/markdown">&gt; TAG: DAILY
-
-# 离职-记录第一次实习
+    <content type="text/markdown"># 离职-记录第一次实习
 
 &gt; 2026年 | 大三下 | 前端实习
 
@@ -1194,9 +1188,7 @@ Windows 电脑建立还原点，电脑出现问题时直接还原（但已登录
     <id>https://janfeise.github.io/blog-backup/article/61</id>
     <updated>2026-10-02T08:18:40Z</updated>
     <published>2026-08-13T07:00:52Z</published>
-    <content type="text/markdown">&gt; TAG: DAILY
-
-# 网站字体处理-字体子集
+    <content type="text/markdown"># 网站字体处理-字体子集
 
 在网站中，往往涉及字体引入，对于网站中广泛使用的字体，直接引入没问题，但是对于只有少数使用场景的字体时，直接引入开销太大，如下图：
 
@@ -1232,9 +1224,7 @@ Windows 电脑建立还原点，电脑出现问题时直接还原（但已登录
     <id>https://janfeise.github.io/blog-backup/article/60</id>
     <updated>2026-10-02T08:18:43Z</updated>
     <published>2026-08-12T06:49:08Z</published>
-    <content type="text/markdown">&gt; TAG: DAILY
-
-# 小心 onDrive：自动同步个人文件到工作电脑
+    <content type="text/markdown"># 小心 onDrive：自动同步个人文件到工作电脑
 
 &gt; 背景：在公司中，我的工作电脑上竟然出现了我的个人文件，瞬间惊悚，因为我并不记得什么时候将个人的文件放置在工作电脑上&#x1f628;&#x1f628;&#x1f628;
 
@@ -1294,9 +1284,7 @@ C:\Users\admin\OneDrive
     <id>https://janfeise.github.io/blog-backup/article/59</id>
     <updated>2026-10-02T08:18:49Z</updated>
     <published>2026-08-12T05:43:54Z</published>
-    <content type="text/markdown">&gt; TAG: DAILY
-
-# 工作电脑-桌面管理
+    <content type="text/markdown"># 工作电脑-桌面管理
 
 &gt; 背景：2026/08/12 第一份实习
 
@@ -1327,9 +1315,7 @@ Desktop
     <id>https://janfeise.github.io/blog-backup/article/58</id>
     <updated>2026-10-02T08:19:25Z</updated>
     <published>2026-08-09T06:19:12Z</published>
-    <content type="text/markdown">&gt; TAG: DAILY
-
-![bg](/blog-backup/blog-images/2026/08/09/bg.png)
+    <content type="text/markdown">![bg](/blog-backup/blog-images/2026/08/09/bg.png)
 
 遇到了一张好看的壁纸，让 codex 复刻了一张
 
@@ -4082,9 +4068,7 @@ onMounted(() =&gt; {
     <id>https://janfeise.github.io/blog-backup/article/49</id>
     <updated>2026-10-02T08:20:13Z</updated>
     <published>2026-07-30T05:10:30Z</published>
-    <content type="text/markdown">&gt; TAG: DAILY
-
-# 雨天上班
+    <content type="text/markdown"># 雨天上班
 
 ![IMG_20260728_192947_1](/blog-backup/blog-images/2026/07/30/IMG_20260728_192947_1.jpg)
 
