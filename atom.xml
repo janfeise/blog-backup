@@ -5,9 +5,760 @@
   <link rel="self" type="application/atom+xml" href="https://janfeise.github.io/blog-backup/atom.xml" />
   <subtitle>浮生世，片刻光阴</subtitle>
   <id>https://janfeise.github.io/blog-backup/</id>
-  <updated>2026-10-05T04:57:34Z</updated>
+  <updated>2026-10-09T12:05:04Z</updated>
   <dc:creator>Tilex</dc:creator>
-  <dc:date>2026-10-05T04:57:34Z</dc:date>
+  <dc:date>2026-10-09T12:05:04Z</dc:date>
+  <entry>
+    <title>常用快捷键梳理.md</title>
+    <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/71" />
+    <author>
+      <name>Tilex</name>
+    </author>
+    <id>https://janfeise.github.io/blog-backup/article/71</id>
+    <updated>2026-10-09T12:05:04Z</updated>
+    <published>2026-10-09T11:34:25Z</published>
+    <content type="text/markdown"># 常用快捷键梳理
+
+梳理日常使用电脑时常用的快捷键，大致分为以下四部分：
+
+- 通用快捷键
+- bilibili
+- 浏览器
+- Windows 电脑
+
+### 通用快捷键
+
+| 快捷键     | 功能        | 说明               |
+| ---------- | ----------- | -------------------------------- |
+| `Ctrl + C` | 复制        | Copy                             |
+| `Ctrl + V` | 粘贴        | Paste                            |
+| `Ctrl + X` | 剪切        | Cut                              |
+| `Ctrl + Z` | 撤销        | Undo                             |
+| `Ctrl + A` | 全选        | All                              |
+| `Ctrl + F` | 查找        | Find，网页、文档、代码编辑器通用 |
+| `Ctrl + S` | 保存        | Save                             |
+| `Esc`      | 取消 / 退出 | 关闭弹窗、退出当前状态等         |
+
+---
+
+### Bilibili 常用快捷键
+
+| 快捷键       | 功能            | 说明               |
+| ------------ | --------------- | ------------------------------ |
+| `F`          | 全屏 / 退出全屏 | Fullscreen                     |
+| `D`          | 开启 / 关闭弹幕 | 弹幕                           |
+| `[`          | 上一个视频      | **[** ]，系列 / 合集中的上一集 |
+| `]`          | 下一个视频      | [ **]**，系列 / 合集中的下一集 |
+| `Space` 空格 | 播放 / 暂停     | 视频网站最常用操作             |
+| `←` / `→`    | 后退 / 快进     | 快速调整播放进度               |
+| `↑` / `↓`    | 增大 / 减小音量 | 视频播放控制                   |
+
+&gt; 可惜没有找到重置视频进度的快捷键，每次用鼠标拖动进度条到视频开头，还是有点繁琐
+
+------
+
+### 浏览器常用快捷键
+
+| 快捷键               | 功能                 | 说明                 |
+| -------------------- | -------------------- | ----------------------------------- |
+| `Ctrl + T`           | 新建标签页           | Tab                                 |
+| `Ctrl + W`           | 关闭当前标签页       | 与 `Ctrl + T` 对应                  |
+| `Ctrl + Shift + T`   | 恢复刚关闭的标签页   | 非常实用，可连续恢复多个            |
+| `Ctrl + L`           | 聚焦地址栏，好用&#x1f929;    | Location，可直接输入 URL 或搜索内容 |
+| `Ctrl + Tab`         | 切换到下一个标签页   | 标签页之间快速切换                  |
+| `Ctrl + Shift + Tab` | 切换到上一个标签页   | 与 `Ctrl + Tab` 对应                |
+| `Ctrl + 1 ~ 8`       | 切换到指定标签页     | `Ctrl + 1` = 第一个标签页           |
+| `Ctrl + 9`           | 切换到最后一个标签页 | 标签很多时很好用                    |
+| `Ctrl + R`           | 刷新网页             | Reload                              |
+| `Ctrl + Shift + R`   | 强制刷新             | 通常会忽略部分缓存，前端开发常用    |
+| `Ctrl + D`           | 收藏当前网页         | 添加书签                            |
+| `Ctrl + F`           | 页面内查找           | Find                                |
+| `Ctrl + U`           | 查看网页源代码       | 前端开发常用，可判断网站是否是SPA   |
+| `Ctrl + shift + C`   | 打开开发者工具       | check，不太习惯 F12                 |
+| `Ctrl + N`           | 新建窗口             | Chrome / Edge 常用                  |
+| `Ctrl + Shift + N`   | 新建无痕窗口         | Chrome / Edge 常用                  |
+
+------
+
+### Windows 窗口与软件管理
+
+| 快捷键             | 功能              | 说明                                         |
+| ------------------ | ----------------- | ------------------------------------------------------------ |
+| `Alt + Tab`        | 切换软件          | 在打开的软件之间切换                                         |
+| `Ctrl + Alt + Tab` | 固定任务切换界面  | 可松开按键后继续选择窗口，常与Ctrl + W搭配使用，快速关闭软件 |
+| `Ctrl + W`         | 关闭              | 与 `Ctrl + Alt + Tab` 搭配使用                               |
+| `Win + D`          | 显示 / 恢复桌面   | Desktop，常用                                                |
+| `Win + ↑`          | 最大化当前窗口    | 窗口布局                                                     |
+| `Win + ↓`          | 还原 / 最小化窗口 | 与 `Win + ↑` 对应                                            |
+| `Win + ←`          | 窗口贴靠左侧      | 分屏非常好用                                                 |
+| `Win + →`          | 窗口贴靠右侧      | 分屏非常好用                                                 |
+
+------
+
+### Windows 系统功能
+
+| 快捷键               | 功能                                              | 说明                |
+| -------------------- | ------------------------------------------------- | ------------------------------- |
+| `Win + E`            | 打开文件资源管理器                                | Explorer                        |
+| `Win + R`            | 打开“运行”，可输入：calc（计算器）、cmd（终端）…… | Run                             |
+| `Win + I`            | 打开 Windows 设置，调整耳机蓝牙时好用             | Settings                        |
+| `Win + S`            | Windows 搜索，快速打开软件                        | Search                          |
+| `Win + V`            | 打开剪贴板历史                                    | **强烈推荐开启**                |
+| `Win + L`            | 锁屏，锁定电脑                                    | Lock                            |
+| `Ctrl + Shift + Esc` | 打开任务管理器                                    | 比 `Ctrl + Alt + Delete` 更直接 |
+| `Win + X`            | 打开高级系统菜单                                  | 可继续通过字母执行操作          |
+| `Win + X → U → U`    | 关机，好用&#x1f929;                                       | 快速关机                        |
+| `Win + X → U → R`    | 重启                                              | 与关机操作同一套逻辑            |
+
+------
+
+### Windows 桌面与虚拟桌面
+
+&gt; 当前很少使用
+
+| 快捷键            | 功能             | 使用场景           | 推荐程度 |
+| ----------------- | ---------------- | ------------------ | -------- |
+| `Win + Tab`       | 打开任务视图     | 查看窗口和虚拟桌面 | ★★★★☆    |
+| `Win + Ctrl + D`  | 新建虚拟桌面     | 工作内容分组       | ★★★☆☆    |
+| `Win + Ctrl + ←`  | 上一个虚拟桌面   | 快速切换工作区     | ★★★☆☆    |
+| `Win + Ctrl + →`  | 下一个虚拟桌面   | 快速切换工作区     | ★★★☆☆    |
+| `Win + Ctrl + F4` | 关闭当前虚拟桌面 | 清理工作区         | ★★★☆☆    |
+
+如果平时同时开：
+
+```
+浏览器
+IDEA
+VS Code
+数据库工具
+SSH
+微信
+```
+
+虚拟桌面会比较有价值，例如：
+
+```
+桌面 1：浏览器 + 日常软件
+
+桌面 2：VS Code + Chrome
+
+桌面 3：IDEA + MySQL
+```</content>
+    <dc:creator>Tilex</dc:creator>
+    <dc:date>2026-10-09T11:34:25Z</dc:date>
+  </entry>
+  <entry>
+    <title>MySQL笔记整理.md</title>
+    <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/70" />
+    <author>
+      <name>Tilex</name>
+    </author>
+    <id>https://janfeise.github.io/blog-backup/article/70</id>
+    <updated>2026-10-05T08:48:58Z</updated>
+    <published>2026-10-05T08:47:02Z</published>
+    <content type="text/markdown"># MySQL笔记整理
+
+&gt; 在线练习平台：[牛客 SQL 快速入门](https://www.nowcoder.com/exam/oj?page=1&amp;tab=SQL%E7%AF%87&amp;topicId=199&amp;fromPut=pc_csdncpt_xie_sql)
+
+## MySQL 执行顺序
+
+&gt;视频：[数据库面试——SQL执行顺序_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Ha4y1a791/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f)
+
+MySQL执行顺序与编写顺序不同，编写顺序：
+```sql
+select
+
+from
+
+where
+
+group by
+
+having
+
+order by
+
+limit
+```
+
+编写顺序从上到下依次编写，但执行顺序却不同：中间开始，返回头部，最后执行尾部
+
+```sql
+1. FROM
+   确定数据来源，从指定表中获取数据
+
+2. WHERE
+   对原始数据进行筛选，只保留满足条件的数据行
+
+3. GROUP BY
+   对筛选后的数据进行分组
+
+4. HAVING
+   对分组后的结果再次进行筛选，通常用于筛选聚合结果
+
+5. SELECT
+   决定最终需要返回哪些字段、表达式或聚合结果
+
+6. ORDER BY
+   对查询结果进行排序
+
+7. LIMIT
+   限制最终返回的数据条数
+```
+
+因此，默认情况下，select 语句设置的别名，只有尾部 order by 才能使用（limit 只是限制数量，不做筛选），但 MySQL 对 having、order by  做了优化，having 与 order by 也可以使用 select 设置的别名，示例：
+
+```sql
+SELECT
+    class_name,
+    AVG(score) AS avg_score
+FROM score
+GROUP BY class_name
+HAVING avg_score &gt; 83;
+```
+
+执行顺序是：
+
+- from
+- group by
+- having
+- select
+
+此时 select 设置的别名，having 等语句访问应该是无效的，但由于 MySQL 做了优化，上面的代码也可以正确运行
+
+## MySQL基础
+
+Mysql 执行顺序应该是 from, where, group by, having, select, order by, limit
+
+| 一级分类         | 二级分类 | 操作           | SQL 示例                                                     | 说明                                                         |
+| ---------------- | -------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **数据库**       | 查看     | 查看所有数据库 | `SHOW DATABASES;`                                            | 查看 MySQL 中已有数据库                                      |
+|                  | 创建     | 创建数据库     | `CREATE DATABASE school;`                                    | 创建 `school` 数据库                                         |
+|                  | 删除     | 删除数据库     | `DROP DATABASE school;`                                      | 删除整个数据库及其中所有表                                   |
+|                  | 选择     | 选择数据库     | `USE school;`                                                | 后续操作默认针对该数据库                                     |
+|                  | 查看     | 查看当前数据库 | `SELECT DATABASE();`                                         | 查看当前正在使用的数据库                                     |
+| **表**           | 查看     | 查看所有表     | `SHOW TABLES;`                                               | 查看当前数据库中的所有表                                     |
+|                  | 创建     | 创建表         | `CREATE TABLE user (id INT, name VARCHAR(50));`              | 创建表                                                       |
+|                  | 查看     | 查看表结构     | `DESC user;`                                                 | 查看字段名、类型、NULL 等信息                                |
+|                  | 删除     | 删除表         | `DROP TABLE user;`                                           | 删除表结构和其中的数据                                       |
+|                  | 修改     | 添加字段       | `ALTER TABLE user ADD age INT;`                              | 为已有表添加字段                                             |
+|                  | 修改     | 删除字段       | `ALTER TABLE user DROP COLUMN age;`                          | 删除指定字段                                                 |
+|                  | 修改     | 修改字段       | `ALTER TABLE user MODIFY name VARCHAR(100);`                 | 修改字段类型等定义                                           |
+|                  | 修改     | 重命名表       | `RENAME TABLE user TO users;`                                | 修改表名                                                     |
+| **行数据**       | 新增     | 新增一行       | `INSERT INTO user (id, name) VALUES (1, 'Tom');`             | 插入一条数据                                                 |
+|                  | 新增     | 新增多行       | `INSERT INTO user (id, name) VALUES (1, 'Tom'), (2, 'Jack');` | 一次插入多条数据                                             |
+|                  | 修改     | 修改数据       | `UPDATE user SET name = 'Jerry' WHERE id = 1;`               | 修改符合条件的数据                                           |
+|                  | 删除     | 删除指定数据   | `DELETE FROM user WHERE id = 1;`                             | 删除符合条件的行                                             |
+|                  | 删除     | 删除全部数据   | `DELETE FROM user;`                                          | 删除所有数据，但保留表结构                                   |
+| **查询**         | 基础查询 | 查询全部字段   | `SELECT * FROM user;`                                        | 查询所有字段                                                 |
+|                  | 基础查询 | 查询指定字段   | `SELECT id, name FROM user;`                                 | 查询指定字段                                                 |
+|                  | 别名     | 字段别名       | `SELECT name AS username FROM user;`                         | `AS` 可以省略                                                |
+|                  | 去重     | 查询不同值     | `SELECT DISTINCT age FROM user;`                             | 去除重复结果                                                 |
+|                  | 排序     | 升序           | `SELECT * FROM user ORDER BY age ASC;`                       | `ASC` 为升序，也是默认值                                     |
+|                  | 排序     | 降序           | `SELECT * FROM user ORDER BY age DESC;`                      | `DESC` 为降序                                                |
+|                  | 排序     | 多列排序       | `select device_id, gpa, age from user_profile order by gpa asc, age asc;` | 依次放置即可，首先对 gap 进行升序排序，然后再对 age 进行升序排序 |
+|                  | 限制结果 | 限制数量       | `SELECT * FROM user LIMIT 10;`                               | 获取前 10 条                                                 |
+|                  | 分页     | 偏移查询       | `SELECT * FROM user LIMIT 10 OFFSET 20;`                     | 跳过 20 条，再获取 10 条                                     |
+| **WHERE 条件**   | 比较     | 等于           | `WHERE age = 18`                                             | SQL 中判断相等使用 `=`                                       |
+|                  | 比较     | 不等于         | `WHERE age != 18`                                            | 也可以使用 `&lt;&gt;`                                              |
+|                  | 比较     | 大小比较       | `WHERE age &gt;= 18`                                            | 支持 `&gt;`、`&lt;`、`&gt;=`、`&lt;=`                                    |
+|                  | 逻辑     | AND            | `WHERE age &gt;= 18 AND age &lt;= 25`                              | 多个条件同时成立                                             |
+|                  | 逻辑     | OR             | `WHERE age = 18 OR age = 20`                                 | 任一条件成立                                                 |
+|                  | 逻辑     | NOT            | `WHERE NOT age = 18`                                         | 对条件取反                                                   |
+|                  | 范围     | BETWEEN        | `WHERE age BETWEEN 18 AND 25`                                | 判断是否位于指定范围，包含边界                               |
+|                  | 集合     | IN             | `WHERE id IN (1, 2, 3)`                                      | 判断值是否属于指定集合                                       |
+|                  | 模糊查询 | LIKE           | `WHERE name LIKE 'Tom%'`                                     | `%` 表示任意数量字符                                         |
+|                  | 模糊查询 | LIKE           | `WHERE name LIKE 'To_'`                                      | `_` 表示任意一个字符                                         |
+|                  | NULL     | 判断 NULL      | `WHERE age IS NULL`                                          | 不能使用 `age = NULL`                                        |
+|                  | NULL     | 判断非 NULL    | `WHERE age IS NOT NULL`                                      | 判断字段不为 NULL                                            |
+| **删除方式对比** | DELETE   | 删除数据       | `DELETE FROM user WHERE id = 1;`                             | 删除行，保留表结构，支持 `WHERE`，`AUTO_INCREMENT` 的计数状态通常不会重置 |
+|                  | TRUNCATE | 清空表         | `TRUNCATE TABLE user;`                                       | 删除全部数据，保留表结构，不支持 `WHERE`，`AUTO_INCREMENT` 的计数状态重置 |
+|                  | DROP     | 删除表         | `DROP TABLE user;`                                           | 删除表结构以及全部数据                                       |
+
+## 正则
+
+&gt; **REGEXP** 是 **Regular Expression**（正则表达式）的缩写
+
+REGEXP 是用于进行正则表达式匹配的运算符，用于检查一个字符串是否匹配指定的正则表达式模式，示例：
+
+查找 name 字段中以 **'st'** 为开头的所有数据：
+
+```sql
+SELECT name 
+FROM person_tbl 
+WHERE name REGEXP '^st';
+```
+
+| 分类     | 语法 / 符号     | 示例                                 | 说明                                  |
+| -------- | --------------- | ------------------------------------ | ------------------------------------- |
+| 正则查询 | `REGEXP`        | `WHERE name REGEXP 'Tom'`            | 判断字段是否匹配正则表达式            |
+|          | `RLIKE`         | `WHERE name RLIKE 'Tom'`             | `REGEXP` 的同义写法                   |
+|          | `REGEXP_LIKE()` | `WHERE REGEXP_LIKE(name, 'Tom')`     | MySQL 8.0 推荐的正则函数写法          |
+| 位置匹配 | `^`             | `WHERE name REGEXP '^Tom'`           | 匹配以 `Tom` 开头的字符串             |
+|          | `$`             | `WHERE name REGEXP 'Tom$'`           | 匹配以 `Tom` 结尾的字符串             |
+| 任意字符 | `.`             | `WHERE name REGEXP 'T.m'`            | `.` 表示任意单个字符，如 `Tom`、`Tim` |
+| 重复匹配 | `*`             | `WHERE name REGEXP 'ab*c'`           | 前一个字符出现 0 次或多次             |
+|          | `+`             | `WHERE name REGEXP 'ab+c'`           | 前一个字符出现 1 次或多次             |
+|          | `?`             | `WHERE name REGEXP 'ab?c'`           | 前一个字符出现 0 次或 1 次            |
+| 次数匹配 | `{n}`           | `WHERE code REGEXP '[0-9]{4}'`       | 前一个模式恰好出现 `n` 次             |
+|          | `{n,}`          | `WHERE code REGEXP '[0-9]{4,}'`      | 至少出现 `n` 次                       |
+|          | `{n,m}`         | `WHERE code REGEXP '[0-9]{2,4}'`     | 出现 `n` 到 `m` 次                    |
+| 字符集合 | `[abc]`         | `WHERE name REGEXP '[abc]'`          | 匹配 `a`、`b`、`c` 中任意一个字符     |
+|          | `[a-z]`         | `WHERE name REGEXP '[a-z]'`          | 匹配指定字符范围                      |
+|          | `[0-9]`         | `WHERE code REGEXP '[0-9]'`          | 匹配数字                              |
+| 排除字符 | `[^abc]`        | `WHERE name REGEXP '[^abc]'`         | 匹配不是 `a`、`b`、`c` 的字符         |
+| 多条件   | `|`             | `WHERE name REGEXP 'Tom|Jack'`       | 匹配 `Tom` 或 `Jack`                  |
+| 分组     | `()`            | `WHERE name REGEXP '^(Tom|Jack)$'`   | 将多个正则模式组合                    |
+| 数字     | `[[:digit:]]`   | `WHERE code REGEXP '[[:digit:]]'`    | 匹配数字字符                          |
+| 字母     | `[[:alpha:]]`   | `WHERE name REGEXP '[[:alpha:]]'`    | 匹配字母                              |
+| 字母数字 | `[[:alnum:]]`   | `WHERE code REGEXP '[[:alnum:]]'`    | 匹配字母或数字                        |
+| 空白字符 | `[[:space:]]`   | `WHERE content REGEXP '[[:space:]]'` | 匹配空格、换行等空白字符              |
+
+### 常见示例
+
+```SQL
+-- 查询以 Tom 开头的用户名
+SELECT *
+FROM user
+WHERE name REGEXP '^Tom';
+```
+
+```sql
+-- 查询以 3 个数字结尾的数据
+SELECT *
+FROM user
+WHERE code REGEXP '[0-9]{3}$';
+```
+
+## 聚合
+
+| 聚合函数  | 作用     | 示例         |
+| --------- | -------- | ------------ |
+| `COUNT()` | 统计数量 | `COUNT(*)`   |
+| `SUM()`   | 求和     | `SUM(score)` |
+| `AVG()`   | 求平均值 | `AVG(score)` |
+| `MAX()`   | 求最大值 | `MAX(score)` |
+| `MIN()`   | 求最小值 | `MIN(score)` |
+
+## 分组
+
+| 聚合函数   | 作用                                                         | 示例                                                         |
+| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `GROUP BY` | 分组                                                         | `SELECT class_name FROM score GROUP BY class_name;`          |
+| `HAVING `  | 如果要过滤的不是原始数据，而是**分组之后的结果**，就要使用 `HAVING` | `SELECT class_name, AVG(score) AS avg_score FROM score GROUP BY class_name HAVING AVG(score) &gt; 83;` |
+
+`HAVING` 示例：查询平均分大于 83 的班级
+
+| id   | student_name | class_name | gender | score |
+| ---- | ------------ | ---------- | ------ | ----- |
+| 1    | Tom          | A          | 男     | 80    |
+| 2    | Jack         | A          | 男     | 90    |
+| 3    | Lucy         | A          | 女     | 85    |
+| 4    | Jerry        | B          | 男     | 70    |
+| 5    | Alice        | B          | 女     | 95    |
+
+&gt; 如果要过滤的不是原始数据，而是**分组之后的结果**，就要使用 `HAVING`
+
+思路：
+
+1. 对班级进行分组，分为A班和B班
+2. 计算每个班级的平均分，A班的平均分，B班的平均分
+3. 筛选平均分大于83的班级
+
+由于是对分组后的结果进行处理，需使用 having
+
+```sql
+SELECT
+    class_name,
+    AVG(score) AS avg_score
+FROM score
+GROUP BY class_name
+HAVING avg_score &gt; 83;
+```
+
+## 多表查询
+
+&gt;笛卡尔积：[《离散数学》知识点详解：集合的运算（笛卡尔积）_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1sa4y1R73e/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f)
+&gt;
+&gt;SQL关系代数：[【关系代数】并、交、差与广义笛卡尔积_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1zM4y1s7ar/?spm_id_from=333.337.search-card.all.click)
+
+当一个查询需要同时使用多张表中的数据时，就属于多表查询，理解多表查询，可以先从 **笛卡尔积** 开始：
+
+![image-20260930173655859](/blog-backup/blog-images/2026/09/30/image-20260930173655859.png)
+
+假设有两张表：
+
+### S 学生表
+
+| Sno  | Sname |
+| ---- | ----- |
+| 001  | Tom   |
+| 002  | Jack  |
+
+### SC 成绩表
+
+| Sno  | Course | Score |
+| ---- | ------ | ----- |
+| 001  | MySQL  | 90    |
+| 001  | Java   | 85    |
+| 002  | MySQL  | 80    |
+
+如果直接查询两张表：
+
+```sql
+SELECT S.*, SC.*
+FROM S, SC;
+```
+
+没有设置任何关联条件，此时会得到两张表的 **笛卡尔积**
+
+如果：
+
+```text
+S 表有 m 行
+SC 表有 n 行
+```
+
+那么理论上会得到：
+
+```text
+m × n 行
+```
+
+因为 S 表中的每一行都会分别与 SC 表中的每一行进行组合
+
+例如：
+
+```text
+S.001 × SC.001 MySQL
+S.001 × SC.001 Java
+S.001 × SC.002 MySQL
+
+S.002 × SC.001 MySQL
+S.002 × SC.001 Java
+S.002 × SC.002 MySQL
+```
+
+总共：
+
+```text
+2 × 3 = 6 行
+```
+
+![image-20260930173553140](/blog-backup/blog-images/2026/09/30/image-20260930173553140.png)
+
+将两张表进行笛卡尔积，得到的是第一张表每行数据与另一张表所有数据合并的结果，如上图所示，S表的006数据与SC表的每行数据进行合并，得到了5行数据，总共20行数据，后续的多表查询便是再次基础上进行处理，而且实际业务中，我们通常并不需要所有组合，而只需要存在关系的数据，如学生编号相同时才认为两条数据有关联：
+
+1. 多表进行笛卡尔积
+	```sql
+	select S.*, SC.*
+	from S, SC;
+	```
+
+	便能得到上图中的20行大表，后续对这张大表进行业务处理即可（看作一张表）
+
+2. 后续业务处理，如：学生编号相同
+	```sql
+	select S.*, SC.*
+	from S, SC
+	where S.Sno = SC.Sno;
+	```
+
+这种写法属于较早的隐式连接写法，实际开发中更推荐明确使用 `JOIN`
+
+```sql
+SELECT S.*, SC.*
+FROM S
+INNER JOIN SC
+    ON S.Sno = SC.Sno;
+```
+
+这两种写法在这里表达的查询含义基本相同：
+
+```sql
+FROM S, SC
+WHERE S.Sno = SC.Sno
+```
+
+等价理解为：
+
+```sql
+FROM S
+INNER JOIN SC
+ON S.Sno = SC.Sno
+```
+
+需要注意：
+
+“先生成完整笛卡尔积，再使用 WHERE 筛选”适合作为**理解模型**
+
+但 MySQL 实际执行查询时，优化器通常不会真的先生成一张巨大的笛卡尔积临时表，再进行筛选，而会选择更高效的连接算法和执行计划
+
+## 连接 JOIN
+
+&gt; [MYSQL面试——left join 、inner join 、right join区别_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1NV411r7Nz/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f)
+
+JOIN 用于：根据连接条件，将多张表中满足条件的行组合成新的结果集
+
+例如：
+
+```sql
+S.Sno = SC.Sno
+```
+
+就是一个连接条件
+
+常见 JOIN 包括：
+
+| 类型         | 含义                                     |
+| ------------ | ---------------------------------------- |
+| `CROSS JOIN` | 所有行互相组合，即笛卡尔积               |
+| `INNER JOIN` | 只保留满足连接条件的数据                 |
+| `LEFT JOIN`  | 保留左表全部数据，同时连接右表匹配的数据 |
+| `RIGHT JOIN` | 保留右表全部数据，同时连接左表匹配的数据 |
+
+维恩图：
+
+![image-20260930193639960](/blog-backup/blog-images/2026/09/30/image-20260930193639960.png)
+
+### CROSS JOIN
+
+`CROSS JOIN` 就是笛卡尔积
+
+```sql
+SELECT *
+FROM S
+CROSS JOIN SC;
+```
+
+如果：
+
+```text
+S：4 行
+SC：5 行
+```
+
+结果：
+
+```text
+4 × 5 = 20 行
+```
+
+因此：
+
+```sql
+FROM S, SC
+```
+
+可以理解为一种隐式的 `CROSS JOIN`
+
+### 左连接
+
+左连接的核心规则是：
+
+&gt; **左表全部保留，右表能匹配就连接，左表不能匹配项填 NULL**
+
+![image-20260930193836186](/blog-backup/blog-images/2026/09/30/image-20260930193836186.png)
+
+![image-20260930194059506](/blog-backup/blog-images/2026/09/30/image-20260930194059506.png)
+
+将 from Student 的 Student 作为左表，left join SC 的 SC 作为右表，两者进行左连接
+
+```sql
+from A（左表）
+LEFT JOIN B（右表）
+```
+
+### 内连接 INNER JOIN
+
+内连接：左表公共部分与右表公共部分做笛卡尔积，核心规则是：
+
+&gt; **满足连接条件的行组合**
+
+![image-20260930194720120](/blog-backup/blog-images/2026/09/30/image-20260930194720120.png)
+
+示例：
+
+```sql
+SELECT
+    S.Sno,
+    S.Sname,
+    SC.Course,
+    SC.Score
+FROM S
+INNER JOIN SC
+    ON S.Sno = SC.Sno;
+```
+
+执行逻辑可以理解为：
+
+```text
+S 表
+  │
+  │ S.Sno = SC.Sno
+  ▼
+寻找 SC 表中满足条件的数据
+  │
+  ▼
+组合匹配成功的数据
+```
+
+例如：
+
+```text
+S
+
+001 Tom
+002 Jack
+003 Lucy
+SC
+
+001 MySQL 90
+001 Java 85
+002 MySQL 80
+004 Java 90
+```
+
+执行：
+
+```sql
+SELECT *
+FROM S
+INNER JOIN SC
+    ON S.Sno = SC.Sno;
+```
+
+得到：
+
+```text
+001 Tom  001 MySQL 90
+001 Tom  001 Java  85
+002 Jack 002 MySQL 80
+```
+
+其中：
+
+```text
+003 Lucy
+004 Java
+```
+
+不会出现在最终结果中，因为它们没有找到满足连接条件的数据
+
+## ON 与 WHERE
+
+学习 JOIN 时，还需要区分：
+
+```sql
+ON
+```
+
+与：
+
+```sql
+WHERE
+```
+
+`ON` 主要用于描述：
+
+&gt; 两张表之间如何进行匹配
+
+例如：
+
+```sql
+ON S.Sno = SC.Sno
+```
+
+`WHERE` 主要用于描述：
+
+&gt; 对连接完成后的结果进一步进行筛选
+
+例如查询 MySQL 成绩大于 80 分的学生：
+
+```sql
+SELECT
+    S.Sname,
+    SC.Score
+FROM S
+INNER JOIN SC
+    ON S.Sno = SC.Sno
+WHERE SC.Course = 'MySQL'
+  AND SC.Score &gt; 80;
+```
+
+可以理解为：
+
+```text
+S
+        \
+         \ S.Sno = SC.Sno
+          JOIN
+         /
+SC
+        ↓
+   得到关联数据
+        ↓
+WHERE Course = 'MySQL'
+  AND Score &gt; 80
+        ↓
+   得到最终结果
+```
+
+因此可以简单记忆：
+
+```text
+ON      → 表与表怎么关联
+WHERE   → 结果还需要满足什么条件
+```
+
+需要注意，对于外连接 `LEFT JOIN / RIGHT JOIN`，将条件写在 `ON` 还是 `WHERE` 中可能直接改变查询结果，因此两者不能认为完全等价
+
+## 多表查询整体理解
+
+整个知识点可以整理成一条主线：
+
+```text
+多表查询
+│
+├── CROSS JOIN
+│     └── 所有数据组合：笛卡尔积
+│
+├── INNER JOIN
+│     └── 只保留匹配成功的数据
+│
+├── LEFT JOIN
+│     └── 左表全部保留
+│         ├── 匹配成功 → 合并右表数据
+│         └── 匹配失败 → 右表字段 NULL
+│
+└── RIGHT JOIN
+      └── 右表全部保留
+          ├── 匹配成功 → 合并左表数据
+          └── 匹配失败 → 左表字段 NULL
+```
+
+最核心的理解是：
+
+```text
+JOIN ≠ 单纯寻找两个集合的交集
+
+JOIN = 根据 ON 条件寻找行与行之间的匹配关系，并将匹配的数据组合起来
+```
+
+其中：
+
+```text
+INNER JOIN → 只要匹配成功的数据
+
+LEFT JOIN  → 左边全部要，右边能匹配多少就匹配多少
+
+RIGHT JOIN → 右边全部要，左边能匹配多少就匹配多少
+
+CROSS JOIN → 不考虑匹配关系，所有数据互相组合
+```</content>
+    <dc:creator>Tilex</dc:creator>
+    <dc:date>2026-10-05T08:47:02Z</dc:date>
+  </entry>
   <entry>
     <title>博客主题更新.md</title>
     <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/69" />
@@ -3886,279 +4637,5 @@ tabs
 两种机制分别解决不同层面的问题。</content>
     <dc:creator>Tilex</dc:creator>
     <dc:date>2026-08-08T06:58:02Z</dc:date>
-  </entry>
-  <entry>
-    <title>git 常用操作.md</title>
-    <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/51" />
-    <author>
-      <name>Tilex</name>
-    </author>
-    <id>https://janfeise.github.io/blog-backup/article/51</id>
-    <updated>2026-10-02T08:20:00Z</updated>
-    <published>2026-08-08T06:47:50Z</published>
-    <content type="text/markdown"># git 常用操作
-&gt; 2026/08/08 | 大三下 | 暑假 | 第一份实习 | 前端实习 | 实习时间：2026/03-2026/08
-
-记录前端实习中常用的 `git` 操作
-
-## 本地同步远程分支
-
-新一期需求通常会创建新的远程分支，此时需要在本地创建对应分支并与其关联
-
-```cmd
-// -------------------本地同步远程分支-------------------
-git branch -a # 查看远程分支
-git checkout -b dev-0.1.0 origin/dev-0.1.0 # 本地创建分支 0.1.0 并关联到远程分支
-```
-
-## 提交流程
-
-提交前，先使用 `stash` 暂存本地修改，再拉取最新代码，最后恢复修改。即使发生冲突，本地修改和远程代码也会保留，便于后续处理
-
-```cmd
-// -------------------提交流程-------------------
-# 1. 暂存当前修改
-git stash save "执行存储时，添加备注，方便查找"
-
-# 2. 拉取最新代码
-git pull
-
-# 3. 恢复自己的修改
-git stash pop
-
-# 4. 解决可能的冲突后提交
-git add .
-git commit -m "feat: XXX需求开发"
-git push origin main
-```
-
-## stash 暂存单个文件
-
-```cmd
-// -------------------stash 暂存单个文件-------------------
-git stash push -m "描述信息" -- 文件路径
-
-# 示例
-git stash push -m "暂存 analysis.vue 文件" -- src/views/analysis.vue
-
-# 查看 stash 列表
-git stash list
-
-# 恢复最近一次 stash
-git stash pop
-```</content>
-    <dc:creator>Tilex</dc:creator>
-    <dc:date>2026-08-08T06:47:50Z</dc:date>
-  </entry>
-  <entry>
-    <title>让 AI 编写你认知范围内的代码：vite-ssg initialState 踩坑记录.md</title>
-    <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/50" />
-    <author>
-      <name>Tilex</name>
-    </author>
-    <id>https://janfeise.github.io/blog-backup/article/50</id>
-    <updated>2026-10-02T08:20:06Z</updated>
-    <published>2026-08-01T02:42:41Z</published>
-    <content type="text/markdown"># 让 AI 编写你认知范围内的代码：vite-ssg initialState 踩坑记录
-
-Codex 在更改代码时，对于&lt;u&gt;没有说明、留白的地方&lt;/u&gt;（我甚至没有考虑到这一点），自动进行了“脑补”，而我在审核时遗漏了，导致博客的首页数据停留在构建时的数据。
-
-最终排查发现，codex更改的代码，通过使用 vite-ssg 的 `initialState` 保存构建状态，又通过 `loaded` 判断阻止客户端重新请求，导致博客首页长期停留在构建时的数据。
-
-首页：构建时的数据（旧数据）
-![image-20260801173032358](/blog-backup/blog-images/2026/08/01/image-20260801173032358.png)
-
-后续，更新文章时，发现首页的数据一直没有更新，仍停留在构建阶段，预期的状态：
-
-![image-20260801173144308](/blog-backup/blog-images/2026/08/01/image-20260801173144308.png)
-
-但，预期的状态并没有生效
-
-## 从 SPA 到 SSG
-
-传统 Vue SPA 首次访问时，服务器通常只返回一个 HTML 根节点：
-
-```HTML
-&lt;div id="app"&gt;&lt;/div&gt;
-```
-
-浏览器随后还需要：
-
-1. 下载 js；
-2. 执行 js；
-3. 创建 Vue 应用；
-4. 请求页面所需的数据；
-5. 根据数据生成实际 DOM。
-
-在 js 执行和数据请求完成之前，页面可能只显示空白或加载状态，且对于博客来说，这种方式存在两个比较明显的问题：
-
-- SEO不友好：搜索引擎首次拿到的 HTML 缺少文章内容，对 SEO 不够友好；
-- 白屏：页面需要等待 JavaScript 和接口请求完成，首屏内容出现得较晚。
-
-因此，我在博客中引入了 [vite-ssg](https://github.com/antfu-collective/vite-ssg)，在项目构建阶段提前生成静态 HTML，构建完成后，可以得到类似下面的文件：
-
-```
-dist/
-├─ index.html
-├─ about/
-│  └─ index.html
-└─ article/
-   ├─ 1/
-   │  └─ index.html
-   ├─ 2/
-   │  └─ index.html
-   └─ ...
-```
-
-这样后续访问博客时，服务器直接返回渲染后的静态HTML，此时即使 js 尚未完成加载，用户和搜索引擎也能看到主要内容。
-
-## vite-ssg 的局限：静态 HTML 的数据可能过期
-
-vite-ssg 生成的是构建时的数据快照。
-
-假设网站在 7 月 1 日执行构建，首页静态 HTML 包含当时最新的 10 篇文章。7 月 2 日发布了一篇新文章，但没有重新构建前端，那么已经部署的 `index.html` 并不会自动更新。
-
-用户访问时，可能经历下面的过程：
-
-```
-返回构建时的静态 HTML
-    ↓
-先显示构建时的旧文章
-    ↓
-下载并执行客户端 JavaScript
-    ↓
-Vue 接管页面
-    ↓
-客户端请求最新文章
-    ↓
-更新为最新数据
-```
-
-这是引入 vite-ssg 后的正常流程：
-
-- 先用旧数据保证首屏立即有内容；
-- 再通过客户端请求更新为最新数据。
-
-旧数据并不是问题，只要客户端最终能够重新请求和更新，那么此次首页数据为什么没有更新？bug 是如何产生的呢？
-
-## Bug 是如何产生的
-
-&gt; initialState  文档：https://github.com/antfu-collective/vite-ssg#initial-state
-
-查看了 codex 更改的代码，发现首页的数据没有更新，便在于 codex 自动进行了脑补，使用 initialState 将数据序列化到首页的HTML，又通过 `loaded` 判断阻止客户端重新请求，导致后续不会重新获取数据，详情如下：
-
-首页在构建阶段通过 `onServerPrefetch()` 请求文章：
-
-```js
-onServerPrefetch(async () =&gt; {
-  await loadPage();
-});
-```
-
-请求成功后，loadPage 会将首页数据和 `loaded` 状态写入 Pinia：
-
-```js
-articles.value = res.data.articles;
-page.value = res.data.page;
-total.value = res.data.total;
-loaded.value = true;
-```
-
-随后，vite-ssg 通过 `initialState` 将 Pinia 状态序列化到静态 HTML：
-
-```js
-if (import.meta.env.SSR) {
-  onSSRAppRendered(() =&gt; {
-    initialState.pinia = pinia.state.value;
-  });
-} else {
-  pinia.state.value = initialState.pinia || {};
-}
-```
-
-序列化的结果，将输入写入首页的静态 HTML：
-
-```html
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;title&gt;Tilex Blog&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  ……
-&lt;/body&gt;
-&lt;script&gt;window.__INITIAL_STATE__="{\"pinia\":{\"home\":{\"loaded": true,\"articles\":[{\"id\":49,\"title\":\"雨天上班.md\",\"preview\":\"\u003E TAG: DAILY\\n\\n# 雨天上班\\n\\n![IMG_20260728_192947_1](https:\u002F\u002Foss.tilex.
-……
-&lt;/html&gt;
-```
-
-浏览器访问首页时，会恢复构建阶段的 Pinia 状态，其中包括：
-
-```js
-loaded.value === true;
-```
-
-但客户端在处理时，却增加了 `loaded` 判断：
-
-```vue
-onMounted(() =&gt; {
-  if (!loaded.value) { // bug 产生的核心
-    loadPage();
-  }
-});
-```
-
-此时 `loaded` 为 `true`，客户端请求会被直接跳过
-
-完整过程如下：
-
-```
-构建阶段请求文章
-→ loaded = true
-→ Pinia 状态写入 initialState
-→ 客户端恢复 loaded = true
-→ onMounted 跳过请求
-→ 首页一直显示构建数据（旧数据）
-```
-
-修复很简单，直接移除 `loaded` 的判断即可
-
-```vue
-onMounted(() =&gt; {
-    loadPage();
-});
-```
-
-但，还需要 initialState 吗？此时 initialState 似乎没有起到任何作用，甚至构建生成的HTML文件体积更大：initialState 会将序列化的数据写入静态HTML
-
-## initialState 使用的权衡
-
-`initialState` 的主要作用是把构建阶段的数据传递给客户端，让客户端第一次渲染与静态 HTML 保持一致，从而稳定完成水合。
-
-使用 `initialState` 后，首页流程为：
-
-- 返回包首页构建阶段的静态 HTML，包括 initialState 序列化后的数据；
-- 客户端通过数据，直接恢复&lt;u&gt;构建时&lt;/u&gt;的 Pinia 状态；
-- Vue 使用相同状态完成水合；
-- 水合后请求最新数据；
-- Vue 根据新旧数据差异更新页面。
-
-它的代价是静态 HTML 中同时存在渲染后的 DOM 和序列化状态，产生双份载荷。数据越多，HTML 体积和解析成本越明显。
-
-因此，是否使用 `initialState` 需要根据页面情况权衡：
-
-- 数据较小，并且希望避免水合不一致和内容闪烁（新旧数据的交接），可以使用；
-- 数据很大，且能够接受静态内容在客户端重新渲染，可以考虑移除；
-- 也可以只序列化水合必需字段，减少载荷。
-
-当然，我的选择是移除 initialState，保持构建时静态HTML的简洁
-
-## 对 AI 修改代码的反思
-
-使用 AI 修改项目时，往往存在许多&lt;u&gt;没有说明、留白的地方&lt;/u&gt;，这些地方甚至不在你的认知范围内，此时 AI 对于这些地方往往会自动“脑补”，如此次bug，我之前甚至并没有接触过 initialState ，对它并不了解 ，但审核时却遗漏了
-
-让 AI 编写你认知范围内的代码，没有接触过的内容最好三思</content>
-    <dc:creator>Tilex</dc:creator>
-    <dc:date>2026-08-01T02:42:41Z</dc:date>
   </entry>
 </feed>

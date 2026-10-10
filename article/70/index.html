@@ -1,0 +1,1565 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/blog-backup/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-B1epJIYc.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/SiteLink-C_m5hiao.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-BS27mNY4.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-DtfJBe5a.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-CGBCeit0.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-CKj5VDhz.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-BVpwueTf.js"><link rel="stylesheet" href="/blog-backup/assets/Nav-C7kYqkO1.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/SiteLink-C_m5hiao.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-riPp3SYM.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-CYJPD-xC.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/SiteFooter-CZKYtmhI.js"><link rel="stylesheet" href="/blog-backup/assets/SiteFooter-D8_RPO5a.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="site site--moss site--article" data-v-63be9f0d=""><!--[--><!--[--><div class="nav flex nav__top nav--moss nav--classic" style="" data-v-518031d1=""><div class="nav__brand nav__top--logo" data-v-518031d1=""><a href="/blog-backup/" class="nav__logo-link" data-v-518031d1=""><!--[-->Tilex Blog<!--]--></a></div><!--[--><!--]--><a href="/blog-backup/archive/" class="nav__archive" aria-label="进入归档" data-v-518031d1=""><!--[--><span class="nav__archive-icon" aria-hidden="true" data-v-518031d1=""></span><!--]--></a><button class="nav__menu-btn" type="button" aria-label="打开导航菜单" aria-controls="top-nav-menu" aria-expanded="false" data-v-518031d1=""><span class="nav__menu-icon" aria-hidden="true" data-v-518031d1=""></span></button><!----><nav id="top-nav-menu" class="nav__links nav__top-menu" aria-label="站点导航" data-v-518031d1=""><div class="nav__top-main" data-v-518031d1=""><!--[--><a href="/blog-backup/" class="nav__top-link" data-v-518031d1=""><!--[-->首页<!--]--></a><a href="/blog-backup/space/" class="nav__top-link" data-v-518031d1=""><!--[-->空间<!--]--></a><!--]--></div><div class="nav__top-minor" data-v-518031d1=""><!--[--><span class="nav__top-item" data-v-518031d1=""><!----><a href="/blog-backup/archive/" class="nav__top-link nav__top-link--minor" data-v-518031d1=""><!--[-->归档<!--]--></a></span><span class="nav__top-item" data-v-518031d1=""><span class="nav__top-slash" aria-hidden="true" data-v-518031d1="">/</span><a href="/blog-backup/links/" class="nav__top-link nav__top-link--minor" data-v-518031d1=""><!--[-->友链<!--]--></a></span><span class="nav__top-item" data-v-518031d1=""><span class="nav__top-slash" aria-hidden="true" data-v-518031d1="">/</span><a href="/blog-backup/about/" class="nav__top-link nav__top-link--minor" data-v-518031d1=""><!--[-->关于我<!--]--></a></span><!--]--></div></nav><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><section class="article-layout__content"><!--[--><article class="article-container" data-v-f7b9a25f=""><header class="article-header" data-v-f7b9a25f=""><h1 class="article-header__title" data-v-f7b9a25f="">MySQL笔记整理</h1><div class="article-header__meta" data-v-f7b9a25f=""><span class="article-header__item" data-v-f7b9a25f=""><time datetime="2026-10-05T16:47:02" data-v-f7b9a25f="">2026.10.05</time> 发布 </span><span class="article-header__item" data-v-f7b9a25f="">90 分钟阅读</span><span class="article-header__item" data-v-f7b9a25f=""> 更新于 <time datetime="2026-10-05T16:48:58" data-v-f7b9a25f="">2026.10.05</time></span></div></header><div class="markdown-renderer" data-v-f7b9a25f="" data-v-5d342459=""><!----><div class="markdown-container markdown-renderer__container" data-v-5d342459=""><div class="markdown-content-wrapper markdown-renderer__wrapper" data-v-5d342459=""><div class="markdown-content markdown-renderer__body" data-v-5d342459=""><blockquote>
+<p>在线练习平台：<a href="https://www.nowcoder.com/exam/oj?page=1&amp;tab=SQL%E7%AF%87&amp;topicId=199&amp;fromPut=pc_csdncpt_xie_sql">牛客 SQL 快速入门</a></p>
+</blockquote>
+<h2 id="mysql-执行顺序"><a href="#mysql-执行顺序" class="anchor-link">#</a> MySQL 执行顺序</h2>
+<blockquote>
+<p>视频：<a href="https://www.bilibili.com/video/BV1Ha4y1a791/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f">数据库面试——SQL执行顺序_哔哩哔哩_bilibili</a></p>
+</blockquote>
+<p>MySQL执行顺序与编写顺序不同，编写顺序：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="select%0A%0Afrom%0A%0Awhere%0A%0Agroup%20by%0A%0Ahaving%0A%0Aorder%20by%0A%0Alimit%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">select</span>
+
+<span class="hljs-keyword">from</span>
+
+<span class="hljs-keyword">where</span>
+
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span>
+
+<span class="hljs-keyword">having</span>
+
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span>
+
+limit
+</code></pre>
+      </div>
+    
+<p>编写顺序从上到下依次编写，但执行顺序却不同：中间开始，返回头部，最后执行尾部</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="1.%20FROM%0A%20%20%20%E7%A1%AE%E5%AE%9A%E6%95%B0%E6%8D%AE%E6%9D%A5%E6%BA%90%EF%BC%8C%E4%BB%8E%E6%8C%87%E5%AE%9A%E8%A1%A8%E4%B8%AD%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%0A%0A2.%20WHERE%0A%20%20%20%E5%AF%B9%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E7%AD%9B%E9%80%89%EF%BC%8C%E5%8F%AA%E4%BF%9D%E7%95%99%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E8%A1%8C%0A%0A3.%20GROUP%20BY%0A%20%20%20%E5%AF%B9%E7%AD%9B%E9%80%89%E5%90%8E%E7%9A%84%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%88%86%E7%BB%84%0A%0A4.%20HAVING%0A%20%20%20%E5%AF%B9%E5%88%86%E7%BB%84%E5%90%8E%E7%9A%84%E7%BB%93%E6%9E%9C%E5%86%8D%E6%AC%A1%E8%BF%9B%E8%A1%8C%E7%AD%9B%E9%80%89%EF%BC%8C%E9%80%9A%E5%B8%B8%E7%94%A8%E4%BA%8E%E7%AD%9B%E9%80%89%E8%81%9A%E5%90%88%E7%BB%93%E6%9E%9C%0A%0A5.%20SELECT%0A%20%20%20%E5%86%B3%E5%AE%9A%E6%9C%80%E7%BB%88%E9%9C%80%E8%A6%81%E8%BF%94%E5%9B%9E%E5%93%AA%E4%BA%9B%E5%AD%97%E6%AE%B5%E3%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%88%96%E8%81%9A%E5%90%88%E7%BB%93%E6%9E%9C%0A%0A6.%20ORDER%20BY%0A%20%20%20%E5%AF%B9%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F%0A%0A7.%20LIMIT%0A%20%20%20%E9%99%90%E5%88%B6%E6%9C%80%E7%BB%88%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9D%A1%E6%95%B0%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-number">1.</span> <span class="hljs-keyword">FROM</span>
+   确定数据来源，从指定表中获取数据
+
+<span class="hljs-number">2.</span> <span class="hljs-keyword">WHERE</span>
+   对原始数据进行筛选，只保留满足条件的数据行
+
+<span class="hljs-number">3.</span> <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>
+   对筛选后的数据进行分组
+
+<span class="hljs-number">4.</span> <span class="hljs-keyword">HAVING</span>
+   对分组后的结果再次进行筛选，通常用于筛选聚合结果
+
+<span class="hljs-number">5.</span> <span class="hljs-keyword">SELECT</span>
+   决定最终需要返回哪些字段、表达式或聚合结果
+
+<span class="hljs-number">6.</span> <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>
+   对查询结果进行排序
+
+<span class="hljs-number">7.</span> LIMIT
+   限制最终返回的数据条数
+</code></pre>
+      </div>
+    
+<p>因此，默认情况下，select 语句设置的别名，只有尾部 order by 才能使用（limit 只是限制数量，不做筛选），但 MySQL 对 having、order by  做了优化，having 与 order by 也可以使用 select 设置的别名，示例：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="SELECT%0A%20%20%20%20class_name%2C%0A%20%20%20%20AVG(score)%20AS%20avg_score%0AFROM%20score%0AGROUP%20BY%20class_name%0AHAVING%20avg_score%20%3E%2083%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">SELECT</span>
+    class_name,
+    <span class="hljs-built_in">AVG</span>(score) <span class="hljs-keyword">AS</span> avg_score
+<span class="hljs-keyword">FROM</span> score
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> class_name
+<span class="hljs-keyword">HAVING</span> avg_score <span class="hljs-operator">&gt;</span> <span class="hljs-number">83</span>;
+</code></pre>
+      </div>
+    
+<p>执行顺序是：</p>
+<ul>
+<li>from</li>
+<li>group by</li>
+<li>having</li>
+<li>select</li>
+</ul>
+<p>此时 select 设置的别名，having 等语句访问应该是无效的，但由于 MySQL 做了优化，上面的代码也可以正确运行</p>
+<h2 id="mysql基础"><a href="#mysql基础" class="anchor-link">#</a> MySQL基础</h2>
+<p>Mysql 执行顺序应该是 from, where, group by, having, select, order by, limit</p>
+<table>
+<thead>
+<tr>
+<th>一级分类</th>
+<th>二级分类</th>
+<th>操作</th>
+<th>SQL 示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>数据库</strong></td>
+<td>查看</td>
+<td>查看所有数据库</td>
+<td><code>SHOW DATABASES;</code></td>
+<td>查看 MySQL 中已有数据库</td>
+</tr>
+<tr>
+<td></td>
+<td>创建</td>
+<td>创建数据库</td>
+<td><code>CREATE DATABASE school;</code></td>
+<td>创建 <code>school</code> 数据库</td>
+</tr>
+<tr>
+<td></td>
+<td>删除</td>
+<td>删除数据库</td>
+<td><code>DROP DATABASE school;</code></td>
+<td>删除整个数据库及其中所有表</td>
+</tr>
+<tr>
+<td></td>
+<td>选择</td>
+<td>选择数据库</td>
+<td><code>USE school;</code></td>
+<td>后续操作默认针对该数据库</td>
+</tr>
+<tr>
+<td></td>
+<td>查看</td>
+<td>查看当前数据库</td>
+<td><code>SELECT DATABASE();</code></td>
+<td>查看当前正在使用的数据库</td>
+</tr>
+<tr>
+<td><strong>表</strong></td>
+<td>查看</td>
+<td>查看所有表</td>
+<td><code>SHOW TABLES;</code></td>
+<td>查看当前数据库中的所有表</td>
+</tr>
+<tr>
+<td></td>
+<td>创建</td>
+<td>创建表</td>
+<td><code>CREATE TABLE user (id INT, name VARCHAR(50));</code></td>
+<td>创建表</td>
+</tr>
+<tr>
+<td></td>
+<td>查看</td>
+<td>查看表结构</td>
+<td><code>DESC user;</code></td>
+<td>查看字段名、类型、NULL 等信息</td>
+</tr>
+<tr>
+<td></td>
+<td>删除</td>
+<td>删除表</td>
+<td><code>DROP TABLE user;</code></td>
+<td>删除表结构和其中的数据</td>
+</tr>
+<tr>
+<td></td>
+<td>修改</td>
+<td>添加字段</td>
+<td><code>ALTER TABLE user ADD age INT;</code></td>
+<td>为已有表添加字段</td>
+</tr>
+<tr>
+<td></td>
+<td>修改</td>
+<td>删除字段</td>
+<td><code>ALTER TABLE user DROP COLUMN age;</code></td>
+<td>删除指定字段</td>
+</tr>
+<tr>
+<td></td>
+<td>修改</td>
+<td>修改字段</td>
+<td><code>ALTER TABLE user MODIFY name VARCHAR(100);</code></td>
+<td>修改字段类型等定义</td>
+</tr>
+<tr>
+<td></td>
+<td>修改</td>
+<td>重命名表</td>
+<td><code>RENAME TABLE user TO users;</code></td>
+<td>修改表名</td>
+</tr>
+<tr>
+<td><strong>行数据</strong></td>
+<td>新增</td>
+<td>新增一行</td>
+<td><code>INSERT INTO user (id, name) VALUES (1, 'Tom');</code></td>
+<td>插入一条数据</td>
+</tr>
+<tr>
+<td></td>
+<td>新增</td>
+<td>新增多行</td>
+<td><code>INSERT INTO user (id, name) VALUES (1, 'Tom'), (2, 'Jack');</code></td>
+<td>一次插入多条数据</td>
+</tr>
+<tr>
+<td></td>
+<td>修改</td>
+<td>修改数据</td>
+<td><code>UPDATE user SET name = 'Jerry' WHERE id = 1;</code></td>
+<td>修改符合条件的数据</td>
+</tr>
+<tr>
+<td></td>
+<td>删除</td>
+<td>删除指定数据</td>
+<td><code>DELETE FROM user WHERE id = 1;</code></td>
+<td>删除符合条件的行</td>
+</tr>
+<tr>
+<td></td>
+<td>删除</td>
+<td>删除全部数据</td>
+<td><code>DELETE FROM user;</code></td>
+<td>删除所有数据，但保留表结构</td>
+</tr>
+<tr>
+<td><strong>查询</strong></td>
+<td>基础查询</td>
+<td>查询全部字段</td>
+<td><code>SELECT * FROM user;</code></td>
+<td>查询所有字段</td>
+</tr>
+<tr>
+<td></td>
+<td>基础查询</td>
+<td>查询指定字段</td>
+<td><code>SELECT id, name FROM user;</code></td>
+<td>查询指定字段</td>
+</tr>
+<tr>
+<td></td>
+<td>别名</td>
+<td>字段别名</td>
+<td><code>SELECT name AS username FROM user;</code></td>
+<td><code>AS</code> 可以省略</td>
+</tr>
+<tr>
+<td></td>
+<td>去重</td>
+<td>查询不同值</td>
+<td><code>SELECT DISTINCT age FROM user;</code></td>
+<td>去除重复结果</td>
+</tr>
+<tr>
+<td></td>
+<td>排序</td>
+<td>升序</td>
+<td><code>SELECT * FROM user ORDER BY age ASC;</code></td>
+<td><code>ASC</code> 为升序，也是默认值</td>
+</tr>
+<tr>
+<td></td>
+<td>排序</td>
+<td>降序</td>
+<td><code>SELECT * FROM user ORDER BY age DESC;</code></td>
+<td><code>DESC</code> 为降序</td>
+</tr>
+<tr>
+<td></td>
+<td>排序</td>
+<td>多列排序</td>
+<td><code>select device_id, gpa, age from user_profile order by gpa asc, age asc;</code></td>
+<td>依次放置即可，首先对 gap 进行升序排序，然后再对 age 进行升序排序</td>
+</tr>
+<tr>
+<td></td>
+<td>限制结果</td>
+<td>限制数量</td>
+<td><code>SELECT * FROM user LIMIT 10;</code></td>
+<td>获取前 10 条</td>
+</tr>
+<tr>
+<td></td>
+<td>分页</td>
+<td>偏移查询</td>
+<td><code>SELECT * FROM user LIMIT 10 OFFSET 20;</code></td>
+<td>跳过 20 条，再获取 10 条</td>
+</tr>
+<tr>
+<td><strong>WHERE 条件</strong></td>
+<td>比较</td>
+<td>等于</td>
+<td><code>WHERE age = 18</code></td>
+<td>SQL 中判断相等使用 <code>=</code></td>
+</tr>
+<tr>
+<td></td>
+<td>比较</td>
+<td>不等于</td>
+<td><code>WHERE age != 18</code></td>
+<td>也可以使用 <code>&lt;&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td>比较</td>
+<td>大小比较</td>
+<td><code>WHERE age &gt;= 18</code></td>
+<td>支持 <code>&gt;</code>、<code>&lt;</code>、<code>&gt;=</code>、<code>&lt;=</code></td>
+</tr>
+<tr>
+<td></td>
+<td>逻辑</td>
+<td>AND</td>
+<td><code>WHERE age &gt;= 18 AND age &lt;= 25</code></td>
+<td>多个条件同时成立</td>
+</tr>
+<tr>
+<td></td>
+<td>逻辑</td>
+<td>OR</td>
+<td><code>WHERE age = 18 OR age = 20</code></td>
+<td>任一条件成立</td>
+</tr>
+<tr>
+<td></td>
+<td>逻辑</td>
+<td>NOT</td>
+<td><code>WHERE NOT age = 18</code></td>
+<td>对条件取反</td>
+</tr>
+<tr>
+<td></td>
+<td>范围</td>
+<td>BETWEEN</td>
+<td><code>WHERE age BETWEEN 18 AND 25</code></td>
+<td>判断是否位于指定范围，包含边界</td>
+</tr>
+<tr>
+<td></td>
+<td>集合</td>
+<td>IN</td>
+<td><code>WHERE id IN (1, 2, 3)</code></td>
+<td>判断值是否属于指定集合</td>
+</tr>
+<tr>
+<td></td>
+<td>模糊查询</td>
+<td>LIKE</td>
+<td><code>WHERE name LIKE 'Tom%'</code></td>
+<td><code>%</code> 表示任意数量字符</td>
+</tr>
+<tr>
+<td></td>
+<td>模糊查询</td>
+<td>LIKE</td>
+<td><code>WHERE name LIKE 'To_'</code></td>
+<td><code>_</code> 表示任意一个字符</td>
+</tr>
+<tr>
+<td></td>
+<td>NULL</td>
+<td>判断 NULL</td>
+<td><code>WHERE age IS NULL</code></td>
+<td>不能使用 <code>age = NULL</code></td>
+</tr>
+<tr>
+<td></td>
+<td>NULL</td>
+<td>判断非 NULL</td>
+<td><code>WHERE age IS NOT NULL</code></td>
+<td>判断字段不为 NULL</td>
+</tr>
+<tr>
+<td><strong>删除方式对比</strong></td>
+<td>DELETE</td>
+<td>删除数据</td>
+<td><code>DELETE FROM user WHERE id = 1;</code></td>
+<td>删除行，保留表结构，支持 <code>WHERE</code>，<code>AUTO_INCREMENT</code> 的计数状态通常不会重置</td>
+</tr>
+<tr>
+<td></td>
+<td>TRUNCATE</td>
+<td>清空表</td>
+<td><code>TRUNCATE TABLE user;</code></td>
+<td>删除全部数据，保留表结构，不支持 <code>WHERE</code>，<code>AUTO_INCREMENT</code> 的计数状态重置</td>
+</tr>
+<tr>
+<td></td>
+<td>DROP</td>
+<td>删除表</td>
+<td><code>DROP TABLE user;</code></td>
+<td>删除表结构以及全部数据</td>
+</tr>
+</tbody>
+</table>
+<h2 id="正则"><a href="#正则" class="anchor-link">#</a> 正则</h2>
+<blockquote>
+<p><strong>REGEXP</strong> 是 <strong>Regular Expression</strong>（正则表达式）的缩写</p>
+</blockquote>
+<p>REGEXP 是用于进行正则表达式匹配的运算符，用于检查一个字符串是否匹配指定的正则表达式模式，示例：</p>
+<p>查找 name 字段中以 <strong>‘st’</strong> 为开头的所有数据：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="SELECT%20name%20%0AFROM%20person_tbl%20%0AWHERE%20name%20REGEXP%20'%5Est'%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">SELECT</span> name 
+<span class="hljs-keyword">FROM</span> person_tbl 
+<span class="hljs-keyword">WHERE</span> name REGEXP <span class="hljs-string">'^st'</span>;
+</code></pre>
+      </div>
+    
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>语法 / 符号</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正则查询</td>
+<td><code>REGEXP</code></td>
+<td><code>WHERE name REGEXP 'Tom'</code></td>
+<td>判断字段是否匹配正则表达式</td>
+</tr>
+<tr>
+<td></td>
+<td><code>RLIKE</code></td>
+<td><code>WHERE name RLIKE 'Tom'</code></td>
+<td><code>REGEXP</code> 的同义写法</td>
+</tr>
+<tr>
+<td></td>
+<td><code>REGEXP_LIKE()</code></td>
+<td><code>WHERE REGEXP_LIKE(name, 'Tom')</code></td>
+<td>MySQL 8.0 推荐的正则函数写法</td>
+</tr>
+<tr>
+<td>位置匹配</td>
+<td><code>^</code></td>
+<td><code>WHERE name REGEXP '^Tom'</code></td>
+<td>匹配以 <code>Tom</code> 开头的字符串</td>
+</tr>
+<tr>
+<td></td>
+<td><code>$</code></td>
+<td><code>WHERE name REGEXP 'Tom$'</code></td>
+<td>匹配以 <code>Tom</code> 结尾的字符串</td>
+</tr>
+<tr>
+<td>任意字符</td>
+<td><code>.</code></td>
+<td><code>WHERE name REGEXP 'T.m'</code></td>
+<td><code>.</code> 表示任意单个字符，如 <code>Tom</code>、<code>Tim</code></td>
+</tr>
+<tr>
+<td>重复匹配</td>
+<td><code>*</code></td>
+<td><code>WHERE name REGEXP 'ab*c'</code></td>
+<td>前一个字符出现 0 次或多次</td>
+</tr>
+<tr>
+<td></td>
+<td><code>+</code></td>
+<td><code>WHERE name REGEXP 'ab+c'</code></td>
+<td>前一个字符出现 1 次或多次</td>
+</tr>
+<tr>
+<td></td>
+<td><code>?</code></td>
+<td><code>WHERE name REGEXP 'ab?c'</code></td>
+<td>前一个字符出现 0 次或 1 次</td>
+</tr>
+<tr>
+<td>次数匹配</td>
+<td><code>{n}</code></td>
+<td><code>WHERE code REGEXP '[0-9]{4}'</code></td>
+<td>前一个模式恰好出现 <code>n</code> 次</td>
+</tr>
+<tr>
+<td></td>
+<td><code>{n,}</code></td>
+<td><code>WHERE code REGEXP '[0-9]{4,}'</code></td>
+<td>至少出现 <code>n</code> 次</td>
+</tr>
+<tr>
+<td></td>
+<td><code>{n,m}</code></td>
+<td><code>WHERE code REGEXP '[0-9]{2,4}'</code></td>
+<td>出现 <code>n</code> 到 <code>m</code> 次</td>
+</tr>
+<tr>
+<td>字符集合</td>
+<td><code>[abc]</code></td>
+<td><code>WHERE name REGEXP '[abc]'</code></td>
+<td>匹配 <code>a</code>、<code>b</code>、<code>c</code> 中任意一个字符</td>
+</tr>
+<tr>
+<td></td>
+<td><code>[a-z]</code></td>
+<td><code>WHERE name REGEXP '[a-z]'</code></td>
+<td>匹配指定字符范围</td>
+</tr>
+<tr>
+<td></td>
+<td><code>[0-9]</code></td>
+<td><code>WHERE code REGEXP '[0-9]'</code></td>
+<td>匹配数字</td>
+</tr>
+<tr>
+<td>排除字符</td>
+<td><code>[^abc]</code></td>
+<td><code>WHERE name REGEXP '[^abc]'</code></td>
+<td>匹配不是 <code>a</code>、<code>b</code>、<code>c</code> 的字符</td>
+</tr>
+<tr>
+<td>多条件</td>
+<td>`</td>
+<td>`</td>
+<td>`WHERE name REGEXP 'Tom</td>
+</tr>
+<tr>
+<td>分组</td>
+<td><code>()</code></td>
+<td>`WHERE name REGEXP '^(Tom</td>
+<td>Jack)$'`</td>
+</tr>
+<tr>
+<td>数字</td>
+<td><code>[[:digit:]]</code></td>
+<td><code>WHERE code REGEXP '[[:digit:]]'</code></td>
+<td>匹配数字字符</td>
+</tr>
+<tr>
+<td>字母</td>
+<td><code>[[:alpha:]]</code></td>
+<td><code>WHERE name REGEXP '[[:alpha:]]'</code></td>
+<td>匹配字母</td>
+</tr>
+<tr>
+<td>字母数字</td>
+<td><code>[[:alnum:]]</code></td>
+<td><code>WHERE code REGEXP '[[:alnum:]]'</code></td>
+<td>匹配字母或数字</td>
+</tr>
+<tr>
+<td>空白字符</td>
+<td><code>[[:space:]]</code></td>
+<td><code>WHERE content REGEXP '[[:space:]]'</code></td>
+<td>匹配空格、换行等空白字符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="常见示例"><a href="#常见示例" class="anchor-link">#</a> 常见示例</h3>
+
+      <div class="md-editor-code" data-language="SQL">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">SQL</span>
+            <button class="md-editor-copy-button" data-code="--%20%E6%9F%A5%E8%AF%A2%E4%BB%A5%20Tom%20%E5%BC%80%E5%A4%B4%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%0ASELECT%20*%0AFROM%20user%0AWHERE%20name%20REGEXP%20'%5ETom'%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-SQL"><span class="hljs-comment">-- 查询以 Tom 开头的用户名</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> <span class="hljs-keyword">user</span>
+<span class="hljs-keyword">WHERE</span> name REGEXP <span class="hljs-string">'^Tom'</span>;
+</code></pre>
+      </div>
+    
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="--%20%E6%9F%A5%E8%AF%A2%E4%BB%A5%203%20%E4%B8%AA%E6%95%B0%E5%AD%97%E7%BB%93%E5%B0%BE%E7%9A%84%E6%95%B0%E6%8D%AE%0ASELECT%20*%0AFROM%20user%0AWHERE%20code%20REGEXP%20'%5B0-9%5D%7B3%7D%24'%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-comment">-- 查询以 3 个数字结尾的数据</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> <span class="hljs-keyword">user</span>
+<span class="hljs-keyword">WHERE</span> code REGEXP <span class="hljs-string">'[0-9]{3}$'</span>;
+</code></pre>
+      </div>
+    
+<h2 id="聚合"><a href="#聚合" class="anchor-link">#</a> 聚合</h2>
+<table>
+<thead>
+<tr>
+<th>聚合函数</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COUNT()</code></td>
+<td>统计数量</td>
+<td><code>COUNT(*)</code></td>
+</tr>
+<tr>
+<td><code>SUM()</code></td>
+<td>求和</td>
+<td><code>SUM(score)</code></td>
+</tr>
+<tr>
+<td><code>AVG()</code></td>
+<td>求平均值</td>
+<td><code>AVG(score)</code></td>
+</tr>
+<tr>
+<td><code>MAX()</code></td>
+<td>求最大值</td>
+<td><code>MAX(score)</code></td>
+</tr>
+<tr>
+<td><code>MIN()</code></td>
+<td>求最小值</td>
+<td><code>MIN(score)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="分组"><a href="#分组" class="anchor-link">#</a> 分组</h2>
+<table>
+<thead>
+<tr>
+<th>聚合函数</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GROUP BY</code></td>
+<td>分组</td>
+<td><code>SELECT class_name FROM score GROUP BY class_name;</code></td>
+</tr>
+<tr>
+<td><code>HAVING </code></td>
+<td>如果要过滤的不是原始数据，而是<strong>分组之后的结果</strong>，就要使用 <code>HAVING</code></td>
+<td><code>SELECT class_name, AVG(score) AS avg_score FROM score GROUP BY class_name HAVING AVG(score) &gt; 83;</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>HAVING</code> 示例：查询平均分大于 83 的班级</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>student_name</th>
+<th>class_name</th>
+<th>gender</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Tom</td>
+<td>A</td>
+<td>男</td>
+<td>80</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Jack</td>
+<td>A</td>
+<td>男</td>
+<td>90</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Lucy</td>
+<td>A</td>
+<td>女</td>
+<td>85</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Jerry</td>
+<td>B</td>
+<td>男</td>
+<td>70</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Alice</td>
+<td>B</td>
+<td>女</td>
+<td>95</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>如果要过滤的不是原始数据，而是<strong>分组之后的结果</strong>，就要使用 <code>HAVING</code></p>
+</blockquote>
+<p>思路：</p>
+<ol>
+<li>对班级进行分组，分为A班和B班</li>
+<li>计算每个班级的平均分，A班的平均分，B班的平均分</li>
+<li>筛选平均分大于83的班级</li>
+</ol>
+<p>由于是对分组后的结果进行处理，需使用 having</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="SELECT%0A%20%20%20%20class_name%2C%0A%20%20%20%20AVG(score)%20AS%20avg_score%0AFROM%20score%0AGROUP%20BY%20class_name%0AHAVING%20avg_score%20%3E%2083%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">SELECT</span>
+    class_name,
+    <span class="hljs-built_in">AVG</span>(score) <span class="hljs-keyword">AS</span> avg_score
+<span class="hljs-keyword">FROM</span> score
+<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> class_name
+<span class="hljs-keyword">HAVING</span> avg_score <span class="hljs-operator">&gt;</span> <span class="hljs-number">83</span>;
+</code></pre>
+      </div>
+    
+<h2 id="多表查询"><a href="#多表查询" class="anchor-link">#</a> 多表查询</h2>
+<blockquote>
+<p>笛卡尔积：<a href="https://www.bilibili.com/video/BV1sa4y1R73e/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f">《离散数学》知识点详解：集合的运算（笛卡尔积）_哔哩哔哩_bilibili</a></p>
+<p>SQL关系代数：<a href="https://www.bilibili.com/video/BV1zM4y1s7ar/?spm_id_from=333.337.search-card.all.click">【关系代数】并、交、差与广义笛卡尔积_哔哩哔哩_bilibili</a></p>
+</blockquote>
+<p>当一个查询需要同时使用多张表中的数据时，就属于多表查询，理解多表查询，可以先从 <strong>笛卡尔积</strong> 开始：</p>
+<p><img src="/blog-backup/blog-images/2026/09/30/image-20260930173655859.png" alt="image-20260930173655859"></p>
+<p>假设有两张表：</p>
+<h3 id="s-学生表"><a href="#s-学生表" class="anchor-link">#</a> S 学生表</h3>
+<table>
+<thead>
+<tr>
+<th>Sno</th>
+<th>Sname</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>001</td>
+<td>Tom</td>
+</tr>
+<tr>
+<td>002</td>
+<td>Jack</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sc-成绩表"><a href="#sc-成绩表" class="anchor-link">#</a> SC 成绩表</h3>
+<table>
+<thead>
+<tr>
+<th>Sno</th>
+<th>Course</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>001</td>
+<td>MySQL</td>
+<td>90</td>
+</tr>
+<tr>
+<td>001</td>
+<td>Java</td>
+<td>85</td>
+</tr>
+<tr>
+<td>002</td>
+<td>MySQL</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>如果直接查询两张表：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="SELECT%20S.*%2C%20SC.*%0AFROM%20S%2C%20SC%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">SELECT</span> S.<span class="hljs-operator">*</span>, SC.<span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> S, SC;
+</code></pre>
+      </div>
+    
+<p>没有设置任何关联条件，此时会得到两张表的 <strong>笛卡尔积</strong></p>
+<p>如果：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="S%20%E8%A1%A8%E6%9C%89%20m%20%E8%A1%8C%0ASC%20%E8%A1%A8%E6%9C%89%20n%20%E8%A1%8C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">S 表有 m 行
+SC 表有 n 行
+</code></pre>
+      </div>
+    
+<p>那么理论上会得到：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="m%20%C3%97%20n%20%E8%A1%8C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">m × n 行
+</code></pre>
+      </div>
+    
+<p>因为 S 表中的每一行都会分别与 SC 表中的每一行进行组合</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="S.001%20%C3%97%20SC.001%20MySQL%0AS.001%20%C3%97%20SC.001%20Java%0AS.001%20%C3%97%20SC.002%20MySQL%0A%0AS.002%20%C3%97%20SC.001%20MySQL%0AS.002%20%C3%97%20SC.001%20Java%0AS.002%20%C3%97%20SC.002%20MySQL%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">S.001 × SC.001 MySQL
+S.001 × SC.001 Java
+S.001 × SC.002 MySQL
+
+S.002 × SC.001 MySQL
+S.002 × SC.001 Java
+S.002 × SC.002 MySQL
+</code></pre>
+      </div>
+    
+<p>总共：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="2%20%C3%97%203%20%3D%206%20%E8%A1%8C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">2 × 3 = 6 行
+</code></pre>
+      </div>
+    
+<p><img src="/blog-backup/blog-images/2026/09/30/image-20260930173553140.png" alt="image-20260930173553140"></p>
+<p>将两张表进行笛卡尔积，得到的是第一张表每行数据与另一张表所有数据合并的结果，如上图所示，S表的006数据与SC表的每行数据进行合并，得到了5行数据，总共20行数据，后续的多表查询便是再次基础上进行处理，而且实际业务中，我们通常并不需要所有组合，而只需要存在关系的数据，如学生编号相同时才认为两条数据有关联：</p>
+<ol>
+<li>
+<p>多表进行笛卡尔积</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="select%20S.*%2C%20SC.*%0Afrom%20S%2C%20SC%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">select</span> S.<span class="hljs-operator">*</span>, SC.<span class="hljs-operator">*</span>
+<span class="hljs-keyword">from</span> S, SC;
+</code></pre>
+      </div>
+    
+<p>便能得到上图中的20行大表，后续对这张大表进行业务处理即可（看作一张表）</p>
+</li>
+<li>
+<p>后续业务处理，如：学生编号相同</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="select%20S.*%2C%20SC.*%0Afrom%20S%2C%20SC%0Awhere%20S.Sno%20%3D%20SC.Sno%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">select</span> S.<span class="hljs-operator">*</span>, SC.<span class="hljs-operator">*</span>
+<span class="hljs-keyword">from</span> S, SC
+<span class="hljs-keyword">where</span> S.Sno <span class="hljs-operator">=</span> SC.Sno;
+</code></pre>
+      </div>
+    
+</li>
+</ol>
+<p>这种写法属于较早的隐式连接写法，实际开发中更推荐明确使用 <code>JOIN</code></p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="SELECT%20S.*%2C%20SC.*%0AFROM%20S%0AINNER%20JOIN%20SC%0A%20%20%20%20ON%20S.Sno%20%3D%20SC.Sno%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">SELECT</span> S.<span class="hljs-operator">*</span>, SC.<span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> S
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> SC
+    <span class="hljs-keyword">ON</span> S.Sno <span class="hljs-operator">=</span> SC.Sno;
+</code></pre>
+      </div>
+    
+<p>这两种写法在这里表达的查询含义基本相同：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="FROM%20S%2C%20SC%0AWHERE%20S.Sno%20%3D%20SC.Sno%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">FROM</span> S, SC
+<span class="hljs-keyword">WHERE</span> S.Sno <span class="hljs-operator">=</span> SC.Sno
+</code></pre>
+      </div>
+    
+<p>等价理解为：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="FROM%20S%0AINNER%20JOIN%20SC%0AON%20S.Sno%20%3D%20SC.Sno%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">FROM</span> S
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> SC
+<span class="hljs-keyword">ON</span> S.Sno <span class="hljs-operator">=</span> SC.Sno
+</code></pre>
+      </div>
+    
+<p>需要注意：</p>
+<p>“先生成完整笛卡尔积，再使用 WHERE 筛选”适合作为<strong>理解模型</strong></p>
+<p>但 MySQL 实际执行查询时，优化器通常不会真的先生成一张巨大的笛卡尔积临时表，再进行筛选，而会选择更高效的连接算法和执行计划</p>
+<h2 id="连接-join"><a href="#连接-join" class="anchor-link">#</a> 连接 JOIN</h2>
+<blockquote>
+<p><a href="https://www.bilibili.com/video/BV1NV411r7Nz/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f">MYSQL面试——left join 、inner join 、right join区别_哔哩哔哩_bilibili</a></p>
+</blockquote>
+<p>JOIN 用于：根据连接条件，将多张表中满足条件的行组合成新的结果集</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="S.Sno%20%3D%20SC.Sno%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql">S.Sno <span class="hljs-operator">=</span> SC.Sno
+</code></pre>
+      </div>
+    
+<p>就是一个连接条件</p>
+<p>常见 JOIN 包括：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CROSS JOIN</code></td>
+<td>所有行互相组合，即笛卡尔积</td>
+</tr>
+<tr>
+<td><code>INNER JOIN</code></td>
+<td>只保留满足连接条件的数据</td>
+</tr>
+<tr>
+<td><code>LEFT JOIN</code></td>
+<td>保留左表全部数据，同时连接右表匹配的数据</td>
+</tr>
+<tr>
+<td><code>RIGHT JOIN</code></td>
+<td>保留右表全部数据，同时连接左表匹配的数据</td>
+</tr>
+</tbody>
+</table>
+<p>维恩图：</p>
+<p><img src="/blog-backup/blog-images/2026/09/30/image-20260930193639960.png" alt="image-20260930193639960"></p>
+<h3 id="cross-join"><a href="#cross-join" class="anchor-link">#</a> CROSS JOIN</h3>
+<p><code>CROSS JOIN</code> 就是笛卡尔积</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="SELECT%20*%0AFROM%20S%0ACROSS%20JOIN%20SC%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> S
+<span class="hljs-keyword">CROSS</span> <span class="hljs-keyword">JOIN</span> SC;
+</code></pre>
+      </div>
+    
+<p>如果：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="S%EF%BC%9A4%20%E8%A1%8C%0ASC%EF%BC%9A5%20%E8%A1%8C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">S：4 行
+SC：5 行
+</code></pre>
+      </div>
+    
+<p>结果：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="4%20%C3%97%205%20%3D%2020%20%E8%A1%8C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">4 × 5 = 20 行
+</code></pre>
+      </div>
+    
+<p>因此：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="FROM%20S%2C%20SC%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">FROM</span> S, SC
+</code></pre>
+      </div>
+    
+<p>可以理解为一种隐式的 <code>CROSS JOIN</code></p>
+<h3 id="左连接"><a href="#左连接" class="anchor-link">#</a> 左连接</h3>
+<p>左连接的核心规则是：</p>
+<blockquote>
+<p><strong>左表全部保留，右表能匹配就连接，左表不能匹配项填 NULL</strong></p>
+</blockquote>
+<p><img src="/blog-backup/blog-images/2026/09/30/image-20260930193836186.png" alt="image-20260930193836186"></p>
+<p><img src="/blog-backup/blog-images/2026/09/30/image-20260930194059506.png" alt="image-20260930194059506"></p>
+<p>将 from Student 的 Student 作为左表，left join SC 的 SC 作为右表，两者进行左连接</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="from%20A%EF%BC%88%E5%B7%A6%E8%A1%A8%EF%BC%89%0ALEFT%20JOIN%20B%EF%BC%88%E5%8F%B3%E8%A1%A8%EF%BC%89%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">from</span> A（左表）
+<span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> B（右表）
+</code></pre>
+      </div>
+    
+<h3 id="内连接-inner-join"><a href="#内连接-inner-join" class="anchor-link">#</a> 内连接 INNER JOIN</h3>
+<p>内连接：左表公共部分与右表公共部分做笛卡尔积，核心规则是：</p>
+<blockquote>
+<p><strong>满足连接条件的行组合</strong></p>
+</blockquote>
+<p><img src="/blog-backup/blog-images/2026/09/30/image-20260930194720120.png" alt="image-20260930194720120"></p>
+<p>示例：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="SELECT%0A%20%20%20%20S.Sno%2C%0A%20%20%20%20S.Sname%2C%0A%20%20%20%20SC.Course%2C%0A%20%20%20%20SC.Score%0AFROM%20S%0AINNER%20JOIN%20SC%0A%20%20%20%20ON%20S.Sno%20%3D%20SC.Sno%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">SELECT</span>
+    S.Sno,
+    S.Sname,
+    SC.Course,
+    SC.Score
+<span class="hljs-keyword">FROM</span> S
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> SC
+    <span class="hljs-keyword">ON</span> S.Sno <span class="hljs-operator">=</span> SC.Sno;
+</code></pre>
+      </div>
+    
+<p>执行逻辑可以理解为：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="S%20%E8%A1%A8%0A%20%20%E2%94%82%0A%20%20%E2%94%82%20S.Sno%20%3D%20SC.Sno%0A%20%20%E2%96%BC%0A%E5%AF%BB%E6%89%BE%20SC%20%E8%A1%A8%E4%B8%AD%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%0A%20%20%E2%94%82%0A%20%20%E2%96%BC%0A%E7%BB%84%E5%90%88%E5%8C%B9%E9%85%8D%E6%88%90%E5%8A%9F%E7%9A%84%E6%95%B0%E6%8D%AE%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">S 表
+  │
+  │ S.Sno = SC.Sno
+  ▼
+寻找 SC 表中满足条件的数据
+  │
+  ▼
+组合匹配成功的数据
+</code></pre>
+      </div>
+    
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="S%0A%0A001%20Tom%0A002%20Jack%0A003%20Lucy%0ASC%0A%0A001%20MySQL%2090%0A001%20Java%2085%0A002%20MySQL%2080%0A004%20Java%2090%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">S
+
+001 Tom
+002 Jack
+003 Lucy
+SC
+
+001 MySQL 90
+001 Java 85
+002 MySQL 80
+004 Java 90
+</code></pre>
+      </div>
+    
+<p>执行：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="SELECT%20*%0AFROM%20S%0AINNER%20JOIN%20SC%0A%20%20%20%20ON%20S.Sno%20%3D%20SC.Sno%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">FROM</span> S
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> SC
+    <span class="hljs-keyword">ON</span> S.Sno <span class="hljs-operator">=</span> SC.Sno;
+</code></pre>
+      </div>
+    
+<p>得到：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="001%20Tom%20%20001%20MySQL%2090%0A001%20Tom%20%20001%20Java%20%2085%0A002%20Jack%20002%20MySQL%2080%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">001 Tom  001 MySQL 90
+001 Tom  001 Java  85
+002 Jack 002 MySQL 80
+</code></pre>
+      </div>
+    
+<p>其中：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="003%20Lucy%0A004%20Java%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">003 Lucy
+004 Java
+</code></pre>
+      </div>
+    
+<p>不会出现在最终结果中，因为它们没有找到满足连接条件的数据</p>
+<h2 id="on-与-where"><a href="#on-与-where" class="anchor-link">#</a> ON 与 WHERE</h2>
+<p>学习 JOIN 时，还需要区分：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="ON%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">ON</span>
+</code></pre>
+      </div>
+    
+<p>与：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="WHERE%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">WHERE</span>
+</code></pre>
+      </div>
+    
+<p><code>ON</code> 主要用于描述：</p>
+<blockquote>
+<p>两张表之间如何进行匹配</p>
+</blockquote>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="ON%20S.Sno%20%3D%20SC.Sno%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">ON</span> S.Sno <span class="hljs-operator">=</span> SC.Sno
+</code></pre>
+      </div>
+    
+<p><code>WHERE</code> 主要用于描述：</p>
+<blockquote>
+<p>对连接完成后的结果进一步进行筛选</p>
+</blockquote>
+<p>例如查询 MySQL 成绩大于 80 分的学生：</p>
+
+      <div class="md-editor-code" data-language="sql">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">sql</span>
+            <button class="md-editor-copy-button" data-code="SELECT%0A%20%20%20%20S.Sname%2C%0A%20%20%20%20SC.Score%0AFROM%20S%0AINNER%20JOIN%20SC%0A%20%20%20%20ON%20S.Sno%20%3D%20SC.Sno%0AWHERE%20SC.Course%20%3D%20'MySQL'%0A%20%20AND%20SC.Score%20%3E%2080%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-sql"><span class="hljs-keyword">SELECT</span>
+    S.Sname,
+    SC.Score
+<span class="hljs-keyword">FROM</span> S
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> SC
+    <span class="hljs-keyword">ON</span> S.Sno <span class="hljs-operator">=</span> SC.Sno
+<span class="hljs-keyword">WHERE</span> SC.Course <span class="hljs-operator">=</span> <span class="hljs-string">'MySQL'</span>
+  <span class="hljs-keyword">AND</span> SC.Score <span class="hljs-operator">&gt;</span> <span class="hljs-number">80</span>;
+</code></pre>
+      </div>
+    
+<p>可以理解为：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="S%0A%20%20%20%20%20%20%20%20%5C%0A%20%20%20%20%20%20%20%20%20%5C%20S.Sno%20%3D%20SC.Sno%0A%20%20%20%20%20%20%20%20%20%20JOIN%0A%20%20%20%20%20%20%20%20%20%2F%0ASC%0A%20%20%20%20%20%20%20%20%E2%86%93%0A%20%20%20%E5%BE%97%E5%88%B0%E5%85%B3%E8%81%94%E6%95%B0%E6%8D%AE%0A%20%20%20%20%20%20%20%20%E2%86%93%0AWHERE%20Course%20%3D%20'MySQL'%0A%20%20AND%20Score%20%3E%2080%0A%20%20%20%20%20%20%20%20%E2%86%93%0A%20%20%20%E5%BE%97%E5%88%B0%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">S
+        \
+         \ S.Sno = SC.Sno
+          JOIN
+         /
+SC
+        ↓
+   得到关联数据
+        ↓
+WHERE Course = 'MySQL'
+  AND Score &gt; 80
+        ↓
+   得到最终结果
+</code></pre>
+      </div>
+    
+<p>因此可以简单记忆：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="ON%20%20%20%20%20%20%E2%86%92%20%E8%A1%A8%E4%B8%8E%E8%A1%A8%E6%80%8E%E4%B9%88%E5%85%B3%E8%81%94%0AWHERE%20%20%20%E2%86%92%20%E7%BB%93%E6%9E%9C%E8%BF%98%E9%9C%80%E8%A6%81%E6%BB%A1%E8%B6%B3%E4%BB%80%E4%B9%88%E6%9D%A1%E4%BB%B6%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">ON      → 表与表怎么关联
+WHERE   → 结果还需要满足什么条件
+</code></pre>
+      </div>
+    
+<p>需要注意，对于外连接 <code>LEFT JOIN / RIGHT JOIN</code>，将条件写在 <code>ON</code> 还是 <code>WHERE</code> 中可能直接改变查询结果，因此两者不能认为完全等价</p>
+<h2 id="多表查询整体理解"><a href="#多表查询整体理解" class="anchor-link">#</a> 多表查询整体理解</h2>
+<p>整个知识点可以整理成一条主线：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%0A%E2%94%82%0A%E2%94%9C%E2%94%80%E2%94%80%20CROSS%20JOIN%0A%E2%94%82%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%E7%BB%84%E5%90%88%EF%BC%9A%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF%0A%E2%94%82%0A%E2%94%9C%E2%94%80%E2%94%80%20INNER%20JOIN%0A%E2%94%82%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20%E5%8F%AA%E4%BF%9D%E7%95%99%E5%8C%B9%E9%85%8D%E6%88%90%E5%8A%9F%E7%9A%84%E6%95%B0%E6%8D%AE%0A%E2%94%82%0A%E2%94%9C%E2%94%80%E2%94%80%20LEFT%20JOIN%0A%E2%94%82%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20%E5%B7%A6%E8%A1%A8%E5%85%A8%E9%83%A8%E4%BF%9D%E7%95%99%0A%E2%94%82%20%20%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20%E5%8C%B9%E9%85%8D%E6%88%90%E5%8A%9F%20%E2%86%92%20%E5%90%88%E5%B9%B6%E5%8F%B3%E8%A1%A8%E6%95%B0%E6%8D%AE%0A%E2%94%82%20%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20%E5%8C%B9%E9%85%8D%E5%A4%B1%E8%B4%A5%20%E2%86%92%20%E5%8F%B3%E8%A1%A8%E5%AD%97%E6%AE%B5%20NULL%0A%E2%94%82%0A%E2%94%94%E2%94%80%E2%94%80%20RIGHT%20JOIN%0A%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20%E5%8F%B3%E8%A1%A8%E5%85%A8%E9%83%A8%E4%BF%9D%E7%95%99%0A%20%20%20%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20%E5%8C%B9%E9%85%8D%E6%88%90%E5%8A%9F%20%E2%86%92%20%E5%90%88%E5%B9%B6%E5%B7%A6%E8%A1%A8%E6%95%B0%E6%8D%AE%0A%20%20%20%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20%E5%8C%B9%E9%85%8D%E5%A4%B1%E8%B4%A5%20%E2%86%92%20%E5%B7%A6%E8%A1%A8%E5%AD%97%E6%AE%B5%20NULL%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">多表查询
+│
+├── CROSS JOIN
+│     └── 所有数据组合：笛卡尔积
+│
+├── INNER JOIN
+│     └── 只保留匹配成功的数据
+│
+├── LEFT JOIN
+│     └── 左表全部保留
+│         ├── 匹配成功 → 合并右表数据
+│         └── 匹配失败 → 右表字段 NULL
+│
+└── RIGHT JOIN
+      └── 右表全部保留
+          ├── 匹配成功 → 合并左表数据
+          └── 匹配失败 → 左表字段 NULL
+</code></pre>
+      </div>
+    
+<p>最核心的理解是：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="JOIN%20%E2%89%A0%20%E5%8D%95%E7%BA%AF%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E9%9B%86%E5%90%88%E7%9A%84%E4%BA%A4%E9%9B%86%0A%0AJOIN%20%3D%20%E6%A0%B9%E6%8D%AE%20ON%20%E6%9D%A1%E4%BB%B6%E5%AF%BB%E6%89%BE%E8%A1%8C%E4%B8%8E%E8%A1%8C%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%B9%E9%85%8D%E5%85%B3%E7%B3%BB%EF%BC%8C%E5%B9%B6%E5%B0%86%E5%8C%B9%E9%85%8D%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%84%E5%90%88%E8%B5%B7%E6%9D%A5%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">JOIN ≠ 单纯寻找两个集合的交集
+
+JOIN = 根据 ON 条件寻找行与行之间的匹配关系，并将匹配的数据组合起来
+</code></pre>
+      </div>
+    
+<p>其中：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="INNER%20JOIN%20%E2%86%92%20%E5%8F%AA%E8%A6%81%E5%8C%B9%E9%85%8D%E6%88%90%E5%8A%9F%E7%9A%84%E6%95%B0%E6%8D%AE%0A%0ALEFT%20JOIN%20%20%E2%86%92%20%E5%B7%A6%E8%BE%B9%E5%85%A8%E9%83%A8%E8%A6%81%EF%BC%8C%E5%8F%B3%E8%BE%B9%E8%83%BD%E5%8C%B9%E9%85%8D%E5%A4%9A%E5%B0%91%E5%B0%B1%E5%8C%B9%E9%85%8D%E5%A4%9A%E5%B0%91%0A%0ARIGHT%20JOIN%20%E2%86%92%20%E5%8F%B3%E8%BE%B9%E5%85%A8%E9%83%A8%E8%A6%81%EF%BC%8C%E5%B7%A6%E8%BE%B9%E8%83%BD%E5%8C%B9%E9%85%8D%E5%A4%9A%E5%B0%91%E5%B0%B1%E5%8C%B9%E9%85%8D%E5%A4%9A%E5%B0%91%0A%0ACROSS%20JOIN%20%E2%86%92%20%E4%B8%8D%E8%80%83%E8%99%91%E5%8C%B9%E9%85%8D%E5%85%B3%E7%B3%BB%EF%BC%8C%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%E4%BA%92%E7%9B%B8%E7%BB%84%E5%90%88%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">INNER JOIN → 只要匹配成功的数据
+
+LEFT JOIN  → 左边全部要，右边能匹配多少就匹配多少
+
+RIGHT JOIN → 右边全部要，左边能匹配多少就匹配多少
+
+CROSS JOIN → 不考虑匹配关系，所有数据互相组合
+</code></pre>
+      </div>
+    
+</div></div></div><!----></div><div class="article-footer" data-v-f7b9a25f=""><div class="article-footer__main" data-v-f7b9a25f=""><div class="article-footer__tags" aria-label="文章标签" data-v-f7b9a25f=""><!--[--><span class="article-footer__tag" data-v-f7b9a25f="">MySQL</span><span class="article-footer__tag" data-v-f7b9a25f="">MySQL_笔记整理</span><!--]--></div><button type="button" class="article-footer__download" data-v-f7b9a25f=""><span aria-hidden="true" data-v-f7b9a25f="">↓</span> 下载 Markdown </button></div></div><!----><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-haspopup="dialog" aria-controls="article-read-drawer" aria-expanded="false" data-v-f7b9a25f=""> 阅读导航 </button><!----></article><footer class="site-footer site-footer--article" data-v-f7b9a25f="" data-v-6b865c42=""><div class="site-footer__content" data-v-6b865c42=""><p class="site-footer__copyright" data-v-6b865c42="">© 2026 Tilex Blog</p><p class="site-footer__motto" data-v-6b865c42="">浮生世，片刻光阴</p></div></footer><!--]--></section></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--></div></div>
+<script>window.__INITIAL_STATE__="{\"pinia\":{\"article\":{\"article\":{\"id\":70,\"title\":\"MySQL笔记整理.md\",\"content\":\"# MySQL笔记整理\\n\\n\u003E 在线练习平台：[牛客 SQL 快速入门](https:\u002F\u002Fwww.nowcoder.com\u002Fexam\u002Foj?page=1&tab=SQL%E7%AF%87&topicId=199&fromPut=pc_csdncpt_xie_sql)\\n\\n## MySQL 执行顺序\\n\\n\u003E视频：[数据库面试——SQL执行顺序_哔哩哔哩_bilibili](https:\u002F\u002Fwww.bilibili.com\u002Fvideo\u002FBV1Ha4y1a791\u002F?spm_id_from=333.337.search-card.all.click&vd_source=8c5774f0412cfb872126f5a44585db4f)\\n\\nMySQL执行顺序与编写顺序不同，编写顺序：\\n```sql\\nselect\\n\\nfrom\\n\\nwhere\\n\\ngroup by\\n\\nhaving\\n\\norder by\\n\\nlimit\\n```\\n\\n编写顺序从上到下依次编写，但执行顺序却不同：中间开始，返回头部，最后执行尾部\\n\\n```sql\\n1. FROM\\n   确定数据来源，从指定表中获取数据\\n\\n2. WHERE\\n   对原始数据进行筛选，只保留满足条件的数据行\\n\\n3. GROUP BY\\n   对筛选后的数据进行分组\\n\\n4. HAVING\\n   对分组后的结果再次进行筛选，通常用于筛选聚合结果\\n\\n5. SELECT\\n   决定最终需要返回哪些字段、表达式或聚合结果\\n\\n6. ORDER BY\\n   对查询结果进行排序\\n\\n7. LIMIT\\n   限制最终返回的数据条数\\n```\\n\\n因此，默认情况下，select 语句设置的别名，只有尾部 order by 才能使用（limit 只是限制数量，不做筛选），但 MySQL 对 having、order by  做了优化，having 与 order by 也可以使用 select 设置的别名，示例：\\n\\n```sql\\nSELECT\\n    class_name,\\n    AVG(score) AS avg_score\\nFROM score\\nGROUP BY class_name\\nHAVING avg_score \u003E 83;\\n```\\n\\n执行顺序是：\\n\\n- from\\n- group by\\n- having\\n- select\\n\\n此时 select 设置的别名，having 等语句访问应该是无效的，但由于 MySQL 做了优化，上面的代码也可以正确运行\\n\\n## MySQL基础\\n\\nMysql 执行顺序应该是 from, where, group by, having, select, order by, limit\\n\\n| 一级分类         | 二级分类 | 操作           | SQL 示例                                                     | 说明                                                         |\\n| ---------------- | -------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |\\n| **数据库**       | 查看     | 查看所有数据库 | `SHOW DATABASES;`                                            | 查看 MySQL 中已有数据库                                      |\\n|                  | 创建     | 创建数据库     | `CREATE DATABASE school;`                                    | 创建 `school` 数据库                                         |\\n|                  | 删除     | 删除数据库     | `DROP DATABASE school;`                                      | 删除整个数据库及其中所有表                                   |\\n|                  | 选择     | 选择数据库     | `USE school;`                                                | 后续操作默认针对该数据库                                     |\\n|                  | 查看     | 查看当前数据库 | `SELECT DATABASE();`                                         | 查看当前正在使用的数据库                                     |\\n| **表**           | 查看     | 查看所有表     | `SHOW TABLES;`                                               | 查看当前数据库中的所有表                                     |\\n|                  | 创建     | 创建表         | `CREATE TABLE user (id INT, name VARCHAR(50));`              | 创建表                                                       |\\n|                  | 查看     | 查看表结构     | `DESC user;`                                                 | 查看字段名、类型、NULL 等信息                                |\\n|                  | 删除     | 删除表         | `DROP TABLE user;`                                           | 删除表结构和其中的数据                                       |\\n|                  | 修改     | 添加字段       | `ALTER TABLE user ADD age INT;`                              | 为已有表添加字段                                             |\\n|                  | 修改     | 删除字段       | `ALTER TABLE user DROP COLUMN age;`                          | 删除指定字段                                                 |\\n|                  | 修改     | 修改字段       | `ALTER TABLE user MODIFY name VARCHAR(100);`                 | 修改字段类型等定义                                           |\\n|                  | 修改     | 重命名表       | `RENAME TABLE user TO users;`                                | 修改表名                                                     |\\n| **行数据**       | 新增     | 新增一行       | `INSERT INTO user (id, name) VALUES (1, 'Tom');`             | 插入一条数据                                                 |\\n|                  | 新增     | 新增多行       | `INSERT INTO user (id, name) VALUES (1, 'Tom'), (2, 'Jack');` | 一次插入多条数据                                             |\\n|                  | 修改     | 修改数据       | `UPDATE user SET name = 'Jerry' WHERE id = 1;`               | 修改符合条件的数据                                           |\\n|                  | 删除     | 删除指定数据   | `DELETE FROM user WHERE id = 1;`                             | 删除符合条件的行                                             |\\n|                  | 删除     | 删除全部数据   | `DELETE FROM user;`                                          | 删除所有数据，但保留表结构                                   |\\n| **查询**         | 基础查询 | 查询全部字段   | `SELECT * FROM user;`                                        | 查询所有字段                                                 |\\n|                  | 基础查询 | 查询指定字段   | `SELECT id, name FROM user;`                                 | 查询指定字段                                                 |\\n|                  | 别名     | 字段别名       | `SELECT name AS username FROM user;`                         | `AS` 可以省略                                                |\\n|                  | 去重     | 查询不同值     | `SELECT DISTINCT age FROM user;`                             | 去除重复结果                                                 |\\n|                  | 排序     | 升序           | `SELECT * FROM user ORDER BY age ASC;`                       | `ASC` 为升序，也是默认值                                     |\\n|                  | 排序     | 降序           | `SELECT * FROM user ORDER BY age DESC;`                      | `DESC` 为降序                                                |\\n|                  | 排序     | 多列排序       | `select device_id, gpa, age from user_profile order by gpa asc, age asc;` | 依次放置即可，首先对 gap 进行升序排序，然后再对 age 进行升序排序 |\\n|                  | 限制结果 | 限制数量       | `SELECT * FROM user LIMIT 10;`                               | 获取前 10 条                                                 |\\n|                  | 分页     | 偏移查询       | `SELECT * FROM user LIMIT 10 OFFSET 20;`                     | 跳过 20 条，再获取 10 条                                     |\\n| **WHERE 条件**   | 比较     | 等于           | `WHERE age = 18`                                             | SQL 中判断相等使用 `=`                                       |\\n|                  | 比较     | 不等于         | `WHERE age != 18`                                            | 也可以使用 `\u003C\u003E`                                              |\\n|                  | 比较     | 大小比较       | `WHERE age \u003E= 18`                                            | 支持 `\u003E`、`\u003C`、`\u003E=`、`\u003C=`                                    |\\n|                  | 逻辑     | AND            | `WHERE age \u003E= 18 AND age \u003C= 25`                              | 多个条件同时成立                                             |\\n|                  | 逻辑     | OR             | `WHERE age = 18 OR age = 20`                                 | 任一条件成立                                                 |\\n|                  | 逻辑     | NOT            | `WHERE NOT age = 18`                                         | 对条件取反                                                   |\\n|                  | 范围     | BETWEEN        | `WHERE age BETWEEN 18 AND 25`                                | 判断是否位于指定范围，包含边界                               |\\n|                  | 集合     | IN             | `WHERE id IN (1, 2, 3)`                                      | 判断值是否属于指定集合                                       |\\n|                  | 模糊查询 | LIKE           | `WHERE name LIKE 'Tom%'`                                     | `%` 表示任意数量字符                                         |\\n|                  | 模糊查询 | LIKE           | `WHERE name LIKE 'To_'`                                      | `_` 表示任意一个字符                                         |\\n|                  | NULL     | 判断 NULL      | `WHERE age IS NULL`                                          | 不能使用 `age = NULL`                                        |\\n|                  | NULL     | 判断非 NULL    | `WHERE age IS NOT NULL`                                      | 判断字段不为 NULL                                            |\\n| **删除方式对比** | DELETE   | 删除数据       | `DELETE FROM user WHERE id = 1;`                             | 删除行，保留表结构，支持 `WHERE`，`AUTO_INCREMENT` 的计数状态通常不会重置 |\\n|                  | TRUNCATE | 清空表         | `TRUNCATE TABLE user;`                                       | 删除全部数据，保留表结构，不支持 `WHERE`，`AUTO_INCREMENT` 的计数状态重置 |\\n|                  | DROP     | 删除表         | `DROP TABLE user;`                                           | 删除表结构以及全部数据                                       |\\n\\n## 正则\\n\\n\u003E **REGEXP** 是 **Regular Expression**（正则表达式）的缩写\\n\\nREGEXP 是用于进行正则表达式匹配的运算符，用于检查一个字符串是否匹配指定的正则表达式模式，示例：\\n\\n查找 name 字段中以 **'st'** 为开头的所有数据：\\n\\n```sql\\nSELECT name \\nFROM person_tbl \\nWHERE name REGEXP '^st';\\n```\\n\\n| 分类     | 语法 \u002F 符号     | 示例                                 | 说明                                  |\\n| -------- | --------------- | ------------------------------------ | ------------------------------------- |\\n| 正则查询 | `REGEXP`        | `WHERE name REGEXP 'Tom'`            | 判断字段是否匹配正则表达式            |\\n|          | `RLIKE`         | `WHERE name RLIKE 'Tom'`             | `REGEXP` 的同义写法                   |\\n|          | `REGEXP_LIKE()` | `WHERE REGEXP_LIKE(name, 'Tom')`     | MySQL 8.0 推荐的正则函数写法          |\\n| 位置匹配 | `^`             | `WHERE name REGEXP '^Tom'`           | 匹配以 `Tom` 开头的字符串             |\\n|          | `$`             | `WHERE name REGEXP 'Tom$'`           | 匹配以 `Tom` 结尾的字符串             |\\n| 任意字符 | `.`             | `WHERE name REGEXP 'T.m'`            | `.` 表示任意单个字符，如 `Tom`、`Tim` |\\n| 重复匹配 | `*`             | `WHERE name REGEXP 'ab*c'`           | 前一个字符出现 0 次或多次             |\\n|          | `+`             | `WHERE name REGEXP 'ab+c'`           | 前一个字符出现 1 次或多次             |\\n|          | `?`             | `WHERE name REGEXP 'ab?c'`           | 前一个字符出现 0 次或 1 次            |\\n| 次数匹配 | `{n}`           | `WHERE code REGEXP '[0-9]{4}'`       | 前一个模式恰好出现 `n` 次             |\\n|          | `{n,}`          | `WHERE code REGEXP '[0-9]{4,}'`      | 至少出现 `n` 次                       |\\n|          | `{n,m}`         | `WHERE code REGEXP '[0-9]{2,4}'`     | 出现 `n` 到 `m` 次                    |\\n| 字符集合 | `[abc]`         | `WHERE name REGEXP '[abc]'`          | 匹配 `a`、`b`、`c` 中任意一个字符     |\\n|          | `[a-z]`         | `WHERE name REGEXP '[a-z]'`          | 匹配指定字符范围                      |\\n|          | `[0-9]`         | `WHERE code REGEXP '[0-9]'`          | 匹配数字                              |\\n| 排除字符 | `[^abc]`        | `WHERE name REGEXP '[^abc]'`         | 匹配不是 `a`、`b`、`c` 的字符         |\\n| 多条件   | `|`             | `WHERE name REGEXP 'Tom|Jack'`       | 匹配 `Tom` 或 `Jack`                  |\\n| 分组     | `()`            | `WHERE name REGEXP '^(Tom|Jack)$'`   | 将多个正则模式组合                    |\\n| 数字     | `[[:digit:]]`   | `WHERE code REGEXP '[[:digit:]]'`    | 匹配数字字符                          |\\n| 字母     | `[[:alpha:]]`   | `WHERE name REGEXP '[[:alpha:]]'`    | 匹配字母                              |\\n| 字母数字 | `[[:alnum:]]`   | `WHERE code REGEXP '[[:alnum:]]'`    | 匹配字母或数字                        |\\n| 空白字符 | `[[:space:]]`   | `WHERE content REGEXP '[[:space:]]'` | 匹配空格、换行等空白字符              |\\n\\n### 常见示例\\n\\n```SQL\\n-- 查询以 Tom 开头的用户名\\nSELECT *\\nFROM user\\nWHERE name REGEXP '^Tom';\\n```\\n\\n```sql\\n-- 查询以 3 个数字结尾的数据\\nSELECT *\\nFROM user\\nWHERE code REGEXP '[0-9]{3}$';\\n```\\n\\n## 聚合\\n\\n| 聚合函数  | 作用     | 示例         |\\n| --------- | -------- | ------------ |\\n| `COUNT()` | 统计数量 | `COUNT(*)`   |\\n| `SUM()`   | 求和     | `SUM(score)` |\\n| `AVG()`   | 求平均值 | `AVG(score)` |\\n| `MAX()`   | 求最大值 | `MAX(score)` |\\n| `MIN()`   | 求最小值 | `MIN(score)` |\\n\\n## 分组\\n\\n| 聚合函数   | 作用                                                         | 示例                                                         |\\n| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |\\n| `GROUP BY` | 分组                                                         | `SELECT class_name FROM score GROUP BY class_name;`          |\\n| `HAVING `  | 如果要过滤的不是原始数据，而是**分组之后的结果**，就要使用 `HAVING` | `SELECT class_name, AVG(score) AS avg_score FROM score GROUP BY class_name HAVING AVG(score) \u003E 83;` |\\n\\n`HAVING` 示例：查询平均分大于 83 的班级\\n\\n| id   | student_name | class_name | gender | score |\\n| ---- | ------------ | ---------- | ------ | ----- |\\n| 1    | Tom          | A          | 男     | 80    |\\n| 2    | Jack         | A          | 男     | 90    |\\n| 3    | Lucy         | A          | 女     | 85    |\\n| 4    | Jerry        | B          | 男     | 70    |\\n| 5    | Alice        | B          | 女     | 95    |\\n\\n\u003E 如果要过滤的不是原始数据，而是**分组之后的结果**，就要使用 `HAVING`\\n\\n思路：\\n\\n1. 对班级进行分组，分为A班和B班\\n2. 计算每个班级的平均分，A班的平均分，B班的平均分\\n3. 筛选平均分大于83的班级\\n\\n由于是对分组后的结果进行处理，需使用 having\\n\\n```sql\\nSELECT\\n    class_name,\\n    AVG(score) AS avg_score\\nFROM score\\nGROUP BY class_name\\nHAVING avg_score \u003E 83;\\n```\\n\\n## 多表查询\\n\\n\u003E笛卡尔积：[《离散数学》知识点详解：集合的运算（笛卡尔积）_哔哩哔哩_bilibili](https:\u002F\u002Fwww.bilibili.com\u002Fvideo\u002FBV1sa4y1R73e\u002F?spm_id_from=333.337.search-card.all.click&vd_source=8c5774f0412cfb872126f5a44585db4f)\\n\u003E\\n\u003ESQL关系代数：[【关系代数】并、交、差与广义笛卡尔积_哔哩哔哩_bilibili](https:\u002F\u002Fwww.bilibili.com\u002Fvideo\u002FBV1zM4y1s7ar\u002F?spm_id_from=333.337.search-card.all.click)\\n\\n当一个查询需要同时使用多张表中的数据时，就属于多表查询，理解多表查询，可以先从 **笛卡尔积** 开始：\\n\\n![image-20260930173655859](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F09\u002F30\u002Fimage-20260930173655859.png)\\n\\n假设有两张表：\\n\\n### S 学生表\\n\\n| Sno  | Sname |\\n| ---- | ----- |\\n| 001  | Tom   |\\n| 002  | Jack  |\\n\\n### SC 成绩表\\n\\n| Sno  | Course | Score |\\n| ---- | ------ | ----- |\\n| 001  | MySQL  | 90    |\\n| 001  | Java   | 85    |\\n| 002  | MySQL  | 80    |\\n\\n如果直接查询两张表：\\n\\n```sql\\nSELECT S.*, SC.*\\nFROM S, SC;\\n```\\n\\n没有设置任何关联条件，此时会得到两张表的 **笛卡尔积**\\n\\n如果：\\n\\n```text\\nS 表有 m 行\\nSC 表有 n 行\\n```\\n\\n那么理论上会得到：\\n\\n```text\\nm × n 行\\n```\\n\\n因为 S 表中的每一行都会分别与 SC 表中的每一行进行组合\\n\\n例如：\\n\\n```text\\nS.001 × SC.001 MySQL\\nS.001 × SC.001 Java\\nS.001 × SC.002 MySQL\\n\\nS.002 × SC.001 MySQL\\nS.002 × SC.001 Java\\nS.002 × SC.002 MySQL\\n```\\n\\n总共：\\n\\n```text\\n2 × 3 = 6 行\\n```\\n\\n![image-20260930173553140](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F09\u002F30\u002Fimage-20260930173553140.png)\\n\\n将两张表进行笛卡尔积，得到的是第一张表每行数据与另一张表所有数据合并的结果，如上图所示，S表的006数据与SC表的每行数据进行合并，得到了5行数据，总共20行数据，后续的多表查询便是再次基础上进行处理，而且实际业务中，我们通常并不需要所有组合，而只需要存在关系的数据，如学生编号相同时才认为两条数据有关联：\\n\\n1. 多表进行笛卡尔积\\n\\t```sql\\n\\tselect S.*, SC.*\\n\\tfrom S, SC;\\n\\t```\\n\\n\\t便能得到上图中的20行大表，后续对这张大表进行业务处理即可（看作一张表）\\n\\n2. 后续业务处理，如：学生编号相同\\n\\t```sql\\n\\tselect S.*, SC.*\\n\\tfrom S, SC\\n\\twhere S.Sno = SC.Sno;\\n\\t```\\n\\n这种写法属于较早的隐式连接写法，实际开发中更推荐明确使用 `JOIN`\\n\\n```sql\\nSELECT S.*, SC.*\\nFROM S\\nINNER JOIN SC\\n    ON S.Sno = SC.Sno;\\n```\\n\\n这两种写法在这里表达的查询含义基本相同：\\n\\n```sql\\nFROM S, SC\\nWHERE S.Sno = SC.Sno\\n```\\n\\n等价理解为：\\n\\n```sql\\nFROM S\\nINNER JOIN SC\\nON S.Sno = SC.Sno\\n```\\n\\n需要注意：\\n\\n“先生成完整笛卡尔积，再使用 WHERE 筛选”适合作为**理解模型**\\n\\n但 MySQL 实际执行查询时，优化器通常不会真的先生成一张巨大的笛卡尔积临时表，再进行筛选，而会选择更高效的连接算法和执行计划\\n\\n## 连接 JOIN\\n\\n\u003E [MYSQL面试——left join 、inner join 、right join区别_哔哩哔哩_bilibili](https:\u002F\u002Fwww.bilibili.com\u002Fvideo\u002FBV1NV411r7Nz\u002F?spm_id_from=333.337.search-card.all.click&vd_source=8c5774f0412cfb872126f5a44585db4f)\\n\\nJOIN 用于：根据连接条件，将多张表中满足条件的行组合成新的结果集\\n\\n例如：\\n\\n```sql\\nS.Sno = SC.Sno\\n```\\n\\n就是一个连接条件\\n\\n常见 JOIN 包括：\\n\\n| 类型         | 含义                                     |\\n| ------------ | ---------------------------------------- |\\n| `CROSS JOIN` | 所有行互相组合，即笛卡尔积               |\\n| `INNER JOIN` | 只保留满足连接条件的数据                 |\\n| `LEFT JOIN`  | 保留左表全部数据，同时连接右表匹配的数据 |\\n| `RIGHT JOIN` | 保留右表全部数据，同时连接左表匹配的数据 |\\n\\n维恩图：\\n\\n![image-20260930193639960](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F09\u002F30\u002Fimage-20260930193639960.png)\\n\\n### CROSS JOIN\\n\\n`CROSS JOIN` 就是笛卡尔积\\n\\n```sql\\nSELECT *\\nFROM S\\nCROSS JOIN SC;\\n```\\n\\n如果：\\n\\n```text\\nS：4 行\\nSC：5 行\\n```\\n\\n结果：\\n\\n```text\\n4 × 5 = 20 行\\n```\\n\\n因此：\\n\\n```sql\\nFROM S, SC\\n```\\n\\n可以理解为一种隐式的 `CROSS JOIN`\\n\\n### 左连接\\n\\n左连接的核心规则是：\\n\\n\u003E **左表全部保留，右表能匹配就连接，左表不能匹配项填 NULL**\\n\\n![image-20260930193836186](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F09\u002F30\u002Fimage-20260930193836186.png)\\n\\n![image-20260930194059506](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F09\u002F30\u002Fimage-20260930194059506.png)\\n\\n将 from Student 的 Student 作为左表，left join SC 的 SC 作为右表，两者进行左连接\\n\\n```sql\\nfrom A（左表）\\nLEFT JOIN B（右表）\\n```\\n\\n### 内连接 INNER JOIN\\n\\n内连接：左表公共部分与右表公共部分做笛卡尔积，核心规则是：\\n\\n\u003E **满足连接条件的行组合**\\n\\n![image-20260930194720120](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F09\u002F30\u002Fimage-20260930194720120.png)\\n\\n示例：\\n\\n```sql\\nSELECT\\n    S.Sno,\\n    S.Sname,\\n    SC.Course,\\n    SC.Score\\nFROM S\\nINNER JOIN SC\\n    ON S.Sno = SC.Sno;\\n```\\n\\n执行逻辑可以理解为：\\n\\n```text\\nS 表\\n  │\\n  │ S.Sno = SC.Sno\\n  ▼\\n寻找 SC 表中满足条件的数据\\n  │\\n  ▼\\n组合匹配成功的数据\\n```\\n\\n例如：\\n\\n```text\\nS\\n\\n001 Tom\\n002 Jack\\n003 Lucy\\nSC\\n\\n001 MySQL 90\\n001 Java 85\\n002 MySQL 80\\n004 Java 90\\n```\\n\\n执行：\\n\\n```sql\\nSELECT *\\nFROM S\\nINNER JOIN SC\\n    ON S.Sno = SC.Sno;\\n```\\n\\n得到：\\n\\n```text\\n001 Tom  001 MySQL 90\\n001 Tom  001 Java  85\\n002 Jack 002 MySQL 80\\n```\\n\\n其中：\\n\\n```text\\n003 Lucy\\n004 Java\\n```\\n\\n不会出现在最终结果中，因为它们没有找到满足连接条件的数据\\n\\n## ON 与 WHERE\\n\\n学习 JOIN 时，还需要区分：\\n\\n```sql\\nON\\n```\\n\\n与：\\n\\n```sql\\nWHERE\\n```\\n\\n`ON` 主要用于描述：\\n\\n\u003E 两张表之间如何进行匹配\\n\\n例如：\\n\\n```sql\\nON S.Sno = SC.Sno\\n```\\n\\n`WHERE` 主要用于描述：\\n\\n\u003E 对连接完成后的结果进一步进行筛选\\n\\n例如查询 MySQL 成绩大于 80 分的学生：\\n\\n```sql\\nSELECT\\n    S.Sname,\\n    SC.Score\\nFROM S\\nINNER JOIN SC\\n    ON S.Sno = SC.Sno\\nWHERE SC.Course = 'MySQL'\\n  AND SC.Score \u003E 80;\\n```\\n\\n可以理解为：\\n\\n```text\\nS\\n        \\\\\\n         \\\\ S.Sno = SC.Sno\\n          JOIN\\n         \u002F\\nSC\\n        ↓\\n   得到关联数据\\n        ↓\\nWHERE Course = 'MySQL'\\n  AND Score \u003E 80\\n        ↓\\n   得到最终结果\\n```\\n\\n因此可以简单记忆：\\n\\n```text\\nON      → 表与表怎么关联\\nWHERE   → 结果还需要满足什么条件\\n```\\n\\n需要注意，对于外连接 `LEFT JOIN \u002F RIGHT JOIN`，将条件写在 `ON` 还是 `WHERE` 中可能直接改变查询结果，因此两者不能认为完全等价\\n\\n## 多表查询整体理解\\n\\n整个知识点可以整理成一条主线：\\n\\n```text\\n多表查询\\n│\\n├── CROSS JOIN\\n│     └── 所有数据组合：笛卡尔积\\n│\\n├── INNER JOIN\\n│     └── 只保留匹配成功的数据\\n│\\n├── LEFT JOIN\\n│     └── 左表全部保留\\n│         ├── 匹配成功 → 合并右表数据\\n│         └── 匹配失败 → 右表字段 NULL\\n│\\n└── RIGHT JOIN\\n      └── 右表全部保留\\n          ├── 匹配成功 → 合并左表数据\\n          └── 匹配失败 → 左表字段 NULL\\n```\\n\\n最核心的理解是：\\n\\n```text\\nJOIN ≠ 单纯寻找两个集合的交集\\n\\nJOIN = 根据 ON 条件寻找行与行之间的匹配关系，并将匹配的数据组合起来\\n```\\n\\n其中：\\n\\n```text\\nINNER JOIN → 只要匹配成功的数据\\n\\nLEFT JOIN  → 左边全部要，右边能匹配多少就匹配多少\\n\\nRIGHT JOIN → 右边全部要，左边能匹配多少就匹配多少\\n\\nCROSS JOIN → 不考虑匹配关系，所有数据互相组合\\n```\\n\",\"status\":1,\"statusName\":\"已发布\",\"createdAt\":\"2026-10-05 16:47:02\",\"updatedAt\":\"2026-10-05 16:48:58\",\"tags\":[{\"id\":114,\"name\":\"MySQL\"},{\"id\":115,\"name\":\"MySQL_笔记整理\"}]}}}}"</script>
+  
+
+</body></html>
