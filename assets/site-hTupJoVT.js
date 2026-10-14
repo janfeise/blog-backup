@@ -1,0 +1,1 @@
+var e=Object.freeze({name:`Tilex`,title:`Tilex Blog`,desc:`追寻炽烈的爱`});export{e as t};
