@@ -1,0 +1,822 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/blog-backup/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-CCtjlQQY.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/SiteLink-cCKG4X0l.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-CJVyhrtB.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-lX7aBYeP.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-aDdYdfsJ.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-CWetEoAe.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-Bri_xbau.js"><link rel="stylesheet" href="/blog-backup/assets/Nav-CIomYlXg.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/SiteLink-cCKG4X0l.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-BTp7VwD-.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-CYJPD-xC.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/SiteFooter-BS7IaTLU.js"><link rel="stylesheet" href="/blog-backup/assets/SiteFooter-D8_RPO5a.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="site site--moss site--article" data-v-befb9f6e=""><!--[--><!--[--><div class="nav flex nav__top nav--moss nav--classic" style="" data-v-747263ed=""><div class="nav__brand nav__top--logo" data-v-747263ed=""><a href="/blog-backup/" class="nav__logo-link" data-v-747263ed=""><!--[-->Tilex Blog<!--]--></a></div><!--[--><!--]--><a href="/blog-backup/archive/" class="nav__archive" aria-label="进入归档" data-v-747263ed=""><!--[--><span class="nav__archive-icon" aria-hidden="true" data-v-747263ed=""></span><!--]--></a><button class="nav__menu-btn" type="button" aria-label="打开导航菜单" aria-controls="top-nav-menu" aria-expanded="false" data-v-747263ed=""><span class="nav__menu-icon" aria-hidden="true" data-v-747263ed=""></span></button><!----><nav id="top-nav-menu" class="nav__links nav__top-menu" aria-label="站点导航" data-v-747263ed=""><div class="nav__top-main" data-v-747263ed=""><!--[--><a href="/blog-backup/" class="nav__top-link" data-v-747263ed=""><!--[-->首页<!--]--></a><a href="/blog-backup/space/" class="nav__top-link" data-v-747263ed=""><!--[-->空间<!--]--></a><!--]--></div><div class="nav__top-minor" data-v-747263ed=""><!--[--><span class="nav__top-item" data-v-747263ed=""><!----><a href="/blog-backup/archive/" class="nav__top-link nav__top-link--minor" data-v-747263ed=""><!--[-->归档<!--]--></a></span><span class="nav__top-item" data-v-747263ed=""><span class="nav__top-slash" aria-hidden="true" data-v-747263ed="">/</span><a href="/blog-backup/links/" class="nav__top-link nav__top-link--minor" data-v-747263ed=""><!--[-->友链<!--]--></a></span><!--]--><span class="nav__top-item" data-v-747263ed=""><span class="nav__top-slash" aria-hidden="true" data-v-747263ed="">/</span><span class="nav__drop" data-v-747263ed=""><button class="nav__drop-btn" type="button" aria-controls="nav-more-links" aria-expanded="false" data-v-747263ed=""> 更多 <span class="nav__drop-icon" aria-hidden="true" data-v-747263ed=""></span></button></span></span><!----></div></nav><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><section class="article-layout__content"><!--[--><article class="article-container" data-v-5dad6fdf=""><header class="article-header" data-v-5dad6fdf=""><h1 class="article-header__title" data-v-5dad6fdf="">Java SE八股整理</h1><div class="article-header__meta" data-v-5dad6fdf=""><span class="article-header__item" data-v-5dad6fdf=""><time datetime="2026-10-21T11:30:26" data-v-5dad6fdf="">2026.10.21</time> 发布 </span><span class="article-header__item" data-v-5dad6fdf="">75 分钟阅读</span><span class="article-header__item" data-v-5dad6fdf=""> 更新于 <time datetime="2026-10-21T11:52:01" data-v-5dad6fdf="">2026.10.21</time></span></div></header><div class="markdown-renderer" data-v-5dad6fdf="" data-v-5d342459=""><!----><div class="markdown-container markdown-renderer__container" data-v-5d342459=""><div class="markdown-content-wrapper markdown-renderer__wrapper" data-v-5d342459=""><div class="markdown-content markdown-renderer__body" data-v-5d342459=""><h2 id="java-核心特性"><a href="#java-核心特性" class="anchor-link">#</a> Java 核心特性</h2>
+<ul>
+<li>面向对象：支持封装、继承、多态三大特性，以对象为核心组织程序结构</li>
+<li>平台无关性：基于 JVM 屏蔽底层差异，将源代码编译为字节码后可在任意安装JVM的平台上运行</li>
+<li>内存自动管理：内置垃圾回收机制（GC），无需像C语言手动调用 malloc/free 释放内存，降低了内存泄露的风险</li>
+<li>……</li>
+</ul>
+<h2 id="jvm-jre-jdk"><a href="#jvm-jre-jdk" class="anchor-link">#</a> JVM、JRE、JDK</h2>
+<blockquote>
+<p><a href="https://javaguide.cn/java/basis/java-basic-questions-01.html#java-%E8%AF%AD%E8%A8%80%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9">JAVAGUID-java基础</a></p>
+</blockquote>
+<p>JVM：Java 虚拟机（Java Virtual Machine, JVM）是运行 Java 字节码的虚拟机。JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是使用相同的字节码，它们都会给出相同的结果。字节码和不同系统的 JVM 实现是 Java 语言“一次编译，随处可以运行”的关键所在。</p>
+<p>JRE：Java Runtime Environment，JRE 是运行已编译 Java 程序所需的环境，主要包含以下两个部分：</p>
+<ol>
+<li><strong>JVM</strong> : 也就是我们上面提到的 Java 虚拟机。</li>
+<li><strong>Java 基础类库（Class Library）</strong>：一组标准的类库，提供常用的功能和 API（如 I/O 操作、网络通信、数据结构等）。</li>
+</ol>
+<p>JDK（Java Development Kit）是一个功能齐全的 Java 开发工具包，供开发者使用，用于创建和编译 Java 程序。它包含了 JRE（Java Runtime Environment），以及编译器 javac 和其他工具，如 javadoc（文档生成器）、jdb（调试器）、jconsole（监控工具）、javap（反编译工具）等。</p>
+<p><img src="/blog-backup/blog-images/2026/10/21/image-20261021113456276.png" alt="image-20261021113456276"></p>
+<blockquote>
+<p>图片源自：<a href="https://oss.javaguide.cn/github/javaguide/java/basis/jdk-include-jre.png">https://oss.javaguide.cn/github/javaguide/java/basis/jdk-include-jre.png</a></p>
+</blockquote>
+<h2 id="基础数据类型"><a href="#基础数据类型" class="anchor-link">#</a> 基础数据类型</h2>
+<p>Java 中有 8 种基本数据类型，分别为：</p>
+<ul>
+<li>6 种数字类型：
+<ul>
+<li>4 种整数型：<code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code>，占用字节分别是：1字节、2字节、4字节、8字节</li>
+<li>2 种浮点型：<code>float</code>、<code>double，</code>，占用字节分别是4字节，8字节</li>
+</ul>
+</li>
+<li>1 种字符类型：<code>char</code>，2字节</li>
+<li>1 种布尔型：<code>boolean</code>，true/false</li>
+</ul>
+<p>这八种基本类型都有对应的包装类分别为：<code>Byte</code>、<code>Short</code>、<code>Integer</code>、<code>Long</code>、<code>Float</code>、<code>Double</code>、<code>Character</code>、<code>Boolean</code>。</p>
+<h3 id="基本类型与包装类的区别是"><a href="#基本类型与包装类的区别是" class="anchor-link">#</a> 基本类型与包装类的区别是？</h3>
+<p>我觉得主要区别在于代码的复用性，与前端的JavaScript不同，JavaScript通过原型链实现复用，而Java则主要通过类的继承实现，子类继承父类的方法，因此包装类可以使用父类的方法，如：map、filter……，但基本类型不行</p>
+<h2 id="面向对象"><a href="#面向对象" class="anchor-link">#</a> 面向对象</h2>
+<h3 id="三大特性"><a href="#三大特性" class="anchor-link">#</a> 三大特性</h3>
+<p>面向对象的三大特性：</p>
+<ul>
+<li>封装：通过 private 修饰属性，提供 getter/setter 方法控制访问，隐藏内部实现细节</li>
+<li>继承：子类继承父类的属性与方法，提高了代码的复用性</li>
+<li>多态：子类重写父类的方法，后续调用时使用子类重写后的方法，提高了代码的灵活性和可扩展性</li>
+</ul>
+<h3 id="this-关键字"><a href="#this-关键字" class="anchor-link">#</a> this 关键字</h3>
+<p>类可以有多个实例，this 关键字便指向实例本身</p>
+<h3 id="this与静态方法-静态变量"><a href="#this与静态方法-静态变量" class="anchor-link">#</a> this与静态方法、静态变量</h3>
+<p>在 Java 中通过 static 修饰的属性称为静态变量，通过 static 修饰的方法称为静态方法，两者的共同特点是：全局属性/全局方法</p>
+<p><img src="/blog-backup/blog-images/2026/10/21/image-20261021113625632.png" alt="image-20261021113625632"></p>
+<blockquote>
+<p>图片源自：<a href="https://oss.javaguide.cn/github/javaguide/java/basis/java-basis-variables-static-variable.png">https://oss.javaguide.cn/github/javaguide/java/basis/java-basis-variables-static-variable.png</a></p>
+</blockquote>
+<p>而 this 是指向实例本身，因此静态方法是没有this的，只能访问静态变量，不能直接访问实例成员</p>
+<h3 id="重写与重载"><a href="#重写与重载" class="anchor-link">#</a> 重写与重载</h3>
+<p>重写：实现面向对象多态的基础，子类继承父类方法时，可进行重写，后续方法使用时，查找方法从子类到父类逐步往上查找，此时子类重写了父类的方法，可直接使用，不会经过父类的方法</p>
+<p>重载：多个同名方法，但不同参数，根据参数选择对应的方法</p>
+<h3 id="抽象类与接口的区别"><a href="#抽象类与接口的区别" class="anchor-link">#</a> 抽象类与接口的区别</h3>
+<p>抽象类与接口的主要区别是，一个类只能继承一个抽象类（Java不支持多继承），但一个类却可以实现多个接口</p>
+<h3 id="浅拷贝与深拷贝的区别"><a href="#浅拷贝与深拷贝的区别" class="anchor-link">#</a> 浅拷贝与深拷贝的区别</h3>
+<p>两者的区别主要体现在引用数据类型，浅拷贝会拷贝引用数据类型的地址值，而深拷贝则完全拷贝一个对象，并将堆中的对象也拷贝一份</p>
+<p><img src="/blog-backup/blog-images/2026/10/21/image-20261021113646622.png" alt="image-20261021113646622"></p>
+<blockquote>
+<p>图片源自：<a href="https://oss.javaguide.cn/github/javaguide/java/basis/shallow&amp;deep-copy.png">https://oss.javaguide.cn/github/javaguide/java/basis/shallow&amp;deep-copy.png</a></p>
+</blockquote>
+<h3 id="为什么重写-equals-时必须重写-hashcode"><a href="#为什么重写-equals-时必须重写-hashcode" class="anchor-link">#</a> 为什么重写 equals() 时必须重写 hashCode()</h3>
+<blockquote>
+<p>参考：<a href="https://www.cnblogs.com/skywang12345/p/3324958.html?utm_source=chatgpt.com">Java equals() 和 hashCode() 详解</a></p>
+</blockquote>
+<h4 id="equals-方法"><a href="#equals-方法" class="anchor-link">#</a> equals() 方法</h4>
+<p><code>equals()</code> 定义在 Java 的 <code>Object</code> 类中，默认通过 <code>==</code> 判断两个引用是否指向同一个对象</p>
+
+      <div class="md-editor-code" data-language="Java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">Java</span>
+            <button class="md-editor-copy-button" data-code="public%20boolean%20equals(Object%20obj)%20%7B%0A%20%20%20%20return%20this%20%3D%3D%20obj%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-Java"><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object obj)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span> == obj;
+}
+</code></pre>
+      </div>
+    
+<p>但实际开发中，我们可能希望两个不同对象的属性相同，也认为它们相等，因此需要重写 <code>equals()</code></p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="Java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">Java</span>
+            <button class="md-editor-copy-button" data-code="Person%20p1%20%3D%20new%20Person(%22Tom%22%2C%2020)%3B%0APerson%20p2%20%3D%20new%20Person(%22Tom%22%2C%2020)%3B%0A%0ASystem.out.println(p1%20%3D%3D%20p2)%3B%20%20%20%20%20%20%2F%2F%20false%0ASystem.out.println(p1.equals(p2))%3B%20%2F%2F%20true%EF%BC%88%E9%87%8D%E5%86%99%20equals%20%E5%90%8E%EF%BC%89%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-Java"><span class="hljs-type">Person</span> <span class="hljs-variable">p1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">"Tom"</span>, <span class="hljs-number">20</span>);
+<span class="hljs-type">Person</span> <span class="hljs-variable">p2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">"Tom"</span>, <span class="hljs-number">20</span>);
+
+System.out.println(p1 == p2);      <span class="hljs-comment">// false</span>
+System.out.println(p1.equals(p2)); <span class="hljs-comment">// true（重写 equals 后）</span>
+</code></pre>
+      </div>
+    
+<p>重写示例：</p>
+
+      <div class="md-editor-code" data-language="Java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">Java</span>
+            <button class="md-editor-copy-button" data-code="%40Override%0Apublic%20boolean%20equals(Object%20obj)%20%7B%0A%20%20%20%20if%20(this%20%3D%3D%20obj)%20return%20true%3B%20%2F%2F%20%E5%90%8C%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%0A%0A%20%20%20%20if%20(obj%20%3D%3D%20null%20%7C%7C%20getClass()%20!%3D%20obj.getClass())%0A%20%20%20%20%20%20%20%20return%20false%3B%0A%0A%20%20%20%20Person%20person%20%3D%20(Person)%20obj%3B%0A%0A%20%20%20%20return%20age%20%3D%3D%20person.age%0A%20%20%20%20%20%20%20%20%20%20%20%20%26%26%20Objects.equals(name%2C%20person.name)%3B%20%2F%2F%20%E4%B8%8D%E5%90%8C%E5%AF%B9%E8%B1%A1%E6%AF%94%E8%BE%83%E5%B1%9E%E6%80%A7%E6%98%AF%E5%90%A6%E7%9B%B8%E5%90%8C%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-Java"><span class="hljs-meta">@Override</span>
+<span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object obj)</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span> == obj) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// 同一个对象</span>
+
+    <span class="hljs-keyword">if</span> (obj == <span class="hljs-literal">null</span> || getClass() != obj.getClass())
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+    <span class="hljs-type">Person</span> <span class="hljs-variable">person</span> <span class="hljs-operator">=</span> (Person) obj;
+
+    <span class="hljs-keyword">return</span> age == person.age
+            &amp;&amp; Objects.equals(name, person.name); <span class="hljs-comment">// 不同对象比较属性是否相同</span>
+}
+</code></pre>
+      </div>
+    
+<h4 id="hashcode-方法"><a href="#hashcode-方法" class="anchor-link">#</a> hashCode() 方法</h4>
+<p><code>hashCode()</code> 同样定义在 <code>Object</code> 类中，用于返回对象的哈希码（<code>int</code> 类型），主要用于 <code>HashSet</code>、<code>HashMap</code> 等哈希集合，辅助快速定位元素，以 <code>HashSet</code> 为例，底层基于 <code>HashMap</code> 实现，添加元素时：</p>
+<ol>
+<li>计算哈希值：调用 <code>hashCode()</code>，经过处理后确定数组桶的位置</li>
+<li>检查桶内元素：
+<ul>
+<li>桶为空：直接插入</li>
+<li>桶不为空：检查已有节点的哈希码</li>
+<li>哈希码相同：进一步通过 <code>==</code> 或 <code>equals()</code> 判断是否相等</li>
+</ul>
+</li>
+<li>决定是否插入：
+<ul>
+<li>存在相等元素：拒绝插入</li>
+<li>不存在相等元素：插入新节点</li>
+</ul>
+</li>
+</ol>
+<p>注意：不同哈希码也可能映射到同一个桶，但不会因此直接调用 <code>equals()</code> 比较</p>
+<h4 id="为什么重写-equals-必须重写-hashcode"><a href="#为什么重写-equals-必须重写-hashcode" class="anchor-link">#</a> 为什么重写 equals() 必须重写 hashCode()</h4>
+<p>假设 <code>Person</code> 只重写了 <code>equals()</code>，没有重写 <code>hashCode()</code></p>
+
+      <div class="md-editor-code" data-language="Java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">Java</span>
+            <button class="md-editor-copy-button" data-code="Person%20p1%20%3D%20new%20Person(%22Tom%22%2C%2020)%3B%0APerson%20p2%20%3D%20new%20Person(%22Tom%22%2C%2020)%3B%0A%0ASystem.out.println(p1.equals(p2))%3B%20%2F%2F%20true%0A%0AHashSet%3CPerson%3E%20set%20%3D%20new%20HashSet%3C%3E()%3B%0Aset.add(p1)%3B%0Aset.add(p2)%3B%0A%0ASystem.out.println(set.size())%3B%20%2F%2F%20%E5%8F%AF%E8%83%BD%E4%B8%BA%202%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-Java"><span class="hljs-type">Person</span> <span class="hljs-variable">p1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">"Tom"</span>, <span class="hljs-number">20</span>);
+<span class="hljs-type">Person</span> <span class="hljs-variable">p2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">"Tom"</span>, <span class="hljs-number">20</span>);
+
+System.out.println(p1.equals(p2)); <span class="hljs-comment">// true</span>
+
+HashSet&lt;Person&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();
+set.add(p1);
+set.add(p2);
+
+System.out.println(set.size()); <span class="hljs-comment">// 可能为 2</span>
+</code></pre>
+      </div>
+    
+<p>问题原因：</p>
+<ul>
+<li><code>p1</code> 和 <code>p2</code> 属性相同，<code>equals()</code> 返回 <code>true</code></li>
+<li>但默认 <code>hashCode()</code> 通常根据对象身份生成哈希码，两者可能不同</li>
+<li><code>HashSet</code> 根据不同哈希码定位元素，可能将两个对象都插入集合，导致去重失败</li>
+</ul>
+<p>解决方法：同时重写 <code>hashCode()</code>，使用与 <code>equals()</code> 相同的属性计算哈希码</p>
+
+      <div class="md-editor-code" data-language="Java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">Java</span>
+            <button class="md-editor-copy-button" data-code="%40Override%0Apublic%20int%20hashCode()%20%7B%0A%20%20%20%20return%20Objects.hash(name%2C%20age)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-Java"><span class="hljs-meta">@Override</span>
+<span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span> {
+    <span class="hljs-keyword">return</span> Objects.hash(name, age);
+}
+</code></pre>
+      </div>
+    
+<p>此时：</p>
+
+      <div class="md-editor-code" data-language="Java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">Java</span>
+            <button class="md-editor-copy-button" data-code="p1.equals(p2)%3B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20true%0Ap1.hashCode()%20%3D%3D%20p2.hashCode()%3B%20%20%20%2F%2F%20true%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-Java">p1.equals(p2);                    <span class="hljs-comment">// true</span>
+p1.hashCode() == p2.hashCode();   <span class="hljs-comment">// true</span>
+</code></pre>
+      </div>
+    
+<p><code>HashSet</code> 就能正确识别两个逻辑上相等的对象，最终 <code>set.size()</code> 为 <code>1</code></p>
+<p>总的来说，重写 hashCode 是为了处理当两个对象相同时，哈希表不重复添加元素</p>
+<h4 id="总结"><a href="#总结" class="anchor-link">#</a> 总结</h4>
+<ul>
+<li><code>equals()</code>：判断两个对象在逻辑上是否相等</li>
+<li><code>hashCode()</code>：生成哈希码，帮助哈希表快速定位对象</li>
+<li>重写 <code>equals()</code> 时必须同时重写 <code>hashCode()</code>，保证相等对象具有相同哈希码</li>
+<li><code>hashCode()</code> 相同不代表对象相等，仍需通过 <code>equals()</code> 进一步判断</li>
+</ul>
+<p>核心：<code>equals()</code> 负责判断对象是否相等，<code>hashCode()</code> 负责辅助定位对象，两者必须遵守一致的相等性规则，才能保证哈希集合正常工作</p>
+<h2 id="string-stringbuilder-stringbuffer"><a href="#string-stringbuilder-stringbuffer" class="anchor-link">#</a> String、Stringbuilder、Stringbuffer</h2>
+<blockquote>
+<p>文档：<a href="https://javaguide.cn/java/basis/java-basic-questions-02.html#%E2%AD%90%EF%B8%8F-string%E3%80%81stringbuffer%E3%80%81stringbuilder-%E7%9A%84%E5%8C%BA%E5%88%AB">https://javaguide.cn/java/basis/java-basic-questions-02.html#⭐️-string、stringbuffer、stringbuilder-的区别</a></p>
+</blockquote>
+<p>都是用来处理字符串的，但 String 不可变，每次修改都会生成新的对象，并将引用指向新的实例（即新的String），而 <code>StringBuffer</code> 和 <code>StringBuilder</code> 都是可变的，它们在修改字符串时不会创建新对象，而是直接在原有字符数组上进行操作。</p>
+<p>因此，遇到大量字符串连接可以用 StringBuilder ，不会生成许多新的对象，StringBuilder 与 StringBuffer 的区别是，StringBuffer 对字符串的基本操作，如：append、insert 等都添加了同步锁，synchronized，线程安全，而 <code>StringBuilder</code> 并没有对方法进行加同步锁，所以是非线程安全的。</p>
+<p>String 为什么不可变？——final</p>
+<ul>
+<li>在源码中，java对于 String 类的保存通过数组存储每个字符，并通过 final 进行修饰，而且没有提供/暴露修改这个字符串的方法</li>
+<li>String 类也被 final 修饰，导致其不能被继承，进而避免了子类破坏 String 不可变</li>
+</ul>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="public%20final%20class%20String%20implements%20java.io.Serializable%2CComparable%3CString%3E%2C%20CharSequence%20%7B%0A%20%20%20%20%2F%2F%20%40Stable%20%E6%B3%A8%E8%A7%A3%E8%A1%A8%E7%A4%BA%E5%8F%98%E9%87%8F%E6%9C%80%E5%A4%9A%E8%A2%AB%E4%BF%AE%E6%94%B9%E4%B8%80%E6%AC%A1%EF%BC%8C%E7%A7%B0%E4%B8%BA%E2%80%9C%E7%A8%B3%E5%AE%9A%E7%9A%84%E2%80%9D%E3%80%82%0A%20%20%20%20%40Stable%0A%20%20%20%20private%20final%20byte%5B%5D%20value%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">String</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">java</span>.io.Serializable,Comparable&lt;String&gt;, CharSequence {
+    <span class="hljs-comment">// @Stable 注解表示变量最多被修改一次，称为“稳定的”。</span>
+    <span class="hljs-meta">@Stable</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">byte</span>[] value;
+}
+</code></pre>
+      </div>
+    
+<h2 id="字符串常量池的作用了解吗"><a href="#字符串常量池的作用了解吗" class="anchor-link">#</a> 字符串常量池的作用了解吗？</h2>
+<blockquote>
+<p>文档：<a href="https://javaguide.cn/java/basis/java-basic-questions-02.html#%E2%AD%90%EF%B8%8F-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%9A%84%E4%BD%9C%E7%94%A8%E4%BA%86%E8%A7%A3%E5%90%97">https://javaguide.cn/java/basis/java-basic-questions-02.html#⭐️-字符串常量池的作用了解吗</a></p>
+</blockquote>
+<p>字符串是引用数据类型，默认情况下每次创建都会开辟新的空间，放置对象，并返回引用地址，但用于字符串是不可变的，此时 JVM 开辟一块空间放置字符串，也就是字符串常量池，提示了性能并减少内存消耗，避免字符串重复创建</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%2F%2F%201.%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E4%B8%AD%E6%9F%A5%E8%AF%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1%20%22ab%22%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E5%88%99%E5%88%9B%E5%BB%BA%22ab%22%E5%B9%B6%E6%94%BE%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%2F%2F%202.%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1%20%22ab%22%20%E7%9A%84%E5%BC%95%E7%94%A8%E8%B5%8B%E5%80%BC%E7%BB%99%20aa%0AString%20aa%20%3D%20%22ab%22%3B%0A%2F%2F%20%E7%9B%B4%E6%8E%A5%E8%BF%94%E5%9B%9E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1%20%22ab%22%EF%BC%8C%E8%B5%8B%E5%80%BC%E7%BB%99%E5%BC%95%E7%94%A8%20bb%0AString%20bb%20%3D%20%22ab%22%3B%0ASystem.out.println(aa%3D%3Dbb)%3B%20%2F%2F%20true%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-comment">// 1.在字符串常量池中查询字符串对象 "ab"，如果没有则创建"ab"并放入字符串常量池</span>
+<span class="hljs-comment">// 2.将字符串对象 "ab" 的引用赋值给 aa</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">aa</span> <span class="hljs-operator">=</span> <span class="hljs-string">"ab"</span>;
+<span class="hljs-comment">// 直接返回字符串常量池中字符串对象 "ab"，赋值给引用 bb</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">bb</span> <span class="hljs-operator">=</span> <span class="hljs-string">"ab"</span>;
+System.out.println(aa==bb); <span class="hljs-comment">// true</span>
+</code></pre>
+      </div>
+    
+<h2 id="泛型"><a href="#泛型" class="anchor-link">#</a> 泛型</h2>
+<p>泛型，我的理解是参数，将数据的类型参数化，在定义类、接口或者方法时不必指定具体的数据类型，在实际使用时指定具体的类型即可</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="class%20Box%3CT%3E%20%7B%0A%20%20%20%20private%20T%20value%3B%0A%0A%20%20%20%20public%20void%20setValue(T%20value)%20%7B%0A%20%20%20%20%20%20%20%20this.value%20%3D%20value%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20public%20T%20getValue()%20%7B%0A%20%20%20%20%20%20%20%20return%20value%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Box</span>&lt;T&gt; {
+    <span class="hljs-keyword">private</span> T value;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setValue</span><span class="hljs-params">(T value)</span> {
+        <span class="hljs-built_in">this</span>.value = value;
+    }
+
+    <span class="hljs-keyword">public</span> T <span class="hljs-title function_">getValue</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> value;
+    }
+}
+</code></pre>
+      </div>
+    
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="Box%3CString%3E%20box1%20%3D%20new%20Box%3C%3E()%3B%20%2F%2F%20%E6%8C%87%E5%AE%9A%20String%20%E7%B1%BB%E5%9E%8B%0Abox1.setValue(%22Hello%22)%3B%0A%0ABox%3CInteger%3E%20box2%20%3D%20new%20Box%3C%3E()%3B%20%2F%2F%20%E6%8C%87%E5%AE%9A%20Integer%20%E7%B1%BB%E5%9E%8B%0Abox2.setValue(100)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java">Box&lt;String&gt; box1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Box</span>&lt;&gt;(); <span class="hljs-comment">// 指定 String 类型</span>
+box1.setValue(<span class="hljs-string">"Hello"</span>);
+
+Box&lt;Integer&gt; box2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Box</span>&lt;&gt;(); <span class="hljs-comment">// 指定 Integer 类型</span>
+box2.setValue(<span class="hljs-number">100</span>);
+</code></pre>
+      </div>
+    
+<h2 id="序列化与反序列化"><a href="#序列化与反序列化" class="anchor-link">#</a> 序列化与反序列化</h2>
+<p><img src="/blog-backup/blog-images/2026/10/21/image-20261021113723532.png" alt="image-20261021113723532"></p>
+<blockquote>
+<p>图片源自：<a href="https://oss.javaguide.cn/github/javaguide/a478c74d-2c48-40ae-9374-87aacf05188c.png">https://oss.javaguide.cn/github/javaguide/a478c74d-2c48-40ae-9374-87aacf05188c.png</a></p>
+</blockquote>
+<p>序列化（Serialization）：将 java 中对象持久化保持，保持格式有二进制字节流（Bytes）、JSON等</p>
+<p>反序列化：序列化的逆过程，将序列化持久化的文件转换为对象的过程</p>
+<h2 id="反射"><a href="#反射" class="anchor-link">#</a> 反射</h2>
+<p>在程序运行时，可以动态的获取类的属性与方法，并可以调用方法，例如：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="User%20user%20%3D%20new%20User()%3B%0Auser.sayHello()%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();
+user.sayHello();
+</code></pre>
+      </div>
+    
+<p>编译时已经明确知道调用的是 <code>User</code> 类的 <code>sayHello()</code> 方法。而通过反射：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="Class%3C%3F%3E%20clazz%20%3D%20Class.forName(%22com.example.User%22)%3B%0A%0A%2F%2F%20%E8%8E%B7%E5%8F%96%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E5%B9%B6%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B%0AObject%20user%20%3D%20clazz.getDeclaredConstructor().newInstance()%3B%0A%0A%2F%2F%20%E8%8E%B7%E5%8F%96%E6%8C%87%E5%AE%9A%E6%96%B9%E6%B3%95%0AMethod%20method%20%3D%20clazz.getMethod(%22sayHello%22)%3B%0A%0A%2F%2F%20%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%0Amethod.invoke(user)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java">Class&lt;?&gt; clazz = Class.forName(<span class="hljs-string">"com.example.User"</span>);
+
+<span class="hljs-comment">// 获取构造方法并创建实例</span>
+<span class="hljs-type">Object</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> clazz.getDeclaredConstructor().newInstance();
+
+<span class="hljs-comment">// 获取指定方法</span>
+<span class="hljs-type">Method</span> <span class="hljs-variable">method</span> <span class="hljs-operator">=</span> clazz.getMethod(<span class="hljs-string">"sayHello"</span>);
+
+<span class="hljs-comment">// 调用方法</span>
+method.invoke(user);
+</code></pre>
+      </div>
+    
+<p>这里的类名可以在运行时确定，因此反射支持更动态的程序行为。</p>
+<h2 id="io流"><a href="#io流" class="anchor-link">#</a> IO流</h2>
+<p>Java IO（Input / Output）流用于实现程序与外部数据源（如文件、网络等）之间的数据读取与写入，IO 流主要有两种分类方式：</p>
+<ul>
+<li>按照数据流向划分
+<ul>
+<li>输入流：从外部读取数据到程序，如 <code>InputStream</code>、<code>Reader</code></li>
+<li>输出流：从程序向外部写入数据，如 <code>OutputStream</code>、<code>Writer</code></li>
+</ul>
+</li>
+<li>按照数据处理单位划分
+<ul>
+<li>字节流：以字节（8 bit）为单位处理数据，如 <code>InputStream</code>、<code>OutputStream</code></li>
+<li>字符流：以字符为单位处理数据，如 <code>Reader</code>、<code>Writer</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="字节流与字符流的区别"><a href="#字节流与字符流的区别" class="anchor-link">#</a> 字节流与字符流的区别</h3>
+<p>计算机实际存储的数据是二进制数据。对于文本，程序需要根据字符编码规则（如 ASCII、UTF-8、UTF-16）将字节数据转换为字符，或将字符转换为字节</p>
+<p>两者的核心区别在于处理数据的单位不同，以及是否涉及字符编码与解码</p>
+<ul>
+<li>字节流：以字节为单位读取或写入数据，不直接处理字符编码，适用于图片、视频、音频等二进制数据，也可以处理文本</li>
+<li>字符流：以字符为单位读取或写入数据，适用于文本处理，通常需要在底层字节数据与字符之间进行编码或解码</li>
+</ul>
+<p>例如，使用 UTF-8 编码时：</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>UTF-8 编码</th>
+<th>占用字节数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td><code>41</code></td>
+<td>1 字节</td>
+</tr>
+<tr>
+<td><code>中</code></td>
+<td><code>E4 B8 AD</code></td>
+<td>3 字节</td>
+</tr>
+<tr>
+<td><code>😀</code></td>
+<td><code>F0 9F 98 80</code></td>
+<td>4 字节</td>
+</tr>
+</tbody>
+</table>
+<p>因此：</p>
+<ul>
+<li>字节流读取字符 <code>中</code> 对应的 UTF-8 数据，需要读取 3 个字节才能获取完整的编码数据</li>
+<li>字符流通过字符解码器将这 3 个字节转换为 Java 字符数据，而不需要开发者手动组合字节</li>
+</ul>
+<p>注意： Java 的 <code>Reader.read()</code> 每次读取的是一个 UTF-16 代码单元（返回 <code>int</code>），并不保证每次都能读取一个完整的 Unicode 字符。例如，<code>😀</code> 在 Java 中需要两个 <code>char</code> 表示</p>
+<h3 id="总结-2"><a href="#总结-2" class="anchor-link">#</a> 总结</h3>
+<p>字节流直接处理原始字节，字符流处理文本字符，并在需要时完成字符编码与解码</p>
+<ul>
+<li>处理二进制文件：优先使用字节流</li>
+<li>处理文本文件：优先使用字符流，并明确指定字符编码（如 UTF-8）</li>
+</ul>
+<h3 id="在-io-中-文件字节流读取时返回值类型为什么是-int"><a href="#在-io-中-文件字节流读取时返回值类型为什么是-int" class="anchor-link">#</a> 在 IO 中，文件字节流读取时返回值类型为什么是 int？</h3>
+<p>在 Java IO 中，<code>InputStream.read()</code> 每次读取 <strong>1 个字节（8 bit）</strong>，但返回值类型为 <code>int</code>（32 bit）</p>
+<p><strong>核心原因：使用</strong> <code>-1</code> <strong>表示文件读取结束（EOF），避免与实际读取的数据产生冲突</strong></p>
+<h4 id="为什么不使用-byte"><a href="#为什么不使用-byte" class="anchor-link">#</a> 为什么不使用 byte？</h4>
+<p>Java 中的 <code>byte</code> 是有符号类型，取值范围为 <code>-128～127</code>，而一个字节有 256 种可能的二进制组合</p>
+<p>如果返回值类型为 <code>byte</code>，则无法区分实际数据与文件结束标志：</p>
+<ul>
+<li><strong>读取到字节</strong> <code>11111111</code>：按照 Java 的有符号 <code>byte</code> 解释，结果为 <code>-1</code></li>
+<li><strong>文件读取结束</strong>：同样返回 <code>-1</code></li>
+</ul>
+<p>因此，二者会产生冲突</p>
+<h4 id="为什么使用-int"><a href="#为什么使用-int" class="anchor-link">#</a> 为什么使用 int？</h4>
+<p><code>int</code> 可以使用 <code>0～255</code> 表示读取到的字节，并使用 <code>-1</code> 表示文件结束</p>
+<p>假设文件中存在字节 <code>11111111</code>：</p>
+<ul>
+<li><strong>正常读取</strong>：返回 <code>00000000 00000000 00000000 11111111</code>，即十进制 <code>255</code></li>
+<li><strong>文件读取结束</strong>：返回 <code>-1</code>，其 32 位补码表示为 <code>11111111 11111111 11111111 11111111</code></li>
+</ul>
+<p>因此，可以准确区分实际数据和文件结束标志</p>
+<h4 id="代码示例"><a href="#代码示例" class="anchor-link">#</a> 代码示例</h4>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="try%20(FileInputStream%20input%20%3D%20new%20FileInputStream(%22test.txt%22))%20%7B%0A%20%20%20%20int%20data%3B%0A%0A%20%20%20%20while%20((data%20%3D%20input.read())%20!%3D%20-1)%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(data)%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">try</span> (<span class="hljs-type">FileInputStream</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">"test.txt"</span>)) {
+    <span class="hljs-type">int</span> data;
+
+    <span class="hljs-keyword">while</span> ((data = input.read()) != -<span class="hljs-number">1</span>) {
+        System.out.println(data);
+    }
+}
+</code></pre>
+      </div>
+    
+<p><strong>总结：</strong><code>read()</code> <strong>返回</strong> <code>int</code> <strong>并不意味着每次读取 4 个字节，而是为了完整表示单字节的</strong> <code>0～255</code><strong>，同时保留</strong> <code>-1</code> <strong>作为文件结束标志</strong></p>
+<h3 id="bio-nio-aio的区别"><a href="#bio-nio-aio的区别" class="anchor-link">#</a> BIO、NIO、AIO的区别</h3>
+<p>BIO、NIO、AIO 是 java 中常见的 3 种 IO 模型，三者的区别：</p>
+<ul>
+<li>BIO：blocking IO，阻塞，read 调用后会一直阻塞，直至读取完成</li>
+<li>NIO：new IO，同步非阻塞 IO，一个线程监听多个 channel ，就绪时进行后续的处理</li>
+<li>AIO：异步IO，当 IO 完成后执行回调函数即可</li>
+</ul>
+<h2 id="hashmap"><a href="#hashmap" class="anchor-link">#</a> hashMap</h2>
+<h2 id="jvm-内存结构"><a href="#jvm-内存结构" class="anchor-link">#</a> JVM 内存结构</h2>
+<blockquote>
+<p><a href="https://www.bilibili.com/video/BV12t411u726/?spm_id_from=333.1387.homepage.video_card.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f">【java】jvm内存模型全面解析_哔哩哔哩_bilibili</a></p>
+</blockquote>
+<p><img src="/blog-backup/blog-images/2026/10/21/image-20261021113752392.png" alt="image-20261021113752392"></p>
+<blockquote>
+<p>图片源自：<a href="https://oss.javaguide.cn/github/javaguide/java/jvm/java-runtime-data-areas-jdk1.8.png">https://oss.javaguide.cn/github/javaguide/java/jvm/java-runtime-data-areas-jdk1.8.png</a></p>
+</blockquote>
+<p>Java 虚拟机（JVM）的运行时数据区域主要分为五部分：</p>
+<table>
+<thead>
+<tr>
+<th>内存区域</th>
+<th>线程归属</th>
+<th>核心作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>堆</td>
+<td>线程共享</td>
+<td>存储对象、引用数据类型，字符串常量池也在这里（毕竟是引用数据类型），是GC的主要管理区域</td>
+</tr>
+<tr>
+<td>虚拟机栈</td>
+<td>线程私有</td>
+<td>存储方法调用对应的栈帧，如：局部变量等</td>
+</tr>
+<tr>
+<td>本地方法栈</td>
+<td>线程私有</td>
+<td>为本地方法提供支持</td>
+</tr>
+<tr>
+<td>程序计数器</td>
+<td>线程私有</td>
+<td>记录当前线程执行的字节码指令位置</td>
+</tr>
+<tr>
+<td>方法区</td>
+<td>线程共享</td>
+<td>存储类的原数据、运行时常量池等</td>
+</tr>
+</tbody>
+</table>
+<p>栈帧：栈的基本单位，每调用一个 java 方法，JVM 就会为该方法创建一个栈帧，用于存储该方法所需的数据</p>
+<p>需要注意：</p>
+<ul>
+<li>每个线程都有自己的虚拟机栈、程序计数器等线程私有空间，线程结束后，相应的运行时空间也会被释放</li>
+<li>堆由线程共享，对象通常分配在堆中，但存在逃逸分析等优化情形</li>
+<li>方法区是逻辑概念，在 HotSpot JVM 中，JDK 8 起主要使用元空间（Metaspace）实现，元空间使用本地内存，不属于 Java 堆</li>
+</ul>
+<h3 id="堆与栈的区别"><a href="#堆与栈的区别" class="anchor-link">#</a> 堆与栈的区别</h3>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="public%20void%20test()%20%7B%0A%20%20%20%20int%20age%20%3D%2020%3B%0A%20%20%20%20Person%20person%20%3D%20new%20Person()%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span> {
+    <span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>;
+    <span class="hljs-type">Person</span> <span class="hljs-variable">person</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();
+}
+</code></pre>
+      </div>
+    
+<p>按照常见情况理解：</p>
+<ul>
+<li><code>age</code>：栈，基本类型局部变量，其值存放在栈帧的局部变量表中</li>
+<li><code>person</code>：局部引用变量，存放在栈帧的局部变量表中</li>
+<li><code>new Person()</code>：堆，创建的对象通常存放在堆中</li>
+</ul>
+<p>栈主要管理方法执行过程，存放局部变量等，堆主要存储对象实例等引用数据类型</p>
+<h2 id="gc-垃圾回收"><a href="#gc-垃圾回收" class="anchor-link">#</a> GC 垃圾回收</h2>
+<blockquote>
+<p>为什么需要 GC 垃圾回收？</p>
+<p>堆中的数据需要处理，在栈中，出栈后数据会进行删除，但栈存放的是局部变量，而堆中存放的是引用数据类型，如：对象，此时栈中只会清理局部变量，堆中的对象等还没有处理，因此需要GC对堆中的数据进行清理</p>
+</blockquote>
+<p>GC（Garbage Collection）即垃圾回收，负责自动识别并回收不再使用的对象，减少手动管理内存的负担。</p>
+<h3 id="堆内存分代结构"><a href="#堆内存分代结构" class="anchor-link">#</a> 堆内存分代结构</h3>
+<p>传统分代垃圾回收将 Java 堆划分为两个主要区域：</p>
+<ul>
+<li>新生代（Young Generation）：主要存储新创建的对象，生命周期通常较短</li>
+<li>老年代（Old Generation）：主要存储经过多次 GC 后仍然存活的对象</li>
+</ul>
+<p>新生代又分为三个区域：</p>
+<ul>
+<li>Eden（伊甸园，新生区）：对象通常最先分配的区域</li>
+<li>Survivor 0（S0）：幸存者区</li>
+<li>Survivor 1（S1）：幸存者区</li>
+</ul>
+<p><img src="/blog-backup/blog-images/2026/10/20/image-20261020171035936.png" alt="image-20261020171035936"></p>
+<h3 id="新生代垃圾回收-young-gc"><a href="#新生代垃圾回收-young-gc" class="anchor-link">#</a> 新生代垃圾回收（Young GC）</h3>
+<p>新生代采用的经典垃圾回收算法是<strong>复制算法</strong>（Copying）。</p>
+<p>基本流程：</p>
+<ol>
+<li>新创建的对象通常分配在 Eden 区</li>
+<li>Eden 空间不足时，可能触发 Young GC</li>
+<li>GC 识别仍然存活的对象，将其复制到空闲的 Survivor 区</li>
+<li>清理 Eden 及原 Survivor 区中不再需要的对象</li>
+<li>S0 和 S1 轮流充当存活对象复制的目标区域</li>
+<li>对象经过多次 GC 仍然存活，达到一定条件后晋升到 Old 区</li>
+</ol>
+<p><img src="/blog-backup/blog-images/2026/10/20/image-20261020171116136.png" alt="image-20261020171116136"></p>
+<p><strong>为什么使用复制算法？</strong></p>
+<p>因为新生代中的对象通常存活率较低，仅需复制少量存活对象，效率较高，同时能够减少内存碎片。</p>
+<p>注意：若 Survivor 空间不足，对象也可能提前晋升到老年代，不一定必须经过固定次数的 GC。</p>
+<h3 id="老年代垃圾回收-old-gc"><a href="#老年代垃圾回收-old-gc" class="anchor-link">#</a> 老年代垃圾回收（Old GC）</h3>
+<p>老年代主要存储长期存活的对象，这些对象存活率通常较高，因此经典分代模型中通常采用以下算法：</p>
+<ul>
+<li>标记-清除（Mark-Sweep）：标记存活对象，清除不可达对象，但容易产生内存碎片</li>
+<li>标记-整理（Mark-Compact）：标记存活对象，将其移动到连续空间，再回收剩余内存，减少内存碎片</li>
+</ul>
+<p><img src="/blog-backup/blog-images/2026/10/20/image-20261020171243630.png" alt="image-20261020171243630"></p>
+<p><strong>为什么老年代不适合简单使用新生代的复制方案</strong>？</p>
+<p>因为老年代对象存活率通常较高，需要复制的对象较多，复制开销较大。</p>
+<blockquote>
+<p>需要注意，具体算法取决于垃圾收集器。例如，传统 Parallel Old 使用标记-整理，旧版 CMS 主要使用标记-清除，G1 则通过 Region 进行对象转移和空间回收。</p>
+</blockquote>
+<h2 id="总结-3"><a href="#总结-3" class="anchor-link">#</a> 总结</h2>
+<p>GC的存在是为了解决堆中的数据清理，由于栈区域出栈时会将局部变量等数据进行删除，但栈中引用的对象等存放在堆区域，而堆区域便是由 GC 进行数据清理，清理的逻辑大致是：</p>
+<ul>
+<li>young区域存放新 new 的对象</li>
+<li>young区域大致分为三块：E区、S0区、S1区</li>
+<li>E区满了会触发young GC，进行清理，清理策略是复制，将E区存活的数据放置在空闲的S区，然后清空E区与另一个S区，通过两个S区进行交替工作</li>
+<li>当young区多次GC清理，某些对象仍存在时，如：清理6次，仍存活，此时该对象会晋升到OLD区，表示使用频率高，存活率高</li>
+<li>old区满时触发oldGC，清理策略一般是标记-清楚或者标记-整理</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>young区空间有限，若清理复制时：S区空间满了，剩余存活对象会提前进入old区</li>
+<li>大对象会放置在old区，因为大对象进行复制时开销太大，而old区若采用标记-清楚策略时，不会进行移动，更适合</li>
+</ul>
+<h2 id="gc-如何判断哪些对象需要回收"><a href="#gc-如何判断哪些对象需要回收" class="anchor-link">#</a> GC 如何判断哪些对象需要回收？</h2>
+<p>核心原理：可达性分析（Reachability Analysis），从 GC Roots 出发，沿着对象引用关系向下查找，无法从 GC Roots 到达的对象，通常就可以被回收。</p>
+<p>GC 并不是简单地检查某个变量是否存在，而是判断对象是否仍然存在有效的引用路径。</p>
+<h3 id="gc-roots-主要有哪些"><a href="#gc-roots-主要有哪些" class="anchor-link">#</a> GC Roots 主要有哪些？</h3>
+<p>入门阶段重点掌握以下几类：</p>
+<table>
+<thead>
+<tr>
+<th>GC Roots 来源</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>栈中的引用</td>
+<td>当前活动线程的栈帧中，仍然存活的局部变量、方法参数等引用</td>
+</tr>
+<tr>
+<td>静态字段（static）</td>
+<td>已加载类的静态字段所引用的对象，通常可以作为可达性分析的起点</td>
+</tr>
+<tr>
+<td>活跃线程</td>
+<td>JVM 中仍然活跃的线程及其相关引用</td>
+</tr>
+<tr>
+<td>JNI 引用</td>
+<td>Java 调用本地代码时，本地代码持有的有效引用</td>
+</tr>
+<tr>
+<td>JVM 内部引用</td>
+<td>类加载器、系统类等 JVM 内部结构持有的相关引用</td>
+</tr>
+</tbody>
+</table>
+<p>注意：并不是只有栈和 static 才能影响对象是否被回收。 只要某个对象能够通过引用链从 GC Roots 到达，就可能继续存活。</p>
+<h3 id="示例-栈引用与-static-引用"><a href="#示例-栈引用与-static-引用" class="anchor-link">#</a> 示例：栈引用与 static 引用</h3>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="class%20User%20%7B%0A%20%20%20%20String%20name%3B%0A%7D%0A%0Apublic%20class%20Demo%20%7B%0A%20%20%20%20static%20User%20global%20%3D%20new%20User()%3B%0A%0A%20%20%20%20public%20static%20void%20main(String%5B%5D%20args)%20%7B%0A%20%20%20%20%20%20%20%20User%20a%20%3D%20new%20User()%3B%0A%20%20%20%20%20%20%20%20User%20b%20%3D%20a%3B%0A%0A%20%20%20%20%20%20%20%20a%20%3D%20null%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20%E6%AD%A4%E6%97%B6%E5%AF%B9%E8%B1%A1%E4%BB%8D%E7%84%B6%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%20b%20%E8%AE%BF%E9%97%AE%0A%20%20%20%20%20%20%20%20System.out.println(b)%3B%0A%0A%20%20%20%20%20%20%20%20b%20%3D%20null%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20%E5%A6%82%E6%9E%9C%E8%AF%A5%E5%AF%B9%E8%B1%A1%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%85%B6%E4%BB%96%E6%9C%89%E6%95%88%E5%BC%95%E7%94%A8%E8%B7%AF%E5%BE%84%EF%BC%8C%0A%20%20%20%20%20%20%20%20%2F%2F%20%E5%AE%83%E5%B0%B1%E5%85%B7%E5%A4%87%E4%BA%86%E8%A2%AB%20GC%20%E5%9B%9E%E6%94%B6%E7%9A%84%E6%9D%A1%E4%BB%B6%0A%0A%20%20%20%20%20%20%20%20global%20%3D%20null%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20%E5%A6%82%E6%9E%9C%20global%20%E5%8E%9F%E6%9D%A5%E5%BC%95%E7%94%A8%E7%9A%84%E5%AF%B9%E8%B1%A1%E4%B9%9F%E4%B8%8D%E5%AD%98%E5%9C%A8%0A%20%20%20%20%20%20%20%20%2F%2F%20%E5%85%B6%E4%BB%96%E6%9C%89%E6%95%88%E5%BC%95%E7%94%A8%E8%B7%AF%E5%BE%84%EF%BC%8C%E5%AE%83%E5%90%8C%E6%A0%B7%E5%85%B7%E5%A4%87%E8%A2%AB%E5%9B%9E%E6%94%B6%E7%9A%84%E6%9D%A1%E4%BB%B6%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> {
+    String name;
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> {
+    <span class="hljs-keyword">static</span> <span class="hljs-type">User</span> <span class="hljs-variable">global</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">User</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();
+        <span class="hljs-type">User</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> a;
+
+        a = <span class="hljs-literal">null</span>;
+
+        <span class="hljs-comment">// 此时对象仍然可以通过 b 访问</span>
+        System.out.println(b);
+
+        b = <span class="hljs-literal">null</span>;
+
+        <span class="hljs-comment">// 如果该对象不存在其他有效引用路径，</span>
+        <span class="hljs-comment">// 它就具备了被 GC 回收的条件</span>
+
+        global = <span class="hljs-literal">null</span>;
+
+        <span class="hljs-comment">// 如果 global 原来引用的对象也不存在</span>
+        <span class="hljs-comment">// 其他有效引用路径，它同样具备被回收的条件</span>
+    }
+}
+</code></pre>
+      </div>
+    
+<p>结合代码理解：</p>
+<ul>
+<li><code>a = null</code>：只是取消 <code>a</code> 对对象的引用，但 <code>b</code> 仍然引用该对象，因此对象仍然可达</li>
+<li><code>b = null</code>：如果不存在其他有效引用路径，该对象就可能成为垃圾</li>
+<li><code>global = null</code>：取消静态字段对对象的引用；如果没有其他有效引用路径，该对象也可能成为垃圾</li>
+</ul>
+<p>这里需要区分两个概念：不可达不等于立即被回收。它只是说明对象具备被回收的条件，具体何时回收由 JVM 决定。</p>
+<h3 id="static-对象为什么通常不会被回收"><a href="#static-对象为什么通常不会被回收" class="anchor-link">#</a> static 对象为什么通常不会被回收？</h3>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="static%20User%20global%20%3D%20new%20User()%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">static</span> <span class="hljs-type">User</span> <span class="hljs-variable">global</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();
+</code></pre>
+      </div>
+    
+<p>只要对应的类仍处于可达状态，且静态字段 <code>global</code> 仍然引用这个对象，那么 GC 就能沿着这条引用路径找到它。</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="GC%20Roots%0A%20%20%20%7C%0A%20%20%20v%0Astatic%20%E5%AD%97%E6%AE%B5%20global%0A%20%20%20%7C%0A%20%20%20v%0AUser%20%E5%AF%B9%E8%B1%A1%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>GC Roots
+   <span class="hljs-operator">|</span>
+   v
+<span class="hljs-keyword">static</span> 字段 <span class="hljs-keyword">global</span>
+   <span class="hljs-operator">|</span>
+   v
+<span class="hljs-keyword">User</span> 对象
+</code></pre>
+      </div>
+    
+<p>因此，该对象通常不会被当作垃圾回收。不过，<code>static</code> 并不意味着对象永远不会被回收。如果对应的类可以被卸载，或者静态字段不再引用该对象，且没有其他有效引用路径，对象仍然可能被回收。</p>
+<h3 id="最后总结"><a href="#最后总结" class="anchor-link">#</a> 最后总结</h3>
+<p>可以把 GC 的判断过程理解为：</p>
+<ol>
+<li>找到 GC Roots</li>
+<li>沿着引用关系遍历对象</li>
+<li>能够到达的对象，继续保留</li>
+<li>无法到达的对象，通常具备被回收的条件</li>
+<li>JVM 在合适的时机执行实际回收</li>
+</ol>
+<p>栈中的有效引用、static 字段等决定了对象是否仍然可达；GC 通过可达性分析判断堆中的对象是否具备回收条件，而不是简单地清理没有被当前方法直接引用的数据</p>
+</div></div></div><!----></div><div class="article-footer" data-v-5dad6fdf=""><div class="article-footer__main" data-v-5dad6fdf=""><div class="article-footer__tags" aria-label="文章标签" data-v-5dad6fdf=""><!--[--><span class="article-footer__tag" data-v-5dad6fdf="">Java</span><span class="article-footer__tag" data-v-5dad6fdf="">Java_SE</span><span class="article-footer__tag" data-v-5dad6fdf="">Java_八股整理</span><!--]--></div><button type="button" class="article-footer__download" data-v-5dad6fdf=""><span aria-hidden="true" data-v-5dad6fdf="">↓</span> 下载 Markdown </button></div></div><!----><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-haspopup="dialog" aria-controls="article-read-drawer" aria-expanded="false" data-v-5dad6fdf=""> 阅读导航 </button><!----></article><footer class="site-footer site-footer--article" data-v-5dad6fdf="" data-v-6b865c42=""><div class="site-footer__content" data-v-6b865c42=""><p class="site-footer__copyright" data-v-6b865c42="">© 2026 Tilex Blog</p><p class="site-footer__motto" data-v-6b865c42="">浮生世，片刻光阴</p></div></footer><!--]--></section></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--></div></div>
+<script>window.__INITIAL_STATE__="{\"pinia\":{\"article\":{\"article\":{\"id\":73,\"title\":\"Java SE八股整理.md\",\"content\":\"# Java SE八股整理\\n\\n## Java 核心特性\\n\\n- 面向对象：支持封装、继承、多态三大特性，以对象为核心组织程序结构\\n- 平台无关性：基于 JVM 屏蔽底层差异，将源代码编译为字节码后可在任意安装JVM的平台上运行\\n- 内存自动管理：内置垃圾回收机制（GC），无需像C语言手动调用 malloc\u002Ffree 释放内存，降低了内存泄露的风险\\n- ……\\n\\n## JVM、JRE、JDK\\n\\n\u003E [JAVAGUID-java基础](https:\u002F\u002Fjavaguide.cn\u002Fjava\u002Fbasis\u002Fjava-basic-questions-01.html#java-%E8%AF%AD%E8%A8%80%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9)\\n\\nJVM：Java 虚拟机（Java Virtual Machine, JVM）是运行 Java 字节码的虚拟机。JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是使用相同的字节码，它们都会给出相同的结果。字节码和不同系统的 JVM 实现是 Java 语言“一次编译，随处可以运行”的关键所在。\\n\\nJRE：Java Runtime Environment，JRE 是运行已编译 Java 程序所需的环境，主要包含以下两个部分：\\n\\n1. **JVM** : 也就是我们上面提到的 Java 虚拟机。\\n2. **Java 基础类库（Class Library）**：一组标准的类库，提供常用的功能和 API（如 I\u002FO 操作、网络通信、数据结构等）。\\n\\nJDK（Java Development Kit）是一个功能齐全的 Java 开发工具包，供开发者使用，用于创建和编译 Java 程序。它包含了 JRE（Java Runtime Environment），以及编译器 javac 和其他工具，如 javadoc（文档生成器）、jdb（调试器）、jconsole（监控工具）、javap（反编译工具）等。\\n\\n![image-20261021113456276](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F21\u002Fimage-20261021113456276.png)\\n\\n\u003E 图片源自：https:\u002F\u002Foss.javaguide.cn\u002Fgithub\u002Fjavaguide\u002Fjava\u002Fbasis\u002Fjdk-include-jre.png\\n\\n## 基础数据类型\\n\\nJava 中有 8 种基本数据类型，分别为：\\n\\n- 6 种数字类型：\\n\\t- 4 种整数型：`byte`、`short`、`int`、`long`，占用字节分别是：1字节、2字节、4字节、8字节\\n\\t- 2 种浮点型：`float`、`double，`，占用字节分别是4字节，8字节\\n- 1 种字符类型：`char`，2字节\\n- 1 种布尔型：`boolean`，true\u002Ffalse\\n\\n这八种基本类型都有对应的包装类分别为：`Byte`、`Short`、`Integer`、`Long`、`Float`、`Double`、`Character`、`Boolean`。\\n\\n### 基本类型与包装类的区别是？\\n\\n我觉得主要区别在于代码的复用性，与前端的JavaScript不同，JavaScript通过原型链实现复用，而Java则主要通过类的继承实现，子类继承父类的方法，因此包装类可以使用父类的方法，如：map、filter……，但基本类型不行\\n\\n## 面向对象\\n\\n### 三大特性\\n\\n面向对象的三大特性：\\n\\n- 封装：通过 private 修饰属性，提供 getter\u002Fsetter 方法控制访问，隐藏内部实现细节\\n- 继承：子类继承父类的属性与方法，提高了代码的复用性\\n- 多态：子类重写父类的方法，后续调用时使用子类重写后的方法，提高了代码的灵活性和可扩展性\\n\\n### this 关键字\\n\\n类可以有多个实例，this 关键字便指向实例本身\\n\\n### this与静态方法、静态变量\\n\\n在 Java 中通过 static 修饰的属性称为静态变量，通过 static 修饰的方法称为静态方法，两者的共同特点是：全局属性\u002F全局方法\\n\\n![image-20261021113625632](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F21\u002Fimage-20261021113625632.png)\\n\\n\u003E 图片源自：https:\u002F\u002Foss.javaguide.cn\u002Fgithub\u002Fjavaguide\u002Fjava\u002Fbasis\u002Fjava-basis-variables-static-variable.png\\n\\n而 this 是指向实例本身，因此静态方法是没有this的，只能访问静态变量，不能直接访问实例成员\\n\\n### 重写与重载\\n\\n重写：实现面向对象多态的基础，子类继承父类方法时，可进行重写，后续方法使用时，查找方法从子类到父类逐步往上查找，此时子类重写了父类的方法，可直接使用，不会经过父类的方法\\n\\n重载：多个同名方法，但不同参数，根据参数选择对应的方法\\n\\n### 抽象类与接口的区别\\n\\n抽象类与接口的主要区别是，一个类只能继承一个抽象类（Java不支持多继承），但一个类却可以实现多个接口\\n\\n### 浅拷贝与深拷贝的区别\\n\\n两者的区别主要体现在引用数据类型，浅拷贝会拷贝引用数据类型的地址值，而深拷贝则完全拷贝一个对象，并将堆中的对象也拷贝一份\\n\\n![image-20261021113646622](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F21\u002Fimage-20261021113646622.png)\\n\\n\u003E 图片源自：https:\u002F\u002Foss.javaguide.cn\u002Fgithub\u002Fjavaguide\u002Fjava\u002Fbasis\u002Fshallow&deep-copy.png\\n\\n### 为什么重写 equals() 时必须重写 hashCode()\\n\\n\u003E 参考：[Java equals() 和 hashCode() 详解](https:\u002F\u002Fwww.cnblogs.com\u002Fskywang12345\u002Fp\u002F3324958.html?utm_source=chatgpt.com)\\n\\n#### equals() 方法\\n\\n`equals()` 定义在 Java 的 `Object` 类中，默认通过 `==` 判断两个引用是否指向同一个对象\\n\\n```Java\\npublic boolean equals(Object obj) {\\n    return this == obj;\\n}\\n```\\n\\n但实际开发中，我们可能希望两个不同对象的属性相同，也认为它们相等，因此需要重写 `equals()`\\n\\n例如：\\n\\n```Java\\nPerson p1 = new Person(\\\"Tom\\\", 20);\\nPerson p2 = new Person(\\\"Tom\\\", 20);\\n\\nSystem.out.println(p1 == p2);      \u002F\u002F false\\nSystem.out.println(p1.equals(p2)); \u002F\u002F true（重写 equals 后）\\n```\\n\\n重写示例：\\n\\n```Java\\n@Override\\npublic boolean equals(Object obj) {\\n    if (this == obj) return true; \u002F\u002F 同一个对象\\n\\n    if (obj == null || getClass() != obj.getClass())\\n        return false;\\n\\n    Person person = (Person) obj;\\n\\n    return age == person.age\\n            && Objects.equals(name, person.name); \u002F\u002F 不同对象比较属性是否相同\\n}\\n```\\n\\n#### hashCode() 方法\\n\\n`hashCode()` 同样定义在 `Object` 类中，用于返回对象的哈希码（`int` 类型），主要用于 `HashSet`、`HashMap` 等哈希集合，辅助快速定位元素，以 `HashSet` 为例，底层基于 `HashMap` 实现，添加元素时：\\n\\n1. 计算哈希值：调用 `hashCode()`，经过处理后确定数组桶的位置\\n2. 检查桶内元素：\\n\\t- 桶为空：直接插入\\n\\t- 桶不为空：检查已有节点的哈希码\\n\\t- 哈希码相同：进一步通过 `==` 或 `equals()` 判断是否相等\\n3. 决定是否插入：\\n\\t- 存在相等元素：拒绝插入\\n\\t- 不存在相等元素：插入新节点\\n\\n注意：不同哈希码也可能映射到同一个桶，但不会因此直接调用 `equals()` 比较\\n\\n#### 为什么重写 equals() 必须重写 hashCode()\\n\\n假设 `Person` 只重写了 `equals()`，没有重写 `hashCode()`\\n\\n```Java\\nPerson p1 = new Person(\\\"Tom\\\", 20);\\nPerson p2 = new Person(\\\"Tom\\\", 20);\\n\\nSystem.out.println(p1.equals(p2)); \u002F\u002F true\\n\\nHashSet\u003CPerson\u003E set = new HashSet\u003C\u003E();\\nset.add(p1);\\nset.add(p2);\\n\\nSystem.out.println(set.size()); \u002F\u002F 可能为 2\\n```\\n\\n问题原因：\\n\\n- `p1` 和 `p2` 属性相同，`equals()` 返回 `true`\\n- 但默认 `hashCode()` 通常根据对象身份生成哈希码，两者可能不同\\n- `HashSet` 根据不同哈希码定位元素，可能将两个对象都插入集合，导致去重失败\\n\\n解决方法：同时重写 `hashCode()`，使用与 `equals()` 相同的属性计算哈希码\\n\\n```Java\\n@Override\\npublic int hashCode() {\\n    return Objects.hash(name, age);\\n}\\n```\\n\\n此时：\\n\\n```Java\\np1.equals(p2);                    \u002F\u002F true\\np1.hashCode() == p2.hashCode();   \u002F\u002F true\\n```\\n\\n`HashSet` 就能正确识别两个逻辑上相等的对象，最终 `set.size()` 为 `1`\\n\\n总的来说，重写 hashCode 是为了处理当两个对象相同时，哈希表不重复添加元素\\n\\n#### 总结\\n\\n- `equals()`：判断两个对象在逻辑上是否相等\\n- `hashCode()`：生成哈希码，帮助哈希表快速定位对象\\n- 重写 `equals()` 时必须同时重写 `hashCode()`，保证相等对象具有相同哈希码\\n- `hashCode()` 相同不代表对象相等，仍需通过 `equals()` 进一步判断\\n\\n核心：`equals()` 负责判断对象是否相等，`hashCode()` 负责辅助定位对象，两者必须遵守一致的相等性规则，才能保证哈希集合正常工作\\n\\n## String、Stringbuilder、Stringbuffer\\n\\n\u003E 文档：https:\u002F\u002Fjavaguide.cn\u002Fjava\u002Fbasis\u002Fjava-basic-questions-02.html#%E2%AD%90%EF%B8%8F-string%E3%80%81stringbuffer%E3%80%81stringbuilder-%E7%9A%84%E5%8C%BA%E5%88%AB\\n\\n都是用来处理字符串的，但 String 不可变，每次修改都会生成新的对象，并将引用指向新的实例（即新的String），而 `StringBuffer` 和 `StringBuilder` 都是可变的，它们在修改字符串时不会创建新对象，而是直接在原有字符数组上进行操作。\\n\\n因此，遇到大量字符串连接可以用 StringBuilder ，不会生成许多新的对象，StringBuilder 与 StringBuffer 的区别是，StringBuffer 对字符串的基本操作，如：append、insert 等都添加了同步锁，synchronized，线程安全，而 `StringBuilder` 并没有对方法进行加同步锁，所以是非线程安全的。\\n\\nString 为什么不可变？——final\\n\\n- 在源码中，java对于 String 类的保存通过数组存储每个字符，并通过 final 进行修饰，而且没有提供\u002F暴露修改这个字符串的方法\\n- String 类也被 final 修饰，导致其不能被继承，进而避免了子类破坏 String 不可变\\n\\n```java\\npublic final class String implements java.io.Serializable,Comparable\u003CString\u003E, CharSequence {\\n    \u002F\u002F @Stable 注解表示变量最多被修改一次，称为“稳定的”。\\n    @Stable\\n    private final byte[] value;\\n}\\n```\\n\\n## 字符串常量池的作用了解吗？\\n\\n\u003E 文档：https:\u002F\u002Fjavaguide.cn\u002Fjava\u002Fbasis\u002Fjava-basic-questions-02.html#%E2%AD%90%EF%B8%8F-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%9A%84%E4%BD%9C%E7%94%A8%E4%BA%86%E8%A7%A3%E5%90%97\\n\\n字符串是引用数据类型，默认情况下每次创建都会开辟新的空间，放置对象，并返回引用地址，但用于字符串是不可变的，此时 JVM 开辟一块空间放置字符串，也就是字符串常量池，提示了性能并减少内存消耗，避免字符串重复创建\\n\\n```java\\n\u002F\u002F 1.在字符串常量池中查询字符串对象 \\\"ab\\\"，如果没有则创建\\\"ab\\\"并放入字符串常量池\\n\u002F\u002F 2.将字符串对象 \\\"ab\\\" 的引用赋值给 aa\\nString aa = \\\"ab\\\";\\n\u002F\u002F 直接返回字符串常量池中字符串对象 \\\"ab\\\"，赋值给引用 bb\\nString bb = \\\"ab\\\";\\nSystem.out.println(aa==bb); \u002F\u002F true\\n```\\n\\n## 泛型\\n\\n泛型，我的理解是参数，将数据的类型参数化，在定义类、接口或者方法时不必指定具体的数据类型，在实际使用时指定具体的类型即可\\n\\n```java\\nclass Box\u003CT\u003E {\\n    private T value;\\n\\n    public void setValue(T value) {\\n        this.value = value;\\n    }\\n\\n    public T getValue() {\\n        return value;\\n    }\\n}\\n```\\n\\n```java\\nBox\u003CString\u003E box1 = new Box\u003C\u003E(); \u002F\u002F 指定 String 类型\\nbox1.setValue(\\\"Hello\\\");\\n\\nBox\u003CInteger\u003E box2 = new Box\u003C\u003E(); \u002F\u002F 指定 Integer 类型\\nbox2.setValue(100);\\n```\\n\\n## 序列化与反序列化\\n\\n![image-20261021113723532](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F21\u002Fimage-20261021113723532.png)\\n\\n\u003E 图片源自：https:\u002F\u002Foss.javaguide.cn\u002Fgithub\u002Fjavaguide\u002Fa478c74d-2c48-40ae-9374-87aacf05188c.png\\n\\n序列化（Serialization）：将 java 中对象持久化保持，保持格式有二进制字节流（Bytes）、JSON等\\n\\n反序列化：序列化的逆过程，将序列化持久化的文件转换为对象的过程\\n\\n## 反射\\n\\n在程序运行时，可以动态的获取类的属性与方法，并可以调用方法，例如：\\n\\n```java\\nUser user = new User();\\nuser.sayHello();\\n```\\n\\n编译时已经明确知道调用的是 `User` 类的 `sayHello()` 方法。而通过反射：\\n\\n```java\\nClass\u003C?\u003E clazz = Class.forName(\\\"com.example.User\\\");\\n\\n\u002F\u002F 获取构造方法并创建实例\\nObject user = clazz.getDeclaredConstructor().newInstance();\\n\\n\u002F\u002F 获取指定方法\\nMethod method = clazz.getMethod(\\\"sayHello\\\");\\n\\n\u002F\u002F 调用方法\\nmethod.invoke(user);\\n```\\n\\n这里的类名可以在运行时确定，因此反射支持更动态的程序行为。\\n\\n## IO流\\n\\nJava IO（Input \u002F Output）流用于实现程序与外部数据源（如文件、网络等）之间的数据读取与写入，IO 流主要有两种分类方式：\\n\\n- 按照数据流向划分\\n\\t- 输入流：从外部读取数据到程序，如 `InputStream`、`Reader`\\n\\t- 输出流：从程序向外部写入数据，如 `OutputStream`、`Writer`\\n- 按照数据处理单位划分\\n\\t- 字节流：以字节（8 bit）为单位处理数据，如 `InputStream`、`OutputStream`\\n\\t- 字符流：以字符为单位处理数据，如 `Reader`、`Writer`\\n\\n### 字节流与字符流的区别\\n\\n计算机实际存储的数据是二进制数据。对于文本，程序需要根据字符编码规则（如 ASCII、UTF-8、UTF-16）将字节数据转换为字符，或将字符转换为字节\\n\\n两者的核心区别在于处理数据的单位不同，以及是否涉及字符编码与解码\\n\\n- 字节流：以字节为单位读取或写入数据，不直接处理字符编码，适用于图片、视频、音频等二进制数据，也可以处理文本\\n- 字符流：以字符为单位读取或写入数据，适用于文本处理，通常需要在底层字节数据与字符之间进行编码或解码\\n\\n例如，使用 UTF-8 编码时：\\n\\n| 字符 | UTF-8 编码    | 占用字节数 |\\n| ---- | ------------- | ---------- |\\n| `A`  | `41`          | 1 字节     |\\n| `中` | `E4 B8 AD`    | 3 字节     |\\n| `😀`  | `F0 9F 98 80` | 4 字节     |\\n\\n因此：\\n\\n- 字节流读取字符 `中` 对应的 UTF-8 数据，需要读取 3 个字节才能获取完整的编码数据\\n- 字符流通过字符解码器将这 3 个字节转换为 Java 字符数据，而不需要开发者手动组合字节\\n\\n注意： Java 的 `Reader.read()` 每次读取的是一个 UTF-16 代码单元（返回 `int`），并不保证每次都能读取一个完整的 Unicode 字符。例如，`😀` 在 Java 中需要两个 `char` 表示\\n\\n### 总结\\n\\n字节流直接处理原始字节，字符流处理文本字符，并在需要时完成字符编码与解码\\n\\n- 处理二进制文件：优先使用字节流\\n- 处理文本文件：优先使用字符流，并明确指定字符编码（如 UTF-8）\\n\\n### 在 IO 中，文件字节流读取时返回值类型为什么是 int？\\n\\n在 Java IO 中，`InputStream.read()` 每次读取 **1 个字节（8 bit）**，但返回值类型为 `int`（32 bit）\\n\\n**核心原因：使用** `-1` **表示文件读取结束（EOF），避免与实际读取的数据产生冲突**\\n\\n#### 为什么不使用 byte？\\n\\nJava 中的 `byte` 是有符号类型，取值范围为 `-128～127`，而一个字节有 256 种可能的二进制组合\\n\\n如果返回值类型为 `byte`，则无法区分实际数据与文件结束标志：\\n\\n- **读取到字节** `11111111`：按照 Java 的有符号 `byte` 解释，结果为 `-1`\\n- **文件读取结束**：同样返回 `-1`\\n\\n因此，二者会产生冲突\\n\\n#### 为什么使用 int？\\n\\n`int` 可以使用 `0～255` 表示读取到的字节，并使用 `-1` 表示文件结束\\n\\n假设文件中存在字节 `11111111`：\\n\\n- **正常读取**：返回 `00000000 00000000 00000000 11111111`，即十进制 `255`\\n- **文件读取结束**：返回 `-1`，其 32 位补码表示为 `11111111 11111111 11111111 11111111`\\n\\n因此，可以准确区分实际数据和文件结束标志\\n\\n#### 代码示例\\n\\n```java\\ntry (FileInputStream input = new FileInputStream(\\\"test.txt\\\")) {\\n    int data;\\n\\n    while ((data = input.read()) != -1) {\\n        System.out.println(data);\\n    }\\n}\\n```\\n\\n**总结：**`read()` **返回** `int` **并不意味着每次读取 4 个字节，而是为了完整表示单字节的** `0～255`**，同时保留** `-1` **作为文件结束标志**\\n\\n### BIO、NIO、AIO的区别\\n\\nBIO、NIO、AIO 是 java 中常见的 3 种 IO 模型，三者的区别：\\n\\n- BIO：blocking IO，阻塞，read 调用后会一直阻塞，直至读取完成\\n- NIO：new IO，同步非阻塞 IO，一个线程监听多个 channel ，就绪时进行后续的处理\\n- AIO：异步IO，当 IO 完成后执行回调函数即可\\n\\n## hashMap\\n\\n\\n\\n## JVM 内存结构\\n\\n\u003E [【java】jvm内存模型全面解析_哔哩哔哩_bilibili](https:\u002F\u002Fwww.bilibili.com\u002Fvideo\u002FBV12t411u726\u002F?spm_id_from=333.1387.homepage.video_card.click&vd_source=8c5774f0412cfb872126f5a44585db4f)\\n\\n![image-20261021113752392](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F21\u002Fimage-20261021113752392.png)\\n\\n\u003E 图片源自：https:\u002F\u002Foss.javaguide.cn\u002Fgithub\u002Fjavaguide\u002Fjava\u002Fjvm\u002Fjava-runtime-data-areas-jdk1.8.png\\n\\nJava 虚拟机（JVM）的运行时数据区域主要分为五部分：\\n\\n| 内存区域   | 线程归属 | 核心作用                                                     |\\n| ---------- | -------- | ------------------------------------------------------------ |\\n| 堆         | 线程共享 | 存储对象、引用数据类型，字符串常量池也在这里（毕竟是引用数据类型），是GC的主要管理区域 |\\n| 虚拟机栈   | 线程私有 | 存储方法调用对应的栈帧，如：局部变量等                       |\\n| 本地方法栈 | 线程私有 | 为本地方法提供支持                                           |\\n| 程序计数器 | 线程私有 | 记录当前线程执行的字节码指令位置                             |\\n| 方法区     | 线程共享 | 存储类的原数据、运行时常量池等                               |\\n\\n栈帧：栈的基本单位，每调用一个 java 方法，JVM 就会为该方法创建一个栈帧，用于存储该方法所需的数据\\n\\n需要注意：\\n\\n- 每个线程都有自己的虚拟机栈、程序计数器等线程私有空间，线程结束后，相应的运行时空间也会被释放\\n- 堆由线程共享，对象通常分配在堆中，但存在逃逸分析等优化情形\\n- 方法区是逻辑概念，在 HotSpot JVM 中，JDK 8 起主要使用元空间（Metaspace）实现，元空间使用本地内存，不属于 Java 堆\\n\\n### 堆与栈的区别\\n\\n```java \\npublic void test() {\\n    int age = 20;\\n    Person person = new Person();\\n}\\n```\\n\\n按照常见情况理解：\\n\\n- `age`：栈，基本类型局部变量，其值存放在栈帧的局部变量表中\\n- `person`：局部引用变量，存放在栈帧的局部变量表中\\n- `new Person()`：堆，创建的对象通常存放在堆中\\n\\n栈主要管理方法执行过程，存放局部变量等，堆主要存储对象实例等引用数据类型\\n\\n## GC 垃圾回收\\n\\n\u003E 为什么需要 GC 垃圾回收？\\n\u003E\\n\u003E 堆中的数据需要处理，在栈中，出栈后数据会进行删除，但栈存放的是局部变量，而堆中存放的是引用数据类型，如：对象，此时栈中只会清理局部变量，堆中的对象等还没有处理，因此需要GC对堆中的数据进行清理\\n\\nGC（Garbage Collection）即垃圾回收，负责自动识别并回收不再使用的对象，减少手动管理内存的负担。\\n\\n### 堆内存分代结构\\n\\n传统分代垃圾回收将 Java 堆划分为两个主要区域：\\n\\n- 新生代（Young Generation）：主要存储新创建的对象，生命周期通常较短\\n- 老年代（Old Generation）：主要存储经过多次 GC 后仍然存活的对象\\n\\n新生代又分为三个区域：\\n\\n- Eden（伊甸园，新生区）：对象通常最先分配的区域\\n- Survivor 0（S0）：幸存者区\\n- Survivor 1（S1）：幸存者区\\n\\n![image-20261020171035936](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F20\u002Fimage-20261020171035936.png)\\n\\n### 新生代垃圾回收（Young GC）\\n\\n新生代采用的经典垃圾回收算法是**复制算法**（Copying）。\\n\\n基本流程：\\n\\n1. 新创建的对象通常分配在 Eden 区\\n2. Eden 空间不足时，可能触发 Young GC\\n3. GC 识别仍然存活的对象，将其复制到空闲的 Survivor 区\\n4. 清理 Eden 及原 Survivor 区中不再需要的对象\\n5. S0 和 S1 轮流充当存活对象复制的目标区域\\n6. 对象经过多次 GC 仍然存活，达到一定条件后晋升到 Old 区\\n\\n![image-20261020171116136](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F20\u002Fimage-20261020171116136.png)\\n\\n**为什么使用复制算法？**\\n\\n因为新生代中的对象通常存活率较低，仅需复制少量存活对象，效率较高，同时能够减少内存碎片。\\n\\n注意：若 Survivor 空间不足，对象也可能提前晋升到老年代，不一定必须经过固定次数的 GC。\\n\\n### 老年代垃圾回收（Old GC）\\n\\n老年代主要存储长期存活的对象，这些对象存活率通常较高，因此经典分代模型中通常采用以下算法：\\n\\n- 标记-清除（Mark-Sweep）：标记存活对象，清除不可达对象，但容易产生内存碎片\\n- 标记-整理（Mark-Compact）：标记存活对象，将其移动到连续空间，再回收剩余内存，减少内存碎片\\n\\n![image-20261020171243630](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F20\u002Fimage-20261020171243630.png)\\n\\n**为什么老年代不适合简单使用新生代的复制方案**？\\n\\n因为老年代对象存活率通常较高，需要复制的对象较多，复制开销较大。\\n\\n\u003E 需要注意，具体算法取决于垃圾收集器。例如，传统 Parallel Old 使用标记-整理，旧版 CMS 主要使用标记-清除，G1 则通过 Region 进行对象转移和空间回收。\\n\\n## 总结\\n\\nGC的存在是为了解决堆中的数据清理，由于栈区域出栈时会将局部变量等数据进行删除，但栈中引用的对象等存放在堆区域，而堆区域便是由 GC 进行数据清理，清理的逻辑大致是：\\n\\n- young区域存放新 new 的对象\\n- young区域大致分为三块：E区、S0区、S1区\\n- E区满了会触发young GC，进行清理，清理策略是复制，将E区存活的数据放置在空闲的S区，然后清空E区与另一个S区，通过两个S区进行交替工作\\n- 当young区多次GC清理，某些对象仍存在时，如：清理6次，仍存活，此时该对象会晋升到OLD区，表示使用频率高，存活率高\\n- old区满时触发oldGC，清理策略一般是标记-清楚或者标记-整理\\n\\n注意：\\n\\n- young区空间有限，若清理复制时：S区空间满了，剩余存活对象会提前进入old区\\n- 大对象会放置在old区，因为大对象进行复制时开销太大，而old区若采用标记-清楚策略时，不会进行移动，更适合\\n\\n## GC 如何判断哪些对象需要回收？\\n\\n核心原理：可达性分析（Reachability Analysis），从 GC Roots 出发，沿着对象引用关系向下查找，无法从 GC Roots 到达的对象，通常就可以被回收。\\n\\nGC 并不是简单地检查某个变量是否存在，而是判断对象是否仍然存在有效的引用路径。\\n\\n### GC Roots 主要有哪些？\\n\\n入门阶段重点掌握以下几类：\\n\\n| GC Roots 来源      | 说明                                                         |\\n| ------------------ | ------------------------------------------------------------ |\\n| 栈中的引用         | 当前活动线程的栈帧中，仍然存活的局部变量、方法参数等引用     |\\n| 静态字段（static） | 已加载类的静态字段所引用的对象，通常可以作为可达性分析的起点 |\\n| 活跃线程           | JVM 中仍然活跃的线程及其相关引用                             |\\n| JNI 引用           | Java 调用本地代码时，本地代码持有的有效引用                  |\\n| JVM 内部引用       | 类加载器、系统类等 JVM 内部结构持有的相关引用                |\\n\\n注意：并不是只有栈和 static 才能影响对象是否被回收。 只要某个对象能够通过引用链从 GC Roots 到达，就可能继续存活。\\n\\n### 示例：栈引用与 static 引用\\n\\n```java\\nclass User {\\n    String name;\\n}\\n\\npublic class Demo {\\n    static User global = new User();\\n\\n    public static void main(String[] args) {\\n        User a = new User();\\n        User b = a;\\n\\n        a = null;\\n\\n        \u002F\u002F 此时对象仍然可以通过 b 访问\\n        System.out.println(b);\\n\\n        b = null;\\n\\n        \u002F\u002F 如果该对象不存在其他有效引用路径，\\n        \u002F\u002F 它就具备了被 GC 回收的条件\\n\\n        global = null;\\n\\n        \u002F\u002F 如果 global 原来引用的对象也不存在\\n        \u002F\u002F 其他有效引用路径，它同样具备被回收的条件\\n    }\\n}\\n```\\n\\n结合代码理解：\\n\\n- `a = null`：只是取消 `a` 对对象的引用，但 `b` 仍然引用该对象，因此对象仍然可达\\n- `b = null`：如果不存在其他有效引用路径，该对象就可能成为垃圾\\n- `global = null`：取消静态字段对对象的引用；如果没有其他有效引用路径，该对象也可能成为垃圾\\n\\n这里需要区分两个概念：不可达不等于立即被回收。它只是说明对象具备被回收的条件，具体何时回收由 JVM 决定。\\n\\n### static 对象为什么通常不会被回收？\\n\\n例如：\\n\\n```java\\nstatic User global = new User();\\n```\\n\\n只要对应的类仍处于可达状态，且静态字段 `global` 仍然引用这个对象，那么 GC 就能沿着这条引用路径找到它。\\n\\n```\\nGC Roots\\n   |\\n   v\\nstatic 字段 global\\n   |\\n   v\\nUser 对象\\n```\\n\\n因此，该对象通常不会被当作垃圾回收。不过，`static` 并不意味着对象永远不会被回收。如果对应的类可以被卸载，或者静态字段不再引用该对象，且没有其他有效引用路径，对象仍然可能被回收。\\n\\n### 最后总结\\n\\n可以把 GC 的判断过程理解为：\\n\\n1. 找到 GC Roots\\n2. 沿着引用关系遍历对象\\n3. 能够到达的对象，继续保留\\n4. 无法到达的对象，通常具备被回收的条件\\n5. JVM 在合适的时机执行实际回收\\n\\n栈中的有效引用、static 字段等决定了对象是否仍然可达；GC 通过可达性分析判断堆中的对象是否具备回收条件，而不是简单地清理没有被当前方法直接引用的数据\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\",\"status\":1,\"statusName\":\"已发布\",\"createdAt\":\"2026-10-21 11:30:26\",\"updatedAt\":\"2026-10-21 11:52:01\",\"tags\":[{\"id\":119,\"name\":\"Java\"},{\"id\":120,\"name\":\"Java_SE\"},{\"id\":121,\"name\":\"Java_八股整理\"}]}}}}"</script>
+  
+
+</body></html>

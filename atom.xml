@@ -5,9 +5,4114 @@
   <link rel="self" type="application/atom+xml" href="https://janfeise.github.io/blog-backup/atom.xml" />
   <subtitle>浮生世，片刻光阴</subtitle>
   <id>https://janfeise.github.io/blog-backup/</id>
-  <updated>2026-10-09T12:05:04Z</updated>
+  <updated>2026-10-21T03:52:01Z</updated>
   <dc:creator>Tilex</dc:creator>
-  <dc:date>2026-10-09T12:05:04Z</dc:date>
+  <dc:date>2026-10-21T03:52:01Z</dc:date>
+  <entry>
+    <title>Java SE八股整理.md</title>
+    <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/73" />
+    <author>
+      <name>Tilex</name>
+    </author>
+    <id>https://janfeise.github.io/blog-backup/article/73</id>
+    <updated>2026-10-21T03:52:01Z</updated>
+    <published>2026-10-21T03:30:26Z</published>
+    <content type="text/markdown"># Java SE八股整理
+
+## Java 核心特性
+
+- 面向对象：支持封装、继承、多态三大特性，以对象为核心组织程序结构
+- 平台无关性：基于 JVM 屏蔽底层差异，将源代码编译为字节码后可在任意安装JVM的平台上运行
+- 内存自动管理：内置垃圾回收机制（GC），无需像C语言手动调用 malloc/free 释放内存，降低了内存泄露的风险
+- ……
+
+## JVM、JRE、JDK
+
+&gt; [JAVAGUID-java基础](https://javaguide.cn/java/basis/java-basic-questions-01.html#java-%E8%AF%AD%E8%A8%80%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9)
+
+JVM：Java 虚拟机（Java Virtual Machine, JVM）是运行 Java 字节码的虚拟机。JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是使用相同的字节码，它们都会给出相同的结果。字节码和不同系统的 JVM 实现是 Java 语言“一次编译，随处可以运行”的关键所在。
+
+JRE：Java Runtime Environment，JRE 是运行已编译 Java 程序所需的环境，主要包含以下两个部分：
+
+1. **JVM** : 也就是我们上面提到的 Java 虚拟机。
+2. **Java 基础类库（Class Library）**：一组标准的类库，提供常用的功能和 API（如 I/O 操作、网络通信、数据结构等）。
+
+JDK（Java Development Kit）是一个功能齐全的 Java 开发工具包，供开发者使用，用于创建和编译 Java 程序。它包含了 JRE（Java Runtime Environment），以及编译器 javac 和其他工具，如 javadoc（文档生成器）、jdb（调试器）、jconsole（监控工具）、javap（反编译工具）等。
+
+![image-20261021113456276](/blog-backup/blog-images/2026/10/21/image-20261021113456276.png)
+
+&gt; 图片源自：https://oss.javaguide.cn/github/javaguide/java/basis/jdk-include-jre.png
+
+## 基础数据类型
+
+Java 中有 8 种基本数据类型，分别为：
+
+- 6 种数字类型：
+	- 4 种整数型：`byte`、`short`、`int`、`long`，占用字节分别是：1字节、2字节、4字节、8字节
+	- 2 种浮点型：`float`、`double，`，占用字节分别是4字节，8字节
+- 1 种字符类型：`char`，2字节
+- 1 种布尔型：`boolean`，true/false
+
+这八种基本类型都有对应的包装类分别为：`Byte`、`Short`、`Integer`、`Long`、`Float`、`Double`、`Character`、`Boolean`。
+
+### 基本类型与包装类的区别是？
+
+我觉得主要区别在于代码的复用性，与前端的JavaScript不同，JavaScript通过原型链实现复用，而Java则主要通过类的继承实现，子类继承父类的方法，因此包装类可以使用父类的方法，如：map、filter……，但基本类型不行
+
+## 面向对象
+
+### 三大特性
+
+面向对象的三大特性：
+
+- 封装：通过 private 修饰属性，提供 getter/setter 方法控制访问，隐藏内部实现细节
+- 继承：子类继承父类的属性与方法，提高了代码的复用性
+- 多态：子类重写父类的方法，后续调用时使用子类重写后的方法，提高了代码的灵活性和可扩展性
+
+### this 关键字
+
+类可以有多个实例，this 关键字便指向实例本身
+
+### this与静态方法、静态变量
+
+在 Java 中通过 static 修饰的属性称为静态变量，通过 static 修饰的方法称为静态方法，两者的共同特点是：全局属性/全局方法
+
+![image-20261021113625632](/blog-backup/blog-images/2026/10/21/image-20261021113625632.png)
+
+&gt; 图片源自：https://oss.javaguide.cn/github/javaguide/java/basis/java-basis-variables-static-variable.png
+
+而 this 是指向实例本身，因此静态方法是没有this的，只能访问静态变量，不能直接访问实例成员
+
+### 重写与重载
+
+重写：实现面向对象多态的基础，子类继承父类方法时，可进行重写，后续方法使用时，查找方法从子类到父类逐步往上查找，此时子类重写了父类的方法，可直接使用，不会经过父类的方法
+
+重载：多个同名方法，但不同参数，根据参数选择对应的方法
+
+### 抽象类与接口的区别
+
+抽象类与接口的主要区别是，一个类只能继承一个抽象类（Java不支持多继承），但一个类却可以实现多个接口
+
+### 浅拷贝与深拷贝的区别
+
+两者的区别主要体现在引用数据类型，浅拷贝会拷贝引用数据类型的地址值，而深拷贝则完全拷贝一个对象，并将堆中的对象也拷贝一份
+
+![image-20261021113646622](/blog-backup/blog-images/2026/10/21/image-20261021113646622.png)
+
+&gt; 图片源自：https://oss.javaguide.cn/github/javaguide/java/basis/shallow&amp;deep-copy.png
+
+### 为什么重写 equals() 时必须重写 hashCode()
+
+&gt; 参考：[Java equals() 和 hashCode() 详解](https://www.cnblogs.com/skywang12345/p/3324958.html?utm_source=chatgpt.com)
+
+#### equals() 方法
+
+`equals()` 定义在 Java 的 `Object` 类中，默认通过 `==` 判断两个引用是否指向同一个对象
+
+```Java
+public boolean equals(Object obj) {
+    return this == obj;
+}
+```
+
+但实际开发中，我们可能希望两个不同对象的属性相同，也认为它们相等，因此需要重写 `equals()`
+
+例如：
+
+```Java
+Person p1 = new Person("Tom", 20);
+Person p2 = new Person("Tom", 20);
+
+System.out.println(p1 == p2);      // false
+System.out.println(p1.equals(p2)); // true（重写 equals 后）
+```
+
+重写示例：
+
+```Java
+@Override
+public boolean equals(Object obj) {
+    if (this == obj) return true; // 同一个对象
+
+    if (obj == null || getClass() != obj.getClass())
+        return false;
+
+    Person person = (Person) obj;
+
+    return age == person.age
+            &amp;&amp; Objects.equals(name, person.name); // 不同对象比较属性是否相同
+}
+```
+
+#### hashCode() 方法
+
+`hashCode()` 同样定义在 `Object` 类中，用于返回对象的哈希码（`int` 类型），主要用于 `HashSet`、`HashMap` 等哈希集合，辅助快速定位元素，以 `HashSet` 为例，底层基于 `HashMap` 实现，添加元素时：
+
+1. 计算哈希值：调用 `hashCode()`，经过处理后确定数组桶的位置
+2. 检查桶内元素：
+	- 桶为空：直接插入
+	- 桶不为空：检查已有节点的哈希码
+	- 哈希码相同：进一步通过 `==` 或 `equals()` 判断是否相等
+3. 决定是否插入：
+	- 存在相等元素：拒绝插入
+	- 不存在相等元素：插入新节点
+
+注意：不同哈希码也可能映射到同一个桶，但不会因此直接调用 `equals()` 比较
+
+#### 为什么重写 equals() 必须重写 hashCode()
+
+假设 `Person` 只重写了 `equals()`，没有重写 `hashCode()`
+
+```Java
+Person p1 = new Person("Tom", 20);
+Person p2 = new Person("Tom", 20);
+
+System.out.println(p1.equals(p2)); // true
+
+HashSet&lt;Person&gt; set = new HashSet&lt;&gt;();
+set.add(p1);
+set.add(p2);
+
+System.out.println(set.size()); // 可能为 2
+```
+
+问题原因：
+
+- `p1` 和 `p2` 属性相同，`equals()` 返回 `true`
+- 但默认 `hashCode()` 通常根据对象身份生成哈希码，两者可能不同
+- `HashSet` 根据不同哈希码定位元素，可能将两个对象都插入集合，导致去重失败
+
+解决方法：同时重写 `hashCode()`，使用与 `equals()` 相同的属性计算哈希码
+
+```Java
+@Override
+public int hashCode() {
+    return Objects.hash(name, age);
+}
+```
+
+此时：
+
+```Java
+p1.equals(p2);                    // true
+p1.hashCode() == p2.hashCode();   // true
+```
+
+`HashSet` 就能正确识别两个逻辑上相等的对象，最终 `set.size()` 为 `1`
+
+总的来说，重写 hashCode 是为了处理当两个对象相同时，哈希表不重复添加元素
+
+#### 总结
+
+- `equals()`：判断两个对象在逻辑上是否相等
+- `hashCode()`：生成哈希码，帮助哈希表快速定位对象
+- 重写 `equals()` 时必须同时重写 `hashCode()`，保证相等对象具有相同哈希码
+- `hashCode()` 相同不代表对象相等，仍需通过 `equals()` 进一步判断
+
+核心：`equals()` 负责判断对象是否相等，`hashCode()` 负责辅助定位对象，两者必须遵守一致的相等性规则，才能保证哈希集合正常工作
+
+## String、Stringbuilder、Stringbuffer
+
+&gt; 文档：https://javaguide.cn/java/basis/java-basic-questions-02.html#%E2%AD%90%EF%B8%8F-string%E3%80%81stringbuffer%E3%80%81stringbuilder-%E7%9A%84%E5%8C%BA%E5%88%AB
+
+都是用来处理字符串的，但 String 不可变，每次修改都会生成新的对象，并将引用指向新的实例（即新的String），而 `StringBuffer` 和 `StringBuilder` 都是可变的，它们在修改字符串时不会创建新对象，而是直接在原有字符数组上进行操作。
+
+因此，遇到大量字符串连接可以用 StringBuilder ，不会生成许多新的对象，StringBuilder 与 StringBuffer 的区别是，StringBuffer 对字符串的基本操作，如：append、insert 等都添加了同步锁，synchronized，线程安全，而 `StringBuilder` 并没有对方法进行加同步锁，所以是非线程安全的。
+
+String 为什么不可变？——final
+
+- 在源码中，java对于 String 类的保存通过数组存储每个字符，并通过 final 进行修饰，而且没有提供/暴露修改这个字符串的方法
+- String 类也被 final 修饰，导致其不能被继承，进而避免了子类破坏 String 不可变
+
+```java
+public final class String implements java.io.Serializable,Comparable&lt;String&gt;, CharSequence {
+    // @Stable 注解表示变量最多被修改一次，称为“稳定的”。
+    @Stable
+    private final byte[] value;
+}
+```
+
+## 字符串常量池的作用了解吗？
+
+&gt; 文档：https://javaguide.cn/java/basis/java-basic-questions-02.html#%E2%AD%90%EF%B8%8F-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%9A%84%E4%BD%9C%E7%94%A8%E4%BA%86%E8%A7%A3%E5%90%97
+
+字符串是引用数据类型，默认情况下每次创建都会开辟新的空间，放置对象，并返回引用地址，但用于字符串是不可变的，此时 JVM 开辟一块空间放置字符串，也就是字符串常量池，提示了性能并减少内存消耗，避免字符串重复创建
+
+```java
+// 1.在字符串常量池中查询字符串对象 "ab"，如果没有则创建"ab"并放入字符串常量池
+// 2.将字符串对象 "ab" 的引用赋值给 aa
+String aa = "ab";
+// 直接返回字符串常量池中字符串对象 "ab"，赋值给引用 bb
+String bb = "ab";
+System.out.println(aa==bb); // true
+```
+
+## 泛型
+
+泛型，我的理解是参数，将数据的类型参数化，在定义类、接口或者方法时不必指定具体的数据类型，在实际使用时指定具体的类型即可
+
+```java
+class Box&lt;T&gt; {
+    private T value;
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public T getValue() {
+        return value;
+    }
+}
+```
+
+```java
+Box&lt;String&gt; box1 = new Box&lt;&gt;(); // 指定 String 类型
+box1.setValue("Hello");
+
+Box&lt;Integer&gt; box2 = new Box&lt;&gt;(); // 指定 Integer 类型
+box2.setValue(100);
+```
+
+## 序列化与反序列化
+
+![image-20261021113723532](/blog-backup/blog-images/2026/10/21/image-20261021113723532.png)
+
+&gt; 图片源自：https://oss.javaguide.cn/github/javaguide/a478c74d-2c48-40ae-9374-87aacf05188c.png
+
+序列化（Serialization）：将 java 中对象持久化保持，保持格式有二进制字节流（Bytes）、JSON等
+
+反序列化：序列化的逆过程，将序列化持久化的文件转换为对象的过程
+
+## 反射
+
+在程序运行时，可以动态的获取类的属性与方法，并可以调用方法，例如：
+
+```java
+User user = new User();
+user.sayHello();
+```
+
+编译时已经明确知道调用的是 `User` 类的 `sayHello()` 方法。而通过反射：
+
+```java
+Class&lt;?&gt; clazz = Class.forName("com.example.User");
+
+// 获取构造方法并创建实例
+Object user = clazz.getDeclaredConstructor().newInstance();
+
+// 获取指定方法
+Method method = clazz.getMethod("sayHello");
+
+// 调用方法
+method.invoke(user);
+```
+
+这里的类名可以在运行时确定，因此反射支持更动态的程序行为。
+
+## IO流
+
+Java IO（Input / Output）流用于实现程序与外部数据源（如文件、网络等）之间的数据读取与写入，IO 流主要有两种分类方式：
+
+- 按照数据流向划分
+	- 输入流：从外部读取数据到程序，如 `InputStream`、`Reader`
+	- 输出流：从程序向外部写入数据，如 `OutputStream`、`Writer`
+- 按照数据处理单位划分
+	- 字节流：以字节（8 bit）为单位处理数据，如 `InputStream`、`OutputStream`
+	- 字符流：以字符为单位处理数据，如 `Reader`、`Writer`
+
+### 字节流与字符流的区别
+
+计算机实际存储的数据是二进制数据。对于文本，程序需要根据字符编码规则（如 ASCII、UTF-8、UTF-16）将字节数据转换为字符，或将字符转换为字节
+
+两者的核心区别在于处理数据的单位不同，以及是否涉及字符编码与解码
+
+- 字节流：以字节为单位读取或写入数据，不直接处理字符编码，适用于图片、视频、音频等二进制数据，也可以处理文本
+- 字符流：以字符为单位读取或写入数据，适用于文本处理，通常需要在底层字节数据与字符之间进行编码或解码
+
+例如，使用 UTF-8 编码时：
+
+| 字符 | UTF-8 编码    | 占用字节数 |
+| ---- | ------------- | ---------- |
+| `A`  | `41`          | 1 字节     |
+| `中` | `E4 B8 AD`    | 3 字节     |
+| `&#x1f600;`  | `F0 9F 98 80` | 4 字节     |
+
+因此：
+
+- 字节流读取字符 `中` 对应的 UTF-8 数据，需要读取 3 个字节才能获取完整的编码数据
+- 字符流通过字符解码器将这 3 个字节转换为 Java 字符数据，而不需要开发者手动组合字节
+
+注意： Java 的 `Reader.read()` 每次读取的是一个 UTF-16 代码单元（返回 `int`），并不保证每次都能读取一个完整的 Unicode 字符。例如，`&#x1f600;` 在 Java 中需要两个 `char` 表示
+
+### 总结
+
+字节流直接处理原始字节，字符流处理文本字符，并在需要时完成字符编码与解码
+
+- 处理二进制文件：优先使用字节流
+- 处理文本文件：优先使用字符流，并明确指定字符编码（如 UTF-8）
+
+### 在 IO 中，文件字节流读取时返回值类型为什么是 int？
+
+在 Java IO 中，`InputStream.read()` 每次读取 **1 个字节（8 bit）**，但返回值类型为 `int`（32 bit）
+
+**核心原因：使用** `-1` **表示文件读取结束（EOF），避免与实际读取的数据产生冲突**
+
+#### 为什么不使用 byte？
+
+Java 中的 `byte` 是有符号类型，取值范围为 `-128～127`，而一个字节有 256 种可能的二进制组合
+
+如果返回值类型为 `byte`，则无法区分实际数据与文件结束标志：
+
+- **读取到字节** `11111111`：按照 Java 的有符号 `byte` 解释，结果为 `-1`
+- **文件读取结束**：同样返回 `-1`
+
+因此，二者会产生冲突
+
+#### 为什么使用 int？
+
+`int` 可以使用 `0～255` 表示读取到的字节，并使用 `-1` 表示文件结束
+
+假设文件中存在字节 `11111111`：
+
+- **正常读取**：返回 `00000000 00000000 00000000 11111111`，即十进制 `255`
+- **文件读取结束**：返回 `-1`，其 32 位补码表示为 `11111111 11111111 11111111 11111111`
+
+因此，可以准确区分实际数据和文件结束标志
+
+#### 代码示例
+
+```java
+try (FileInputStream input = new FileInputStream("test.txt")) {
+    int data;
+
+    while ((data = input.read()) != -1) {
+        System.out.println(data);
+    }
+}
+```
+
+**总结：**`read()` **返回** `int` **并不意味着每次读取 4 个字节，而是为了完整表示单字节的** `0～255`**，同时保留** `-1` **作为文件结束标志**
+
+### BIO、NIO、AIO的区别
+
+BIO、NIO、AIO 是 java 中常见的 3 种 IO 模型，三者的区别：
+
+- BIO：blocking IO，阻塞，read 调用后会一直阻塞，直至读取完成
+- NIO：new IO，同步非阻塞 IO，一个线程监听多个 channel ，就绪时进行后续的处理
+- AIO：异步IO，当 IO 完成后执行回调函数即可
+
+## hashMap
+
+
+
+## JVM 内存结构
+
+&gt; [【java】jvm内存模型全面解析_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV12t411u726/?spm_id_from=333.1387.homepage.video_card.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f)
+
+![image-20261021113752392](/blog-backup/blog-images/2026/10/21/image-20261021113752392.png)
+
+&gt; 图片源自：https://oss.javaguide.cn/github/javaguide/java/jvm/java-runtime-data-areas-jdk1.8.png
+
+Java 虚拟机（JVM）的运行时数据区域主要分为五部分：
+
+| 内存区域   | 线程归属 | 核心作用                                                     |
+| ---------- | -------- | ------------------------------------------------------------ |
+| 堆         | 线程共享 | 存储对象、引用数据类型，字符串常量池也在这里（毕竟是引用数据类型），是GC的主要管理区域 |
+| 虚拟机栈   | 线程私有 | 存储方法调用对应的栈帧，如：局部变量等                       |
+| 本地方法栈 | 线程私有 | 为本地方法提供支持                                           |
+| 程序计数器 | 线程私有 | 记录当前线程执行的字节码指令位置                             |
+| 方法区     | 线程共享 | 存储类的原数据、运行时常量池等                               |
+
+栈帧：栈的基本单位，每调用一个 java 方法，JVM 就会为该方法创建一个栈帧，用于存储该方法所需的数据
+
+需要注意：
+
+- 每个线程都有自己的虚拟机栈、程序计数器等线程私有空间，线程结束后，相应的运行时空间也会被释放
+- 堆由线程共享，对象通常分配在堆中，但存在逃逸分析等优化情形
+- 方法区是逻辑概念，在 HotSpot JVM 中，JDK 8 起主要使用元空间（Metaspace）实现，元空间使用本地内存，不属于 Java 堆
+
+### 堆与栈的区别
+
+```java 
+public void test() {
+    int age = 20;
+    Person person = new Person();
+}
+```
+
+按照常见情况理解：
+
+- `age`：栈，基本类型局部变量，其值存放在栈帧的局部变量表中
+- `person`：局部引用变量，存放在栈帧的局部变量表中
+- `new Person()`：堆，创建的对象通常存放在堆中
+
+栈主要管理方法执行过程，存放局部变量等，堆主要存储对象实例等引用数据类型
+
+## GC 垃圾回收
+
+&gt; 为什么需要 GC 垃圾回收？
+&gt;
+&gt; 堆中的数据需要处理，在栈中，出栈后数据会进行删除，但栈存放的是局部变量，而堆中存放的是引用数据类型，如：对象，此时栈中只会清理局部变量，堆中的对象等还没有处理，因此需要GC对堆中的数据进行清理
+
+GC（Garbage Collection）即垃圾回收，负责自动识别并回收不再使用的对象，减少手动管理内存的负担。
+
+### 堆内存分代结构
+
+传统分代垃圾回收将 Java 堆划分为两个主要区域：
+
+- 新生代（Young Generation）：主要存储新创建的对象，生命周期通常较短
+- 老年代（Old Generation）：主要存储经过多次 GC 后仍然存活的对象
+
+新生代又分为三个区域：
+
+- Eden（伊甸园，新生区）：对象通常最先分配的区域
+- Survivor 0（S0）：幸存者区
+- Survivor 1（S1）：幸存者区
+
+![image-20261020171035936](/blog-backup/blog-images/2026/10/20/image-20261020171035936.png)
+
+### 新生代垃圾回收（Young GC）
+
+新生代采用的经典垃圾回收算法是**复制算法**（Copying）。
+
+基本流程：
+
+1. 新创建的对象通常分配在 Eden 区
+2. Eden 空间不足时，可能触发 Young GC
+3. GC 识别仍然存活的对象，将其复制到空闲的 Survivor 区
+4. 清理 Eden 及原 Survivor 区中不再需要的对象
+5. S0 和 S1 轮流充当存活对象复制的目标区域
+6. 对象经过多次 GC 仍然存活，达到一定条件后晋升到 Old 区
+
+![image-20261020171116136](/blog-backup/blog-images/2026/10/20/image-20261020171116136.png)
+
+**为什么使用复制算法？**
+
+因为新生代中的对象通常存活率较低，仅需复制少量存活对象，效率较高，同时能够减少内存碎片。
+
+注意：若 Survivor 空间不足，对象也可能提前晋升到老年代，不一定必须经过固定次数的 GC。
+
+### 老年代垃圾回收（Old GC）
+
+老年代主要存储长期存活的对象，这些对象存活率通常较高，因此经典分代模型中通常采用以下算法：
+
+- 标记-清除（Mark-Sweep）：标记存活对象，清除不可达对象，但容易产生内存碎片
+- 标记-整理（Mark-Compact）：标记存活对象，将其移动到连续空间，再回收剩余内存，减少内存碎片
+
+![image-20261020171243630](/blog-backup/blog-images/2026/10/20/image-20261020171243630.png)
+
+**为什么老年代不适合简单使用新生代的复制方案**？
+
+因为老年代对象存活率通常较高，需要复制的对象较多，复制开销较大。
+
+&gt; 需要注意，具体算法取决于垃圾收集器。例如，传统 Parallel Old 使用标记-整理，旧版 CMS 主要使用标记-清除，G1 则通过 Region 进行对象转移和空间回收。
+
+## 总结
+
+GC的存在是为了解决堆中的数据清理，由于栈区域出栈时会将局部变量等数据进行删除，但栈中引用的对象等存放在堆区域，而堆区域便是由 GC 进行数据清理，清理的逻辑大致是：
+
+- young区域存放新 new 的对象
+- young区域大致分为三块：E区、S0区、S1区
+- E区满了会触发young GC，进行清理，清理策略是复制，将E区存活的数据放置在空闲的S区，然后清空E区与另一个S区，通过两个S区进行交替工作
+- 当young区多次GC清理，某些对象仍存在时，如：清理6次，仍存活，此时该对象会晋升到OLD区，表示使用频率高，存活率高
+- old区满时触发oldGC，清理策略一般是标记-清楚或者标记-整理
+
+注意：
+
+- young区空间有限，若清理复制时：S区空间满了，剩余存活对象会提前进入old区
+- 大对象会放置在old区，因为大对象进行复制时开销太大，而old区若采用标记-清楚策略时，不会进行移动，更适合
+
+## GC 如何判断哪些对象需要回收？
+
+核心原理：可达性分析（Reachability Analysis），从 GC Roots 出发，沿着对象引用关系向下查找，无法从 GC Roots 到达的对象，通常就可以被回收。
+
+GC 并不是简单地检查某个变量是否存在，而是判断对象是否仍然存在有效的引用路径。
+
+### GC Roots 主要有哪些？
+
+入门阶段重点掌握以下几类：
+
+| GC Roots 来源      | 说明                                                         |
+| ------------------ | ------------------------------------------------------------ |
+| 栈中的引用         | 当前活动线程的栈帧中，仍然存活的局部变量、方法参数等引用     |
+| 静态字段（static） | 已加载类的静态字段所引用的对象，通常可以作为可达性分析的起点 |
+| 活跃线程           | JVM 中仍然活跃的线程及其相关引用                             |
+| JNI 引用           | Java 调用本地代码时，本地代码持有的有效引用                  |
+| JVM 内部引用       | 类加载器、系统类等 JVM 内部结构持有的相关引用                |
+
+注意：并不是只有栈和 static 才能影响对象是否被回收。 只要某个对象能够通过引用链从 GC Roots 到达，就可能继续存活。
+
+### 示例：栈引用与 static 引用
+
+```java
+class User {
+    String name;
+}
+
+public class Demo {
+    static User global = new User();
+
+    public static void main(String[] args) {
+        User a = new User();
+        User b = a;
+
+        a = null;
+
+        // 此时对象仍然可以通过 b 访问
+        System.out.println(b);
+
+        b = null;
+
+        // 如果该对象不存在其他有效引用路径，
+        // 它就具备了被 GC 回收的条件
+
+        global = null;
+
+        // 如果 global 原来引用的对象也不存在
+        // 其他有效引用路径，它同样具备被回收的条件
+    }
+}
+```
+
+结合代码理解：
+
+- `a = null`：只是取消 `a` 对对象的引用，但 `b` 仍然引用该对象，因此对象仍然可达
+- `b = null`：如果不存在其他有效引用路径，该对象就可能成为垃圾
+- `global = null`：取消静态字段对对象的引用；如果没有其他有效引用路径，该对象也可能成为垃圾
+
+这里需要区分两个概念：不可达不等于立即被回收。它只是说明对象具备被回收的条件，具体何时回收由 JVM 决定。
+
+### static 对象为什么通常不会被回收？
+
+例如：
+
+```java
+static User global = new User();
+```
+
+只要对应的类仍处于可达状态，且静态字段 `global` 仍然引用这个对象，那么 GC 就能沿着这条引用路径找到它。
+
+```
+GC Roots
+   |
+   v
+static 字段 global
+   |
+   v
+User 对象
+```
+
+因此，该对象通常不会被当作垃圾回收。不过，`static` 并不意味着对象永远不会被回收。如果对应的类可以被卸载，或者静态字段不再引用该对象，且没有其他有效引用路径，对象仍然可能被回收。
+
+### 最后总结
+
+可以把 GC 的判断过程理解为：
+
+1. 找到 GC Roots
+2. 沿着引用关系遍历对象
+3. 能够到达的对象，继续保留
+4. 无法到达的对象，通常具备被回收的条件
+5. JVM 在合适的时机执行实际回收
+
+栈中的有效引用、static 字段等决定了对象是否仍然可达；GC 通过可达性分析判断堆中的对象是否具备回收条件，而不是简单地清理没有被当前方法直接引用的数据</content>
+    <dc:creator>Tilex</dc:creator>
+    <dc:date>2026-10-21T03:30:26Z</dc:date>
+  </entry>
+  <entry>
+    <title>MySQL八股整理.md</title>
+    <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/72" />
+    <author>
+      <name>Tilex</name>
+    </author>
+    <id>https://janfeise.github.io/blog-backup/article/72</id>
+    <updated>2026-10-21T03:30:26Z</updated>
+    <published>2026-10-21T03:30:26Z</published>
+    <content type="text/markdown"># MySQL八股整理&#xD;
+&#xD;
+&gt; [【计算机基础】数据库MySQL面试八股总结_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1uHkXBMExe/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f)&#xD;
+&#xD;
+![MySQL](/blog-backup/blog-images/2026/10/05/MySQL.png)&#xD;
+&#xD;
+&gt; 上图来自于视频：[【计算机基础】数据库MySQL面试八股总结_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1uHkXBMExe/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f)&#xD;
+&#xD;
+## MySQL 组成结构&#xD;
+&#xD;
+MySQL 主要由两部分组成：server 层、存储引擎层&#xD;
+&#xD;
+```&#xD;
+客户端&#xD;
+  │&#xD;
+  ▼&#xD;
+┌──────────────────────────────┐&#xD;
+│          Server 层           │&#xD;
+│                              │&#xD;
+│  连接管理                    │&#xD;
+│  SQL 解析器                  │&#xD;
+│  SQL 优化器                  │&#xD;
+│  SQL 执行器                  │&#xD;
+│  权限校验等                  │&#xD;
+└──────────────┬───────────────┘&#xD;
+               │&#xD;
+               ▼&#xD;
+┌──────────────────────────────┐&#xD;
+│        存储引擎层            │&#xD;
+│                              │&#xD;
+│  InnoDB                      │&#xD;
+│  MyISAM                      │&#xD;
+│  Memory                      │&#xD;
+│  ...                         │&#xD;
+└──────────────┬───────────────┘&#xD;
+               │&#xD;
+               ▼&#xD;
+            磁盘数据&#xD;
+```&#xD;
+&#xD;
+## 从后端一段SQL代码到MySQL的执行流程&#xD;
+&#xD;
+&gt; 客户端发送SQL查询语句到MySQL服务器，MySQL处理请求，并与客户端建立连接，获取权限，后续MySQL的解析器对SQL语句进行解析，检查是否符合SQL语法规则，通过后优化器尝试找出最高效的方式来执行查询，执行器调用存储引擎的API进行数据的读写，并返回给客户端完成本次查询&#xD;
+&#xD;
+第一步，**客户端**发送 SQL 查询语句到 MySQL 服务器。&#xD;
+&#xD;
+第二步，MySQL 服务器的连接器开始处理这个请求，跟客户端建立连接、获取权限、管理连接。&#xD;
+&#xD;
+第三步，**解析器**开始对 SQL 语句进行解析，检查语句是否符合 SQL 语法规则，确保引用的数据库、表和列都存在，并处理 SQL 语句中的名称解析和权限验证。&#xD;
+&#xD;
+第四步，**优化器**负责确定 SQL 语句的执行计划，这包括选择使用哪些索引，以及决定表之间的连接顺序等。优化器会尝试找出最高效的方式来执行查询。&#xD;
+&#xD;
+第五步，**执行器**会调用**存储引擎**的 API 来进行数据的读写。&#xD;
+&#xD;
+第六步，MySQL 的存储引擎是插件式的，不同的存储引擎在细节上面有很大不同。例如，InnoDB 是支持事务的，而 MyISAM 是不支持的。之后，会将执行结果返回给客户端&#xD;
+&#xD;
+第七步，客户端接收到查询结果，完成这次查询请求。&#xD;
+&#xD;
+## 常用命令&#xD;
+&#xD;
+创建、删除，CRUD&#xD;
+&#xD;
+## MySQL支持哪些存储引擎？各个引擎之间有什么区别？&#xD;
+&#xD;
+![image-20261005175212478](/blog-backup/blog-images/2026/10/05/image-20261005175212478.png)&#xD;
+&#xD;
+常见的存储引擎主要有三个：memory、innodb、myisam，主要区别是：&#xD;
+&#xD;
+- memory：基于内存&#xD;
+- innodb：支持事务、行锁、外键，其中与myisam的区别是，innodb存储引擎存放数据只有一个idb文件，该文件包含了索引与数据，而myisam则分为两个：索引文件与数据文件，查询时需先查询索引，然后根据索引再去找到数据&#xD;
+- myisam：不支持事务、行锁、外键&#xD;
+&#xD;
+| 文件   | 含义    | 存什么       |&#xD;
+| ------ | ------- | ------------ |&#xD;
+| `.MYD` | MYData  | 实际的行数据 |&#xD;
+| `.MYI` | MYIndex | 索引数据     |&#xD;
+&#xD;
+## MySQL 日志文件有哪些？&#xD;
+&#xD;
+&gt; Error Log 看 MySQL 自己出了什么问题；Binlog 看数据发生了什么变化；General Log 看客户端执行了什么 SQL；Slow Log 看哪些 SQL 执行得太慢&#xD;
+&#xD;
+| 日志类型         | 英文名称            | 主要记录内容                                                 | 默认状态           | 主要用途                                | 补充说明                                                     |&#xD;
+| ---------------- | ------------------- | ------------------------------------------------------------ | ------------------ | --------------------------------------- | ------------------------------------------------------------ |&#xD;
+| **错误日志**     | Error Log           | 记录 MySQL 在**启动、运行、停止**过程中产生的错误、警告以及部分重要运行信息 | 默认开启           | 故障排查、定位 MySQL 启动失败或运行异常 | 例如数据库启动失败、存储引擎异常、权限问题等。**错误日志本身并不是用于恢复业务数据的日志** |&#xD;
+| **二进制日志**   | Binary Log / Binlog | 记录数据库中会导致**数据或结构发生变化的事件**，例如 `CREATE`、`INSERT`、`UPDATE`、`DELETE` 等；通常不记录普通 `SELECT` 查询 | MySQL 8.0 默认开启 | **数据恢复、主从复制、数据同步**        | Binlog 主要有 `STATEMENT`、`ROW`、`MIXED` 三种格式。`STATEMENT` 记录执行的 SQL；`ROW` 记录行数据发生的变化；`MIXED` 根据情况在两者之间选择 |&#xD;
+| **通用查询日志** | General Query Log   | 记录客户端连接以及 MySQL 接收到的各种 SQL 请求，包括 `SELECT`、`INSERT`、`UPDATE`、`DELETE` 等 | 默认关闭           | 排查 SQL 请求、分析客户端执行了哪些操作 | 记录范围非常广，写入频繁，**性能开销较大**，通常只在排查问题时临时开启 |&#xD;
+| **慢查询日志**   | Slow Query Log      | 记录执行时间超过指定阈值的 SQL                               | 默认关闭           | **定位慢 SQL、进行数据库性能优化**      | 通过 `long_query_time` 设置慢查询时间阈值，例如设置为 `2`，表示执行时间超过 2 秒的 SQL 可被记录 |&#xD;
+&#xD;
+## innodb 存储引擎中 redolog 与 undolog 的区别&#xD;
+&#xD;
+- undolog：记录旧数据，即更新前的数据，用于回滚和MVCC多版本并发控制&#xD;
+- redolog：记录修改，用于崩溃后恢复，由于innodb对于数据更改，缓冲区与实际存储数据的磁盘处理顺序不同，首先将位于内存的缓冲区数据更新，并写入redolog，若数据写入实际存储的磁盘时发生崩溃，此时重启后可以通过redolog重新恢复已提交的数据&#xD;
+&#xD;
+## redo log 与 binlog 有什么区别&#xD;
+&#xD;
+最核心的区别是：&#xD;
+&#xD;
+```&#xD;
+redo log&#xD;
+    ↓&#xD;
+InnoDB 层&#xD;
+    ↓&#xD;
+保证存储引擎自身崩溃恢复&#xD;
+&#xD;
+binlog&#xD;
+    ↓&#xD;
+MySQL Server 层&#xD;
+    ↓&#xD;
+记录数据库发生的逻辑变化&#xD;
+```&#xD;
+&#xD;
+redolog是MySQL存储引擎层innodb的日志记录文件，而binlog是MySQL server层的日志记录文件，redolog与innodb绑定，记录物理级别的修改操作，如：具体的索引、页、以及数据等内容，而binlog主要是逻辑层面的修改操作，有三种记录方式：statement、row、mixed（两者混合），其中statement记录SQL语句，row记录更改前后的数据&#xD;
+&#xD;
+## MySQL 两阶段提交&#xD;
+&#xD;
+背景：一条SQL语句进行更新操作设计了两阶段提交&#xD;
+&#xD;
+1. 为什么需要两阶段提交？&#xD;
+2. 两阶段提交的流程是什么？&#xD;
+&#xD;
+两阶段提交是为了保证 redolog 和 binlog 的一致性，由于 redolog 是 innodb 存储引擎的日志记录，而 binlog 是MySQL server层的日志记录，主要用于主从复制和数据恢复。如果两者独立提交，宕机时可能出现 redolog 有记录但 binlog 没有，或者 binlog 有记录但 redolog 没有，从而导致主库恢复结果与 binlog 不一致，因此 MySQL 将 redolog 的提交分为 prepare 与 commit 两个阶段，中间写入 binlog，以保证两套日志对同一个事务的提交状态保持一致&#xD;
+&#xD;
+两阶段提交的流程是， innodb 先写 redolog，并将其标记为 prepare 状态，然后server 层写人binlog，binlog 写入成功后，再将 redolog 标记为 commit，事务完成；若后续发生故障可能进行回滚或者判断事务已经成功&#xD;
+&#xD;
+如果在 prepare 后，binlog 前宕机，此时binlog没有成功写入，事务会回滚；如果 binlog 已经写入成功，但 redolog 仍处于 prepare 状态，重启后会根据 binlog 判断事务已经成功，并完成提交&#xD;
+&#xD;
+&gt; 其中真正的“两阶段”主要指 redo log 的：&#xD;
+&gt;&#xD;
+&gt; ```&#xD;
+&gt; prepare&#xD;
+&gt; ↓&#xD;
+&gt; commit&#xD;
+&gt; ```&#xD;
+&gt;&#xD;
+&gt; binlog 写入发生在这两个阶段之间&#xD;
+&#xD;
+## MySQL 索引&#xD;
+&#xD;
+&gt; [【编程不良人】这一次彻底搞定MySQL索引、从此不在恐惧面试_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV19y4y127h4/?spm_id_from=333.788.videopod.sections&amp;vd_source=8c5774f0412cfb872126f5a44585db4f)&#xD;
+&#xD;
+索引分类：&#xD;
+&#xD;
+```&#xD;
+按功能分类&#xD;
+├── 主键索引&#xD;
+├── 唯一索引&#xD;
+├── 普通索引&#xD;
+└── 全文索引&#xD;
+&#xD;
+按包含字段数量分类&#xD;
+├── 单列索引&#xD;
+└── 复合索引（联合索引）&#xD;
+```&#xD;
+&#xD;
+==不同索引加锁情况不同==&#xD;
+&#xD;
+| 索引类型               | 说明                                                         | 特点 / 注意事项                                              | 示例                                   |&#xD;
+| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------- |&#xD;
+| 主键索引 `PRIMARY KEY` | 创建表时设置主键，MySQL 会自动为主键创建索引                 | 数据必须**唯一且不能为 NULL**；一个表只能有一个主键          | `PRIMARY KEY (id)`                     |&#xD;
+| 唯一索引 `UNIQUE`      | 用于保证索引列的值具有唯一性                                 | 不允许出现重复的非 NULL 值；MySQL 中通常**允许多个 NULL**    | `UNIQUE INDEX idx_email (email)`       |&#xD;
+| 普通索引 `INDEX`       | 最基本的索引类型，不要求数据唯一                             | 主要用于提高查询效率，可以出现重复值和 NULL                  | `INDEX idx_name (name)`                |&#xD;
+| 单列索引               | 只包含**一个字段**的索引                                     | 描述的是索引包含的字段数量，可以是普通索引、唯一索引等       | `INDEX idx_name (name)`                |&#xD;
+| 复合索引 / 联合索引    | 一个索引同时包含多个字段                                     | 查询时通常需要遵循**最左前缀原则**                           | `INDEX idx_name_age (name, age)`       |&#xD;
+| 全文索引 `FULLTEXT`    | 用于文本内容的全文搜索，通过**分词 + 倒排索引**提高文本检索效率 | 适合 `CHAR`、`VARCHAR`、`TEXT` 等文本字段；InnoDB 从 MySQL 5.6 开始支持全文索引 | `FULLTEXT INDEX idx_content (content)` |&#xD;
+&#xD;
+全文索引：类似于 elasticsearch ，但分词与高亮方面不如 ES，在分词方面 MySQL 内置的 ngram 全文解析器，并不是按照语义划分，而是滑动窗口，生硬的将文本按字符数进行拆分，如：默认的 ngram_token_size 为 2，后续分词时只会按照 2 个字符进行切分，而 ES 可通过扩展使用分词器，中文分词器有 IK 分词器，该分词器是按照语义进行分词的，下面是 ngram 与 IK 分词器的对比：&#xD;
+&#xD;
+文本：“中华人民共和国”&#xD;
+&#xD;
+- ngram 分词结果：中华、华人、人民、民共、共和、和国&#xD;
+- IK 分词结果：中华、人民、共和国&#xD;
+&#xD;
+在高亮方面，由于对文本进行了分词，若后端进行高亮需知道分词的结果，然后才能进行高亮，而 ES 则支持高亮，无需后端处理，但MySQL只能返回全文搜索的结果与评分，高亮需后端进行处理&#xD;
+&#xD;
+### MySQL 底层 B+树&#xD;
+&#xD;
+MySQL 的数据最终存储在磁盘中，如果每次查询都直接扫描磁盘中的所有数据，查询效率会非常低&#xD;
+&#xD;
+以 InnoDB 为例，它主要使用 **B+ 树作为索引的数据结构**，通过 B+ 树减少磁盘 I/O 次数，提高数据查询效率&#xD;
+&#xD;
+需要注意：&#xD;
+&#xD;
+- InnoDB 的索引通常采用 B+ 树&#xD;
+- 主键索引又称聚簇索引，**叶子节点存储完整的行数据**&#xD;
+- 非叶子节点主要存储 **索引键 + 子页指针**&#xD;
+- InnoDB 默认一个数据页大小为 **16KB**&#xD;
+- B+树顶层存放于内存中，无需经过磁盘IIO，进一步减少了磁盘IO访问次数&#xD;
+&#xD;
+##### B+ 树如何存储数据&#xD;
+&#xD;
+假设表中存在一个主键 `id`：&#xD;
+&#xD;
+```sql&#xD;
+CREATE TABLE user (&#xD;
+    id INT PRIMARY KEY,&#xD;
+    name VARCHAR(20),&#xD;
+    age INT&#xD;
+);&#xD;
+```&#xD;
+&#xD;
+随着数据不断插入，InnoDB 会按照主键顺序组织聚簇索引&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```text&#xD;
+1  2  3  4  5  6  7  8 ...&#xD;
+```&#xD;
+&#xD;
+但 InnoDB 并不是直接将每条数据作为一个独立的 B+ 树节点，而是将多条记录存放在一个 **数据页 Page** 中&#xD;
+&#xD;
+一个数据页默认大小为：&#xD;
+&#xD;
+```text&#xD;
+16KB&#xD;
+```&#xD;
+&#xD;
+因此整体结构可以简化理解为：&#xD;
+&#xD;
+```text&#xD;
+                非叶子节点&#xD;
+              [100] [200] [300]&#xD;
+                ↓     ↓     ↓&#xD;
+             Page1  Page2  Page3&#xD;
+               ↓      ↓      ↓&#xD;
+             行数据   行数据   行数据&#xD;
+```&#xD;
+&#xD;
+B+ 树的所有完整行数据都存储在**叶子节点的数据页**中，而非叶子节点只保存索引键以及指向下一层页面的指针&#xD;
+&#xD;
+![image-20261007161342209](/blog-backup/blog-images/2026/10/07/image-20261007161342209.png)&#xD;
+&#xD;
+同时，叶子节点之间通过**双向链表**连接：&#xD;
+&#xD;
+```text&#xD;
+Page1 ⇄ Page2 ⇄ Page3 ⇄ Page4&#xD;
+```&#xD;
+&#xD;
+这样不仅可以快速进行单条数据查询，也非常适合范围查询&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE id BETWEEN 100 AND 200;&#xD;
+```&#xD;
+&#xD;
+MySQL 可以先通过 B+ 树找到 `id = 100` 所在的数据页，然后沿着叶子节点的链表继续向后扫描，而不需要重新从根节点查找每一条数据&#xD;
+&#xD;
+#### 两层 B+ 树可以存放多少数据&#xD;
+&#xD;
+下面可以使用一个**简化模型**进行面试估算&#xD;
+&#xD;
+假设：&#xD;
+&#xD;
+```text&#xD;
+INT：4 字节&#xD;
+&#xD;
+非叶子节点中的索引键：4 字节&#xD;
+&#xD;
+子页指针：为了方便估算，假设约 8 字节&#xD;
+```&#xD;
+&#xD;
+表结构：&#xD;
+&#xD;
+```sql&#xD;
+CREATE TABLE user (&#xD;
+    id INT PRIMARY KEY,&#xD;
+    name VARCHAR(20),&#xD;
+    age INT&#xD;
+);&#xD;
+```&#xD;
+&#xD;
+为了方便计算，假设一条记录大约占用：&#xD;
+&#xD;
+```text&#xD;
+id    = 4 字节&#xD;
+name  ≈ 20 字节&#xD;
+age   = 4 字节&#xD;
+其他记录开销 ≈ 8 字节&#xD;
+&#xD;
+合计约 36 字节&#xD;
+```&#xD;
+&#xD;
+这里的 `36 字节` 只是为了方便理解而进行的粗略估算&#xD;
+&#xD;
+实际上 InnoDB 一条记录还包含：&#xD;
+&#xD;
+- Record Header&#xD;
+- NULL 标记&#xD;
+- 变长字段长度信息&#xD;
+- MVCC 隐藏字段&#xD;
+- 页内部管理信息&#xD;
+&#xD;
+并且 `VARCHAR(20)` 的 `20` 指的是字符数，而不是固定占用 20 字节，实际大小还与字符集以及真实字符串长度有关&#xD;
+&#xD;
+因此实际一页能存放多少行数据，需要根据具体表结构判断&#xD;
+&#xD;
+###### 第一层：根节点&#xD;
+&#xD;
+如果非叶子节点的一条目录记录粗略认为包含：&#xD;
+&#xD;
+```text&#xD;
+主键：4 字节&#xD;
+&#xD;
+页指针：8 字节&#xD;
+```&#xD;
+&#xD;
+那么一条目录记录约：&#xD;
+&#xD;
+```text&#xD;
+4 + 8 = 12 字节&#xD;
+```&#xD;
+&#xD;
+一个页大小为 16KB：&#xD;
+&#xD;
+```text&#xD;
+16 × 1024 = 16384 字节&#xD;
+```&#xD;
+&#xD;
+因此一个非叶子页大约可以保存：&#xD;
+&#xD;
+```text&#xD;
+16384 ÷ 12 ≈ 1365&#xD;
+```&#xD;
+&#xD;
+也就是说，根节点最多可以粗略指向约：&#xD;
+&#xD;
+```text&#xD;
+1365 个叶子数据页&#xD;
+```&#xD;
+&#xD;
+###### 第二层：叶子节点&#xD;
+&#xD;
+假设每条完整数据约占：&#xD;
+&#xD;
+```text&#xD;
+36 字节&#xD;
+```&#xD;
+&#xD;
+那么一个 16KB 数据页大约可以存储：&#xD;
+&#xD;
+```text&#xD;
+16384 ÷ 36 ≈ 455 条数据&#xD;
+```&#xD;
+&#xD;
+第一层最多指向约 1365 个叶子页，因此两层 B+ 树理论上可以粗略存储：&#xD;
+&#xD;
+```text&#xD;
+1365 × 455&#xD;
+≈ 621075&#xD;
+```&#xD;
+&#xD;
+即：&#xD;
+&#xD;
+```text&#xD;
+约 62 万条数据&#xD;
+```&#xD;
+&#xD;
+可以简化理解为：&#xD;
+&#xD;
+```text&#xD;
+             Root&#xD;
+              │&#xD;
+        最多约 1365 个指针&#xD;
+              │&#xD;
+    ┌─────────┼─────────┐&#xD;
+  Page1     Page2      Page...&#xD;
+   455条     455条       455条&#xD;
+&#xD;
+总数据量：&#xD;
+&#xD;
+1365 × 455 ≈ 62 万&#xD;
+```&#xD;
+&#xD;
+#### 三层 B+ 树可以存放多少数据&#xD;
+&#xD;
+如果 B+ 树增加到三层：&#xD;
+&#xD;
+```text&#xD;
+第一层：根节点&#xD;
+第二层：非叶子索引页&#xD;
+第三层：叶子数据页&#xD;
+```&#xD;
+&#xD;
+结构可以简化为：&#xD;
+&#xD;
+```text&#xD;
+                     Root&#xD;
+                      │&#xD;
+                 1365 个指针&#xD;
+                      │&#xD;
+             ┌────────┴────────┐&#xD;
+          Index Page        Index Page&#xD;
+              │                 │&#xD;
+        1365 个指针        1365 个指针&#xD;
+              │                 │&#xD;
+          Data Page         Data Page&#xD;
+```&#xD;
+&#xD;
+第一层最多指向：&#xD;
+&#xD;
+```text&#xD;
+1365 个第二层索引页&#xD;
+```&#xD;
+&#xD;
+每个第二层索引页又可以指向：&#xD;
+&#xD;
+```text&#xD;
+1365 个叶子数据页&#xD;
+```&#xD;
+&#xD;
+因此叶子数据页总数约为：&#xD;
+&#xD;
+```text&#xD;
+1365 × 1365&#xD;
+```&#xD;
+&#xD;
+每个叶子数据页约保存：&#xD;
+&#xD;
+```text&#xD;
+455 条数据&#xD;
+```&#xD;
+&#xD;
+最终数据量约为：&#xD;
+&#xD;
+```text&#xD;
+1365 × 1365 × 455&#xD;
+= 847767375&#xD;
+```&#xD;
+&#xD;
+即大约：&#xD;
+&#xD;
+```text&#xD;
+8.48 亿条数据&#xD;
+```&#xD;
+&#xD;
+因此，在这个极度简化的估算模型中：&#xD;
+&#xD;
+| B+ 树高度 | 粗略可存储数据量 |&#xD;
+| --------- | ---------------: |&#xD;
+| 2 层      |       约 62 万条 |&#xD;
+| 3 层      |     约 8.48 亿条 |&#xD;
+&#xD;
+##### 为什么 B+ 树只有三层也能存储大量数据&#xD;
+&#xD;
+核心原因是 B+ 树的**扇出非常大**，一个 16KB 的非叶子节点并不存储完整行数据，而主要保存：&#xD;
+&#xD;
+```text&#xD;
+索引键 + 子页指针&#xD;
+```&#xD;
+&#xD;
+因此一个索引页可以指向大量下一层页面，例如按照前面的简化模型：&#xD;
+&#xD;
+```text&#xD;
+一个非叶子节点&#xD;
+≈ 可以指向 1365 个子节点&#xD;
+```&#xD;
+&#xD;
+B+ 树每增加一层，理论容量都会成百上千倍增长，所以实际数据库中，即使存在几百万、几千万甚至更多的数据，B+ 树通常仍然只有较少的层数&#xD;
+&#xD;
+查询一条数据时，其过程可以简化理解为：&#xD;
+&#xD;
+```text&#xD;
+根节点&#xD;
+↓&#xD;
+中间索引节点&#xD;
+↓&#xD;
+叶子数据页&#xD;
+↓&#xD;
+找到目标记录&#xD;
+```&#xD;
+&#xD;
+因此 B+ 树能够使用很少的磁盘 I/O 完成大量数据中的定位&#xD;
+&#xD;
+#### 面试回答&#xD;
+&#xD;
+InnoDB 的索引主要采用 B+ 树结构，一个数据页默认大小为 16KB&#xD;
+&#xD;
+对于主键索引，也就是聚簇索引，完整的行数据存储在 B+ 树的叶子节点中，非叶子节点主要保存索引和指向下一层数据页的指针&#xD;
+&#xD;
+因为非叶子节点不需要保存完整行数据，所以一个 16KB 的页面可以保存大量索引项&#xD;
+&#xD;
+假设一个非叶子页大约可以指向 1000 多个子页，一个叶子页可以保存几百条数据，那么三层 B+ 树理论上就可以管理上亿条数据&#xD;
+&#xD;
+同时叶子节点之间通过双向链表连接，因此 B+ 树不仅适合等值查询，也非常适合范围查询&#xD;
+&#xD;
+### 聚簇索引与非聚簇索引&#xD;
+&#xD;
+在 InnoDB 中，索引主要可以分为 **聚簇索引（Clustered Index）** 和 **辅助索引（Secondary Index）**。&#xD;
+&#xD;
+#### 聚簇索引&#xD;
+&#xD;
+聚簇索引的特点是：**索引和完整行数据存储在一起**，如：主键索引，其 B+ 树的叶子节点存储完整的行数据。&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```sql&#xD;
+CREATE TABLE user (&#xD;
+    id INT PRIMARY KEY,&#xD;
+    name VARCHAR(20),&#xD;
+    age INT&#xD;
+);&#xD;
+```&#xD;
+&#xD;
+主键索引可以简化理解为：&#xD;
+&#xD;
+```text&#xD;
+                主键索引 B+ 树&#xD;
+&#xD;
+                    目录&#xD;
+                 /       \&#xD;
+                /         \&#xD;
+             数据页       数据页&#xD;
+&#xD;
+        id=1            id=10&#xD;
+        name=Tom        name=Jack&#xD;
+        age=20          age=25&#xD;
+```&#xD;
+&#xD;
+叶子节点中不仅存在主键 `id`，还保存这一行的完整数据：&#xD;
+&#xD;
+```text&#xD;
+id + name + age + ...&#xD;
+```&#xD;
+&#xD;
+因此：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE id = 10;&#xD;
+```&#xD;
+&#xD;
+通过主键索引找到对应的叶子节点后，就可以直接取得完整的数据。&#xD;
+&#xD;
+&gt; InnoDB 一张表只能有一个聚簇索引，因为完整的行数据只能按照一种 B+ 树结构进行组织。&#xD;
+&#xD;
+如果表中没有显式定义主键，InnoDB 会按照一定规则选择其他字段作为聚簇索引；如果仍然没有合适的字段，则会生成隐藏的行 ID 来组织数据。&#xD;
+&#xD;
+#### 非聚簇索引&#xD;
+&#xD;
+InnoDB 中通常称为 **辅助索引或二级索引（Secondary Index）**。&#xD;
+&#xD;
+例如为 `name` 创建索引：&#xD;
+&#xD;
+```sql&#xD;
+CREATE INDEX idx_name&#xD;
+ON user(name);&#xD;
+```&#xD;
+&#xD;
+此时会额外创建一棵以 `name` 为索引键的 B+ 树。&#xD;
+&#xD;
+但辅助索引的叶子节点**不会再次保存完整行数据**，而是主要保存：&#xD;
+&#xD;
+```text&#xD;
+辅助索引列 + 主键值&#xD;
+```&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```text&#xD;
+name        id&#xD;
+&#xD;
+Alice       5&#xD;
+Jack        10&#xD;
+Tom         1&#xD;
+```&#xD;
+&#xD;
+因此可以简化理解为：&#xD;
+&#xD;
+```text&#xD;
+辅助索引 B+ 树&#xD;
+&#xD;
+          name&#xD;
+            ↓&#xD;
+        找到 Jack&#xD;
+            ↓&#xD;
+         得到 id=10&#xD;
+```&#xD;
+&#xD;
+然后再通过：&#xD;
+&#xD;
+```text&#xD;
+id = 10&#xD;
+```&#xD;
+&#xD;
+去主键索引 B+ 树中查找完整行数据：&#xD;
+&#xD;
+```text&#xD;
+辅助索引 B+ 树&#xD;
+      ↓&#xD;
+得到主键 id&#xD;
+      ↓&#xD;
+主键索引 B+ 树&#xD;
+      ↓&#xD;
+获得完整行数据&#xD;
+```&#xD;
+&#xD;
+这种根据辅助索引取得主键值，再根据主键值查询聚簇索引的过程称为：&#xD;
+&#xD;
+```text&#xD;
+回表&#xD;
+```&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE name = 'Jack';&#xD;
+```&#xD;
+&#xD;
+如果 `name` 上存在辅助索引，查询过程可以简化为：&#xD;
+&#xD;
+```text&#xD;
+idx_name B+ 树&#xD;
+↓&#xD;
+找到 name = Jack&#xD;
+↓&#xD;
+取得主键 id = 10&#xD;
+↓&#xD;
+主键索引 B+ 树&#xD;
+↓&#xD;
+找到 id = 10&#xD;
+↓&#xD;
+获得完整行数据&#xD;
+```&#xD;
+&#xD;
+也就是说，通常需要经过两棵 B+ 树。&#xD;
+&#xD;
+不过，并不是所有辅助索引查询都一定需要回表。&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```sql&#xD;
+SELECT id, name&#xD;
+FROM user&#xD;
+WHERE name = 'Jack';&#xD;
+```&#xD;
+&#xD;
+假设存在：&#xD;
+&#xD;
+```sql&#xD;
+INDEX idx_name(name)&#xD;
+```&#xD;
+&#xD;
+辅助索引叶子节点本身已经保存：&#xD;
+&#xD;
+```text&#xD;
+name + id&#xD;
+```&#xD;
+&#xD;
+查询需要的字段都可以直接从索引中取得，因此无需再次查询主键索引。&#xD;
+&#xD;
+这种情况称为：&#xD;
+&#xD;
+```text&#xD;
+覆盖索引&#xD;
+```&#xD;
+&#xD;
+### 聚簇索引与辅助索引对比&#xD;
+&#xD;
+| 对比项               | 聚簇索引         | 辅助索引             |&#xD;
+| -------------------- | ---------------- | -------------------- |&#xD;
+| 典型代表             | 主键索引         | 普通索引、唯一索引等 |&#xD;
+| 是否构建 B+ 树       | 是               | 是                   |&#xD;
+| 叶子节点存储内容     | 完整行数据       | 索引列 + 主键值      |&#xD;
+| 一张表数量           | 一个             | 可以有多个           |&#xD;
+| 查询完整数据         | 找到叶子节点即可 | 可能需要回表         |&#xD;
+| 是否可能使用覆盖索引 | —                | 可以                 |&#xD;
+&#xD;
+可以简单记忆：&#xD;
+&#xD;
+```text&#xD;
+主键索引：&#xD;
+&#xD;
+主键&#xD;
+↓&#xD;
+完整数据&#xD;
+```&#xD;
+&#xD;
+辅助索引：&#xD;
+&#xD;
+```text&#xD;
+索引字段&#xD;
+↓&#xD;
+主键&#xD;
+↓&#xD;
+完整数据&#xD;
+```&#xD;
+&#xD;
+### 为什么辅助索引不直接存储数据的磁盘位置&#xD;
+&#xD;
+一个很自然的问题是：&#xD;
+&#xD;
+&gt; 既然辅助索引最终要找到完整数据，为什么不直接在辅助索引中保存数据所在的磁盘地址，而是保存主键值？&#xD;
+&#xD;
+核心原因是：**InnoDB 的数据本身就是按照聚簇索引组织的，数据页的位置并不是永久不变的。**&#xD;
+&#xD;
+例如随着数据不断进行：&#xD;
+&#xD;
+```text&#xD;
+INSERT&#xD;
+DELETE&#xD;
+UPDATE&#xD;
+```&#xD;
+&#xD;
+可能发生：&#xD;
+&#xD;
+```text&#xD;
+页分裂&#xD;
+页合并&#xD;
+页面重新组织&#xD;
+```&#xD;
+&#xD;
+原来位于某个数据页中的记录，之后可能移动到其他数据页。&#xD;
+&#xD;
+假设辅助索引保存物理地址：&#xD;
+&#xD;
+```text&#xD;
+name = Jack&#xD;
+↓&#xD;
+Page 100&#xD;
+```&#xD;
+&#xD;
+如果之后因为页分裂，Jack 所在的数据发生移动：&#xD;
+&#xD;
+```text&#xD;
+Page 100&#xD;
+↓&#xD;
+Page 205&#xD;
+```&#xD;
+&#xD;
+那么所有引用该数据物理位置的辅助索引都需要同步更新。&#xD;
+&#xD;
+如果一张表存在多个辅助索引：&#xD;
+&#xD;
+```text&#xD;
+idx_name&#xD;
+idx_age&#xD;
+idx_email&#xD;
+idx_phone&#xD;
+...&#xD;
+```&#xD;
+&#xD;
+数据位置变化可能导致多个索引都需要修改，维护成本较高。&#xD;
+&#xD;
+而 InnoDB 选择保存主键：&#xD;
+&#xD;
+```text&#xD;
+name = Jack&#xD;
+↓&#xD;
+id = 10&#xD;
+```&#xD;
+&#xD;
+即使数据所在的数据页发生变化：&#xD;
+&#xD;
+```text&#xD;
+Page 100&#xD;
+↓&#xD;
+Page 205&#xD;
+```&#xD;
+&#xD;
+只要主键仍然是：&#xD;
+&#xD;
+```text&#xD;
+id = 10&#xD;
+```&#xD;
+&#xD;
+辅助索引就不需要因为数据页位置变化而修改。&#xD;
+&#xD;
+查询时只需要：&#xD;
+&#xD;
+```text&#xD;
+辅助索引&#xD;
+↓&#xD;
+主键 id&#xD;
+↓&#xD;
+聚簇索引&#xD;
+↓&#xD;
+当前真实数据位置&#xD;
+```&#xD;
+&#xD;
+因此，本质上是使用**稳定的逻辑标识——主键**，而不是依赖容易发生变化的物理地址。&#xD;
+&#xD;
+不过需要注意：&#xD;
+&#xD;
+&gt; 如果主键本身发生修改，那么相关辅助索引中的主键值仍然需要更新。&#xD;
+&#xD;
+因此实际设计表结构时，也通常建议主键：&#xD;
+&#xD;
+```text&#xD;
+短&#xD;
+稳定&#xD;
+尽量不修改&#xD;
+```&#xD;
+&#xD;
+### 索引失效的常见情况&#xD;
+&#xD;
+所谓“索引失效”，通常是指查询条件无法有效利用已经建立的索引进行快速定位，MySQL 优化器可能因此选择全表扫描。&#xD;
+&#xD;
+常见情况主要有以下几类。&#xD;
+&#xD;
+#### LIKE 以通配符开头&#xD;
+&#xD;
+假设：&#xD;
+&#xD;
+```sql&#xD;
+CREATE INDEX idx_name&#xD;
+ON user(name);&#xD;
+```&#xD;
+&#xD;
+下面的查询通常可以使用索引：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE name LIKE 'Tom%';&#xD;
+```&#xD;
+&#xD;
+因为 B+ 树中的数据按照 `name` 排序，可以快速找到：&#xD;
+&#xD;
+```text&#xD;
+Tom...&#xD;
+```&#xD;
+&#xD;
+所在的位置。&#xD;
+&#xD;
+但是：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE name LIKE '%Tom';&#xD;
+```&#xD;
+&#xD;
+或者：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE name LIKE '_Tom';&#xD;
+```&#xD;
+&#xD;
+由于第一个字符无法确定，无法直接确定 B+ 树从哪里开始查找，因此通常无法利用普通 B+ 树索引快速定位。&#xD;
+&#xD;
+可以简单理解为：&#xD;
+&#xD;
+```text&#xD;
+LIKE 'Tom%'   → 知道从 Tom 开始找&#xD;
+&#xD;
+LIKE '%Tom'   → 不知道从哪里开始找&#xD;
+```&#xD;
+&#xD;
+#### 复合索引不满足最左前缀原则&#xD;
+&#xD;
+假设存在复合索引：&#xD;
+&#xD;
+```sql&#xD;
+CREATE INDEX idx_name_age&#xD;
+ON user(name, age);&#xD;
+```&#xD;
+&#xD;
+B+ 树首先按照：&#xD;
+&#xD;
+```text&#xD;
+name&#xD;
+```&#xD;
+&#xD;
+排序，在 `name` 相同的情况下，再按照：&#xD;
+&#xD;
+```text&#xD;
+age&#xD;
+```&#xD;
+&#xD;
+排序。&#xD;
+&#xD;
+因此：&#xD;
+&#xD;
+```sql&#xD;
+WHERE name = 'Tom'&#xD;
+```&#xD;
+&#xD;
+可以有效使用索引。&#xD;
+&#xD;
+```sql&#xD;
+WHERE name = 'Tom'&#xD;
+  AND age = 20&#xD;
+```&#xD;
+&#xD;
+也可以有效使用索引。&#xD;
+&#xD;
+但是：&#xD;
+&#xD;
+```sql&#xD;
+WHERE age = 20&#xD;
+```&#xD;
+&#xD;
+无法直接按照这棵复合索引的排序方式快速定位。&#xD;
+&#xD;
+可以理解为：&#xD;
+&#xD;
+```text&#xD;
+(name, age)&#xD;
+&#xD;
+先按照 name 排序&#xD;
+↓&#xD;
+name 相同&#xD;
+↓&#xD;
+再按照 age 排序&#xD;
+```&#xD;
+&#xD;
+因此如果跳过 `name`，直接查询 `age`，通常无法有效利用这个复合索引。&#xD;
+&#xD;
+这就是：&#xD;
+&#xD;
+```text&#xD;
+最左前缀原则&#xD;
+```&#xD;
+&#xD;
+#### OR 中存在无法使用索引的条件&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```sql&#xD;
+CREATE INDEX idx_name&#xD;
+ON user(name);&#xD;
+```&#xD;
+&#xD;
+执行：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE name = 'Tom'&#xD;
+   OR age = 20;&#xD;
+```&#xD;
+&#xD;
+其中：&#xD;
+&#xD;
+```text&#xD;
+name → 有索引&#xD;
+age  → 没有索引&#xD;
+```&#xD;
+&#xD;
+为了找到：&#xD;
+&#xD;
+```text&#xD;
+age = 20&#xD;
+```&#xD;
+&#xD;
+的数据，MySQL 可能仍然需要扫描大量数据。&#xD;
+&#xD;
+在某些情况下，优化器就可能认为：&#xD;
+&#xD;
+```text&#xD;
+直接全表扫描&#xD;
+```&#xD;
+&#xD;
+比：&#xD;
+&#xD;
+```text&#xD;
+索引查询 + 额外扫描&#xD;
+```&#xD;
+&#xD;
+成本更低，从而放弃使用索引。&#xD;
+&#xD;
+因此更准确的说法是：&#xD;
+&#xD;
+&gt; `OR` 本身不会必然导致索引失效，但如果 `OR` 两侧存在无法有效使用索引的条件，MySQL 可能选择全表扫描。&#xD;
+&#xD;
+### 其他常见的索引失效或无法充分利用索引的情况&#xD;
+&#xD;
+除了上面三种情况，面试中还经常会问到以下几类。&#xD;
+&#xD;
+#### 对索引列进行函数运算&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```sql&#xD;
+CREATE INDEX idx_create_time&#xD;
+ON user(create_time);&#xD;
+```&#xD;
+&#xD;
+执行：&#xD;
+&#xD;
+```sql&#xD;
+WHERE YEAR(create_time) = 2026&#xD;
+```&#xD;
+&#xD;
+由于对索引列进行了函数计算，普通索引通常无法直接按照原始 `create_time` 的排序关系进行快速定位。&#xD;
+&#xD;
+更适合写成：&#xD;
+&#xD;
+```sql&#xD;
+WHERE create_time &gt;= '2026-01-01'&#xD;
+  AND create_time &lt; '2027-01-01'&#xD;
+```&#xD;
+&#xD;
+#### 对索引列进行计算&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```sql&#xD;
+WHERE age + 1 = 21;&#xD;
+```&#xD;
+&#xD;
+相比：&#xD;
+&#xD;
+```sql&#xD;
+WHERE age = 20;&#xD;
+```&#xD;
+&#xD;
+前者通常更难直接利用 `age` 索引进行定位。&#xD;
+&#xD;
+#### 出现隐式类型转换&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```sql&#xD;
+phone VARCHAR(20)&#xD;
+```&#xD;
+&#xD;
+并且：&#xD;
+&#xD;
+```sql&#xD;
+CREATE INDEX idx_phone&#xD;
+ON user(phone);&#xD;
+```&#xD;
+&#xD;
+正确写法：&#xD;
+&#xD;
+```sql&#xD;
+WHERE phone = '13800138000';&#xD;
+```&#xD;
+&#xD;
+如果写成：&#xD;
+&#xD;
+```sql&#xD;
+WHERE phone = 13800138000;&#xD;
+```&#xD;
+&#xD;
+可能发生隐式类型转换，从而影响索引的使用。&#xD;
+&#xD;
+### 面试回答&#xD;
+&#xD;
+InnoDB 中主要有聚簇索引和非聚簇索引&#xD;
+&#xD;
+聚簇索引，存放索引与数据，如：主键索引；而非聚簇索引，则主要存放非聚簇索引列和对应的主键值。&#xD;
+&#xD;
+因此通过非聚簇索引查询完整数据时，通常先查询非聚簇索引的 B+ 树得到主键，再根据主键查询聚簇索引。如果查询需要的字段都已经包含在辅助索引中，则可以通过覆盖索引避免回表。&#xD;
+&#xD;
+辅助索引之所以存储主键，而不是直接保存数据的物理地址，是因为 InnoDB 中数据页可能由于插入、删除、页分裂等操作发生位置变化，而主键作为逻辑标识更加稳定，可以降低多个辅助索引的维护成本。&#xD;
+&#xD;
+常见的索引无法有效使用的情况包括：`LIKE` 以通配符开头、复合索引不满足最左前缀原则、`OR` 中存在无法使用索引的条件&#xD;
+&#xD;
+## 事务&#xD;
+&#xD;
+&gt; [MYSQL事务基本概念1_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1HW4y1x7FY?spm_id_from=333.788.videopod.sections&amp;vd_source=8c5774f0412cfb872126f5a44585db4f)&#xD;
+&gt;&#xD;
+&gt; [面试官：说说MVCC？ 事务隔离级别实现原理是什么？_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Hr421p7EK/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f)&#xD;
+&#xD;
+事务（Transaction）可以理解为：**将一组数据库操作看作一个整体，这些操作要么全部成功，要么全部失败**&#xD;
+&#xD;
+例如转账：&#xD;
+&#xD;
+```sql&#xD;
+START TRANSACTION;&#xD;
+&#xD;
+UPDATE account&#xD;
+SET balance = balance - 100&#xD;
+WHERE id = 1;&#xD;
+&#xD;
+UPDATE account&#xD;
+SET balance = balance + 100&#xD;
+WHERE id = 2;&#xD;
+&#xD;
+COMMIT;&#xD;
+```&#xD;
+&#xD;
+一次转账包含两个操作：&#xD;
+&#xD;
+```text&#xD;
+账户 A -100&#xD;
+账户 B +100&#xD;
+```&#xD;
+&#xD;
+这两个操作必须同时成功。&#xD;
+&#xD;
+如果第二条 SQL 执行失败，就应该回滚第一条 SQL：&#xD;
+&#xD;
+```sql&#xD;
+ROLLBACK;&#xD;
+```&#xD;
+&#xD;
+否则可能出现：&#xD;
+&#xD;
+```text&#xD;
+A 已经扣钱&#xD;
+B 却没有收到钱&#xD;
+```&#xD;
+&#xD;
+因此事务的核心目标就是保证一组相关操作的正确性。&#xD;
+&#xD;
+#### 事务的四大特性&#xD;
+&#xD;
+事务具有四个基本特性，简称 **ACID**。&#xD;
+&#xD;
+| 特性   | 英文        | 含义                                                         |&#xD;
+| ------ | ----------- | ------------------------------------------------------------ |&#xD;
+| 原子性 | Atomicity   | 一个事务中的操作要么全部成功，要么全部失败                   |&#xD;
+| 一致性 | Consistency | 事务执行前后，数据库都应该处于合法、一致的状态               |&#xD;
+| 隔离性 | Isolation   | 多个事务并发执行时，相互之间尽量不产生不正确的影响           |&#xD;
+| 持久性 | Durability  | 事务提交后，数据修改应该被永久保存，即使数据库发生故障也能够恢复 |&#xD;
+&#xD;
+### 隔离级别&#xD;
+&#xD;
+| 隔离级别         | 脏读 | 不可重复读 | 幻读                          |&#xD;
+| ---------------- | ---- | ---------- | ----------------------------- |&#xD;
+| Read Uncommitted | 可能 | 可能       | 可能                          |&#xD;
+| Read Committed   | 避免 | 可能       | 可能                          |&#xD;
+| Repeatable Read  | 避免 | 避免       | InnoDB 通过 MVCC + 锁机制处理 |&#xD;
+| Serializable     | 避免 | 避免       | 避免                          |&#xD;
+&#xD;
+MySQL InnoDB 默认：&#xD;
+&#xD;
+```&#xD;
+Repeatable Read&#xD;
+```&#xD;
+&#xD;
+为什么需要事务隔离级别？核心原因是：&#xD;
+&#xD;
+```text&#xD;
+并发&#xD;
+```&#xD;
+&#xD;
+如果数据库中只有一个事务执行，那么通常不会发生事务之间的数据干扰，但实际系统中可能同时存在：&#xD;
+&#xD;
+```text&#xD;
+事务 A&#xD;
+事务 B&#xD;
+事务 C&#xD;
+...&#xD;
+```&#xD;
+&#xD;
+多个事务同时读取、修改同一批数据，如果完全不进行隔离，就可能出现：&#xD;
+&#xD;
+```text&#xD;
+脏读&#xD;
+不可重复读&#xD;
+幻读&#xD;
+```&#xD;
+&#xD;
+因此 SQL 标准定义了不同的事务隔离级别，从低到高分别为：&#xD;
+&#xD;
+```text&#xD;
+读未提交&#xD;
+↓&#xD;
+读已提交&#xD;
+↓&#xD;
+可重复读&#xD;
+↓&#xD;
+串行化&#xD;
+```&#xD;
+&#xD;
+隔离级别越高：&#xD;
+&#xD;
+```text&#xD;
+数据隔离能力越强&#xD;
+```&#xD;
+&#xD;
+但通常也意味着：&#xD;
+&#xD;
+```text&#xD;
+并发性能可能越低&#xD;
+```&#xD;
+&#xD;
+### 读未提交 Read Uncommitted&#xD;
+&#xD;
+读未提交是隔离程度最低的隔离级别。&#xD;
+&#xD;
+假设：&#xD;
+&#xD;
+```MySQL&#xD;
+初始：&#xD;
+&#xD;
+id = 1&#xD;
+balance = 100&#xD;
+```&#xD;
+&#xD;
+事务 A：&#xD;
+&#xD;
+```MySQL&#xD;
+START TRANSACTION;&#xD;
+&#xD;
+UPDATE account&#xD;
+SET balance = 50&#xD;
+WHERE id = 1;&#xD;
+```&#xD;
+&#xD;
+但是此时：&#xD;
+&#xD;
+```&#xD;
+事务 A 还没有 COMMIT&#xD;
+```&#xD;
+&#xD;
+如果事务 B 可以直接读取：&#xD;
+&#xD;
+```MySQL&#xD;
+SELECT balance&#xD;
+FROM account&#xD;
+WHERE id = 1;&#xD;
+```&#xD;
+&#xD;
+得到：&#xD;
+&#xD;
+```&#xD;
+50&#xD;
+```&#xD;
+&#xD;
+随后事务 A：&#xD;
+&#xD;
+```MySQL&#xD;
+ROLLBACK;&#xD;
+```&#xD;
+&#xD;
+数据重新恢复：&#xD;
+&#xD;
+```MySQL&#xD;
+balance = 100&#xD;
+```&#xD;
+&#xD;
+那么事务 B 曾经读取到的：&#xD;
+&#xD;
+```&#xD;
+50&#xD;
+```&#xD;
+&#xD;
+实际上是一个从未真正提交的数据。&#xD;
+&#xD;
+这种现象称为：&#xD;
+&#xD;
+```&#xD;
+脏读 Dirty Read&#xD;
+```&#xD;
+&#xD;
+即：&#xD;
+&#xD;
+&gt; 一个事务读取到了另一个事务尚未提交的数据&#xD;
+&#xD;
+### 读已提交 Read Committed&#xD;
+&#xD;
+读已提交解决了脏读问题。&#xD;
+&#xD;
+一个事务只能读取其他事务：&#xD;
+&#xD;
+```&#xD;
+已经 COMMIT&#xD;
+```&#xD;
+&#xD;
+的数据。&#xD;
+&#xD;
+例如初始数据：&#xD;
+&#xD;
+```，MySQL&#xD;
+balance = 100&#xD;
+```&#xD;
+&#xD;
+事务 B：&#xD;
+&#xD;
+```MySQL&#xD;
+START TRANSACTION;&#xD;
+&#xD;
+SELECT balance&#xD;
+FROM account&#xD;
+WHERE id = 1;&#xD;
+```&#xD;
+&#xD;
+得到：&#xD;
+&#xD;
+```&#xD;
+100&#xD;
+```&#xD;
+&#xD;
+此时事务 A：&#xD;
+&#xD;
+```MySQL&#xD;
+START TRANSACTION;&#xD;
+&#xD;
+UPDATE account&#xD;
+SET balance = 200&#xD;
+WHERE id = 1;&#xD;
+&#xD;
+COMMIT;&#xD;
+```&#xD;
+&#xD;
+事务 B 再次执行：&#xD;
+&#xD;
+```MySQL&#xD;
+SELECT balance&#xD;
+FROM account&#xD;
+WHERE id = 1;&#xD;
+```&#xD;
+&#xD;
+得到：&#xD;
+&#xD;
+```&#xD;
+200&#xD;
+```&#xD;
+&#xD;
+对于事务 B：&#xD;
+&#xD;
+```&#xD;
+第一次读取 → 100&#xD;
+&#xD;
+第二次读取 → 200&#xD;
+```&#xD;
+&#xD;
+同一个事务中，对同一条数据进行两次相同查询，却得到了不同结果。&#xD;
+&#xD;
+这种现象称为：&#xD;
+&#xD;
+```&#xD;
+不可重复读 Non-Repeatable Read&#xD;
+```&#xD;
+&#xD;
+即：&#xD;
+&#xD;
+&gt; 同一个事务中，多次读取同一条记录，由于其他事务进行了修改并提交，导致前后读取结果不一致&#xD;
+&#xD;
+### 可重复读 Repeatable Read&#xD;
+&#xD;
+InnoDB 默认使用：&#xD;
+&#xD;
+```&#xD;
+Repeatable Read&#xD;
+```&#xD;
+&#xD;
+也就是可重复读。&#xD;
+&#xD;
+它解决了：&#xD;
+&#xD;
+```&#xD;
+脏读&#xD;
+不可重复读&#xD;
+```&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```&#xD;
+balance = 100&#xD;
+```&#xD;
+&#xD;
+事务 B：&#xD;
+&#xD;
+```MySQL&#xD;
+START TRANSACTION;&#xD;
+&#xD;
+SELECT balance&#xD;
+FROM account&#xD;
+WHERE id = 1;&#xD;
+```&#xD;
+&#xD;
+得到：&#xD;
+&#xD;
+```&#xD;
+100&#xD;
+```&#xD;
+&#xD;
+此时事务 A：&#xD;
+&#xD;
+```MySQL&#xD;
+UPDATE account&#xD;
+SET balance = 200&#xD;
+WHERE id = 1;&#xD;
+&#xD;
+COMMIT;&#xD;
+```&#xD;
+&#xD;
+事务 B 再次进行相同的普通查询：&#xD;
+&#xD;
+```MySQL&#xD;
+SELECT balance&#xD;
+FROM account&#xD;
+WHERE id = 1;&#xD;
+```&#xD;
+&#xD;
+仍然可以看到：&#xD;
+&#xD;
+```&#xD;
+100&#xD;
+```&#xD;
+&#xD;
+也就是说：&#xD;
+&#xD;
+```&#xD;
+事务 B 第一次读取 → 100&#xD;
+&#xD;
+事务 A 修改并提交 → 200&#xD;
+&#xD;
+事务 B 第二次读取 → 仍然是 100&#xD;
+```&#xD;
+&#xD;
+从事务 B 的视角来看，在自己的事务执行期间，看到的数据版本保持相对稳定。&#xD;
+&#xD;
+这就是：&#xD;
+&#xD;
+```&#xD;
+可重复读&#xD;
+```&#xD;
+&#xD;
+### 幻读 Phantom Read&#xD;
+&#xD;
+幻读主要关注的不是：&#xD;
+&#xD;
+```&#xD;
+某一行数据发生变化&#xD;
+```&#xD;
+&#xD;
+而是：&#xD;
+&#xD;
+```&#xD;
+满足某个查询条件的记录数量发生变化&#xD;
+```&#xD;
+&#xD;
+例如事务 A：&#xD;
+&#xD;
+```MySQL&#xD;
+START TRANSACTION;&#xD;
+&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age &gt; 20;&#xD;
+```&#xD;
+&#xD;
+第一次得到：&#xD;
+&#xD;
+```&#xD;
+10 条数据&#xD;
+```&#xD;
+&#xD;
+此时事务 B 插入：&#xD;
+&#xD;
+```MySQL&#xD;
+INSERT INTO user(id, name, age)&#xD;
+VALUES (100, 'Tom', 25);&#xD;
+&#xD;
+COMMIT;&#xD;
+```&#xD;
+&#xD;
+如果事务 A 再次执行：&#xD;
+&#xD;
+```MySQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age &gt; 20;&#xD;
+```&#xD;
+&#xD;
+突然看到：&#xD;
+&#xD;
+```&#xD;
+11 条数据&#xD;
+```&#xD;
+&#xD;
+就好像凭空多出了一条数据，因此称为：&#xD;
+&#xD;
+```&#xD;
+幻读&#xD;
+```&#xD;
+&#xD;
+### 串行化 Serializable&#xD;
+&#xD;
+Serializable 是隔离程度最高的事务隔离级别。&#xD;
+&#xD;
+它会对读取采取更加严格的加锁策略，使存在冲突的事务：&#xD;
+&#xD;
+```&#xD;
+等待&#xD;
+```&#xD;
+&#xD;
+从效果上来看，很多存在冲突的操作会趋近于：&#xD;
+&#xD;
+```&#xD;
+串行执行&#xD;
+```&#xD;
+&#xD;
+因此可以避免：&#xD;
+&#xD;
+```&#xD;
+脏读&#xD;
+不可重复读&#xD;
+幻读&#xD;
+```&#xD;
+&#xD;
+但代价也很明显：&#xD;
+&#xD;
+```&#xD;
+并发能力下降&#xD;
+锁竞争增加&#xD;
+事务阻塞增加&#xD;
+```&#xD;
+&#xD;
+因此普通业务系统中通常不会默认使用 Serializable。&#xD;
+&#xD;
+需要注意，Serializable 并不是说：&#xD;
+&#xD;
+```&#xD;
+整个数据库同一时刻只能运行一个事务&#xD;
+```&#xD;
+&#xD;
+而是数据库通过更加严格的锁控制，使存在数据冲突的事务按照安全顺序执行。&#xD;
+&#xD;
+### MVCC 多版本并发控制&#xD;
+&#xD;
+![image-20261008192937239](/blog-backup/blog-images/2026/10/08/image-20261008192937239.png)&#xD;
+&#xD;
+MVCC 全称：&#xD;
+&#xD;
+```&#xD;
+Multi-Version Concurrency Control&#xD;
+```&#xD;
+&#xD;
+即：&#xD;
+&#xD;
+```&#xD;
+多版本并发控制&#xD;
+```&#xD;
+&#xD;
+其核心思想是：&#xD;
+&#xD;
+&gt; 当一条数据被修改后，不需要立即让所有事务都只能看到最新版本，而是保留数据的历史版本，让不同事务根据自己的可见性规则读取对应版本的数据&#xD;
+&#xD;
+这样可以减少：&#xD;
+&#xD;
+```&#xD;
+读操作与写操作之间的锁竞争&#xD;
+```&#xD;
+&#xD;
+提高数据库的并发性能。&#xD;
+&#xD;
+### MVCC 的核心组成&#xD;
+&#xD;
+理解 MVCC 可以抓住三个核心结构：&#xD;
+&#xD;
+```&#xD;
+隐藏字段&#xD;
++&#xD;
+Undo Log 版本链&#xD;
++&#xD;
+Read View&#xD;
+```&#xD;
+&#xD;
+### 隐藏字段&#xD;
+&#xD;
+InnoDB 的记录中存在一些内部维护的隐藏字段，其中与 MVCC 密切相关的主要有：&#xD;
+&#xD;
+```&#xD;
+DB_TRX_ID&#xD;
+DB_ROLL_PTR&#xD;
+```&#xD;
+&#xD;
+其中：&#xD;
+&#xD;
+```&#xD;
+DB_TRX_ID&#xD;
+```&#xD;
+&#xD;
+记录最近一次修改当前数据的事务 ID。&#xD;
+&#xD;
+而：&#xD;
+&#xD;
+```&#xD;
+DB_ROLL_PTR&#xD;
+```&#xD;
+&#xD;
+指向 Undo Log 中上一版本的数据。&#xD;
+&#xD;
+因此一条数据经过多次修改后，可以形成类似：&#xD;
+&#xD;
+```&#xD;
+当前版本&#xD;
+    ↓&#xD;
+历史版本 1&#xD;
+    ↓&#xD;
+历史版本 2&#xD;
+    ↓&#xD;
+历史版本 3&#xD;
+```&#xD;
+&#xD;
+这样的版本链。&#xD;
+&#xD;
+### Undo Log 版本链&#xD;
+&#xD;
+假设最开始：&#xD;
+&#xD;
+```&#xD;
+name = Tom&#xD;
+```&#xD;
+&#xD;
+事务 10 修改为：&#xD;
+&#xD;
+```&#xD;
+name = Jack&#xD;
+```&#xD;
+&#xD;
+随后事务 20 修改为：&#xD;
+&#xD;
+```&#xD;
+name = Bob&#xD;
+```&#xD;
+&#xD;
+从逻辑上可以理解为：&#xD;
+&#xD;
+```&#xD;
+当前记录：&#xD;
+&#xD;
+name = Bob&#xD;
+trx_id = 20&#xD;
+    │&#xD;
+    │ roll_ptr&#xD;
+    ↓&#xD;
+&#xD;
+Undo Log：&#xD;
+&#xD;
+name = Jack&#xD;
+trx_id = 10&#xD;
+    │&#xD;
+    ↓&#xD;
+&#xD;
+name = Tom&#xD;
+trx_id = ...&#xD;
+```&#xD;
+&#xD;
+因此数据库中存在：&#xD;
+&#xD;
+```&#xD;
+Bob&#xD;
+Jack&#xD;
+Tom&#xD;
+```&#xD;
+&#xD;
+多个历史版本。&#xD;
+&#xD;
+需要注意：&#xD;
+&#xD;
+&gt; 并不是所有版本都完整地直接存放在数据页中，当前版本位于数据页中，而旧版本主要通过 Undo Log 串联形成版本链&#xD;
+&#xD;
+### Read View&#xD;
+&#xD;
+有了多个数据版本，还存在一个关键问题：&#xD;
+&#xD;
+```&#xD;
+当前事务到底应该读取哪个版本？&#xD;
+```&#xD;
+&#xD;
+这就是：&#xD;
+&#xD;
+```&#xD;
+Read View&#xD;
+```&#xD;
+&#xD;
+负责解决的问题。&#xD;
+&#xD;
+Read View 可以理解为：&#xD;
+&#xD;
+&gt; 某个事务进行快照读时，用来判断哪些事务产生的数据版本对自己可见的一套规则&#xD;
+&#xD;
+因此 Read View 并不是：&#xD;
+&#xD;
+```&#xD;
+直接复制一份完整数据库数据&#xD;
+```&#xD;
+&#xD;
+而更接近：&#xD;
+&#xD;
+```&#xD;
+保存事务状态信息&#xD;
++&#xD;
+根据事务 ID 判断数据版本是否可见&#xD;
+```&#xD;
+&#xD;
+查询数据时：&#xD;
+&#xD;
+```&#xD;
+读取当前版本&#xD;
+↓&#xD;
+根据 Read View 判断是否可见&#xD;
+↓&#xD;
+可见 → 返回&#xD;
+↓&#xD;
+不可见&#xD;
+↓&#xD;
+沿 Undo Log 版本链向前寻找&#xD;
+↓&#xD;
+直到找到可见版本&#xD;
+```&#xD;
+&#xD;
+#### Read Committed 与 Repeatable Read 的区别&#xD;
+&#xD;
+MVCC 正是实现：&#xD;
+&#xD;
+```&#xD;
+Read Committed&#xD;
+Repeatable Read&#xD;
+```&#xD;
+&#xD;
+的重要机制。&#xD;
+&#xD;
+两者最大的区别之一就是：&#xD;
+&#xD;
+```&#xD;
+Read View 的创建时机不同&#xD;
+```&#xD;
+&#xD;
+##### Read Committed&#xD;
+&#xD;
+在 Read Committed 中：&#xD;
+&#xD;
+```&#xD;
+每一次快照读&#xD;
+```&#xD;
+&#xD;
+通常都会重新创建 Read View。&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```&#xD;
+事务 B 第一次查询&#xD;
+↓&#xD;
+创建 Read View 1&#xD;
+↓&#xD;
+读取 name = Tom&#xD;
+&#xD;
+事务 A 修改 Tom → Jack&#xD;
+↓&#xD;
+COMMIT&#xD;
+&#xD;
+事务 B 第二次查询&#xD;
+↓&#xD;
+重新创建 Read View 2&#xD;
+↓&#xD;
+Jack 已经提交&#xD;
+↓&#xD;
+读取 name = Jack&#xD;
+```&#xD;
+&#xD;
+所以：&#xD;
+&#xD;
+```&#xD;
+第一次 → Tom&#xD;
+&#xD;
+第二次 → Jack&#xD;
+```&#xD;
+&#xD;
+这就可能产生：&#xD;
+&#xD;
+```&#xD;
+不可重复读&#xD;
+```&#xD;
+&#xD;
+##### Repeatable Read&#xD;
+&#xD;
+在 Repeatable Read 中：&#xD;
+&#xD;
+```&#xD;
+第一次快照读&#xD;
+```&#xD;
+&#xD;
+会创建 Read View。&#xD;
+&#xD;
+后续快照读通常继续：&#xD;
+&#xD;
+```&#xD;
+复用这个 Read View&#xD;
+```&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```&#xD;
+事务 B 第一次查询&#xD;
+↓&#xD;
+创建 Read View&#xD;
+↓&#xD;
+读取 Tom&#xD;
+&#xD;
+事务 A&#xD;
+↓&#xD;
+修改 Tom → Jack&#xD;
+↓&#xD;
+COMMIT&#xD;
+&#xD;
+事务 B 第二次查询&#xD;
+↓&#xD;
+继续使用原来的 Read View&#xD;
+↓&#xD;
+Jack 对当前 Read View 不可见&#xD;
+↓&#xD;
+沿 Undo Log 查找旧版本&#xD;
+↓&#xD;
+找到 Tom&#xD;
+```&#xD;
+&#xD;
+因此：&#xD;
+&#xD;
+```&#xD;
+第一次 → Tom&#xD;
+&#xD;
+第二次 → Tom&#xD;
+```&#xD;
+&#xD;
+实现：&#xD;
+&#xD;
+```&#xD;
+可重复读&#xD;
+```&#xD;
+&#xD;
+需要特别注意：&#xD;
+&#xD;
+&gt; Repeatable Read 的 Read View 通常不是在 `START TRANSACTION` 的瞬间创建，而是在第一次普通快照读时创建&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```&#xD;
+START TRANSACTION;&#xD;
+&#xD;
+-- 此时通常还没有建立快照读使用的 Read View&#xD;
+&#xD;
+SELECT * FROM user;&#xD;
+&#xD;
+-- 第一次快照读时创建 Read View&#xD;
+```&#xD;
+&#xD;
+### MVCC 为什么并发性能更高&#xD;
+&#xD;
+如果不使用 MVCC，为了保证事务读取的数据不发生变化，一种简单方式就是：&#xD;
+&#xD;
+```&#xD;
+读数据&#xD;
+↓&#xD;
+加锁&#xD;
+↓&#xD;
+其他事务不能修改&#xD;
+↓&#xD;
+事务结束&#xD;
+↓&#xD;
+释放锁&#xD;
+```&#xD;
+&#xD;
+这样容易出现：&#xD;
+&#xD;
+```&#xD;
+事务 A 读数据&#xD;
+↓&#xD;
+事务 B 等待&#xD;
+&#xD;
+事务 C 也等待&#xD;
+```&#xD;
+&#xD;
+并发能力受到影响。&#xD;
+&#xD;
+而 MVCC 的思路是：&#xD;
+&#xD;
+```&#xD;
+事务 A → 读取旧版本&#xD;
+&#xD;
+事务 B → 修改并提交新版本&#xD;
+```&#xD;
+&#xD;
+两者在很多情况下可以同时进行。&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```&#xD;
+数据库当前：&#xD;
+&#xD;
+Tom&#xD;
+```&#xD;
+&#xD;
+事务 A 开始读取：&#xD;
+&#xD;
+```&#xD;
+Tom&#xD;
+```&#xD;
+&#xD;
+事务 B：&#xD;
+&#xD;
+```&#xD;
+Tom → Jack&#xD;
+COMMIT&#xD;
+```&#xD;
+&#xD;
+事务 A 后续仍然可以：&#xD;
+&#xD;
+```&#xD;
+通过 Undo Log&#xD;
+↓&#xD;
+读取 Tom&#xD;
+```&#xD;
+&#xD;
+而新的事务可以读取：&#xD;
+&#xD;
+```&#xD;
+Jack&#xD;
+```&#xD;
+&#xD;
+因此不同事务可以：&#xD;
+&#xD;
+```&#xD;
+读取不同的数据版本&#xD;
+```&#xD;
+&#xD;
+而不是所有读操作都必须通过加锁互相等待。&#xD;
+&#xD;
+这也是 MVCC 的核心优势：&#xD;
+&#xD;
+```&#xD;
+读写并发&#xD;
+↓&#xD;
+减少锁竞争&#xD;
+↓&#xD;
+提高数据库并发性能&#xD;
+```&#xD;
+&#xD;
+不过需要注意：&#xD;
+&#xD;
+&gt; MVCC 主要作用于快照读，并不意味着 MySQL 的事务完全不需要锁&#xD;
+&#xD;
+对于：&#xD;
+&#xD;
+```&#xD;
+SELECT ... FOR UPDATE;&#xD;
+UPDATE ...&#xD;
+DELETE ...&#xD;
+```&#xD;
+&#xD;
+等当前读和写操作，InnoDB 仍然需要使用行锁、间隙锁、Next-Key Lock 等锁机制。&#xD;
+&#xD;
+### 面试回答&#xD;
+&#xD;
+事务是一组要么全部成功、要么全部失败的数据库操作，具有 ACID 四个特性，分别是原子性、一致性、隔离性和持久性。&#xD;
+&#xD;
+由于数据库中多个事务会并发执行，所以存在脏读、不可重复读和幻读等问题，因此数据库提供了 Read Uncommitted、Read Committed、Repeatable Read 和 Serializable 四种隔离级别，InnoDB 默认使用 Repeatable Read。&#xD;
+&#xD;
+InnoDB 中 Read Committed 和 Repeatable Read 主要通过 MVCC 实现。MVCC 的核心由 Undo Log 版本链、记录中的事务信息以及 Read View 组成。数据发生修改后，旧版本通过 Undo Log 保存并形成版本链，事务进行快照读时通过 Read View 判断哪个版本对当前事务可见。&#xD;
+&#xD;
+Read Committed 通常每次快照读都会创建新的 Read View，因此可能读取到其他事务最新提交的数据，产生不可重复读；Repeatable Read 通常在第一次快照读时创建 Read View，后续继续复用，因此可以保证同一个事务中的多次快照读看到相对一致的数据。&#xD;
+&#xD;
+MVCC 允许不同事务读取同一条数据的不同版本，减少了读写之间的锁竞争，因此相比所有读取都依赖加锁，能够提供更高的并发性能。&#xD;
+&#xD;
+不过 MVCC 主要解决快照读的问题，对于 UPDATE、DELETE、SELECT FOR UPDATE 等当前读操作，InnoDB 仍然需要结合行锁、间隙锁和 Next-Key Lock 等机制保证事务隔离。&#xD;
+&#xD;
+## MySQL 锁&#xD;
+&#xD;
+MySQL 中的锁可以从锁粒度、读写类型、加锁思想等不同角度进行分类，而 InnoDB 在此基础上还实现了记录锁、间隙锁、临键锁等更细粒度的锁机制&#xD;
+&#xD;
+#### 按锁粒度分类&#xD;
+&#xD;
+| 锁类型 | 锁定范围       | 典型场景              | 特点                       |&#xD;
+| ------ | -------------- | --------------------- | -------------------------- |&#xD;
+| 全局锁 | 整个数据库实例 | 全库备份              | 锁粒度最大，对业务影响较大 |&#xD;
+| 表锁   | 整张表         | MyISAM、部分 DDL 操作 | 开销较小，但并发能力较弱   |&#xD;
+| 行锁   | 索引记录       | InnoDB 并发读写       | 粒度小，并发能力较强       |&#xD;
+&#xD;
+全局锁可以通过：&#xD;
+&#xD;
+```sql&#xD;
+FLUSH TABLES WITH READ LOCK;&#xD;
+```&#xD;
+&#xD;
+将整个实例设置为只读状态，对于全部使用 InnoDB 的数据库进行逻辑备份时，一般更推荐：&#xD;
+&#xD;
+```bash&#xD;
+mysqldump --single-transaction&#xD;
+```&#xD;
+&#xD;
+它利用 InnoDB 的 MVCC 获取一致性快照，通常无需长时间阻塞正常写操作&#xD;
+&#xD;
+#### 按读写类型分类&#xD;
+&#xD;
+| 锁类型 | 英文                   | 作用                                                         | 常见语法     |&#xD;
+| ------ | ---------------------- | ------------------------------------------------------------ | ------------ |&#xD;
+| 共享锁 | Shared Lock，S Lock    | 多个事务可以同时持有共享锁，但会阻止其他事务获得冲突的排他锁 | `FOR SHARE`  |&#xD;
+| 排他锁 | Exclusive Lock，X Lock | 当前事务独占该记录，阻止其他事务对其进行冲突的加锁读或修改   | `FOR UPDATE` |&#xD;
+&#xD;
+共享锁：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE id = 1&#xD;
+FOR SHARE;&#xD;
+```&#xD;
+&#xD;
+排他锁：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE id = 1&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+需要注意：&#xD;
+&#xD;
+&gt; 排他锁并不意味着其他事务完全无法读取该数据&#xD;
+&#xD;
+其他事务的普通 `SELECT` 通常属于 MVCC 快照读，仍然可以读取符合其 Read View 的版本，排他锁主要会阻塞其他事务的：&#xD;
+&#xD;
+```sql&#xD;
+UPDATE&#xD;
+DELETE&#xD;
+SELECT ... FOR UPDATE&#xD;
+```&#xD;
+&#xD;
+等存在锁冲突的操作&#xD;
+&#xD;
+因此：&#xD;
+&#xD;
+```sql&#xD;
+SELECT ... FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+可以理解为：&#xD;
+&#xD;
+&gt; 当前虽然执行的是读取，但以“准备修改”的方式对数据加排他锁&#xD;
+&#xD;
+#### 按加锁思想分类&#xD;
+&#xD;
+| 类型   | 核心思想                               | 特点                             |&#xD;
+| ------ | -------------------------------------- | -------------------------------- |&#xD;
+| 悲观锁 | 假设并发冲突很可能发生，操作前先加锁   | 数据一致性强，但可能降低并发     |&#xD;
+| 乐观锁 | 假设冲突较少，更新时再检测是否发生冲突 | 并发能力较好，通常通过版本号实现 |&#xD;
+&#xD;
+例如乐观锁可以设计：&#xD;
+&#xD;
+```sql&#xD;
+UPDATE product&#xD;
+SET stock = stock - 1,&#xD;
+    version = version + 1&#xD;
+WHERE id = 1&#xD;
+  AND version = 5;&#xD;
+```&#xD;
+&#xD;
+若 `version` 已经发生变化，则更新失败，由业务决定是否重试&#xD;
+&#xD;
+## InnoDB 常见锁&#xD;
+&#xD;
+| 锁类型 | 锁定对象               | 主要作用                             |&#xD;
+| ------ | ---------------------- | ------------------------------------ |&#xD;
+| 意向锁 | 表                     | 快速判断表中是否存在与表锁冲突的行锁 |&#xD;
+| 记录锁 | 已存在的索引记录       | 防止已有记录被并发修改               |&#xD;
+| 间隙锁 | 两条索引记录之间的间隙 | 防止其他事务向间隙插入新记录         |&#xD;
+| 临键锁 | 记录 + 前方间隙        | 同时锁住已有记录和插入空间           |&#xD;
+&#xD;
+### 意向锁&#xD;
+&#xD;
+假设事务 A 已经为某一行加了排他锁：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE id = 10&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+此时事务 B 想给整个表加一个与之冲突的表锁，需要判断：&#xD;
+&#xD;
+&gt; 当前表中是否存在已经被锁住的记录？&#xD;
+&#xD;
+如果没有意向锁，就可能需要遍历检查是否存在行锁，因此 InnoDB 在事务获得行级共享锁或排他锁时，会同时在表级别设置对应的意向锁&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```text&#xD;
+行级共享锁&#xD;
+    ↓&#xD;
+表级意向共享锁 IS&#xD;
+&#xD;
+行级排他锁&#xD;
+    ↓&#xD;
+表级意向排他锁 IX&#xD;
+```&#xD;
+&#xD;
+这样其他事务申请表锁时，可以先检查表上的意向锁，而不需要逐条检查所有记录，效率提升&#xD;
+&#xD;
+### 记录锁、间隙锁与临键锁&#xD;
+&#xD;
+假设索引数据为：&#xD;
+&#xD;
+```text&#xD;
+10    20    30    40&#xD;
+```&#xD;
+&#xD;
+| 锁类型 | 示例      | 锁定内容                   | 是否阻止区间插入 |&#xD;
+| ------ | --------- | -------------------------- | ---------------- |&#xD;
+| 记录锁 | `[30]`    | 已存在的 `30`              | 否               |&#xD;
+| 间隙锁 | `(20,30)` | 20 与 30 之间的空隙        | 是               |&#xD;
+| 临键锁 | `(20,30]` | 间隙 `(20,30)` + 记录 `30` | 是               |&#xD;
+&#xD;
+临键锁 `Next-Key Lock` 本质上可以理解为：&#xD;
+&#xD;
+```text&#xD;
+Next-Key Lock&#xD;
+=&#xD;
+Gap Lock&#xD;
++&#xD;
+Record Lock&#xD;
+```&#xD;
+&#xD;
+通常表现为左开右闭区间：&#xD;
+&#xD;
+```text&#xD;
+(20,30]&#xD;
+```&#xD;
+&#xD;
+其中：&#xD;
+&#xD;
+```text&#xD;
+(20,30) → Gap Lock&#xD;
+30      → Record Lock&#xD;
+```&#xD;
+&#xD;
+## innodb为什么需要间隙锁、临界锁&#xD;
+&#xD;
+背景：通过主键进行精确查询时，此时innodb会自动添加记录锁（行锁），如果是范围查询直接为该范围内的所有数据添加记录锁不就行了吗？为什么还细分为间隙锁、临界锁？&#xD;
+&#xD;
+因为，记录锁只能为已经存在的数据加锁，而间隙锁、临界锁可以为区间进行加锁，举例：user 表存在以下数据&#xD;
+&#xD;
+| id   | age  |&#xD;
+| ---- | ---- |&#xD;
+| 1    | 10   |&#xD;
+| 2    | 20   |&#xD;
+| 3    | 30   |&#xD;
+&#xD;
+其中，`age` 添加了索引，此时事务A进行范围查询：&#xD;
+&#xD;
+```sql&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age BETWEEN 20 AND 30&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+`FOR UPDATE` 是排它锁（写锁），会进行加锁，若只为范围内的所有数据添加记录锁，那么加锁的数据只有两个：&#xD;
+&#xD;
+```&#xD;
+age = 20&#xD;
+age = 30&#xD;
+```&#xD;
+&#xD;
+此时会产生问题，当事务 B 执行：&#xD;
+&#xD;
+```MySQL&#xD;
+INSERT INTO user(age) VALUES (25);&#xD;
+```&#xD;
+&#xD;
+`25` 这条记录原本不存在，所以事务 A 根本没有任何“记录”可以锁住它，于是事务 B 可以插入：&#xD;
+&#xD;
+```&#xD;
+10    20    25    30 &#xD;
+```&#xD;
+&#xD;
+此时事务 A 再执行：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age BETWEEN 20 AND 30&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+结果就从：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+变成：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+25&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+这就是典型的幻读，因此：&#xD;
+&#xD;
+&gt; 记录锁无法锁住“尚不存在的数据”&#xD;
+&#xD;
+这就是间隙锁存在的根本原因&#xD;
+&#xD;
+### 记录锁解决什么问题&#xD;
+&#xD;
+记录锁 `Record Lock` 锁的是：&#xD;
+&#xD;
+&gt; 索引中已经存在的某条记录&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE id = 10&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+如果：&#xD;
+&#xD;
+```SQL&#xD;
+id = 10&#xD;
+```&#xD;
+&#xD;
+确实存在，那么 InnoDB 可以直接锁住这条索引记录：&#xD;
+&#xD;
+```&#xD;
+... 9 | [10] | 11 ...&#xD;
+         ↑&#xD;
+       记录锁&#xD;
+```&#xD;
+&#xD;
+其他事务不能：&#xD;
+&#xD;
+```SQL&#xD;
+UPDATE user SET ... WHERE id = 10;&#xD;
+DELETE FROM user WHERE id = 10;&#xD;
+```&#xD;
+&#xD;
+但它并不会阻止：&#xD;
+&#xD;
+```SQL&#xD;
+INSERT id = 9&#xD;
+INSERT id = 11&#xD;
+```&#xD;
+&#xD;
+如果查询本身只是唯一键精确匹配，这通常也没关系，因为：&#xD;
+&#xD;
+```SQL&#xD;
+WHERE id = 10&#xD;
+```&#xD;
+&#xD;
+无论旁边插入多少数据，都不会影响查询结果，所以这种情况一般只需要记录锁&#xD;
+&#xD;
+### 间隙锁解决什么问题&#xD;
+&#xD;
+间隙锁 `Gap Lock` 锁的是：&#xD;
+&#xD;
+&gt; 两条索引记录之间不存在数据的区域&#xD;
+&#xD;
+例如索引：&#xD;
+&#xD;
+```&#xD;
+10      20      30      40&#xD;
+```&#xD;
+&#xD;
+其中：&#xD;
+&#xD;
+```&#xD;
+(20, 30)&#xD;
+```&#xD;
+&#xD;
+就是一个 gap，如果事务 A 锁住：&#xD;
+&#xD;
+```&#xD;
+(20, 30)&#xD;
+```&#xD;
+&#xD;
+那么其他事务就不能插入：&#xD;
+&#xD;
+```&#xD;
+21&#xD;
+25&#xD;
+29&#xD;
+```&#xD;
+&#xD;
+间隙锁真正解决的是：&#xD;
+&#xD;
+&gt; 防止其他事务制造“新的索引记录”&#xD;
+&#xD;
+所以它主要服务于范围查询&#xD;
+&#xD;
+### 为什么还需要 Next-Key Lock&#xD;
+&#xD;
+ **Next-Key Lock，也常翻译为临键锁**，它实际上不是第三种完全独立的东西，而是：&#xD;
+&#xD;
+```&#xD;
+Next-Key Lock&#xD;
+=&#xD;
+Record Lock&#xD;
++&#xD;
+Gap Lock&#xD;
+```&#xD;
+&#xD;
+比如索引：&#xD;
+&#xD;
+```&#xD;
+10    20    30    40&#xD;
+```&#xD;
+&#xD;
+一个 Next-Key Lock 通常可以理解成：&#xD;
+&#xD;
+```&#xD;
+(20, 30]&#xD;
+```&#xD;
+&#xD;
+即：&#xD;
+&#xD;
+```&#xD;
+(20,30)  → Gap Lock&#xD;
+30       → Record Lock&#xD;
+```&#xD;
+&#xD;
+合起来就是：&#xD;
+&#xD;
+```&#xD;
+(20,30]&#xD;
+```&#xD;
+&#xD;
+所以：&#xD;
+&#xD;
+&gt; Next-Key Lock 本质上就是“既锁住已有记录（30），又锁住它前面的空隙（20-30）”&#xD;
+&#xD;
+### 为什么不直接设置范围锁&#xD;
+&#xD;
+这里正是 InnoDB 设计比较巧妙的地方，可能会想：&#xD;
+&#xD;
+&gt; 那为什么不直接设计一个 `20 &lt;= age &lt;= 30` 的范围锁？&#xD;
+&#xD;
+理论上当然可以，但 InnoDB 的数据本身就是存储在 **B+Tree 索引** 中的，所以它更自然的做法是：&#xD;
+&#xD;
+```&#xD;
+索引记录 + 索引之间的 gap&#xD;
+```&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```&#xD;
+10       20       30       40&#xD;
+         ↑        ↑&#xD;
+       record   record&#xD;
+&#xD;
+         └──────┘&#xD;
+            gap&#xD;
+```&#xD;
+&#xD;
+于是所有范围都可以由：&#xD;
+&#xD;
+```&#xD;
+Record Lock&#xD;
+Gap Lock&#xD;
+```&#xD;
+&#xD;
+组合出来，这与 B+Tree 的存储结构天然契合&#xD;
+&#xD;
+### 完整举例&#xD;
+&#xD;
+当前索引：&#xD;
+&#xD;
+```&#xD;
+10    20    30    40&#xD;
+```&#xD;
+&#xD;
+执行：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age &gt;= 20 AND age &lt;= 30&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+为了防止其他事务：&#xD;
+&#xD;
+```&#xD;
+UPDATE age = 20&#xD;
+UPDATE age = 30&#xD;
+```&#xD;
+&#xD;
+需要记录锁锁住20与30，同时为了防止：&#xD;
+&#xD;
+```&#xD;
+INSERT age = 21&#xD;
+INSERT age = 25&#xD;
+INSERT age = 29&#xD;
+```&#xD;
+&#xD;
+需要间隙锁锁住区间，因此可以抽象理解为：&#xD;
+&#xD;
+```&#xD;
+       Record       Gap        Record&#xD;
+          ↓          ↓            ↓&#xD;
+&#xD;
+10       [20]  ───────────────   [30]       40&#xD;
+```&#xD;
+&#xD;
+或者使用 Next-Key Lock 表示：&#xD;
+&#xD;
+```&#xD;
+(10,20]&#xD;
+(20,30]&#xD;
+```&#xD;
+&#xD;
+具体实际加锁区间还会受到查询条件、索引扫描范围等影响，不一定严格就是上面这个简化图，但理解原理时可以这样看&#xD;
+&#xD;
+## MySQL 解决幻读&#xD;
+&#xD;
+InnoDB 默认事务隔离级别为 **可重复读（Repeatable Read，RR）**，在 RR 隔离级别下，InnoDB 主要通过两套机制处理幻读：&#xD;
+&#xD;
+| 读取方式 | 常见操作                                    | 实现机制         | 是否加锁   |&#xD;
+| -------- | ------------------------------------------- | ---------------- | ---------- |&#xD;
+| 快照读   | 普通 `SELECT`                               | MVCC + Read View | 通常不加锁 |&#xD;
+| 当前读   | `SELECT ... FOR UPDATE`、`UPDATE`、`DELETE` | 当前版本 + 锁    | 加锁       |&#xD;
+&#xD;
+可以概括为：&#xD;
+&#xD;
+```&#xD;
+快照读&#xD;
+↓&#xD;
+MVCC + Read View&#xD;
+↓&#xD;
+控制当前事务能够看到哪些版本&#xD;
+&#xD;
+当前读&#xD;
+↓&#xD;
+记录锁 / 间隙锁 / 临键锁&#xD;
+↓&#xD;
+控制其他事务能否修改记录或插入新记录&#xD;
+```&#xD;
+&#xD;
+因此：&#xD;
+&#xD;
+&gt; InnoDB 在 RR 隔离级别下通过 MVCC 和锁机制共同解决幻读问题&#xD;
+&#xD;
+### MVCC 与 Read View&#xD;
+&#xD;
+MVCC 的核心基础包括：&#xD;
+&#xD;
+```&#xD;
+undo log 版本链&#xD;
++&#xD;
+Read View 版本可见性规则&#xD;
+```&#xD;
+&#xD;
+其中：&#xD;
+&#xD;
+- `undo log` 保存数据修改前的旧版本，并形成版本链&#xD;
+- `Read View` 用于判断版本链中的哪些版本对当前事务可见&#xD;
+&#xD;
+例如一条记录可能存在：&#xD;
+&#xD;
+```&#xD;
+最新版本 V3&#xD;
+    ↓&#xD;
+旧版本 V2&#xD;
+    ↓&#xD;
+旧版本 V1&#xD;
+```&#xD;
+&#xD;
+事务读取数据时，并不是直接读取某份提前复制好的“数据快照”，而是：&#xD;
+&#xD;
+```&#xD;
+读取当前记录&#xD;
+↓&#xD;
+根据 Read View 判断当前版本是否可见&#xD;
+↓&#xD;
+如果不可见，则沿 undo log 版本链继续查找&#xD;
+↓&#xD;
+找到符合可见性规则的版本&#xD;
+↓&#xD;
+读取该版本对应的数据&#xD;
+```&#xD;
+&#xD;
+因此更准确地说：&#xD;
+&#xD;
+```&#xD;
+Read View ≠ 数据快照&#xD;
+Read View = 版本可见性规则&#xD;
+```&#xD;
+&#xD;
+可以把 MVCC 理解为：&#xD;
+&#xD;
+&gt; 数据可以产生多个版本，Read View 决定当前事务应该读取哪个版本&#xD;
+&#xD;
+### READ COMMITTED 与 REPEATABLE READ&#xD;
+&#xD;
+两种隔离级别的重要区别之一，是 Read View 的使用方式不同：&#xD;
+&#xD;
+| 隔离级别        | Read View                                              | 效果                             |&#xD;
+| --------------- | ------------------------------------------------------ | -------------------------------- |&#xD;
+| READ COMMITTED  | 每次一致性快照读通常重新创建                           | 可以看到其他事务最新已提交版本   |&#xD;
+| REPEATABLE READ | 一个事务中的一致性快照读通常复用第一次建立的 Read View | 多次读取遵循相同的版本可见性规则 |&#xD;
+&#xD;
+需要注意：&#xD;
+&#xD;
+&gt; RR 并不是“相同 SQL 才复用 Read View”&#xD;
+&#xD;
+而是：&#xD;
+&#xD;
+&gt; 同一个事务中的一致性快照读通常复用同一个 Read View&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT * FROM user;&#xD;
+SELECT * FROM product;&#xD;
+SELECT * FROM orders;&#xD;
+```&#xD;
+&#xD;
+虽然 SQL 不同，但都可以使用同一套版本可见性规则&#xD;
+&#xD;
+### MVCC 如何避免快照读幻读&#xD;
+&#xD;
+假设 `age` 已建立索引，初始数据：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+事务 A：&#xD;
+&#xD;
+```SQL&#xD;
+BEGIN;&#xD;
+&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age BETWEEN 20 AND 30;&#xD;
+```&#xD;
+&#xD;
+查询结果：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+第一次一致性快照读建立 Read View，此时事务 B：&#xD;
+&#xD;
+```SQL&#xD;
+INSERT INTO user(age)&#xD;
+VALUES (25);&#xD;
+&#xD;
+COMMIT;&#xD;
+```&#xD;
+&#xD;
+数据库中已经存在新的记录版本：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+25&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+事务 A 再次执行：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age BETWEEN 20 AND 30;&#xD;
+```&#xD;
+&#xD;
+仍然可能得到：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+原因是事务 A 仍然按照之前的 Read View 判断版本是否可见，事务 B 后插入的：&#xD;
+&#xD;
+```&#xD;
+25&#xD;
+```&#xD;
+&#xD;
+属于新的版本，对事务 A 当前使用的 Read View 不可见，因此事务 A 不会读取这个版本，所以 MVCC 的核心不是：&#xD;
+&#xD;
+```&#xD;
+保存第一次查询结果&#xD;
+```&#xD;
+&#xD;
+而是：&#xD;
+&#xD;
+```&#xD;
+保存版本可见性规则&#xD;
+↓&#xD;
+后续读取时继续按照该规则选择数据版本&#xD;
+```&#xD;
+&#xD;
+### 为什么 MVCC 无法单独解决当前读幻读&#xD;
+&#xD;
+假设事务 A 通过 Read View 能看到的版本仍然对应：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+但是事务 B 已经提交：&#xD;
+&#xD;
+```&#xD;
+25&#xD;
+```&#xD;
+&#xD;
+数据库当前真实存在的最新记录为：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+25&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+如果事务 A 接下来执行：&#xD;
+&#xD;
+```SQL&#xD;
+UPDATE user&#xD;
+SET some_column = 'x'&#xD;
+WHERE age BETWEEN 20 AND 30;&#xD;
+```&#xD;
+&#xD;
+不能因为：&#xD;
+&#xD;
+```&#xD;
+Read View 看不到 25&#xD;
+```&#xD;
+&#xD;
+就认为：&#xD;
+&#xD;
+```&#xD;
+UPDATE 也不会处理 25&#xD;
+```&#xD;
+&#xD;
+因为 `UPDATE`、`DELETE`、`SELECT ... FOR UPDATE` 等操作属于：&#xD;
+&#xD;
+```SQL&#xD;
+当前读&#xD;
+```&#xD;
+&#xD;
+当前读需要读取并操作当前最新版本的数据，而不是继续按照普通快照读的方式只读取旧版本，因此：&#xD;
+&#xD;
+```&#xD;
+普通 SELECT&#xD;
+↓&#xD;
+可能只看到：&#xD;
+20&#xD;
+30&#xD;
+&#xD;
+UPDATE&#xD;
+↓&#xD;
+可能处理：&#xD;
+20&#xD;
+25&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+所以：&#xD;
+&#xD;
+&gt; Read View 只能决定当前事务读取哪个版本，不能阻止其他事务真正创建新的记录或修改现有记录&#xD;
+&#xD;
+这就是 MVCC 无法单独解决当前读场景幻读的原因&#xD;
+&#xD;
+### FOR UPDATE 的作用&#xD;
+&#xD;
+普通查询：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age BETWEEN 20 AND 30;&#xD;
+```&#xD;
+&#xD;
+属于快照读，通常通过 MVCC 读取符合 Read View 的版本，不主动加行级锁&#xD;
+&#xD;
+而：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age BETWEEN 20 AND 30&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+属于：&#xD;
+&#xD;
+```&#xD;
+当前读&#xD;
++&#xD;
+排他性质的加锁读&#xD;
+```&#xD;
+&#xD;
+也就是说：&#xD;
+&#xD;
+&gt; `FOR UPDATE` 虽然执行的是 SELECT，但会按照“准备修改这些数据”的方式读取最新版本，并申请排他性质的锁&#xD;
+&#xD;
+### FOR UPDATE 会加什么锁&#xD;
+&#xD;
+`FOR UPDATE` 并不代表固定添加某一种锁，实际锁类型由：&#xD;
+&#xD;
+```&#xD;
+隔离级别&#xD;
+查询条件&#xD;
+使用的索引&#xD;
+是否为唯一索引&#xD;
+记录是否存在&#xD;
+索引扫描范围&#xD;
+```&#xD;
+&#xD;
+共同决定，常见情况：&#xD;
+&#xD;
+| 查询情况                   | 可能使用的锁               |&#xD;
+| -------------------------- | -------------------------- |&#xD;
+| 唯一索引精确匹配，记录存在 | 记录锁                     |&#xD;
+| 普通索引范围查询           | 临键锁、间隙锁             |&#xD;
+| 查询不存在的索引值         | 可能锁对应间隙             |&#xD;
+| RR 下范围扫描              | 通常需要锁住相关记录和间隙 |&#xD;
+&#xD;
+因此：&#xD;
+&#xD;
+```&#xD;
+FOR UPDATE&#xD;
+≠&#xD;
+固定的“记录锁 + 间隙锁”&#xD;
+```&#xD;
+&#xD;
+更准确的是：&#xD;
+&#xD;
+```&#xD;
+FOR UPDATE&#xD;
+↓&#xD;
+触发当前读&#xD;
+↓&#xD;
+申请排他性质的锁&#xD;
+↓&#xD;
+InnoDB 根据索引扫描情况选择具体锁类型&#xD;
+```&#xD;
+&#xD;
+### 记录锁、间隙锁与临键锁&#xD;
+&#xD;
+假设索引：&#xD;
+&#xD;
+```&#xD;
+10    20    30    40&#xD;
+```&#xD;
+&#xD;
+| 锁类型 | 示例      | 锁定对象           | 主要作用                   |&#xD;
+| ------ | --------- | ------------------ | -------------------------- |&#xD;
+| 记录锁 | `[30]`    | 已存在的索引记录   | 防止已有记录被冲突修改     |&#xD;
+| 间隙锁 | `(20,30)` | 两条记录之间的间隙 | 防止插入新的索引记录       |&#xD;
+| 临键锁 | `(20,30]` | 间隙 + 右侧记录    | 同时保护已有记录和插入空间 |&#xD;
+&#xD;
+临键锁：&#xD;
+&#xD;
+```&#xD;
+Next-Key Lock&#xD;
+=&#xD;
+Gap Lock&#xD;
++&#xD;
+Record Lock&#xD;
+```&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```&#xD;
+(20,30]&#xD;
+```&#xD;
+&#xD;
+可以拆分为：&#xD;
+&#xD;
+```&#xD;
+(20,30) → Gap Lock&#xD;
+30      → Record Lock&#xD;
+```&#xD;
+&#xD;
+### 当前读为什么需要间隙锁&#xD;
+&#xD;
+假设当前索引：&#xD;
+&#xD;
+```&#xD;
+10    20    30    40&#xD;
+```&#xD;
+&#xD;
+事务 A：&#xD;
+&#xD;
+```SQL&#xD;
+BEGIN;&#xD;
+&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age BETWEEN 20 AND 30&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+如果仅仅给：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+添加记录锁，那么事务 B 仍然可以尝试：&#xD;
+&#xD;
+```SQL&#xD;
+INSERT INTO user(age)&#xD;
+VALUES (25);&#xD;
+```&#xD;
+&#xD;
+原因是：&#xD;
+&#xD;
+```&#xD;
+25&#xD;
+```&#xD;
+&#xD;
+原本并不存在，因此没有任何已有记录可以被记录锁锁住，如果事务 B 成功插入，数据库就会变成：&#xD;
+&#xD;
+```&#xD;
+10    20    25    30    40&#xD;
+```&#xD;
+&#xD;
+事务 A 再次执行当前读：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age BETWEEN 20 AND 30&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+结果就可能从：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+变成：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+25&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+产生幻读，因此：&#xD;
+&#xD;
+&gt; 记录锁只能保护已有记录，不能保护尚不存在的数据&#xD;
+&#xD;
+### 间隙锁如何解决问题&#xD;
+&#xD;
+InnoDB 不需要尝试锁住未来所有可能出现的：&#xD;
+&#xD;
+```&#xD;
+21&#xD;
+22&#xD;
+23&#xD;
+24&#xD;
+25&#xD;
+...&#xD;
+29&#xD;
+```&#xD;
+&#xD;
+而只需要锁住：&#xD;
+&#xD;
+```&#xD;
+(20,30)&#xD;
+```&#xD;
+&#xD;
+这个索引间隙，可以理解为：&#xD;
+&#xD;
+```&#xD;
+20 ----------- 30&#xD;
+      Gap&#xD;
+```&#xD;
+&#xD;
+当这个间隙被锁住以后，其他事务就不能向其中插入新的索引记录，例如：&#xD;
+&#xD;
+```SQL&#xD;
+INSERT INTO user(age) VALUES (25);&#xD;
+```&#xD;
+&#xD;
+会因为需要进入被锁定的间隙而等待，因此间隙锁解决的是：&#xD;
+&#xD;
+&gt; 防止当前读范围内出现新的记录&#xD;
+&#xD;
+### 临键锁如何解决当前读幻读&#xD;
+&#xD;
+范围查询往往既需要保护已有记录，也需要保护记录之间的空隙，因此 InnoDB 可以使用临键锁：&#xD;
+&#xD;
+```&#xD;
+Next-Key Lock&#xD;
+=&#xD;
+Record Lock&#xD;
++&#xD;
+Gap Lock&#xD;
+```&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```&#xD;
+(20,30]&#xD;
+```&#xD;
+&#xD;
+表示：&#xD;
+&#xD;
+```&#xD;
+(20,30)&#xD;
+↓&#xD;
+禁止插入新记录&#xD;
+&#xD;
+30&#xD;
+↓&#xD;
+保护已有记录&#xD;
+```&#xD;
+&#xD;
+因此临键锁可以同时实现：&#xD;
+&#xD;
+```&#xD;
+已有记录不能被冲突修改&#xD;
++&#xD;
+相关间隙不能插入新记录&#xD;
+```&#xD;
+&#xD;
+从而避免当前读产生幻读&#xD;
+&#xD;
+### 完整示例&#xD;
+&#xD;
+当前索引：&#xD;
+&#xD;
+```&#xD;
+10    20    30    40&#xD;
+```&#xD;
+&#xD;
+事务 A：&#xD;
+&#xD;
+```SQL&#xD;
+BEGIN;&#xD;
+&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age BETWEEN 20 AND 30&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+这是一个当前读，在 RR 隔离级别下，InnoDB 会根据实际索引扫描范围对相关记录和间隙进行加锁，此时事务 B：&#xD;
+&#xD;
+```SQL&#xD;
+INSERT INTO user(age)&#xD;
+VALUES (25);&#xD;
+```&#xD;
+&#xD;
+由于 `25` 需要插入事务 A 已经保护的索引间隙，因此会被阻塞，事务 A 再执行：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE age BETWEEN 20 AND 30&#xD;
+FOR UPDATE;&#xD;
+```&#xD;
+&#xD;
+仍然只能看到：&#xD;
+&#xD;
+```&#xD;
+20&#xD;
+30&#xD;
+```&#xD;
+&#xD;
+事务 A：&#xD;
+&#xD;
+```&#xD;
+COMMIT;&#xD;
+```&#xD;
+&#xD;
+之后事务 B 才能够继续插入，因此：&#xD;
+&#xD;
+```&#xD;
+事务 A 当前读&#xD;
+↓&#xD;
+锁住相关记录和间隙&#xD;
+&#xD;
+事务 B INSERT 25&#xD;
+↓&#xD;
+被阻塞&#xD;
+&#xD;
+事务 A 再次当前读&#xD;
+↓&#xD;
+不会出现 25&#xD;
+```&#xD;
+&#xD;
+当前读幻读因此被避免&#xD;
+&#xD;
+## MVCC 与锁的关系&#xD;
+&#xD;
+可以最终归纳为：&#xD;
+&#xD;
+| 机制             | 作用               | 核心思想                       |&#xD;
+| ---------------- | ------------------ | ------------------------------ |&#xD;
+| MVCC + Read View | 保证快照读的一致性 | 根据版本可见性规则选择数据版本 |&#xD;
+| 记录锁           | 保护已有记录       | 防止已有记录被冲突修改         |&#xD;
+| 间隙锁           | 保护记录之间的空间 | 防止插入新记录                 |&#xD;
+| 临键锁           | 记录锁 + 间隙锁    | 同时保护已有记录和插入空间     |&#xD;
+&#xD;
+整个逻辑可以表示为：&#xD;
+&#xD;
+```&#xD;
+普通 SELECT&#xD;
+↓&#xD;
+快照读&#xD;
+↓&#xD;
+MVCC&#xD;
+↓&#xD;
+Read View 判断版本是否可见&#xD;
+↓&#xD;
+沿版本链找到可见版本&#xD;
+↓&#xD;
+读取该版本的数据&#xD;
+&#xD;
+&#xD;
+SELECT ... FOR UPDATE&#xD;
+UPDATE&#xD;
+DELETE&#xD;
+↓&#xD;
+当前读&#xD;
+↓&#xD;
+读取最新可操作版本&#xD;
+↓&#xD;
+根据索引扫描范围加锁&#xD;
+↓&#xD;
+Record Lock / Gap Lock / Next-Key Lock&#xD;
+↓&#xD;
+限制其他事务修改或插入&#xD;
+```&#xD;
+&#xD;
+最终可以记住两句话：&#xD;
+&#xD;
+&gt; Read View 决定“当前事务应该读取哪个版本”&#xD;
+&#xD;
+&gt; 锁机制决定“其他事务现在能不能修改或插入数据”&#xD;
+&#xD;
+因此，InnoDB 在 RR 隔离级别下，是通过 **MVCC + Read View 处理快照读，通过记录锁、间隙锁、临键锁等机制处理当前读**，两者共同避免幻读&#xD;
+&#xD;
+## 当前读与快照读&#xD;
+&#xD;
+| 类型   | 常见 SQL                                                     | 读取方式                                                     |&#xD;
+| ------ | ------------------------------------------------------------ | ------------------------------------------------------------ |&#xD;
+| 快照读 | 普通 `SELECT`                                                | 根据 Read View 判断版本可见性，必要时沿 undo log 版本链找旧版本 |&#xD;
+| 当前读 | `SELECT ... FOR UPDATE`、`SELECT ... FOR SHARE`、`UPDATE`、`DELETE` | 读取当前最新可操作版本，并进行加锁                           |&#xD;
+&#xD;
+版本链只是记录了数据的可见与不可见，不同版本之间数据的可见性不同，但数据的存在与否于版本链无关&#xD;
+&#xD;
+## SQL 优化&#xD;
+&#xD;
+思想：SQL优化基本是建立在索引的基础上，通过底层的B+树进行索引的使用，提高查询效率&#xD;
+&#xD;
+| 优化方式                | 核心思路                               |&#xD;
+| ----------------------- | -------------------------------------- |&#xD;
+| `ORDER BY` 利用索引     | 减少额外排序 `filesort`                |&#xD;
+| `GROUP BY` 利用索引     | 减少排序、临时表等操作                 |&#xD;
+| `MIN / MAX` 利用索引    | 直接定位索引边界值                     |&#xD;
+| 使用覆盖索引            | 减少回表                               |&#xD;
+| 小表驱动大表：JOIN 优化 | 使用join时主表为小表，通过小表驱动大表 |&#xD;
+| SQL 优化分析            | 通过慢查询日志和 `EXPLAIN` 定位问题    |&#xD;
+&#xD;
+### SQL 优化分析&#xD;
+&#xD;
+SQL 出现性能问题时，可以按照以下流程排查：&#xD;
+&#xD;
+```&#xD;
+开启慢查询日志&#xD;
+    ↓&#xD;
+找到执行时间较长的 SQL&#xD;
+    ↓&#xD;
+使用 EXPLAIN 查看执行计划&#xD;
+    ↓&#xD;
+分析索引使用情况、扫描行数、排序、临时表等&#xD;
+    ↓&#xD;
+调整索引或 SQL&#xD;
+```&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```SQL&#xD;
+EXPLAIN&#xD;
+SELECT id, name&#xD;
+FROM user&#xD;
+WHERE age = 20;&#xD;
+```&#xD;
+&#xD;
+重点可以关注：&#xD;
+&#xD;
+- `type`：访问类型&#xD;
+- `possible_keys`：可能使用的索引&#xD;
+- `key`：实际使用的索引&#xD;
+- `rows`：预计扫描的数据量&#xD;
+- `Extra`：是否出现 `Using filesort`、`Using temporary` 等信息&#xD;
+&#xD;
+需要注意：&#xD;
+&#xD;
+&gt; `EXPLAIN` 主要用于分析执行计划，并不能直接表示 SQL 的真实执行耗时&#xD;
+&#xD;
+如果需要查看实际执行过程和耗时，可以进一步使用 `EXPLAIN ANALYZE`&#xD;
+&#xD;
+### ORDER BY 优化&#xD;
+&#xD;
+`ORDER BY` 需要对查询结果进行排序，例如：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+ORDER BY age;&#xD;
+```&#xD;
+&#xD;
+如果 `age` 没有合适的索引，MySQL 可能需要额外执行排序操作：&#xD;
+&#xD;
+```&#xD;
+查询数据&#xD;
+↓&#xD;
+额外排序&#xD;
+↓&#xD;
+返回结果&#xD;
+```&#xD;
+&#xD;
+如果建立：&#xD;
+&#xD;
+```SQL&#xD;
+CREATE INDEX idx_age ON user(age);&#xD;
+```&#xD;
+&#xD;
+B+Tree 本身按照 `age` 有序排列，因此 MySQL 在满足条件时可以直接按照索引顺序读取数据：&#xD;
+&#xD;
+```&#xD;
+索引：&#xD;
+&#xD;
+10&#xD;
+20&#xD;
+30&#xD;
+40&#xD;
+```&#xD;
+&#xD;
+从而避免额外排序，因此：&#xD;
+&#xD;
+```&#xD;
+没有合适索引&#xD;
+↓&#xD;
+查数据 + 排序&#xD;
+&#xD;
+可以利用索引顺序&#xD;
+↓&#xD;
+按索引读取数据&#xD;
+↓&#xD;
+减少排序开销&#xD;
+```&#xD;
+&#xD;
+不过并不是：&#xD;
+&#xD;
+&gt; 只要 `ORDER BY` 字段创建索引就一定能够利用索引排序&#xD;
+&#xD;
+还需要考虑查询条件、联合索引顺序、排序方向等因素，例如联合索引：&#xD;
+&#xD;
+```&#xD;
+INDEX idx_name_age(name, age)&#xD;
+```&#xD;
+&#xD;
+对于：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM user&#xD;
+WHERE name = 'Tom'&#xD;
+ORDER BY age;&#xD;
+```&#xD;
+&#xD;
+由于：&#xD;
+&#xD;
+```&#xD;
+name 已经固定为 Tom&#xD;
+↓&#xD;
+在 name = Tom 的范围内&#xD;
+↓&#xD;
+age 按索引顺序排列&#xD;
+```&#xD;
+&#xD;
+因此通常能够很好地利用联合索引&#xD;
+&#xD;
+### GROUP BY 优化&#xD;
+&#xD;
+`GROUP BY` 用于根据某个字段进行分组：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT age, COUNT(*)&#xD;
+FROM user&#xD;
+GROUP BY age;&#xD;
+```&#xD;
+&#xD;
+如果 `age` 没有索引，MySQL 可能需要对大量数据进行排序或使用临时结构完成分组&#xD;
+&#xD;
+如果：&#xD;
+&#xD;
+```SQL&#xD;
+CREATE INDEX idx_age ON user(age);&#xD;
+```&#xD;
+&#xD;
+索引本身已经按照：&#xD;
+&#xD;
+```&#xD;
+18&#xD;
+18&#xD;
+18&#xD;
+20&#xD;
+20&#xD;
+25&#xD;
+25&#xD;
+```&#xD;
+&#xD;
+这样的顺序组织，相同 `age` 的记录在索引中通常是连续的，因此 MySQL 可以更高效地进行分组，可以理解为：&#xD;
+&#xD;
+```&#xD;
+无索引：&#xD;
+&#xD;
+20&#xD;
+18&#xD;
+25&#xD;
+18&#xD;
+20&#xD;
+25&#xD;
+18&#xD;
+&#xD;
+↓&#xD;
+需要先组织数据&#xD;
+&#xD;
+18 18 18&#xD;
+20 20&#xD;
+25 25&#xD;
+```&#xD;
+&#xD;
+而利用索引：&#xD;
+&#xD;
+```&#xD;
+18 18 18 20 20 25 25&#xD;
+↑&#xD;
+索引天然有序&#xD;
+```&#xD;
+&#xD;
+因此可以减少分组过程中的额外工作&#xD;
+&#xD;
+### MIN / MAX 优化&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```sql&#xD;
+SELECT MAX(age)&#xD;
+FROM user;&#xD;
+```&#xD;
+&#xD;
+如果没有 `age` 索引，理论上可能需要检查大量数据才能找到最大值&#xD;
+&#xD;
+如果：&#xD;
+&#xD;
+```sql&#xD;
+CREATE INDEX idx_age ON user(age);&#xD;
+```&#xD;
+&#xD;
+由于索引本身有序：&#xD;
+&#xD;
+```&#xD;
+10&#xD;
+20&#xD;
+30&#xD;
+40&#xD;
+50&#xD;
+```&#xD;
+&#xD;
+最大值就在索引的一端，因此 MySQL 可以快速找到：&#xD;
+&#xD;
+```&#xD;
+MAX(age) → 50&#xD;
+```&#xD;
+&#xD;
+同理：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT MIN(age)&#xD;
+FROM user;&#xD;
+```&#xD;
+&#xD;
+可以从索引另一端快速定位最小值，因此 `MIN / MAX` 非常适合利用索引的有序性&#xD;
+&#xD;
+### 覆盖索引：尽量避免回表&#xD;
+&#xD;
+InnoDB 的辅助索引叶子节点通常保存：&#xD;
+&#xD;
+```&#xD;
+辅助索引字段&#xD;
++&#xD;
+主键值&#xD;
+```&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```SQL&#xD;
+INDEX idx_age(age)&#xD;
+```&#xD;
+&#xD;
+可以抽象理解为：&#xD;
+&#xD;
+```&#xD;
+age       id&#xD;
+&#xD;
+18   →    1&#xD;
+20   →    5&#xD;
+25   →    8&#xD;
+```&#xD;
+&#xD;
+执行：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT id, age&#xD;
+FROM user&#xD;
+WHERE age = 20;&#xD;
+```&#xD;
+&#xD;
+辅助索引中已经存在：&#xD;
+&#xD;
+```&#xD;
+age&#xD;
+id&#xD;
+```&#xD;
+&#xD;
+因此可以直接返回结果，不需要再根据主键访问聚簇索引，这就是：&#xD;
+&#xD;
+&gt; 覆盖索引&#xD;
+&#xD;
+但如果：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT id, age, name&#xD;
+FROM user&#xD;
+WHERE age = 20;&#xD;
+```&#xD;
+&#xD;
+而 `name` 不在辅助索引中，则需要：&#xD;
+&#xD;
+```&#xD;
+idx_age&#xD;
+↓&#xD;
+找到 id&#xD;
+↓&#xD;
+根据 id 查询聚簇索引&#xD;
+↓&#xD;
+获取 name&#xD;
+```&#xD;
+&#xD;
+这个过程就是：&#xD;
+&#xD;
+&gt; 回表&#xD;
+&#xD;
+因此在业务允许的情况下，可以尽量让查询字段被索引覆盖，从而减少回表次数，例如：&#xD;
+&#xD;
+```SQL&#xD;
+INDEX idx_age_name(age, name)&#xD;
+```&#xD;
+&#xD;
+对于：&#xD;
+&#xD;
+```&#xD;
+SELECT age, name&#xD;
+FROM user&#xD;
+WHERE age = 20;&#xD;
+```&#xD;
+&#xD;
+就可能形成覆盖索引&#xD;
+&#xD;
+### 小表驱动大表：JOIN 优化&#xD;
+&#xD;
+多表连接时，需要尽量减少连接过程中参与计算的数据量，例如：&#xD;
+&#xD;
+```SQL&#xD;
+SELECT *&#xD;
+FROM small_table s&#xD;
+JOIN large_table l&#xD;
+    ON s.user_id = l.user_id;&#xD;
+```&#xD;
+&#xD;
+传统上经常使用：&#xD;
+&#xD;
+&gt; 小表驱动大表&#xD;
+&#xD;
+其核心思想并不是简单地规定“小表必须写在前面”，而是：&#xD;
+&#xD;
+&gt; 尽量让外层处理的数据量更少，并让被匹配的一侧具有合适索引&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```&#xD;
+小表：100 行&#xD;
+大表：100 万行&#xD;
+```&#xD;
+&#xD;
+如果能够先处理小表中的少量记录，再利用大表的索引查找：&#xD;
+&#xD;
+```&#xD;
+小表 100 行&#xD;
+↓&#xD;
+每一行通过索引查大表&#xD;
+↓&#xD;
+快速定位对应记录&#xD;
+```&#xD;
+&#xD;
+通常比大量扫描更加高效，不过需要注意：&#xD;
+&#xD;
+&gt; MySQL 优化器会根据统计信息自动选择 JOIN 顺序，并不完全取决于 SQL 中表的书写顺序&#xD;
+&#xD;
+因此 JOIN 优化更应该关注：&#xD;
+&#xD;
+```&#xD;
+参与连接的数据量&#xD;
++&#xD;
+JOIN 字段是否有索引&#xD;
++&#xD;
+WHERE 条件能否提前过滤数据&#xD;
++&#xD;
+实际执行计划&#xD;
+```&#xD;
+&#xD;
+而不能机械地认为：&#xD;
+&#xD;
+```&#xD;
+FROM 小表 JOIN 大表&#xD;
+```&#xD;
+&#xD;
+就一定更快&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+## 模拟面试题&#xD;
+&#xD;
+### 为什么联合索引 `(name, age)` 必须优先知道 `name`，才能高效地利用 `age`？请从 B+ 树中数据的排序方式解释，而不是只回答“因为最左前缀原则”&#xD;
+&#xD;
+&gt; 因为B+树对于联合索引存放的数据进行排序时，首先对name进行排序，当name相同时，再对age进行排序，此时age并不是全局有序的，因此若缺失name只对age进行索引时，索引失效，可能会进行全表扫描&#xD;
+&#xD;
+你这段回答里的核心逻辑是完整的：&#xD;
+&#xD;
+```&#xD;
+联合索引 (name, age)&#xD;
+&#xD;
+先按 name 排序&#xD;
+↓&#xD;
+name 相同时&#xD;
+↓&#xD;
+再按 age 排序&#xD;
+```&#xD;
+&#xD;
+所以 `age` 只是**局部有序**，不是全局有序。缺少 `name` 这个前提时，就不能直接根据 `age = 20` 快速定位到一个连续的索引范围&#xD;
+&#xD;
+有一个表达细节建议修正：&#xD;
+&#xD;
+&gt; “只对 age 进行索引时，索引失效”&#xD;
+&#xD;
+更准确应说：&#xD;
+&#xD;
+&gt; “只根据 `age` 查询时，这个 `(name, age)` 联合索引通常无法被用于高效定位”&#xD;
+&#xD;
+因为 `age` 本身并没有单独创建索引，所以不是“age 索引失效”，而是**联合索引无法充分利用**</content>
+    <dc:creator>Tilex</dc:creator>
+    <dc:date>2026-10-21T03:30:26Z</dc:date>
+  </entry>
   <entry>
     <title>常用快捷键梳理.md</title>
     <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/71" />
@@ -3335,1307 +7440,5 @@ process.env.DB_HOST = "localhost"
 dotenv 把 `.env` 文件的内容读出来，挂载到 `process.env` 对象上，之后便可以通过代码访问 env 文件中的数据了</content>
     <dc:creator>Tilex</dc:creator>
     <dc:date>2026-08-08T07:06:38Z</dc:date>
-  </entry>
-  <entry>
-    <title>Ant-Design-Vue Image-Preview 组件箭头图标局部替换.md</title>
-    <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/53" />
-    <author>
-      <name>Tilex</name>
-    </author>
-    <id>https://janfeise.github.io/blog-backup/article/53</id>
-    <updated>2026-10-02T08:19:50Z</updated>
-    <published>2026-08-08T07:01:45Z</published>
-    <content type="text/markdown"># Ant-Design-Vue Image-Preview 组件箭头图标局部替换
-
-在实习时，UI 的设计稿将 antdv 的 image-preview 组件的左右箭头替换为 UI 所设计的icon，尝试了多次后才成功替换，在此做一个记录
-![Pasted image 20260730104505](/blog-backup/blog-images/2026/08/08/Pasted%20image%2020260730104505.png)
-
-## 需求
-
-1. icon替换：将 `a-image-preview-group` 的默认左右箭头替换为自定义图标，并分别提供 normal、hover、click 三种状态的icon
-
-2. 局部替换，不影响全局：同时要求本次修改只作用于当前 `a-image-preview-group`，不能影响项目中其他页面的图片预览组件
-
-## 踩坑记录
-
-### `preview.rootClassName` 没有生效
-
-最开始让 deepseek-v4 pro 更改，尝试通过 `preview.rootClassName` 给当前图片预览面板添加独立类名
-
-```vue
-&lt;a-image-preview-group
-    :preview="{
-        rootClassName: 'facility-image-preview'
-    }"
-&gt;
-    ...
-&lt;/a-image-preview-group&gt;
-```
-
-然后通过该类名限制箭头样式的作用范围
-
-```scss
-.facility-image-preview {
-    .ant-image-preview-switch-left {
-        ...
-    }
-}
-```
-
-但实际测试发现，antdv 根本没有提供 rootClassName 的api，纯 AI 幻觉
-&gt; https://antdv.com/components/image-cn#api
-&gt;
-&gt; ![Pasted image 20260730104720](/blog-backup/blog-images/2026/08/08/Pasted%20image%2020260730104720.png)
-&gt;
-
-后续发现 Ant Design Vue 4.x 的 `PreviewGroup` 封装层会覆盖用户传入的 `rootClassName`，并使用组件内部生成的 `hashId`
-&gt; ![Pasted image 20260730105019](/blog-backup/blog-images/2026/08/08/Pasted%20image%2020260730105019.png)
-
-```js
-// node_modules/ant-design-vue/es/image/PreviewGroup.js
-
-const _preview = typeof preview === 'object' ? preview : {}
-
-return _extends(_extends({}, _preview), {
-    rootClassName: hashId.value
-})
-```
-
-这里先展开用户传入的 `_preview`，然后再次设置 `rootClassName`
-
-因此，用户传入的：
-
-```js
-rootClassName: 'facility-image-preview'
-```
-
-最终会被`hashId` 覆盖：
-
-```js
-rootClassName: hashId.value
-```
-
-
-所以不能依赖 `preview.rootClassName` 实现当前预览组件的样式隔离
-
-### `scoped CSS` 无法命中预览面板
-
-另一种尝试是在当前 Vue 组件的 `scoped` 样式中直接修改箭头
-
-```vue
-&lt;style lang="scss" scoped&gt;
-:deep(.ant-image-preview-switch-left) {
-    ...
-}
-&lt;/style&gt;
-```
-
-但图片预览面板默认通过 Portal 挂载到 `document.body`，并不在当前 Vue 组件的 DOM 树中
-
-Vue 的 `scoped` 样式会被编译为带有 `data-v-xxx` 属性的选择器
-
-```css
-[data-v-xxx] .ant-image-preview-switch-left {
-    ...
-}
-```
-
-而预览面板位于 `document.body` 下，不属于当前带有 `data-v-xxx` 的组件节点，因此选择器无法命中
-
-即使使用 `:deep()`，也无法改变预览面板已经脱离当前组件 DOM 树这一事实
-
-### 全局选择器会影响其他组件
-
-如果直接使用全局选择器，样式可以正常生效
-
-```scss
-.ant-image-preview-switch-left {
-    ...
-}
-
-.ant-image-preview-switch-right {
-    ...
-}
-```
-
-但这种方式会修改项目中所有 `a-image-preview-group` 的左右箭头，其他页面中的 `ImageViewer.vue` 也会被影响
-
-因此，全局选择器虽然可行，但不满足本次需求中的局部作用域要求
-
-## 解决方案
-
-最终采用 `getContainer + ref + 后代选择器` 实现局部替换
-
-整体思路分为两步：
-
-- 通过 `ref` 获取当前组件的容器节点
-  
-- 通过后代选择器，只修改该容器内部的图片预览箭头
-  
-
-### 通过 ref 指定预览面板的挂载位置
-
-首先，在当前组件的根容器上绑定 `rootRef`
-
-```vue
-&lt;template&gt;
-    &lt;div
-        ref="rootRef"
-        class="pr-10 scroll-container"
-    &gt;
-        &lt;a-image-preview-group
-            :preview="{
-                getContainer: () =&gt; rootRef,
-                onVisibleChange: onPrevVisibleChange
-            }"
-        &gt;
-            &lt;a-image
-                v-for="item in imgList"
-                :key="item.uid"
-                :src="item.url"
-            /&gt;
-        &lt;/a-image-preview-group&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
-```
-
-在脚本中声明对应的模板引用
-
-```js
-import { ref } from 'vue'
-
-const rootRef = ref(null)
-```
-
-在 Vue 模板表达式中，`ref` 会被自动解包，因此：
-
-```js
-getContainer: () =&gt; rootRef
-```
-
-实际返回的是 `rootRef.value` 对应的 DOM 元素
-
-Ant Design Vue 获取到该容器后，会将当前 `a-image-preview-group` 的预览面板挂载到 `.scroll-container` 内部，而不是默认挂载到 `document.body`
-
-### 使用后代选择器精确替换箭头
-
-预览面板挂载到 `.scroll-container` 后，最终生成的左右切换按钮会成为该容器的后代元素
-
-此时可以通过：
-
-```scss
-.scroll-container .ant-image-preview-switch-left
-```
-
-精确匹配当前组件中的预览箭头
-
-```vue
-&lt;style lang="scss"&gt;
-.scroll-container {
-    .ant-image-preview-switch-left,
-    .ant-image-preview-switch-right {
-        background: none !important;
-
-        &gt; .anticon {
-            display: none !important;
-        }
-
-        &amp;::before {
-            content: '';
-            display: block;
-            width: 56px;
-            height: 56px;
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-    }
-
-    .ant-image-preview-switch-left {
-        &amp;::before {
-            background-image: url('@/assets/highwayAsset/normal-left.png');
-        }
-
-        &amp;:hover::before {
-            background-image: url('@/assets/highwayAsset/hover-left.png');
-        }
-
-        &amp;:active::before {
-            background-image: url('@/assets/highwayAsset/click-left.png');
-        }
-    }
-
-    .ant-image-preview-switch-right {
-        &amp;::before {
-            background-image: url('@/assets/highwayAsset/normal-right.png');
-        }
-
-        &amp;:hover::before {
-            background-image: url('@/assets/highwayAsset/hover-right.png');
-        }
-
-        &amp;:active::before {
-            background-image: url('@/assets/highwayAsset/click-right.png');
-        }
-    }
-
-    .ant-image-preview-switch-left-disabled,
-    .ant-image-preview-switch-right-disabled {
-        cursor: not-allowed;
-
-        &amp;::before {
-            opacity: 0.6;
-        }
-    }
-}
-&lt;/style&gt;
-```
-
-这部分样式不能使用普通的 `scoped` 写法
-
-预览面板虽然被挂载到了 `.scroll-container` 内部，但预览组件生成的 DOM 元素不会自动携带当前组件的 `data-v-xxx` 属性
-
-因此这里使用非 `scoped` 样式，再通过 `.scroll-container` 限定作用范围
-
-### 样式处理说明
-
-隐藏 Ant Design Vue 默认箭头背景：
-
-```scss
-background: none !important;
-```
-
-隐藏默认的 SVG 图标：
-
-```scss
-&gt; .anticon {
-    display: none !important;
-}
-```
-
-使用伪元素承载自定义图标：
-
-```scss
-&amp;::before {
-    content: '';
-    display: block;
-    width: 56px;
-    height: 56px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-```
-
-通过不同的伪类切换图片状态：
-
-```scss
-&amp;::before {
-    background-image: url('normal.png');
-}
-
-&amp;:hover::before {
-    background-image: url('hover.png');
-}
-
-&amp;:active::before {
-    background-image: url('click.png');
-}
-```
-
-在第一张或最后一张图片时，Ant Design Vue 会添加 disabled 类名，此时降低自定义箭头的透明度：
-
-```scss
-.ant-image-preview-switch-left-disabled,
-.ant-image-preview-switch-right-disabled {
-    cursor: not-allowed;
-
-    &amp;::before {
-        opacity: 0.6;
-    }
-}
-```
-
-## DOM 结构变化
-
-修改前，预览面板默认挂载在 `document.body` 下：
-
-```html
-&lt;body&gt;
-    &lt;div id="app"&gt;
-        &lt;div class="scroll-container"&gt;
-            &lt;!-- 当前组件 --&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="ant-image-preview-root"&gt;
-        &lt;div class="ant-image-preview-switch-left"&gt;
-            &lt;span class="anticon"&gt;
-                ...
-            &lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-```
-
-此时 `.scroll-container` 和预览箭头之间不存在父子关系，下面的选择器无法命中：
-
-```scss
-.scroll-container {
-    .ant-image-preview-switch-left {
-        ...
-    }
-}
-```
-
-增加 `getContainer` 后，预览面板被挂载到 `rootRef` 对应的 `.scroll-container` 内：
-
-```html
-&lt;body&gt;
-    &lt;div id="app"&gt;
-        &lt;div class="scroll-container"&gt;
-            &lt;!-- 当前组件 --&gt;
-
-            &lt;div class="ant-image-preview-root"&gt;
-                &lt;div class="ant-image-preview-switch-left"&gt;
-                    &lt;span class="anticon"&gt;
-                        ...
-                    &lt;/span&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-```
-
-此时预览箭头是 `.scroll-container` 的后代元素，因此后代选择器能够正常命中：
-
-```scss
-.scroll-container {
-    .ant-image-preview-switch-left {
-        ...
-    }
-}
-```
-
-## 最终效果
-
-| 状态       | 图标                                   | 触发方式             |
-| -------- | ------------------------------------ | ---------------- |
-| normal   | `normal-left.png`、`normal-right.png` | 默认状态             |
-| hover    | `hover-left.png`、`hover-right.png`   | 鼠标悬停             |
-| click    | `click-left.png`、`click-right.png`   | 鼠标按下             |
-| disabled | 自定义图标透明度降低                           | 第一张的左箭头或最后一张的右箭头 |
-
-最终方案虽然使用了非 `scoped` 样式，但所有规则都被限制在 `.scroll-container` 后代中
-
-其他图片预览组件仍然挂载在默认容器中，不属于当前 `.scroll-container`，因此不会受到本次样式修改的影响
-
-## `getContainer` 带来的副作用
-
-通过 `getContainer` 将预览面板挂载到当前组件容器后，虽然解决了箭头样式只能局部生效的问题，但也引入了一个新的生命周期问题
-
-### 问题现象
-
-存在详情态和编辑态两种状态，详情态可全屏预览图片，并通过 getContainer 将全屏预览的上/下切换箭头进行了替换，但却产生了新的问题：
-
-```text
-详情态点击图片全屏预览
-    ↓
-关闭图片预览
-    ↓
-点击“编辑”按钮
-    ↓
-页面白屏，编辑态内容完全不可见
-```
-
-这里的“白屏”并不一定表示编辑态内容没有渲染，更可能是图片预览遗留的遮罩层仍然覆盖在编辑内容上方
-
-### 再次踩坑
-
-最初判断是 `v-if / v-else` 切换时，`a-image-preview-group` 销毁过快，而 Preview Dialog 的关闭和清理还没有完成
-
-围绕这个方向尝试了两种方案
-
-#### 将 Preview 改为受控模式
-
-通过变量控制预览状态，并在进入编辑态前主动关闭预览
-
-```js
-const previewOpen = ref(false)
-
-function enterEdit() {
-    previewOpen.value = false
-    isEdit.value = true
-}
-```
-
-但实际测试后问题仍然存在
-
-即使 `visible` 已经变为 `false`，Dialog 的关闭动画和 Portal DOM 清理仍然是异步进行的
-
-#### 使用 `nextTick` 延迟切换编辑态
-
-尝试先关闭预览，再等待 Vue 完成本轮 DOM 更新，最后进入编辑态
-
-```js
-async function enterEdit() {
-    previewOpen.value = false
-
-    await nextTick()
-
-    isEdit.value = true
-}
-```
-
-该方式同样没有解决问题
-
-`nextTick` 只能等待 Vue 当前批次的 DOM 更新完成，无法等待 Ant Design Vue Dialog 的关闭动画和异步卸载完成
-
-### 根因
-
-之前为了限制箭头样式的作用范围，使用了：
-
-```vue
-&lt;a-image-preview-group
-    :preview="{
-        getContainer: () =&gt; rootRef,
-        onVisibleChange: onPrevVisibleChange
-    }"
-&gt;
-```
-
-其中 `rootRef` 对应当前组件的 `.scroll-container`
-
-```vue
-&lt;div
-    ref="rootRef"
-    class="scroll-container"
-&gt;
-```
-
-这意味着图片预览 Dialog 不再挂载到默认的 `document.body`，而是挂载到 `.scroll-container` 内部
-
-DOM 结构类似：
-
-```html
-&lt;div class="scroll-container"&gt;
-    &lt;!-- 详情态内容 --&gt;
-
-    &lt;div class="ant-image-preview-root"&gt;
-        &lt;div class="ant-image-preview-mask"&gt;&lt;/div&gt;
-        &lt;div class="ant-image-preview-wrap"&gt;
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-```
-
-详情态和编辑态原本通过 `v-if / v-else` 切换：
-
-```vue
-&lt;template v-if="!isEdit"&gt;
-    &lt;a-image-preview-group&gt;
-        ...
-    &lt;/a-image-preview-group&gt;
-&lt;/template&gt;
-
-&lt;template v-else&gt;
-    &lt;!-- 编辑态 --&gt;
-&lt;/template&gt;
-```
-
-当 `isEdit` 变为 `true` 时，Vue 会同步销毁详情态中的 `a-image-preview-group`
-
-但 Ant Design Vue Dialog 的销毁并不是完全同步的，它还需要执行关闭动画，并在动画结束后清理 Portal DOM
-
-整个过程可以理解为：
-
-```text
-isEdit 变为 true
-    ↓
-v-if 销毁 a-image-preview-group
-    ↓
-Preview Dialog 开始执行关闭动画
-    ↓
-同一时间，编辑态内容已经完成渲染
-    ↓
-Portal DOM 和遮罩层暂时仍存在于 rootRef 内
-    ↓
-遮罩层覆盖编辑态内容
-    ↓
-页面看起来像白屏
-```
-
-问题本质是：
-
-```text
-Vue 的 v-if 同步销毁
-        与
-Ant Design Vue Dialog 的异步卸载
-        之间产生了生命周期竞态
-```
-
-`v-if` 不会等待 Dialog 完成关闭动画后再销毁 `a-image-preview-group`
-
-而当 Dialog 被挂载到当前组件容器内部时，尚未卸载的遮罩层会直接覆盖同一容器中的编辑态内容
-
-### 修复方案
-
-将详情态和编辑态的 `v-if / v-else` 改为 `v-show`
-
-修改前：
-
-```vue
-&lt;template v-if="!isEdit"&gt;
-    &lt;a-image-preview-group
-        :preview="{
-            getContainer: () =&gt; rootRef,
-            onVisibleChange: onPrevVisibleChange
-        }"
-    &gt;
-        ...
-    &lt;/a-image-preview-group&gt;
-&lt;/template&gt;
-
-&lt;template v-else&gt;
-    &lt;!-- 编辑态 --&gt;
-&lt;/template&gt;
-```
-
-修改后：
-
-```vue
-&lt;div v-show="!isEdit"&gt;
-    &lt;a-empty
-        v-if="!hasImg"
-        description="暂无设施照片"
-    /&gt;
-
-    &lt;a-image-preview-group
-        v-else
-        :preview="{
-            getContainer: () =&gt; rootRef,
-            onVisibleChange: onPrevVisibleChange
-        }"
-    &gt;
-        ...
-    &lt;/a-image-preview-group&gt;
-&lt;/div&gt;
-
-&lt;div v-show="isEdit"&gt;
-    &lt;!-- 编辑态 --&gt;
-&lt;/div&gt;
-```
-
-需要注意，`v-show` 不能直接用于 `&lt;template&gt;`，因为它需要通过修改真实 DOM 元素的 `display` 样式控制显示和隐藏
-
-因此需要将原来的 `&lt;template&gt;` 改为 `&lt;div&gt;` 或其他真实元素
-
-### 为什么 `v-show` 可以解决
-
-`v-if` 和 `v-show` 的核心区别在于：
-
-|指令|切换方式|组件实例|
-|---|---|---|
-|`v-if`|创建或销毁 DOM|会被销毁和重新创建|
-|`v-show`|修改 `display`|始终保留|
-
-使用 `v-show` 后，`a-image-preview-group` 不会因为进入编辑态而立即销毁
-
-```text
-点击编辑
-    ↓
-关闭 Preview Dialog
-    ↓
-详情态通过 display: none 隐藏
-    ↓
-a-image-preview-group 实例仍然存在
-    ↓
-Dialog 按照自身生命周期完成关闭动画
-    ↓
-Portal DOM 和遮罩层正常卸载
-```
-
-由于组件实例仍然存活，Preview Dialog 可以完整处理 `visible` 变化、关闭动画和 Portal 清理，不会在卸载过程中被 `v-if` 强行销毁
-
-最终避免遮罩层残留在 `.scroll-container` 内部，也就不会继续覆盖编辑态内容
-
-### 修改后的结构
-
-```vue
-&lt;template&gt;
-    &lt;div
-        ref="rootRef"
-        class="scroll-container"
-    &gt;
-        &lt;!-- 详情态 --&gt;
-        &lt;div v-show="!isEdit"&gt;
-            &lt;a-empty
-                v-if="!hasImg"
-                description="暂无设施照片"
-            /&gt;
-
-            &lt;a-image-preview-group
-                v-else
-                :preview="{
-                    getContainer: () =&gt; rootRef,
-                    onVisibleChange: onPrevVisibleChange
-                }"
-            &gt;
-                &lt;a-image
-                    v-for="item in imgList"
-                    :key="item.uid"
-                    :src="item.url"
-                /&gt;
-            &lt;/a-image-preview-group&gt;
-        &lt;/div&gt;
-
-        &lt;!-- 编辑态 --&gt;
-        &lt;div v-show="isEdit"&gt;
-            ...
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
-```
-
-### 总结
-
-`getContainer` 将 Preview Dialog 挂载到当前组件容器后，使局部样式覆盖成为可能，但也让 Dialog 的 Portal 生命周期和当前组件的视图切换产生关联
-
-当详情态使用 `v-if` 销毁时，Vue 的同步卸载可能和 Dialog 的异步关闭动画产生竞态，导致遮罩层短暂或持续覆盖编辑态内容
-
-将详情态和编辑态改为 `v-show` 后，`a-image-preview-group` 始终保持挂载，Dialog 可以按照自身生命周期正常关闭和清理
-
-最终方案为：
-
-```text
-getContainer + ref
-    解决预览箭头的局部样式作用域
-
-v-show
-    避免 Preview Dialog 异步卸载与视图切换产生竞态
-```</content>
-    <dc:creator>Tilex</dc:creator>
-    <dc:date>2026-08-08T07:01:45Z</dc:date>
-  </entry>
-  <entry>
-    <title>动态组件 vs 插槽.md</title>
-    <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/52" />
-    <author>
-      <name>Tilex</name>
-    </author>
-    <id>https://janfeise.github.io/blog-backup/article/52</id>
-    <updated>2026-10-02T08:19:57Z</updated>
-    <published>2026-08-08T06:58:02Z</published>
-    <content type="text/markdown"># 动态组件 vs 插槽
-
-&gt; 动态组件文档：[Vue 官方文档 - Dynamic Components](https://cn.vuejs.org/guide/essentials/component-basics.html?utm_source=chatgpt.com#dynamic-components)
-
-如下图所示，壳组件（Layout Component）组织了布局与左侧的公共目录部分，而右侧区域是不同的内容，需通过组件注入加载，此时有两种方案：动态组件与插槽![Pasted image 20260522104732](/blog-backup/blog-images/2026/08/08/Pasted%20image%2020260522104732.png)
-
-![Pasted image 20260522104821](/blog-backup/blog-images/2026/08/08/Pasted%20image%2020260522104821.png)
-
-在 Vue 中，组件拆分往往并不是完全独立的模块，更多情况下是“公共结构 + 内容注入”的组合模式。某些组件只负责整体布局、状态管理与公共逻辑，而真正的业务内容则通过插槽或动态组件注入到指定区域中
-
-这种设计方式在后台管理系统、文档系统、详情页、配置页等场景中十分常见，因为页面结构通常高度一致，但中间内容区域却存在明显差异
-
-## 动态组件
-
-动态组件适合以下场景：右侧内容已经被封装成独立组件，只需要根据不同页面动态切换即可
-
-如下结构：
-
-```txt
-|
-|——TOCBase.vue		// 壳组件，layout component，只负责布局与左侧公共目录部分
-|——TOC				// 文件夹
-   |——EditTOC.vue	// 右侧编辑组件
-   |——DetailTOC.vue // 右侧详情组件
-```
-
-此时，`TOCBase.vue` 负责：
-
-- 页面布局
-- 左侧目录
-- 滚动联动
-- 激活状态
-- 公共逻辑
-
-而右侧内容区域则完全交由业务组件负责
-
-由于右侧已经封装为完整组件，因此此时使用动态组件更加适合
-
-新增页：
-
-```vue
-&lt;TOCBase :rightComponent="EditTOC" /&gt;
-```
-
-详情页：
-
-```vue
-&lt;TOCBase :rightComponent="DetailTOC" /&gt;
-```
-
-通过参数直接传递右侧组件，即可实现不同内容区域的动态切换
-
-这种模式本质上类似：
-
-```txt
-Layout + 页面内容注入
-```
-
-壳组件只负责结构，而不关心具体业务内容
-
-### 动态组件实现
-
-```vue
-&lt;component :is="rightComponent" /&gt;
-```
-
-在 Vue 中，`:is`（即 `v-bind:is`）主要用于动态组件，它允许根据绑定的响应式变量，在多个组件之间动态切换
-
-例如：
-
-```vue
-&lt;script setup&gt;
-import EditTOC from './EditTOC.vue'
-import DetailTOC from './DetailTOC.vue'
-
-const currentComponent = ref(EditTOC)
-&lt;/script&gt;
-
-&lt;template&gt;
-    &lt;component :is="currentComponent" /&gt;
-&lt;/template&gt;
-```
-
-此时：
-
-```js
-currentComponent.value = DetailTOC
-```
-
-页面会自动切换为：
-
-```vue
-&lt;DetailTOC /&gt;
-```
-
-这种方式最大的优势在于：
-
-- 解耦业务与布局
-- 提高组件复用性
-- 页面切换更加灵活
-- 更适合中大型项目
-
-尤其在后台系统中，一个统一的布局组件往往会配合多个动态业务组件共同使用
-
-## 插槽
-
-与动态组件相比，插槽更加适合“&lt;u&gt;局部内容注入&lt;/u&gt;”
-
-如果动态组件更像：
-
-```txt
-注入一个完整模块
-```
-
-那么插槽更像：
-
-```txt
-向指定区域填充内容
-```
-
-例如：
-
-```vue
-&lt;template&gt;
-    &lt;div class="layout"&gt;
-        &lt;aside&gt;
-            左侧目录
-        &lt;/aside&gt;
-
-        &lt;main&gt;
-            &lt;slot /&gt;
-        &lt;/main&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
-```
-
-父组件：
-
-```vue
-&lt;TOCBase&gt;
-    &lt;div&gt;
-        这里是内容区域
-    &lt;/div&gt;
-&lt;/TOCBase&gt;
-```
-
-最终：
-
-```vue
-&lt;slot /&gt;
-```
-
-会被替换为：
-
-```vue
-&lt;div&gt;
-    这里是内容区域
-&lt;/div&gt;
-```
-
-### 具名插槽
-
-当页面存在多个可注入区域时，通常会使用具名插槽
-
-例如：
-
-```vue
-&lt;template&gt;
-    &lt;div class="layout"&gt;
-        &lt;header&gt;
-            &lt;slot name="header" /&gt;
-        &lt;/header&gt;
-
-        &lt;main&gt;
-            &lt;slot name="content" /&gt;
-        &lt;/main&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
-```
-
-父组件：
-
-```vue
-&lt;TOCBase&gt;
-    &lt;template #header&gt;
-        顶部区域
-    &lt;/template&gt;
-
-    &lt;template #content&gt;
-        内容区域
-    &lt;/template&gt;
-&lt;/TOCBase&gt;
-```
-
-这种方式相比动态组件更加灵活，因为它允许父组件直接控制局部结构，而不需要额外拆分完整组件
-
-## 动态组件与插槽的区别
-
-动态组件更适合：
-
-- 已封装好的组件
-- 独立业务模块
-- 页面级组件切换
-- 后台管理系统
-- 多页面复用布局
-
-插槽更适合：
-
-- 局部内容注入
-- 灵活结构组合
-- 小型内容块
-- UI 组件封装
-- 通用容器组件
-
-可以理解为：
-
-```txt
-动态组件：注入组件
-插槽：注入内容
-```
-
-## Layout Component 的核心思想
-
-无论是动态组件还是插槽，本质上都体现了同一种设计思想：
-
-```txt
-结构与内容分离
-```
-
-布局组件只负责：
-
-- 页面结构
-- 公共逻辑
-- 状态管理
-- UI 框架
-
-业务内容则由外部注入
-
-这种模式能够显著提升：
-
-- 组件复用率
-- 项目可维护性
-- 模块解耦能力
-- 页面扩展能力
-
-在 Vue 中，大量优秀组件库与后台框架都采用了类似思想，例如：
-
-- 表格组件
-- Dialog 组件
-- Drawer 组件
-- Layout 布局组件
-- Tabs 组件
-
-它们往往只负责公共结构，而真正的内容则由开发者通过插槽或动态组件注入完成
-
-## 扩展：动态组件与插槽并不是对立关系，而是经常配合使用
-
-在实际项目开发中，动态组件与插槽并不是二选一的关系。很多场景下，两者往往会同时出现，共同完成布局组件（Layout Component）的设计。
-
-例如，一个典型的双栏布局组件，曾在后台系统中遇到：
-
-```txt
-┌──────────┬───────────────────────┐
-│          │                       │
-│  tabs    │                       │
-│  (切换)  │        right          │
-│──────────│     (右侧内容区)       │
-│          │                       │
-│  left    │                       │
-│(左侧内容)│                       │
-│          │                       │
-└──────────┴───────────────────────┘
-```
-
-该布局被多个页面复用，其中：
-
-- `left`：左侧功能区域
-  
-- `right`：右侧业务区域
-  
-- `tabs`：可选区域，用于切换左侧内容
-  
-
-此时会发现：
-
-- `left` 和 `right` 本质上属于完整业务模块
-  
-- `tabs` 只是一个局部控制区域
-  
-- `tabs` 与具体页面状态强相关
-  
-
-因此三者并不适合采用同一种注入方式。
-
-### left 与 right 适合动态组件
-
-对于左右区域而言，它们通常已经被封装为独立业务组件。
-
-例如：
-
-```txt
-components
-│
-├── LeftUser.vue
-├── LeftRole.vue
-├── LeftPermission.vue
-│
-├── RightAdd.vue
-├── RightEdit.vue
-└── RightDetail.vue
-```
-
-不同页面只需要动态切换对应组件即可：
-
-```vue
-&lt;Layout
-    :left-component="currentLeft"
-    :right-component="currentRight"
-/&gt;
-```
-
-Layout 内部：
-
-```vue
-&lt;template&gt;
-    &lt;div class="layout"&gt;
-        &lt;aside&gt;
-            &lt;component :is="leftComponent" /&gt;
-        &lt;/aside&gt;
-
-        &lt;main&gt;
-            &lt;component :is="rightComponent" /&gt;
-        &lt;/main&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
-```
-
-这种方式非常符合动态组件的设计目标：
-
-```txt
-根据不同页面动态切换完整业务模块
-```
-
-Layout 不需要关心具体渲染哪个组件，只负责提供渲染位置。
-
-### tabs 更适合插槽
-
-相比之下，tabs 的情况有所不同。
-
-很多时候 tabs 只是一个简单的切换器，例如：
-&gt; Segmented 组件是 ant-design-vue 中的一个分段控制器组件
-```vue
-&lt;Segmented
-    v-model="activeTab"
-    :options="options"
-/&gt;
-```
-
-它本身并不是一个独立业务模块，而是当前页面状态的一部分。
-
-例如：
-
-```js
-const activeTab = ref('user')
-
-const currentLeft = computed(() =&gt; {
-    return activeTab.value === 'user'
-        ? LeftUser
-        : LeftRole
-})
-```
-
-这里的核心状态：
-
-```js
-activeTab
-```
-
-属于页面本身，而不是 Layout。
-
-如果将 tabs 再单独封装为：
-
-```vue
-&lt;Tabs /&gt;
-```
-
-那么组件之间就会产生额外通信：
-
-```txt
-Tabs
- ↓
-通知父组件
- ↓
-修改 activeTab
- ↓
-切换 Left 组件
-```
-
-原本简单的状态流转变得更加复杂（❌）。
-
-因此，对于这种仅负责局部控制的内容，更适合使用插槽进行注入。
-
-### Layout 实现：具名插槽 + 动态组件
-
-Layout 只提供一个具名插槽：
-
-```vue
-&lt;!--
-  Layout 布局组件
-
-  职责：
-
-    - 左右 3:7 分，分栏布局
-
-    - 不参与任何业务逻辑与状态管理，只负责布局
-
-  注入方式：
-    - tabs  ：仅通过具名插槽注入（父组件自行管理切换状态）
-    - left  ：插槽优先，无插槽时回退到动态组件 leftComponent
-    - right ：插槽优先，无插槽时回退到动态组件 rightComponent
-
-  使用示例：
-    &lt;Layout :left-component="SomeComp" :right-component="OtherComp"&gt;
-      &lt;template #tabs&gt;
-        &lt;Segmented v-model="activeTab" :options="options" /&gt;
-      &lt;/template&gt;
-    &lt;/Layout&gt;
---&gt;
-
-&lt;template&gt;
-  &lt;div class="layout-wrapper"&gt;
-    &lt;!-- tabs 插槽：由父组件注入切换控件，本组件不管理切换状态 --&gt;
-    &lt;div v-if="$slots.tabs" class="layout-tabs"&gt;
-      &lt;slot name="tabs" /&gt;
-    &lt;/div&gt;
-
-    &lt;a-row :gutter="16"&gt;
-      &lt;!-- 左侧：占 7/24 宽度，优先渲染插槽内容，无插槽时回退到动态组件 --&gt;
-      &lt;a-col :span="7"&gt;
-        &lt;div class="left-panel"&gt;
-          &lt;slot name="left"&gt;
-            &lt;component :is="leftComponent" /&gt;
-          &lt;/slot&gt;
-        &lt;/div&gt;
-      &lt;/a-col&gt;
-
-      &lt;!-- 右侧：占 17/24 宽度，优先渲染插槽内容，无插槽时回退到动态组件 --&gt;
-      &lt;a-col :span="17"&gt;
-        &lt;div class="right-panel"&gt;
-          &lt;slot name="right"&gt;
-            &lt;component :is="rightComponent" /&gt;
-          &lt;/slot&gt;
-        &lt;/div&gt;
-      &lt;/a-col&gt;
-    &lt;/a-row&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script setup&gt;
-// 左右动态组件：父组件可传入具体业务组件进行渲染
-// 若同时传入插槽和动态组件，插槽优先级更高
-defineProps({
-  leftComponent: {
-    type: Object,
-    default: null
-  },
-  rightComponent: {
-    type: Object,
-    default: null
-  }
-})
-&lt;/script&gt;
-```
-
-Layout 只负责：
-
-- 布局结构
-  
-- 左右区域渲染
-  
-- tabs 插槽占位
-  
-
-并不参与具体业务逻辑。
-
-### 页面使用示例
-
-新增页面：`add.vue`
-
-```vue
-&lt;script setup&gt;
-import { computed, ref } from 'vue'
-
-import Layout from '@/components/Layout.vue'
-
-import LeftUser from './LeftUser.vue'
-import LeftRole from './LeftRole.vue'
-
-import RightAdd from './RightAdd.vue'
-
-const activeTab = ref('user')
-
-const currentLeft = computed(() =&gt; {
-    return activeTab.value === 'user'
-        ? LeftUser
-        : LeftRole
-})
-&lt;/script&gt;
-
-&lt;template&gt;
-    &lt;Layout
-        :left-component="currentLeft"
-        :right-component="RightAdd"
-    &gt;
-
-        &lt;template #tabs&gt;
-            &lt;Segmented
-                v-model="activeTab"
-                :options="[
-                    {
-                        label: '用户',
-                        value: 'user'
-                    },
-                    {
-                        label: '角色',
-                        value: 'role'
-                    }
-                ]"
-            /&gt;
-        &lt;/template&gt;
-
-    &lt;/Layout&gt;
-&lt;/template&gt;
-```
-
-整个状态流转过程如下：
-
-```txt
-Page
- │
- ├── activeTab
- │
- ├── Segmented
- │
- ├── currentLeft
- │
- └── Layout
-      ├── tabs slot
-      ├── left component
-      └── right component
-```
-
-其中：
-
-```txt
-Page
-负责状态管理
-
-Layout
-负责页面结构
-
-Segmented
-负责切换状态
-
-动态组件
-负责业务内容
-```
-
-各自职责清晰，互不耦合。
-
-### 为什么这种设计更合理
-
-从职责角度分析：
-
-动态组件解决的是：
-
-```txt
-渲染什么组件
-```
-
-的问题。
-
-插槽解决的是：
-
-```txt
-把内容放到哪里
-```
-
-的问题。
-
-在当前场景下：
-
-```txt
-left/right
-    ↓
-完整业务模块
-    ↓
-动态组件
-
-tabs
-    ↓
-控制组件切换功能
-    ↓
-具名插槽：将tabs的权限归还给所需使用的页面，不额外控制
-```
-
-两种机制分别解决不同层面的问题。</content>
-    <dc:creator>Tilex</dc:creator>
-    <dc:date>2026-08-08T06:58:02Z</dc:date>
   </entry>
 </feed>
