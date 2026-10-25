@@ -5,9 +5,1157 @@
   <link rel="self" type="application/atom+xml" href="https://janfeise.github.io/blog-backup/atom.xml" />
   <subtitle>浮生世，片刻光阴</subtitle>
   <id>https://janfeise.github.io/blog-backup/</id>
-  <updated>2026-10-21T03:52:01Z</updated>
+  <updated>2026-10-25T12:01:54Z</updated>
   <dc:creator>Tilex</dc:creator>
-  <dc:date>2026-10-21T03:52:01Z</dc:date>
+  <dc:date>2026-10-25T12:01:54Z</dc:date>
+  <entry>
+    <title>Spring八股整理.md</title>
+    <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/74" />
+    <author>
+      <name>Tilex</name>
+    </author>
+    <id>https://janfeise.github.io/blog-backup/article/74</id>
+    <updated>2026-10-25T12:01:54Z</updated>
+    <published>2026-10-25T12:01:54Z</published>
+    <content type="text/markdown"># Spring八股整理&#xD;
+&#xD;
+## 重点&#xD;
+&#xD;
+1. 三级缓存&#xD;
+2. jdk动态代理与cglib代理&#xD;
+3. springboot自动装配原理&#xD;
+4. spring事务失效场景&#xD;
+&#xD;
+## 常见注解&#xD;
+&#xD;
+按照 Spring Boot 开发时的分层结构记忆：&#xD;
+&#xD;
+| 注解          | 作用                                 |&#xD;
+| ------------- | ------------------------------------ |&#xD;
+| `@Controller` | 标注控制层组件，负责处理 HTTP 请求   |&#xD;
+| `@Service`    | 标注业务逻辑层组件，负责处理业务逻辑 |&#xD;
+| `@Repository` | 标注数据访问层组件，负责数据库访问   |&#xD;
+&#xD;
+### HTTP 请求映射注解&#xD;
+&#xD;
+由于在 controller 层往往会处理 http 请求，根据不同的请求方法选择对应的 service 层，因此有以下常见的注解：&#xD;
+&#xD;
+| 注解             | 作用                               |&#xD;
+| ---------------- | ---------------------------------- |&#xD;
+| `@GetMapping`    | 处理 GET 请求，通常用于查询数据    |&#xD;
+| `@PostMapping`   | 处理 POST 请求，通常用于新增数据   |&#xD;
+| `@PutMapping`    | 处理 PUT 请求，通常用于更新数据    |&#xD;
+| `@DeleteMapping` | 处理 DELETE 请求，通常用于删除数据 |&#xD;
+&#xD;
+### HTTP 响应注解&#xD;
+&#xD;
+Controller 层处理完请求后，需要将结果返回给客户端，通常以 JSON 格式返回。&#xD;
+&#xD;
+- `@Controller`：默认将方法返回的字符串视为视图名称，通过视图解析器查找并渲染对应页面（如 HTML）&#xD;
+- `@ResponseBody`：将方法返回值直接写入 HTTP 响应体，不进行视图解析。返回 Java 对象时，通常会自动序列化为 JSON&#xD;
+- `@RestController`：相当于 `@Controller` + `@ResponseBody`，默认将方法返回值写入 HTTP 响应体，适用于前后端分离开发（restful api）&#xD;
+&#xD;
+核心区别： `@Controller` 默认偏向视图解析，而 `@RestController` 默认直接返回响应数据。&#xD;
+&#xD;
+#### @Controller 示例&#xD;
+&#xD;
+只使用 @Controller 注解，会将返回的字符串进行视图解析，返回对应的HTML&#xD;
+&#xD;
+```java&#xD;
+@Controller&#xD;
+public class UserController {&#xD;
+&#xD;
+    @GetMapping("/user")&#xD;
+    public String user() {&#xD;
+        return "user";&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+这里返回的 `"user"` 并不是直接发送给浏览器，而是作为视图名称，由 Spring MVC 的视图解析机制处理&#xD;
+&#xD;
+例如使用 Thymeleaf 时，可以解析到：&#xD;
+&#xD;
+```java&#xD;
+src/main/resources/templates/user.html&#xD;
+```&#xD;
+&#xD;
+然后渲染 HTML 页面并返回给浏览器；如果要返回 JSON，可以添加 `@ResponseBody` 注解：&#xD;
+&#xD;
+```java&#xD;
+@Controller&#xD;
+public class UserController {&#xD;
+&#xD;
+    @ResponseBody&#xD;
+    @GetMapping("/user")&#xD;
+    public User user() {&#xD;
+        return new User(1, "张三");&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+Spring MVC 会通过合适的 `HttpMessageConverter` 将对象序列化，常见情况下使用 Jackson 转换为 JSON&#xD;
+&#xD;
+### HTTP 请求参数注解&#xD;
+&#xD;
+- `@RequestBody`：用于接收前端传递的 JSON 数据&#xD;
+&#xD;
+前端发送 post 请求：&#xD;
+&#xD;
+```json&#xD;
+{&#xD;
+  "name": "张三",&#xD;
+  "age": 20&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+后端接受数据：@RequestBody 注解&#xD;
+&#xD;
+```java&#xD;
+@RestController&#xD;
+public class UserController {&#xD;
+&#xD;
+    @PostMapping("/user")&#xD;
+    public String addUser(@RequestBody User user) { // RequestBody 接受前端传递的JSON数据&#xD;
+        return user.getName();&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+### 依赖注入注解&#xD;
+&#xD;
+- `@Autowired`：Spring 提供的依赖注入注解，默认按照类型从 IoC 容器中查找 Bean 并注入&#xD;
+&#xD;
+## @Autowired 注解与 @Resource 注解的区别&#xD;
+&#xD;
+可以通过 @Autowired 与 @Resource 注入 Bean 到对应属性中，但存在不同：&#xD;
+&#xD;
+1. `@Autowired` 是 Spring 提供的注解，`@Resource` 是 java EE 标准提供的注解&#xD;
+&#xD;
+2. 两者都用于依赖注入，核心区别在于匹配方式：&#xD;
+&#xD;
+- `@Autowired` 默认按类型匹配，同类型存在多个 Bean 时，可以结合名称等条件进一步筛选&#xD;
+- `@Resource` 默认先按名称匹配，未指定名称且名称匹配失败时，再按类型匹配&#xD;
+&#xD;
+## spring 核心组成模块&#xD;
+&#xD;
+- spring-core 与 spring-beans：提供 IoC 容器的基础实现，管理 Bean 的创建与装配&#xD;
+- spring-web：web应用初始化&#xD;
+- spring-context：应用上下文，好像是企业级功能&#xD;
+- spring-test：提供 JUnit 单元测试等&#xD;
+&#xD;
+## IOC与DI&#xD;
+&#xD;
+IoC（控制反转，Inversion of Control），就是由 Spring 容器来控制和管理对象，不用手动进行 new 创建，以及销毁&#xD;
+&#xD;
+DI：由于对象都交由 Spring 容器管理，后续使用对象时进行依赖注入即可&#xD;
+&#xD;
+## 依赖注入方式有哪些？&#xD;
+&#xD;
+1. 构造函数注入：通过类的构造函数来注入依赖项。&#xD;
+2. Setter 注入：通过类的 Setter 方法来注入依赖项。&#xD;
+3. Field（字段） 注入：直接在类的字段上使用注解（如 `@Autowired` 或 `@Resource`）来注入依赖项。&#xD;
+&#xD;
+构造函数注入示例：&#xD;
+&#xD;
+```java&#xD;
+@Service&#xD;
+public class UserService {&#xD;
+&#xD;
+    private final UserRepository userRepository; // final 修饰&#xD;
+&#xD;
+    public UserService(UserRepository userRepository) {&#xD;
+        this.userRepository = userRepository;&#xD;
+    }&#xD;
+&#xD;
+    //...&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+Setter 注入示例：&#xD;
+&#xD;
+```java&#xD;
+@Service&#xD;
+public class UserService {&#xD;
+&#xD;
+    private UserRepository userRepository;&#xD;
+&#xD;
+    @Autowired&#xD;
+    public void setUserRepository(UserRepository userRepository) {&#xD;
+        this.userRepository = userRepository;&#xD;
+    }&#xD;
+&#xD;
+    //...&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+Field 注入示例：&#xD;
+&#xD;
+```java&#xD;
+@Service&#xD;
+public class UserService {&#xD;
+&#xD;
+    @Autowired&#xD;
+    private UserRepository userRepository;&#xD;
+&#xD;
+    //...&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+## 构造函数注入与setter注入的区别是？&#xD;
+&#xD;
+- 依赖完整性：构造函数注入要求在创建对象时就提供必须依赖，而 setter 注入可以在创建对象后再设置依赖&#xD;
+- 不可变性：构造函数注入通常配合 final 修饰依赖字段，避免后续被重新赋值&#xD;
+- 适用场景：两者适用场景不同，构造函数注入适合必须依赖，而 setter 注入则适合可选依赖&#xD;
+&#xD;
+记忆重点：构造函数注入 = 必需依赖 + `final`；Setter 注入 = 可选依赖 + 可重新设置&#xD;
+&#xD;
+构造函数注入示例：&#xD;
+&#xD;
+```java&#xD;
+@Service&#xD;
+public class UserService {&#xD;
+&#xD;
+    private final UserRepository userRepository; // final&#xD;
+&#xD;
+    public UserService(UserRepository userRepository) {&#xD;
+        this.userRepository = userRepository;&#xD;
+    }&#xD;
+&#xD;
+    //...&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+Setter 注入示例：&#xD;
+&#xD;
+```java&#xD;
+@Service&#xD;
+public class UserService {&#xD;
+&#xD;
+    private UserRepository userRepository;&#xD;
+&#xD;
+    @Autowired&#xD;
+    public void setUserRepository(UserRepository userRepository) {&#xD;
+        this.userRepository = userRepository;&#xD;
+    }&#xD;
+&#xD;
+    //...&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+两者使用时的差别：构造函数注入是“创建时传入依赖”，Setter 注入是“创建后设置依赖”&#xD;
+&#xD;
+```java&#xD;
+// 构造函数注入：创建对象时必须传入依赖&#xD;
+UserService service = new UserService(userRepository);&#xD;
+&#xD;
+// Setter 注入：先创建对象，再设置依赖&#xD;
+UserService service = new UserService();&#xD;
+service.setUserRepository(userRepository);&#xD;
+```&#xD;
+&#xD;
+需要注意：以上两种写法是为了说明 Java 对象的创建方式。在实际 Spring 开发中，通常由 Spring 容器负责创建对象并完成依赖注入，而不是手动 `new` &#xD;
+&#xD;
+## Bean 的生命周期&#xD;
+&#xD;
+&gt; Spring Bean 的生命周期类似于 Vue 组件的生命周期，开发者可以在不同阶段执行对应的业务逻辑，例如初始化资源、释放资源等&#xD;
+&gt;&#xD;
+&gt; 视频：[一个例子讲明白 Spring Bean 的生命周期](https://www.bilibili.com/video/BV1n9k4BJEoP/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f)&#xD;
+&#xD;
+### Bean 生命周期的主要阶段&#xD;
+&#xD;
+Spring Bean 的生命周期可以简化为以下 5 个阶段：&#xD;
+&#xD;
+![image-20261024120513420](/blog-backup/blog-images/2026/10/24/image-20261024120513420.png)&#xD;
+&#xD;
+1. **实例化**：Spring 容器创建 Bean 实例&#xD;
+2. **属性赋值**：Spring 为 Bean 注入所需的依赖，例如通过 Setter 方法或字段注入&#xD;
+3. **初始化**：依赖注入完成后，执行初始化逻辑，例如 `@PostConstruct` 或配置的 `initMethod`&#xD;
+4. **使用**：Bean 初始化完成后，可以被其他组件使用，执行业务逻辑&#xD;
+5. **销毁**：Spring 容器关闭时，执行销毁回调，例如 `@PreDestroy` 或配置的 `destroyMethod`，用于释放资源&#xD;
+&#xD;
+其中，常见的生命周期注解有：&#xD;
+&#xD;
+| 注解             | 执行时机       | 主要用途             |&#xD;
+| ---------------- | -------------- | -------------------- |&#xD;
+| `@PostConstruct` | 依赖注入完成后 | 初始化资源、加载配置 |&#xD;
+| `@PreDestroy`    | Bean 销毁前    | 关闭连接、释放资源   |&#xD;
+&#xD;
+注意：上述是简化后的生命周期，实际还涉及 Bean 后置处理器等机制&#xD;
+&#xD;
+### Bean 生命周期示例&#xD;
+&#xD;
+首先，定义一个依赖组件：&#xD;
+&#xD;
+```java&#xD;
+@Component&#xD;
+public class TaskRepository {&#xD;
+&#xD;
+    public void save() {&#xD;
+        System.out.println("执行数据保存");&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+然后，定义业务组件 `TaskService`，通过 Setter 方法注入 `TaskRepository`：&#xD;
+&#xD;
+```java&#xD;
+@Component&#xD;
+public class TaskService {&#xD;
+&#xD;
+    private TaskRepository taskRepository;&#xD;
+&#xD;
+    // 1. 实例化&#xD;
+    public TaskService() {&#xD;
+        System.out.println("1. Bean 实例化");&#xD;
+    }&#xD;
+&#xD;
+    // 2. 属性赋值&#xD;
+    @Autowired&#xD;
+    public void setTaskRepository(TaskRepository taskRepository) {&#xD;
+        this.taskRepository = taskRepository;&#xD;
+        System.out.println("2. Bean 属性赋值");&#xD;
+    }&#xD;
+&#xD;
+    // 3. 初始化，等价于 initMethod&#xD;
+    @PostConstruct&#xD;
+    public void init() {&#xD;
+        System.out.println("3. Bean 初始化");&#xD;
+    }&#xD;
+&#xD;
+    // 4. 使用&#xD;
+    public void execute() {&#xD;
+        System.out.println("4. Bean 使用");&#xD;
+        taskRepository.save();&#xD;
+    }&#xD;
+&#xD;
+    // 5. 销毁&#xD;
+    @PreDestroy&#xD;
+    public void destroy() {&#xD;
+        System.out.println("5. Bean 销毁");&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+上述代码需要导入对应的注解：`@Component`、`@Autowired`、`@PostConstruct` 和 `@PreDestroy`&#xD;
+&#xD;
+**调用 Bean：**&#xD;
+&#xD;
+```java&#xD;
+@Component&#xD;
+public class TaskRunner implements CommandLineRunner {&#xD;
+&#xD;
+    private final TaskService taskService;&#xD;
+&#xD;
+    public TaskRunner(TaskService taskService) {&#xD;
+        this.taskService = taskService;&#xD;
+    }&#xD;
+&#xD;
+    @Override&#xD;
+    public void run(String... args) {&#xD;
+        taskService.execute();&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+**运行结果：**&#xD;
+&#xD;
+```text&#xD;
+1. Bean 实例化&#xD;
+2. Bean 属性赋值&#xD;
+3. Bean 初始化&#xD;
+4. Bean 使用&#xD;
+执行数据保存&#xD;
+```&#xD;
+&#xD;
+当 Spring Boot 应用正常关闭时：&#xD;
+&#xD;
+```text&#xD;
+5. Bean 销毁&#xD;
+```&#xD;
+&#xD;
+注意：示例以默认单例 Bean 为前提，仅展示主要生命周期阶段，实际 Spring 内部还涉及 Bean 后置处理器等机制&#xD;
+&#xD;
+### 面试总结&#xD;
+&#xD;
+Spring Bean 的生命周期主要包括 **实例化、属性赋值、初始化、使用和销毁** 五个阶段&#xD;
+&#xD;
+其中，构造函数注入在实例化阶段完成，而 Setter 注入和字段注入通常在属性赋值阶段完成&#xD;
+&#xD;
+开发者可以使用 `@PostConstruct` 在初始化阶段执行相关逻辑，使用 `@PreDestroy` 在销毁前释放资源&#xD;
+&#xD;
+## 单例 bean 的线程安全问题&#xD;
+&#xD;
+Spring bean 的作用域默认是单例 bean，即 Spring 容器只会存在一个 Bean 实例，并且该实例会被多个线程共享，因此在多线程情景下可能存在问题&#xD;
+&#xD;
+- 如果单例 Bean 是无状态的，没有成员变量，那么这个单例 Bean 是线程安全的，比如 Spring MVC 中的 controller、service、dao等，基本都是无状态的&#xD;
+- 如果 Bean 内部有成员变量，在多线程情景下会存在线程安全问题&#xD;
+&#xD;
+单例 Bean存在多线程安全问题，常见的有三种解决办法：&#xD;
+&#xD;
+1. 优先设计无状态 Bean：避免使用可变的共享成员变量，尽量使用方法局部变量&#xD;
+2. 必要时进行线程同步：例如使用 `synchronized`、`AtomicInteger` 等机制&#xD;
+3. 使用 `ThreadLocal`：对于确实需要线程隔离的数据，可以使用 `ThreadLocal`，但需要注意线程池环境下的数据清理与内存泄漏风险。&#xD;
+&#xD;
+## Bean 的作用域有哪些？&#xD;
+&#xD;
+Spring 中 Bean 的作用域通常有下面几种：&#xD;
+&#xD;
+- singleton：单例，Ioc 容器中只存在唯一的 Bean 实例。Spring 中的 bean 默认都是单例的，是对单例模式的应用&#xD;
+- prototype：原型，每次获取都会创建一个新的 bean 实例。也就是说 getBean() 两次，得到的是不同的 Bean 实例&#xD;
+- request（仅web应用可用）：每一次http请求都会产生一个新的 bean（请求bean），该 bean 仅在当前http request 内有效&#xD;
+- session（仅web应用可用）：每一次来自新 session 的 http 请求都会产生一个新的 bean（会话bean），该 bean 仅在当前 http session 有效&#xD;
+&#xD;
+如何配置 bean 的作用域呢？&#xD;
+&#xD;
+xml 方式：&#xD;
+&#xD;
+```xml&#xD;
+&lt;bean id="..." class="..." scope="singleton"&gt;&lt;/bean&gt;&#xD;
+```&#xD;
+&#xD;
+注解方式：&#xD;
+&#xD;
+```java&#xD;
+@Bean&#xD;
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)&#xD;
+public Person personPrototype() {&#xD;
+    return new Person();&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+## 三级缓存解决循环依赖&#xD;
+&#xD;
+### 什么是循环依赖？&#xD;
+&#xD;
+在 Spring 中，依赖注入主要有三种方式：构造器注入、Setter 注入、Field 字段注入。&#xD;
+&#xD;
+其中，Setter 注入与 Field 字段注入的特点是：Bean 的实例化与属性赋值分开进行，先创建对象，再注入依赖，这为解决循环依赖提供了条件。&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```java&#xD;
+@Component&#xD;
+public class CircularDependencyA {&#xD;
+    @Autowired&#xD;
+    private CircularDependencyB circB;&#xD;
+}&#xD;
+&#xD;
+@Component&#xD;
+public class CircularDependencyB {&#xD;
+    @Autowired&#xD;
+    private CircularDependencyA circA;&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+此时：&#xD;
+&#xD;
+- A 依赖 B，需要先获取 B&#xD;
+- B 依赖 A，需要先获取 A&#xD;
+&#xD;
+两者相互依赖，形成循环依赖&#xD;
+&#xD;
+### Spring 如何解决循环依赖？&#xD;
+&#xD;
+Spring 通过三级缓存机制，提前暴露尚未完成属性赋值和初始化的 Bean，从而解决部分循环依赖问题。&#xD;
+&#xD;
+首先了解三级缓存：&#xD;
+&#xD;
+| 缓存     | 名称                    | 存储内容                         |&#xD;
+| -------- | ----------------------- | -------------------------------- |&#xD;
+| 一级缓存 | `singletonObjects`      | 完成初始化的单例 Bean            |&#xD;
+| 二级缓存 | `earlySingletonObjects` | 提前暴露的 Bean 引用             |&#xD;
+| 三级缓存 | `singletonFactories`    | 用于获取提前暴露 Bean 引用的工厂 |&#xD;
+&#xD;
+以 A、B 循环依赖为例，结合 Bean 生命周期进行分析：&#xD;
+&#xD;
+![image-20261024160928333](/blog-backup/blog-images/2026/10/24/image-20261024160928333.png)&#xD;
+&#xD;
+具体步骤：&#xD;
+&#xD;
+1. 实例化 A：创建 A 对象，并将用于获取 A 提前引用的工厂放入三级缓存&#xD;
+2. A 属性赋值：发现依赖 B，于是开始创建 B&#xD;
+3. 实例化 B：创建 B 对象，同样将其工厂放入三级缓存&#xD;
+4. B 属性赋值：发现依赖 A，此时通过三级缓存获取 A 的提前引用，并将该引用放入二级缓存，完成 B 对 A 的注入&#xD;
+5. 完成 B：B 完成初始化，进入一级缓存&#xD;
+6. 完成 A：将 B 注入 A，A 完成初始化，进入一级缓存&#xD;
+&#xD;
+至此，A 和 B 的循环依赖得到解决。&#xD;
+&#xD;
+### 为什么需要三级缓存？&#xD;
+&#xD;
+- 一级缓存：保存已经完成初始化的单例 Bean&#xD;
+- 二级缓存：保存提前暴露的 Bean 引用，避免重复创建提前引用&#xD;
+- 三级缓存：保存 `ObjectFactory`，在需要时获取 Bean 的提前引用，支持提前生成 AOP 代理对象&#xD;
+&#xD;
+需要注意：三级缓存的关键作用之一是配合 AOP，保证循环依赖场景下能够获取合适的代理对象引用。如果只考虑普通对象之间的循环引用，并非一定需要三级缓存。&#xD;
+&#xD;
+### 哪些循环依赖无法解决？&#xD;
+&#xD;
+Spring 的三级缓存并不能解决所有循环依赖：&#xD;
+&#xD;
+- 构造器循环依赖：A 创建时需要 B，B 创建时又需要 A，此时 A 尚未实例化，无法提前暴露引用&#xD;
+- Prototype 多例 Bean 循环依赖：Spring 不会像单例 Bean 一样对其进行三级缓存管理&#xD;
+- 部分复杂场景：例如某些 Bean 后置处理器或代理创建场景，仍可能出现循环依赖异常&#xD;
+&#xD;
+此外，Spring Boot 2.6 起默认禁止循环依赖，即使是可以通过三级缓存处理的循环依赖，也可能直接报错。可以通过 `spring.main.allow-circular-references=true` 允许尝试处理，但实际开发中更推荐从设计上消除循环依赖。&#xD;
+&#xD;
+### 面试总结&#xD;
+&#xD;
+&gt; 说说三级缓存如何解决循环依赖的？&#xD;
+&gt;&#xD;
+&gt; 我觉得解决循环依赖主要与依赖注入方式有关，依赖注入有三种方式：构造函数注入、setter 注入、field字段注入，setter注入与字段注入的核心点便是实例化与属性赋值分离，基于这里，在bean进行初始化时将循环依赖的对象放置在三级缓存中，存放提前引用的工厂，后续循环依赖可以直接从三级缓存中获取所需的依赖，完成初始化，至于另一个循环依赖的bean，此时也能进行后续的属性赋值和初始化。因此，对于构造函数产生的循环依赖往往无法进行解决&#xD;
+&gt;&#xD;
+&gt; 一级缓存存储完成初始化的单例 Bean，二级缓存存储提前暴露的 Bean 引用，三级缓存存储获取提前引用的工厂，并支持 AOP 代理的提前生成。&#xD;
+&gt;&#xD;
+&gt; 需要注意，构造器循环依赖和 Prototype 多例 Bean 的循环依赖通常无法通过该机制解决。&#xD;
+&#xD;
+## AOP&#xD;
+&#xD;
+aop：面向切面编程，实现了主业务与分支业务的解耦，主业务无需关心日志记录等操作，这些操作都统一通过aop进行实现和记录&#xD;
+&#xD;
+spring 是如何实现 aop 的？——动态代理，JDK动态代理与cglib动态代理，那么两者有什么区别？&#xD;
+&#xD;
+### jdk动态代理和cglib代理的区别&#xD;
+&#xD;
+&gt; JDK 动态代理和 CGLIB 代理的主要区别在于实现方式。&#xD;
+&gt;&#xD;
+&gt; JDK 动态代理基于接口，通过实现目标接口生成代理对象，而&#xD;
+&gt;&#xD;
+&gt; CGLIB 代理基于继承，通过创建目标类的子类生成代理对象，因此不要求目标对象实现接口。但是由于 Java 中 `final` 类不能被继承，`final` 方法不能被重写，所以 CGLIB 无法代理 `final` 类，也无法增强 `final` 方法。&#xD;
+&#xD;
+记忆要点：JDK 基于接口，CGLIB 基于继承；CGLIB 受 `final` 限制。&#xD;
+&#xD;
+## 三级缓存是如何处理代理对象的？&#xD;
+&#xD;
+在 spring 中，无论是 jdk 动态代理，还是 cglib 代理，两者的共同特点都是——通过 代理对象 实现增强，对于普通循环依赖二级缓存便足以，但代理却不行&#xD;
+&#xD;
+### 为什么普通循环依赖只需要二级缓存？&#xD;
+&#xD;
+假设存在两个 Bean：&#xD;
+&#xD;
+```java&#xD;
+@Component&#xD;
+public class A {&#xD;
+    @Autowired&#xD;
+    private B b;&#xD;
+}&#xD;
+&#xD;
+@Component&#xD;
+public class B {&#xD;
+    @Autowired&#xD;
+    private A a;&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+Spring 创建 Bean A 时：&#xD;
+&#xD;
+1. 实例化 A，此时 A 尚未完成属性注入&#xD;
+2. 将 A 提前放入缓存&#xD;
+3. 给 A 注入 B，发现 B 尚未创建，开始创建 B&#xD;
+4. 给 B 注入 A，从缓存中获取提前暴露的 A&#xD;
+5. B 创建完成，注入 A，最终 A 创建完成&#xD;
+&#xD;
+在这个过程中，只需要：&#xD;
+&#xD;
+- 一级缓存：存放初始化完成的 Bean&#xD;
+- 二级缓存：存放提前暴露、尚未完成初始化的 Bean&#xD;
+&#xD;
+因此，对于不涉及代理的常见 Setter/字段注入循环依赖，理论上二级缓存就足够了。&#xD;
+&#xD;
+### 为什么 aop 代理需要特殊处理&#xD;
+&#xD;
+&gt; aop 代理是通过代理对象实现，二级缓存会绕过代理&#xD;
+&#xD;
+假设 A 需要进行 AOP 增强：&#xD;
+&#xD;
+```java&#xD;
+@Component&#xD;
+public class A {&#xD;
+    @Autowired&#xD;
+    private B b;&#xD;
+&#xD;
+    @Transactional&#xD;
+    public void doSomething() {&#xD;
+        System.out.println("执行事务方法");&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+JDK 动态代理和 CGLIB 虽然实现方式不同，但有一个共同点：&#xD;
+&#xD;
+代理对象与原始对象不是同一个对象。&#xD;
+&#xD;
+- JDK 动态代理：创建实现目标接口的代理对象&#xD;
+- CGLIB：创建目标类的子类作为代理类，并生成代理对象，通过方法拦截实现增强&#xD;
+&#xD;
+假设 A 的原始对象为 `A_original`，代理对象为 `A_proxy`。&#xD;
+&#xD;
+如果 B 注入的是 `A_original`，而 Spring 最终对外提供的是 `A_proxy`，那么就会出现问题：&#xD;
+&#xD;
+```&#xD;
+B.a  → A_original（原始对象）&#xD;
+容器 → A_proxy（代理对象）&#xD;
+```&#xD;
+&#xD;
+这样 B 调用 A 的方法时，就可能绕过 AOP 增强，例如 `@Transactional` 无法按预期生效。&#xD;
+&#xD;
+因此，Spring 必须确保：B 提前获取的 A，与容器最终对外提供的 A，是同一个代理对象。&#xD;
+&#xD;
+### 二级缓存处理aop循环依赖会出现什么问题？&#xD;
+&#xD;
+假设 A 依赖 B，B 又依赖 A。&#xD;
+&#xD;
+Spring 首先创建 A：&#xD;
+&#xD;
+```&#xD;
+① 实例化 A_original&#xD;
+          ↓&#xD;
+② A 需要注入 B&#xD;
+          ↓&#xD;
+③ 开始创建 B&#xD;
+          ↓&#xD;
+④ B 又需要注入 A&#xD;
+          ↓&#xD;
+⑤ 此时 A 还没有完成初始化&#xD;
+```&#xD;
+&#xD;
+问题就在第⑤步：&#xD;
+&#xD;
+如果直接把原始对象 `A_original` 注入 B，就会变成：&#xD;
+&#xD;
+![image-20261025105815277](/blog-backup/blog-images/2026/10/25/image-20261025105815277.png)&#xD;
+&#xD;
+B 持有的是原始对象，其他 Bean 从容器中获取的却是代理对象。这不仅可能绕过 AOP 增强，还可能造成 Bean 引用不一致。&#xD;
+&#xD;
+### 三级缓存处理aop循环依赖&#xD;
+&#xD;
+Spring 不会直接把原始对象 A 放到三级缓存，而是先放入一个 `ObjectFactory`。&#xD;
+&#xD;
+当 B 需要 A 时，才调用工厂中的 `getEarlyBeanReference()`。&#xD;
+&#xD;
+可以把它理解为下面这段简化的伪代码：&#xD;
+&#xD;
+```java&#xD;
+Object getEarlyBeanReference(Object bean) {&#xD;
+    if (需要AOP代理(bean)) {&#xD;
+        return 创建代理对象(bean);&#xD;
+    }&#xD;
+&#xD;
+    return bean;&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+假设 A 需要代理，那么：&#xD;
+&#xD;
+```&#xD;
+B 需要 A&#xD;
+    ↓&#xD;
+从三级缓存获取 ObjectFactory&#xD;
+    ↓&#xD;
+调用 getEarlyBeanReference(A_original)&#xD;
+    ↓&#xD;
+提前获取 A_proxy&#xD;
+    ↓&#xD;
+把 A_proxy 放入二级缓存&#xD;
+    ↓&#xD;
+将 A_proxy 注入 B&#xD;
+```&#xD;
+&#xD;
+最终得到：&#xD;
+&#xD;
+```&#xD;
+B.a       → A_proxy&#xD;
+Spring容器 → A_proxy&#xD;
+```&#xD;
+&#xD;
+这样 B 调用 A 的方法时，也能够经过代理对象，执行事务等 AOP 增强。&#xD;
+&#xD;
+如果 A 不需要 AOP 代理，`getEarlyBeanReference()` 通常直接返回 `A_original` 即可。&#xD;
+&#xD;
+## Spring MVC的工作流程&#xD;
+&#xD;
+![image-20261025110950210](/blog-backup/blog-images/2026/10/25/image-20261025110950210.png)&#xD;
+&#xD;
+工作流程：从前端发起请求，到后端处理请求并返回给前端的整个过程&#xD;
+&#xD;
+1. 接收请求：前端发送 HTTP 请求，由 `DispatcherServlet` 统一接收&#xD;
+2. 处理器映射：`DispatcherServlet` 调用 `HandlerMapping`，根据请求路径、请求方法等条件找到对应的处理器，并返回 `HandlerExecutionChain`（包含处理器和拦截器）&#xD;
+3. 处理器执行：`DispatcherServlet` 调用 `HandlerAdapter`，由适配器执行拦截器的前置处理，并调用对应的 Controller 方法处理业务&#xD;
+4. 返回结果：Controller 执行完成后，传统 MVC 模式通常返回 `ModelAndView`，包含模型数据和视图信息&#xD;
+5. 视图解析与渲染：`DispatcherServlet` 调用 `ViewResolver` 解析视图，再渲染视图并将响应返回客户端&#xD;
+&#xD;
+速记：&#xD;
+&#xD;
+&gt; Spring MVC 的核心是 DispatcherServlet。首先接收前端请求，通过 HandlerMapping 找到对应的处理器执行链，然后由 HandlerAdapter 调用 Controller 执行业务逻辑。传统 MVC 模式会返回 ModelAndView，包含模型数据和视图信息，最后通过 ViewResolver 解析视图并渲染返回。&#xD;
+&#xD;
+## springboot 自动配置的原理&#xD;
+&#xD;
+配置路线：`@SpringBootApplication` → `@EnableAutoConfiguration` → `@Import` → `AutoConfigurationImportSelector` → 读取自动配置文件 → 条件装配 Bean&#xD;
+&#xD;
+Spring Boot 项目通常有如下启动类：&#xD;
+&#xD;
+```java&#xD;
+@SpringBootApplication&#xD;
+public class Application {&#xD;
+    public static void main(String[] args) {&#xD;
+        SpringApplication.run(Application.class, args);&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+其中，`@SpringBootApplication` 是一个组合注解，主要包含三个注解：&#xD;
+&#xD;
+```java&#xD;
+@SpringBootConfiguration&#xD;
+@EnableAutoConfiguration&#xD;
+@ComponentScan&#xD;
+```&#xD;
+&#xD;
+三个注解分别负责不同的事情：&#xD;
+&#xD;
+| 注解                       | 作用                       |&#xD;
+| -------------------------- | -------------------------- |&#xD;
+| `@SpringBootConfiguration` | 标识当前类为配置类         |&#xD;
+| `@EnableAutoConfiguration` | 开启 Spring Boot 自动配置  |&#xD;
+| `@ComponentScan`           | 扫描指定包下的 Spring 组件 |&#xD;
+&#xD;
+### @EnableAutoConfiguration 如何实现自动配置？&#xD;
+&#xD;
+`@EnableAutoConfiguration` 是自动配置的核心入口。&#xD;
+&#xD;
+其内部有一个关键注解：&#xD;
+&#xD;
+```java&#xD;
+@Import(AutoConfigurationImportSelector.class)&#xD;
+```&#xD;
+&#xD;
+（1）@Import 的作用&#xD;
+&#xD;
+`@Import` 是 Spring 提供的注解，可以向 Spring 容器导入配置类或其他组件。&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```java&#xD;
+@Configuration&#xD;
+public class MyConfig {&#xD;
+&#xD;
+    @Bean&#xD;
+    public UserService userService() {&#xD;
+        return new UserService();&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+通过：&#xD;
+&#xD;
+```java&#xD;
+@Import(MyConfig.class)&#xD;
+```&#xD;
+&#xD;
+Spring 就可以处理 `MyConfig`，将其中定义的 `UserService` 注册为 Bean。&#xD;
+&#xD;
+### 面试回答&#xD;
+&#xD;
+首先是启动类上的 `@SpringBootApplication` 是一个组合注解，其中包含 `@EnableAutoConfiguration` 是自动配置的核心，`@EnableAutoConfiguration` 通过 @import 注解导入对应的配置选择器（AutoConfigurationImportSelector），通过选择器读取 classpath 路径下 spring.factories 文件中声明的自动配置类&#xD;
+&#xD;
+最后，对 Bean 进行筛选，通过 `@ConditionalOnclass` 等注解判断是否需要将 Bean 注册到容器中，通过这种方式， springboot 实现了自动配置&#xD;
+&#xD;
+&gt; 组合注解启动类 @SpringBootApplication -&gt; 包含实现自动配置的核心注解 @EnalbeAutoConfiguration -&gt; 通过 @import 注解导入配置选择器（AutoConfigurationImportSelector）读取自动配置类 -&gt; 最后，通过 @ConditionalOnclass 进行 Bean 筛选，完成注册&#xD;
+&#xD;
+## spring 如何实现事务&#xD;
+&#xD;
+通过 aop 代理进行实现，对方法前后进行拦截，执行方法前开启事务，执行完目标方法后根据情况进行提交或者回滚事务&#xD;
+&#xD;
+```java&#xD;
+@Transactional(rollbackFor = Exception.class)&#xD;
+public void createOrder() {&#xD;
+    // 1. 创建订单&#xD;
+    orderMapper.insert();&#xD;
+&#xD;
+    // 2. 扣除余额&#xD;
+    accountMapper.deductBalance();&#xD;
+&#xD;
+    // 3. 模拟异常&#xD;
+    int result = 1 / 0;&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+代理对象：&#xD;
+&#xD;
+```java&#xD;
+public void proxyCreateOrder() {&#xD;
+    // 获取事务并根据传播行为开启或加入事务&#xD;
+    TransactionStatus status = transactionManager.getTransaction(definition);&#xD;
+&#xD;
+    try {&#xD;
+        // 执行目标方法&#xD;
+        target.createOrder();&#xD;
+&#xD;
+        // 正常执行，提交事务&#xD;
+        transactionManager.commit(status);&#xD;
+&#xD;
+    } catch (Throwable e) {&#xD;
+        // 仅演示 rollbackFor = Exception.class 的常见效果&#xD;
+        if (e instanceof Exception) {&#xD;
+            transactionManager.rollback(status);&#xD;
+        } else {&#xD;
+            transactionManager.commit(status);&#xD;
+        }&#xD;
+&#xD;
+        throw e;&#xD;
+    } finally {&#xD;
+        // 事务资源清理由事务管理器负责&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+注意：以上只是原理示意，并非 Spring 的实际源码。真实的 Spring 事务拦截器会先区分目标方法异常与提交过程异常，并根据回滚规则、传播行为和事务状态进行处理。&#xD;
+&#xD;
+### 事务失效的场景有哪些？&#xD;
+&#xD;
+&gt; 添加 `@Transactional` 注解后事务失效的场景有哪些？&#xD;
+&#xD;
+Spring 声明式事务主要通过 AOP 动态代理 + 事务管理器实现，因此分析事务失效时，可以从两个角度考虑：&#xD;
+&#xD;
+1. AOP 代理是否生效：目标方法有没有经过代理对象？&#xD;
+2. 事务回滚条件是否满足：方法执行过程中发生异常，Spring 是否能够感知并触发回滚？&#xD;
+&#xD;
+### 1. private 修饰的方法导致事务失效&#xD;
+&#xD;
+ Spring 通过代理对象进行事务增强，private 方法是无法进行代理&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```java&#xD;
+@Service&#xD;
+public class OrderService {&#xD;
+&#xD;
+    @Transactional&#xD;
+    private void createOrder() {&#xD;
+        orderMapper.insert();&#xD;
+        accountMapper.deductBalance();&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+这里 `private` 方法无法被 Spring 默认的 AOP 代理进行事务增强。&#xD;
+&#xD;
+解决方案： 建议将事务方法声明为 `public`，并确保通过 Spring 管理的代理对象调用。&#xD;
+&#xD;
+```java&#xD;
+@Transactional&#xD;
+public void createOrder() {&#xD;
+    orderMapper.insert();&#xD;
+    accountMapper.deductBalance();&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+为了保证跨版本、跨代理方式的一致性，开发中一般推荐在 `public` 方法上使用 `@Transactional`。&#xD;
+&#xD;
+### 2. 异常被捕获，没有向上抛出&#xD;
+&#xD;
+原因： Spring 事务拦截器需要感知异常，才能根据回滚规则执行回滚。如果业务方法自己捕获并处理异常，事务拦截器通常会认为方法正常执行完成，从而提交事务。&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```java&#xD;
+@Transactional&#xD;
+public void createOrder() {&#xD;
+    try {&#xD;
+        orderMapper.insert();&#xD;
+        accountMapper.deductBalance();&#xD;
+&#xD;
+        int result = 1 / 0;&#xD;
+    } catch (Exception e) {&#xD;
+        e.printStackTrace(); // 捕获异常&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+执行流程：&#xD;
+&#xD;
+1. Spring 开启事务&#xD;
+2. 执行插入订单和扣除余额&#xD;
+3. 发生 `ArithmeticException`&#xD;
+4. `catch` 捕获异常，没有继续向外抛出&#xD;
+5. 方法正常结束，Spring 提交事务&#xD;
+&#xD;
+解决方案： 在 `catch` 中重新抛出异常。&#xD;
+&#xD;
+```java&#xD;
+@Transactional&#xD;
+public void createOrder() {&#xD;
+    try {&#xD;
+        orderMapper.insert();&#xD;
+        accountMapper.deductBalance();&#xD;
+&#xD;
+        int result = 1 / 0;&#xD;
+    } catch (Exception e) {&#xD;
+        throw new RuntimeException(e); // 抛出异常&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+这样 Spring 就能够感知异常，并根据回滚规则执行回滚。&#xD;
+&#xD;
+补充：也可以使用 `TransactionAspectSupport.currentTransactionStatus().setRollbackOnly()` 手动标记事务回滚，但通常更推荐合理地向上抛出异常。&#xD;
+&#xD;
+### 3. 抛出非runtime异常与error异常时，事务失效&#xD;
+&#xD;
+原因： Spring 默认仅对 `RuntimeException` 和 `Error` 触发回滚，对于普通受检异常，如 `IOException`、`FileNotFoundException`，默认不会回滚。&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```java&#xD;
+@Transactional&#xD;
+public void createOrder() throws IOException {&#xD;
+    orderMapper.insert();&#xD;
+    accountMapper.deductBalance();&#xD;
+&#xD;
+    throw new IOException("文件读取失败");&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+虽然方法抛出了异常，但默认配置下 Spring 仍然会尝试提交事务。&#xD;
+&#xD;
+解决方法：配置 rollbackFor 属性 @Transactional(rollbackFor=Exception.class)，该属性会对 `Exception` 及其子类回滚，同时保留对 `Error` 的默认回滚&#xD;
+&#xD;
+```java&#xD;
+@Transactional(rollbackFor = Exception.class)&#xD;
+public void createOrder() throws IOException {&#xD;
+    // 1. 创建订单&#xD;
+    orderMapper.insert();&#xD;
+&#xD;
+    // 2. 扣除余额&#xD;
+    accountMapper.deductBalance();&#xD;
+&#xD;
+    // 3. 抛出受检异常&#xD;
+    throw new IOException("文件读取失败");&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+执行结果：&#xD;
+&#xD;
+- 执行创建订单&#xD;
+- 执行扣除余额&#xD;
+- 抛出 `IOException`&#xD;
+- Spring 根据 `rollbackFor` 配置回滚整个事务&#xD;
+- 创建订单和扣除余额操作均被撤销&#xD;
+&#xD;
+### 4. 同一个类内部的方法调用&#xD;
+&#xD;
+一个类中方法B添加了事务，方法A去调用方法B，但是方法A没有添加事务，此时方法A不会触发事务，也不会生成代理对象，导致事务失效&#xD;
+&#xD;
+原因： Spring 默认通过 AOP 代理对象实现事务增强，而同一个类内部通过 `this` 调用其他方法时，不会再次经过代理对象，因此被调用方法上的 `@Transactional` 不会单独生效。&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```java&#xD;
+@Service&#xD;
+public class OrderService {&#xD;
+&#xD;
+    public void methodA() {&#xD;
+        methodB();&#xD;
+    }&#xD;
+&#xD;
+    @Transactional&#xD;
+    public void methodB() {&#xD;
+        orderMapper.insert();&#xD;
+        accountMapper.deductBalance();&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+当外部调用 `methodA()` 时：&#xD;
+&#xD;
+![image-20261025192841542](/blog-backup/blog-images/2026/10/25/image-20261025192841542.png)&#xD;
+&#xD;
+## spring 事务传播机制&#xD;
+&#xD;
+Spring 事务传播机制（Propagation）主要用于解决：当一个事务方法调用另一个事务方法时，被调用的方法应该如何处理事务？&#xD;
+&#xD;
+例如，存在两个 Service：&#xD;
+&#xD;
+- `OrderService`：负责创建订单，对应事务 A&#xD;
+- `AccountService`：负责扣除余额，对应事务 B&#xD;
+&#xD;
+```java&#xD;
+@Service&#xD;
+public class OrderService {&#xD;
+&#xD;
+    @Autowired&#xD;
+    private AccountService accountService;&#xD;
+&#xD;
+    @Transactional&#xD;
+    public void createOrder() {&#xD;
+        // 1. 创建订单&#xD;
+        orderMapper.insert();&#xD;
+&#xD;
+        // 2. 扣除余额&#xD;
+        accountService.deductBalance(); // 另一个事务方法&#xD;
+&#xD;
+        // 3. 模拟异常&#xD;
+        int result = 1 / 0;&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+@Service&#xD;
+public class AccountService {&#xD;
+&#xD;
+    @Transactional&#xD;
+    public void deductBalance() {&#xD;
+        accountMapper.deductBalance();&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+这里存在一个问题：`createOrder()` 调用了另一个带有 `@Transactional` 的方法，那么两个方法的事务应该如何执行？&#xD;
+&#xD;
+主要有三种处理方式：&#xD;
+&#xD;
+- 融入：加入外层事务&#xD;
+- 挂起：两个事务相互独立，互不影响&#xD;
+- 嵌套：类似于保存点&#xD;
+&#xD;
+![image-20261025195000711](/blog-backup/blog-images/2026/10/25/image-20261025195000711.png)&#xD;
+&#xD;
+MySQL 不支持真正独立的嵌套事务，但 InnoDB 支持 SAVEPOINT 保存点。因此 Spring 在适当的事务管理器配置下，可以通过保存点实现 `NESTED` 的嵌套回滚语义。&#xD;
+&#xD;
+### 四种核心事务传播机制&#xD;
+&#xD;
+| 传播机制       | 外层有事务           | 外层无事务       |&#xD;
+| -------------- | -------------------- | ---------------- |&#xD;
+| `REQUIRED`     | 加入已有事务         | 创建新事务       |&#xD;
+| `REQUIRES_NEW` | 挂起外层，创建新事务 | 创建新事务       |&#xD;
+| `SUPPORTS`     | 加入已有事务         | 以非事务方式执行 |&#xD;
+| `MANDATORY`    | 加入已有事务         | 抛出异常         |&#xD;
+&#xD;
+以下仍然使用创建订单和扣除余额的案例，分别说明四种机制。&#xD;
+&#xD;
+### REQUIRED：加入已有事务（默认）&#xD;
+&#xD;
+```java&#xD;
+@Transactional(propagation = Propagation.REQUIRED)&#xD;
+public void deductBalance() {&#xD;
+    accountMapper.deductBalance();&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+- 外层有事务：加入外层事务，共同提交或回滚&#xD;
+- 外层无事务：自己创建一个新事务&#xD;
+&#xD;
+结合案例： `createOrder()` 开启事务 A，`deductBalance()` 加入事务 A。当外层执行 `1 / 0` 发生异常时，订单创建和余额扣除都会回滚。&#xD;
+&#xD;
+可以理解为：两个方法共享同一个数据库事务。&#xD;
+&#xD;
+### REQUIRES_NEW：挂起外层事务，创建新事务&#xD;
+&#xD;
+```java&#xD;
+@Transactional(propagation = Propagation.REQUIRES_NEW)&#xD;
+public void deductBalance() {&#xD;
+    accountMapper.deductBalance();&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+- 外层有事务：挂起外层事务，开启独立的新事务&#xD;
+- 外层无事务：直接创建新事务&#xD;
+&#xD;
+结合案例：&#xD;
+&#xD;
+1. `createOrder()` 开启事务 A，插入订单&#xD;
+2. 调用 `deductBalance()`，挂起事务 A&#xD;
+3. 创建事务 B，扣除余额并提交事务 B&#xD;
+4. 恢复事务 A&#xD;
+5. 执行 `1 / 0`，事务 A 回滚&#xD;
+&#xD;
+结果：订单创建回滚，但余额扣除已提交，不会随事务 A 回滚。&#xD;
+&#xD;
+原因是事务 A 与事务 B 属于独立的物理事务，可以分别提交或回滚。&#xD;
+&#xD;
+在常见的 JDBC 本地事务中，事务 A 和事务 B 通常使用不同的数据库连接。使用时需要注意连接池大小，避免连接资源不足。&#xD;
+&#xD;
+### SUPPORTS：有事务就加入，没有就不创建&#xD;
+&#xD;
+```java&#xD;
+@Transactional(propagation = Propagation.SUPPORTS)&#xD;
+public void deductBalance() {&#xD;
+    accountMapper.deductBalance();&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+- 外层有事务：加入外层事务，与 `REQUIRED` 类似&#xD;
+- 外层无事务：不创建事务，直接执行&#xD;
+&#xD;
+结合案例： 因为 `createOrder()` 已经开启事务 A，所以 `deductBalance()` 会加入事务 A。当外层异常回滚时，余额扣除也随之回滚。&#xD;
+&#xD;
+但如果直接调用 `deductBalance()`，并且没有已存在的事务，那么方法将以非事务方式执行。对于开启自动提交的数据库连接，单条 SQL 通常会各自提交。&#xD;
+&#xD;
+与 REQUIRED 的区别： 无外层事务时，`REQUIRED` 会创建事务，而 `SUPPORTS` 不会。&#xD;
+&#xD;
+### MANDATORY：必须存在事务&#xD;
+&#xD;
+必须存在事务，不存在则抛出异常&#xD;
+&#xD;
+```java&#xD;
+@Transactional(propagation = Propagation.MANDATORY)&#xD;
+public void deductBalance() {&#xD;
+    accountMapper.deductBalance();&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+- 外层有事务：加入外层事务&#xD;
+- 外层无事务：直接抛出异常，不执行目标方法&#xD;
+&#xD;
+结合案例： `createOrder()` 已经开启事务 A，因此 `deductBalance()` 可以正常加入事务 A。&#xD;
+&#xD;
+如果直接从没有事务的地方调用 `deductBalance()`，Spring 就会抛出事务相关异常（通常为 `IllegalTransactionStateException`）。&#xD;
+&#xD;
+与 SUPPORTS 的区别： 无外层事务时，`SUPPORTS` 允许执行，而 `MANDATORY` 禁止执行。&#xD;
+&#xD;
+### 补充：NESTED 嵌套事务&#xD;
+&#xD;
+虽然不属于你重点记忆的四种传播机制，但可以将 `NESTED` 和 `REQUIRES_NEW` 对比理解。&#xD;
+&#xD;
+```java&#xD;
+@Transactional(propagation = Propagation.NESTED)&#xD;
+public void deductBalance() {&#xD;
+    accountMapper.deductBalance();&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+- 外层有事务：在当前事务中创建保存点，允许回滚内层操作&#xD;
+- 外层无事务：行为类似 `REQUIRED`，创建新事务&#xD;
+&#xD;
+例如：&#xD;
+&#xD;
+```java&#xD;
+@Transactional&#xD;
+public void createOrder() {&#xD;
+    orderMapper.insert();&#xD;
+&#xD;
+    try {&#xD;
+        accountService.deductBalance();&#xD;
+    } catch (Exception e) {&#xD;
+        // 处理扣款失败&#xD;
+    }&#xD;
+}&#xD;
+```&#xD;
+&#xD;
+假设 `deductBalance()` 使用 `NESTED`，且扣款过程中抛出了符合回滚规则的异常，那么：&#xD;
+&#xD;
+1. 事务 A 开始，创建订单&#xD;
+2. 进入嵌套事务，在事务 A 中设置保存点&#xD;
+3. 扣款失败，回滚到保存点&#xD;
+4. 外层捕获异常，继续执行&#xD;
+5. 事务 A 正常提交，订单创建保留&#xD;
+&#xD;
+这与 `REQUIRES_NEW` 的区别在于：NESTED 并没有创建独立物理事务。如果外层事务 A 最终回滚，内层已完成的修改也会一起回滚。&#xD;
+&#xD;
+MySQL InnoDB 支持保存点，因此可以配合 Spring 的 JDBC 事务管理器实现这种行为，但并非所有事务管理器都支持 `NESTED`。</content>
+    <dc:creator>Tilex</dc:creator>
+    <dc:date>2026-10-25T12:01:54Z</dc:date>
+  </entry>
   <entry>
     <title>Java SE八股整理.md</title>
     <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/73" />
@@ -15,7 +1163,7 @@
       <name>Tilex</name>
     </author>
     <id>https://janfeise.github.io/blog-backup/article/73</id>
-    <updated>2026-10-21T03:52:01Z</updated>
+    <updated>2026-10-21T08:44:20Z</updated>
     <published>2026-10-21T03:30:26Z</published>
     <content type="text/markdown"># Java SE八股整理
 
@@ -614,7 +1762,123 @@ User 对象
 4. 无法到达的对象，通常具备被回收的条件
 5. JVM 在合适的时机执行实际回收
 
-栈中的有效引用、static 字段等决定了对象是否仍然可达；GC 通过可达性分析判断堆中的对象是否具备回收条件，而不是简单地清理没有被当前方法直接引用的数据</content>
+栈中的有效引用、static 字段等决定了对象是否仍然可达；GC 通过可达性分析判断堆中的对象是否具备回收条件，而不是简单地清理没有被当前方法直接引用的数据
+
+## JVM调优参数有哪些？
+&gt; 调优主要针对于JVM内存空间的分布，主要是栈和堆
+- 虚拟机栈的设置
+- 设置堆空间的大小
+- 调整年轻代E区与两个S区的大小比例
+- 年轻代晋升老年队的阈值
+- 设置GC，常见的垃圾回收收集器有：CMS、G1
+
+## OOM 与 full GC 问题排查
+&gt; out of memory：内存溢出，堆中对象过多、发生内存泄露、堆内存不足等会产生OOM问题
+&gt;
+&gt; OOM与内存泄露的区别：内存泄露指的是不再使用的对象无法被回收，会占据内存空间，导致内存空间减小，后续可能发生OOM问题
+
+排查流程：
+1. 收集日志：查看 GC 日志，判断是否频繁 Full GC、GC 后内存是否下降，以及是否出现 OOM；日志的话可以通过配置参数来开启，现在好像可以直接配置：-Xlog:gc，记录GC日志
+
+2. 获取 Dump 文件：通过 JVM 参数在发生 OOM 时自动生成堆转储文件，保留内存现场；dump：转储的意思，会生成日志文件
+
+3. MAT 分析：使用 MAT 分析生成的日志文件，一般会指出哪个对象出了问题，后续通过代码进行定位，进行修复
+
+4. 修复并验证：根据原因优化代码或调整 JVM 参数，再通过压测观察 GC 频率、内存占用和应用运行情况
+
+
+## 类加载过程与双亲委派模型
+### 类加载过程
+&gt; 背景：Java源代码代码经过编译生成class文件，而类加载过程便是从磁盘中读取所生成的 class 文件到 JVM 中，在 JVM 中生成对应的 class 对象，方便后续直接 new 生成实例
+
+五个阶段：加载 → 验证 → 准备 → 解析 → 初始化
+| 阶段 | 核心作用 | 关键词 |
+| - | - | - |
+| 加载阶段 | 从磁盘中获取对应的class文件，在jvm中生成对应的class对象 | 加载class文件（字节码） |
+| 验证阶段 | 检查字节码是否合法、安全 | 校验字节码合法性 |
+|准备阶段|为静态变量分配内存空间，并设置默认值|分配内存空间、默认值|
+|解析阶段|将符号引用转换为直接引用|符号引用 → 直接引用|
+|初始化阶段|执行类初始化代码，赋予静态变量代码中设定的值|执行 \&lt;clinit&gt;()，不是 init()|
+
+&gt; 解析阶段：符号引用转变为直接引用是什么意思？
+&gt; 
+&gt; 指的是当某个类的方法被调用时，解析阶段直接定位到该方法的具体位置，如：下方 main 调用了 Helper 类的 doWork 方法
+&gt;
+```java
+public class Main {
+    public static void main(String[] args) {
+        Helper.doWork();
+    }
+}
+
+public class Helper {
+    public static void doWork() {
+        System.out.println("执行任务");
+    }
+}
+```
+&gt; 此时，解析阶段 JVM 会根据符号引用找到对应的类和方法，并建立能够定位该目标的直接引用
+
+注意两个高频考点：
+- 准备阶段不等于赋予代码中定义的初始值：普通静态变量在准备阶段先获得默认值，初始化阶段再执行相应的赋值代码
+- 初始化不等于执行构造方法：初始化阶段执行的是类初始化方法 &lt;clinit&gt;()，它由静态变量赋值语句和 static 静态代码块合并生成；对象构造方法 &lt;init&gt;() 则在创建对象时执行
+例如：
+```java
+public class Demo {
+    static int a = 10;
+
+    static {
+        a = 20;
+    }
+}
+```
+
+
+- 准备阶段：a = 0
+- 初始化阶段：先执行 a = 10，再执行静态代码块，最终 a = 20
+补充：五个阶段通常按上述顺序推进，但解析阶段可以根据虚拟机实现的需要延迟执行，因此不一定发生在初始化之前
+
+### 双亲委派模型
+核心记忆：递归向上加载，先向父加载器委托，父加载器无法加载时，子加载器再尝试
+
+当类加载器收到类加载请求时，通常遵循以下流程：
+![image-20261021154152217](/blog-backup/blog-images/2026/10/21/image-20261021154152217.png)
+
+为什么需要双亲委派？
+- 安全性：例如 java.lang.String 应由受信任的核心类加载机制加载，避免应用自行定义同名类替换它
+- 避免类的重复加载：父加载器已经成功加载的类，子加载器通常可以直接使用，无需再次加载
+
+补充：双亲委派是常见的类加载机制，不是所有类加载场景都必须严格遵循它。自定义类加载器可以通过重写相关方法改变默认行为
+### 类加载器有哪些？
+Java 中常见的类加载器可以分为四种：启动类加载器、扩展类加载器、应用类加载器和自定义类加载器
+| 类加载器 | 核心作用 | 记忆关键词 |
+| --- | --- | --- |
+| 启动类加载器（Bootstrap ClassLoader） | 加载 Java 核心类库 | 核心类库 |
+| 扩展类加载器（Extension ClassLoader） | Java 8 及之前加载扩展类库 | 扩展类库 |
+| 应用类加载器（Application ClassLoader） | 加载应用程序的类，如 classpath 下的业务类 | 应用程序 |
+| 自定义类加载器（Custom ClassLoader） | 根据业务需求自定义类的加载方式 | 自定义加载 |
+
+补充说明：
+- 启动类加载器：由 JVM 实现，通常负责加载 java.lang.String 等核心类
+- 扩展类加载器：Java 8 及之前主要加载 jre/lib/ext 等扩展目录中的类库
+- 应用类加载器：也称系统类加载器，可以通过 ClassLoader.getSystemClassLoader() 获取
+- 自定义类加载器：通常通过继承 ClassLoader 并重写 findClass() 等方法实现，可用于插件系统、动态加载等场景
+注意：Java 9 起，扩展类加载器被平台类加载器（Platform ClassLoader）取代。因此，面向 Java 8 的面试资料通常使用“扩展类加载器”，面向 Java 9 及之后的版本则应使用“平台类加载器”
+#### 类加载器之间的关系
+```
+启动类加载器
+    ↑
+扩展类加载器（Java 8 及之前）
+    ↑
+应用类加载器
+    ↑
+自定义类加载器（通常情况）
+```
+
+
+这里的箭头表示父子委派关系的方向相反于请求方向：加载请求从子加载器向父加载器委托，父加载器无法加载时，再由子加载器尝试，自定义类加载器可以有不同的父加载器，也可以改变默认的委派行为，因此上述关系是常见情况，并非固定结构
+#### 面试速记
+&gt; Java 常见的类加载器包括启动类加载器、扩展类加载器、应用类加载器和自定义类加载器。启动类加载器负责加载核心类库，扩展类加载器负责加载扩展类库，应用类加载器负责加载应用程序的类，自定义类加载器则用于满足特殊的类加载需求。需要注意，Java 9 起，扩展类加载器被平台类加载器取代</content>
     <dc:creator>Tilex</dc:creator>
     <dc:date>2026-10-21T03:30:26Z</dc:date>
   </entry>
@@ -7403,42 +8667,5 @@ npm run predev&#xD;
 &gt; 如果项目引用了新依赖，但没有把该依赖写入 `package.json`，`npm ls` 无法通过依赖声明发现它</content>
     <dc:creator>Tilex</dc:creator>
     <dc:date>2026-08-08T07:08:46Z</dc:date>
-  </entry>
-  <entry>
-    <title>dotenv-node.js 读取 env 数据.md</title>
-    <link rel="alternate" href="https://janfeise.github.io/blog-backup/article/54" />
-    <author>
-      <name>Tilex</name>
-    </author>
-    <id>https://janfeise.github.io/blog-backup/article/54</id>
-    <updated>2026-10-02T08:19:47Z</updated>
-    <published>2026-08-08T07:06:38Z</published>
-    <content type="text/markdown">在 node.js 中，不支持直接读取 env 文件数据，与前端不同，前端在 vite 的加持下可读取 env 数据，但 node.js 需 `dotenv` 模块才能加载 env 数据
-```js
-import dotenv from 'dotenv'; 
-
-dotenv.config();
-
-console.log(process.env.DEEPSEEK_API_KEY);
-```
-
-`dotenv.config()`读取 env 文件，并进行解析
-
-1. 读取 `.env` 文件（文本）
-2. 将 env 中的数据解析成 key-value 形式
-3. 写入 `process.env` （process：进程）
-
-完成后会挂载到 `process.env` 上：
-
-```js
-process.env.PORT = "3000"
-process.env.DB_HOST = "localhost"
-```
-
-`process` 是什么？——进程，**进程是操作系统分配资源的最小单位。** Node.js 把这个操作系统进程封装成了一个全局对象——**`process`**
-
-dotenv 把 `.env` 文件的内容读出来，挂载到 `process.env` 对象上，之后便可以通过代码访问 env 文件中的数据了</content>
-    <dc:creator>Tilex</dc:creator>
-    <dc:date>2026-08-08T07:06:38Z</dc:date>
   </entry>
 </feed>

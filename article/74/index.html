@@ -1,0 +1,1714 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/blog-backup/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="Tilex Blog" href="/blog-backup/atom.xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tilex Blog</title>
+    <script type="module" crossorigin="" src="/blog-backup/assets/app-CCtjlQQY.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/SiteLink-cCKG4X0l.js">
+    <link rel="stylesheet" crossorigin="" href="/blog-backup/assets/app-CJVyhrtB.css">
+  <link rel="modulepreload" crossorigin="" href="/blog-backup/assets/ArticleView-lX7aBYeP.js"><link rel="stylesheet" href="/blog-backup/assets/ArticleView-aDdYdfsJ.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/classicLayout-CWetEoAe.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/Nav-Bri_xbau.js"><link rel="stylesheet" href="/blog-backup/assets/Nav-CIomYlXg.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/SiteLink-cCKG4X0l.js"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/MarkdownRenderer-BTp7VwD-.js"><link rel="stylesheet" href="/blog-backup/assets/MarkdownRenderer-CYJPD-xC.css"><link rel="modulepreload" crossorigin="" href="/blog-backup/assets/SiteFooter-BS7IaTLU.js"><link rel="stylesheet" href="/blog-backup/assets/SiteFooter-D8_RPO5a.css"></head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="site site--moss site--article" data-v-befb9f6e=""><!--[--><!--[--><div class="nav flex nav__top nav--moss nav--classic" style="" data-v-747263ed=""><div class="nav__brand nav__top--logo" data-v-747263ed=""><a href="/blog-backup/" class="nav__logo-link" data-v-747263ed=""><!--[-->Tilex Blog<!--]--></a></div><!--[--><!--]--><a href="/blog-backup/archive/" class="nav__archive" aria-label="进入归档" data-v-747263ed=""><!--[--><span class="nav__archive-icon" aria-hidden="true" data-v-747263ed=""></span><!--]--></a><button class="nav__menu-btn" type="button" aria-label="打开导航菜单" aria-controls="top-nav-menu" aria-expanded="false" data-v-747263ed=""><span class="nav__menu-icon" aria-hidden="true" data-v-747263ed=""></span></button><!----><nav id="top-nav-menu" class="nav__links nav__top-menu" aria-label="站点导航" data-v-747263ed=""><div class="nav__top-main" data-v-747263ed=""><!--[--><a href="/blog-backup/" class="nav__top-link" data-v-747263ed=""><!--[-->首页<!--]--></a><a href="/blog-backup/space/" class="nav__top-link" data-v-747263ed=""><!--[-->空间<!--]--></a><!--]--></div><div class="nav__top-minor" data-v-747263ed=""><!--[--><span class="nav__top-item" data-v-747263ed=""><!----><a href="/blog-backup/archive/" class="nav__top-link nav__top-link--minor" data-v-747263ed=""><!--[-->归档<!--]--></a></span><span class="nav__top-item" data-v-747263ed=""><span class="nav__top-slash" aria-hidden="true" data-v-747263ed="">/</span><a href="/blog-backup/links/" class="nav__top-link nav__top-link--minor" data-v-747263ed=""><!--[-->友链<!--]--></a></span><!--]--><span class="nav__top-item" data-v-747263ed=""><span class="nav__top-slash" aria-hidden="true" data-v-747263ed="">/</span><span class="nav__drop" data-v-747263ed=""><button class="nav__drop-btn" type="button" aria-controls="nav-more-links" aria-expanded="false" data-v-747263ed=""> 更多 <span class="nav__drop-icon" aria-hidden="true" data-v-747263ed=""></span></button></span></span><!----></div></nav><!----><!----></div><main class="classic-layout"><!--[--><div class="article-layout"><section class="article-layout__content"><!--[--><article class="article-container" data-v-5dad6fdf=""><header class="article-header" data-v-5dad6fdf=""><h1 class="article-header__title" data-v-5dad6fdf="">Spring八股整理</h1><div class="article-header__meta" data-v-5dad6fdf=""><span class="article-header__item" data-v-5dad6fdf=""><time datetime="2026-10-25T20:01:54" data-v-5dad6fdf="">2026.10.25</time> 发布 </span><span class="article-header__item" data-v-5dad6fdf="">123 分钟阅读</span><span class="article-header__item" data-v-5dad6fdf=""> 更新于 <time datetime="2026-10-25T20:01:54" data-v-5dad6fdf="">2026.10.25</time></span></div></header><div class="markdown-renderer" data-v-5dad6fdf="" data-v-5d342459=""><!----><div class="markdown-container markdown-renderer__container" data-v-5d342459=""><div class="markdown-content-wrapper markdown-renderer__wrapper" data-v-5d342459=""><div class="markdown-content markdown-renderer__body" data-v-5d342459=""><h2 id="重点"><a href="#重点" class="anchor-link">#</a> 重点</h2>
+<ol>
+<li>三级缓存</li>
+<li>jdk动态代理与cglib代理</li>
+<li>springboot自动装配原理</li>
+<li>spring事务失效场景</li>
+</ol>
+<h2 id="常见注解"><a href="#常见注解" class="anchor-link">#</a> 常见注解</h2>
+<p>按照 Spring Boot 开发时的分层结构记忆：</p>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@Controller</code></td>
+<td>标注控制层组件，负责处理 HTTP 请求</td>
+</tr>
+<tr>
+<td><code>@Service</code></td>
+<td>标注业务逻辑层组件，负责处理业务逻辑</td>
+</tr>
+<tr>
+<td><code>@Repository</code></td>
+<td>标注数据访问层组件，负责数据库访问</td>
+</tr>
+</tbody>
+</table>
+<h3 id="http-请求映射注解"><a href="#http-请求映射注解" class="anchor-link">#</a> HTTP 请求映射注解</h3>
+<p>由于在 controller 层往往会处理 http 请求，根据不同的请求方法选择对应的 service 层，因此有以下常见的注解：</p>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@GetMapping</code></td>
+<td>处理 GET 请求，通常用于查询数据</td>
+</tr>
+<tr>
+<td><code>@PostMapping</code></td>
+<td>处理 POST 请求，通常用于新增数据</td>
+</tr>
+<tr>
+<td><code>@PutMapping</code></td>
+<td>处理 PUT 请求，通常用于更新数据</td>
+</tr>
+<tr>
+<td><code>@DeleteMapping</code></td>
+<td>处理 DELETE 请求，通常用于删除数据</td>
+</tr>
+</tbody>
+</table>
+<h3 id="http-响应注解"><a href="#http-响应注解" class="anchor-link">#</a> HTTP 响应注解</h3>
+<p>Controller 层处理完请求后，需要将结果返回给客户端，通常以 JSON 格式返回。</p>
+<ul>
+<li><code>@Controller</code>：默认将方法返回的字符串视为视图名称，通过视图解析器查找并渲染对应页面（如 HTML）</li>
+<li><code>@ResponseBody</code>：将方法返回值直接写入 HTTP 响应体，不进行视图解析。返回 Java 对象时，通常会自动序列化为 JSON</li>
+<li><code>@RestController</code>：相当于 <code>@Controller</code> + <code>@ResponseBody</code>，默认将方法返回值写入 HTTP 响应体，适用于前后端分离开发（restful api）</li>
+</ul>
+<p>核心区别： <code>@Controller</code> 默认偏向视图解析，而 <code>@RestController</code> 默认直接返回响应数据。</p>
+<h4 id="controller-示例"><a href="#controller-示例" class="anchor-link">#</a> @Controller 示例</h4>
+<p>只使用 @Controller 注解，会将返回的字符串进行视图解析，返回对应的HTML</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Controller%0Apublic%20class%20UserController%20%7B%0A%0A%20%20%20%20%40GetMapping(%22%2Fuser%22)%0A%20%20%20%20public%20String%20user()%20%7B%0A%20%20%20%20%20%20%20%20return%20%22user%22%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Controller</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserController</span> {
+
+    <span class="hljs-meta">@GetMapping("/user")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">user</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"user"</span>;
+    }
+}
+</code></pre>
+      </div>
+    
+<p>这里返回的 <code>"user"</code> 并不是直接发送给浏览器，而是作为视图名称，由 Spring MVC 的视图解析机制处理</p>
+<p>例如使用 Thymeleaf 时，可以解析到：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="src%2Fmain%2Fresources%2Ftemplates%2Fuser.html%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java">src/main/resources/templates/user.html
+</code></pre>
+      </div>
+    
+<p>然后渲染 HTML 页面并返回给浏览器；如果要返回 JSON，可以添加 <code>@ResponseBody</code> 注解：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Controller%0Apublic%20class%20UserController%20%7B%0A%0A%20%20%20%20%40ResponseBody%0A%20%20%20%20%40GetMapping(%22%2Fuser%22)%0A%20%20%20%20public%20User%20user()%20%7B%0A%20%20%20%20%20%20%20%20return%20new%20User(1%2C%20%22%E5%BC%A0%E4%B8%89%22)%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Controller</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserController</span> {
+
+    <span class="hljs-meta">@ResponseBody</span>
+    <span class="hljs-meta">@GetMapping("/user")</span>
+    <span class="hljs-keyword">public</span> User <span class="hljs-title function_">user</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(<span class="hljs-number">1</span>, <span class="hljs-string">"张三"</span>);
+    }
+}
+</code></pre>
+      </div>
+    
+<p>Spring MVC 会通过合适的 <code>HttpMessageConverter</code> 将对象序列化，常见情况下使用 Jackson 转换为 JSON</p>
+<h3 id="http-请求参数注解"><a href="#http-请求参数注解" class="anchor-link">#</a> HTTP 请求参数注解</h3>
+<ul>
+<li><code>@RequestBody</code>：用于接收前端传递的 JSON 数据</li>
+</ul>
+<p>前端发送 post 请求：</p>
+
+      <div class="md-editor-code" data-language="json">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">json</span>
+            <button class="md-editor-copy-button" data-code="%7B%0A%20%20%22name%22%3A%20%22%E5%BC%A0%E4%B8%89%22%2C%0A%20%20%22age%22%3A%2020%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"张三"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"age"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">20</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+      </div>
+    
+<p>后端接受数据：@RequestBody 注解</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40RestController%0Apublic%20class%20UserController%20%7B%0A%0A%20%20%20%20%40PostMapping(%22%2Fuser%22)%0A%20%20%20%20public%20String%20addUser(%40RequestBody%20User%20user)%20%7B%20%2F%2F%20RequestBody%20%E6%8E%A5%E5%8F%97%E5%89%8D%E7%AB%AF%E4%BC%A0%E9%80%92%E7%9A%84JSON%E6%95%B0%E6%8D%AE%0A%20%20%20%20%20%20%20%20return%20user.getName()%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserController</span> {
+
+    <span class="hljs-meta">@PostMapping("/user")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">addUser</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> User user)</span> { <span class="hljs-comment">// RequestBody 接受前端传递的JSON数据</span>
+        <span class="hljs-keyword">return</span> user.getName();
+    }
+}
+</code></pre>
+      </div>
+    
+<h3 id="依赖注入注解"><a href="#依赖注入注解" class="anchor-link">#</a> 依赖注入注解</h3>
+<ul>
+<li><code>@Autowired</code>：Spring 提供的依赖注入注解，默认按照类型从 IoC 容器中查找 Bean 并注入</li>
+</ul>
+<h2 id="autowired-注解与-resource-注解的区别"><a href="#autowired-注解与-resource-注解的区别" class="anchor-link">#</a> @Autowired 注解与 @Resource 注解的区别</h2>
+<p>可以通过 @Autowired 与 @Resource 注入 Bean 到对应属性中，但存在不同：</p>
+<ol>
+<li>
+<p><code>@Autowired</code> 是 Spring 提供的注解，<code>@Resource</code> 是 java EE 标准提供的注解</p>
+</li>
+<li>
+<p>两者都用于依赖注入，核心区别在于匹配方式：</p>
+</li>
+</ol>
+<ul>
+<li><code>@Autowired</code> 默认按类型匹配，同类型存在多个 Bean 时，可以结合名称等条件进一步筛选</li>
+<li><code>@Resource</code> 默认先按名称匹配，未指定名称且名称匹配失败时，再按类型匹配</li>
+</ul>
+<h2 id="spring-核心组成模块"><a href="#spring-核心组成模块" class="anchor-link">#</a> spring 核心组成模块</h2>
+<ul>
+<li>spring-core 与 spring-beans：提供 IoC 容器的基础实现，管理 Bean 的创建与装配</li>
+<li>spring-web：web应用初始化</li>
+<li>spring-context：应用上下文，好像是企业级功能</li>
+<li>spring-test：提供 JUnit 单元测试等</li>
+</ul>
+<h2 id="ioc与di"><a href="#ioc与di" class="anchor-link">#</a> IOC与DI</h2>
+<p>IoC（控制反转，Inversion of Control），就是由 Spring 容器来控制和管理对象，不用手动进行 new 创建，以及销毁</p>
+<p>DI：由于对象都交由 Spring 容器管理，后续使用对象时进行依赖注入即可</p>
+<h2 id="依赖注入方式有哪些"><a href="#依赖注入方式有哪些" class="anchor-link">#</a> 依赖注入方式有哪些？</h2>
+<ol>
+<li>构造函数注入：通过类的构造函数来注入依赖项。</li>
+<li>Setter 注入：通过类的 Setter 方法来注入依赖项。</li>
+<li>Field（字段） 注入：直接在类的字段上使用注解（如 <code>@Autowired</code> 或 <code>@Resource</code>）来注入依赖项。</li>
+</ol>
+<p>构造函数注入示例：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Service%0Apublic%20class%20UserService%20%7B%0A%0A%20%20%20%20private%20final%20UserRepository%20userRepository%3B%20%2F%2F%20final%20%E4%BF%AE%E9%A5%B0%0A%0A%20%20%20%20public%20UserService(UserRepository%20userRepository)%20%7B%0A%20%20%20%20%20%20%20%20this.userRepository%20%3D%20userRepository%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F...%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> UserRepository userRepository; <span class="hljs-comment">// final 修饰</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">UserService</span><span class="hljs-params">(UserRepository userRepository)</span> {
+        <span class="hljs-built_in">this</span>.userRepository = userRepository;
+    }
+
+    <span class="hljs-comment">//...</span>
+}
+</code></pre>
+      </div>
+    
+<p>Setter 注入示例：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Service%0Apublic%20class%20UserService%20%7B%0A%0A%20%20%20%20private%20UserRepository%20userRepository%3B%0A%0A%20%20%20%20%40Autowired%0A%20%20%20%20public%20void%20setUserRepository(UserRepository%20userRepository)%20%7B%0A%20%20%20%20%20%20%20%20this.userRepository%20%3D%20userRepository%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F...%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> {
+
+    <span class="hljs-keyword">private</span> UserRepository userRepository;
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setUserRepository</span><span class="hljs-params">(UserRepository userRepository)</span> {
+        <span class="hljs-built_in">this</span>.userRepository = userRepository;
+    }
+
+    <span class="hljs-comment">//...</span>
+}
+</code></pre>
+      </div>
+    
+<p>Field 注入示例：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Service%0Apublic%20class%20UserService%20%7B%0A%0A%20%20%20%20%40Autowired%0A%20%20%20%20private%20UserRepository%20userRepository%3B%0A%0A%20%20%20%20%2F%2F...%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> {
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> UserRepository userRepository;
+
+    <span class="hljs-comment">//...</span>
+}
+</code></pre>
+      </div>
+    
+<h2 id="构造函数注入与setter注入的区别是"><a href="#构造函数注入与setter注入的区别是" class="anchor-link">#</a> 构造函数注入与setter注入的区别是？</h2>
+<ul>
+<li>依赖完整性：构造函数注入要求在创建对象时就提供必须依赖，而 setter 注入可以在创建对象后再设置依赖</li>
+<li>不可变性：构造函数注入通常配合 final 修饰依赖字段，避免后续被重新赋值</li>
+<li>适用场景：两者适用场景不同，构造函数注入适合必须依赖，而 setter 注入则适合可选依赖</li>
+</ul>
+<p>记忆重点：构造函数注入 = 必需依赖 + <code>final</code>；Setter 注入 = 可选依赖 + 可重新设置</p>
+<p>构造函数注入示例：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Service%0Apublic%20class%20UserService%20%7B%0A%0A%20%20%20%20private%20final%20UserRepository%20userRepository%3B%20%2F%2F%20final%0A%0A%20%20%20%20public%20UserService(UserRepository%20userRepository)%20%7B%0A%20%20%20%20%20%20%20%20this.userRepository%20%3D%20userRepository%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F...%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> UserRepository userRepository; <span class="hljs-comment">// final</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">UserService</span><span class="hljs-params">(UserRepository userRepository)</span> {
+        <span class="hljs-built_in">this</span>.userRepository = userRepository;
+    }
+
+    <span class="hljs-comment">//...</span>
+}
+</code></pre>
+      </div>
+    
+<p>Setter 注入示例：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Service%0Apublic%20class%20UserService%20%7B%0A%0A%20%20%20%20private%20UserRepository%20userRepository%3B%0A%0A%20%20%20%20%40Autowired%0A%20%20%20%20public%20void%20setUserRepository(UserRepository%20userRepository)%20%7B%0A%20%20%20%20%20%20%20%20this.userRepository%20%3D%20userRepository%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F...%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> {
+
+    <span class="hljs-keyword">private</span> UserRepository userRepository;
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setUserRepository</span><span class="hljs-params">(UserRepository userRepository)</span> {
+        <span class="hljs-built_in">this</span>.userRepository = userRepository;
+    }
+
+    <span class="hljs-comment">//...</span>
+}
+</code></pre>
+      </div>
+    
+<p>两者使用时的差别：构造函数注入是“创建时传入依赖”，Setter 注入是“创建后设置依赖”</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%2F%2F%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%B3%A8%E5%85%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E6%97%B6%E5%BF%85%E9%A1%BB%E4%BC%A0%E5%85%A5%E4%BE%9D%E8%B5%96%0AUserService%20service%20%3D%20new%20UserService(userRepository)%3B%0A%0A%2F%2F%20Setter%20%E6%B3%A8%E5%85%A5%EF%BC%9A%E5%85%88%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%86%8D%E8%AE%BE%E7%BD%AE%E4%BE%9D%E8%B5%96%0AUserService%20service%20%3D%20new%20UserService()%3B%0Aservice.setUserRepository(userRepository)%3B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-comment">// 构造函数注入：创建对象时必须传入依赖</span>
+<span class="hljs-type">UserService</span> <span class="hljs-variable">service</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserService</span>(userRepository);
+
+<span class="hljs-comment">// Setter 注入：先创建对象，再设置依赖</span>
+<span class="hljs-type">UserService</span> <span class="hljs-variable">service</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserService</span>();
+service.setUserRepository(userRepository);
+</code></pre>
+      </div>
+    
+<p>需要注意：以上两种写法是为了说明 Java 对象的创建方式。在实际 Spring 开发中，通常由 Spring 容器负责创建对象并完成依赖注入，而不是手动 <code>new</code></p>
+<h2 id="bean-的生命周期"><a href="#bean-的生命周期" class="anchor-link">#</a> Bean 的生命周期</h2>
+<blockquote>
+<p>Spring Bean 的生命周期类似于 Vue 组件的生命周期，开发者可以在不同阶段执行对应的业务逻辑，例如初始化资源、释放资源等</p>
+<p>视频：<a href="https://www.bilibili.com/video/BV1n9k4BJEoP/?spm_id_from=333.337.search-card.all.click&amp;vd_source=8c5774f0412cfb872126f5a44585db4f">一个例子讲明白 Spring Bean 的生命周期</a></p>
+</blockquote>
+<h3 id="bean-生命周期的主要阶段"><a href="#bean-生命周期的主要阶段" class="anchor-link">#</a> Bean 生命周期的主要阶段</h3>
+<p>Spring Bean 的生命周期可以简化为以下 5 个阶段：</p>
+<p><img src="/blog-backup/blog-images/2026/10/24/image-20261024120513420.png" alt="image-20261024120513420"></p>
+<ol>
+<li><strong>实例化</strong>：Spring 容器创建 Bean 实例</li>
+<li><strong>属性赋值</strong>：Spring 为 Bean 注入所需的依赖，例如通过 Setter 方法或字段注入</li>
+<li><strong>初始化</strong>：依赖注入完成后，执行初始化逻辑，例如 <code>@PostConstruct</code> 或配置的 <code>initMethod</code></li>
+<li><strong>使用</strong>：Bean 初始化完成后，可以被其他组件使用，执行业务逻辑</li>
+<li><strong>销毁</strong>：Spring 容器关闭时，执行销毁回调，例如 <code>@PreDestroy</code> 或配置的 <code>destroyMethod</code>，用于释放资源</li>
+</ol>
+<p>其中，常见的生命周期注解有：</p>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>执行时机</th>
+<th>主要用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@PostConstruct</code></td>
+<td>依赖注入完成后</td>
+<td>初始化资源、加载配置</td>
+</tr>
+<tr>
+<td><code>@PreDestroy</code></td>
+<td>Bean 销毁前</td>
+<td>关闭连接、释放资源</td>
+</tr>
+</tbody>
+</table>
+<p>注意：上述是简化后的生命周期，实际还涉及 Bean 后置处理器等机制</p>
+<h3 id="bean-生命周期示例"><a href="#bean-生命周期示例" class="anchor-link">#</a> Bean 生命周期示例</h3>
+<p>首先，定义一个依赖组件：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Component%0Apublic%20class%20TaskRepository%20%7B%0A%0A%20%20%20%20public%20void%20save()%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%22%E6%89%A7%E8%A1%8C%E6%95%B0%E6%8D%AE%E4%BF%9D%E5%AD%98%22)%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskRepository</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">save</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"执行数据保存"</span>);
+    }
+}
+</code></pre>
+      </div>
+    
+<p>然后，定义业务组件 <code>TaskService</code>，通过 Setter 方法注入 <code>TaskRepository</code>：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Component%0Apublic%20class%20TaskService%20%7B%0A%0A%20%20%20%20private%20TaskRepository%20taskRepository%3B%0A%0A%20%20%20%20%2F%2F%201.%20%E5%AE%9E%E4%BE%8B%E5%8C%96%0A%20%20%20%20public%20TaskService()%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%221.%20Bean%20%E5%AE%9E%E4%BE%8B%E5%8C%96%22)%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%202.%20%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC%0A%20%20%20%20%40Autowired%0A%20%20%20%20public%20void%20setTaskRepository(TaskRepository%20taskRepository)%20%7B%0A%20%20%20%20%20%20%20%20this.taskRepository%20%3D%20taskRepository%3B%0A%20%20%20%20%20%20%20%20System.out.println(%222.%20Bean%20%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC%22)%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%203.%20%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%8C%E7%AD%89%E4%BB%B7%E4%BA%8E%20initMethod%0A%20%20%20%20%40PostConstruct%0A%20%20%20%20public%20void%20init()%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%223.%20Bean%20%E5%88%9D%E5%A7%8B%E5%8C%96%22)%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%204.%20%E4%BD%BF%E7%94%A8%0A%20%20%20%20public%20void%20execute()%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%224.%20Bean%20%E4%BD%BF%E7%94%A8%22)%3B%0A%20%20%20%20%20%20%20%20taskRepository.save()%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%205.%20%E9%94%80%E6%AF%81%0A%20%20%20%20%40PreDestroy%0A%20%20%20%20public%20void%20destroy()%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%225.%20Bean%20%E9%94%80%E6%AF%81%22)%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskService</span> {
+
+    <span class="hljs-keyword">private</span> TaskRepository taskRepository;
+
+    <span class="hljs-comment">// 1. 实例化</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">TaskService</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"1. Bean 实例化"</span>);
+    }
+
+    <span class="hljs-comment">// 2. 属性赋值</span>
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setTaskRepository</span><span class="hljs-params">(TaskRepository taskRepository)</span> {
+        <span class="hljs-built_in">this</span>.taskRepository = taskRepository;
+        System.out.println(<span class="hljs-string">"2. Bean 属性赋值"</span>);
+    }
+
+    <span class="hljs-comment">// 3. 初始化，等价于 initMethod</span>
+    <span class="hljs-meta">@PostConstruct</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"3. Bean 初始化"</span>);
+    }
+
+    <span class="hljs-comment">// 4. 使用</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">execute</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"4. Bean 使用"</span>);
+        taskRepository.save();
+    }
+
+    <span class="hljs-comment">// 5. 销毁</span>
+    <span class="hljs-meta">@PreDestroy</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">destroy</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"5. Bean 销毁"</span>);
+    }
+}
+</code></pre>
+      </div>
+    
+<p>上述代码需要导入对应的注解：<code>@Component</code>、<code>@Autowired</code>、<code>@PostConstruct</code> 和 <code>@PreDestroy</code></p>
+<p><strong>调用 Bean：</strong></p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Component%0Apublic%20class%20TaskRunner%20implements%20CommandLineRunner%20%7B%0A%0A%20%20%20%20private%20final%20TaskService%20taskService%3B%0A%0A%20%20%20%20public%20TaskRunner(TaskService%20taskService)%20%7B%0A%20%20%20%20%20%20%20%20this.taskService%20%3D%20taskService%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%40Override%0A%20%20%20%20public%20void%20run(String...%20args)%20%7B%0A%20%20%20%20%20%20%20%20taskService.execute()%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskRunner</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">CommandLineRunner</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> TaskService taskService;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">TaskRunner</span><span class="hljs-params">(TaskService taskService)</span> {
+        <span class="hljs-built_in">this</span>.taskService = taskService;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">(String... args)</span> {
+        taskService.execute();
+    }
+}
+</code></pre>
+      </div>
+    
+<p><strong>运行结果：</strong></p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="1.%20Bean%20%E5%AE%9E%E4%BE%8B%E5%8C%96%0A2.%20Bean%20%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC%0A3.%20Bean%20%E5%88%9D%E5%A7%8B%E5%8C%96%0A4.%20Bean%20%E4%BD%BF%E7%94%A8%0A%E6%89%A7%E8%A1%8C%E6%95%B0%E6%8D%AE%E4%BF%9D%E5%AD%98%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">1. Bean 实例化
+2. Bean 属性赋值
+3. Bean 初始化
+4. Bean 使用
+执行数据保存
+</code></pre>
+      </div>
+    
+<p>当 Spring Boot 应用正常关闭时：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="5.%20Bean%20%E9%94%80%E6%AF%81%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-text">5. Bean 销毁
+</code></pre>
+      </div>
+    
+<p>注意：示例以默认单例 Bean 为前提，仅展示主要生命周期阶段，实际 Spring 内部还涉及 Bean 后置处理器等机制</p>
+<h3 id="面试总结"><a href="#面试总结" class="anchor-link">#</a> 面试总结</h3>
+<p>Spring Bean 的生命周期主要包括 <strong>实例化、属性赋值、初始化、使用和销毁</strong> 五个阶段</p>
+<p>其中，构造函数注入在实例化阶段完成，而 Setter 注入和字段注入通常在属性赋值阶段完成</p>
+<p>开发者可以使用 <code>@PostConstruct</code> 在初始化阶段执行相关逻辑，使用 <code>@PreDestroy</code> 在销毁前释放资源</p>
+<h2 id="单例-bean-的线程安全问题"><a href="#单例-bean-的线程安全问题" class="anchor-link">#</a> 单例 bean 的线程安全问题</h2>
+<p>Spring bean 的作用域默认是单例 bean，即 Spring 容器只会存在一个 Bean 实例，并且该实例会被多个线程共享，因此在多线程情景下可能存在问题</p>
+<ul>
+<li>如果单例 Bean 是无状态的，没有成员变量，那么这个单例 Bean 是线程安全的，比如 Spring MVC 中的 controller、service、dao等，基本都是无状态的</li>
+<li>如果 Bean 内部有成员变量，在多线程情景下会存在线程安全问题</li>
+</ul>
+<p>单例 Bean存在多线程安全问题，常见的有三种解决办法：</p>
+<ol>
+<li>优先设计无状态 Bean：避免使用可变的共享成员变量，尽量使用方法局部变量</li>
+<li>必要时进行线程同步：例如使用 <code>synchronized</code>、<code>AtomicInteger</code> 等机制</li>
+<li>使用 <code>ThreadLocal</code>：对于确实需要线程隔离的数据，可以使用 <code>ThreadLocal</code>，但需要注意线程池环境下的数据清理与内存泄漏风险。</li>
+</ol>
+<h2 id="bean-的作用域有哪些"><a href="#bean-的作用域有哪些" class="anchor-link">#</a> Bean 的作用域有哪些？</h2>
+<p>Spring 中 Bean 的作用域通常有下面几种：</p>
+<ul>
+<li>singleton：单例，Ioc 容器中只存在唯一的 Bean 实例。Spring 中的 bean 默认都是单例的，是对单例模式的应用</li>
+<li>prototype：原型，每次获取都会创建一个新的 bean 实例。也就是说 getBean() 两次，得到的是不同的 Bean 实例</li>
+<li>request（仅web应用可用）：每一次http请求都会产生一个新的 bean（请求bean），该 bean 仅在当前http request 内有效</li>
+<li>session（仅web应用可用）：每一次来自新 session 的 http 请求都会产生一个新的 bean（会话bean），该 bean 仅在当前 http session 有效</li>
+</ul>
+<p>如何配置 bean 的作用域呢？</p>
+<p>xml 方式：</p>
+
+      <div class="md-editor-code" data-language="xml">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">xml</span>
+            <button class="md-editor-copy-button" data-code="%3Cbean%20id%3D%22...%22%20class%3D%22...%22%20scope%3D%22singleton%22%3E%3C%2Fbean%3E%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"singleton"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+</code></pre>
+      </div>
+    
+<p>注解方式：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Bean%0A%40Scope(value%20%3D%20ConfigurableBeanFactory.SCOPE_PROTOTYPE)%0Apublic%20Person%20personPrototype()%20%7B%0A%20%20%20%20return%20new%20Person()%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Bean</span>
+<span class="hljs-meta">@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)</span>
+<span class="hljs-keyword">public</span> Person <span class="hljs-title function_">personPrototype</span><span class="hljs-params">()</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();
+}
+</code></pre>
+      </div>
+    
+<h2 id="三级缓存解决循环依赖"><a href="#三级缓存解决循环依赖" class="anchor-link">#</a> 三级缓存解决循环依赖</h2>
+<h3 id="什么是循环依赖"><a href="#什么是循环依赖" class="anchor-link">#</a> 什么是循环依赖？</h3>
+<p>在 Spring 中，依赖注入主要有三种方式：构造器注入、Setter 注入、Field 字段注入。</p>
+<p>其中，Setter 注入与 Field 字段注入的特点是：Bean 的实例化与属性赋值分开进行，先创建对象，再注入依赖，这为解决循环依赖提供了条件。</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Component%0Apublic%20class%20CircularDependencyA%20%7B%0A%20%20%20%20%40Autowired%0A%20%20%20%20private%20CircularDependencyB%20circB%3B%0A%7D%0A%0A%40Component%0Apublic%20class%20CircularDependencyB%20%7B%0A%20%20%20%20%40Autowired%0A%20%20%20%20private%20CircularDependencyA%20circA%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CircularDependencyA</span> {
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> CircularDependencyB circB;
+}
+
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CircularDependencyB</span> {
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> CircularDependencyA circA;
+}
+</code></pre>
+      </div>
+    
+<p>此时：</p>
+<ul>
+<li>A 依赖 B，需要先获取 B</li>
+<li>B 依赖 A，需要先获取 A</li>
+</ul>
+<p>两者相互依赖，形成循环依赖</p>
+<h3 id="spring-如何解决循环依赖"><a href="#spring-如何解决循环依赖" class="anchor-link">#</a> Spring 如何解决循环依赖？</h3>
+<p>Spring 通过三级缓存机制，提前暴露尚未完成属性赋值和初始化的 Bean，从而解决部分循环依赖问题。</p>
+<p>首先了解三级缓存：</p>
+<table>
+<thead>
+<tr>
+<th>缓存</th>
+<th>名称</th>
+<th>存储内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一级缓存</td>
+<td><code>singletonObjects</code></td>
+<td>完成初始化的单例 Bean</td>
+</tr>
+<tr>
+<td>二级缓存</td>
+<td><code>earlySingletonObjects</code></td>
+<td>提前暴露的 Bean 引用</td>
+</tr>
+<tr>
+<td>三级缓存</td>
+<td><code>singletonFactories</code></td>
+<td>用于获取提前暴露 Bean 引用的工厂</td>
+</tr>
+</tbody>
+</table>
+<p>以 A、B 循环依赖为例，结合 Bean 生命周期进行分析：</p>
+<p><img src="/blog-backup/blog-images/2026/10/24/image-20261024160928333.png" alt="image-20261024160928333"></p>
+<p>具体步骤：</p>
+<ol>
+<li>实例化 A：创建 A 对象，并将用于获取 A 提前引用的工厂放入三级缓存</li>
+<li>A 属性赋值：发现依赖 B，于是开始创建 B</li>
+<li>实例化 B：创建 B 对象，同样将其工厂放入三级缓存</li>
+<li>B 属性赋值：发现依赖 A，此时通过三级缓存获取 A 的提前引用，并将该引用放入二级缓存，完成 B 对 A 的注入</li>
+<li>完成 B：B 完成初始化，进入一级缓存</li>
+<li>完成 A：将 B 注入 A，A 完成初始化，进入一级缓存</li>
+</ol>
+<p>至此，A 和 B 的循环依赖得到解决。</p>
+<h3 id="为什么需要三级缓存"><a href="#为什么需要三级缓存" class="anchor-link">#</a> 为什么需要三级缓存？</h3>
+<ul>
+<li>一级缓存：保存已经完成初始化的单例 Bean</li>
+<li>二级缓存：保存提前暴露的 Bean 引用，避免重复创建提前引用</li>
+<li>三级缓存：保存 <code>ObjectFactory</code>，在需要时获取 Bean 的提前引用，支持提前生成 AOP 代理对象</li>
+</ul>
+<p>需要注意：三级缓存的关键作用之一是配合 AOP，保证循环依赖场景下能够获取合适的代理对象引用。如果只考虑普通对象之间的循环引用，并非一定需要三级缓存。</p>
+<h3 id="哪些循环依赖无法解决"><a href="#哪些循环依赖无法解决" class="anchor-link">#</a> 哪些循环依赖无法解决？</h3>
+<p>Spring 的三级缓存并不能解决所有循环依赖：</p>
+<ul>
+<li>构造器循环依赖：A 创建时需要 B，B 创建时又需要 A，此时 A 尚未实例化，无法提前暴露引用</li>
+<li>Prototype 多例 Bean 循环依赖：Spring 不会像单例 Bean 一样对其进行三级缓存管理</li>
+<li>部分复杂场景：例如某些 Bean 后置处理器或代理创建场景，仍可能出现循环依赖异常</li>
+</ul>
+<p>此外，Spring Boot 2.6 起默认禁止循环依赖，即使是可以通过三级缓存处理的循环依赖，也可能直接报错。可以通过 <code>spring.main.allow-circular-references=true</code> 允许尝试处理，但实际开发中更推荐从设计上消除循环依赖。</p>
+<h3 id="面试总结-2"><a href="#面试总结-2" class="anchor-link">#</a> 面试总结</h3>
+<blockquote>
+<p>说说三级缓存如何解决循环依赖的？</p>
+<p>我觉得解决循环依赖主要与依赖注入方式有关，依赖注入有三种方式：构造函数注入、setter 注入、field字段注入，setter注入与字段注入的核心点便是实例化与属性赋值分离，基于这里，在bean进行初始化时将循环依赖的对象放置在三级缓存中，存放提前引用的工厂，后续循环依赖可以直接从三级缓存中获取所需的依赖，完成初始化，至于另一个循环依赖的bean，此时也能进行后续的属性赋值和初始化。因此，对于构造函数产生的循环依赖往往无法进行解决</p>
+<p>一级缓存存储完成初始化的单例 Bean，二级缓存存储提前暴露的 Bean 引用，三级缓存存储获取提前引用的工厂，并支持 AOP 代理的提前生成。</p>
+<p>需要注意，构造器循环依赖和 Prototype 多例 Bean 的循环依赖通常无法通过该机制解决。</p>
+</blockquote>
+<h2 id="aop"><a href="#aop" class="anchor-link">#</a> AOP</h2>
+<p>aop：面向切面编程，实现了主业务与分支业务的解耦，主业务无需关心日志记录等操作，这些操作都统一通过aop进行实现和记录</p>
+<p>spring 是如何实现 aop 的？——动态代理，JDK动态代理与cglib动态代理，那么两者有什么区别？</p>
+<h3 id="jdk动态代理和cglib代理的区别"><a href="#jdk动态代理和cglib代理的区别" class="anchor-link">#</a> jdk动态代理和cglib代理的区别</h3>
+<blockquote>
+<p>JDK 动态代理和 CGLIB 代理的主要区别在于实现方式。</p>
+<p>JDK 动态代理基于接口，通过实现目标接口生成代理对象，而</p>
+<p>CGLIB 代理基于继承，通过创建目标类的子类生成代理对象，因此不要求目标对象实现接口。但是由于 Java 中 <code>final</code> 类不能被继承，<code>final</code> 方法不能被重写，所以 CGLIB 无法代理 <code>final</code> 类，也无法增强 <code>final</code> 方法。</p>
+</blockquote>
+<p>记忆要点：JDK 基于接口，CGLIB 基于继承；CGLIB 受 <code>final</code> 限制。</p>
+<h2 id="三级缓存是如何处理代理对象的"><a href="#三级缓存是如何处理代理对象的" class="anchor-link">#</a> 三级缓存是如何处理代理对象的？</h2>
+<p>在 spring 中，无论是 jdk 动态代理，还是 cglib 代理，两者的共同特点都是——通过 代理对象 实现增强，对于普通循环依赖二级缓存便足以，但代理却不行</p>
+<h3 id="为什么普通循环依赖只需要二级缓存"><a href="#为什么普通循环依赖只需要二级缓存" class="anchor-link">#</a> 为什么普通循环依赖只需要二级缓存？</h3>
+<p>假设存在两个 Bean：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Component%0Apublic%20class%20A%20%7B%0A%20%20%20%20%40Autowired%0A%20%20%20%20private%20B%20b%3B%0A%7D%0A%0A%40Component%0Apublic%20class%20B%20%7B%0A%20%20%20%20%40Autowired%0A%20%20%20%20private%20A%20a%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span> {
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> B b;
+}
+
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span> {
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> A a;
+}
+</code></pre>
+      </div>
+    
+<p>Spring 创建 Bean A 时：</p>
+<ol>
+<li>实例化 A，此时 A 尚未完成属性注入</li>
+<li>将 A 提前放入缓存</li>
+<li>给 A 注入 B，发现 B 尚未创建，开始创建 B</li>
+<li>给 B 注入 A，从缓存中获取提前暴露的 A</li>
+<li>B 创建完成，注入 A，最终 A 创建完成</li>
+</ol>
+<p>在这个过程中，只需要：</p>
+<ul>
+<li>一级缓存：存放初始化完成的 Bean</li>
+<li>二级缓存：存放提前暴露、尚未完成初始化的 Bean</li>
+</ul>
+<p>因此，对于不涉及代理的常见 Setter/字段注入循环依赖，理论上二级缓存就足够了。</p>
+<h3 id="为什么-aop-代理需要特殊处理"><a href="#为什么-aop-代理需要特殊处理" class="anchor-link">#</a> 为什么 aop 代理需要特殊处理</h3>
+<blockquote>
+<p>aop 代理是通过代理对象实现，二级缓存会绕过代理</p>
+</blockquote>
+<p>假设 A 需要进行 AOP 增强：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Component%0Apublic%20class%20A%20%7B%0A%20%20%20%20%40Autowired%0A%20%20%20%20private%20B%20b%3B%0A%0A%20%20%20%20%40Transactional%0A%20%20%20%20public%20void%20doSomething()%20%7B%0A%20%20%20%20%20%20%20%20System.out.println(%22%E6%89%A7%E8%A1%8C%E4%BA%8B%E5%8A%A1%E6%96%B9%E6%B3%95%22)%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span> {
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> B b;
+
+    <span class="hljs-meta">@Transactional</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doSomething</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"执行事务方法"</span>);
+    }
+}
+</code></pre>
+      </div>
+    
+<p>JDK 动态代理和 CGLIB 虽然实现方式不同，但有一个共同点：</p>
+<p>代理对象与原始对象不是同一个对象。</p>
+<ul>
+<li>JDK 动态代理：创建实现目标接口的代理对象</li>
+<li>CGLIB：创建目标类的子类作为代理类，并生成代理对象，通过方法拦截实现增强</li>
+</ul>
+<p>假设 A 的原始对象为 <code>A_original</code>，代理对象为 <code>A_proxy</code>。</p>
+<p>如果 B 注入的是 <code>A_original</code>，而 Spring 最终对外提供的是 <code>A_proxy</code>，那么就会出现问题：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="B.a%20%20%E2%86%92%20A_original%EF%BC%88%E5%8E%9F%E5%A7%8B%E5%AF%B9%E8%B1%A1%EF%BC%89%0A%E5%AE%B9%E5%99%A8%20%E2%86%92%20A_proxy%EF%BC%88%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1%EF%BC%89%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>B.a  → <span class="hljs-built_in">A_original</span>（原始对象）
+容器 → <span class="hljs-built_in">A_proxy</span>（代理对象）
+</code></pre>
+      </div>
+    
+<p>这样 B 调用 A 的方法时，就可能绕过 AOP 增强，例如 <code>@Transactional</code> 无法按预期生效。</p>
+<p>因此，Spring 必须确保：B 提前获取的 A，与容器最终对外提供的 A，是同一个代理对象。</p>
+<h3 id="二级缓存处理aop循环依赖会出现什么问题"><a href="#二级缓存处理aop循环依赖会出现什么问题" class="anchor-link">#</a> 二级缓存处理aop循环依赖会出现什么问题？</h3>
+<p>假设 A 依赖 B，B 又依赖 A。</p>
+<p>Spring 首先创建 A：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="%E2%91%A0%20%E5%AE%9E%E4%BE%8B%E5%8C%96%20A_original%0A%20%20%20%20%20%20%20%20%20%20%E2%86%93%0A%E2%91%A1%20A%20%E9%9C%80%E8%A6%81%E6%B3%A8%E5%85%A5%20B%0A%20%20%20%20%20%20%20%20%20%20%E2%86%93%0A%E2%91%A2%20%E5%BC%80%E5%A7%8B%E5%88%9B%E5%BB%BA%20B%0A%20%20%20%20%20%20%20%20%20%20%E2%86%93%0A%E2%91%A3%20B%20%E5%8F%88%E9%9C%80%E8%A6%81%E6%B3%A8%E5%85%A5%20A%0A%20%20%20%20%20%20%20%20%20%20%E2%86%93%0A%E2%91%A4%20%E6%AD%A4%E6%97%B6%20A%20%E8%BF%98%E6%B2%A1%E6%9C%89%E5%AE%8C%E6%88%90%E5%88%9D%E5%A7%8B%E5%8C%96%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>① 实例化 A_original
+          ↓
+② <span class="hljs-selector-tag">A</span> 需要注入 <span class="hljs-selector-tag">B</span>
+          ↓
+③ 开始创建 <span class="hljs-selector-tag">B</span>
+          ↓
+④ <span class="hljs-selector-tag">B</span> 又需要注入 <span class="hljs-selector-tag">A</span>
+          ↓
+⑤ 此时 <span class="hljs-selector-tag">A</span> 还没有完成初始化
+</code></pre>
+      </div>
+    
+<p>问题就在第⑤步：</p>
+<p>如果直接把原始对象 <code>A_original</code> 注入 B，就会变成：</p>
+<p><img src="/blog-backup/blog-images/2026/10/25/image-20261025105815277.png" alt="image-20261025105815277"></p>
+<p>B 持有的是原始对象，其他 Bean 从容器中获取的却是代理对象。这不仅可能绕过 AOP 增强，还可能造成 Bean 引用不一致。</p>
+<h3 id="三级缓存处理aop循环依赖"><a href="#三级缓存处理aop循环依赖" class="anchor-link">#</a> 三级缓存处理aop循环依赖</h3>
+<p>Spring 不会直接把原始对象 A 放到三级缓存，而是先放入一个 <code>ObjectFactory</code>。</p>
+<p>当 B 需要 A 时，才调用工厂中的 <code>getEarlyBeanReference()</code>。</p>
+<p>可以把它理解为下面这段简化的伪代码：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="Object%20getEarlyBeanReference(Object%20bean)%20%7B%0A%20%20%20%20if%20(%E9%9C%80%E8%A6%81AOP%E4%BB%A3%E7%90%86(bean))%20%7B%0A%20%20%20%20%20%20%20%20return%20%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1(bean)%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20return%20bean%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java">Object <span class="hljs-title function_">getEarlyBeanReference</span><span class="hljs-params">(Object bean)</span> {
+    <span class="hljs-keyword">if</span> (需要AOP代理(bean)) {
+        <span class="hljs-keyword">return</span> 创建代理对象(bean);
+    }
+
+    <span class="hljs-keyword">return</span> bean;
+}
+</code></pre>
+      </div>
+    
+<p>假设 A 需要代理，那么：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="B%20%E9%9C%80%E8%A6%81%20A%0A%20%20%20%20%E2%86%93%0A%E4%BB%8E%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98%E8%8E%B7%E5%8F%96%20ObjectFactory%0A%20%20%20%20%E2%86%93%0A%E8%B0%83%E7%94%A8%20getEarlyBeanReference(A_original)%0A%20%20%20%20%E2%86%93%0A%E6%8F%90%E5%89%8D%E8%8E%B7%E5%8F%96%20A_proxy%0A%20%20%20%20%E2%86%93%0A%E6%8A%8A%20A_proxy%20%E6%94%BE%E5%85%A5%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98%0A%20%20%20%20%E2%86%93%0A%E5%B0%86%20A_proxy%20%E6%B3%A8%E5%85%A5%20B%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>B 需要 A
+    ↓
+从三级缓存获取 ObjectFactory
+    ↓
+调用 getEarlyBeanReference(<span class="hljs-built_in">A_original</span>)
+    ↓
+提前获取 <span class="hljs-built_in">A_proxy</span>
+    ↓
+把 <span class="hljs-built_in">A_proxy</span> 放入二级缓存
+    ↓
+将 <span class="hljs-built_in">A_proxy</span> 注入 B
+</code></pre>
+      </div>
+    
+<p>最终得到：</p>
+
+      <div class="md-editor-code" data-language="text">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">text</span>
+            <button class="md-editor-copy-button" data-code="B.a%20%20%20%20%20%20%20%E2%86%92%20A_proxy%0ASpring%E5%AE%B9%E5%99%A8%20%E2%86%92%20A_proxy%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code>B.a       → <span class="hljs-built_in">A_proxy</span>
+Spring容器 → <span class="hljs-built_in">A_proxy</span>
+</code></pre>
+      </div>
+    
+<p>这样 B 调用 A 的方法时，也能够经过代理对象，执行事务等 AOP 增强。</p>
+<p>如果 A 不需要 AOP 代理，<code>getEarlyBeanReference()</code> 通常直接返回 <code>A_original</code> 即可。</p>
+<h2 id="spring-mvc的工作流程"><a href="#spring-mvc的工作流程" class="anchor-link">#</a> Spring MVC的工作流程</h2>
+<p><img src="/blog-backup/blog-images/2026/10/25/image-20261025110950210.png" alt="image-20261025110950210"></p>
+<p>工作流程：从前端发起请求，到后端处理请求并返回给前端的整个过程</p>
+<ol>
+<li>接收请求：前端发送 HTTP 请求，由 <code>DispatcherServlet</code> 统一接收</li>
+<li>处理器映射：<code>DispatcherServlet</code> 调用 <code>HandlerMapping</code>，根据请求路径、请求方法等条件找到对应的处理器，并返回 <code>HandlerExecutionChain</code>（包含处理器和拦截器）</li>
+<li>处理器执行：<code>DispatcherServlet</code> 调用 <code>HandlerAdapter</code>，由适配器执行拦截器的前置处理，并调用对应的 Controller 方法处理业务</li>
+<li>返回结果：Controller 执行完成后，传统 MVC 模式通常返回 <code>ModelAndView</code>，包含模型数据和视图信息</li>
+<li>视图解析与渲染：<code>DispatcherServlet</code> 调用 <code>ViewResolver</code> 解析视图，再渲染视图并将响应返回客户端</li>
+</ol>
+<p>速记：</p>
+<blockquote>
+<p>Spring MVC 的核心是 DispatcherServlet。首先接收前端请求，通过 HandlerMapping 找到对应的处理器执行链，然后由 HandlerAdapter 调用 Controller 执行业务逻辑。传统 MVC 模式会返回 ModelAndView，包含模型数据和视图信息，最后通过 ViewResolver 解析视图并渲染返回。</p>
+</blockquote>
+<h2 id="springboot-自动配置的原理"><a href="#springboot-自动配置的原理" class="anchor-link">#</a> springboot 自动配置的原理</h2>
+<p>配置路线：<code>@SpringBootApplication</code> → <code>@EnableAutoConfiguration</code> → <code>@Import</code> → <code>AutoConfigurationImportSelector</code> → 读取自动配置文件 → 条件装配 Bean</p>
+<p>Spring Boot 项目通常有如下启动类：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40SpringBootApplication%0Apublic%20class%20Application%20%7B%0A%20%20%20%20public%20static%20void%20main(String%5B%5D%20args)%20%7B%0A%20%20%20%20%20%20%20%20SpringApplication.run(Application.class%2C%20args)%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Application</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        SpringApplication.run(Application.class, args);
+    }
+}
+</code></pre>
+      </div>
+    
+<p>其中，<code>@SpringBootApplication</code> 是一个组合注解，主要包含三个注解：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40SpringBootConfiguration%0A%40EnableAutoConfiguration%0A%40ComponentScan%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@SpringBootConfiguration</span>
+<span class="hljs-meta">@EnableAutoConfiguration</span>
+<span class="hljs-meta">@ComponentScan</span>
+</code></pre>
+      </div>
+    
+<p>三个注解分别负责不同的事情：</p>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@SpringBootConfiguration</code></td>
+<td>标识当前类为配置类</td>
+</tr>
+<tr>
+<td><code>@EnableAutoConfiguration</code></td>
+<td>开启 Spring Boot 自动配置</td>
+</tr>
+<tr>
+<td><code>@ComponentScan</code></td>
+<td>扫描指定包下的 Spring 组件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="enableautoconfiguration-如何实现自动配置"><a href="#enableautoconfiguration-如何实现自动配置" class="anchor-link">#</a> @EnableAutoConfiguration 如何实现自动配置？</h3>
+<p><code>@EnableAutoConfiguration</code> 是自动配置的核心入口。</p>
+<p>其内部有一个关键注解：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Import(AutoConfigurationImportSelector.class)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Import(AutoConfigurationImportSelector.class)</span>
+</code></pre>
+      </div>
+    
+<p>（1）@Import 的作用</p>
+<p><code>@Import</code> 是 Spring 提供的注解，可以向 Spring 容器导入配置类或其他组件。</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Configuration%0Apublic%20class%20MyConfig%20%7B%0A%0A%20%20%20%20%40Bean%0A%20%20%20%20public%20UserService%20userService()%20%7B%0A%20%20%20%20%20%20%20%20return%20new%20UserService()%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyConfig</span> {
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-keyword">public</span> UserService <span class="hljs-title function_">userService</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserService</span>();
+    }
+}
+</code></pre>
+      </div>
+    
+<p>通过：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Import(MyConfig.class)%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Import(MyConfig.class)</span>
+</code></pre>
+      </div>
+    
+<p>Spring 就可以处理 <code>MyConfig</code>，将其中定义的 <code>UserService</code> 注册为 Bean。</p>
+<h3 id="面试回答"><a href="#面试回答" class="anchor-link">#</a> 面试回答</h3>
+<p>首先是启动类上的 <code>@SpringBootApplication</code> 是一个组合注解，其中包含 <code>@EnableAutoConfiguration</code> 是自动配置的核心，<code>@EnableAutoConfiguration</code> 通过 @import 注解导入对应的配置选择器（AutoConfigurationImportSelector），通过选择器读取 classpath 路径下 spring.factories 文件中声明的自动配置类</p>
+<p>最后，对 Bean 进行筛选，通过 <code>@ConditionalOnclass</code> 等注解判断是否需要将 Bean 注册到容器中，通过这种方式， springboot 实现了自动配置</p>
+<blockquote>
+<p>组合注解启动类 @SpringBootApplication -&gt; 包含实现自动配置的核心注解 @EnalbeAutoConfiguration -&gt; 通过 @import 注解导入配置选择器（AutoConfigurationImportSelector）读取自动配置类 -&gt; 最后，通过 @ConditionalOnclass 进行 Bean 筛选，完成注册</p>
+</blockquote>
+<h2 id="spring-如何实现事务"><a href="#spring-如何实现事务" class="anchor-link">#</a> spring 如何实现事务</h2>
+<p>通过 aop 代理进行实现，对方法前后进行拦截，执行方法前开启事务，执行完目标方法后根据情况进行提交或者回滚事务</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional(rollbackFor%20%3D%20Exception.class)%0Apublic%20void%20createOrder()%20%7B%0A%20%20%20%20%2F%2F%201.%20%E5%88%9B%E5%BB%BA%E8%AE%A2%E5%8D%95%0A%20%20%20%20orderMapper.insert()%3B%0A%0A%20%20%20%20%2F%2F%202.%20%E6%89%A3%E9%99%A4%E4%BD%99%E9%A2%9D%0A%20%20%20%20accountMapper.deductBalance()%3B%0A%0A%20%20%20%20%2F%2F%203.%20%E6%A8%A1%E6%8B%9F%E5%BC%82%E5%B8%B8%0A%20%20%20%20int%20result%20%3D%201%20%2F%200%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional(rollbackFor = Exception.class)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">()</span> {
+    <span class="hljs-comment">// 1. 创建订单</span>
+    orderMapper.insert();
+
+    <span class="hljs-comment">// 2. 扣除余额</span>
+    accountMapper.deductBalance();
+
+    <span class="hljs-comment">// 3. 模拟异常</span>
+    <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span> / <span class="hljs-number">0</span>;
+}
+</code></pre>
+      </div>
+    
+<p>代理对象：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="public%20void%20proxyCreateOrder()%20%7B%0A%20%20%20%20%2F%2F%20%E8%8E%B7%E5%8F%96%E4%BA%8B%E5%8A%A1%E5%B9%B6%E6%A0%B9%E6%8D%AE%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA%E5%BC%80%E5%90%AF%E6%88%96%E5%8A%A0%E5%85%A5%E4%BA%8B%E5%8A%A1%0A%20%20%20%20TransactionStatus%20status%20%3D%20transactionManager.getTransaction(definition)%3B%0A%0A%20%20%20%20try%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20%E6%89%A7%E8%A1%8C%E7%9B%AE%E6%A0%87%E6%96%B9%E6%B3%95%0A%20%20%20%20%20%20%20%20target.createOrder()%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%EF%BC%8C%E6%8F%90%E4%BA%A4%E4%BA%8B%E5%8A%A1%0A%20%20%20%20%20%20%20%20transactionManager.commit(status)%3B%0A%0A%20%20%20%20%7D%20catch%20(Throwable%20e)%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20%E4%BB%85%E6%BC%94%E7%A4%BA%20rollbackFor%20%3D%20Exception.class%20%E7%9A%84%E5%B8%B8%E8%A7%81%E6%95%88%E6%9E%9C%0A%20%20%20%20%20%20%20%20if%20(e%20instanceof%20Exception)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20transactionManager.rollback(status)%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20transactionManager.commit(status)%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20throw%20e%3B%0A%20%20%20%20%7D%20finally%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20%E4%BA%8B%E5%8A%A1%E8%B5%84%E6%BA%90%E6%B8%85%E7%90%86%E7%94%B1%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%B4%9F%E8%B4%A3%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">proxyCreateOrder</span><span class="hljs-params">()</span> {
+    <span class="hljs-comment">// 获取事务并根据传播行为开启或加入事务</span>
+    <span class="hljs-type">TransactionStatus</span> <span class="hljs-variable">status</span> <span class="hljs-operator">=</span> transactionManager.getTransaction(definition);
+
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">// 执行目标方法</span>
+        target.createOrder();
+
+        <span class="hljs-comment">// 正常执行，提交事务</span>
+        transactionManager.commit(status);
+
+    } <span class="hljs-keyword">catch</span> (Throwable e) {
+        <span class="hljs-comment">// 仅演示 rollbackFor = Exception.class 的常见效果</span>
+        <span class="hljs-keyword">if</span> (e <span class="hljs-keyword">instanceof</span> Exception) {
+            transactionManager.rollback(status);
+        } <span class="hljs-keyword">else</span> {
+            transactionManager.commit(status);
+        }
+
+        <span class="hljs-keyword">throw</span> e;
+    } <span class="hljs-keyword">finally</span> {
+        <span class="hljs-comment">// 事务资源清理由事务管理器负责</span>
+    }
+}
+</code></pre>
+      </div>
+    
+<p>注意：以上只是原理示意，并非 Spring 的实际源码。真实的 Spring 事务拦截器会先区分目标方法异常与提交过程异常，并根据回滚规则、传播行为和事务状态进行处理。</p>
+<h3 id="事务失效的场景有哪些"><a href="#事务失效的场景有哪些" class="anchor-link">#</a> 事务失效的场景有哪些？</h3>
+<blockquote>
+<p>添加 <code>@Transactional</code> 注解后事务失效的场景有哪些？</p>
+</blockquote>
+<p>Spring 声明式事务主要通过 AOP 动态代理 + 事务管理器实现，因此分析事务失效时，可以从两个角度考虑：</p>
+<ol>
+<li>AOP 代理是否生效：目标方法有没有经过代理对象？</li>
+<li>事务回滚条件是否满足：方法执行过程中发生异常，Spring 是否能够感知并触发回滚？</li>
+</ol>
+<h3 id="1-private-修饰的方法导致事务失效"><a href="#1-private-修饰的方法导致事务失效" class="anchor-link">#</a> 1. private 修饰的方法导致事务失效</h3>
+<p>Spring 通过代理对象进行事务增强，private 方法是无法进行代理</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Service%0Apublic%20class%20OrderService%20%7B%0A%0A%20%20%20%20%40Transactional%0A%20%20%20%20private%20void%20createOrder()%20%7B%0A%20%20%20%20%20%20%20%20orderMapper.insert()%3B%0A%20%20%20%20%20%20%20%20accountMapper.deductBalance()%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderService</span> {
+
+    <span class="hljs-meta">@Transactional</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">()</span> {
+        orderMapper.insert();
+        accountMapper.deductBalance();
+    }
+}
+</code></pre>
+      </div>
+    
+<p>这里 <code>private</code> 方法无法被 Spring 默认的 AOP 代理进行事务增强。</p>
+<p>解决方案： 建议将事务方法声明为 <code>public</code>，并确保通过 Spring 管理的代理对象调用。</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional%0Apublic%20void%20createOrder()%20%7B%0A%20%20%20%20orderMapper.insert()%3B%0A%20%20%20%20accountMapper.deductBalance()%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">()</span> {
+    orderMapper.insert();
+    accountMapper.deductBalance();
+}
+</code></pre>
+      </div>
+    
+<p>为了保证跨版本、跨代理方式的一致性，开发中一般推荐在 <code>public</code> 方法上使用 <code>@Transactional</code>。</p>
+<h3 id="2-异常被捕获-没有向上抛出"><a href="#2-异常被捕获-没有向上抛出" class="anchor-link">#</a> 2. 异常被捕获，没有向上抛出</h3>
+<p>原因： Spring 事务拦截器需要感知异常，才能根据回滚规则执行回滚。如果业务方法自己捕获并处理异常，事务拦截器通常会认为方法正常执行完成，从而提交事务。</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional%0Apublic%20void%20createOrder()%20%7B%0A%20%20%20%20try%20%7B%0A%20%20%20%20%20%20%20%20orderMapper.insert()%3B%0A%20%20%20%20%20%20%20%20accountMapper.deductBalance()%3B%0A%0A%20%20%20%20%20%20%20%20int%20result%20%3D%201%20%2F%200%3B%0A%20%20%20%20%7D%20catch%20(Exception%20e)%20%7B%0A%20%20%20%20%20%20%20%20e.printStackTrace()%3B%20%2F%2F%20%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">()</span> {
+    <span class="hljs-keyword">try</span> {
+        orderMapper.insert();
+        accountMapper.deductBalance();
+
+        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span> / <span class="hljs-number">0</span>;
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        e.printStackTrace(); <span class="hljs-comment">// 捕获异常</span>
+    }
+}
+</code></pre>
+      </div>
+    
+<p>执行流程：</p>
+<ol>
+<li>Spring 开启事务</li>
+<li>执行插入订单和扣除余额</li>
+<li>发生 <code>ArithmeticException</code></li>
+<li><code>catch</code> 捕获异常，没有继续向外抛出</li>
+<li>方法正常结束，Spring 提交事务</li>
+</ol>
+<p>解决方案： 在 <code>catch</code> 中重新抛出异常。</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional%0Apublic%20void%20createOrder()%20%7B%0A%20%20%20%20try%20%7B%0A%20%20%20%20%20%20%20%20orderMapper.insert()%3B%0A%20%20%20%20%20%20%20%20accountMapper.deductBalance()%3B%0A%0A%20%20%20%20%20%20%20%20int%20result%20%3D%201%20%2F%200%3B%0A%20%20%20%20%7D%20catch%20(Exception%20e)%20%7B%0A%20%20%20%20%20%20%20%20throw%20new%20RuntimeException(e)%3B%20%2F%2F%20%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">()</span> {
+    <span class="hljs-keyword">try</span> {
+        orderMapper.insert();
+        accountMapper.deductBalance();
+
+        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span> / <span class="hljs-number">0</span>;
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e); <span class="hljs-comment">// 抛出异常</span>
+    }
+}
+</code></pre>
+      </div>
+    
+<p>这样 Spring 就能够感知异常，并根据回滚规则执行回滚。</p>
+<p>补充：也可以使用 <code>TransactionAspectSupport.currentTransactionStatus().setRollbackOnly()</code> 手动标记事务回滚，但通常更推荐合理地向上抛出异常。</p>
+<h3 id="3-抛出非runtime异常与error异常时-事务失效"><a href="#3-抛出非runtime异常与error异常时-事务失效" class="anchor-link">#</a> 3. 抛出非runtime异常与error异常时，事务失效</h3>
+<p>原因： Spring 默认仅对 <code>RuntimeException</code> 和 <code>Error</code> 触发回滚，对于普通受检异常，如 <code>IOException</code>、<code>FileNotFoundException</code>，默认不会回滚。</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional%0Apublic%20void%20createOrder()%20throws%20IOException%20%7B%0A%20%20%20%20orderMapper.insert()%3B%0A%20%20%20%20accountMapper.deductBalance()%3B%0A%0A%20%20%20%20throw%20new%20IOException(%22%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%A4%B1%E8%B4%A5%22)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException {
+    orderMapper.insert();
+    accountMapper.deductBalance();
+
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IOException</span>(<span class="hljs-string">"文件读取失败"</span>);
+}
+</code></pre>
+      </div>
+    
+<p>虽然方法抛出了异常，但默认配置下 Spring 仍然会尝试提交事务。</p>
+<p>解决方法：配置 rollbackFor 属性 @Transactional(rollbackFor=Exception.class)，该属性会对 <code>Exception</code> 及其子类回滚，同时保留对 <code>Error</code> 的默认回滚</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional(rollbackFor%20%3D%20Exception.class)%0Apublic%20void%20createOrder()%20throws%20IOException%20%7B%0A%20%20%20%20%2F%2F%201.%20%E5%88%9B%E5%BB%BA%E8%AE%A2%E5%8D%95%0A%20%20%20%20orderMapper.insert()%3B%0A%0A%20%20%20%20%2F%2F%202.%20%E6%89%A3%E9%99%A4%E4%BD%99%E9%A2%9D%0A%20%20%20%20accountMapper.deductBalance()%3B%0A%0A%20%20%20%20%2F%2F%203.%20%E6%8A%9B%E5%87%BA%E5%8F%97%E6%A3%80%E5%BC%82%E5%B8%B8%0A%20%20%20%20throw%20new%20IOException(%22%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%A4%B1%E8%B4%A5%22)%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional(rollbackFor = Exception.class)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException {
+    <span class="hljs-comment">// 1. 创建订单</span>
+    orderMapper.insert();
+
+    <span class="hljs-comment">// 2. 扣除余额</span>
+    accountMapper.deductBalance();
+
+    <span class="hljs-comment">// 3. 抛出受检异常</span>
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IOException</span>(<span class="hljs-string">"文件读取失败"</span>);
+}
+</code></pre>
+      </div>
+    
+<p>执行结果：</p>
+<ul>
+<li>执行创建订单</li>
+<li>执行扣除余额</li>
+<li>抛出 <code>IOException</code></li>
+<li>Spring 根据 <code>rollbackFor</code> 配置回滚整个事务</li>
+<li>创建订单和扣除余额操作均被撤销</li>
+</ul>
+<h3 id="4-同一个类内部的方法调用"><a href="#4-同一个类内部的方法调用" class="anchor-link">#</a> 4. 同一个类内部的方法调用</h3>
+<p>一个类中方法B添加了事务，方法A去调用方法B，但是方法A没有添加事务，此时方法A不会触发事务，也不会生成代理对象，导致事务失效</p>
+<p>原因： Spring 默认通过 AOP 代理对象实现事务增强，而同一个类内部通过 <code>this</code> 调用其他方法时，不会再次经过代理对象，因此被调用方法上的 <code>@Transactional</code> 不会单独生效。</p>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Service%0Apublic%20class%20OrderService%20%7B%0A%0A%20%20%20%20public%20void%20methodA()%20%7B%0A%20%20%20%20%20%20%20%20methodB()%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%40Transactional%0A%20%20%20%20public%20void%20methodB()%20%7B%0A%20%20%20%20%20%20%20%20orderMapper.insert()%3B%0A%20%20%20%20%20%20%20%20accountMapper.deductBalance()%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderService</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">methodA</span><span class="hljs-params">()</span> {
+        methodB();
+    }
+
+    <span class="hljs-meta">@Transactional</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">methodB</span><span class="hljs-params">()</span> {
+        orderMapper.insert();
+        accountMapper.deductBalance();
+    }
+}
+</code></pre>
+      </div>
+    
+<p>当外部调用 <code>methodA()</code> 时：</p>
+<p><img src="/blog-backup/blog-images/2026/10/25/image-20261025192841542.png" alt="image-20261025192841542"></p>
+<h2 id="spring-事务传播机制"><a href="#spring-事务传播机制" class="anchor-link">#</a> spring 事务传播机制</h2>
+<p>Spring 事务传播机制（Propagation）主要用于解决：当一个事务方法调用另一个事务方法时，被调用的方法应该如何处理事务？</p>
+<p>例如，存在两个 Service：</p>
+<ul>
+<li><code>OrderService</code>：负责创建订单，对应事务 A</li>
+<li><code>AccountService</code>：负责扣除余额，对应事务 B</li>
+</ul>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Service%0Apublic%20class%20OrderService%20%7B%0A%0A%20%20%20%20%40Autowired%0A%20%20%20%20private%20AccountService%20accountService%3B%0A%0A%20%20%20%20%40Transactional%0A%20%20%20%20public%20void%20createOrder()%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%201.%20%E5%88%9B%E5%BB%BA%E8%AE%A2%E5%8D%95%0A%20%20%20%20%20%20%20%20orderMapper.insert()%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%202.%20%E6%89%A3%E9%99%A4%E4%BD%99%E9%A2%9D%0A%20%20%20%20%20%20%20%20accountService.deductBalance()%3B%20%2F%2F%20%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BA%8B%E5%8A%A1%E6%96%B9%E6%B3%95%0A%0A%20%20%20%20%20%20%20%20%2F%2F%203.%20%E6%A8%A1%E6%8B%9F%E5%BC%82%E5%B8%B8%0A%20%20%20%20%20%20%20%20int%20result%20%3D%201%20%2F%200%3B%0A%20%20%20%20%7D%0A%7D%0A%0A%40Service%0Apublic%20class%20AccountService%20%7B%0A%0A%20%20%20%20%40Transactional%0A%20%20%20%20public%20void%20deductBalance()%20%7B%0A%20%20%20%20%20%20%20%20accountMapper.deductBalance()%3B%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderService</span> {
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> AccountService accountService;
+
+    <span class="hljs-meta">@Transactional</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// 1. 创建订单</span>
+        orderMapper.insert();
+
+        <span class="hljs-comment">// 2. 扣除余额</span>
+        accountService.deductBalance(); <span class="hljs-comment">// 另一个事务方法</span>
+
+        <span class="hljs-comment">// 3. 模拟异常</span>
+        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span> / <span class="hljs-number">0</span>;
+    }
+}
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AccountService</span> {
+
+    <span class="hljs-meta">@Transactional</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">deductBalance</span><span class="hljs-params">()</span> {
+        accountMapper.deductBalance();
+    }
+}
+</code></pre>
+      </div>
+    
+<p>这里存在一个问题：<code>createOrder()</code> 调用了另一个带有 <code>@Transactional</code> 的方法，那么两个方法的事务应该如何执行？</p>
+<p>主要有三种处理方式：</p>
+<ul>
+<li>融入：加入外层事务</li>
+<li>挂起：两个事务相互独立，互不影响</li>
+<li>嵌套：类似于保存点</li>
+</ul>
+<p><img src="/blog-backup/blog-images/2026/10/25/image-20261025195000711.png" alt="image-20261025195000711"></p>
+<p>MySQL 不支持真正独立的嵌套事务，但 InnoDB 支持 SAVEPOINT 保存点。因此 Spring 在适当的事务管理器配置下，可以通过保存点实现 <code>NESTED</code> 的嵌套回滚语义。</p>
+<h3 id="四种核心事务传播机制"><a href="#四种核心事务传播机制" class="anchor-link">#</a> 四种核心事务传播机制</h3>
+<table>
+<thead>
+<tr>
+<th>传播机制</th>
+<th>外层有事务</th>
+<th>外层无事务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>REQUIRED</code></td>
+<td>加入已有事务</td>
+<td>创建新事务</td>
+</tr>
+<tr>
+<td><code>REQUIRES_NEW</code></td>
+<td>挂起外层，创建新事务</td>
+<td>创建新事务</td>
+</tr>
+<tr>
+<td><code>SUPPORTS</code></td>
+<td>加入已有事务</td>
+<td>以非事务方式执行</td>
+</tr>
+<tr>
+<td><code>MANDATORY</code></td>
+<td>加入已有事务</td>
+<td>抛出异常</td>
+</tr>
+</tbody>
+</table>
+<p>以下仍然使用创建订单和扣除余额的案例，分别说明四种机制。</p>
+<h3 id="required-加入已有事务-默认"><a href="#required-加入已有事务-默认" class="anchor-link">#</a> REQUIRED：加入已有事务（默认）</h3>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional(propagation%20%3D%20Propagation.REQUIRED)%0Apublic%20void%20deductBalance()%20%7B%0A%20%20%20%20accountMapper.deductBalance()%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional(propagation = Propagation.REQUIRED)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">deductBalance</span><span class="hljs-params">()</span> {
+    accountMapper.deductBalance();
+}
+</code></pre>
+      </div>
+    
+<ul>
+<li>外层有事务：加入外层事务，共同提交或回滚</li>
+<li>外层无事务：自己创建一个新事务</li>
+</ul>
+<p>结合案例： <code>createOrder()</code> 开启事务 A，<code>deductBalance()</code> 加入事务 A。当外层执行 <code>1 / 0</code> 发生异常时，订单创建和余额扣除都会回滚。</p>
+<p>可以理解为：两个方法共享同一个数据库事务。</p>
+<h3 id="requires-new-挂起外层事务-创建新事务"><a href="#requires-new-挂起外层事务-创建新事务" class="anchor-link">#</a> REQUIRES_NEW：挂起外层事务，创建新事务</h3>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional(propagation%20%3D%20Propagation.REQUIRES_NEW)%0Apublic%20void%20deductBalance()%20%7B%0A%20%20%20%20accountMapper.deductBalance()%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional(propagation = Propagation.REQUIRES_NEW)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">deductBalance</span><span class="hljs-params">()</span> {
+    accountMapper.deductBalance();
+}
+</code></pre>
+      </div>
+    
+<ul>
+<li>外层有事务：挂起外层事务，开启独立的新事务</li>
+<li>外层无事务：直接创建新事务</li>
+</ul>
+<p>结合案例：</p>
+<ol>
+<li><code>createOrder()</code> 开启事务 A，插入订单</li>
+<li>调用 <code>deductBalance()</code>，挂起事务 A</li>
+<li>创建事务 B，扣除余额并提交事务 B</li>
+<li>恢复事务 A</li>
+<li>执行 <code>1 / 0</code>，事务 A 回滚</li>
+</ol>
+<p>结果：订单创建回滚，但余额扣除已提交，不会随事务 A 回滚。</p>
+<p>原因是事务 A 与事务 B 属于独立的物理事务，可以分别提交或回滚。</p>
+<p>在常见的 JDBC 本地事务中，事务 A 和事务 B 通常使用不同的数据库连接。使用时需要注意连接池大小，避免连接资源不足。</p>
+<h3 id="supports-有事务就加入-没有就不创建"><a href="#supports-有事务就加入-没有就不创建" class="anchor-link">#</a> SUPPORTS：有事务就加入，没有就不创建</h3>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional(propagation%20%3D%20Propagation.SUPPORTS)%0Apublic%20void%20deductBalance()%20%7B%0A%20%20%20%20accountMapper.deductBalance()%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional(propagation = Propagation.SUPPORTS)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">deductBalance</span><span class="hljs-params">()</span> {
+    accountMapper.deductBalance();
+}
+</code></pre>
+      </div>
+    
+<ul>
+<li>外层有事务：加入外层事务，与 <code>REQUIRED</code> 类似</li>
+<li>外层无事务：不创建事务，直接执行</li>
+</ul>
+<p>结合案例： 因为 <code>createOrder()</code> 已经开启事务 A，所以 <code>deductBalance()</code> 会加入事务 A。当外层异常回滚时，余额扣除也随之回滚。</p>
+<p>但如果直接调用 <code>deductBalance()</code>，并且没有已存在的事务，那么方法将以非事务方式执行。对于开启自动提交的数据库连接，单条 SQL 通常会各自提交。</p>
+<p>与 REQUIRED 的区别： 无外层事务时，<code>REQUIRED</code> 会创建事务，而 <code>SUPPORTS</code> 不会。</p>
+<h3 id="mandatory-必须存在事务"><a href="#mandatory-必须存在事务" class="anchor-link">#</a> MANDATORY：必须存在事务</h3>
+<p>必须存在事务，不存在则抛出异常</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional(propagation%20%3D%20Propagation.MANDATORY)%0Apublic%20void%20deductBalance()%20%7B%0A%20%20%20%20accountMapper.deductBalance()%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional(propagation = Propagation.MANDATORY)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">deductBalance</span><span class="hljs-params">()</span> {
+    accountMapper.deductBalance();
+}
+</code></pre>
+      </div>
+    
+<ul>
+<li>外层有事务：加入外层事务</li>
+<li>外层无事务：直接抛出异常，不执行目标方法</li>
+</ul>
+<p>结合案例： <code>createOrder()</code> 已经开启事务 A，因此 <code>deductBalance()</code> 可以正常加入事务 A。</p>
+<p>如果直接从没有事务的地方调用 <code>deductBalance()</code>，Spring 就会抛出事务相关异常（通常为 <code>IllegalTransactionStateException</code>）。</p>
+<p>与 SUPPORTS 的区别： 无外层事务时，<code>SUPPORTS</code> 允许执行，而 <code>MANDATORY</code> 禁止执行。</p>
+<h3 id="补充-nested-嵌套事务"><a href="#补充-nested-嵌套事务" class="anchor-link">#</a> 补充：NESTED 嵌套事务</h3>
+<p>虽然不属于你重点记忆的四种传播机制，但可以将 <code>NESTED</code> 和 <code>REQUIRES_NEW</code> 对比理解。</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional(propagation%20%3D%20Propagation.NESTED)%0Apublic%20void%20deductBalance()%20%7B%0A%20%20%20%20accountMapper.deductBalance()%3B%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional(propagation = Propagation.NESTED)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">deductBalance</span><span class="hljs-params">()</span> {
+    accountMapper.deductBalance();
+}
+</code></pre>
+      </div>
+    
+<ul>
+<li>外层有事务：在当前事务中创建保存点，允许回滚内层操作</li>
+<li>外层无事务：行为类似 <code>REQUIRED</code>，创建新事务</li>
+</ul>
+<p>例如：</p>
+
+      <div class="md-editor-code" data-language="java">
+        <div class="md-editor-code-head">
+          <div class="md-editor-code-flag" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="md-editor-code-action">
+            <span class="md-editor-code-lang">java</span>
+            <button class="md-editor-copy-button" data-code="%40Transactional%0Apublic%20void%20createOrder()%20%7B%0A%20%20%20%20orderMapper.insert()%3B%0A%0A%20%20%20%20try%20%7B%0A%20%20%20%20%20%20%20%20accountService.deductBalance()%3B%0A%20%20%20%20%7D%20catch%20(Exception%20e)%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20%E5%A4%84%E7%90%86%E6%89%A3%E6%AC%BE%E5%A4%B1%E8%B4%A5%0A%20%20%20%20%7D%0A%7D%0A">复制代码</button>
+          </div>
+        </div>
+        <pre><code class="language-java"><span class="hljs-meta">@Transactional</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createOrder</span><span class="hljs-params">()</span> {
+    orderMapper.insert();
+
+    <span class="hljs-keyword">try</span> {
+        accountService.deductBalance();
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        <span class="hljs-comment">// 处理扣款失败</span>
+    }
+}
+</code></pre>
+      </div>
+    
+<p>假设 <code>deductBalance()</code> 使用 <code>NESTED</code>，且扣款过程中抛出了符合回滚规则的异常，那么：</p>
+<ol>
+<li>事务 A 开始，创建订单</li>
+<li>进入嵌套事务，在事务 A 中设置保存点</li>
+<li>扣款失败，回滚到保存点</li>
+<li>外层捕获异常，继续执行</li>
+<li>事务 A 正常提交，订单创建保留</li>
+</ol>
+<p>这与 <code>REQUIRES_NEW</code> 的区别在于：NESTED 并没有创建独立物理事务。如果外层事务 A 最终回滚，内层已完成的修改也会一起回滚。</p>
+<p>MySQL InnoDB 支持保存点，因此可以配合 Spring 的 JDBC 事务管理器实现这种行为，但并非所有事务管理器都支持 <code>NESTED</code>。</p>
+</div></div></div><!----></div><div class="article-footer" data-v-5dad6fdf=""><div class="article-footer__main" data-v-5dad6fdf=""><div class="article-footer__tags" aria-label="文章标签" data-v-5dad6fdf=""><!--[--><span class="article-footer__tag" data-v-5dad6fdf="">后端</span><span class="article-footer__tag" data-v-5dad6fdf="">后端_Spring</span><!--]--></div><button type="button" class="article-footer__download" data-v-5dad6fdf=""><span aria-hidden="true" data-v-5dad6fdf="">↓</span> 下载 Markdown </button></div></div><!----><button type="button" class="article-read__btn" aria-label="打开阅读导航" aria-haspopup="dialog" aria-controls="article-read-drawer" aria-expanded="false" data-v-5dad6fdf=""> 阅读导航 </button><!----></article><footer class="site-footer site-footer--article" data-v-5dad6fdf="" data-v-6b865c42=""><div class="site-footer__content" data-v-6b865c42=""><p class="site-footer__copyright" data-v-6b865c42="">© 2026 Tilex Blog</p><p class="site-footer__motto" data-v-6b865c42="">浮生世，片刻光阴</p></div></footer><!--]--></section></div><!--]--></main><!--]--><!--teleport start--><!--teleport end--><!--]--><!--v-if--></div></div>
+<script>window.__INITIAL_STATE__="{\"pinia\":{\"article\":{\"article\":{\"id\":74,\"title\":\"Spring八股整理.md\",\"content\":\"# Spring八股整理\\r\\n\\r\\n## 重点\\r\\n\\r\\n1. 三级缓存\\r\\n2. jdk动态代理与cglib代理\\r\\n3. springboot自动装配原理\\r\\n4. spring事务失效场景\\r\\n\\r\\n## 常见注解\\r\\n\\r\\n按照 Spring Boot 开发时的分层结构记忆：\\r\\n\\r\\n| 注解          | 作用                                 |\\r\\n| ------------- | ------------------------------------ |\\r\\n| `@Controller` | 标注控制层组件，负责处理 HTTP 请求   |\\r\\n| `@Service`    | 标注业务逻辑层组件，负责处理业务逻辑 |\\r\\n| `@Repository` | 标注数据访问层组件，负责数据库访问   |\\r\\n\\r\\n### HTTP 请求映射注解\\r\\n\\r\\n由于在 controller 层往往会处理 http 请求，根据不同的请求方法选择对应的 service 层，因此有以下常见的注解：\\r\\n\\r\\n| 注解             | 作用                               |\\r\\n| ---------------- | ---------------------------------- |\\r\\n| `@GetMapping`    | 处理 GET 请求，通常用于查询数据    |\\r\\n| `@PostMapping`   | 处理 POST 请求，通常用于新增数据   |\\r\\n| `@PutMapping`    | 处理 PUT 请求，通常用于更新数据    |\\r\\n| `@DeleteMapping` | 处理 DELETE 请求，通常用于删除数据 |\\r\\n\\r\\n### HTTP 响应注解\\r\\n\\r\\nController 层处理完请求后，需要将结果返回给客户端，通常以 JSON 格式返回。\\r\\n\\r\\n- `@Controller`：默认将方法返回的字符串视为视图名称，通过视图解析器查找并渲染对应页面（如 HTML）\\r\\n- `@ResponseBody`：将方法返回值直接写入 HTTP 响应体，不进行视图解析。返回 Java 对象时，通常会自动序列化为 JSON\\r\\n- `@RestController`：相当于 `@Controller` + `@ResponseBody`，默认将方法返回值写入 HTTP 响应体，适用于前后端分离开发（restful api）\\r\\n\\r\\n核心区别： `@Controller` 默认偏向视图解析，而 `@RestController` 默认直接返回响应数据。\\r\\n\\r\\n#### @Controller 示例\\r\\n\\r\\n只使用 @Controller 注解，会将返回的字符串进行视图解析，返回对应的HTML\\r\\n\\r\\n```java\\r\\n@Controller\\r\\npublic class UserController {\\r\\n\\r\\n    @GetMapping(\\\"\u002Fuser\\\")\\r\\n    public String user() {\\r\\n        return \\\"user\\\";\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n这里返回的 `\\\"user\\\"` 并不是直接发送给浏览器，而是作为视图名称，由 Spring MVC 的视图解析机制处理\\r\\n\\r\\n例如使用 Thymeleaf 时，可以解析到：\\r\\n\\r\\n```java\\r\\nsrc\u002Fmain\u002Fresources\u002Ftemplates\u002Fuser.html\\r\\n```\\r\\n\\r\\n然后渲染 HTML 页面并返回给浏览器；如果要返回 JSON，可以添加 `@ResponseBody` 注解：\\r\\n\\r\\n```java\\r\\n@Controller\\r\\npublic class UserController {\\r\\n\\r\\n    @ResponseBody\\r\\n    @GetMapping(\\\"\u002Fuser\\\")\\r\\n    public User user() {\\r\\n        return new User(1, \\\"张三\\\");\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\nSpring MVC 会通过合适的 `HttpMessageConverter` 将对象序列化，常见情况下使用 Jackson 转换为 JSON\\r\\n\\r\\n### HTTP 请求参数注解\\r\\n\\r\\n- `@RequestBody`：用于接收前端传递的 JSON 数据\\r\\n\\r\\n前端发送 post 请求：\\r\\n\\r\\n```json\\r\\n{\\r\\n  \\\"name\\\": \\\"张三\\\",\\r\\n  \\\"age\\\": 20\\r\\n}\\r\\n```\\r\\n\\r\\n后端接受数据：@RequestBody 注解\\r\\n\\r\\n```java\\r\\n@RestController\\r\\npublic class UserController {\\r\\n\\r\\n    @PostMapping(\\\"\u002Fuser\\\")\\r\\n    public String addUser(@RequestBody User user) { \u002F\u002F RequestBody 接受前端传递的JSON数据\\r\\n        return user.getName();\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n### 依赖注入注解\\r\\n\\r\\n- `@Autowired`：Spring 提供的依赖注入注解，默认按照类型从 IoC 容器中查找 Bean 并注入\\r\\n\\r\\n## @Autowired 注解与 @Resource 注解的区别\\r\\n\\r\\n可以通过 @Autowired 与 @Resource 注入 Bean 到对应属性中，但存在不同：\\r\\n\\r\\n1. `@Autowired` 是 Spring 提供的注解，`@Resource` 是 java EE 标准提供的注解\\r\\n\\r\\n2. 两者都用于依赖注入，核心区别在于匹配方式：\\r\\n\\r\\n- `@Autowired` 默认按类型匹配，同类型存在多个 Bean 时，可以结合名称等条件进一步筛选\\r\\n- `@Resource` 默认先按名称匹配，未指定名称且名称匹配失败时，再按类型匹配\\r\\n\\r\\n## spring 核心组成模块\\r\\n\\r\\n- spring-core 与 spring-beans：提供 IoC 容器的基础实现，管理 Bean 的创建与装配\\r\\n- spring-web：web应用初始化\\r\\n- spring-context：应用上下文，好像是企业级功能\\r\\n- spring-test：提供 JUnit 单元测试等\\r\\n\\r\\n## IOC与DI\\r\\n\\r\\nIoC（控制反转，Inversion of Control），就是由 Spring 容器来控制和管理对象，不用手动进行 new 创建，以及销毁\\r\\n\\r\\nDI：由于对象都交由 Spring 容器管理，后续使用对象时进行依赖注入即可\\r\\n\\r\\n## 依赖注入方式有哪些？\\r\\n\\r\\n1. 构造函数注入：通过类的构造函数来注入依赖项。\\r\\n2. Setter 注入：通过类的 Setter 方法来注入依赖项。\\r\\n3. Field（字段） 注入：直接在类的字段上使用注解（如 `@Autowired` 或 `@Resource`）来注入依赖项。\\r\\n\\r\\n构造函数注入示例：\\r\\n\\r\\n```java\\r\\n@Service\\r\\npublic class UserService {\\r\\n\\r\\n    private final UserRepository userRepository; \u002F\u002F final 修饰\\r\\n\\r\\n    public UserService(UserRepository userRepository) {\\r\\n        this.userRepository = userRepository;\\r\\n    }\\r\\n\\r\\n    \u002F\u002F...\\r\\n}\\r\\n```\\r\\n\\r\\nSetter 注入示例：\\r\\n\\r\\n```java\\r\\n@Service\\r\\npublic class UserService {\\r\\n\\r\\n    private UserRepository userRepository;\\r\\n\\r\\n    @Autowired\\r\\n    public void setUserRepository(UserRepository userRepository) {\\r\\n        this.userRepository = userRepository;\\r\\n    }\\r\\n\\r\\n    \u002F\u002F...\\r\\n}\\r\\n```\\r\\n\\r\\nField 注入示例：\\r\\n\\r\\n```java\\r\\n@Service\\r\\npublic class UserService {\\r\\n\\r\\n    @Autowired\\r\\n    private UserRepository userRepository;\\r\\n\\r\\n    \u002F\u002F...\\r\\n}\\r\\n```\\r\\n\\r\\n## 构造函数注入与setter注入的区别是？\\r\\n\\r\\n- 依赖完整性：构造函数注入要求在创建对象时就提供必须依赖，而 setter 注入可以在创建对象后再设置依赖\\r\\n- 不可变性：构造函数注入通常配合 final 修饰依赖字段，避免后续被重新赋值\\r\\n- 适用场景：两者适用场景不同，构造函数注入适合必须依赖，而 setter 注入则适合可选依赖\\r\\n\\r\\n记忆重点：构造函数注入 = 必需依赖 + `final`；Setter 注入 = 可选依赖 + 可重新设置\\r\\n\\r\\n构造函数注入示例：\\r\\n\\r\\n```java\\r\\n@Service\\r\\npublic class UserService {\\r\\n\\r\\n    private final UserRepository userRepository; \u002F\u002F final\\r\\n\\r\\n    public UserService(UserRepository userRepository) {\\r\\n        this.userRepository = userRepository;\\r\\n    }\\r\\n\\r\\n    \u002F\u002F...\\r\\n}\\r\\n```\\r\\n\\r\\nSetter 注入示例：\\r\\n\\r\\n```java\\r\\n@Service\\r\\npublic class UserService {\\r\\n\\r\\n    private UserRepository userRepository;\\r\\n\\r\\n    @Autowired\\r\\n    public void setUserRepository(UserRepository userRepository) {\\r\\n        this.userRepository = userRepository;\\r\\n    }\\r\\n\\r\\n    \u002F\u002F...\\r\\n}\\r\\n```\\r\\n\\r\\n两者使用时的差别：构造函数注入是“创建时传入依赖”，Setter 注入是“创建后设置依赖”\\r\\n\\r\\n```java\\r\\n\u002F\u002F 构造函数注入：创建对象时必须传入依赖\\r\\nUserService service = new UserService(userRepository);\\r\\n\\r\\n\u002F\u002F Setter 注入：先创建对象，再设置依赖\\r\\nUserService service = new UserService();\\r\\nservice.setUserRepository(userRepository);\\r\\n```\\r\\n\\r\\n需要注意：以上两种写法是为了说明 Java 对象的创建方式。在实际 Spring 开发中，通常由 Spring 容器负责创建对象并完成依赖注入，而不是手动 `new` \\r\\n\\r\\n## Bean 的生命周期\\r\\n\\r\\n\u003E Spring Bean 的生命周期类似于 Vue 组件的生命周期，开发者可以在不同阶段执行对应的业务逻辑，例如初始化资源、释放资源等\\r\\n\u003E\\r\\n\u003E 视频：[一个例子讲明白 Spring Bean 的生命周期](https:\u002F\u002Fwww.bilibili.com\u002Fvideo\u002FBV1n9k4BJEoP\u002F?spm_id_from=333.337.search-card.all.click&vd_source=8c5774f0412cfb872126f5a44585db4f)\\r\\n\\r\\n### Bean 生命周期的主要阶段\\r\\n\\r\\nSpring Bean 的生命周期可以简化为以下 5 个阶段：\\r\\n\\r\\n![image-20261024120513420](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F24\u002Fimage-20261024120513420.png)\\r\\n\\r\\n1. **实例化**：Spring 容器创建 Bean 实例\\r\\n2. **属性赋值**：Spring 为 Bean 注入所需的依赖，例如通过 Setter 方法或字段注入\\r\\n3. **初始化**：依赖注入完成后，执行初始化逻辑，例如 `@PostConstruct` 或配置的 `initMethod`\\r\\n4. **使用**：Bean 初始化完成后，可以被其他组件使用，执行业务逻辑\\r\\n5. **销毁**：Spring 容器关闭时，执行销毁回调，例如 `@PreDestroy` 或配置的 `destroyMethod`，用于释放资源\\r\\n\\r\\n其中，常见的生命周期注解有：\\r\\n\\r\\n| 注解             | 执行时机       | 主要用途             |\\r\\n| ---------------- | -------------- | -------------------- |\\r\\n| `@PostConstruct` | 依赖注入完成后 | 初始化资源、加载配置 |\\r\\n| `@PreDestroy`    | Bean 销毁前    | 关闭连接、释放资源   |\\r\\n\\r\\n注意：上述是简化后的生命周期，实际还涉及 Bean 后置处理器等机制\\r\\n\\r\\n### Bean 生命周期示例\\r\\n\\r\\n首先，定义一个依赖组件：\\r\\n\\r\\n```java\\r\\n@Component\\r\\npublic class TaskRepository {\\r\\n\\r\\n    public void save() {\\r\\n        System.out.println(\\\"执行数据保存\\\");\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n然后，定义业务组件 `TaskService`，通过 Setter 方法注入 `TaskRepository`：\\r\\n\\r\\n```java\\r\\n@Component\\r\\npublic class TaskService {\\r\\n\\r\\n    private TaskRepository taskRepository;\\r\\n\\r\\n    \u002F\u002F 1. 实例化\\r\\n    public TaskService() {\\r\\n        System.out.println(\\\"1. Bean 实例化\\\");\\r\\n    }\\r\\n\\r\\n    \u002F\u002F 2. 属性赋值\\r\\n    @Autowired\\r\\n    public void setTaskRepository(TaskRepository taskRepository) {\\r\\n        this.taskRepository = taskRepository;\\r\\n        System.out.println(\\\"2. Bean 属性赋值\\\");\\r\\n    }\\r\\n\\r\\n    \u002F\u002F 3. 初始化，等价于 initMethod\\r\\n    @PostConstruct\\r\\n    public void init() {\\r\\n        System.out.println(\\\"3. Bean 初始化\\\");\\r\\n    }\\r\\n\\r\\n    \u002F\u002F 4. 使用\\r\\n    public void execute() {\\r\\n        System.out.println(\\\"4. Bean 使用\\\");\\r\\n        taskRepository.save();\\r\\n    }\\r\\n\\r\\n    \u002F\u002F 5. 销毁\\r\\n    @PreDestroy\\r\\n    public void destroy() {\\r\\n        System.out.println(\\\"5. Bean 销毁\\\");\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n上述代码需要导入对应的注解：`@Component`、`@Autowired`、`@PostConstruct` 和 `@PreDestroy`\\r\\n\\r\\n**调用 Bean：**\\r\\n\\r\\n```java\\r\\n@Component\\r\\npublic class TaskRunner implements CommandLineRunner {\\r\\n\\r\\n    private final TaskService taskService;\\r\\n\\r\\n    public TaskRunner(TaskService taskService) {\\r\\n        this.taskService = taskService;\\r\\n    }\\r\\n\\r\\n    @Override\\r\\n    public void run(String... args) {\\r\\n        taskService.execute();\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n**运行结果：**\\r\\n\\r\\n```text\\r\\n1. Bean 实例化\\r\\n2. Bean 属性赋值\\r\\n3. Bean 初始化\\r\\n4. Bean 使用\\r\\n执行数据保存\\r\\n```\\r\\n\\r\\n当 Spring Boot 应用正常关闭时：\\r\\n\\r\\n```text\\r\\n5. Bean 销毁\\r\\n```\\r\\n\\r\\n注意：示例以默认单例 Bean 为前提，仅展示主要生命周期阶段，实际 Spring 内部还涉及 Bean 后置处理器等机制\\r\\n\\r\\n### 面试总结\\r\\n\\r\\nSpring Bean 的生命周期主要包括 **实例化、属性赋值、初始化、使用和销毁** 五个阶段\\r\\n\\r\\n其中，构造函数注入在实例化阶段完成，而 Setter 注入和字段注入通常在属性赋值阶段完成\\r\\n\\r\\n开发者可以使用 `@PostConstruct` 在初始化阶段执行相关逻辑，使用 `@PreDestroy` 在销毁前释放资源\\r\\n\\r\\n## 单例 bean 的线程安全问题\\r\\n\\r\\nSpring bean 的作用域默认是单例 bean，即 Spring 容器只会存在一个 Bean 实例，并且该实例会被多个线程共享，因此在多线程情景下可能存在问题\\r\\n\\r\\n- 如果单例 Bean 是无状态的，没有成员变量，那么这个单例 Bean 是线程安全的，比如 Spring MVC 中的 controller、service、dao等，基本都是无状态的\\r\\n- 如果 Bean 内部有成员变量，在多线程情景下会存在线程安全问题\\r\\n\\r\\n单例 Bean存在多线程安全问题，常见的有三种解决办法：\\r\\n\\r\\n1. 优先设计无状态 Bean：避免使用可变的共享成员变量，尽量使用方法局部变量\\r\\n2. 必要时进行线程同步：例如使用 `synchronized`、`AtomicInteger` 等机制\\r\\n3. 使用 `ThreadLocal`：对于确实需要线程隔离的数据，可以使用 `ThreadLocal`，但需要注意线程池环境下的数据清理与内存泄漏风险。\\r\\n\\r\\n## Bean 的作用域有哪些？\\r\\n\\r\\nSpring 中 Bean 的作用域通常有下面几种：\\r\\n\\r\\n- singleton：单例，Ioc 容器中只存在唯一的 Bean 实例。Spring 中的 bean 默认都是单例的，是对单例模式的应用\\r\\n- prototype：原型，每次获取都会创建一个新的 bean 实例。也就是说 getBean() 两次，得到的是不同的 Bean 实例\\r\\n- request（仅web应用可用）：每一次http请求都会产生一个新的 bean（请求bean），该 bean 仅在当前http request 内有效\\r\\n- session（仅web应用可用）：每一次来自新 session 的 http 请求都会产生一个新的 bean（会话bean），该 bean 仅在当前 http session 有效\\r\\n\\r\\n如何配置 bean 的作用域呢？\\r\\n\\r\\nxml 方式：\\r\\n\\r\\n```xml\\r\\n\u003Cbean id=\\\"...\\\" class=\\\"...\\\" scope=\\\"singleton\\\"\u003E\u003C\u002Fbean\u003E\\r\\n```\\r\\n\\r\\n注解方式：\\r\\n\\r\\n```java\\r\\n@Bean\\r\\n@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)\\r\\npublic Person personPrototype() {\\r\\n    return new Person();\\r\\n}\\r\\n```\\r\\n\\r\\n## 三级缓存解决循环依赖\\r\\n\\r\\n### 什么是循环依赖？\\r\\n\\r\\n在 Spring 中，依赖注入主要有三种方式：构造器注入、Setter 注入、Field 字段注入。\\r\\n\\r\\n其中，Setter 注入与 Field 字段注入的特点是：Bean 的实例化与属性赋值分开进行，先创建对象，再注入依赖，这为解决循环依赖提供了条件。\\r\\n\\r\\n例如：\\r\\n\\r\\n```java\\r\\n@Component\\r\\npublic class CircularDependencyA {\\r\\n    @Autowired\\r\\n    private CircularDependencyB circB;\\r\\n}\\r\\n\\r\\n@Component\\r\\npublic class CircularDependencyB {\\r\\n    @Autowired\\r\\n    private CircularDependencyA circA;\\r\\n}\\r\\n```\\r\\n\\r\\n此时：\\r\\n\\r\\n- A 依赖 B，需要先获取 B\\r\\n- B 依赖 A，需要先获取 A\\r\\n\\r\\n两者相互依赖，形成循环依赖\\r\\n\\r\\n### Spring 如何解决循环依赖？\\r\\n\\r\\nSpring 通过三级缓存机制，提前暴露尚未完成属性赋值和初始化的 Bean，从而解决部分循环依赖问题。\\r\\n\\r\\n首先了解三级缓存：\\r\\n\\r\\n| 缓存     | 名称                    | 存储内容                         |\\r\\n| -------- | ----------------------- | -------------------------------- |\\r\\n| 一级缓存 | `singletonObjects`      | 完成初始化的单例 Bean            |\\r\\n| 二级缓存 | `earlySingletonObjects` | 提前暴露的 Bean 引用             |\\r\\n| 三级缓存 | `singletonFactories`    | 用于获取提前暴露 Bean 引用的工厂 |\\r\\n\\r\\n以 A、B 循环依赖为例，结合 Bean 生命周期进行分析：\\r\\n\\r\\n![image-20261024160928333](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F24\u002Fimage-20261024160928333.png)\\r\\n\\r\\n具体步骤：\\r\\n\\r\\n1. 实例化 A：创建 A 对象，并将用于获取 A 提前引用的工厂放入三级缓存\\r\\n2. A 属性赋值：发现依赖 B，于是开始创建 B\\r\\n3. 实例化 B：创建 B 对象，同样将其工厂放入三级缓存\\r\\n4. B 属性赋值：发现依赖 A，此时通过三级缓存获取 A 的提前引用，并将该引用放入二级缓存，完成 B 对 A 的注入\\r\\n5. 完成 B：B 完成初始化，进入一级缓存\\r\\n6. 完成 A：将 B 注入 A，A 完成初始化，进入一级缓存\\r\\n\\r\\n至此，A 和 B 的循环依赖得到解决。\\r\\n\\r\\n### 为什么需要三级缓存？\\r\\n\\r\\n- 一级缓存：保存已经完成初始化的单例 Bean\\r\\n- 二级缓存：保存提前暴露的 Bean 引用，避免重复创建提前引用\\r\\n- 三级缓存：保存 `ObjectFactory`，在需要时获取 Bean 的提前引用，支持提前生成 AOP 代理对象\\r\\n\\r\\n需要注意：三级缓存的关键作用之一是配合 AOP，保证循环依赖场景下能够获取合适的代理对象引用。如果只考虑普通对象之间的循环引用，并非一定需要三级缓存。\\r\\n\\r\\n### 哪些循环依赖无法解决？\\r\\n\\r\\nSpring 的三级缓存并不能解决所有循环依赖：\\r\\n\\r\\n- 构造器循环依赖：A 创建时需要 B，B 创建时又需要 A，此时 A 尚未实例化，无法提前暴露引用\\r\\n- Prototype 多例 Bean 循环依赖：Spring 不会像单例 Bean 一样对其进行三级缓存管理\\r\\n- 部分复杂场景：例如某些 Bean 后置处理器或代理创建场景，仍可能出现循环依赖异常\\r\\n\\r\\n此外，Spring Boot 2.6 起默认禁止循环依赖，即使是可以通过三级缓存处理的循环依赖，也可能直接报错。可以通过 `spring.main.allow-circular-references=true` 允许尝试处理，但实际开发中更推荐从设计上消除循环依赖。\\r\\n\\r\\n### 面试总结\\r\\n\\r\\n\u003E 说说三级缓存如何解决循环依赖的？\\r\\n\u003E\\r\\n\u003E 我觉得解决循环依赖主要与依赖注入方式有关，依赖注入有三种方式：构造函数注入、setter 注入、field字段注入，setter注入与字段注入的核心点便是实例化与属性赋值分离，基于这里，在bean进行初始化时将循环依赖的对象放置在三级缓存中，存放提前引用的工厂，后续循环依赖可以直接从三级缓存中获取所需的依赖，完成初始化，至于另一个循环依赖的bean，此时也能进行后续的属性赋值和初始化。因此，对于构造函数产生的循环依赖往往无法进行解决\\r\\n\u003E\\r\\n\u003E 一级缓存存储完成初始化的单例 Bean，二级缓存存储提前暴露的 Bean 引用，三级缓存存储获取提前引用的工厂，并支持 AOP 代理的提前生成。\\r\\n\u003E\\r\\n\u003E 需要注意，构造器循环依赖和 Prototype 多例 Bean 的循环依赖通常无法通过该机制解决。\\r\\n\\r\\n## AOP\\r\\n\\r\\naop：面向切面编程，实现了主业务与分支业务的解耦，主业务无需关心日志记录等操作，这些操作都统一通过aop进行实现和记录\\r\\n\\r\\nspring 是如何实现 aop 的？——动态代理，JDK动态代理与cglib动态代理，那么两者有什么区别？\\r\\n\\r\\n### jdk动态代理和cglib代理的区别\\r\\n\\r\\n\u003E JDK 动态代理和 CGLIB 代理的主要区别在于实现方式。\\r\\n\u003E\\r\\n\u003E JDK 动态代理基于接口，通过实现目标接口生成代理对象，而\\r\\n\u003E\\r\\n\u003E CGLIB 代理基于继承，通过创建目标类的子类生成代理对象，因此不要求目标对象实现接口。但是由于 Java 中 `final` 类不能被继承，`final` 方法不能被重写，所以 CGLIB 无法代理 `final` 类，也无法增强 `final` 方法。\\r\\n\\r\\n记忆要点：JDK 基于接口，CGLIB 基于继承；CGLIB 受 `final` 限制。\\r\\n\\r\\n## 三级缓存是如何处理代理对象的？\\r\\n\\r\\n在 spring 中，无论是 jdk 动态代理，还是 cglib 代理，两者的共同特点都是——通过 代理对象 实现增强，对于普通循环依赖二级缓存便足以，但代理却不行\\r\\n\\r\\n### 为什么普通循环依赖只需要二级缓存？\\r\\n\\r\\n假设存在两个 Bean：\\r\\n\\r\\n```java\\r\\n@Component\\r\\npublic class A {\\r\\n    @Autowired\\r\\n    private B b;\\r\\n}\\r\\n\\r\\n@Component\\r\\npublic class B {\\r\\n    @Autowired\\r\\n    private A a;\\r\\n}\\r\\n```\\r\\n\\r\\nSpring 创建 Bean A 时：\\r\\n\\r\\n1. 实例化 A，此时 A 尚未完成属性注入\\r\\n2. 将 A 提前放入缓存\\r\\n3. 给 A 注入 B，发现 B 尚未创建，开始创建 B\\r\\n4. 给 B 注入 A，从缓存中获取提前暴露的 A\\r\\n5. B 创建完成，注入 A，最终 A 创建完成\\r\\n\\r\\n在这个过程中，只需要：\\r\\n\\r\\n- 一级缓存：存放初始化完成的 Bean\\r\\n- 二级缓存：存放提前暴露、尚未完成初始化的 Bean\\r\\n\\r\\n因此，对于不涉及代理的常见 Setter\u002F字段注入循环依赖，理论上二级缓存就足够了。\\r\\n\\r\\n### 为什么 aop 代理需要特殊处理\\r\\n\\r\\n\u003E aop 代理是通过代理对象实现，二级缓存会绕过代理\\r\\n\\r\\n假设 A 需要进行 AOP 增强：\\r\\n\\r\\n```java\\r\\n@Component\\r\\npublic class A {\\r\\n    @Autowired\\r\\n    private B b;\\r\\n\\r\\n    @Transactional\\r\\n    public void doSomething() {\\r\\n        System.out.println(\\\"执行事务方法\\\");\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\nJDK 动态代理和 CGLIB 虽然实现方式不同，但有一个共同点：\\r\\n\\r\\n代理对象与原始对象不是同一个对象。\\r\\n\\r\\n- JDK 动态代理：创建实现目标接口的代理对象\\r\\n- CGLIB：创建目标类的子类作为代理类，并生成代理对象，通过方法拦截实现增强\\r\\n\\r\\n假设 A 的原始对象为 `A_original`，代理对象为 `A_proxy`。\\r\\n\\r\\n如果 B 注入的是 `A_original`，而 Spring 最终对外提供的是 `A_proxy`，那么就会出现问题：\\r\\n\\r\\n```\\r\\nB.a  → A_original（原始对象）\\r\\n容器 → A_proxy（代理对象）\\r\\n```\\r\\n\\r\\n这样 B 调用 A 的方法时，就可能绕过 AOP 增强，例如 `@Transactional` 无法按预期生效。\\r\\n\\r\\n因此，Spring 必须确保：B 提前获取的 A，与容器最终对外提供的 A，是同一个代理对象。\\r\\n\\r\\n### 二级缓存处理aop循环依赖会出现什么问题？\\r\\n\\r\\n假设 A 依赖 B，B 又依赖 A。\\r\\n\\r\\nSpring 首先创建 A：\\r\\n\\r\\n```\\r\\n① 实例化 A_original\\r\\n          ↓\\r\\n② A 需要注入 B\\r\\n          ↓\\r\\n③ 开始创建 B\\r\\n          ↓\\r\\n④ B 又需要注入 A\\r\\n          ↓\\r\\n⑤ 此时 A 还没有完成初始化\\r\\n```\\r\\n\\r\\n问题就在第⑤步：\\r\\n\\r\\n如果直接把原始对象 `A_original` 注入 B，就会变成：\\r\\n\\r\\n![image-20261025105815277](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F25\u002Fimage-20261025105815277.png)\\r\\n\\r\\nB 持有的是原始对象，其他 Bean 从容器中获取的却是代理对象。这不仅可能绕过 AOP 增强，还可能造成 Bean 引用不一致。\\r\\n\\r\\n### 三级缓存处理aop循环依赖\\r\\n\\r\\nSpring 不会直接把原始对象 A 放到三级缓存，而是先放入一个 `ObjectFactory`。\\r\\n\\r\\n当 B 需要 A 时，才调用工厂中的 `getEarlyBeanReference()`。\\r\\n\\r\\n可以把它理解为下面这段简化的伪代码：\\r\\n\\r\\n```java\\r\\nObject getEarlyBeanReference(Object bean) {\\r\\n    if (需要AOP代理(bean)) {\\r\\n        return 创建代理对象(bean);\\r\\n    }\\r\\n\\r\\n    return bean;\\r\\n}\\r\\n```\\r\\n\\r\\n假设 A 需要代理，那么：\\r\\n\\r\\n```\\r\\nB 需要 A\\r\\n    ↓\\r\\n从三级缓存获取 ObjectFactory\\r\\n    ↓\\r\\n调用 getEarlyBeanReference(A_original)\\r\\n    ↓\\r\\n提前获取 A_proxy\\r\\n    ↓\\r\\n把 A_proxy 放入二级缓存\\r\\n    ↓\\r\\n将 A_proxy 注入 B\\r\\n```\\r\\n\\r\\n最终得到：\\r\\n\\r\\n```\\r\\nB.a       → A_proxy\\r\\nSpring容器 → A_proxy\\r\\n```\\r\\n\\r\\n这样 B 调用 A 的方法时，也能够经过代理对象，执行事务等 AOP 增强。\\r\\n\\r\\n如果 A 不需要 AOP 代理，`getEarlyBeanReference()` 通常直接返回 `A_original` 即可。\\r\\n\\r\\n## Spring MVC的工作流程\\r\\n\\r\\n![image-20261025110950210](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F25\u002Fimage-20261025110950210.png)\\r\\n\\r\\n工作流程：从前端发起请求，到后端处理请求并返回给前端的整个过程\\r\\n\\r\\n1. 接收请求：前端发送 HTTP 请求，由 `DispatcherServlet` 统一接收\\r\\n2. 处理器映射：`DispatcherServlet` 调用 `HandlerMapping`，根据请求路径、请求方法等条件找到对应的处理器，并返回 `HandlerExecutionChain`（包含处理器和拦截器）\\r\\n3. 处理器执行：`DispatcherServlet` 调用 `HandlerAdapter`，由适配器执行拦截器的前置处理，并调用对应的 Controller 方法处理业务\\r\\n4. 返回结果：Controller 执行完成后，传统 MVC 模式通常返回 `ModelAndView`，包含模型数据和视图信息\\r\\n5. 视图解析与渲染：`DispatcherServlet` 调用 `ViewResolver` 解析视图，再渲染视图并将响应返回客户端\\r\\n\\r\\n速记：\\r\\n\\r\\n\u003E Spring MVC 的核心是 DispatcherServlet。首先接收前端请求，通过 HandlerMapping 找到对应的处理器执行链，然后由 HandlerAdapter 调用 Controller 执行业务逻辑。传统 MVC 模式会返回 ModelAndView，包含模型数据和视图信息，最后通过 ViewResolver 解析视图并渲染返回。\\r\\n\\r\\n## springboot 自动配置的原理\\r\\n\\r\\n配置路线：`@SpringBootApplication` → `@EnableAutoConfiguration` → `@Import` → `AutoConfigurationImportSelector` → 读取自动配置文件 → 条件装配 Bean\\r\\n\\r\\nSpring Boot 项目通常有如下启动类：\\r\\n\\r\\n```java\\r\\n@SpringBootApplication\\r\\npublic class Application {\\r\\n    public static void main(String[] args) {\\r\\n        SpringApplication.run(Application.class, args);\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n其中，`@SpringBootApplication` 是一个组合注解，主要包含三个注解：\\r\\n\\r\\n```java\\r\\n@SpringBootConfiguration\\r\\n@EnableAutoConfiguration\\r\\n@ComponentScan\\r\\n```\\r\\n\\r\\n三个注解分别负责不同的事情：\\r\\n\\r\\n| 注解                       | 作用                       |\\r\\n| -------------------------- | -------------------------- |\\r\\n| `@SpringBootConfiguration` | 标识当前类为配置类         |\\r\\n| `@EnableAutoConfiguration` | 开启 Spring Boot 自动配置  |\\r\\n| `@ComponentScan`           | 扫描指定包下的 Spring 组件 |\\r\\n\\r\\n### @EnableAutoConfiguration 如何实现自动配置？\\r\\n\\r\\n`@EnableAutoConfiguration` 是自动配置的核心入口。\\r\\n\\r\\n其内部有一个关键注解：\\r\\n\\r\\n```java\\r\\n@Import(AutoConfigurationImportSelector.class)\\r\\n```\\r\\n\\r\\n（1）@Import 的作用\\r\\n\\r\\n`@Import` 是 Spring 提供的注解，可以向 Spring 容器导入配置类或其他组件。\\r\\n\\r\\n例如：\\r\\n\\r\\n```java\\r\\n@Configuration\\r\\npublic class MyConfig {\\r\\n\\r\\n    @Bean\\r\\n    public UserService userService() {\\r\\n        return new UserService();\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n通过：\\r\\n\\r\\n```java\\r\\n@Import(MyConfig.class)\\r\\n```\\r\\n\\r\\nSpring 就可以处理 `MyConfig`，将其中定义的 `UserService` 注册为 Bean。\\r\\n\\r\\n### 面试回答\\r\\n\\r\\n首先是启动类上的 `@SpringBootApplication` 是一个组合注解，其中包含 `@EnableAutoConfiguration` 是自动配置的核心，`@EnableAutoConfiguration` 通过 @import 注解导入对应的配置选择器（AutoConfigurationImportSelector），通过选择器读取 classpath 路径下 spring.factories 文件中声明的自动配置类\\r\\n\\r\\n最后，对 Bean 进行筛选，通过 `@ConditionalOnclass` 等注解判断是否需要将 Bean 注册到容器中，通过这种方式， springboot 实现了自动配置\\r\\n\\r\\n\u003E 组合注解启动类 @SpringBootApplication -\u003E 包含实现自动配置的核心注解 @EnalbeAutoConfiguration -\u003E 通过 @import 注解导入配置选择器（AutoConfigurationImportSelector）读取自动配置类 -\u003E 最后，通过 @ConditionalOnclass 进行 Bean 筛选，完成注册\\r\\n\\r\\n## spring 如何实现事务\\r\\n\\r\\n通过 aop 代理进行实现，对方法前后进行拦截，执行方法前开启事务，执行完目标方法后根据情况进行提交或者回滚事务\\r\\n\\r\\n```java\\r\\n@Transactional(rollbackFor = Exception.class)\\r\\npublic void createOrder() {\\r\\n    \u002F\u002F 1. 创建订单\\r\\n    orderMapper.insert();\\r\\n\\r\\n    \u002F\u002F 2. 扣除余额\\r\\n    accountMapper.deductBalance();\\r\\n\\r\\n    \u002F\u002F 3. 模拟异常\\r\\n    int result = 1 \u002F 0;\\r\\n}\\r\\n```\\r\\n\\r\\n代理对象：\\r\\n\\r\\n```java\\r\\npublic void proxyCreateOrder() {\\r\\n    \u002F\u002F 获取事务并根据传播行为开启或加入事务\\r\\n    TransactionStatus status = transactionManager.getTransaction(definition);\\r\\n\\r\\n    try {\\r\\n        \u002F\u002F 执行目标方法\\r\\n        target.createOrder();\\r\\n\\r\\n        \u002F\u002F 正常执行，提交事务\\r\\n        transactionManager.commit(status);\\r\\n\\r\\n    } catch (Throwable e) {\\r\\n        \u002F\u002F 仅演示 rollbackFor = Exception.class 的常见效果\\r\\n        if (e instanceof Exception) {\\r\\n            transactionManager.rollback(status);\\r\\n        } else {\\r\\n            transactionManager.commit(status);\\r\\n        }\\r\\n\\r\\n        throw e;\\r\\n    } finally {\\r\\n        \u002F\u002F 事务资源清理由事务管理器负责\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n注意：以上只是原理示意，并非 Spring 的实际源码。真实的 Spring 事务拦截器会先区分目标方法异常与提交过程异常，并根据回滚规则、传播行为和事务状态进行处理。\\r\\n\\r\\n### 事务失效的场景有哪些？\\r\\n\\r\\n\u003E 添加 `@Transactional` 注解后事务失效的场景有哪些？\\r\\n\\r\\nSpring 声明式事务主要通过 AOP 动态代理 + 事务管理器实现，因此分析事务失效时，可以从两个角度考虑：\\r\\n\\r\\n1. AOP 代理是否生效：目标方法有没有经过代理对象？\\r\\n2. 事务回滚条件是否满足：方法执行过程中发生异常，Spring 是否能够感知并触发回滚？\\r\\n\\r\\n### 1. private 修饰的方法导致事务失效\\r\\n\\r\\n Spring 通过代理对象进行事务增强，private 方法是无法进行代理\\r\\n\\r\\n例如：\\r\\n\\r\\n```java\\r\\n@Service\\r\\npublic class OrderService {\\r\\n\\r\\n    @Transactional\\r\\n    private void createOrder() {\\r\\n        orderMapper.insert();\\r\\n        accountMapper.deductBalance();\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n这里 `private` 方法无法被 Spring 默认的 AOP 代理进行事务增强。\\r\\n\\r\\n解决方案： 建议将事务方法声明为 `public`，并确保通过 Spring 管理的代理对象调用。\\r\\n\\r\\n```java\\r\\n@Transactional\\r\\npublic void createOrder() {\\r\\n    orderMapper.insert();\\r\\n    accountMapper.deductBalance();\\r\\n}\\r\\n```\\r\\n\\r\\n为了保证跨版本、跨代理方式的一致性，开发中一般推荐在 `public` 方法上使用 `@Transactional`。\\r\\n\\r\\n### 2. 异常被捕获，没有向上抛出\\r\\n\\r\\n原因： Spring 事务拦截器需要感知异常，才能根据回滚规则执行回滚。如果业务方法自己捕获并处理异常，事务拦截器通常会认为方法正常执行完成，从而提交事务。\\r\\n\\r\\n例如：\\r\\n\\r\\n```java\\r\\n@Transactional\\r\\npublic void createOrder() {\\r\\n    try {\\r\\n        orderMapper.insert();\\r\\n        accountMapper.deductBalance();\\r\\n\\r\\n        int result = 1 \u002F 0;\\r\\n    } catch (Exception e) {\\r\\n        e.printStackTrace(); \u002F\u002F 捕获异常\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n执行流程：\\r\\n\\r\\n1. Spring 开启事务\\r\\n2. 执行插入订单和扣除余额\\r\\n3. 发生 `ArithmeticException`\\r\\n4. `catch` 捕获异常，没有继续向外抛出\\r\\n5. 方法正常结束，Spring 提交事务\\r\\n\\r\\n解决方案： 在 `catch` 中重新抛出异常。\\r\\n\\r\\n```java\\r\\n@Transactional\\r\\npublic void createOrder() {\\r\\n    try {\\r\\n        orderMapper.insert();\\r\\n        accountMapper.deductBalance();\\r\\n\\r\\n        int result = 1 \u002F 0;\\r\\n    } catch (Exception e) {\\r\\n        throw new RuntimeException(e); \u002F\u002F 抛出异常\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n这样 Spring 就能够感知异常，并根据回滚规则执行回滚。\\r\\n\\r\\n补充：也可以使用 `TransactionAspectSupport.currentTransactionStatus().setRollbackOnly()` 手动标记事务回滚，但通常更推荐合理地向上抛出异常。\\r\\n\\r\\n### 3. 抛出非runtime异常与error异常时，事务失效\\r\\n\\r\\n原因： Spring 默认仅对 `RuntimeException` 和 `Error` 触发回滚，对于普通受检异常，如 `IOException`、`FileNotFoundException`，默认不会回滚。\\r\\n\\r\\n例如：\\r\\n\\r\\n```java\\r\\n@Transactional\\r\\npublic void createOrder() throws IOException {\\r\\n    orderMapper.insert();\\r\\n    accountMapper.deductBalance();\\r\\n\\r\\n    throw new IOException(\\\"文件读取失败\\\");\\r\\n}\\r\\n```\\r\\n\\r\\n虽然方法抛出了异常，但默认配置下 Spring 仍然会尝试提交事务。\\r\\n\\r\\n解决方法：配置 rollbackFor 属性 @Transactional(rollbackFor=Exception.class)，该属性会对 `Exception` 及其子类回滚，同时保留对 `Error` 的默认回滚\\r\\n\\r\\n```java\\r\\n@Transactional(rollbackFor = Exception.class)\\r\\npublic void createOrder() throws IOException {\\r\\n    \u002F\u002F 1. 创建订单\\r\\n    orderMapper.insert();\\r\\n\\r\\n    \u002F\u002F 2. 扣除余额\\r\\n    accountMapper.deductBalance();\\r\\n\\r\\n    \u002F\u002F 3. 抛出受检异常\\r\\n    throw new IOException(\\\"文件读取失败\\\");\\r\\n}\\r\\n```\\r\\n\\r\\n执行结果：\\r\\n\\r\\n- 执行创建订单\\r\\n- 执行扣除余额\\r\\n- 抛出 `IOException`\\r\\n- Spring 根据 `rollbackFor` 配置回滚整个事务\\r\\n- 创建订单和扣除余额操作均被撤销\\r\\n\\r\\n### 4. 同一个类内部的方法调用\\r\\n\\r\\n一个类中方法B添加了事务，方法A去调用方法B，但是方法A没有添加事务，此时方法A不会触发事务，也不会生成代理对象，导致事务失效\\r\\n\\r\\n原因： Spring 默认通过 AOP 代理对象实现事务增强，而同一个类内部通过 `this` 调用其他方法时，不会再次经过代理对象，因此被调用方法上的 `@Transactional` 不会单独生效。\\r\\n\\r\\n例如：\\r\\n\\r\\n```java\\r\\n@Service\\r\\npublic class OrderService {\\r\\n\\r\\n    public void methodA() {\\r\\n        methodB();\\r\\n    }\\r\\n\\r\\n    @Transactional\\r\\n    public void methodB() {\\r\\n        orderMapper.insert();\\r\\n        accountMapper.deductBalance();\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n当外部调用 `methodA()` 时：\\r\\n\\r\\n![image-20261025192841542](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F25\u002Fimage-20261025192841542.png)\\r\\n\\r\\n## spring 事务传播机制\\r\\n\\r\\nSpring 事务传播机制（Propagation）主要用于解决：当一个事务方法调用另一个事务方法时，被调用的方法应该如何处理事务？\\r\\n\\r\\n例如，存在两个 Service：\\r\\n\\r\\n- `OrderService`：负责创建订单，对应事务 A\\r\\n- `AccountService`：负责扣除余额，对应事务 B\\r\\n\\r\\n```java\\r\\n@Service\\r\\npublic class OrderService {\\r\\n\\r\\n    @Autowired\\r\\n    private AccountService accountService;\\r\\n\\r\\n    @Transactional\\r\\n    public void createOrder() {\\r\\n        \u002F\u002F 1. 创建订单\\r\\n        orderMapper.insert();\\r\\n\\r\\n        \u002F\u002F 2. 扣除余额\\r\\n        accountService.deductBalance(); \u002F\u002F 另一个事务方法\\r\\n\\r\\n        \u002F\u002F 3. 模拟异常\\r\\n        int result = 1 \u002F 0;\\r\\n    }\\r\\n}\\r\\n\\r\\n@Service\\r\\npublic class AccountService {\\r\\n\\r\\n    @Transactional\\r\\n    public void deductBalance() {\\r\\n        accountMapper.deductBalance();\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n这里存在一个问题：`createOrder()` 调用了另一个带有 `@Transactional` 的方法，那么两个方法的事务应该如何执行？\\r\\n\\r\\n主要有三种处理方式：\\r\\n\\r\\n- 融入：加入外层事务\\r\\n- 挂起：两个事务相互独立，互不影响\\r\\n- 嵌套：类似于保存点\\r\\n\\r\\n![image-20261025195000711](\u002Fblog-backup\u002Fblog-images\u002F2026\u002F10\u002F25\u002Fimage-20261025195000711.png)\\r\\n\\r\\nMySQL 不支持真正独立的嵌套事务，但 InnoDB 支持 SAVEPOINT 保存点。因此 Spring 在适当的事务管理器配置下，可以通过保存点实现 `NESTED` 的嵌套回滚语义。\\r\\n\\r\\n### 四种核心事务传播机制\\r\\n\\r\\n| 传播机制       | 外层有事务           | 外层无事务       |\\r\\n| -------------- | -------------------- | ---------------- |\\r\\n| `REQUIRED`     | 加入已有事务         | 创建新事务       |\\r\\n| `REQUIRES_NEW` | 挂起外层，创建新事务 | 创建新事务       |\\r\\n| `SUPPORTS`     | 加入已有事务         | 以非事务方式执行 |\\r\\n| `MANDATORY`    | 加入已有事务         | 抛出异常         |\\r\\n\\r\\n以下仍然使用创建订单和扣除余额的案例，分别说明四种机制。\\r\\n\\r\\n### REQUIRED：加入已有事务（默认）\\r\\n\\r\\n```java\\r\\n@Transactional(propagation = Propagation.REQUIRED)\\r\\npublic void deductBalance() {\\r\\n    accountMapper.deductBalance();\\r\\n}\\r\\n```\\r\\n\\r\\n- 外层有事务：加入外层事务，共同提交或回滚\\r\\n- 外层无事务：自己创建一个新事务\\r\\n\\r\\n结合案例： `createOrder()` 开启事务 A，`deductBalance()` 加入事务 A。当外层执行 `1 \u002F 0` 发生异常时，订单创建和余额扣除都会回滚。\\r\\n\\r\\n可以理解为：两个方法共享同一个数据库事务。\\r\\n\\r\\n### REQUIRES_NEW：挂起外层事务，创建新事务\\r\\n\\r\\n```java\\r\\n@Transactional(propagation = Propagation.REQUIRES_NEW)\\r\\npublic void deductBalance() {\\r\\n    accountMapper.deductBalance();\\r\\n}\\r\\n```\\r\\n\\r\\n- 外层有事务：挂起外层事务，开启独立的新事务\\r\\n- 外层无事务：直接创建新事务\\r\\n\\r\\n结合案例：\\r\\n\\r\\n1. `createOrder()` 开启事务 A，插入订单\\r\\n2. 调用 `deductBalance()`，挂起事务 A\\r\\n3. 创建事务 B，扣除余额并提交事务 B\\r\\n4. 恢复事务 A\\r\\n5. 执行 `1 \u002F 0`，事务 A 回滚\\r\\n\\r\\n结果：订单创建回滚，但余额扣除已提交，不会随事务 A 回滚。\\r\\n\\r\\n原因是事务 A 与事务 B 属于独立的物理事务，可以分别提交或回滚。\\r\\n\\r\\n在常见的 JDBC 本地事务中，事务 A 和事务 B 通常使用不同的数据库连接。使用时需要注意连接池大小，避免连接资源不足。\\r\\n\\r\\n### SUPPORTS：有事务就加入，没有就不创建\\r\\n\\r\\n```java\\r\\n@Transactional(propagation = Propagation.SUPPORTS)\\r\\npublic void deductBalance() {\\r\\n    accountMapper.deductBalance();\\r\\n}\\r\\n```\\r\\n\\r\\n- 外层有事务：加入外层事务，与 `REQUIRED` 类似\\r\\n- 外层无事务：不创建事务，直接执行\\r\\n\\r\\n结合案例： 因为 `createOrder()` 已经开启事务 A，所以 `deductBalance()` 会加入事务 A。当外层异常回滚时，余额扣除也随之回滚。\\r\\n\\r\\n但如果直接调用 `deductBalance()`，并且没有已存在的事务，那么方法将以非事务方式执行。对于开启自动提交的数据库连接，单条 SQL 通常会各自提交。\\r\\n\\r\\n与 REQUIRED 的区别： 无外层事务时，`REQUIRED` 会创建事务，而 `SUPPORTS` 不会。\\r\\n\\r\\n### MANDATORY：必须存在事务\\r\\n\\r\\n必须存在事务，不存在则抛出异常\\r\\n\\r\\n```java\\r\\n@Transactional(propagation = Propagation.MANDATORY)\\r\\npublic void deductBalance() {\\r\\n    accountMapper.deductBalance();\\r\\n}\\r\\n```\\r\\n\\r\\n- 外层有事务：加入外层事务\\r\\n- 外层无事务：直接抛出异常，不执行目标方法\\r\\n\\r\\n结合案例： `createOrder()` 已经开启事务 A，因此 `deductBalance()` 可以正常加入事务 A。\\r\\n\\r\\n如果直接从没有事务的地方调用 `deductBalance()`，Spring 就会抛出事务相关异常（通常为 `IllegalTransactionStateException`）。\\r\\n\\r\\n与 SUPPORTS 的区别： 无外层事务时，`SUPPORTS` 允许执行，而 `MANDATORY` 禁止执行。\\r\\n\\r\\n### 补充：NESTED 嵌套事务\\r\\n\\r\\n虽然不属于你重点记忆的四种传播机制，但可以将 `NESTED` 和 `REQUIRES_NEW` 对比理解。\\r\\n\\r\\n```java\\r\\n@Transactional(propagation = Propagation.NESTED)\\r\\npublic void deductBalance() {\\r\\n    accountMapper.deductBalance();\\r\\n}\\r\\n```\\r\\n\\r\\n- 外层有事务：在当前事务中创建保存点，允许回滚内层操作\\r\\n- 外层无事务：行为类似 `REQUIRED`，创建新事务\\r\\n\\r\\n例如：\\r\\n\\r\\n```java\\r\\n@Transactional\\r\\npublic void createOrder() {\\r\\n    orderMapper.insert();\\r\\n\\r\\n    try {\\r\\n        accountService.deductBalance();\\r\\n    } catch (Exception e) {\\r\\n        \u002F\u002F 处理扣款失败\\r\\n    }\\r\\n}\\r\\n```\\r\\n\\r\\n假设 `deductBalance()` 使用 `NESTED`，且扣款过程中抛出了符合回滚规则的异常，那么：\\r\\n\\r\\n1. 事务 A 开始，创建订单\\r\\n2. 进入嵌套事务，在事务 A 中设置保存点\\r\\n3. 扣款失败，回滚到保存点\\r\\n4. 外层捕获异常，继续执行\\r\\n5. 事务 A 正常提交，订单创建保留\\r\\n\\r\\n这与 `REQUIRES_NEW` 的区别在于：NESTED 并没有创建独立物理事务。如果外层事务 A 最终回滚，内层已完成的修改也会一起回滚。\\r\\n\\r\\nMySQL InnoDB 支持保存点，因此可以配合 Spring 的 JDBC 事务管理器实现这种行为，但并非所有事务管理器都支持 `NESTED`。\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\",\"status\":1,\"statusName\":\"已发布\",\"createdAt\":\"2026-10-25 20:01:54\",\"updatedAt\":\"2026-10-25 20:01:54\",\"tags\":[{\"id\":122,\"name\":\"后端\"},{\"id\":123,\"name\":\"后端_Spring\"}]}}}}"</script>
+  
+
+</body></html>
